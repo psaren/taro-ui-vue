@@ -1,0 +1,85 @@
+Arguments: 
+  D:\Program Files\nodejs\node.exe D:\Program Files\nodejs\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\bin;C:\Users\Administrator\bin;D:\Program Files (x86)\NetSarang\Xftp 6;D:\Program Files (x86)\NetSarang;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0;C:\windows\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;D:\Program Files\Git\usr\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk1.8.0_191\bin;C:\Android\android-sdk\tools;C:\Android\android-sdk\platform-tools;C:\Android\android-sdk\tools\bin;D:\src\flutter\bin;D:\phpstudy_pro\Extensions\php\php7.3.4nts;D:\softtool\nvm;D:\Program Files\nodejs;C:\Program Files (x86)\Subversion\bin;C:\Go\bin;D:\Program Files\gs\gs9.27\bin;D:\MinGW\bin;D:\MinGW\msys\1.0\bin;D:\Program Files\geckodriver;D:\HashiCorp\Vagrant\bin;D:\Program Files\Geth;C:\Program Files\dotnet;C:\xampp\php7.4.1;C:\Program Files (x86)\GitExtensions;C:\Users\Administrator\AppData\Local\Programs\Python\Python36\Scripts;C:\Users\Administrator\AppData\Local\Programs\Python\Python36;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MongoDB\Server\4.0\bin;C:\Program Files\kdiff3;D:\softtool\nvm;D:\Program Files\nodejs;C:\Program Files\JetBrains\PhpStorm 2019.2.1\bin;C:\Users\Administrator\go\bin;C:\Program Files\Docker Toolbox;D:\Program Files\JetBrains\GoLand 2019.2.5\bin;D:\Program Files\geckodriver;C:\Users\Administrator\AppData\Local\Programs\Fiddler;C:\Users\Administrator\.dotnet\tools;C:\Program Files\JetBrains\PhpStorm 2019.2.1\bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: http://112.74.196.215:4888/less/-/less-3.11.1.tgz: unexpected end of file
+      at Zlib.zlibOnError [as onerror] (zlib.js:162:17)
+
+npm manifest: 
+  {
+    "name": "vueAppTs",
+    "version": "1.0.0",
+    "private": true,
+    "description": "taro-vue-app-ts",
+    "templateInfo": {
+      "name": "vuex",
+      "typescript": true,
+      "css": "sass"
+    },
+    "scripts": {
+      "build:weapp": "taro build --type weapp",
+      "build:swan": "taro build --type swan",
+      "build:alipay": "taro build --type alipay",
+      "build:tt": "taro build --type tt",
+      "build:h5": "taro build --type h5",
+      "build:rn": "taro build --type rn",
+      "build:qq": "taro build --type qq",
+      "build:quickapp": "taro build --type quickapp",
+      "dev:weapp": "npm run build:weapp -- --watch",
+      "dev:swan": "npm run build:swan -- --watch",
+      "dev:alipay": "npm run build:alipay -- --watch",
+      "dev:tt": "npm run build:tt -- --watch",
+      "dev:h5": "npm run build:h5 -- --watch",
+      "dev:rn": "npm run build:rn -- --watch",
+      "dev:qq": "npm run build:qq -- --watch",
+      "dev:quickapp": "npm run build:quickapp -- --watch"
+    },
+    "browserslist": [
+      "last 3 versions",
+      "Android >= 4.1",
+      "ios >= 8"
+    ],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+      "@babel/runtime": "^7.7.7",
+      "@tarojs/runtime": "3.0.0-beta.6",
+      "@tarojs/taro": "3.0.0-beta.6",
+      "@tarojs/components": "3.0.0-beta.6",
+      "vuex": "^3.0.0",
+      "vue-template-compiler": "^2.5.0",
+      "vue": "^2.5.0"
+    },
+    "devDependencies": {
+      "@types/webpack-env": "^1.13.6",
+      "@tarojs/mini-runner": "3.0.0-beta.6",
+      "@tarojs/webpack-runner": "3.0.0-beta.6",
+      "@babel/core": "^7.8.0",
+      "babel-preset-taro": "3.0.0-beta.6",
+      "eslint-plugin-vue": "^6.x",
+      "eslint-config-taro": "3.0.0-beta.6",
+      "eslint": "^6.8.0",
+      "stylelint": "9.3.0",
+      "@typescript-eslint/parser": "^2.x",
+      "@typescript-eslint/eslint-plugin": "^2.x",
+      "typescript": "^3.7.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
