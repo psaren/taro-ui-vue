@@ -121,15 +121,47 @@ export default {
       isALIPAY:  env === ENV_TYPE.ALIPAY,
     }
   },
+  mounted(){
+    console.log('this.onGetPhoneNumber', this.onGetPhoneNumber)
+  },
   methods: {
     hanldeClick(event) {
       if (!this.disabled) {
         this.onClick && this.onClick(event)
       }
     },
-    handleGetUserInfo() {
-      this.onGetUserInfo()
-    }
+    handleGetUserInfo(event) {
+      this.onGetUserInfo && this.onGetUserInfo(event)
+    },
+    handleGetPhoneNumber(event) {
+      this.onGetPhoneNumber && this.onGetPhoneNumber(event)
+    },
+    handleOpenSetting(event) {
+      this.onOpenSetting && this.onOpenSetting(event)
+    },
+    handleError(event) {
+      this.onError && this.onError(event)
+    },
+    handleContact(event) {
+      this.onContact && this.onContact(event)
+    },
+    handleSubmit(event) {
+      if (this.isWEAPP || this.isWEB) {
+        this.$scope.triggerEvent('submit', event.detail, {
+          bubbles: true,
+          composed: true
+        })
+      }
+    },
+    handleReset(event) {
+      if (this.isWEAPP || this.isWEB) {
+        this.$scope.triggerEvent('reset', event.detail, {
+          bubbles: true,
+          composed: true
+        })
+      }
+    },
+
   },
   render() {
     // props
@@ -188,7 +220,7 @@ export default {
     )
 
     const button = (
-      <Button
+      <button
         className='at-button__wxbutton'
         formType={formType}
         openType={openType}
@@ -199,13 +231,13 @@ export default {
         sendMessageImg={sendMessageImg}
         showMessageCard={showMessageCard}
         appParameter={appParameter}
-        onGetUserInfo={this.handleGetUserInfo}
-        onGetPhoneNumber={this.hanldeClick}
-        onOpenSetting={this.hanldeClick}
-        onError={this.hanldeClick}
-        onContact={this.hanldeClick}
+        ongetUserInfo={this.handleGetUserInfo}
+        onGetPhoneNumber={this.hanldeGetPhoneNumber}
+        onOpenSetting={this.hanldeSetting}
+        onError={this.hanldeError}
+        onContact={this.hanldeContact}
       >
-      </Button>
+      </button>
     )
     return (
       <view
@@ -216,8 +248,8 @@ export default {
         {isWEB && !disabled && webButton}
         {isWEAPP && !disabled && (
           <form
-            onSubmit={this.hanldeClick}
-            onReset={this.hanldeClick}
+            onSubmit={this.handleSubmit}
+            onReset={this.handleReset}
           >
             {button}
           </form>
