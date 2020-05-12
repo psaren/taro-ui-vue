@@ -71,9 +71,9 @@ export default {
     )
 
     return (
-      <view className={rootClass} onTouchMove={this.handleTouchMove}>
-        <view onTap={this.close} className="at-action-sheet__overlay" />
-        <view className="at-action-sheet__container">
+      <view class={rootClass} onTouchMove={this.handleTouchMove}>
+        <view onTap={this.close} class="at-action-sheet__overlay" />
+        <view class="at-action-sheet__container">
           {title && <ActionSheetHeader>{title}</ActionSheetHeader>}
           <ActionSheetBody>{this.$slots.default}</ActionSheetBody>
           {cancelText && (

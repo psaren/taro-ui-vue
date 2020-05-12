@@ -21,7 +21,7 @@ export default {
     const rootClass = classNames('at-action-sheet__footer', this.className)
 
     return (
-      <view onTap={this.handleClick} className={rootClass}>
+      <view onTap={this.handleClick} class={rootClass}>
         {this.$slots.default}
       </view>
     )

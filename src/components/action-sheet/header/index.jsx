@@ -11,6 +11,6 @@ export default {
   render() {
     const rootClass = classNames('at-action-sheet__header', this.className)
 
-    return <view className={rootClass}>{this.$slots.default}</view>
+    return <view class={rootClass}>{this.$slots.default}</view>
   },
 }

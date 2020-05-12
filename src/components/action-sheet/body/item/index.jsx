@@ -21,8 +21,8 @@ export default {
     const rootClass = classNames('at-action-sheet__item', this.className)
 
     return (
-      <view className={rootClass} onTap={this.handleClick}>
-        {this.slots.default}
+      <view class={rootClass} onTap={this.handleClick}>
+        {this.$slots.default}
       </view>
     )
   },

@@ -2,6 +2,14 @@
   <view 
     class="index"
   >
+    <ActionSheet is-opened>
+      <ActionSheetItem>
+        按钮一
+      </ActionSheetItem>
+      <ActionSheetItem>
+        按钮二
+      </ActionSheetItem>
+    </ActionSheet>
     <Badge dot>
       <Icon
         class-name="at-icon at-icon-settings"
@@ -9,24 +17,15 @@
         color="#F00"
       />
     </Badge>
-    <!-- <Button 
+    <Button 
       loading 
       type="primary"
       :on-click="onClick"
     >
       hello
-    </Button> -->
+    </Button>
     <Fab>fab</Fab>
     <Avatar text="111" />
-    <Countdown
-      is-card 
-      is-show-day
-      :format="{ hours: ':', minutes: ':', seconds: '' }"
-      :day="2"
-      :hours="1"
-      :minutes="1"
-      :seconds="10"
-    />
     <Curtain 
       :is-opened="show"
       :on-close="changeShow"
@@ -109,13 +108,15 @@ import Badge from '../../components/badge/index'
 import Icon from '../../components/icon/Icon.vue'
 import Fab from '../../components/fab/Fab.jsx'
 import Avatar from '../../components/avatar/index.jsx'
-import Countdown from '../../components/countdown/index.jsx'
+// import Countdown from '../../components/countdown/index.jsx'
 import Curtain from '../../components/curtain/index.jsx'
 // import LoadMore from '../../components/load-more/index.jsx'
 import Noticebar from '../../components/noticebar/index.jsx'
 import Tag from '../../components/tag/index.jsx'
 import Timeline from '../../components/timeline/index.jsx'
 import Divider from '../../components/divider/index.jsx'
+import ActionSheet from '../../components/action-sheet/index.jsx'
+import ActionSheetItem from '../../components/action-sheet/body/item/index.jsx'
 
 export default {
   name: 'Index',
@@ -125,13 +126,15 @@ export default {
     Fab,
     Avatar,
     Badge,
-    Countdown,
+    // Countdown,
     Curtain,
     // LoadMore,
     Noticebar,
     Tag,
     Timeline,
     Divider,
+    ActionSheet,
+    ActionSheetItem,
   },
   data() {
     return {
