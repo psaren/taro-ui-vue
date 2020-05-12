@@ -2,7 +2,8 @@
   <view 
     class="index"
   >
-    <ActionSheet is-opened>
+    <Progress :percent="80" />
+    <ActionSheet>
       <ActionSheetItem>
         按钮一
       </ActionSheetItem>
@@ -117,6 +118,7 @@ import Timeline from '../../components/timeline/index.jsx'
 import Divider from '../../components/divider/index.jsx'
 import ActionSheet from '../../components/action-sheet/index.jsx'
 import ActionSheetItem from '../../components/action-sheet/body/item/index.jsx'
+import Progress from '../../components/progress/index.jsx'
 
 export default {
   name: 'Index',
@@ -135,6 +137,7 @@ export default {
     Divider,
     ActionSheet,
     ActionSheetItem,
+    Progress,
   },
   data() {
     return {
