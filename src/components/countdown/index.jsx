@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import CountdownItem from './item'
+import CountdownItem from './item/index'
 
 /**
  *

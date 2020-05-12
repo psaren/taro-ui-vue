@@ -199,9 +199,9 @@ export default {
     let loadingComponent = null
     if (loading) {
       loadingComponent = (
-        <View className="at-button__icon">
+        <view className="at-button__icon">
           <Loading color={loadingColor} size={loadingSize} />
-        </View>
+        </view>
       )
       rootClassName.push('at-button--icon')
     }
@@ -248,6 +248,7 @@ export default {
             <Loading color={loadingColor} size={loadingSize} />
           </view>
         )}
+        {loadingComponent}
         <view class="at-button__text">{this.$slots.default}</view>
       </view>
     )
