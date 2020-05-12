@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import store from './store'
 import './app.scss'
+import './utils/vue-prototype'
 // Vue.config.productionTip = false
 
 const App = new Vue({

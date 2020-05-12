@@ -1,0 +1,1 @@
+- Noticebar marquee 属性 还不可用

@@ -1,24 +1,22 @@
-<script>
 import Taro from '@tarojs/taro'
-import Loading from './Loading.vue'
+import Loading from '../loading/index.jsx'
 import classNames from 'classnames'
-import { Button } from '@tarojs/components'
 const { getEnv, ENV_TYPE } = Taro
 const env = getEnv()
 
 const SIZE_CLASS = {
   normal: 'normal',
-  small: 'small'
+  small: 'small',
 }
 
 const TYPE_CLASS = {
   primary: 'primary',
-  secondary: 'secondary'
+  secondary: 'secondary',
 }
 export default {
   name: 'Button',
   components: {
-    Loading
+    Loading,
   },
   props: {
     size: {
@@ -47,81 +45,81 @@ export default {
     },
     customStyle: {
       type: [Object, String],
-      default: () => {}
+      default: () => {},
     },
     className: {
       type: [Object, String],
-      default: () => {}
+      default: () => {},
     },
     formType: {
       type: String,
-      default: undefined
+      default: undefined,
     },
     openType: {
       type: String,
-      default: undefined
+      default: undefined,
     },
     lang: {
       type: String,
-      default: 'en'
+      default: 'en',
     },
     sessionFrom: {
       type: String,
-      default: ''
+      default: '',
     },
     sendMessageTitle: {
       type: String,
-      default: ''
+      default: '',
     },
     sendMessagePath: {
       type: String,
-      default: ''
+      default: '',
     },
     sendMessageImg: {
       type: String,
-      default: ''
+      default: '',
     },
     showMessageCard: {
       type: Boolean,
-      default: false
+      default: false,
     },
     appParameter: {
       type: String,
-      default: ''
+      default: '',
     },
     onClick: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     onGetUserInfo: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     onContact: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     onGetPhoneNumber: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     onError: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
     onOpenSetting: {
       type: Function,
-      default: () => {}
+      default: () => {},
     },
   },
   data() {
     return {
       isWEB: env === ENV_TYPE.WEB,
-      isWEAPP:  env === ENV_TYPE.WEAPP,
-      isALIPAY:  env === ENV_TYPE.ALIPAY,
+      isWEAPP: env === ENV_TYPE.WEAPP,
+      isALIPAY: env === ENV_TYPE.ALIPAY,
     }
   },
-  mounted(){
+  mounted() {
     console.log('this.onGetPhoneNumber', this.onGetPhoneNumber)
   },
   methods: {
@@ -149,7 +147,7 @@ export default {
       if (this.isWEAPP || this.isWEB) {
         this.$scope.triggerEvent('submit', event.detail, {
           bubbles: true,
-          composed: true
+          composed: true,
         })
       }
     },
@@ -157,11 +155,10 @@ export default {
       if (this.isWEAPP || this.isWEB) {
         this.$scope.triggerEvent('reset', event.detail, {
           bubbles: true,
-          composed: true
+          composed: true,
         })
       }
     },
-
   },
   render() {
     // props
@@ -182,7 +179,7 @@ export default {
       sendMessagePath,
       sendMessageImg,
       showMessageCard,
-      appParameter
+      appParameter,
     } = this
     // data
     const { isWEB, isWEAPP, isALIPAY } = this
@@ -193,7 +190,7 @@ export default {
       'at-button--disabled': disabled,
       [`at-button--${type}`]: TYPE_CLASS[type],
       'at-button--circle': circle,
-      'at-button--full': full
+      'at-button--full': full,
     }
 
     const loadingColor = type === 'primary' ? '#fff' : ''
@@ -202,7 +199,7 @@ export default {
     let loadingComponent = null
     if (loading) {
       loadingComponent = (
-        <View className='at-button__icon'>
+        <View className="at-button__icon">
           <Loading color={loadingColor} size={loadingSize} />
         </View>
       )
@@ -211,17 +208,14 @@ export default {
 
     const webButton = (
       <button
-        className='at-button__wxbutton'
+        className="at-button__wxbutton"
         lang={lang}
-        formType={
-          formType === 'submit' || formType === 'reset' ? formType : undefined
-        }
-      ></button>
+        formType={formType === 'submit' || formType === 'reset' ? formType : undefined}></button>
     )
 
     const button = (
       <button
-        className='at-button__wxbutton'
+        className="at-button__wxbutton"
         formType={formType}
         openType={openType}
         lang={lang}
@@ -235,32 +229,27 @@ export default {
         onGetPhoneNumber={this.hanldeGetPhoneNumber}
         onOpenSetting={this.hanldeSetting}
         onError={this.hanldeError}
-        onContact={this.hanldeContact}
-      >
-      </button>
+        onContact={this.hanldeContact}></button>
     )
     return (
       <view
         onTap={this.hanldeClick}
         class={classNames(rootClassName, classObject, className)}
-        style={customStyle}
-      >
+        style={customStyle}>
         {isWEB && !disabled && webButton}
         {isWEAPP && !disabled && (
-          <form
-            onSubmit={this.handleSubmit}
-            onReset={this.handleReset}
-          >
+          <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
             {button}
           </form>
         )}
         {isALIPAY && !disabled && button}
-        {loading && <view class='at-button__icon'>
-          <Loading color={loadingColor} size={loadingSize} />
-        </view>}
-        <view class='at-button__text'>{this.$slots.default}</view>
+        {loading && (
+          <view class="at-button__icon">
+            <Loading color={loadingColor} size={loadingSize} />
+          </view>
+        )}
+        <view class="at-button__text">{this.$slots.default}</view>
       </view>
     )
-  }
+  },
 }
-</script>
