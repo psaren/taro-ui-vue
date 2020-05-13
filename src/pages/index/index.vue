@@ -2,6 +2,25 @@
   <view 
     class="index"
   >
+    <Modal>
+      <ModalHeader>标题</ModalHeader>
+      <ModalContent>
+        这里是正文内容，欢迎加入京东凹凸实验室
+        这里是正文内容，欢迎加入京东凹凸实验室
+        这里是正文内容，欢迎加入京东凹凸实验室
+      </ModalContent>
+      <ModalAction> <button>取消</button> <button>确定</button> </ModalAction>
+    </Modal>
+    <Modal
+      is-opened
+      title="标题"
+      cancel-text="取消"
+      confirm-text="确认"
+      :on-close="onClick"
+      :on-cancel="onClick"
+      :on-confirm="onClick"
+      content="欢迎加入京东凹凸实验室\n\r欢迎加入京东凹凸实验室"
+    />
     <Progress :percent="80" />
     <ActionSheet>
       <ActionSheetItem>
@@ -119,6 +138,10 @@ import Divider from '../../components/divider/index.jsx'
 import ActionSheet from '../../components/action-sheet/index.jsx'
 import ActionSheetItem from '../../components/action-sheet/body/item/index.jsx'
 import Progress from '../../components/progress/index.jsx'
+import Modal from '../../components/modal/index.jsx'
+import ModalHeader from '../../components/modal/header/index.jsx'
+import ModalContent from '../../components/modal/content/index.jsx'
+import ModalAction  from '../../components/modal/action/index.jsx'
 
 export default {
   name: 'Index',
@@ -138,6 +161,10 @@ export default {
     ActionSheet,
     ActionSheetItem,
     Progress,
+    Modal,
+    ModalHeader,
+    ModalContent,
+    ModalAction,
   },
   data() {
     return {

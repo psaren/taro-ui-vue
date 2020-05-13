@@ -1,1 +1,2 @@
 - Noticebar marquee 属性 还不可用
+- Button 未完成，Invalid handler for event "getPhoneNumber": got undefined 等错误
