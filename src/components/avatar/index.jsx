@@ -55,9 +55,6 @@ export default {
     const isOpenData = openData && openData.type === 'userAvatarUrl' && this.$isWEAPP()
     const isImage = !isOpenData && image !== ''
     const isText = !isOpenData && !image
-    console.log('isOpenData', isOpenData)
-    console.log('isImage', isImage)
-    console.log('isText', isText)
     return (
       <view class={classNames(rootClassName, classObject, className)} style={customStyle}>
         {isOpenData && <OpenData type={openData.type}></OpenData>}

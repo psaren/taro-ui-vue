@@ -116,7 +116,6 @@ export default {
       },
       this.className
     )
-    console.log('rootClass', rootClass)
     if (title || content) {
       const isRenderAction = cancelText || confirmText
       return (
