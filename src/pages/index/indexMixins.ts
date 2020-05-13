@@ -33,6 +33,7 @@ import {
   SegmentedControl,
   AtTabs,
   AtTabsPane,
+  AtPagination,
 } from '../../components/index'
 
 export default {
@@ -71,6 +72,7 @@ export default {
     SegmentedControl,
     AtTabs,
     AtTabsPane,
+    AtPagination,
   },
   data() {
     return {

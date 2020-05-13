@@ -9,5 +9,19 @@ import TabBar from './tab-bar/index'
 import SegmentedControl from './segmented-control/index'
 import AtTabs from './tabs/index'
 import AtTabsPane from './tabs-pane/index'
+import AtPagination  from './pagination/index'
 
-export { Grid, List, ListItem, Card, FloatLayout, Accordion, NavBar, TabBar, SegmentedControl, AtTabs, AtTabsPane }
+export { 
+  Grid, 
+  List, 
+  ListItem, 
+  Card, 
+  FloatLayout, 
+  Accordion, 
+  NavBar, 
+  TabBar, 
+  SegmentedControl, 
+  AtTabs, 
+  AtTabsPane, 
+  AtPagination 
+}

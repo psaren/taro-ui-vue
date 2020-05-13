@@ -2,6 +2,11 @@
   <view 
     class="index"
   >
+    <AtPagination 
+      :total="50" 
+      :page-size="10"
+      :current="1"
+    />
     <SegmentedControl
       :on-click="segmentedClick"
       selected-color="#FF4949"
@@ -269,6 +274,7 @@
         </view>
       </AtTabsPane>
     </AtTabs>
+    </atpagination>
   </view>
 </template>
 
