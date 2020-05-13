@@ -4,9 +4,11 @@ import ModalContent from './content/index'
 import ModalHeader from './header/index'
 // import Button from '../button/index'
 import { getEnvs } from '../../utils/common'
+import mixins from '../mixins'
 
 export default {
   name: 'Modal',
+  mixins: [mixins],
   props: {
     title: {
       type: String,
@@ -63,16 +65,6 @@ export default {
     },
   },
   methods: {
-    setState(newState) {
-      const ks = Object.keys(newState)
-      if (Array.isArray(ks)) {
-        ks.forEach((k) => {
-          if (k in this.state) {
-            this.state[k] = newState[k]
-          }
-        })
-      }
-    },
     handleClickOverlay() {
       if (this.closeOnClickOverlay) {
         this.setState(

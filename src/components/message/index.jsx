@@ -1,8 +1,10 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
+import mixins from '../mixins'
 
 export default {
   name: 'Message',
+  mixins: [mixins],
   props: {
     customStyle: {
       type: [Object, String],
@@ -31,19 +33,6 @@ export default {
     Taro.eventCenter.off('atMessage')
   },
   methods: {
-    setState(newState, fn) {
-      const ks = Object.keys(newState)
-      if (Array.isArray(ks)) {
-        ks.forEach((k) => {
-          if (k in this.state) {
-            this.state[k] = newState[k]
-          }
-        })
-      }
-      this.$nextTick(() => {
-        typeof fn === 'function' && fn.call(this)
-      })
-    },
     bindMessageListener() {
       Taro.eventCenter.on('atMessage', (options = {}) => {
         const { message, type, duration } = options

@@ -1,8 +1,10 @@
 import classNames from 'classnames'
+import mixins from '../mixins'
 import { handleTouchScroll } from '../../utils/common'
 
 export default {
   name: 'FloatLayout',
+  mixins: [mixins],
   props: {
     title: {
       type: String,
@@ -82,19 +84,6 @@ export default {
     },
   },
   methods: {
-    setState(newState, fn) {
-      const ks = Object.keys(newState)
-      if (Array.isArray(ks)) {
-        ks.forEach((k) => {
-          if (k in this.state) {
-            this.state[k] = newState[k]
-          }
-        })
-      }
-      this.$nextTick(() => {
-        typeof fn === 'function' && fn.call(this)
-      })
-    },
     handleClose() {
       if (typeof this.onClose === 'function') {
         this.onClose()

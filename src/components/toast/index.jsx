@@ -1,8 +1,10 @@
 import classNames from 'classnames'
 import statusImg from './img.json'
+import mixins from '../mixins'
 
 export default {
   name: 'Toast',
+  mixins: [mixins],
   props: {
     text: {
       type: String,
@@ -66,19 +68,6 @@ export default {
     },
   },
   methods: {
-    setState(newState, fn) {
-      const ks = Object.keys(newState)
-      if (Array.isArray(ks)) {
-        ks.forEach((k) => {
-          if (k in this.state) {
-            this.state[k] = newState[k]
-          }
-        })
-      }
-      this.$nextTick(() => {
-        typeof fn === 'function' && fn.call(this)
-      })
-    },
     clearTimmer() {
       if (this._timer) {
         clearTimeout(this._timer)

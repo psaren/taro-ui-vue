@@ -1,8 +1,11 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
+import mixins from '../mixins'
+
 export default {
   name: 'Noticebar',
+  mixins: [mixins],
   props: {
     close: {
       type: Boolean,
@@ -64,16 +67,6 @@ export default {
     this.initAnimation()
   },
   methods: {
-    setState(newState) {
-      const ks = Object.keys(newState)
-      if (Array.isArray(ks)) {
-        ks.forEach((k) => {
-          if (k in this.state) {
-            this.state[k] = newState[k]
-          }
-        })
-      }
-    },
     handleClose(event) {
       this.setState({
         show: false,

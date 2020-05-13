@@ -3,9 +3,11 @@ import _inRange from 'lodash/inRange'
 import _isEmpty from 'lodash/isEmpty'
 import SwipeActionOptions from './options/index'
 import { delayGetClientRect, delayGetScrollOffset, isTest, uuid } from '../../utils/common'
+import mixins from '../mixins'
 
 export default {
   name: 'SwipeAction',
+  mixins: [mixins],
   props: {
     isOpened: {
       type: Boolean,
@@ -83,16 +85,6 @@ export default {
     }
   },
   methods: {
-    setState(newState) {
-      const ks = Object.keys(newState)
-      if (Array.isArray(ks)) {
-        ks.forEach((k) => {
-          if (k in this.state) {
-            this.state[k] = newState[k]
-          }
-        })
-      }
-    },
     getDomInfo() {
       return Promise.all([
         delayGetClientRect({
