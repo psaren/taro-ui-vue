@@ -59,9 +59,9 @@ function delayGetClientRect({ _, selectorStr, delayTime = 500 }): Promise<[]> {
   })
 }
 
-function delayQuerySelector(self, selectorStr: string, delayTime = 500): Promise<[]> {
-  const $scope = ENV === Taro.ENV_TYPE.WEB ? self : self.$scope
-  const selector: SelectorQuery = Taro.createSelectorQuery().in($scope)
+function delayQuerySelector(_, selectorStr: string, delayTime = 500): Promise<[]> {
+  false && console.log(_)
+  const selector: SelectorQuery = Taro.createSelectorQuery()
 
   return new Promise((resolve) => {
     delay(delayTime).then(() => {

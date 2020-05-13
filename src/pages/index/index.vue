@@ -2,6 +2,33 @@
   <view 
     class="index"
   >
+    <Accordion
+      title="标题三"
+      :icon="accordionIcon"
+      :open="openAccordion"
+      :on-click="handleAccordionOpen"
+    >
+      <List :has-border="false">
+        <ListItem
+          title="标题文字"
+          arrow="right"
+          thumb="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
+        />
+        <ListItem
+          title="标题文字"
+          note="描述信息"
+          arrow="right"
+          thumb="http://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
+        />
+        <ListItem
+          title="标题文字"
+          note="描述信息"
+          extra-text="详细信息"
+          arrow="right"
+          thumb="http://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
+        />
+      </List>
+    </Accordion>
     <FloatLayout
       title="这是个标题"
     >
@@ -217,7 +244,7 @@ import ModalAction  from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
 import Message from '../../components/message/index.jsx'
-import { Grid, List, ListItem, Card, FloatLayout } from '../../components/index'
+import { Grid, List, ListItem, Card, FloatLayout, Accordion } from '../../components/index'
 
 export default {
   name: 'Index',
@@ -249,6 +276,7 @@ export default {
     ListItem,
     Card,
     FloatLayout,
+    Accordion,
   },
   data() {
     return {
@@ -269,31 +297,33 @@ export default {
         }
       ],
       gridData: [
-    {
-      image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
-      value: '领取中心'
-    },
-    {
-      image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
-      value: '找折扣'
-    },
-    {
-      image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
-      value: '领会员'
-    },
-    {
-      image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
-      value: '新品首发'
-    },
-    {
-      image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
-      value: '领京豆'
-    },
-    {
-      image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
-      value: '手机馆'
-    }
-  ]
+        {
+          image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
+          value: '领取中心'
+        },
+        {
+          image: 'https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png',
+          value: '找折扣'
+        },
+        {
+          image: 'https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png',
+          value: '领会员'
+        },
+        {
+          image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png',
+          value: '新品首发'
+        },
+        {
+          image: 'https://img14.360buyimg.com/jdphoto/s72x72_jfs/t17251/336/1311038817/3177/72595a07/5ac44618Na1db7b09.png',
+          value: '领京豆'
+        },
+        {
+          image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
+          value: '手机馆'
+        }
+      ],
+      accordionIcon: { value: 'chevron-down', color: 'red', size: '15' },
+      openAccordion: false
     }
   },
   methods: {
@@ -311,6 +341,9 @@ export default {
         'message': '消息通知',
         'type': type,
       })
+    },
+    handleAccordionOpen(isOpen, e) {
+      this.openAccordion = isOpen
     }
   },
 }
