@@ -2,6 +2,18 @@
   <view 
     class="index"
   >
+    <Card
+      note="小Tips"
+      extra="额外信息"
+      title="这是个标题"
+      thumb="http://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
+    >
+      <Icon
+        slot="renderIcon"
+        value="bell"
+      />
+      这也是内容区 可以随意定义功能
+    </Card>
     <List>
       <ListItem
         title="标题文字"
@@ -171,6 +183,7 @@
       font-color="#2d8cf0"
       line-color="#2d8cf0"
     />
+    </card>
   </view>
 </template>
 
@@ -198,7 +211,7 @@ import ModalAction  from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
 import Message from '../../components/message/index.jsx'
-import { Grid, List, ListItem } from '../../components/index'
+import { Grid, List, ListItem, Card } from '../../components/index'
 
 export default {
   name: 'Index',
@@ -228,6 +241,7 @@ export default {
     Grid,
     List,
     ListItem,
+    Card,
   },
   data() {
     return {
