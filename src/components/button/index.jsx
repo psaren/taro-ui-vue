@@ -196,13 +196,7 @@ export default {
     const loadingColor = type === 'primary' ? '#fff' : ''
     const loadingSize = size === 'small' ? '30' : 0
 
-    let loadingComponent = null
     if (loading) {
-      loadingComponent = (
-        <view className="at-button__icon">
-          <Loading color={loadingColor} size={loadingSize} />
-        </view>
-      )
       rootClassName.push('at-button--icon')
     }
 
@@ -248,7 +242,6 @@ export default {
             <Loading color={loadingColor} size={loadingSize} />
           </view>
         )}
-        {loadingComponent}
         <view class="at-button__text">{this.$slots.default}</view>
       </view>
     )

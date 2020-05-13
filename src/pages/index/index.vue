@@ -18,13 +18,13 @@
         color="#F00"
       />
     </Badge>
-    <Button 
+    <!-- <Button 
       loading 
       type="primary"
       :on-click="onClick"
     >
       hello
-    </Button>
+    </Button> -->
     <Fab>fab</Fab>
     <Avatar text="111" />
     <Curtain 

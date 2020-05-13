@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import Button from '../button/index'
 import AtActivityIndicator from '../activity-indicator/index'
 
 export default {
@@ -61,9 +62,9 @@ export default {
     } else if (status === 'more') {
       component = (
         <view class="at-load-more__cnt">
-          <AtButton full onClick={this.onClick} customStyle={moreBtnStyle}>
+          <Button full onTap={this.onClick} customStyle={moreBtnStyle}>
             {moreText}
-          </AtButton>
+          </Button>
         </view>
       )
     } else {

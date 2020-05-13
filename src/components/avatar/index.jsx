@@ -28,7 +28,7 @@ export default {
     },
     openData: {
       type: Object,
-      default: () => {},
+      default: () => ({}),
     },
     customStyle: {
       type: [Object, String],
@@ -40,7 +40,7 @@ export default {
     },
   },
 
-  render() {
+  render(h) {
     const { size, circle, image, text, openData, customStyle, className } = this
     const rootClassName = ['at-avatar']
     const iconSize = SIZE_CLASS[size || 'normal']
@@ -52,19 +52,17 @@ export default {
     let letter = ''
     if (text) letter = text[0]
 
-    let elem
-    if (openData && openData.type === 'userAvatarUrl' && this.$isWEAPP()) {
-      // TODO OpenData Component
-      elem = <OpenData type={openData.type}></OpenData>
-    } else if (image) {
-      elem = <image class="at-avatar__img" src={image} />
-    } else {
-      elem = <text class="at-avatar__text">{letter}</text>
-    }
-
+    const isOpenData = openData && openData.type === 'userAvatarUrl' && this.$isWEAPP()
+    const isImage = !isOpenData && image !== ''
+    const isText = !isOpenData && !image
+    console.log('isOpenData', isOpenData)
+    console.log('isImage', isImage)
+    console.log('isText', isText)
     return (
       <view class={classNames(rootClassName, classObject, className)} style={customStyle}>
-        {elem}
+        {isOpenData && <OpenData type={openData.type}></OpenData>}
+        {isImage && <image class="at-avatar__img" src={image} />}
+        {isText && <view class="at-avatar__text">{letter}</view>}
       </view>
     )
   },
