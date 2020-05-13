@@ -2,6 +2,11 @@
   <view 
     class="index"
   >
+    <TabBar
+      :tab-list="tabList"
+      :on-click="onTabClick"
+      :current="tabIndex"
+    />
     <NavBar
       :on-click-rg-icon-st="onClick"
       :on-click-rg-icon-nd="onClick"

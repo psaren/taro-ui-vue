@@ -21,7 +21,16 @@ import ModalAction from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
 import Message from '../../components/message/index.jsx'
-import { Grid, List, ListItem, Card, FloatLayout, Accordion, NavBar } from '../../components/index'
+import {
+  Grid,
+  List,
+  ListItem,
+  Card,
+  FloatLayout,
+  Accordion,
+  NavBar,
+  TabBar,
+} from '../../components/index'
 
 export default {
   name: 'Index',
@@ -55,6 +64,7 @@ export default {
     FloatLayout,
     Accordion,
     NavBar,
+    TabBar,
   },
   data() {
     return {
@@ -108,6 +118,12 @@ export default {
       ],
       accordionIcon: { value: 'chevron-down', color: 'red', size: '15' },
       openAccordion: false,
+      tabIndex: 0,
+      tabList: [
+        { title: '待办事项', iconType: 'bullet-list', text: 'new' },
+        { title: '拍照', iconType: 'camera' },
+        { title: '文件夹', iconType: 'folder', text: '100', max: 99 },
+      ],
     }
   },
   methods: {
@@ -128,6 +144,9 @@ export default {
     },
     handleAccordionOpen(isOpen, e) {
       this.openAccordion = isOpen
+    },
+    onTabClick(i, e) {
+      this.tabIndex = i
     },
   },
 }
