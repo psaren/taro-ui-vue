@@ -2,6 +2,22 @@
   <view 
     class="index"
   >
+    <List>
+      <ListItem
+        title="标题文字"
+        arrow="right"
+        thumb="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
+      />
+      <ListItem
+        title="标题文字"
+        extra-text="详细信息"
+      />
+      <ListItem
+        title="禁用状态"
+        disabled
+        extra-text="详细信息"
+      />
+    </List>
     <Grid
       mode="square"
       :data="gridData"
@@ -182,7 +198,7 @@ import ModalAction  from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
 import Message from '../../components/message/index.jsx'
-import { Grid } from '../../components/index'
+import { Grid, List, ListItem } from '../../components/index'
 
 export default {
   name: 'Index',
@@ -210,6 +226,8 @@ export default {
     SwipeAction,
     Message,
     Grid,
+    List,
+    ListItem,
   },
   data() {
     return {
@@ -282,8 +300,7 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
