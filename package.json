@@ -39,6 +39,7 @@
     "@tarojs/runtime": "3.0.0-beta.6",
     "@tarojs/taro": "3.0.0-beta.6",
     "classnames": "^2.2.6",
+    "lodash": "^4.17.15",
     "vue": "^2.5.0",
     "vue-template-compiler": "^2.5.0",
     "vuex": "^3.0.0"
