@@ -6,5 +6,6 @@ import FloatLayout from './float-layout/index'
 import Accordion from './accordion/index'
 import NavBar from './nav-bar/index'
 import TabBar from './tab-bar/index'
+import SegmentedControl from './segmented-control/index'
 
-export { Grid, List, ListItem, Card, FloatLayout, Accordion, NavBar, TabBar }
+export { Grid, List, ListItem, Card, FloatLayout, Accordion, NavBar, TabBar, SegmentedControl }

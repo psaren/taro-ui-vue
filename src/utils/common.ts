@@ -132,6 +132,11 @@ function handleTouchScroll(flag: any): void {
   }
 }
 
+function pxTransform(size: number): string {
+  if (!size) return ''
+  return Taro.pxTransform(size)
+}
+
 export {
   getEnvs,
   delayGetScrollOffset,
@@ -140,4 +145,5 @@ export {
   uuid,
   isTest,
   handleTouchScroll,
+  pxTransform,
 }

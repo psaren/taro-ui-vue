@@ -2,6 +2,13 @@
   <view 
     class="index"
   >
+    <SegmentedControl
+      :on-click="segmentedClick"
+      selected-color="#FF4949"
+      font-size="30"
+      :current="segmentedIndex"
+      :values="segmentedList"
+    />
     <TabBar
       :tab-list="tabList"
       :on-click="onTabClick"

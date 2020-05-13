@@ -30,6 +30,7 @@ import {
   Accordion,
   NavBar,
   TabBar,
+  SegmentedControl,
 } from '../../components/index'
 
 export default {
@@ -65,6 +66,7 @@ export default {
     Accordion,
     NavBar,
     TabBar,
+    SegmentedControl,
   },
   data() {
     return {
@@ -124,6 +126,8 @@ export default {
         { title: '拍照', iconType: 'camera' },
         { title: '文件夹', iconType: 'folder', text: '100', max: 99 },
       ],
+      segmentedIndex: 0,
+      segmentedList: ['标签页1', '标签页2', '标签页3'],
     }
   },
   methods: {
@@ -147,6 +151,9 @@ export default {
     },
     onTabClick(i, e) {
       this.tabIndex = i
+    },
+    segmentedClick(i, e) {
+      this.segmentedIndex = i
     },
   },
 }
