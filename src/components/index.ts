@@ -10,6 +10,7 @@ import SegmentedControl from './segmented-control/index'
 import AtTabs from './tabs/index'
 import AtTabsPane from './tabs-pane/index'
 import AtPagination  from './pagination/index'
+import AtIndexes  from './indexes/index'
 
 export { 
   Grid, 
@@ -23,5 +24,6 @@ export {
   SegmentedControl, 
   AtTabs, 
   AtTabsPane, 
-  AtPagination 
+  AtPagination,
+  AtIndexes 
 }

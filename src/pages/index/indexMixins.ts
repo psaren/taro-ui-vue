@@ -34,6 +34,7 @@ import {
   AtTabs,
   AtTabsPane,
   AtPagination,
+  AtIndexes,
 } from '../../components/index'
 
 export default {
@@ -73,6 +74,7 @@ export default {
     AtTabs,
     AtTabsPane,
     AtPagination,
+    AtIndexes,
   },
   data() {
     return {
@@ -127,7 +129,7 @@ export default {
       accordionIcon: { value: 'chevron-down', color: 'red', size: '15' },
       openAccordion: false,
       tabIndex: 0,
-      tabList: [
+      tabBarList: [
         { title: '待办事项', iconType: 'bullet-list', text: 'new' },
         { title: '拍照', iconType: 'camera' },
         { title: '文件夹', iconType: 'folder', text: '100', max: 99 },
@@ -135,7 +137,31 @@ export default {
       segmentedIndex: 0,
       segmentedList: ['标签页1', '标签页2', '标签页3'],
       currentTab: 0,
-      tabList: [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
+      tabList: [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }],
+      list: [{
+        title: 'A',
+        key: 'A',
+        items: [
+          {
+            'name': '阿坝'
+            // 此处可加其他业务字段
+          },
+          {
+            'name': '阿拉善'
+          }]
+        },
+        {
+          title: 'B',
+          key: 'B',
+          items: [
+            {
+              'name': '北京'
+            },
+            {
+              'name': '保定'
+            }]
+        }
+      ]
     }
   },
   methods: {
@@ -165,6 +191,9 @@ export default {
     },
     changeCurrentTab(val) {
       this.currentTab = val
-    }
+    },
+    clickIndex(e) {
+      console.log(e)
+    },
   },
 }

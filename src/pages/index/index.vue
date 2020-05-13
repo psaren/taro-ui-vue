@@ -2,6 +2,14 @@
   <view 
     class="index"
   >
+    <view style="height:100vh">
+      <AtIndexes
+        :list="list"
+        :on-click="clickIndex"
+      >
+        <view>自定义内容</view>
+      </AtIndexes>
+    </view>
     <AtPagination 
       :total="50" 
       :page-size="10"
@@ -15,7 +23,7 @@
       :values="segmentedList"
     />
     <TabBar
-      :tab-list="tabList"
+      :tab-list="tabBarList"
       :on-click="onTabClick"
       :current="tabIndex"
     />
