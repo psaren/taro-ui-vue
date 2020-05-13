@@ -2,6 +2,11 @@
   <view 
     class="index"
   >
+    <Toast
+      is-opened
+      text="{text}"
+      icon="clock"
+    />
     <Modal>
       <ModalHeader>标题</ModalHeader>
       <ModalContent>
@@ -142,6 +147,7 @@ import Modal from '../../components/modal/index.jsx'
 import ModalHeader from '../../components/modal/header/index.jsx'
 import ModalContent from '../../components/modal/content/index.jsx'
 import ModalAction  from '../../components/modal/action/index.jsx'
+import Toast from '../../components/toast/index.jsx'
 
 export default {
   name: 'Index',
@@ -165,6 +171,7 @@ export default {
     ModalHeader,
     ModalContent,
     ModalAction,
+    Toast,
   },
   data() {
     return {
