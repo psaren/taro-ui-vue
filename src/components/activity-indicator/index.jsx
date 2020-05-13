@@ -46,7 +46,7 @@ export default {
         <view class="at-activity-indicator__body">
           <Loading size={size} color={color} />
         </view>
-        {content && <text class="at-activity-indicator__content">{content}</text>}
+        {content && <view class="at-activity-indicator__content">{content}</view>}
       </view>
     )
   },

@@ -52,7 +52,7 @@ export default {
       return (
         <view class={classNames(itemRootClassName)} key={`at-timeline-item-${index}`}>
           <view class="at-timeline-item__tail"></view>
-          <view class={classNames(dotClass)}>{icon && <text class={iconClass}></text>}</view>
+          <view class={classNames(dotClass)}>{icon && <view class={iconClass}></view>}</view>
           <view class="at-timeline-item__content">
             <view class="at-timeline-item__content-item">{title}</view>
             {content.map((sub, subIndex) => (

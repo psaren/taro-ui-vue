@@ -60,13 +60,13 @@ export default {
                 ) : (
                   <view class="at-steps__circular">
                     {item.icon ? (
-                      <text
+                      <view
                         class={classNames('at-icon', {
                           [`at-icon-${item.icon.value}`]: item.icon.value,
                           'at-steps__circle-icon': true,
-                        })}></text>
+                        })}></view>
                     ) : (
-                      <text class="at-steps__num">{i + 1}</text>
+                      <view class="at-steps__num">{i + 1}</view>
                     )}
                   </view>
                 )}

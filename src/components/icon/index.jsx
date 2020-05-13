@@ -1,4 +1,3 @@
-<script>
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 export default {
@@ -36,32 +35,23 @@ export default {
   methods: {
     handleTab(event) {
       this.handleClick && this.handleClick(event)
-    }
+    },
   },
   render() {
-    const {
-      customStyle,
-      className,
-      prefixClass,
-      value,
-      size,
-      color
-    } = this
+    const { customStyle, className, prefixClass, value, size, color } = this
 
     const rootStyle = {
       fontSize: `${Taro.pxTransform(parseInt(String(size)) * 2)}`,
-      color
+      color,
     }
 
     const iconName = value ? `${prefixClass}-${value}` : ''
 
     return (
-      <text
+      <view
         class={classNames(prefixClass, iconName, className)}
         style={this.$mergeStyle(rootStyle, customStyle)}
-        onTab={this.handleTab}
-      ></text>
+        onTab={this.handleTab}></view>
     )
-  }
+  },
 }
-</script>

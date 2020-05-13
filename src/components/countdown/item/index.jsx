@@ -23,9 +23,9 @@ export default {
     return (
       <view class="at-countdown__item">
         <view class="at-countdown__time-box">
-          <text class="at-countdown__time">{formatNum(num)}</text>
+          <view class="at-countdown__time">{formatNum(num)}</view>
         </view>
-        <text class="at-countdown__separator">{separator}</text>
+        <view class="at-countdown__separator">{separator}</view>
       </view>
     )
   },

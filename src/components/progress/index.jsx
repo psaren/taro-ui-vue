@@ -71,7 +71,7 @@ export default {
         </view>
         {!isHidePercent && (
           <view class="at-progress__content">
-            {!status || status === 'progress' ? `${percent}%` : <text class={iconClass}></text>}
+            {!status || status === 'progress' ? `${percent}%` : <view class={iconClass}></view>}
           </view>
         )}
       </view>

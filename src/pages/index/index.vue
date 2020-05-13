@@ -2,6 +2,13 @@
   <view 
     class="index"
   >
+    <SwipeAction
+      :options="SAOptions"
+    >
+      <view class-name="normal">
+        AtSwipeAction 一般使用场景
+      </view>
+    </SwipeAction>
     <Toast
       is-opened
       text="{text}"
@@ -17,7 +24,6 @@
       <ModalAction> <button>取消</button> <button>确定</button> </ModalAction>
     </Modal>
     <Modal
-      is-opened
       title="标题"
       cancel-text="取消"
       confirm-text="确认"
@@ -130,7 +136,7 @@
 <script>
 // import Button from '../../components/button/index.jsx'
 import Badge from '../../components/badge/index'
-import Icon from '../../components/icon/Icon.vue'
+import Icon from '../../components/icon/index'
 import Fab from '../../components/fab/Fab.jsx'
 import Avatar from '../../components/avatar/index.jsx'
 // import Countdown from '../../components/countdown/index.jsx'
@@ -148,6 +154,7 @@ import ModalHeader from '../../components/modal/header/index.jsx'
 import ModalContent from '../../components/modal/content/index.jsx'
 import ModalAction  from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
+import SwipeAction from '../../components/swipe-action/index.jsx'
 
 export default {
   name: 'Index',
@@ -172,11 +179,26 @@ export default {
     ModalContent,
     ModalAction,
     Toast,
+    SwipeAction,
   },
   data() {
     return {
       show: false,
       activeTag: false,
+      SAOptions: [
+        {
+          text: '取消',
+          style: {
+            backgroundColor: '#6190E8'
+          }
+        },
+        {
+          text: '确认',
+          style: {
+            backgroundColor: '#FF4949'
+          }
+        }
+      ]
     }
   },
   methods: {

@@ -176,14 +176,14 @@ export default {
         <view class={classNames(rootClassName, classObject, className)} style={customStyle}>
           {close && (
             <view class="at-noticebar__close" onClick={this.handlClose}>
-              <text class="at-icon at-icon-close"></text>
+              <view class="at-icon at-icon-close"></view>
             </view>
           )}
           <view class="at-noticebar__content">
             {icon && (
               <view class="at-noticebar__content-icon">
                 {/* start hack 百度小程序 */}
-                <text class={classNames(iconClass, iconClass)}></text>
+                <view class={classNames(iconClass, iconClass)}></view>
               </view>
             )}
             <view class="at-noticebar__content-text">
@@ -198,9 +198,9 @@ export default {
           </view>
           {showMore && (
             <view class="at-noticebar__more" onClick={this.handleGotoMore}>
-              <text class="text">{_moreText}</text>
+              <view class="text">{_moreText}</view>
               <view class="at-noticebar__more-icon">
-                <text class="at-icon at-icon-chevron-right"></text>
+                <view class="at-icon at-icon-chevron-right"></view>
               </view>
             </view>
           )}

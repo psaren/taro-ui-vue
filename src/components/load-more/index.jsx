@@ -69,9 +69,9 @@ export default {
       )
     } else {
       component = (
-        <text class="at-load-more__tip" style={noMoreTextStyle}>
+        <view class="at-load-more__tip" style={noMoreTextStyle}>
           {noMoreText}
-        </text>
+        </view>
       )
     }
 
