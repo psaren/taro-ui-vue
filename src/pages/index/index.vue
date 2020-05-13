@@ -2,6 +2,12 @@
   <view 
     class="index"
   >
+    <FloatLayout
+      title="这是个标题"
+    >
+      这是内容区 随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+      随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写
+    </FloatLayout>
     <Card
       note="小Tips"
       extra="额外信息"
@@ -211,7 +217,7 @@ import ModalAction  from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
 import Message from '../../components/message/index.jsx'
-import { Grid, List, ListItem, Card } from '../../components/index'
+import { Grid, List, ListItem, Card, FloatLayout } from '../../components/index'
 
 export default {
   name: 'Index',
@@ -242,6 +248,7 @@ export default {
     List,
     ListItem,
     Card,
+    FloatLayout,
   },
   data() {
     return {
