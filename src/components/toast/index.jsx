@@ -75,7 +75,9 @@ export default {
           }
         })
       }
-      typeof fn === 'function' && fn.call(this)
+      this.$nextTick(() => {
+        typeof fn === 'function' && fn.call(this)
+      })
     },
     clearTimmer() {
       if (this._timer) {
