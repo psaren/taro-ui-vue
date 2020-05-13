@@ -31,6 +31,8 @@ import {
   NavBar,
   TabBar,
   SegmentedControl,
+  AtTabs,
+  AtTabsPane,
 } from '../../components/index'
 
 export default {
@@ -67,6 +69,8 @@ export default {
     NavBar,
     TabBar,
     SegmentedControl,
+    AtTabs,
+    AtTabsPane,
   },
   data() {
     return {
@@ -128,6 +132,8 @@ export default {
       ],
       segmentedIndex: 0,
       segmentedList: ['标签页1', '标签页2', '标签页3'],
+      currentTab: 0,
+      tabList: [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
     }
   },
   methods: {
@@ -155,5 +161,8 @@ export default {
     segmentedClick(i, e) {
       this.segmentedIndex = i
     },
+    changeCurrentTab(val) {
+      this.currentTab = val
+    }
   },
 }

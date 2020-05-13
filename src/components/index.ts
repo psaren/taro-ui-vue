@@ -7,5 +7,7 @@ import Accordion from './accordion/index'
 import NavBar from './nav-bar/index'
 import TabBar from './tab-bar/index'
 import SegmentedControl from './segmented-control/index'
+import AtTabs from './tabs/index'
+import AtTabsPane from './tabs-pane/index'
 
-export { Grid, List, ListItem, Card, FloatLayout, Accordion, NavBar, TabBar, SegmentedControl }
+export { Grid, List, ListItem, Card, FloatLayout, Accordion, NavBar, TabBar, SegmentedControl, AtTabs, AtTabsPane }

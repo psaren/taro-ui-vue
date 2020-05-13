@@ -238,7 +238,37 @@
       font-color="#2d8cf0"
       line-color="#2d8cf0"
     />
-    </card>
+    <AtTabs
+      :current="currentTab"
+      :tab-list="tabList"
+      :on-click="changeCurrentTab"
+      style="height: 200px"
+    >
+      <AtTabsPane
+        :current="currentTab"
+        :index="0"
+      >
+        <view style="padding: 100px 50px;background-color: #FAFBFC;text-align: center;">
+          标签页一的内容
+        </view>
+      </AtTabsPane>
+      <AtTabsPane
+        :current="currentTab"
+        :index="1"
+      >
+        <view style="padding: 100px 50px;background-color: #FAFBFC;text-align: center;">
+          标签页二的内容
+        </view>
+      </AtTabsPane>
+      <AtTabsPane
+        :current="currentTab"
+        :index="2"
+      >
+        <view style="padding: 100px 50px;background-color: #FAFBFC;text-align: center;">
+          标签页三的内容
+        </view>
+      </AtTabsPane>
+    </AtTabs>
   </view>
 </template>
 
