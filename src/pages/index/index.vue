@@ -2,6 +2,13 @@
   <view 
     class="index"
   >
+    <Message />
+    <button @tap="showMessage">
+      show Message
+    </button>
+    <button @tap="showMessage('success')">
+      show success Message
+    </button>
     <SwipeAction
       :options="SAOptions"
     >
@@ -134,6 +141,7 @@
 </template>
 
 <script>
+import Taro from '@tarojs/taro'
 // import Button from '../../components/button/index.jsx'
 import Badge from '../../components/badge/index'
 import Icon from '../../components/icon/index'
@@ -155,6 +163,7 @@ import ModalContent from '../../components/modal/content/index.jsx'
 import ModalAction  from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
+import Message from '../../components/message/index.jsx'
 
 export default {
   name: 'Index',
@@ -180,6 +189,7 @@ export default {
     ModalAction,
     Toast,
     SwipeAction,
+    Message,
   },
   data() {
     return {
@@ -210,6 +220,12 @@ export default {
     },
     onClick(e) {
       console.log(e)
+    },
+    showMessage(type) {
+      Taro.atMessage({
+        'message': '消息通知',
+        'type': type,
+      })
     }
   },
 }
