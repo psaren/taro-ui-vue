@@ -60,7 +60,7 @@ const AtCheckbox = Vue.extend({
               <view class="at-checkbox__option-wrap">
                 <view class="at-checkbox__option-cnt">
                   <view class="at-checkbox__icon-cnt">
-                    <view class="at-icon at-icon-check text"></view>
+                    <text class="at-icon at-icon-check"></text>
                   </view>
                   <view class="at-checkbox__title">{label}</view>
                 </view>

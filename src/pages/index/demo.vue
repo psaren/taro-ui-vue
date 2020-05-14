@@ -6,5 +6,6 @@
     <form>
       <input>
     </form>
+    <textarea />
   </view>
 </template>

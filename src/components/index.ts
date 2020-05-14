@@ -19,6 +19,7 @@ import AtInputNumber from './input-number/index'
 import AtRadio from './radio/index'
 import AtCheckbox from './checkbox/index'
 import AtRate from './rate/index'
+import AtTextarea from './textarea/index'
 
 export {
   Grid,
@@ -42,4 +43,5 @@ export {
   AtRadio,
   AtCheckbox,
   AtRate,
+  AtTextarea,
 }

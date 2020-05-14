@@ -44,6 +44,7 @@ import {
   AtRadio,
   AtCheckbox,
   AtRate,
+  AtTextarea,
 } from '../../components/index'
 
 export default {
@@ -93,6 +94,7 @@ export default {
     AtRadio,
     AtCheckbox,
     AtRate,
+    AtTextarea,
   },
   data() {
     return {
@@ -218,6 +220,7 @@ export default {
         },
       ],
       rateVal: 2,
+      textareaVal: '',
     }
   },
   methods: {
@@ -261,8 +264,10 @@ export default {
       this.checkedList = val
     },
     rateChange(val) {
-      console.log(val)
       this.rateVal = val
+    },
+    textareaChange(val) {
+      this.textareaVal = val
     },
   },
 }

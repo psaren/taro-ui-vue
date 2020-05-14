@@ -2,6 +2,12 @@
   <view 
     class="index"
   >
+    <AtTextarea
+      :value="textareaVal"
+      :on-change="textareaChange"
+      :max-length="200"
+      placeholder="你的问题是..."
+    />
     <AtRate 
       :value="rateVal"
       :on-change="rateChange"
