@@ -40,6 +40,7 @@ import {
   AtSlider,
   AtInput,
   AtForm,
+  AtInputNumber,
 } from '../../components/index'
 
 export default {
@@ -85,6 +86,7 @@ export default {
     AtSlider,
     AtForm,
     AtInput,
+    AtInputNumber,
   },
   data() {
     return {

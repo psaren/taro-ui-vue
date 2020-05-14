@@ -3,6 +3,13 @@
     class="index"
   >
     <AtForm>
+      <AtInputNumber
+        :min="0"
+        :max="10"
+        :step="1"
+        :value="inputVal"
+        :on-change="inputChange"
+      />
       <AtInput
         name="value1"
         title="文本"

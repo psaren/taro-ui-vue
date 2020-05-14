@@ -15,6 +15,7 @@ import AtSwitch from './switch/index'
 import AtSlider from './slider/index'
 import AtForm from './form/index'
 import AtInput from './input/index'
+import AtInputNumber from './input-number/index'
 
 export {
   Grid,
@@ -34,4 +35,5 @@ export {
   AtSlider,
   AtForm,
   AtInput,
+  AtInputNumber,
 }
