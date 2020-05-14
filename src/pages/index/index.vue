@@ -282,7 +282,8 @@
         </view>
       </AtTabsPane>
     </AtTabs>
-    </atpagination>
+    
+    <Demo />
   </view>
 </template>
 

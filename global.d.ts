@@ -1,3 +1,5 @@
+import React from 'react'
+
 declare module "*.png";
 declare module "*.gif";
 declare module "*.jpg";
@@ -11,7 +13,8 @@ declare module "*.styl";
 
 declare namespace JSX {
     interface IntrinsicElements {
-        'import': React.DetailedHTMLProps<React.EmbedHTMLAttributes<HTMLEmbedElement>, HTMLEmbedElement>
+      'import': React.DetailedHTMLProps<React.EmbedHTMLAttributes<HTMLEmbedElement>, HTMLEmbedElement>;
+      [elem: string]: any;
     }
 }
 

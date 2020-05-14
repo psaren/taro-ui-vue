@@ -21,6 +21,7 @@ import ModalAction from '../../components/modal/action/index.jsx'
 import Toast from '../../components/toast/index.jsx'
 import SwipeAction from '../../components/swipe-action/index.jsx'
 import Message from '../../components/message/index.jsx'
+import Demo from './demo'
 import {
   Grid,
   List,
@@ -75,6 +76,7 @@ export default {
     AtTabsPane,
     AtPagination,
     AtIndexes,
+    Demo,
   },
   data() {
     return {
@@ -138,30 +140,33 @@ export default {
       segmentedList: ['标签页1', '标签页2', '标签页3'],
       currentTab: 0,
       tabList: [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }],
-      list: [{
-        title: 'A',
-        key: 'A',
-        items: [
-          {
-            'name': '阿坝'
-            // 此处可加其他业务字段
-          },
-          {
-            'name': '阿拉善'
-          }]
+      list: [
+        {
+          title: 'A',
+          key: 'A',
+          items: [
+            {
+              name: '阿坝',
+              // 此处可加其他业务字段
+            },
+            {
+              name: '阿拉善',
+            },
+          ],
         },
         {
           title: 'B',
           key: 'B',
           items: [
             {
-              'name': '北京'
+              name: '北京',
             },
             {
-              'name': '保定'
-            }]
-        }
-      ]
+              name: '保定',
+            },
+          ],
+        },
+      ],
     }
   },
   methods: {
