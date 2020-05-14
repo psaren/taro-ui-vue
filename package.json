@@ -54,6 +54,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "babel-preset-taro": "3.0.0-beta.6",
+    "csstype": "^2.6.10",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-taro": "3.0.0-beta.6",

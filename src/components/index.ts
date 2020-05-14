@@ -20,6 +20,7 @@ import AtRadio from './radio/index'
 import AtCheckbox from './checkbox/index'
 import AtRate from './rate/index'
 import AtTextarea from './textarea/index'
+import AtSearchBar from './search-bar/index'
 
 export {
   Grid,
@@ -44,4 +45,5 @@ export {
   AtCheckbox,
   AtRate,
   AtTextarea,
+  AtSearchBar,
 }

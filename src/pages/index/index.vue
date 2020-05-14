@@ -2,6 +2,10 @@
   <view 
     class="index"
   >
+    <AtSearchBar
+      :value="searchVal"
+      :on-change="searchValChange"
+    />
     <AtTextarea
       :value="textareaVal"
       :on-change="textareaChange"

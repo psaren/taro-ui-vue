@@ -45,6 +45,7 @@ import {
   AtCheckbox,
   AtRate,
   AtTextarea,
+  AtSearchBar,
 } from '../../components/index'
 
 export default {
@@ -95,6 +96,7 @@ export default {
     AtCheckbox,
     AtRate,
     AtTextarea,
+    AtSearchBar,
   },
   data() {
     return {
@@ -221,6 +223,7 @@ export default {
       ],
       rateVal: 2,
       textareaVal: '',
+      searchVal: '',
     }
   },
   methods: {
@@ -268,6 +271,9 @@ export default {
     },
     textareaChange(val) {
       this.textareaVal = val
+    },
+    searchValChange(val) {
+      this.searchVal = val
     },
   },
 }

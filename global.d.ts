@@ -1,4 +1,4 @@
-import React from 'react'
+import * as CSS from 'csstype'
 
 declare module "*.png";
 declare module "*.gif";
@@ -13,8 +13,8 @@ declare module "*.styl";
 
 declare namespace JSX {
     interface IntrinsicElements {
-      'import': React.DetailedHTMLProps<React.EmbedHTMLAttributes<HTMLEmbedElement>, HTMLEmbedElement>;
       [elem: string]: any;
+      'import': React.DetailedHTMLProps<React.EmbedHTMLAttributes<HTMLEmbedElement>, HTMLEmbedElement>;
     }
 }
 
@@ -25,3 +25,4 @@ declare const process: {
     [key: string]: any;
   }
 }
+export type CSSProperties = CSS.Properties<string | number>
