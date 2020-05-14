@@ -38,6 +38,8 @@ import {
   AtIndexes,
   AtSwitch,
   AtSlider,
+  AtInput,
+  AtForm,
 } from '../../components/index'
 
 export default {
@@ -81,6 +83,8 @@ export default {
     Demo,
     AtSwitch,
     AtSlider,
+    AtForm,
+    AtInput,
   },
   data() {
     return {
@@ -171,6 +175,7 @@ export default {
           ],
         },
       ],
+      inputVal: '',
     }
   },
   methods: {
@@ -203,6 +208,9 @@ export default {
     },
     clickIndex(e) {
       console.log(e)
+    },
+    inputChange(val) {
+      this.inputVal = val
     },
   },
 }

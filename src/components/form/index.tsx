@@ -1,0 +1,54 @@
+import Vue, { VNode } from 'vue'
+import classNames from 'classnames'
+
+const AtForm = Vue.extend({
+  name: 'AtForm',
+  props: {
+    customStyle: {
+      type: [Object, String],
+      default: () => {},
+    },
+    className: {
+      type: [Object, String],
+      default: () => {},
+    },
+    reportSubmit: {
+      type: Boolean,
+      default: false,
+    },
+    onSubmit: {
+      type: Function,
+      default: () => () => {},
+    },
+    onReset: {
+      type: Function,
+      default: () => () => {},
+    },
+  },
+  methods: {
+    handleSubmit(): void {
+      this.onSubmit && this.onSubmit(arguments)
+    },
+
+    handleReset(): void {
+      this.onReset && this.onReset(arguments)
+    },
+  },
+  render(): VNode {
+    const { customStyle, className, reportSubmit } = this
+    const rootCls = classNames('at-form', className)
+
+    return (
+      <form
+        className={rootCls}
+        style={customStyle}
+        onSubmit={this.handleSubmit.bind(this)}
+        reportSubmit={reportSubmit}
+        onReset={this.handleReset.bind(this)}>
+        {this.$slots.default}
+      </form>
+    )
+  },
+})
+
+export default AtForm

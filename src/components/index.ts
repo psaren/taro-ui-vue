@@ -13,6 +13,8 @@ import AtPagination from './pagination/index'
 import AtIndexes from './indexes/index'
 import AtSwitch from './switch/index'
 import AtSlider from './slider/index'
+import AtForm from './form/index'
+import AtInput from './input/index'
 
 export {
   Grid,
@@ -30,4 +32,6 @@ export {
   AtIndexes,
   AtSwitch,
   AtSlider,
+  AtForm,
+  AtInput,
 }

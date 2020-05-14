@@ -2,6 +2,16 @@
   <view 
     class="index"
   >
+    <AtForm>
+      <AtInput
+        name="value1"
+        title="文本"
+        type="text"
+        placeholder="单行文本"
+        :value="inputVal"
+        :on-change="inputChange"
+      />
+    </AtForm>
     <AtSlider :value="50" />
     <AtSwitch
       :border="false"
