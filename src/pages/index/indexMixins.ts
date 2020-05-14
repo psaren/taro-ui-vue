@@ -41,6 +41,7 @@ import {
   AtInput,
   AtForm,
   AtInputNumber,
+  AtRadio,
 } from '../../components/index'
 
 export default {
@@ -87,6 +88,7 @@ export default {
     AtForm,
     AtInput,
     AtInputNumber,
+    AtRadio,
   },
   data() {
     return {
@@ -178,6 +180,12 @@ export default {
         },
       ],
       inputVal: '',
+      radioVal: '',
+      radioOptions: [
+        { label: '单选项一', value: 'option1', desc: '单选项描述' },
+        { label: '单选项二', value: 'option2' },
+        { label: '单选项三禁用', value: 'option3', desc: '单选项描述', disabled: true },
+      ],
     }
   },
   methods: {
@@ -213,6 +221,9 @@ export default {
     },
     inputChange(val) {
       this.inputVal = val
+    },
+    radioChange(val) {
+      this.radioVal = val
     },
   },
 }

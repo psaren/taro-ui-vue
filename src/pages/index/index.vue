@@ -2,6 +2,11 @@
   <view 
     class="index"
   >
+    <AtRadio
+      :options="radioOptions"
+      :value="radioVal"
+      :on-click="radioChange"
+    />
     <AtForm>
       <AtInputNumber
         :min="0"

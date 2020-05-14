@@ -255,9 +255,9 @@ const AtInput = Vue.extend({
         <view class={containerCls}>
           <view class={overlayCls} onTap={this.handleClick}></view>
           {title && (
-            <label class={`at-input__title ${required && 'at-input__title--required'}`} for={name}>
+            <view class={`at-input__title ${required && 'at-input__title--required'}`} for={name}>
               {title}
-            </label>
+            </view>
           )}
           <input
             class="at-input__input"

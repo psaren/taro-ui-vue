@@ -16,6 +16,7 @@ import AtSlider from './slider/index'
 import AtForm from './form/index'
 import AtInput from './input/index'
 import AtInputNumber from './input-number/index'
+import AtRadio from './radio/index'
 
 export {
   Grid,
@@ -36,4 +37,5 @@ export {
   AtForm,
   AtInput,
   AtInputNumber,
+  AtRadio,
 }
