@@ -46,6 +46,7 @@ import {
   AtRate,
   AtTextarea,
   AtSearchBar,
+  AtImagePicker,
 } from '../../components/index'
 
 export default {
@@ -97,6 +98,7 @@ export default {
     AtRate,
     AtTextarea,
     AtSearchBar,
+    AtImagePicker,
   },
   data() {
     return {
@@ -224,6 +226,17 @@ export default {
       rateVal: 2,
       textareaVal: '',
       searchVal: '',
+      imageFiles: [
+        {
+          url: 'https://storage.360buyimg.com/mtd/home/111543234387022.jpg',
+        },
+        {
+          url: 'https://storage.360buyimg.com/mtd/home/221543234387016.jpg',
+        },
+        {
+          type: 'btn',
+        },
+      ],
     }
   },
   methods: {
@@ -274,6 +287,9 @@ export default {
     },
     searchValChange(val) {
       this.searchVal = val
+    },
+    imageChange(val) {
+      this.imageFiles = val
     },
   },
 }

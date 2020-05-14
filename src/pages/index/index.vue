@@ -2,6 +2,10 @@
   <view 
     class="index"
   >
+    <AtImagePicker
+      :files="imageFiles"
+      :on-change="imageChange"
+    />
     <AtSearchBar
       :value="searchVal"
       :on-change="searchValChange"
