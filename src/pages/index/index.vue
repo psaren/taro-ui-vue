@@ -2,6 +2,11 @@
   <view 
     class="index"
   >
+    <AtCheckbox
+      :options="checkboxOption"
+      :selected-list="checkedList"
+      :on-change="checkboxChange"
+    />
     <AtRadio
       :options="radioOptions"
       :value="radioVal"

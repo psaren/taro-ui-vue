@@ -42,6 +42,7 @@ import {
   AtForm,
   AtInputNumber,
   AtRadio,
+  AtCheckbox,
 } from '../../components/index'
 
 export default {
@@ -89,6 +90,7 @@ export default {
     AtInput,
     AtInputNumber,
     AtRadio,
+    AtCheckbox,
   },
   data() {
     return {
@@ -186,6 +188,33 @@ export default {
         { label: '单选项二', value: 'option2' },
         { label: '单选项三禁用', value: 'option3', desc: '单选项描述', disabled: true },
       ],
+      checkedList: ['list1'],
+      checkboxOption: [
+        {
+          value: 'list1',
+          label: 'iPhone X',
+          desc:
+            '部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。',
+        },
+        {
+          value: 'list2',
+          label: 'HUAWEI P20',
+        },
+        {
+          value: 'list3',
+          label: 'OPPO Find X',
+          desc:
+            '部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。',
+          disabled: true,
+        },
+        {
+          value: 'list4',
+          label: 'vivo NEX',
+          desc:
+            '部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。',
+          disabled: true,
+        },
+      ],
     }
   },
   methods: {
@@ -224,6 +253,9 @@ export default {
     },
     radioChange(val) {
       this.radioVal = val
+    },
+    checkboxChange(val) {
+      this.checkedList = val
     },
   },
 }

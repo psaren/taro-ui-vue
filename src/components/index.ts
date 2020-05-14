@@ -17,6 +17,7 @@ import AtForm from './form/index'
 import AtInput from './input/index'
 import AtInputNumber from './input-number/index'
 import AtRadio from './radio/index'
+import AtCheckbox from './checkbox/index'
 
 export {
   Grid,
@@ -38,4 +39,5 @@ export {
   AtInput,
   AtInputNumber,
   AtRadio,
+  AtCheckbox,
 }
