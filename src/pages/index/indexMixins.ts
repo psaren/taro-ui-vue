@@ -43,6 +43,7 @@ import {
   AtInputNumber,
   AtRadio,
   AtCheckbox,
+  AtRate,
 } from '../../components/index'
 
 export default {
@@ -91,6 +92,7 @@ export default {
     AtInputNumber,
     AtRadio,
     AtCheckbox,
+    AtRate,
   },
   data() {
     return {
@@ -215,6 +217,7 @@ export default {
           disabled: true,
         },
       ],
+      rateVal: 2,
     }
   },
   methods: {
@@ -256,6 +259,10 @@ export default {
     },
     checkboxChange(val) {
       this.checkedList = val
+    },
+    rateChange(val) {
+      console.log(val)
+      this.rateVal = val
     },
   },
 }

@@ -2,6 +2,10 @@
   <view 
     class="index"
   >
+    <AtRate 
+      :value="rateVal"
+      :on-change="rateChange"
+    />
     <AtCheckbox
       :options="checkboxOption"
       :selected-list="checkedList"
