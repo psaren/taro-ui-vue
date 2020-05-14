@@ -36,6 +36,8 @@ import {
   AtTabsPane,
   AtPagination,
   AtIndexes,
+  AtSwitch,
+  AtSlider,
 } from '../../components/index'
 
 export default {
@@ -77,6 +79,8 @@ export default {
     AtPagination,
     AtIndexes,
     Demo,
+    AtSwitch,
+    AtSlider,
   },
   data() {
     return {

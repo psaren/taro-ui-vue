@@ -2,6 +2,11 @@
   <view 
     class="index"
   >
+    <AtSlider :value="50" />
+    <AtSwitch
+      :border="false"
+      title="已关闭"
+    />
     <view style="height:100vh">
       <AtIndexes
         :list="list"
