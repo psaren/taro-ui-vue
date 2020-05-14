@@ -22,6 +22,7 @@ import AtRate from './rate/index'
 import AtTextarea from './textarea/index'
 import AtSearchBar from './search-bar/index'
 import AtImagePicker from './image-picker/index'
+import AtRange from './range/index'
 
 export {
   Grid,
@@ -48,4 +49,5 @@ export {
   AtTextarea,
   AtSearchBar,
   AtImagePicker,
+  AtRange,
 }

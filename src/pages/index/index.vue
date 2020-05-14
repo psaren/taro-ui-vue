@@ -2,6 +2,12 @@
   <view 
     class="index"
   >
+    <AtRange
+      :value="rangeVal"
+      :min="0"
+      :max="100"
+      :on-change="rangeChange"
+    />
     <AtImagePicker
       :files="imageFiles"
       :on-change="imageChange"

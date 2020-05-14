@@ -47,6 +47,7 @@ import {
   AtTextarea,
   AtSearchBar,
   AtImagePicker,
+  AtRange,
 } from '../../components/index'
 
 export default {
@@ -99,6 +100,7 @@ export default {
     AtTextarea,
     AtSearchBar,
     AtImagePicker,
+    AtRange,
   },
   data() {
     return {
@@ -237,6 +239,7 @@ export default {
           type: 'btn',
         },
       ],
+      rangeVal: [20, 60],
     }
   },
   methods: {
@@ -290,6 +293,9 @@ export default {
     },
     imageChange(val) {
       this.imageFiles = val
+    },
+    rangeChange(val) {
+      this.rangeVal = val
     },
   },
 }
