@@ -20,7 +20,8 @@
     "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types",
-      "global.d.ts"
+      "global.d.ts",
+      "types"
     ]
   },
   "exclude": [
