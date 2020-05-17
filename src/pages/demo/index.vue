@@ -3,7 +3,7 @@
     <text>demo</text>
     <view>view</view>
     <AtCalendar />
-    <picker
+    <!-- <picker
       mode="date"
       :value="date"
       start="2015-09-01"
@@ -13,7 +13,7 @@
       <view class="picker">
         当前选择: {{ date }}
       </view>
-    </picker>
+    </picker> -->
   </view>
 </template>
 <script>

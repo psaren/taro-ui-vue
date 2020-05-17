@@ -50,27 +50,27 @@ const AtCalendar = Vue.extend({
       type: String,
       default: 'YYYY年MM月',
     },
-    onMonthChange: {
+    atMonthChange: {
       type: Function,
       default: () => () => {},
     },
-    onClickPreMonth: {
+    atClickPreMonth: {
       type: Function,
       default: () => () => {},
     },
-    onClickNextMonth: {
+    atClickNextMonth: {
       type: Function,
       default: () => () => {},
     },
-    onDayClick: {
+    atDayClick: {
       type: Function,
       default: () => () => {},
     },
-    onSelectDate: {
+    atSelectDate: {
       type: Function,
       default: () => () => {},
     },
-    onDayLongClick: {
+    atDayLongClick: {
       type: Function,
       default: () => () => {},
     },
@@ -88,11 +88,17 @@ const AtCalendar = Vue.extend({
       state: {},
     }
   },
-  watch: {
-    currentDate(val) {
-      if (!val) return
+  computed: {
+    nextProps() {
       const { currentDate, isMultiSelect } = this
-      if (isMultiSelect) {
+      return { currentDate, isMultiSelect }
+    },
+  },
+  watch: {
+    nextProps(val, oldVal) {
+      const { currentDate, isMultiSelect } = val
+      if (!currentDate || currentDate === oldVal.currentDate) return
+      if (isMultiSelect && oldVal.isMultiSelect) {
         const { start, end } = currentDate
         const { start: preStart, end: preEnd } = this.currentDate
 
@@ -201,9 +207,9 @@ const AtCalendar = Vue.extend({
     triggerChangeDate(value) {
       const { format } = this
 
-      if (typeof this.onMonthChange !== 'function') return
+      if (typeof this.atMonthChange !== 'function') return
 
-      this.onMonthChange(value.format(format))
+      this.atMonthChange(value.format(format))
     },
     setMonth(vectorCount) {
       const { format } = this
@@ -213,20 +219,21 @@ const AtCalendar = Vue.extend({
       this.setState({
         generateDate: _generateDate.valueOf(),
       })
-
-      if (vectorCount && typeof this.onMonthChange === 'function') {
-        this.onMonthChange(_generateDate.format(format))
+      console.log(this.state)
+      if (vectorCount && typeof this.atMonthChange === 'function') {
+        this.atMonthChange(_generateDate.format(format))
       }
     },
     handleClickPreMonth(isMinMonth) {
+      console.log('isMinMonth >> ', isMinMonth)
       if (isMinMonth === true) {
         return
       }
 
       this.setMonth(-1)
 
-      if (typeof this.onClickPreMonth === 'function') {
-        this.onClickPreMonth()
+      if (typeof this.atClickPreMonth === 'function') {
+        this.atClickPreMonth()
       }
     },
     handleClickNextMonth(isMaxMonth) {
@@ -236,8 +243,8 @@ const AtCalendar = Vue.extend({
 
       this.setMonth(1)
 
-      if (typeof this.onClickNextMonth === 'function') {
-        this.onClickNextMonth()
+      if (typeof this.atClickNextMonth === 'function') {
+        this.atClickNextMonth()
       }
     },
     handleSelectDate(e) {
@@ -268,18 +275,18 @@ const AtCalendar = Vue.extend({
       } else {
         stateValue = this.getSingleSelectdState(dayjsDate)
       }
-
+      console.log('stateValue', stateValue)
       this.setState(stateValue, () => {
         this.handleSelectedDate()
       })
 
-      if (typeof this.onDayClick === 'function') {
-        this.onDayClick({ value: item.value })
+      if (typeof this.atDayClick === 'function') {
+        this.atDayClick({ value: item.value })
       }
     },
     handleSelectedDate() {
       const selectDate = this.state.selectedDate
-      if (typeof this.onSelectDate === 'function') {
+      if (typeof this.atSelectDate === 'function') {
         const info = {
           start: dayjs(selectDate.start).format(this.format),
         }
@@ -288,19 +295,20 @@ const AtCalendar = Vue.extend({
           info.end = dayjs(selectDate.end).format(this.format)
         }
 
-        this.onSelectDate({
+        this.atSelectDate({
           value: info,
         })
       }
     },
     handleDayLongClick(item) {
-      if (typeof this.onDayLongClick === 'function') {
-        this.onDayLongClick({ value: item.value })
+      if (typeof this.atDayLongClick === 'function') {
+        this.atDayLongClick({ value: item.value })
       }
     },
   },
   render() {
     const { generateDate, selectedDate } = this.state
+    console.log('selectedDate >>', selectedDate)
     const {
       validDates,
       marks,
@@ -323,9 +331,9 @@ const AtCalendar = Vue.extend({
           hideArrow={hideArrow}
           monthFormat={monthFormat}
           generateDate={generateDate}
-          onPreMonth={this.handleClickPreMonth}
-          onNextMonth={this.handleClickNextMonth}
-          onSelectDate={this.handleSelectDate}
+          atPreMonth={this.handleClickPreMonth}
+          atNextMonth={this.handleClickNextMonth}
+          atSelectDate={this.handleSelectDate}
         />
         <AtCalendarBody
           validDates={validDates}
@@ -338,9 +346,9 @@ const AtCalendar = Vue.extend({
           selectedDate={selectedDate}
           selectedDates={selectedDates}
           generateDate={generateDate}
-          onDayClick={this.handleDayClick}
-          onSwipeMonth={this.setMonth}
-          onLongClick={this.handleDayLongClick}
+          atDayClick={this.handleDayClick}
+          atSwipeMonth={this.setMonth}
+          atLongClick={this.handleDayLongClick}
         />
       </view>
     )

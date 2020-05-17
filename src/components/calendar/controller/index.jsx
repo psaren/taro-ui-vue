@@ -13,17 +13,29 @@ const AtCalendarController = Vue.extend({
       type: [String, Number, Date],
       default: '',
     },
-    onSelectDate: {
+    atSelectDate: {
       type: Function,
       default: () => () => {},
     },
-    onPreMonth: {
+    atPreMonth: {
       type: Function,
       default: () => () => {},
     },
-    onNextMonth: {
+    atNextMonth: {
       type: Function,
       default: () => () => {},
+    },
+    monthFormat: {
+      type: String,
+      default: 'YYYY年MM月',
+    },
+    generateDate: {
+      type: [Number, String],
+      default: Date.now(),
+    },
+    hideArrow: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -35,6 +47,7 @@ const AtCalendarController = Vue.extend({
     const { generateDate, minDate, maxDate, monthFormat, hideArrow } = this
 
     const dayjsDate = dayjs(generateDate)
+    console.log('dayjsDate', dayjsDate)
     const dayjsMinDate = !!minDate && dayjs(minDate)
     const dayjsMaxDate = !!maxDate && dayjs(maxDate)
 
@@ -52,7 +65,7 @@ const AtCalendarController = Vue.extend({
             class={classnames('controller__arrow controller__arrow--left', {
               'controller__arrow--disabled': isMinMonth,
             })}
-            onClick={this.onPreMonth.bind(this, isMinMonth)}
+            onTap={this.atPreMonth.bind(this, isMinMonth)}
           />
         )}
         <picker
@@ -60,7 +73,7 @@ const AtCalendarController = Vue.extend({
           fields="month"
           end={maxDateValue}
           start={minDateValue}
-          onChange={this.onSelectDate}
+          onChange={this.atSelectDate}
           value={dayjsDate.format('YYYY-MM')}>
           <text class="controller__info">{dayjsDate.format(monthFormat)}</text>
         </picker>
@@ -69,7 +82,7 @@ const AtCalendarController = Vue.extend({
             class={classnames('controller__arrow controller__arrow--right', {
               'controller__arrow--disabled': isMaxMonth,
             })}
-            onClick={this.onNextMonth.bind(this, isMaxMonth)}
+            onTap={this.atNextMonth.bind(this, isMaxMonth)}
           />
         )}
       </view>

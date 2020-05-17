@@ -1,7 +1,7 @@
 <template>
   <view>
     <view
-      :class="getRootCls"
+      :class="getRootCls()"
     >
       <AtCalendarDayList />
       <swiper
@@ -16,14 +16,14 @@
         :on-touch-start="handleSwipeTouchStart"
       >
         <swiper-item
-          v-for="(item, key) in state.tGroup"
+          v-for="(item, key) in state.listGroup"
           :key="item.value"
           :item-id="key.toString()"
         >
           <AtCalendarDateList
             :list="item.list"
-            :on-click="onDayClick"
-            :on-long-click="onLongClick"
+            :on-click="atDayClick"
+            :on-long-click="atLongClick"
           />
         </swiper-item>
       </swiper>
@@ -91,6 +91,14 @@ const AtCalendarBody = Vue.extend({
       type: Boolean,
       default: false,
     },
+    atDayClick: {
+      type: Function,
+      default: () => () => {},
+    },
+    atLongClick: {
+      type: Function,
+      default: () => () => {},
+    },
   },
   data() {
     const { validDates, marks, format, minDate, maxDate, selectedDates } = this
@@ -116,6 +124,60 @@ const AtCalendarBody = Vue.extend({
         offsetSize: 0,
         isAnimate: false,
       },
+    }
+  },
+  computed: {
+    nextProps() {
+      const {
+      validDates,
+      marks,
+      format,
+      minDate,
+      maxDate,
+      generateDate,
+      selectedDate,
+      selectedDates
+      } = this
+      return {
+        validDates,
+        marks,
+        format,
+        minDate,
+        maxDate,
+        generateDate,
+        selectedDate,
+        selectedDates
+      }
+    }
+  },
+  watch: {
+    nextProps(val) {
+      const {
+        validDates,
+        marks,
+        format,
+        minDate,
+        maxDate,
+        generateDate,
+        selectedDate,
+        selectedDates
+      } = val
+      console.log('generateDate', dayjs(generateDate))
+      this.generateFunc = generateCalendarGroup({
+        validDates,
+        format,
+        minDate,
+        maxDate,
+        marks,
+        selectedDates
+      })
+      const listGroup = this.getGroups(generateDate, selectedDate)
+
+      this.setState({
+        offsetSize: 0,
+        listGroup
+      })
+      console.log(this.state.listGroup)
     }
   },
   created() {
@@ -215,7 +277,7 @@ const AtCalendarBody = Vue.extend({
       if (absOffsetSize > breakpoint) {
         const res = isRight ? this.maxWidth : -this.maxWidth
         return this.animateMoveSlide(res, () => {
-          this.onSwipeMonth(isRight ? -1 : 1)
+          this.atSwipeMonth(isRight ? -1 : 1)
         })
       }
       this.animateMoveSlide(0)
@@ -230,7 +292,7 @@ const AtCalendarBody = Vue.extend({
     },
     handleAnimateFinish() {
       if (this.changeCount > 0) {
-        this.onSwipeMonth(this.isPreMonth ? -this.changeCount : this.changeCount)
+        this.atSwipeMonth(this.isPreMonth ? -this.changeCount : this.changeCount)
         this.changeCount = 0
       }
     },

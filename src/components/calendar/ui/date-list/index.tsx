@@ -33,6 +33,7 @@ const AtCalendarList = Vue.extend({
   },
   methods: {
     handleClick(item) {
+      console.log('handleClick :>> ', this.onClick);
       if (typeof this.onClick === 'function') {
         this.onClick(item)
       }
