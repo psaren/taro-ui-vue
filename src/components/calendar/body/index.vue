@@ -1,16 +1,56 @@
+<template>
+  <view>
+    <view
+      :class="getRootCls"
+    >
+      <AtCalendarDayList />
+      <swiper
+        circular
+        :current="1"
+        skip-hidden-item-layout
+        :class="classNames('main__body')"
+        :on-change="handleChange"
+        :vertical="isVertical"
+        :on-animation-finish="handleAnimateFinish"
+        :on-touch-end="handleSwipeTouchEnd"
+        :on-touch-start="handleSwipeTouchStart"
+      >
+        <swiper-item
+          v-for="(item, key) in state.tGroup"
+          :key="item.value"
+          :item-id="key.toString()"
+        >
+          <AtCalendarDateList
+            :list="item.list"
+            :on-click="onDayClick"
+            :on-long-click="onLongClick"
+          />
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</template>
+
+<script>
 import Vue from 'vue'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
-import { Swiper, SwiperItem, View } from '@tarojs/components'
 import { delayQuerySelector } from '../../../utils/common'
 import generateCalendarGroup from '../common/helper'
 import AtCalendarDateList from '../ui/date-list/index'
 import AtCalendarDayList from '../ui/day-list/index'
+import mixins from '../../mixins'
 
 const ANIMTE_DURATION = 300
 
 const AtCalendarBody = Vue.extend({
   name: 'AtCalendarBody',
+  components: {
+    AtCalendarDateList,
+    AtCalendarDayList,
+    
+  },
+  mixins: [mixins],
   props: {
     marks: {
       type: Array,
@@ -24,7 +64,7 @@ const AtCalendarBody = Vue.extend({
       }),
     },
     selectedDates: {
-      type: Object,
+      type: Array,
       default: () => [],
     },
     format: {
@@ -47,9 +87,29 @@ const AtCalendarBody = Vue.extend({
       type: [String, Number, Date],
       default: '',
     },
+    isVertical: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
+    const { validDates, marks, format, minDate, maxDate, selectedDates } = this
+    this.generateFunc = generateCalendarGroup({
+      validDates,
+      format,
+      minDate,
+      maxDate,
+      marks,
+      selectedDates,
+    })
     return {
+      changeCount: 0,
+      currentSwiperIndex: 1,
+      startX: 0,
+      swipeStartPoint: 0,
+      isPreMonth: false,
+      maxWidth: 0,
+      isTouching: false,
       options: { addGlobalClass: true },
       state: {
         listGroup: [],
@@ -59,26 +119,11 @@ const AtCalendarBody = Vue.extend({
     }
   },
   created() {
-    const {
-      validDates,
-      marks,
-      format,
-      minDate,
-      maxDate,
-      generateDate,
-      selectedDate,
-      selectedDates,
-    } = this
-
-    this.generateFunc = generateCalendarGroup({
-      validDates,
-      format,
-      minDate,
-      maxDate,
-      marks,
-      selectedDates,
+    console.log('created')
+    const { generateDate, selectedDate } = this
+    this.setState({
+      listGroup: this.getGroups(generateDate, selectedDate),
     })
-    this.listGroup = this.getGroups(generateDate, selectedDate)
   },
   mounted() {
     delayQuerySelector(this, '.at-calendar-slider__main').then((res) => {
@@ -86,6 +131,14 @@ const AtCalendarBody = Vue.extend({
     })
   },
   methods: {
+    classNames: classNames,
+    getRootCls() {
+      return classNames(
+          'main',
+          'at-calendar-slider__main',
+          `at-calendar-slider__main--${process.env.TARO_ENV}`
+        )
+    },
     getGroups(generateDate, selectedDate) {
       const dayjsDate = dayjs(generateDate)
       const arr = []
@@ -97,7 +150,7 @@ const AtCalendarBody = Vue.extend({
 
       const preListIndex = this.currentSwiperIndex === 0 ? 2 : this.currentSwiperIndex - 1
       const nextListIndex = this.currentSwiperIndex === 2 ? 0 : this.currentSwiperIndex + 1
-
+      console.log(preListIndex, this.currentSwiperIndex, nextListIndex)
       arr[preListIndex] = preList
       arr[nextListIndex] = nextList
       arr[this.currentSwiperIndex] = nowList
@@ -192,103 +245,8 @@ const AtCalendarBody = Vue.extend({
         : clientX - this.swipeStartPoint > 0
     },
   },
-  render() {
-    const { isSwiper } = this
-    const { isAnimate, offsetSize, listGroup } = this.state
-
-    if (!isSwiper) {
-      return (
-        <View
-          className={classNames(
-            'main',
-            'at-calendar-slider__main',
-            `at-calendar-slider__main--${process.env.TARO_ENV}`
-          )}>
-          <AtCalendarDayList />
-          <View className="main__body body">
-            <View className="body__slider body__slider--now">
-              <AtCalendarDateList
-                list={listGroup[1].list}
-                onClick={this.onDayClick}
-                onLongClick={this.onLongClick}
-              />
-            </View>
-          </View>
-        </View>
-      )
-    }
-
-    /* 需要 Taro 组件库维护 Swiper 使 小程序 和 H5 的表现保持一致  */
-    if (process.env.TARO_ENV === 'h5') {
-      return (
-        <View
-          className={classNames(
-            'main',
-            'at-calendar-slider__main',
-            `at-calendar-slider__main--${process.env.TARO_ENV}`
-          )}
-          onTouchEnd={this.handleTouchEnd}
-          onTouchMove={this.handleTouchMove}
-          onTouchStart={this.handleTouchStart}>
-          <AtCalendarDayList />
-          <View
-            className={classNames('main__body  body', {
-              'main__body--slider': isSwiper,
-              'main__body--animate': isAnimate,
-            })}
-            style={{
-              transform: isSwiper ? `translateX(-100%) translate3d(${offsetSize},0,0)` : '',
-              WebkitTransform: isSwiper ? `translateX(-100%) translate3d(${offsetSize}px,0,0)` : '',
-            }}>
-            <View className="body__slider body__slider--pre">
-              <AtCalendarDateList list={listGroup[0].list} />
-            </View>
-            <View className="body__slider body__slider--now">
-              <AtCalendarDateList
-                list={listGroup[1].list}
-                onClick={this.onDayClick}
-                onLongClick={this.onLongClick}
-              />
-            </View>
-            <View className="body__slider body__slider--next">
-              <AtCalendarDateList list={listGroup[2].list} />
-            </View>
-          </View>
-        </View>
-      )
-    }
-
-    return (
-      <View
-        className={classNames(
-          'main',
-          'at-calendar-slider__main',
-          `at-calendar-slider__main--${process.env.TARO_ENV}`
-        )}>
-        <AtCalendarDayList />
-        <Swiper
-          circular
-          current={1}
-          skipHiddenItemLayout
-          className={classNames('main__body')}
-          onChange={this.handleChange}
-          vertical={this.isVertical}
-          onAnimationFinish={this.handleAnimateFinish}
-          onTouchEnd={this.handleSwipeTouchEnd}
-          onTouchStart={this.handleSwipeTouchStart}>
-          {listGroup.map((item, key) => (
-            <SwiperItem key={item.value} itemId={key.toString()}>
-              <AtCalendarDateList
-                list={item.list}
-                onClick={this.onDayClick}
-                onLongClick={this.onLongClick}
-              />
-            </SwiperItem>
-          ))}
-        </Swiper>
-      </View>
-    )
-  },
 })
 
 export default AtCalendarBody
+
+</script>

@@ -1,28 +1,26 @@
-import Vue, { VNode } from 'vue'
-import { View } from '@tarojs/components'
+import Vue from 'vue'
 
-const AtCalendarHeader = Vue.extend({
-  name: 'AtCalendarHeader',
+const AtCalendarDayList = Vue.extend({
+  name: 'AtCalendarDayList',
   data() {
     return {
       options: { addGlobalClass: true }
     }
   },
-  render(): VNode {
+  render() {
     return (
-      <View className='at-calendar__header header'>
-        <View className='header__flex'>
-          <View className='header__flex-item'>日</View>
-          <View className='header__flex-item'>一</View>
-          <View className='header__flex-item'>二</View>
-          <View className='header__flex-item'>三</View>
-          <View className='header__flex-item'>四</View>
-          <View className='header__flex-item'>五</View>
-          <View className='header__flex-item'>六</View>
-        </View>
-      </View>
+      <view class='at-calendar__header header'>
+        <view class='header__flex'>
+          <view class='header__flex-item'>日</view>
+          <view class='header__flex-item'>一</view>
+          <view class='header__flex-item'>二</view>
+          <view class='header__flex-item'>三</view>
+          <view class='header__flex-item'>四</view>
+          <view class='header__flex-item'>五</view>
+          <view class='header__flex-item'>六</view>
+        </view>
+      </view>
     )
   }
 })
-export default AtCalendarHeader
-
+export default AtCalendarDayList

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import classNames from 'classnames'
-import { View } from '@tarojs/components'
+// import { View } from '@tarojs/components'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
-import AtCalendarBody from './body/index'
+import AtCalendarBody from './body/index.vue'
 import AtCalendarController from './controller/index'
 
 const AtCalendar = Vue.extend({
@@ -316,7 +316,7 @@ const AtCalendar = Vue.extend({
     } = this
 
     return (
-      <View className={classNames('at-calendar', className)}>
+      <view class={classNames('at-calendar', className)}>
         <AtCalendarController
           minDate={minDate}
           maxDate={maxDate}
@@ -342,7 +342,7 @@ const AtCalendar = Vue.extend({
           onSwipeMonth={this.setMonth}
           onLongClick={this.handleDayLongClick}
         />
-      </View>
+      </view>
     )
   },
 })

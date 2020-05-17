@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import classnames from 'classnames'
 import { Calendar } from 'types/calendar'
-import { Text, View } from '@tarojs/components'
+// import { Text, View } from '@tarojs/components'
 import * as constant from '../../common/constant'
 
 const MAP: { [key: number]: string } = {
@@ -48,13 +48,13 @@ const AtCalendarList = Vue.extend({
     if (!list || list.length === 0) return null
 
     return (
-      <View className='at-calendar__list flex'>
+      <view class='at-calendar__list flex'>
         {list.map((item: Calendar.Item, index: number) => (
-          <View
+          <view
             key={`list-item-${item.value}-${index}`}
-            onClick={this.handleClick.bind(this, item)}
+            onTap={this.handleClick.bind(this, item)}
             onLongPress={this.handleLongClick.bind(this, item)}
-            className={classnames(
+            class={classnames(
               'flex__item',
               `flex__item--${MAP[item.type]}`,
               {
@@ -70,23 +70,23 @@ const AtCalendarList = Vue.extend({
               }
             )}
           >
-            <View className='flex__item-container'>
-              <View className='container-text'>{item.text}</View>
-            </View>
-            <View className='flex__item-extra extra'>
+            <view class='flex__item-container'>
+              <view class='container-text'>{item.text}</view>
+            </view>
+            <view class='flex__item-extra extra'>
               {item.marks && item.marks.length > 0 ? (
-                <View className='extra-marks'>
+                <view class='extra-marks'>
                   {item.marks.map((mark, key) => (
-                    <Text key={key} className='mark'>
+                    <text key={key} class='mark'>
                       {mark}
-                    </Text>
+                    </text>
                   ))}
-                </View>
+                </view>
               ) : null}
-            </View>
-          </View>
+            </view>
+          </view>
         ))}
-      </View>
+      </view>
     )
   }
 })
