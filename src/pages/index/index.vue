@@ -2,6 +2,7 @@
   <view 
     class="index"
   >
+    <AtCalendar />
     <AtRange
       :value="rangeVal"
       :min="0"

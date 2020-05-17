@@ -48,6 +48,7 @@ import {
   AtSearchBar,
   AtImagePicker,
   AtRange,
+  AtCalendar,
 } from '../../components/index'
 
 export default {
@@ -101,6 +102,7 @@ export default {
     AtSearchBar,
     AtImagePicker,
     AtRange,
+    AtCalendar,
   },
   data() {
     return {

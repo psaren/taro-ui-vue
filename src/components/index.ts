@@ -23,6 +23,7 @@ import AtTextarea from './textarea/index'
 import AtSearchBar from './search-bar/index'
 import AtImagePicker from './image-picker/index'
 import AtRange from './range/index'
+import AtCalendar from './calendar/index'
 
 export {
   Grid,
@@ -50,4 +51,5 @@ export {
   AtSearchBar,
   AtImagePicker,
   AtRange,
+  AtCalendar,
 }
