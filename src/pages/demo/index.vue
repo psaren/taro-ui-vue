@@ -2,6 +2,11 @@
   <view>
     <text>demo</text>
     <view>view</view>
+    <AtIcon
+      value="clock"
+      size="30"
+      color="#F00"
+    />
     <AtCalendar />
     <!-- <picker
       mode="date"
@@ -18,9 +23,11 @@
 </template>
 <script>
 import { AtCalendar } from '../../components'
+import { AtIcon } from '../../../bundle/index.esm'
 export default {
   components: {
-    AtCalendar
+    AtCalendar,
+    AtIcon,
   },
   data() {
     return {

@@ -30,7 +30,9 @@ const AtRange = Vue.extend({
     },
     value: {
       type: Array,
-      default: () => [0, 0],
+      default: function () {
+        return [0, 0]
+      },
     },
     blockSize: {
       type: Number,
@@ -50,11 +52,15 @@ const AtRange = Vue.extend({
     },
     onChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onAfterChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   data() {
@@ -147,8 +153,9 @@ const AtRange = Vue.extend({
 
     updatePos(): void {
       delayQuerySelector(this, '.at-range__container', 30).then((rect) => {
-        this.width = Math.round(rect[0].width)
-        this.left = Math.round(rect[0].left)
+        const temp = rect ? rect : [{ width: 0, left: 0 }]
+        this.width = Math.round(temp[0].width)
+        this.left = Math.round(temp[0].left)
       })
     },
   },

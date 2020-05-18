@@ -1,8 +1,12 @@
 {
   "name": "vueAppTs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "taro-vue-app-ts",
+  "description": "taro-ui-vue",
+  "browser": "bundle/index.umd.js",
+  "module": "bundle/index.esm.js",
+  "main": "bundle/index.js",
+  "source": "src/index.ts",
   "templateInfo": {
     "name": "vuex",
     "typescript": true,
@@ -24,7 +28,8 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
-    "dev:quickapp": "npm run build:quickapp -- --watch"
+    "dev:quickapp": "npm run build:quickapp -- --watch",
+    "build:rollup": "rollup --config ./config/rollup.config.js"
   },
   "browserslist": [
     "last 3 versions",
@@ -48,6 +53,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-json": "^4.0.3",
+    "@rollup/plugin-node-resolve": "^7.1.3",
     "@tarojs/mini-runner": "3.0.0-beta.6",
     "@tarojs/webpack-runner": "3.0.0-beta.6",
     "@types/webpack-env": "^1.13.6",
@@ -56,6 +64,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
     "babel-preset-taro": "3.0.0-beta.6",
+    "babelrc-rollup": "^3.0.0",
     "csstype": "^2.6.10",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
@@ -63,6 +72,10 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.x",
     "prettier": "^2.0.5",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "rollup-plugin-vue": "^5.1.7",
     "stylelint": "9.3.0",
     "typescript": "^3.7.0"
   }
