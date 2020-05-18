@@ -7,7 +7,7 @@ import { getEnvs } from '../../utils/common'
 import mixins from '../mixins'
 
 export default {
-  name: 'Modal',
+  name: 'AtModal',
   mixins: [mixins],
   props: {
     title: {

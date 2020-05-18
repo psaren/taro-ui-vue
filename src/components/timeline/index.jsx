@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Timeline',
+  name: 'AtTimeline',
   props: {
     pending: {
       type: Boolean,

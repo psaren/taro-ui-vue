@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Divider',
+  name: 'AtDivider',
   props: {
     content: {
       type: String,

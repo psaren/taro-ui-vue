@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'ActionSheetHeader',
+  name: 'AtActionSheetHeader',
   props: {
     className: {
       type: [Array, String],

@@ -1,12 +1,12 @@
 import classNames from 'classnames'
 import _inRange from 'lodash/inRange'
 import _isEmpty from 'lodash/isEmpty'
-import SwipeActionOptions from './options/index'
+import AtSwipeActionOptions from './options/index'
 import { delayGetClientRect, delayGetScrollOffset, isTest, uuid } from '../../utils/common'
 import mixins from '../mixins'
 
 export default {
-  name: 'SwipeAction',
+  name: 'AtSwipeAction',
   mixins: [mixins],
   props: {
     isOpened: {
@@ -262,7 +262,7 @@ export default {
         </view>
 
         {Array.isArray(options) && options.length > 0 ? (
-          <SwipeActionOptions
+          <AtSwipeActionOptions
             options={options}
             componentId={componentId}
             onQueryedDom={this.handleDomInfo}>
@@ -275,7 +275,7 @@ export default {
                 <view class="option__text">{item.text}</view>
               </view>
             ))}
-          </SwipeActionOptions>
+          </AtSwipeActionOptions>
         ) : null}
       </view>
     )

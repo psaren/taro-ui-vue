@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Steps',
+  name: 'AtSteps',
   props: {
     customStyle: {
       type: [Object, String],

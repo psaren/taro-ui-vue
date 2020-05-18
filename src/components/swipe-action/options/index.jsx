@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { delayQuerySelector } from '../../../utils/common'
 
 export default {
-  name: 'SwipeActionOptions',
+  name: 'AtSwipeActionOptions',
   props: {
     componentId: {
       type: String,

@@ -7,7 +7,7 @@ const formatNum = (num) => {
 }
 
 export default {
-  name: 'CountdownItem',
+  name: 'AtCountdownItem',
   props: {
     num: {
       type: Number,

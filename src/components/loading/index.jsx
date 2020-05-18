@@ -1,5 +1,5 @@
 export default {
-  name: 'Loading',
+  name: 'AtLoading',
   props: {
     size: {
       type: [String, Number],

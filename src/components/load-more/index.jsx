@@ -3,7 +3,7 @@ import Button from '../button/index'
 import AtActivityIndicator from '../activity-indicator/index'
 
 export default {
-  name: 'LoadMore',
+  name: 'AtLoadMore',
   props: {
     customStyle: {
       type: [Object, String],

@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'ListItem',
+  name: 'AtListItem',
   props: {
     className: {
       type: [Array, String],

@@ -3,7 +3,7 @@ import mixins from '../mixins'
 import { handleTouchScroll } from '../../utils/common'
 
 export default {
-  name: 'FloatLayout',
+  name: 'AtFloatLayout',
   mixins: [mixins],
   props: {
     title: {

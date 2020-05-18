@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 
 export default {
-  name: 'NavBar',
+  name: 'AtNavBar',
   props: {
     customStyle: {
       type: [Object, String],

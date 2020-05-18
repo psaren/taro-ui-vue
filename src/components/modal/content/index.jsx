@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'ModalContent',
+  name: 'AtModalContent',
   props: {
     className: {
       type: [Object, String],

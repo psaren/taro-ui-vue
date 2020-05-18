@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import Taro from '@tarojs/taro'
 
 /**
  * formatValue
@@ -17,7 +16,7 @@ const formatValue = (value, maxValue) => {
 }
 
 export default {
-  name: 'Badge',
+  name: 'AtBadge',
   props: {
     dot: {
       type: Boolean,

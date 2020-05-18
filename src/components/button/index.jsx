@@ -14,7 +14,7 @@ const TYPE_CLASS = {
   secondary: 'secondary',
 }
 export default {
-  name: 'Button',
+  name: 'AtButton',
   components: {
     Loading,
   },

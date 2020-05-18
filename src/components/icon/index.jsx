@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 export default {
-  name: 'Icon',
+  name: 'AtIcon',
   props: {
     customStyle: {
       type: [Object, String],

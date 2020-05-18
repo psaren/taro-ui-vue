@@ -1,4 +1,8 @@
+import Vue, { VNode } from 'vue'
+import Component from 'vue-class-component'
+import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
+
 const SIZE_CLASS = {
   normal: 'normal',
   small: 'small',
@@ -8,8 +12,7 @@ const TYPE_CLASS = {
   primary: 'primary',
 }
 
-export default {
-  name: 'AtTag',
+const AtTagProps = Vue.extend({
   props: {
     size: {
       type: String,
@@ -50,22 +53,23 @@ export default {
       default: () => () => {},
     },
   },
-  methods: {
-    handleClick(event) {
-      console.log(this.onClick)
-      if (!this.disabled) {
-        this.onClick &&
-          this.onClick(
-            {
-              name: this.name,
-              active: this.active,
-            },
-            event
-          )
-      }
-    },
-  },
-  render() {
+})
+
+@Component
+export default class AtTag extends AtTagProps {
+  handleClick(event: CommonEvent): void {
+    if (!this.disabled) {
+      this.onClick &&
+        this.onClick(
+          {
+            name: this.name,
+            active: this.active,
+          },
+          event
+        )
+    }
+  }
+  render(): VNode {
     const {
       size = 'normal',
       type = '',
@@ -73,7 +77,6 @@ export default {
       disabled = false,
       active = false,
       customStyle,
-      className,
     } = this
     const rootClassName = ['at-tag']
 
@@ -87,11 +90,11 @@ export default {
 
     return (
       <view
-        class={classNames(rootClassName, classObject, className)}
+        class={classNames(rootClassName, classObject, this.className)}
         style={customStyle}
-        onTap={this.handleClick}>
+        onTap={this.handleClick.bind(this)}>
         {this.$slots.default}
       </view>
     )
-  },
+  }
 }

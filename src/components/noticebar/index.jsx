@@ -4,7 +4,7 @@ import { getEnvs } from '../../utils/common'
 import mixins from '../mixins'
 
 export default {
-  name: 'Noticebar',
+  name: 'AtNoticebar',
   mixins: [mixins],
   props: {
     close: {

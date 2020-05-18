@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Card',
+  name: 'AtCard',
   props: {
     note: {
       type: String,

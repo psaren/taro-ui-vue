@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'ModalAction',
+  name: 'AtModalAction',
   props: {
     isSimple: {
       type: Boolean,

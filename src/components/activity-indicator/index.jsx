@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import Loading from '../loading/index.jsx'
 
 export default {
-  name: 'ActivityIndicator',
+  name: 'AtActivityIndicator',
   props: {
     size: {
       type: Number,

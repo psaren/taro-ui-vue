@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import { pxTransform } from '../../utils/common'
 
 export default {
-  name: 'SegmentedControl',
+  name: 'AtSegmentedControl',
   props: {
     customStyle: {
       type: [Object, String],

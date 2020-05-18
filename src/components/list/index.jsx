@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'List',
+  name: 'AtList',
   props: {
     hasBorder: {
       type: Boolean,

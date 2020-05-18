@@ -12,7 +12,7 @@ const toSeconds = (day, hours, minutes, seconds) =>
   day * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds
 
 export default {
-  name: 'Countdown',
+  name: 'AtCountdown',
   props: {
     customStyle: {
       type: [String, Object],

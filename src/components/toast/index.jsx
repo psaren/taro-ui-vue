@@ -3,7 +3,7 @@ import statusImg from './img.json'
 import mixins from '../mixins'
 
 export default {
-  name: 'Toast',
+  name: 'AtToast',
   mixins: [mixins],
   props: {
     text: {

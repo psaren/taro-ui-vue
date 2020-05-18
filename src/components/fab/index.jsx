@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Fab',
+  name: 'AtFab',
   props: {
     size: {
       type: String,

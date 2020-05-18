@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Progress',
+  name: 'AtProgress',
   props: {
     color: {
       type: String,

@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import _chunk from 'lodash/chunk'
 
 export default {
-  name: 'Grid',
+  name: 'AtGrid',
   props: {
     mode: {
       type: String,

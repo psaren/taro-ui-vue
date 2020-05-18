@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'ActionSheetBody',
+  name: 'AtActionSheetBody',
   props: {
     className: {
       type: [Array, String],

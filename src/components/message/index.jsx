@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import mixins from '../mixins'
 
 export default {
-  name: 'Message',
+  name: 'AtMessage',
   mixins: [mixins],
   props: {
     customStyle: {

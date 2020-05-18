@@ -3,7 +3,7 @@ import mixins from '../mixins'
 import { delayQuerySelector } from '../../utils/common'
 
 export default {
-  name: 'Accordion',
+  name: 'AtAccordion',
   mixins: [mixins],
   props: {
     open: {

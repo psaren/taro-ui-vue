@@ -7,7 +7,7 @@ const SIZE_CLASS = {
 }
 
 export default {
-  name: 'Avatar',
+  name: 'AtAvatar',
   props: {
     size: {
       type: String,

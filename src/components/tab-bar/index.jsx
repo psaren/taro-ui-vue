@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import Badge from '../badge/index'
 
 export default {
-  name: 'TabBar',
+  name: 'AtTabBar',
   props: {
     customStyle: {
       type: [Object, String],

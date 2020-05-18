@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'Curtain',
+  name: 'AtCurtain',
   props: {
     customStyle: {
       type: [Object, String],

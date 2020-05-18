@@ -4,7 +4,7 @@ import ActionSheetFooter from './footer/index'
 import ActionSheetHeader from './header/index'
 
 export default {
-  name: 'ActionSheet',
+  name: 'AtActionSheet',
   props: {
     title: {
       type: String,
