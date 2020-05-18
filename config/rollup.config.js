@@ -12,14 +12,15 @@ const babelConfig = require('../babel.config')
 
 const resolveFile = (path) => NodePath.resolve(__dirname, '..', path)
 
-// const externalPackages = [
-//   'react',
-//   'react-dom',
-//   '@tarojs/components',
-//   '@tarojs/runtime',
-//   '@tarojs/taro',
-//   '@tarojs/react',
-// ]
+const externalPackages = [
+  // 'react',
+  // 'react-dom',
+  'vue',
+  '@tarojs/components',
+  '@tarojs/runtime',
+  '@tarojs/taro',
+  // '@tarojs/react',
+]
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
 export default {
@@ -42,10 +43,12 @@ export default {
       sourcemap: true,
       globals: {
         vue: 'Vue',
+        '@tarojs/components': 'components',
+        '@tarojs/taro': 'Taro',
       },
     },
   ],
-  // external: externalPackages,
+  external: externalPackages,
   plugins: [
     vue(),
     babel({
@@ -53,6 +56,7 @@ export default {
         config: { ...babelConfig },
         addModuleOptions: false,
         addExternalHelpersPlugin: false,
+        plugins: ['transform-vue-jsx'],
       }),
       exclude: 'node_modules/**',
       runtimeHelpers: true,
