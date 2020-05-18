@@ -3,8 +3,8 @@ import classNames from 'classnames'
 // import { View } from '@tarojs/components'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
-import AtCalendarBody from './body/index.vue'
-import AtCalendarController from './controller/index'
+import AtCalendarBody from './body/index.jsx'
+import AtCalendarController from './controller/index.tsx'
 
 const AtCalendar = Vue.extend({
   name: 'AtCalendar',
@@ -50,27 +50,27 @@ const AtCalendar = Vue.extend({
       type: String,
       default: 'YYYY年MM月',
     },
-    atMonthChange: {
+    onMonthChange: {
       type: Function,
       default: () => () => {},
     },
-    atClickPreMonth: {
+    onClickPreMonth: {
       type: Function,
       default: () => () => {},
     },
-    atClickNextMonth: {
+    onClickNextMonth: {
       type: Function,
       default: () => () => {},
     },
-    atDayClick: {
+    onDayClick: {
       type: Function,
       default: () => () => {},
     },
-    atSelectDate: {
+    onSelectDate: {
       type: Function,
       default: () => () => {},
     },
-    atDayLongClick: {
+    onDayLongClick: {
       type: Function,
       default: () => () => {},
     },
@@ -207,9 +207,9 @@ const AtCalendar = Vue.extend({
     triggerChangeDate(value) {
       const { format } = this
 
-      if (typeof this.atMonthChange !== 'function') return
+      if (typeof this.onMonthChange !== 'function') return
 
-      this.atMonthChange(value.format(format))
+      this.onMonthChange(value.format(format))
     },
     setMonth(vectorCount) {
       const { format } = this
@@ -219,21 +219,19 @@ const AtCalendar = Vue.extend({
       this.setState({
         generateDate: _generateDate.valueOf(),
       })
-      console.log(this.state)
-      if (vectorCount && typeof this.atMonthChange === 'function') {
-        this.atMonthChange(_generateDate.format(format))
+      if (vectorCount && typeof this.onMonthChange === 'function') {
+        this.onMonthChange(_generateDate.format(format))
       }
     },
     handleClickPreMonth(isMinMonth) {
-      console.log('isMinMonth >> ', isMinMonth)
       if (isMinMonth === true) {
         return
       }
 
       this.setMonth(-1)
 
-      if (typeof this.atClickPreMonth === 'function') {
-        this.atClickPreMonth()
+      if (typeof this.onClickPreMonth === 'function') {
+        this.onClickPreMonth()
       }
     },
     handleClickNextMonth(isMaxMonth) {
@@ -243,8 +241,8 @@ const AtCalendar = Vue.extend({
 
       this.setMonth(1)
 
-      if (typeof this.atClickNextMonth === 'function') {
-        this.atClickNextMonth()
+      if (typeof this.onClickNextMonth === 'function') {
+        this.onClickNextMonth()
       }
     },
     handleSelectDate(e) {
@@ -275,18 +273,17 @@ const AtCalendar = Vue.extend({
       } else {
         stateValue = this.getSingleSelectdState(dayjsDate)
       }
-      console.log('stateValue', stateValue)
       this.setState(stateValue, () => {
         this.handleSelectedDate()
       })
 
-      if (typeof this.atDayClick === 'function') {
-        this.atDayClick({ value: item.value })
+      if (typeof this.onDayClick === 'function') {
+        this.onDayClick({ value: item.value })
       }
     },
     handleSelectedDate() {
       const selectDate = this.state.selectedDate
-      if (typeof this.atSelectDate === 'function') {
+      if (typeof this.onSelectDate === 'function') {
         const info = {
           start: dayjs(selectDate.start).format(this.format),
         }
@@ -295,20 +292,19 @@ const AtCalendar = Vue.extend({
           info.end = dayjs(selectDate.end).format(this.format)
         }
 
-        this.atSelectDate({
+        this.onSelectDate({
           value: info,
         })
       }
     },
     handleDayLongClick(item) {
-      if (typeof this.atDayLongClick === 'function') {
-        this.atDayLongClick({ value: item.value })
+      if (typeof this.onDayLongClick === 'function') {
+        this.onDayLongClick({ value: item.value })
       }
     },
   },
   render() {
     const { generateDate, selectedDate } = this.state
-    console.log('selectedDate >>', selectedDate)
     const {
       validDates,
       marks,
@@ -331,9 +327,11 @@ const AtCalendar = Vue.extend({
           hideArrow={hideArrow}
           monthFormat={monthFormat}
           generateDate={generateDate}
-          atPreMonth={this.handleClickPreMonth}
-          atNextMonth={this.handleClickNextMonth}
-          atSelectDate={this.handleSelectDate}
+          props={{
+            onPreMonth: this.handleClickPreMonth,
+            onNextMonth: this.handleClickNextMonth,
+            onSelectDate: this.handleSelectDate,
+          }}
         />
         <AtCalendarBody
           validDates={validDates}
@@ -346,9 +344,11 @@ const AtCalendar = Vue.extend({
           selectedDate={selectedDate}
           selectedDates={selectedDates}
           generateDate={generateDate}
-          atDayClick={this.handleDayClick}
-          atSwipeMonth={this.setMonth}
-          atLongClick={this.handleDayLongClick}
+          props={{
+            onDayClick: this.handleDayClick,
+            onSwipeMonth: this.setMonth,
+            onLongClick: this.handleDayLongClick,
+          }}
         />
       </view>
     )
