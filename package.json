@@ -1,6 +1,6 @@
 {
   "name": "taro-ui-vue",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "private": true,
   "description": "taro-ui-vue",
   "browser": "bundle/index.umd.js",
