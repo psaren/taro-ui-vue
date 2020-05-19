@@ -6,23 +6,33 @@ const AtCheckbox = Vue.extend({
   props: {
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     options: {
       type: Array,
-      default: () => [],
+      default: function () {
+        return []
+      },
     },
     selectedList: {
       type: Array,
-      default: () => [],
+      default: function () {
+        return []
+      },
     },
     onChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   methods: {

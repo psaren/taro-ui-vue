@@ -16,11 +16,15 @@ const AtSearchBar = Vue.extend({
   props: {
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     value: {
       type: String,
@@ -60,23 +64,33 @@ const AtSearchBar = Vue.extend({
     },
     onChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onFocus: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onBlur: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onConfirm: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onActionClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   data() {

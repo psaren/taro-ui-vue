@@ -8,13 +8,13 @@ import {
   InputEventDetail,
   KeyboardHeightEventDetail,
 } from 'types/input'
-import { InputProps } from '@tarojs/components/types/Input'
+// import { InputProps } from '@tarojs/components/types/Input'
 import { BaseEventOrig, ITouchEvent } from '@tarojs/components/types/common'
 
-type PickAtInputProps = Pick<AtInputProps, 'maxLength' | 'disabled' | 'password'>
-type GetInputPropsReturn = PickAtInputProps & Pick<InputProps, 'type'>
+// type PickAtInputProps = Pick<AtInputProps, 'maxLength' | 'disabled' | 'password'>
+// type GetInputPropsReturn = PickAtInputProps & Pick<InputProps, 'type'>
 
-function getInputProps(props: AtInputProps): GetInputPropsReturn {
+function getInputProps(props: AtInputProps) {
   const actualProps = {
     type: props.type,
     maxLength: props.maxLength,
@@ -45,11 +45,15 @@ const AtInput = Vue.extend({
   props: {
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     value: {
       type: [String, Number],
@@ -141,27 +145,39 @@ const AtInput = Vue.extend({
     },
     onChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onFocus: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onBlur: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onConfirm: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onErrorClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   methods: {

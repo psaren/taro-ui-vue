@@ -15,15 +15,21 @@ const AtCalendarController = Vue.extend({
     },
     onSelectDate: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onPreMonth: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onNextMonth: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     monthFormat: {
       type: String,

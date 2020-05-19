@@ -15,15 +15,21 @@ const AtCalendarList = Vue.extend({
   props: {
     list: {
       type: Array,
-      default: () => [],
+      default: function () {
+        return []
+      },
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onLongClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   data() {

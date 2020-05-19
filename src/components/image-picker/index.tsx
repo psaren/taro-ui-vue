@@ -42,15 +42,21 @@ const AtImagePicker = Vue.extend({
   props: {
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     files: {
       type: Array,
-      default: () => [],
+      default: function () {
+        return []
+      },
     },
     mode: {
       type: String,
@@ -88,15 +94,21 @@ const AtImagePicker = Vue.extend({
     },
     onChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onImageClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
     onFail: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   methods: {

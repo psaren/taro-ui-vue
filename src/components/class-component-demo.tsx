@@ -42,15 +42,21 @@ const AtTagProps = Vue.extend({
     },
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
 })

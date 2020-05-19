@@ -10,11 +10,15 @@ const AtRange = Vue.extend({
   props: {
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     sliderStyle: {
       type: String,

@@ -8,11 +8,15 @@ const AtRadio = Vue.extend({
   props: {
     customStyle: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     className: {
       type: [Object, String],
-      default: () => {},
+      default: function () {
+        return {}
+      },
     },
     value: {
       type: String,
@@ -20,11 +24,15 @@ const AtRadio = Vue.extend({
     },
     options: {
       type: Array,
-      default: () => [],
+      default: function () {
+        return []
+      },
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return function () {}
+      },
     },
   },
   methods: {
