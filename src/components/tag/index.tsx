@@ -75,7 +75,7 @@ export default class AtTag extends AtTagProps {
         )
     }
   }
-  render(): VNode {
+  render(h): VNode {
     const {
       size = 'normal',
       type = '',

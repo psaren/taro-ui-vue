@@ -8,6 +8,12 @@
       color="#F00"
     />
     <AtCalendar />
+    <AtTag
+      type="primary"
+      circle
+    >
+      标签
+    </AtTag>
     <!-- <picker
       mode="date"
       :value="date"
@@ -23,11 +29,16 @@
 </template>
 <script>
 import { AtCalendar } from '../../components'
-import { AtIcon } from '../../../bundle/index.esm'
+import vueUi from 'vueAppts'
+// import { AtIcon, AtTag } from '../../../bundle/index.esm'
+const AtIcon = vueUi.AtIcon
+const AtTag = vueUi.AtTag
 export default {
   components: {
     AtCalendar,
     AtIcon,
+    AtIcon,
+    AtTag
   },
   data() {
     return {

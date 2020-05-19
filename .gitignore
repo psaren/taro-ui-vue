@@ -7,3 +7,7 @@ node_modules/
 
 # Rollup visualizer file
 stats.html
+
+# Build outputs
+bundle
+lib

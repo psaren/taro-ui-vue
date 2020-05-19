@@ -5078,7 +5078,7 @@
 	                }, event);
 	        }
 	    };
-	    AtTag.prototype.render = function () {
+	    AtTag.prototype.render = function (h) {
 	        var _a;
 	        var _b = this, _c = _b.size, size = _c === void 0 ? 'normal' : _c, _d = _b.type, type = _d === void 0 ? '' : _d, _e = _b.circle, circle = _e === void 0 ? false : _e, _f = _b.disabled, disabled = _f === void 0 ? false : _f, _g = _b.active, active = _g === void 0 ? false : _g, customStyle = _b.customStyle;
 	        var rootClassName = ['at-tag'];

@@ -1,5 +1,5 @@
 {
-  "name": "vueAppTs",
+  "name": "taro-ui-vue",
   "version": "0.0.1",
   "private": true,
   "description": "taro-ui-vue",
@@ -7,6 +7,10 @@
   "module": "bundle/index.esm.js",
   "main": "bundle/index.js",
   "source": "src/index.ts",
+  "files": [
+    "bundle",
+    "src/style"
+  ],
   "templateInfo": {
     "name": "vuex",
     "typescript": true,
@@ -30,6 +34,7 @@
     "dev:qq": "npm run build:qq -- --watch",
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test:analyze": "rollup --config ./config/rollup.config.analyze.js",
+    "build:lib": "tsc --project ./tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js"
   },
   "browserslist": [
@@ -58,7 +63,6 @@
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-json": "^4.0.3",
     "@rollup/plugin-node-resolve": "^7.1.3",
-    "@rollup/plugin-typescript": "^4.1.1",
     "@tarojs/mini-runner": "3.0.0-beta.6",
     "@tarojs/webpack-runner": "3.0.0-beta.6",
     "@types/webpack-env": "^1.13.6",
