@@ -1,5 +1,4 @@
 {
-  "extends": "./config/tsconfig.base",
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
@@ -17,6 +16,7 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "preserve",
+    "jsxFactory": "h",
     "allowJs": true,
     "resolveJsonModule": true,
     "typeRoots": [

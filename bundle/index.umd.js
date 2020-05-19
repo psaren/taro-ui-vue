@@ -1,10 +1,11 @@
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@tarojs/taro')) :
-	typeof define === 'function' && define.amd ? define(['exports', '@tarojs/taro'], factory) :
-	(global = global || self, factory(global['taro-ui'] = {}, global.Taro));
-}(this, (function (exports, Taro$1) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@tarojs/taro'), require('vue')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@tarojs/taro', 'vue'], factory) :
+	(global = global || self, factory(global['taro-ui'] = {}, global.Taro, global.Vue));
+}(this, (function (exports, Taro$1, Vue) { 'use strict';
 
 	Taro$1 = Taro$1 && Object.prototype.hasOwnProperty.call(Taro$1, 'default') ? Taro$1['default'] : Taro$1;
+	Vue = Vue && Object.prototype.hasOwnProperty.call(Vue, 'default') ? Vue['default'] : Vue;
 
 	var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -899,6 +900,154 @@
 	  }
 	};
 
+	/*! *****************************************************************************
+	Copyright (c) Microsoft Corporation.
+
+	Permission to use, copy, modify, and/or distribute this software for any
+	purpose with or without fee is hereby granted.
+
+	THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+	REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+	AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+	INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+	LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+	OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+	PERFORMANCE OF THIS SOFTWARE.
+	***************************************************************************** */
+	/* global Reflect, Promise */
+
+	var extendStatics = function(d, b) {
+	    extendStatics = Object.setPrototypeOf ||
+	        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+	        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+	    return extendStatics(d, b);
+	};
+
+	function __extends(d, b) {
+	    extendStatics(d, b);
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	}
+
+	var __assign = function() {
+	    __assign = Object.assign || function __assign(t) {
+	        for (var s, i = 1, n = arguments.length; i < n; i++) {
+	            s = arguments[i];
+	            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+	        }
+	        return t;
+	    };
+	    return __assign.apply(this, arguments);
+	};
+
+	function __decorate(decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	}
+
+	function __read(o, n) {
+	    var m = typeof Symbol === "function" && o[Symbol.iterator];
+	    if (!m) return o;
+	    var i = m.call(o), r, ar = [], e;
+	    try {
+	        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+	    }
+	    catch (error) { e = { error: error }; }
+	    finally {
+	        try {
+	            if (r && !r.done && (m = i["return"])) m.call(i);
+	        }
+	        finally { if (e) throw e.error; }
+	    }
+	    return ar;
+	}
+
+	function __spread() {
+	    for (var ar = [], i = 0; i < arguments.length; i++)
+	        ar = ar.concat(__read(arguments[i]));
+	    return ar;
+	}
+
+	var AtCheckbox = Vue.extend({
+	    name: 'AtCheckbox',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        options: {
+	            type: Array,
+	            default: function () {
+	                return [];
+	            },
+	        },
+	        selectedList: {
+	            type: Array,
+	            default: function () {
+	                return [];
+	            },
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleClick: function (idx) {
+	            var _a = this, selectedList = _a.selectedList, options = _a.options;
+	            var option = options[idx];
+	            var disabled = option.disabled, value = option.value;
+	            if (disabled)
+	                return;
+	            var selectedSet = new Set(selectedList);
+	            if (!selectedSet.has(value)) {
+	                selectedSet.add(value);
+	            }
+	            else {
+	                selectedSet.delete(value);
+	            }
+	            this.onChange(__spread(selectedSet));
+	        },
+	    },
+	    render: function () {
+	        var _this = this;
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, options = _a.options, selectedList = _a.selectedList;
+	        var rootCls = _classnames_2_2_6_classnames('at-checkbox', className);
+	        return (<view class={rootCls} style={customStyle}>
+	        {options.map(function (option, idx) {
+	            var value = option.value, disabled = option.disabled, label = option.label, desc = option.desc;
+	            var optionCls = _classnames_2_2_6_classnames('at-checkbox__option', {
+	                'at-checkbox__option--disabled': disabled,
+	                'at-checkbox__option--selected': selectedList.includes(value),
+	            });
+	            return (<view class={optionCls} key={value} onTap={_this.handleClick.bind(_this, idx)}>
+	              <view class="at-checkbox__option-wrap">
+	                <view class="at-checkbox__option-cnt">
+	                  <view class="at-checkbox__icon-cnt">
+	                    <text class="at-icon at-icon-check"></text>
+	                  </view>
+	                  <view class="at-checkbox__title">{label}</view>
+	                </view>
+	                {desc && <view class="at-checkbox__desc">{desc}</view>}
+	              </view>
+	            </view>);
+	        })}
+	      </view>);
+	    },
+	});
+
 	var mixins = {
 	    methods: {
 	        setState: function (newState, fn) {
@@ -1039,6 +1188,73 @@
 	    if (!size)
 	        return '';
 	    return Taro$1.pxTransform(size);
+	}
+	function getEventDetail(event) {
+	    var detail;
+	    switch (ENV) {
+	        case Taro$1.ENV_TYPE.WEB:
+	            detail = {
+	                pageX: event.pageX,
+	                pageY: event.pageY,
+	                clientX: event.clientX,
+	                clientY: event.clientY,
+	                offsetX: event.offsetX,
+	                offsetY: event.offsetY,
+	                x: event.x,
+	                y: event.y,
+	            };
+	            break;
+	        case Taro$1.ENV_TYPE.WEAPP:
+	            detail = {
+	                pageX: event.touches[0].pageX,
+	                pageY: event.touches[0].pageY,
+	                clientX: event.touches[0].clientX,
+	                clientY: event.touches[0].clientY,
+	                offsetX: event.target.offsetLeft,
+	                offsetY: event.target.offsetTop,
+	                x: event.target.x,
+	                y: event.target.y,
+	            };
+	            break;
+	        case Taro$1.ENV_TYPE.ALIPAY:
+	            detail = {
+	                pageX: event.target.pageX,
+	                pageY: event.target.pageY,
+	                clientX: event.target.clientX,
+	                clientY: event.target.clientY,
+	                offsetX: event.target.offsetLeft,
+	                offsetY: event.target.offsetTop,
+	                x: event.target.x,
+	                y: event.target.y,
+	            };
+	            break;
+	        case Taro$1.ENV_TYPE.SWAN:
+	            detail = {
+	                pageX: event.changedTouches[0].pageX,
+	                pageY: event.changedTouches[0].pageY,
+	                clientX: event.target.clientX,
+	                clientY: event.target.clientY,
+	                offsetX: event.target.offsetLeft,
+	                offsetY: event.target.offsetTop,
+	                x: event.detail.x,
+	                y: event.detail.y,
+	            };
+	            break;
+	        default:
+	            detail = {
+	                pageX: 0,
+	                pageY: 0,
+	                clientX: 0,
+	                clientY: 0,
+	                offsetX: 0,
+	                offsetY: 0,
+	                x: 0,
+	                y: 0,
+	            };
+	            console.warn('getEventDetail暂未支持该环境');
+	            break;
+	    }
+	    return detail;
 	}
 
 	var index$4 = {
@@ -1207,6 +1423,55 @@
 	    }, [this.$slots.default])])])]);
 	  }
 	};
+
+	var AtForm = Vue.extend({
+	    name: 'AtForm',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        reportSubmit: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        onSubmit: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onReset: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleSubmit: function () {
+	            this.onSubmit && this.onSubmit(arguments);
+	        },
+	        handleReset: function () {
+	            this.onReset && this.onReset(arguments);
+	        },
+	    },
+	    render: function () {
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, reportSubmit = _a.reportSubmit;
+	        var rootCls = _classnames_2_2_6_classnames('at-form', className);
+	        return (<form className={rootCls} style={customStyle} onSubmit={this.handleSubmit.bind(this)} reportSubmit={reportSubmit} onReset={this.handleReset.bind(this)}>
+	        {this.$slots.default}
+	      </form>);
+	    },
+	});
 
 	/**
 	 * The base implementation of `_.slice` without an iteratee call guard.
@@ -1994,6 +2259,553 @@
 	    });
 	  }
 	};
+
+	// type PickAtInputProps = Pick<AtInputProps, 'maxLength' | 'disabled' | 'password'>
+	// type GetInputPropsReturn = PickAtInputProps & Pick<InputProps, 'type'>
+	function getInputProps(props) {
+	    var actualProps = {
+	        type: props.type,
+	        maxLength: props.maxLength,
+	        disabled: props.disabled,
+	        password: false,
+	    };
+	    switch (actualProps.type) {
+	        case 'phone':
+	            actualProps.type = 'number';
+	            actualProps.maxLength = 11;
+	            break;
+	        case 'password':
+	            actualProps.type = 'text';
+	            actualProps.password = true;
+	            break;
+	    }
+	    if (!props.disabled && !props.editable) {
+	        actualProps.disabled = true;
+	    }
+	    return actualProps;
+	}
+	var AtInput = Vue.extend({
+	    name: 'AtInput',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        value: {
+	            type: [String, Number],
+	            default: '',
+	        },
+	        name: {
+	            type: String,
+	            default: '',
+	        },
+	        placeholder: {
+	            type: String,
+	            default: '',
+	        },
+	        placeholderStyle: {
+	            type: String,
+	            default: '',
+	        },
+	        placeholderClass: {
+	            type: String,
+	            default: '',
+	        },
+	        title: {
+	            type: String,
+	            default: '',
+	        },
+	        cursorSpacing: {
+	            type: [String, Number],
+	            default: 50,
+	        },
+	        confirmType: {
+	            type: String,
+	            default: '',
+	        },
+	        cursor: {
+	            type: [String, Number],
+	            default: 0,
+	        },
+	        selectionStart: {
+	            type: [String, Number],
+	            default: -1,
+	        },
+	        selectionEnd: {
+	            type: [String, Number],
+	            default: -1,
+	        },
+	        adjustPosition: {
+	            type: Boolean,
+	            default: true,
+	        },
+	        maxLength: {
+	            type: Number,
+	            default: 140,
+	        },
+	        type: {
+	            type: String,
+	            default: 'text',
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        border: {
+	            type: Boolean,
+	            default: true,
+	        },
+	        editable: {
+	            type: Boolean,
+	            default: true,
+	        },
+	        error: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        clear: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        autoFocus: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        focus: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        required: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onFocus: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onBlur: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onConfirm: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onErrorClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleInput: function (event) {
+	            this.onChange(event.detail.value, event);
+	        },
+	        handleFocus: function (event) {
+	            if (typeof this.onFocus === 'function') {
+	                this.onFocus(event.detail.value, event);
+	            }
+	        },
+	        handleBlur: function (event) {
+	            if (typeof this.onBlur === 'function') {
+	                this.onBlur(event.detail.value, event);
+	            }
+	            if (event.type === 'blur' && !this.inputClearing) {
+	                // fix # 583 AtInput 不触发 onChange 的问题
+	                this.onChange(event.detail.value);
+	            }
+	            // 还原状态
+	            this.inputClearing = false;
+	        },
+	        handleConfirm: function (event) {
+	            if (typeof this.onConfirm === 'function') {
+	                this.onConfirm(event.detail.value, event);
+	            }
+	        },
+	        handleClick: function (event) {
+	            if (!this.editable && typeof this.onClick === 'function') {
+	                this.onClick(event);
+	            }
+	        },
+	        handleClearValue: function (event) {
+	            this.inputClearing = true;
+	            this.onChange('', event);
+	        },
+	        handleKeyboardHeightChange: function (event) {
+	            if (typeof this.onKeyboardHeightChange === 'function') {
+	                this.onKeyboardHeightChange(event);
+	            }
+	        },
+	        handleErrorClick: function (event) {
+	            if (typeof this.onErrorClick === 'function') {
+	                this.onErrorClick(event);
+	            }
+	        },
+	    },
+	    render: function () {
+	        var _a = this, className = _a.className, customStyle = _a.customStyle, name = _a.name, cursorSpacing = _a.cursorSpacing, confirmType = _a.confirmType, cursor = _a.cursor, selectionStart = _a.selectionStart, selectionEnd = _a.selectionEnd, adjustPosition = _a.adjustPosition, border = _a.border, title = _a.title, error = _a.error, clear = _a.clear, placeholder = _a.placeholder, placeholderStyle = _a.placeholderStyle, placeholderClass = _a.placeholderClass, autoFocus = _a.autoFocus, focus = _a.focus, value = _a.value, required = _a.required;
+	        var _b = getInputProps(this), type = _b.type, maxLength = _b.maxLength, disabled = _b.disabled, password = _b.password;
+	        var rootCls = _classnames_2_2_6_classnames('at-input', {
+	            'at-input--without-border': !border,
+	        }, className);
+	        var containerCls = _classnames_2_2_6_classnames('at-input__container', {
+	            'at-input--error': error,
+	            'at-input--disabled': disabled,
+	        });
+	        var overlayCls = _classnames_2_2_6_classnames('at-input__overlay', {
+	            'at-input__overlay--hidden': !disabled,
+	        });
+	        var placeholderCls = _classnames_2_2_6_classnames('placeholder', placeholderClass);
+	        return (<view class={rootCls} style={customStyle}>
+	        <view class={containerCls}>
+	          <view class={overlayCls} onTap={this.handleClick}></view>
+	          {title && (<view class={"at-input__title " + (required && 'at-input__title--required')} for={name}>
+	              {title}
+	            </view>)}
+	          <input class="at-input__input" id={name} name={name} type={type} password={password} placeholderStyle={placeholderStyle} placeholderClass={placeholderCls} placeholder={placeholder} cursorSpacing={cursorSpacing} maxLength={maxLength} autoFocus={autoFocus} focus={focus} value={value} confirmType={confirmType} cursor={cursor} selectionStart={selectionStart} selectionEnd={selectionEnd} adjustPosition={adjustPosition} onInput={this.handleInput} onFocus={this.handleFocus} onBlur={this.handleBlur} onConfirm={this.handleConfirm} onKeyboardHeightChange={this.handleKeyboardHeightChange}/>
+	          {clear && value && (<view class="at-input__icon" onTouchEnd={this.handleClearValue}>
+	              <view class="at-icon at-icon-close-circle at-input__icon-close"></view>
+	            </view>)}
+	          {error && (<view class="at-input__icon" onTouchStart={this.handleErrorClick}>
+	              <view class="at-icon at-icon-alert-circle at-input__icon-alert"></view>
+	            </view>)}
+	          <view class="at-input__children">{this.$slots.default}</view>
+	        </view>
+	      </view>);
+	    },
+	});
+
+	/**
+	 * A specialized version of `_.map` for arrays without support for iteratee
+	 * shorthands.
+	 *
+	 * @private
+	 * @param {Array} [array] The array to iterate over.
+	 * @param {Function} iteratee The function invoked per iteration.
+	 * @returns {Array} Returns the new mapped array.
+	 */
+	function arrayMap(array, iteratee) {
+	  var index = -1,
+	      length = array == null ? 0 : array.length,
+	      result = Array(length);
+
+	  while (++index < length) {
+	    result[index] = iteratee(array[index], index, array);
+	  }
+	  return result;
+	}
+
+	var _arrayMap = arrayMap;
+
+	/**
+	 * Checks if `value` is classified as an `Array` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+	 * @example
+	 *
+	 * _.isArray([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isArray(document.body.children);
+	 * // => false
+	 *
+	 * _.isArray('abc');
+	 * // => false
+	 *
+	 * _.isArray(_.noop);
+	 * // => false
+	 */
+	var isArray = Array.isArray;
+
+	var isArray_1 = isArray;
+
+	/** Used as references for various `Number` constants. */
+	var INFINITY$1 = 1 / 0;
+
+	/** Used to convert symbols to primitives and strings. */
+	var symbolProto = _Symbol ? _Symbol.prototype : undefined,
+	    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+	/**
+	 * The base implementation of `_.toString` which doesn't convert nullish
+	 * values to empty strings.
+	 *
+	 * @private
+	 * @param {*} value The value to process.
+	 * @returns {string} Returns the string.
+	 */
+	function baseToString(value) {
+	  // Exit early for strings to avoid a performance hit in some environments.
+	  if (typeof value == 'string') {
+	    return value;
+	  }
+	  if (isArray_1(value)) {
+	    // Recursively convert values (susceptible to call stack limits).
+	    return _arrayMap(value, baseToString) + '';
+	  }
+	  if (isSymbol_1(value)) {
+	    return symbolToString ? symbolToString.call(value) : '';
+	  }
+	  var result = (value + '');
+	  return (result == '0' && (1 / value) == -INFINITY$1) ? '-0' : result;
+	}
+
+	var _baseToString = baseToString;
+
+	/**
+	 * Converts `value` to a string. An empty string is returned for `null`
+	 * and `undefined` values. The sign of `-0` is preserved.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to convert.
+	 * @returns {string} Returns the converted string.
+	 * @example
+	 *
+	 * _.toString(null);
+	 * // => ''
+	 *
+	 * _.toString(-0);
+	 * // => '-0'
+	 *
+	 * _.toString([1, 2, 3]);
+	 * // => '1,2,3'
+	 */
+	function toString(value) {
+	  return value == null ? '' : _baseToString(value);
+	}
+
+	var toString_1 = toString;
+
+	// 实现两数相加并保留小数点后最短尾数
+	function addNum(num1, num2) {
+	    var sq1, sq2;
+	    try {
+	        sq1 = toString_1(num1).split('.')[1].length;
+	    }
+	    catch (e) {
+	        sq1 = 0;
+	    }
+	    try {
+	        sq2 = toString_1(num2).split('.')[1].length;
+	    }
+	    catch (e) {
+	        sq2 = 0;
+	    }
+	    var m = Math.pow(10, Math.max(sq1, sq2));
+	    return (Math.round(num1 * m) + Math.round(num2 * m)) / m;
+	}
+	// 格式化数字，处理01变成1,并且不处理1. 这种情况
+	function parseValue(num) {
+	    if (num === '')
+	        return '0';
+	    var numStr = toString_1(num);
+	    if (numStr.indexOf('0') === 0 && numStr.indexOf('.') === -1) {
+	        // 处理01变成1,并且不处理1.
+	        return toString_1(parseFloat(num));
+	    }
+	    return toString_1(num);
+	}
+	var AtInputNumber = Vue.extend({
+	    name: 'AtInputNumber',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        disabledInput: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        type: {
+	            type: String,
+	            default: 'number',
+	            validator: function (val) { return ['number', 'digit'].includes(val); },
+	        },
+	        size: {
+	            type: String,
+	            default: 'normal',
+	            validator: function (val) { return ['normal', 'large'].includes(val); },
+	        },
+	        value: {
+	            type: [Number, String],
+	            default: 1,
+	        },
+	        width: {
+	            type: Number,
+	            default: 0,
+	        },
+	        min: {
+	            type: Number,
+	            default: 0,
+	        },
+	        max: {
+	            type: Number,
+	            default: 100,
+	        },
+	        step: {
+	            type: Number,
+	            default: 1,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onBlur: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleClick: function (clickType, e) {
+	            var _a = this, disabled = _a.disabled, value = _a.value, min = _a.min, max = _a.max, step = _a.step;
+	            var lowThanMin = clickType === 'minus' && value <= min;
+	            var overThanMax = clickType === 'plus' && value >= max;
+	            if (lowThanMin || overThanMax || disabled) {
+	                var deltaValue_1 = clickType === 'minus' ? -step : step;
+	                var errorValue = addNum(Number(value), deltaValue_1);
+	                if (disabled) {
+	                    this.handleError({
+	                        type: 'DISABLED',
+	                        errorValue: errorValue,
+	                    });
+	                }
+	                else {
+	                    this.handleError({
+	                        type: lowThanMin ? 'LOW' : 'OVER',
+	                        errorValue: errorValue,
+	                    });
+	                }
+	                return;
+	            }
+	            var deltaValue = clickType === 'minus' ? -step : step;
+	            var newValue = addNum(Number(value), deltaValue);
+	            newValue = Number(this.handleValue(newValue));
+	            this.onChange(newValue, e);
+	        },
+	        handleValue: function (value) {
+	            var _a = this, max = _a.max, min = _a.min;
+	            var resultValue = value === '' ? min : value;
+	            // 此处不能使用 Math.max，会是字符串变数字，并丢失 .
+	            if (resultValue > max) {
+	                resultValue = max;
+	                this.handleError({
+	                    type: 'OVER',
+	                    errorValue: resultValue,
+	                });
+	            }
+	            if (resultValue < min) {
+	                resultValue = min;
+	                this.handleError({
+	                    type: 'LOW',
+	                    errorValue: resultValue,
+	                });
+	            }
+	            if (resultValue && !Number(resultValue)) {
+	                resultValue = parseFloat(String(resultValue)) || min;
+	                this.handleError({
+	                    type: 'OVER',
+	                    errorValue: resultValue,
+	                });
+	            }
+	            resultValue = parseValue(String(resultValue));
+	            return resultValue;
+	        },
+	        handleInput: function (e) {
+	            var value = e.target.value;
+	            var disabled = this.disabled;
+	            if (disabled)
+	                return;
+	            var newValue = this.handleValue(value);
+	            this.onChange(Number(newValue), e);
+	            return newValue;
+	        },
+	        handleBlur: function (event) {
+	            this.onBlur && this.onBlur(event);
+	        },
+	        handleError: function (errorValue) {
+	            if (!this.onErrorInput) {
+	                return;
+	            }
+	            this.onErrorInput(errorValue);
+	        },
+	    },
+	    render: function () {
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, width = _a.width, disabled = _a.disabled, value = _a.value, type = _a.type, min = _a.min, max = _a.max, size = _a.size, disabledInput = _a.disabledInput;
+	        var inputStyle = {
+	            width: width ? "" + Taro.pxTransform(width) : '',
+	        };
+	        var inputValue = Number(this.handleValue(value));
+	        var rootCls = _classnames_2_2_6_classnames('at-input-number', {
+	            'at-input-number--lg': size === 'large',
+	        }, className);
+	        var minusBtnCls = _classnames_2_2_6_classnames('at-input-number__btn', {
+	            'at-input-number--disabled': inputValue <= min || disabled,
+	        });
+	        var plusBtnCls = _classnames_2_2_6_classnames('at-input-number__btn', {
+	            'at-input-number--disabled': inputValue >= max || disabled,
+	        });
+	        return (<view class={rootCls} style={customStyle}>
+	        <view class={minusBtnCls} onTap={this.handleClick.bind(this, 'minus')}>
+	          <view class="at-icon at-icon-subtract at-input-number__btn-subtract"></view>
+	        </view>
+	        <input class="at-input-number__input" style={inputStyle} type={type} value={String(inputValue)} disabled={disabledInput || disabled} onInput={this.handleInput} onBlur={this.handleBlur}/>
+	        <view class={plusBtnCls} onTap={this.handleClick.bind(this, 'plus')}>
+	          <view class="at-icon at-icon-add at-input-number__btn-add"></view>
+	        </view>
+	      </view>);
+	    },
+	});
 
 	var AtList = {
 	  name: 'AtList',
@@ -3081,6 +3893,149 @@
 	  }
 	};
 
+	var AtRadio = Vue.extend({
+	    name: 'AtRadio',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        value: {
+	            type: String,
+	            default: '',
+	        },
+	        options: {
+	            type: Array,
+	            default: function () {
+	                return [];
+	            },
+	        },
+	        onClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleClick: function (option, event) {
+	            if (option.disabled)
+	                return;
+	            this.onClick(option.value, event);
+	        },
+	    },
+	    render: function () {
+	        var _this = this;
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, options = _a.options, value = _a.value;
+	        console.log('value :>> ', value);
+	        return (<view class={_classnames_2_2_6_classnames('at-radio', className)} style={customStyle}>
+	        {options.map(function (option) { return (<view key={option.value} onTap={_this.handleClick.bind(_this, option)} class={_classnames_2_2_6_classnames({
+	            'at-radio__option': true,
+	            'at-radio__option--disabled': option.disabled,
+	        })}>
+	            <view class="at-radio__option-wrap">
+	              <view class="at-radio__option-container">
+	                <view class="at-radio__title">{option.label}</view>
+	                <view class={_classnames_2_2_6_classnames({
+	            'at-radio__icon': true,
+	            'at-radio__icon--checked': value === option.value,
+	        })}>
+	                  <view class="at-icon at-icon-check text"></view>
+	                </view>
+	              </view>
+	              {option.desc && <view class="at-radio__desc">{option.desc}</view>}
+	            </view>
+	          </view>); })}
+	      </view>);
+	    },
+	});
+
+	var AtRate = Vue.extend({
+	    name: 'AtRate',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        size: {
+	            type: [Number, String],
+	            default: 0,
+	        },
+	        value: {
+	            type: Number,
+	            default: 0,
+	        },
+	        max: {
+	            type: Number,
+	            default: 5,
+	        },
+	        margin: {
+	            type: Number,
+	            default: 5,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleClick: function (event) {
+	            this.onChange && this.onChange(event);
+	        },
+	    },
+	    render: function () {
+	        var _this = this;
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, value = _a.value, max = _a.max, size = _a.size, margin = _a.margin;
+	        var iconStyle = {
+	            marginRight: Taro$1.pxTransform(margin),
+	        };
+	        var starIconStyle = {
+	            fontSize: size ? size + "px" : '',
+	        };
+	        // 生成星星颜色 className 数组，方便在jsx中直接map
+	        var classNameArr = [];
+	        var floorValue = Math.floor(value);
+	        var ceilValue = Math.ceil(value);
+	        for (var i = 0; i < max; i++) {
+	            if (floorValue > i) {
+	                classNameArr.push('at-rate__icon at-rate__icon--on');
+	            }
+	            else if (ceilValue - 1 === i) {
+	                classNameArr.push('at-rate__icon at-rate__icon--half');
+	            }
+	            else {
+	                classNameArr.push('at-rate__icon at-rate__icon--off');
+	            }
+	        }
+	        return (<view class={_classnames_2_2_6_classnames('at-rate', className)} style={customStyle}>
+	        {classNameArr.map(function (cls, i) { return (<view class={cls} key={"at-rate-star-" + i} style={iconStyle} onTap={_this.handleClick.bind(_this, i + 1)}>
+	            <view class="at-icon at-icon-star-2" style={starIconStyle}></view>
+	            <view class="at-rate__left">
+	              <view class="at-icon at-icon-star-2" style={starIconStyle}></view>
+	            </view>
+	          </view>); })}
+	      </view>);
+	    },
+	});
+
 	var index$c = {
 	  name: 'AtSegmentedControl',
 	  props: {
@@ -3183,6 +4138,73 @@
 	    })]);
 	  }
 	};
+
+	var AtSwitch = Vue.extend({
+	    name: 'AtSwitch',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        title: {
+	            type: String,
+	            default: '',
+	        },
+	        color: {
+	            type: String,
+	            default: '#6190e8',
+	        },
+	        border: {
+	            type: Boolean,
+	            default: true,
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        checked: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleChange: function (event) {
+	            var _a = event.detail, value = _a.value, checked = _a.checked;
+	            var state = typeof value === 'undefined' ? checked : value;
+	            this.onChange && this.onChange(state);
+	        },
+	    },
+	    render: function () {
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, disabled = _a.disabled, border = _a.border, title = _a.title, checked = _a.checked, color = _a.color;
+	        var rootCls = _classnames_2_2_6_classnames('at-switch', {
+	            'at-switch--without-border': !border,
+	        }, className);
+	        var containerCls = _classnames_2_2_6_classnames('at-switch__container', {
+	            'at-switch--disabled': disabled,
+	        });
+	        return (<view class={rootCls} style={customStyle}>
+	        <view class="at-switch__title">{title}</view>
+	        <view class={containerCls}>
+	          <view class="at-switch__mask"></view>
+	          <switch class="at-switch__switch" checked={checked} color={color} onChange={this.handleChange}/>
+	        </view>
+	      </view>);
+	    },
+	});
 
 	var index$d = {
 	  name: 'AtTabBar',
@@ -3694,20 +4716,549 @@
 	  }
 	};
 
-	function _typeof(obj) {
-	  "@babel/helpers - typeof";
+	/**
+	  * vue-class-component v7.2.3
+	  * (c) 2015-present Evan You
+	  * @license MIT
+	  */
 
+	function _typeof(obj) {
 	  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-	    _typeof = function _typeof(obj) {
+	    _typeof = function (obj) {
 	      return typeof obj;
 	    };
 	  } else {
-	    _typeof = function _typeof(obj) {
+	    _typeof = function (obj) {
 	      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
 	    };
 	  }
 
 	  return _typeof(obj);
+	}
+
+	function _defineProperty$1(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	}
+
+	function _toConsumableArray(arr) {
+	  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();
+	}
+
+	function _arrayWithoutHoles(arr) {
+	  if (Array.isArray(arr)) {
+	    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+
+	    return arr2;
+	  }
+	}
+
+	function _iterableToArray(iter) {
+	  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+	}
+
+	function _nonIterableSpread() {
+	  throw new TypeError("Invalid attempt to spread non-iterable instance");
+	}
+
+	// The rational behind the verbose Reflect-feature check below is the fact that there are polyfills
+	// which add an implementation for Reflect.defineMetadata but not for Reflect.getOwnMetadataKeys.
+	// Without this check consumers will encounter hard to track down runtime errors.
+	function reflectionIsSupported() {
+	  return typeof Reflect !== 'undefined' && Reflect.defineMetadata && Reflect.getOwnMetadataKeys;
+	}
+	function copyReflectionMetadata(to, from) {
+	  forwardMetadata(to, from);
+	  Object.getOwnPropertyNames(from.prototype).forEach(function (key) {
+	    forwardMetadata(to.prototype, from.prototype, key);
+	  });
+	  Object.getOwnPropertyNames(from).forEach(function (key) {
+	    forwardMetadata(to, from, key);
+	  });
+	}
+
+	function forwardMetadata(to, from, propertyKey) {
+	  var metaKeys = propertyKey ? Reflect.getOwnMetadataKeys(from, propertyKey) : Reflect.getOwnMetadataKeys(from);
+	  metaKeys.forEach(function (metaKey) {
+	    var metadata = propertyKey ? Reflect.getOwnMetadata(metaKey, from, propertyKey) : Reflect.getOwnMetadata(metaKey, from);
+
+	    if (propertyKey) {
+	      Reflect.defineMetadata(metaKey, metadata, to, propertyKey);
+	    } else {
+	      Reflect.defineMetadata(metaKey, metadata, to);
+	    }
+	  });
+	}
+
+	var fakeArray = {
+	  __proto__: []
+	};
+	var hasProto = fakeArray instanceof Array;
+	function isPrimitive(value) {
+	  var type = _typeof(value);
+
+	  return value == null || type !== 'object' && type !== 'function';
+	}
+	function warn(message) {
+	  if (typeof console !== 'undefined') {
+	    console.warn('[vue-class-component] ' + message);
+	  }
+	}
+
+	function collectDataFromConstructor(vm, Component) {
+	  // override _init to prevent to init as Vue instance
+	  var originalInit = Component.prototype._init;
+
+	  Component.prototype._init = function () {
+	    var _this = this;
+
+	    // proxy to actual vm
+	    var keys = Object.getOwnPropertyNames(vm); // 2.2.0 compat (props are no longer exposed as self properties)
+
+	    if (vm.$options.props) {
+	      for (var key in vm.$options.props) {
+	        if (!vm.hasOwnProperty(key)) {
+	          keys.push(key);
+	        }
+	      }
+	    }
+
+	    keys.forEach(function (key) {
+	      if (key.charAt(0) !== '_') {
+	        Object.defineProperty(_this, key, {
+	          get: function get() {
+	            return vm[key];
+	          },
+	          set: function set(value) {
+	            vm[key] = value;
+	          },
+	          configurable: true
+	        });
+	      }
+	    });
+	  }; // should be acquired class property values
+
+
+	  var data = new Component(); // restore original _init to avoid memory leak (#209)
+
+	  Component.prototype._init = originalInit; // create plain data object
+
+	  var plainData = {};
+	  Object.keys(data).forEach(function (key) {
+	    if (data[key] !== undefined) {
+	      plainData[key] = data[key];
+	    }
+	  });
+
+	  if (process.env.NODE_ENV !== 'production') {
+	    if (!(Component.prototype instanceof Vue) && Object.keys(plainData).length > 0) {
+	      warn('Component class must inherit Vue or its descendant class ' + 'when class property is used.');
+	    }
+	  }
+
+	  return plainData;
+	}
+
+	var $internalHooks = ['data', 'beforeCreate', 'created', 'beforeMount', 'mounted', 'beforeDestroy', 'destroyed', 'beforeUpdate', 'updated', 'activated', 'deactivated', 'render', 'errorCaptured', 'serverPrefetch' // 2.6
+	];
+	function componentFactory(Component) {
+	  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+	  options.name = options.name || Component._componentTag || Component.name; // prototype props.
+
+	  var proto = Component.prototype;
+	  Object.getOwnPropertyNames(proto).forEach(function (key) {
+	    if (key === 'constructor') {
+	      return;
+	    } // hooks
+
+
+	    if ($internalHooks.indexOf(key) > -1) {
+	      options[key] = proto[key];
+	      return;
+	    }
+
+	    var descriptor = Object.getOwnPropertyDescriptor(proto, key);
+
+	    if (descriptor.value !== void 0) {
+	      // methods
+	      if (typeof descriptor.value === 'function') {
+	        (options.methods || (options.methods = {}))[key] = descriptor.value;
+	      } else {
+	        // typescript decorated data
+	        (options.mixins || (options.mixins = [])).push({
+	          data: function data() {
+	            return _defineProperty$1({}, key, descriptor.value);
+	          }
+	        });
+	      }
+	    } else if (descriptor.get || descriptor.set) {
+	      // computed properties
+	      (options.computed || (options.computed = {}))[key] = {
+	        get: descriptor.get,
+	        set: descriptor.set
+	      };
+	    }
+	  });
+	  (options.mixins || (options.mixins = [])).push({
+	    data: function data() {
+	      return collectDataFromConstructor(this, Component);
+	    }
+	  }); // decorate options
+
+	  var decorators = Component.__decorators__;
+
+	  if (decorators) {
+	    decorators.forEach(function (fn) {
+	      return fn(options);
+	    });
+	    delete Component.__decorators__;
+	  } // find super
+
+
+	  var superProto = Object.getPrototypeOf(Component.prototype);
+	  var Super = superProto instanceof Vue ? superProto.constructor : Vue;
+	  var Extended = Super.extend(options);
+	  forwardStaticMembers(Extended, Component, Super);
+
+	  if (reflectionIsSupported()) {
+	    copyReflectionMetadata(Extended, Component);
+	  }
+
+	  return Extended;
+	}
+	var reservedPropertyNames = [// Unique id
+	'cid', // Super Vue constructor
+	'super', // Component options that will be used by the component
+	'options', 'superOptions', 'extendOptions', 'sealedOptions', // Private assets
+	'component', 'directive', 'filter'];
+	var shouldIgnore = {
+	  prototype: true,
+	  arguments: true,
+	  callee: true,
+	  caller: true
+	};
+
+	function forwardStaticMembers(Extended, Original, Super) {
+	  // We have to use getOwnPropertyNames since Babel registers methods as non-enumerable
+	  Object.getOwnPropertyNames(Original).forEach(function (key) {
+	    // Skip the properties that should not be overwritten
+	    if (shouldIgnore[key]) {
+	      return;
+	    } // Some browsers does not allow reconfigure built-in properties
+
+
+	    var extendedDescriptor = Object.getOwnPropertyDescriptor(Extended, key);
+
+	    if (extendedDescriptor && !extendedDescriptor.configurable) {
+	      return;
+	    }
+
+	    var descriptor = Object.getOwnPropertyDescriptor(Original, key); // If the user agent does not support `__proto__` or its family (IE <= 10),
+	    // the sub class properties may be inherited properties from the super class in TypeScript.
+	    // We need to exclude such properties to prevent to overwrite
+	    // the component options object which stored on the extended constructor (See #192).
+	    // If the value is a referenced value (object or function),
+	    // we can check equality of them and exclude it if they have the same reference.
+	    // If it is a primitive value, it will be forwarded for safety.
+
+	    if (!hasProto) {
+	      // Only `cid` is explicitly exluded from property forwarding
+	      // because we cannot detect whether it is a inherited property or not
+	      // on the no `__proto__` environment even though the property is reserved.
+	      if (key === 'cid') {
+	        return;
+	      }
+
+	      var superDescriptor = Object.getOwnPropertyDescriptor(Super, key);
+
+	      if (!isPrimitive(descriptor.value) && superDescriptor && superDescriptor.value === descriptor.value) {
+	        return;
+	      }
+	    } // Warn if the users manually declare reserved properties
+
+
+	    if (process.env.NODE_ENV !== 'production' && reservedPropertyNames.indexOf(key) >= 0) {
+	      warn("Static property name '".concat(key, "' declared on class '").concat(Original.name, "' ") + 'conflicts with reserved property name of Vue internal. ' + 'It may cause unexpected behavior of the component. Consider renaming the property.');
+	    }
+
+	    Object.defineProperty(Extended, key, descriptor);
+	  });
+	}
+
+	function Component(options) {
+	  if (typeof options === 'function') {
+	    return componentFactory(options);
+	  }
+
+	  return function (Component) {
+	    return componentFactory(Component, options);
+	  };
+	}
+
+	Component.registerHooks = function registerHooks(keys) {
+	  $internalHooks.push.apply($internalHooks, _toConsumableArray(keys));
+	};
+
+	var SIZE_CLASS$2 = {
+	    normal: 'normal',
+	    small: 'small',
+	};
+	var TYPE_CLASS$1 = {
+	    primary: 'primary',
+	};
+	var AtTagProps = Vue.extend({
+	    props: {
+	        size: {
+	            type: String,
+	            default: 'normal',
+	            validator: function (val) { return ['normal', 'small'].includes(val); },
+	        },
+	        type: {
+	            type: String,
+	            default: '',
+	            validator: function (val) { return ['', 'primary'].includes(val); },
+	        },
+	        name: {
+	            type: String,
+	            default: '',
+	        },
+	        circle: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        active: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        onClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	});
+	var AtTag = /** @class */ (function (_super) {
+	    __extends(AtTag, _super);
+	    function AtTag() {
+	        return _super !== null && _super.apply(this, arguments) || this;
+	    }
+	    AtTag.prototype.handleClick = function (event) {
+	        if (!this.disabled) {
+	            this.onClick &&
+	                this.onClick({
+	                    name: this.name,
+	                    active: this.active,
+	                }, event);
+	        }
+	    };
+	    AtTag.prototype.render = function () {
+	        var _a;
+	        var _b = this, _c = _b.size, size = _c === void 0 ? 'normal' : _c, _d = _b.type, type = _d === void 0 ? '' : _d, _e = _b.circle, circle = _e === void 0 ? false : _e, _f = _b.disabled, disabled = _f === void 0 ? false : _f, _g = _b.active, active = _g === void 0 ? false : _g, customStyle = _b.customStyle;
+	        var rootClassName = ['at-tag'];
+	        var classObject = (_a = {},
+	            _a["at-tag--" + SIZE_CLASS$2[size]] = SIZE_CLASS$2[size],
+	            _a["at-tag--" + type] = TYPE_CLASS$1[type],
+	            _a['at-tag--disabled'] = disabled,
+	            _a['at-tag--active'] = active,
+	            _a['at-tag--circle'] = circle,
+	            _a);
+	        return (<view class={_classnames_2_2_6_classnames(rootClassName, classObject, this.className)} style={customStyle} onTap={this.handleClick.bind(this)}>
+	        {this.$slots.default}
+	      </view>);
+	    };
+	    AtTag = __decorate([
+	        Component
+	    ], AtTag);
+	    return AtTag;
+	}(AtTagProps));
+
+	function getMaxLength(maxLength, textOverflowForbidden) {
+	    if (!textOverflowForbidden) {
+	        return maxLength + 500;
+	    }
+	    return maxLength;
+	}
+	var ENV$2 = Taro$1.getEnv();
+	var AtTextarea = Vue.extend({
+	    name: 'AtTextarea',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        value: {
+	            type: String,
+	            default: '',
+	            required: true,
+	        },
+	        cursorSpacing: {
+	            type: Number,
+	            default: 100,
+	        },
+	        maxLength: {
+	            type: [Number, String],
+	            default: 200,
+	        },
+	        placeholder: {
+	            type: String,
+	            default: '',
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        autoFocus: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        focus: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        showConfirmBar: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        count: {
+	            type: Boolean,
+	            default: true,
+	        },
+	        fixed: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        selectionStart: {
+	            type: Number,
+	            default: -1,
+	        },
+	        selectionEnd: {
+	            type: Number,
+	            default: -1,
+	        },
+	        height: {
+	            type: [Number, String],
+	            default: '',
+	        },
+	        textOverflowForbidden: {
+	            type: Boolean,
+	            default: true,
+	        },
+	        onLinechange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	            required: true,
+	        },
+	        onFocus: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onBlur: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onConfirm: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        handleInput: function (event) {
+	            this.onChange(event.target.value, event);
+	        },
+	        handleFocus: function (event) {
+	            this.onFocus && this.onFocus(event);
+	        },
+	        handleBlur: function (event) {
+	            this.onBlur && this.onBlur(event);
+	        },
+	        handleConfirm: function (event) {
+	            this.onConfirm && this.onConfirm(event);
+	        },
+	        handleLinechange: function (event) {
+	            this.onLinechange && this.onLinechange(event);
+	        },
+	    },
+	    render: function () {
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, value = _a.value, cursorSpacing = _a.cursorSpacing, placeholder = _a.placeholder, placeholderStyle = _a.placeholderStyle, placeholderClass = _a.placeholderClass, maxLength = _a.maxLength, count = _a.count, disabled = _a.disabled, autoFocus = _a.autoFocus, focus = _a.focus, showConfirmBar = _a.showConfirmBar, selectionStart = _a.selectionStart, selectionEnd = _a.selectionEnd, fixed = _a.fixed, textOverflowForbidden = _a.textOverflowForbidden, height = _a.height;
+	        var _maxLength = parseInt(maxLength.toString());
+	        var actualMaxLength = getMaxLength(_maxLength, textOverflowForbidden);
+	        var textareaStyle = height ? "height:" + Taro$1.pxTransform(Number(height)) : '';
+	        var rootCls = _classnames_2_2_6_classnames('at-textarea', "at-textarea--" + ENV$2, {
+	            'at-textarea--error': _maxLength < value.length,
+	        }, className);
+	        var placeholderCls = _classnames_2_2_6_classnames('placeholder', placeholderClass);
+	        return (<view class={rootCls} style={customStyle}>
+	        <textarea class="at-textarea__textarea" style={textareaStyle} placeholderStyle={placeholderStyle} placeholderClass={placeholderCls} cursorSpacing={cursorSpacing} value={value} maxlength={actualMaxLength} placeholder={placeholder} disabled={disabled} autoFocus={autoFocus} focus={focus} showConfirmBar={showConfirmBar} selectionStart={selectionStart} selectionEnd={selectionEnd} fixed={fixed} onInput={this.handleInput} onFocus={this.handleFocus} onBlur={this.handleBlur} onConfirm={this.handleConfirm} onLineChange={this.handleLinechange}/>
+	        {count && (<view class="at-textarea__counter">
+	            {value.length}/{_maxLength}
+	          </view>)}
+	      </view>);
+	    },
+	});
+
+	function _typeof$1(obj) {
+	  "@babel/helpers - typeof";
+
+	  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+	    _typeof$1 = function _typeof(obj) {
+	      return typeof obj;
+	    };
+	  } else {
+	    _typeof$1 = function _typeof(obj) {
+	      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+	    };
+	  }
+
+	  return _typeof$1(obj);
 	}
 
 	var index$g = {
@@ -3724,7 +5275,7 @@
 	      },
 	      validator: function validator(val) {
 	        return val.every(function (item) {
-	          return _typeof(item) === 'object';
+	          return _typeof$1(item) === 'object';
 	        });
 	      }
 	    },
@@ -4165,6 +5716,117 @@
 	  }
 	};
 
+	function clampNumber(value, lower, upper) {
+	    return Math.max(lower, Math.min(upper, value));
+	}
+	var AtSlider = Vue.extend({
+	    name: 'AtSlider',
+	    mixins: [mixins],
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        min: {
+	            type: Number,
+	            default: 0,
+	        },
+	        max: {
+	            type: Number,
+	            default: 100,
+	        },
+	        step: {
+	            type: Number,
+	            default: 1,
+	        },
+	        value: {
+	            type: Number,
+	            default: 0,
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        activeColor: {
+	            type: String,
+	            default: '#6190e8',
+	        },
+	        backgroundColor: {
+	            type: String,
+	            default: '#e9e9e9',
+	        },
+	        blockSize: {
+	            type: Number,
+	            default: 28,
+	        },
+	        blockColor: {
+	            type: String,
+	            default: '#ffffff',
+	        },
+	        showValue: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onChanging: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    data: function () {
+	        var _a = this, value = _a.value, min = _a.min, max = _a.max;
+	        return {
+	            state: {
+	                _value: clampNumber(value, min, max),
+	            },
+	        };
+	    },
+	    methods: {
+	        clampNumber: clampNumber,
+	        handleChanging: function (e) {
+	            var _value = this.state._value;
+	            var value = e.detail.value;
+	            if (value !== _value) {
+	                this.setState({ _value: value });
+	            }
+	            this.onChanging && this.onChanging(value);
+	        },
+	        handleChange: function (e) {
+	            var value = e.detail.value;
+	            this.setState({ _value: value });
+	            this.onChange && this.onChange(value);
+	        },
+	    },
+	    render: function () {
+	        var _value = this.state._value;
+	        var _a = this, customStyle = _a.customStyle, className = _a.className, min = _a.min, max = _a.max, step = _a.step, disabled = _a.disabled, activeColor = _a.activeColor, backgroundColor = _a.backgroundColor, blockSize = _a.blockSize, blockColor = _a.blockColor, showValue = _a.showValue;
+	        return (<view class={_classnames_2_2_6_classnames({
+	            'at-slider': true,
+	            'at-slider--disabled': disabled,
+	        }, className)} style={customStyle}>
+	        <view class="at-slider__inner">
+	          <slider min={min} max={max} step={step} value={_value} disabled={disabled} activeColor={activeColor} backgroundColor={backgroundColor} blockSize={blockSize} blockColor={blockColor} onChanging={this.handleChanging.bind(this)} onChange={this.handleChange.bind(this)}></slider>
+	        </view>
+	        {showValue && <view clas="at-slider__text">{"" + _value}</view>}
+	      </view>);
+	    },
+	});
+
 	function _arrayWithHoles(arr) {
 	  if (Array.isArray(arr)) return arr;
 	}
@@ -4501,9 +6163,9 @@
 	var _Promise = Promise$1;
 
 	/* Built-in method references that are verified to be native. */
-	var Set = _getNative(_root, 'Set');
+	var Set$1 = _getNative(_root, 'Set');
 
-	var _Set = Set;
+	var _Set = Set$1;
 
 	/* Built-in method references that are verified to be native. */
 	var WeakMap = _getNative(_root, 'WeakMap');
@@ -4610,33 +6272,6 @@
 	};
 
 	var isArguments_1 = isArguments;
-
-	/**
-	 * Checks if `value` is classified as an `Array` object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 0.1.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is an array, else `false`.
-	 * @example
-	 *
-	 * _.isArray([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isArray(document.body.children);
-	 * // => false
-	 *
-	 * _.isArray('abc');
-	 * // => false
-	 *
-	 * _.isArray(_.noop);
-	 * // => false
-	 */
-	var isArray = Array.isArray;
-
-	var isArray_1 = isArray;
 
 	/**
 	 * This method returns `false`.
@@ -4955,10 +6590,10 @@
 	      },
 	      validator: function validator(options) {
 	        return options.every(function (item) {
-	          if (_typeof(item) === 'object') {
+	          if (_typeof$1(item) === 'object') {
 	            if (!item.text) return false;
-	            if (item.style && typeof item.style !== 'string' && _typeof(item.style) !== 'object') return false;
-	            if (item.className && typeof item.className !== 'string' && typeof item.className !== 'array' && _typeof(item.className) !== 'object') return false;
+	            if (item.style && typeof item.style !== 'string' && _typeof$1(item.style) !== 'object') return false;
+	            if (item.className && typeof item.className !== 'string' && typeof item.className !== 'array' && _typeof$1(item.className) !== 'object') return false;
 	            return true;
 	          } else {
 	            return false;
@@ -5240,6 +6875,176 @@
 	    })]) : null]);
 	  }
 	};
+
+	var AtSearchBar = Vue.extend({
+	    name: 'AtSearchBar',
+	    mixins: [mixins],
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        value: {
+	            type: String,
+	            default: '',
+	        },
+	        placeholder: {
+	            type: String,
+	            default: '搜索',
+	        },
+	        actionName: {
+	            type: String,
+	            default: '搜索',
+	        },
+	        maxLength: {
+	            type: Number,
+	            default: 140,
+	        },
+	        fixed: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        focus: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        showActionButton: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        inputType: {
+	            type: String,
+	            default: 'text',
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onFocus: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onBlur: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onConfirm: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onActionClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    data: function () {
+	        return {
+	            state: {
+	                isFocus: !!this.focus,
+	            },
+	        };
+	    },
+	    methods: {
+	        handleFocus: function (event) {
+	            this.setState({
+	                isFocus: true,
+	            });
+	            this.onFocus && this.onFocus(event);
+	        },
+	        handleBlur: function (event) {
+	            this.setState({
+	                isFocus: false,
+	            });
+	            this.onBlur && this.onBlur(event);
+	        },
+	        handleChange: function (e) {
+	            this.onChange(e.target.value, e);
+	        },
+	        handleClear: function (event) {
+	            if (this.onClear) {
+	                this.onClear(event);
+	            }
+	            else {
+	                this.onChange('', event);
+	            }
+	        },
+	        handleConfirm: function (event) {
+	            this.onConfirm && this.onConfirm(event);
+	        },
+	        handleActionClick: function (event) {
+	            this.onActionClick && this.onActionClick(event);
+	        },
+	    },
+	    render: function () {
+	        var _a = this, value = _a.value, placeholder = _a.placeholder, maxLength = _a.maxLength, fixed = _a.fixed, disabled = _a.disabled, showActionButton = _a.showActionButton, actionName = _a.actionName, inputType = _a.inputType, className = _a.className, customStyle = _a.customStyle;
+	        var isFocus = this.state.isFocus;
+	        var fontSize = 14;
+	        var rootCls = _classnames_2_2_6_classnames('at-search-bar', {
+	            'at-search-bar--fixed': fixed,
+	        }, className);
+	        var placeholderWrapStyle = {};
+	        var actionStyle = {};
+	        if (isFocus || (!isFocus && value)) {
+	            actionStyle.opacity = 1;
+	            actionStyle.marginRight = "0";
+	            placeholderWrapStyle.flexGrow = 0;
+	        }
+	        else if (!isFocus && !value) {
+	            placeholderWrapStyle.flexGrow = 1;
+	            actionStyle.opacity = 0;
+	            actionStyle.marginRight = "-" + ((actionName.length + 1) * fontSize + fontSize / 2 + 10) + "px";
+	        }
+	        if (showActionButton) {
+	            actionStyle.opacity = 1;
+	            actionStyle.marginRight = "0";
+	        }
+	        var clearIconStyle = { display: 'flex' };
+	        var placeholderStyle = { visibility: 'hidden' };
+	        if (!value.length) {
+	            clearIconStyle.display = 'none';
+	            placeholderStyle.visibility = 'visible';
+	        }
+	        return (<view class={rootCls} style={customStyle}>
+	        <view class="at-search-bar__input-cnt">
+	          <view class="at-search-bar__placeholder-wrap" style={placeholderWrapStyle}>
+	            <view class="at-icon at-icon-search"></view>
+	            <view class="at-search-bar__placeholder" style={placeholderStyle}>
+	              {isFocus ? '' : placeholder}
+	            </view>
+	          </view>
+	          <input class="at-search-bar__input" type={inputType} confirmType="search" value={value} focus={isFocus} disabled={disabled} maxLength={maxLength} onInput={this.handleChange} onFocus={this.handleFocus} onBlur={this.handleBlur} onConfirm={this.handleConfirm}/>
+	          <view class="at-search-bar__clear" style={clearIconStyle} onTouchStart={this.handleClear}>
+	            <view class="at-icon at-icon-close-circle"></view>
+	          </view>
+	        </view>
+	        <view class="at-search-bar__action" style={actionStyle} onTap={this.handleActionClick}>
+	          {actionName}
+	        </view>
+	      </view>);
+	    },
+	});
 
 	var index$j = {
 	  name: 'AtLoadMore',
@@ -5849,7 +7654,363 @@
 	  }
 	};
 
-	var ENV$2 = Taro$1.getEnv();
+	// 生成 jsx 二维矩阵
+	var generateMatrix = function (files, col, showAddBtn) {
+	    var matrix = [];
+	    var length = showAddBtn ? files.length + 1 : files.length;
+	    var row = Math.ceil(length / col);
+	    for (var i = 0; i < row; i++) {
+	        if (i === row - 1) {
+	            // 最后一行数据加上添加按钮
+	            var lastArr = files.slice(i * col);
+	            if (lastArr.length < col) {
+	                if (showAddBtn) {
+	                    lastArr.push({ type: 'btn', uuid: uuid() });
+	                }
+	                // 填补剩下的空列
+	                for (var j = lastArr.length; j < col; j++) {
+	                    lastArr.push({ type: 'blank', uuid: uuid() });
+	                }
+	            }
+	            matrix.push(lastArr);
+	        }
+	        else {
+	            matrix.push(files.slice(i * col, (i + 1) * col));
+	        }
+	    }
+	    return matrix;
+	};
+	var ENV$3 = Taro$1.getEnv();
+	var AtImagePicker = Vue.extend({
+	    name: 'AtImagePicker',
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        files: {
+	            type: Array,
+	            default: function () {
+	                return [];
+	            },
+	        },
+	        mode: {
+	            type: String,
+	            default: 'aspectFill',
+	            validator: function (val) {
+	                var modes = [
+	                    'scaleToFill',
+	                    'aspectFit',
+	                    'aspectFill',
+	                    'widthFix',
+	                    'top',
+	                    'bottom',
+	                    'center',
+	                    'left',
+	                    'right',
+	                    'top left',
+	                    'top right',
+	                    'bottom left',
+	                    'bottom right',
+	                ];
+	                return modes.includes(val);
+	            },
+	        },
+	        showAddBtn: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        multiple: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        length: {
+	            type: Number,
+	            default: 4,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onImageClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onFail: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    methods: {
+	        chooseFile: function () {
+	            var _this = this;
+	            var _a = this, _b = _a.files, files = _b === void 0 ? [] : _b, multiple = _a.multiple, count = _a.count, sizeType = _a.sizeType, sourceType = _a.sourceType;
+	            var filePathName = ENV$3 === Taro$1.ENV_TYPE.ALIPAY ? 'apFilePaths' : 'tempFiles';
+	            // const count = multiple ? 99 : 1
+	            var params = {};
+	            if (multiple) {
+	                params.count = 99;
+	            }
+	            if (count) {
+	                params.count = count;
+	            }
+	            if (sizeType) {
+	                params.sizeType = sizeType;
+	            }
+	            if (sourceType) {
+	                params.sourceType = sourceType;
+	            }
+	            Taro$1.chooseImage(params)
+	                .then(function (res) {
+	                var targetFiles = res.tempFilePaths.map(function (path, i) { return ({
+	                    url: path,
+	                    file: res[filePathName][i],
+	                }); });
+	                var newFiles = files.concat(targetFiles);
+	                _this.onChange(newFiles, 'add');
+	            })
+	                .catch(this.onFail);
+	        },
+	        handleImageClick: function (idx) {
+	            this.onImageClick && this.onImageClick(idx, this.files[idx]);
+	        },
+	        handleRemoveImg: function (idx) {
+	            var _a = this.files, files = _a === void 0 ? [] : _a;
+	            if (ENV$3 === Taro$1.ENV_TYPE.WEB) {
+	                window.URL.revokeObjectURL(files[idx].url);
+	            }
+	            var newFiles = files.filter(function (_, i) { return i !== idx; });
+	            this.onChange(newFiles, 'remove', idx);
+	        },
+	    },
+	    render: function () {
+	        var _this = this;
+	        var _a = this, className = _a.className, customStyle = _a.customStyle, files = _a.files, mode = _a.mode, _b = _a.length, length = _b === void 0 ? 4 : _b, _c = _a.showAddBtn, showAddBtn = _c === void 0 ? true : _c;
+	        var rowLength = length <= 0 ? 1 : length;
+	        // 行数
+	        var matrix = generateMatrix(files, rowLength, showAddBtn);
+	        var rootCls = _classnames_2_2_6_classnames('at-image-picker', className);
+	        return (<view class={rootCls} style={customStyle}>
+	        {matrix.map(function (row, i) { return (<view class="at-image-picker__flex-box" key={i + 1}>
+	            {row.map(function (item, j) {
+	            return item.url ? (<view class="at-image-picker__flex-item" key={i * length + j}>
+	                  <view class="at-image-picker__item">
+	                    <view class="at-image-picker__remove-btn" onTap={_this.handleRemoveImg.bind(_this, i * length + j)}></view>
+	                    <image class="at-image-picker__preview-img" mode={mode} src={item.url} onTap={_this.handleImageClick.bind(_this, i * length + j)}/>
+	                  </view>
+	                </view>) : (<view class="at-image-picker__flex-item" key={i * length + j}>
+	                  {item.type === 'btn' && (<view class="at-image-picker__item at-image-picker__choose-btn" onTap={_this.chooseFile}>
+	                      <view class="add-bar"></view>
+	                      <view class="add-bar"></view>
+	                    </view>)}
+	                </view>);
+	        })}
+	          </view>); })}
+	      </view>);
+	    },
+	});
+
+	var AtRange = Vue.extend({
+	    name: 'AtRange',
+	    mixins: [mixins],
+	    props: {
+	        customStyle: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        className: {
+	            type: [Object, String],
+	            default: function () {
+	                return {};
+	            },
+	        },
+	        sliderStyle: {
+	            type: String,
+	            default: '',
+	        },
+	        railStyle: {
+	            type: String,
+	            default: '',
+	        },
+	        trackStyle: {
+	            type: String,
+	            default: '',
+	        },
+	        value: {
+	            type: Array,
+	            default: function () {
+	                return [0, 0];
+	            },
+	        },
+	        blockSize: {
+	            type: Number,
+	            default: 0,
+	        },
+	        min: {
+	            type: Number,
+	            default: 0,
+	        },
+	        max: {
+	            type: Number,
+	            default: 100,
+	        },
+	        disabled: {
+	            type: Boolean,
+	            default: false,
+	        },
+	        onChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onAfterChange: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    data: function () {
+	        var _a = this, _b = _a.min, min = _b === void 0 ? 0 : _b, _c = _a.max, max = _c === void 0 ? 100 : _c;
+	        return {
+	            width: 0,
+	            left: 0,
+	            deltaValue: max - min,
+	            currentSlider: '',
+	            state: {
+	                aX: 0,
+	                bX: 0,
+	            },
+	        };
+	    },
+	    watch: {
+	        value: function (v) {
+	            this.updatePos();
+	            if (this.value[0] !== v[0] || this.value[1] !== v[1]) {
+	                this.setValue(v);
+	            }
+	        },
+	    },
+	    mounted: function () {
+	        var value = this.value;
+	        this.updatePos();
+	        this.setValue(value);
+	    },
+	    methods: {
+	        handleClick: function (event) {
+	            if (this.currentSlider && !this.disabled) {
+	                var sliderValue = 0;
+	                var detail = getEventDetail(event);
+	                sliderValue = detail.x - this.left;
+	                this.setSliderValue(this.currentSlider, sliderValue, 'onChange');
+	            }
+	        },
+	        handleTouchMove: function (sliderName, event) {
+	            if (this.disabled)
+	                return;
+	            event.stopPropagation();
+	            var clientX = event.touches[0].clientX;
+	            this.setSliderValue(sliderName, clientX - this.left, 'onChange');
+	        },
+	        handleTouchEnd: function (sliderName) {
+	            if (this.disabled)
+	                return;
+	            this.currentSlider = sliderName;
+	            this.triggerEvent('onAfterChange');
+	        },
+	        setSliderValue: function (sliderName, targetValue, funcName) {
+	            var _a, _b;
+	            var _this = this;
+	            var distance = Math.min(Math.max(targetValue, 0), this.width);
+	            var sliderValue = Math.floor((distance / this.width) * 100);
+	            if (funcName) {
+	                this.setState((_a = {},
+	                    _a[sliderName] = sliderValue,
+	                    _a), function () { return _this.triggerEvent(funcName); });
+	            }
+	            else {
+	                this.setState((_b = {},
+	                    _b[sliderName] = sliderValue,
+	                    _b));
+	            }
+	        },
+	        setValue: function (value) {
+	            var aX = Math.round(((value[0] - this.min) / this.deltaValue) * 100); // fix issue #670
+	            var bX = Math.round(((value[1] - this.min) / this.deltaValue) * 100); // fix issue #670
+	            this.setState({ aX: aX, bX: bX });
+	        },
+	        triggerEvent: function (funcName) {
+	            var _a = this.state, aX = _a.aX, bX = _a.bX;
+	            var a = Math.round((aX / 100) * this.deltaValue) + this.min;
+	            var b = Math.round((bX / 100) * this.deltaValue) + this.min;
+	            var result = [a, b].sort(function (x, y) { return x - y; });
+	            if (funcName === 'onChange') {
+	                this.onChange && this.onChange(result);
+	            }
+	            else if (funcName === 'onAfterChange') {
+	                this.onAfterChange && this.onAfterChange(result);
+	            }
+	        },
+	        updatePos: function () {
+	            var _this = this;
+	            delayQuerySelector(this, '.at-range__container', 30).then(function (rect) {
+	                var temp = rect ? rect : [{ width: 0, left: 0 }];
+	                _this.width = Math.round(temp[0].width);
+	                _this.left = Math.round(temp[0].left);
+	            });
+	        },
+	    },
+	    render: function () {
+	        var _a = this, className = _a.className, customStyle = _a.customStyle, sliderStyle = _a.sliderStyle, railStyle = _a.railStyle, trackStyle = _a.trackStyle, blockSize = _a.blockSize, disabled = _a.disabled;
+	        var rootCls = _classnames_2_2_6_classnames('at-range', {
+	            'at-range--disabled': disabled,
+	        }, className);
+	        var _b = this.state, aX = _b.aX, bX = _b.bX;
+	        var sliderCommonStyle = {
+	            width: blockSize ? blockSize + "PX" : '',
+	            height: blockSize ? blockSize + "PX" : '',
+	            marginLeft: blockSize ? -blockSize / 2 + "PX" : '',
+	        };
+	        var sliderAStyle = __assign(__assign({}, sliderCommonStyle), { left: aX + "%" });
+	        var sliderBStyle = __assign(__assign({}, sliderCommonStyle), { left: bX + "%" });
+	        var containerStyle = {
+	            height: blockSize ? blockSize + "PX" : '',
+	        };
+	        var smallerX = Math.min(aX, bX);
+	        var deltaX = Math.abs(aX - bX);
+	        var atTrackStyle = {
+	            left: smallerX + "%",
+	            width: deltaX + "%",
+	        };
+	        return (<view class={rootCls} style={customStyle} onClick={this.handleClick}>
+	        <view class="at-range__container" style={containerStyle}>
+	          <view class="at-range__rail" style={railStyle}></view>
+	          <view class="at-range__track" style={this.$mergeStyle(atTrackStyle, trackStyle)}></view>
+	          <view class="at-range__slider" style={this.$mergeStyle(sliderAStyle, sliderStyle)} onTouchMove={this.handleTouchMove.bind(this, 'aX')} onTouchEnd={this.handleTouchEnd.bind(this, 'aX')}></view>
+	          <view class="at-range__slider" style={this.$mergeStyle(sliderBStyle, sliderStyle)} onTouchMove={this.handleTouchMove.bind(this, 'bX')} onTouchEnd={this.handleTouchEnd.bind(this, 'bX')}></view>
+	        </view>
+	      </view>);
+	    },
+	});
+
+	var ENV$4 = Taro$1.getEnv();
 	var index$p = {
 	  name: 'AtIndexes',
 	  mixins: [mixins],
@@ -5932,7 +8093,7 @@
 	    this.onScrollIntoView && this.onScrollIntoView(this.__jumpTarget.bind(this));
 	  },
 	  mounted: function mounted() {
-	    if (ENV$2 === Taro$1.ENV_TYPE.WEB) {
+	    if (ENV$4 === Taro$1.ENV_TYPE.WEB) {
 	      this.listRef = document.getElementById(this.listId);
 	    }
 
@@ -5973,7 +8134,7 @@
 
 	      var _tipText = idx === 0 ? topKey : list[idx - 1].key;
 
-	      if (ENV$2 === Taro$1.ENV_TYPE.WEB) {
+	      if (ENV$4 === Taro$1.ENV_TYPE.WEB) {
 	        delayQuerySelector(this, '.at-indexes', 0).then(function (rect) {
 	          var targetOffsetTop = _this.listRef.childNodes[idx].offsetTop;
 
@@ -6146,6 +8307,1798 @@
 	  }
 	};
 
+	function _extends(){return _extends=Object.assign||function(a){for(var b,c=1;c<arguments.length;c++)for(var d in b=arguments[c],b)Object.prototype.hasOwnProperty.call(b,d)&&(a[d]=b[d]);return a},_extends.apply(this,arguments)}var normalMerge=["attrs","props","domProps"],toArrayMerge=["class","style","directives"],functionalMerge=["on","nativeOn"],mergeJsxProps=function(a){return a.reduce(function(c,a){for(var b in a)if(!c[b])c[b]=a[b];else if(-1!==normalMerge.indexOf(b))c[b]=_extends({},c[b],a[b]);else if(-1!==toArrayMerge.indexOf(b)){var d=c[b]instanceof Array?c[b]:[c[b]],e=a[b]instanceof Array?a[b]:[a[b]];c[b]=d.concat(e);}else if(-1!==functionalMerge.indexOf(b)){for(var f in a[b])if(c[b][f]){var g=c[b][f]instanceof Array?c[b][f]:[c[b][f]],h=a[b][f]instanceof Array?a[b][f]:[a[b][f]];c[b][f]=g.concat(h);}else c[b][f]=a[b][f];}else if("hook"==b)for(var i in a[b])c[b][i]=c[b][i]?mergeFn(c[b][i],a[b][i]):a[b][i];else c[b]=a[b];return c},{})},mergeFn=function(a,b){return function(){a&&a.apply(this,arguments),b&&b.apply(this,arguments);}};var helper=mergeJsxProps;
+
+	var dayjs_min = createCommonjsModule(function (module, exports) {
+	!function(t,e){module.exports=e();}(commonjsGlobal,function(){var t="millisecond",e="second",n="minute",r="hour",i="day",s="week",u="month",o="quarter",a="year",h=/^(\d{4})-?(\d{1,2})-?(\d{0,2})[^0-9]*(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?.?(\d{1,3})?$/,f=/\[([^\]]+)]|Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}|SSS/g,c=function(t,e,n){var r=String(t);return !r||r.length>=e?t:""+Array(e+1-r.length).join(n)+t},d={s:c,z:function(t){var e=-t.utcOffset(),n=Math.abs(e),r=Math.floor(n/60),i=n%60;return (e<=0?"+":"-")+c(r,2,"0")+":"+c(i,2,"0")},m:function(t,e){var n=12*(e.year()-t.year())+(e.month()-t.month()),r=t.clone().add(n,u),i=e-r<0,s=t.clone().add(n+(i?-1:1),u);return Number(-(n+(e-r)/(i?r-s:s-r))||0)},a:function(t){return t<0?Math.ceil(t)||0:Math.floor(t)},p:function(h){return {M:u,y:a,w:s,d:i,D:"date",h:r,m:n,s:e,ms:t,Q:o}[h]||String(h||"").toLowerCase().replace(/s$/,"")},u:function(t){return void 0===t}},$={name:"en",weekdays:"Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday".split("_"),months:"January_February_March_April_May_June_July_August_September_October_November_December".split("_")},l="en",m={};m[l]=$;var y=function(t){return t instanceof v},M=function(t,e,n){var r;if(!t)return l;if("string"==typeof t)m[t]&&(r=t),e&&(m[t]=e,r=t);else {var i=t.name;m[i]=t,r=i;}return !n&&r&&(l=r),r||!n&&l},g=function(t,e){if(y(t))return t.clone();var n="object"==typeof e?e:{};return n.date=t,n.args=arguments,new v(n)},D=d;D.l=M,D.i=y,D.w=function(t,e){return g(t,{locale:e.$L,utc:e.$u,$offset:e.$offset})};var v=function(){function c(t){this.$L=this.$L||M(t.locale,null,!0),this.parse(t);}var d=c.prototype;return d.parse=function(t){this.$d=function(t){var e=t.date,n=t.utc;if(null===e)return new Date(NaN);if(D.u(e))return new Date;if(e instanceof Date)return new Date(e);if("string"==typeof e&&!/Z$/i.test(e)){var r=e.match(h);if(r)return n?new Date(Date.UTC(r[1],r[2]-1,r[3]||1,r[4]||0,r[5]||0,r[6]||0,r[7]||0)):new Date(r[1],r[2]-1,r[3]||1,r[4]||0,r[5]||0,r[6]||0,r[7]||0)}return new Date(e)}(t),this.init();},d.init=function(){var t=this.$d;this.$y=t.getFullYear(),this.$M=t.getMonth(),this.$D=t.getDate(),this.$W=t.getDay(),this.$H=t.getHours(),this.$m=t.getMinutes(),this.$s=t.getSeconds(),this.$ms=t.getMilliseconds();},d.$utils=function(){return D},d.isValid=function(){return !("Invalid Date"===this.$d.toString())},d.isSame=function(t,e){var n=g(t);return this.startOf(e)<=n&&n<=this.endOf(e)},d.isAfter=function(t,e){return g(t)<this.startOf(e)},d.isBefore=function(t,e){return this.endOf(e)<g(t)},d.$g=function(t,e,n){return D.u(t)?this[e]:this.set(n,t)},d.year=function(t){return this.$g(t,"$y",a)},d.month=function(t){return this.$g(t,"$M",u)},d.day=function(t){return this.$g(t,"$W",i)},d.date=function(t){return this.$g(t,"$D","date")},d.hour=function(t){return this.$g(t,"$H",r)},d.minute=function(t){return this.$g(t,"$m",n)},d.second=function(t){return this.$g(t,"$s",e)},d.millisecond=function(e){return this.$g(e,"$ms",t)},d.unix=function(){return Math.floor(this.valueOf()/1e3)},d.valueOf=function(){return this.$d.getTime()},d.startOf=function(t,o){var h=this,f=!!D.u(o)||o,c=D.p(t),d=function(t,e){var n=D.w(h.$u?Date.UTC(h.$y,e,t):new Date(h.$y,e,t),h);return f?n:n.endOf(i)},$=function(t,e){return D.w(h.toDate()[t].apply(h.toDate("s"),(f?[0,0,0,0]:[23,59,59,999]).slice(e)),h)},l=this.$W,m=this.$M,y=this.$D,M="set"+(this.$u?"UTC":"");switch(c){case a:return f?d(1,0):d(31,11);case u:return f?d(1,m):d(0,m+1);case s:var g=this.$locale().weekStart||0,v=(l<g?l+7:l)-g;return d(f?y-v:y+(6-v),m);case i:case"date":return $(M+"Hours",0);case r:return $(M+"Minutes",1);case n:return $(M+"Seconds",2);case e:return $(M+"Milliseconds",3);default:return this.clone()}},d.endOf=function(t){return this.startOf(t,!1)},d.$set=function(s,o){var h,f=D.p(s),c="set"+(this.$u?"UTC":""),d=(h={},h[i]=c+"Date",h.date=c+"Date",h[u]=c+"Month",h[a]=c+"FullYear",h[r]=c+"Hours",h[n]=c+"Minutes",h[e]=c+"Seconds",h[t]=c+"Milliseconds",h)[f],$=f===i?this.$D+(o-this.$W):o;if(f===u||f===a){var l=this.clone().set("date",1);l.$d[d]($),l.init(),this.$d=l.set("date",Math.min(this.$D,l.daysInMonth())).toDate();}else d&&this.$d[d]($);return this.init(),this},d.set=function(t,e){return this.clone().$set(t,e)},d.get=function(t){return this[D.p(t)]()},d.add=function(t,o){var h,f=this;t=Number(t);var c=D.p(o),d=function(e){var n=g(f);return D.w(n.date(n.date()+Math.round(e*t)),f)};if(c===u)return this.set(u,this.$M+t);if(c===a)return this.set(a,this.$y+t);if(c===i)return d(1);if(c===s)return d(7);var $=(h={},h[n]=6e4,h[r]=36e5,h[e]=1e3,h)[c]||1,l=this.$d.getTime()+t*$;return D.w(l,this)},d.subtract=function(t,e){return this.add(-1*t,e)},d.format=function(t){var e=this;if(!this.isValid())return "Invalid Date";var n=t||"YYYY-MM-DDTHH:mm:ssZ",r=D.z(this),i=this.$locale(),s=this.$H,u=this.$m,o=this.$M,a=i.weekdays,h=i.months,c=function(t,r,i,s){return t&&(t[r]||t(e,n))||i[r].substr(0,s)},d=function(t){return D.s(s%12||12,t,"0")},$=i.meridiem||function(t,e,n){var r=t<12?"AM":"PM";return n?r.toLowerCase():r},l={YY:String(this.$y).slice(-2),YYYY:this.$y,M:o+1,MM:D.s(o+1,2,"0"),MMM:c(i.monthsShort,o,h,3),MMMM:c(h,o),D:this.$D,DD:D.s(this.$D,2,"0"),d:String(this.$W),dd:c(i.weekdaysMin,this.$W,a,2),ddd:c(i.weekdaysShort,this.$W,a,3),dddd:a[this.$W],H:String(s),HH:D.s(s,2,"0"),h:d(1),hh:d(2),a:$(s,u,!0),A:$(s,u,!1),m:String(u),mm:D.s(u,2,"0"),s:String(this.$s),ss:D.s(this.$s,2,"0"),SSS:D.s(this.$ms,3,"0"),Z:r};return n.replace(f,function(t,e){return e||l[t]||r.replace(":","")})},d.utcOffset=function(){return 15*-Math.round(this.$d.getTimezoneOffset()/15)},d.diff=function(t,h,f){var c,d=D.p(h),$=g(t),l=6e4*($.utcOffset()-this.utcOffset()),m=this-$,y=D.m(this,$);return y=(c={},c[a]=y/12,c[u]=y,c[o]=y/3,c[s]=(m-l)/6048e5,c[i]=(m-l)/864e5,c[r]=m/36e5,c[n]=m/6e4,c[e]=m/1e3,c)[d]||m,f?y:D.a(y)},d.daysInMonth=function(){return this.endOf(u).$D},d.$locale=function(){return m[this.$L]},d.locale=function(t,e){if(!t)return this.$L;var n=this.clone(),r=M(t,e,!0);return r&&(n.$L=r),n},d.clone=function(){return D.w(this.$d,this)},d.toDate=function(){return new Date(this.valueOf())},d.toJSON=function(){return this.isValid()?this.toISOString():null},d.toISOString=function(){return this.$d.toISOString()},d.toString=function(){return this.$d.toUTCString()},c}();return g.prototype=v.prototype,g.extend=function(t,e){return t(e,v,g),g},g.locale=M,g.isDayjs=y,g.unix=function(t){return g(1e3*t)},g.en=m[l],g.Ls=m,g});
+	});
+
+	/** Built-in value references. */
+	var objectCreate = Object.create;
+
+	/**
+	 * The base implementation of `_.create` without support for assigning
+	 * properties to the created object.
+	 *
+	 * @private
+	 * @param {Object} proto The object to inherit from.
+	 * @returns {Object} Returns the new object.
+	 */
+	var baseCreate = (function() {
+	  function object() {}
+	  return function(proto) {
+	    if (!isObject_1(proto)) {
+	      return {};
+	    }
+	    if (objectCreate) {
+	      return objectCreate(proto);
+	    }
+	    object.prototype = proto;
+	    var result = new object;
+	    object.prototype = undefined;
+	    return result;
+	  };
+	}());
+
+	var _baseCreate = baseCreate;
+
+	/**
+	 * The function whose prototype chain sequence wrappers inherit from.
+	 *
+	 * @private
+	 */
+	function baseLodash() {
+	  // No operation performed.
+	}
+
+	var _baseLodash = baseLodash;
+
+	/**
+	 * The base constructor for creating `lodash` wrapper objects.
+	 *
+	 * @private
+	 * @param {*} value The value to wrap.
+	 * @param {boolean} [chainAll] Enable explicit method chain sequences.
+	 */
+	function LodashWrapper(value, chainAll) {
+	  this.__wrapped__ = value;
+	  this.__actions__ = [];
+	  this.__chain__ = !!chainAll;
+	  this.__index__ = 0;
+	  this.__values__ = undefined;
+	}
+
+	LodashWrapper.prototype = _baseCreate(_baseLodash.prototype);
+	LodashWrapper.prototype.constructor = LodashWrapper;
+
+	var _LodashWrapper = LodashWrapper;
+
+	/**
+	 * Appends the elements of `values` to `array`.
+	 *
+	 * @private
+	 * @param {Array} array The array to modify.
+	 * @param {Array} values The values to append.
+	 * @returns {Array} Returns `array`.
+	 */
+	function arrayPush(array, values) {
+	  var index = -1,
+	      length = values.length,
+	      offset = array.length;
+
+	  while (++index < length) {
+	    array[offset + index] = values[index];
+	  }
+	  return array;
+	}
+
+	var _arrayPush = arrayPush;
+
+	/** Built-in value references. */
+	var spreadableSymbol = _Symbol ? _Symbol.isConcatSpreadable : undefined;
+
+	/**
+	 * Checks if `value` is a flattenable `arguments` object or array.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
+	 */
+	function isFlattenable(value) {
+	  return isArray_1(value) || isArguments_1(value) ||
+	    !!(spreadableSymbol && value && value[spreadableSymbol]);
+	}
+
+	var _isFlattenable = isFlattenable;
+
+	/**
+	 * The base implementation of `_.flatten` with support for restricting flattening.
+	 *
+	 * @private
+	 * @param {Array} array The array to flatten.
+	 * @param {number} depth The maximum recursion depth.
+	 * @param {boolean} [predicate=isFlattenable] The function invoked per iteration.
+	 * @param {boolean} [isStrict] Restrict to values that pass `predicate` checks.
+	 * @param {Array} [result=[]] The initial result value.
+	 * @returns {Array} Returns the new flattened array.
+	 */
+	function baseFlatten(array, depth, predicate, isStrict, result) {
+	  var index = -1,
+	      length = array.length;
+
+	  predicate || (predicate = _isFlattenable);
+	  result || (result = []);
+
+	  while (++index < length) {
+	    var value = array[index];
+	    if (depth > 0 && predicate(value)) {
+	      if (depth > 1) {
+	        // Recursively flatten arrays (susceptible to call stack limits).
+	        baseFlatten(value, depth - 1, predicate, isStrict, result);
+	      } else {
+	        _arrayPush(result, value);
+	      }
+	    } else if (!isStrict) {
+	      result[result.length] = value;
+	    }
+	  }
+	  return result;
+	}
+
+	var _baseFlatten = baseFlatten;
+
+	/**
+	 * Flattens `array` a single level deep.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 0.1.0
+	 * @category Array
+	 * @param {Array} array The array to flatten.
+	 * @returns {Array} Returns the new flattened array.
+	 * @example
+	 *
+	 * _.flatten([1, [2, [3, [4]], 5]]);
+	 * // => [1, 2, [3, [4]], 5]
+	 */
+	function flatten(array) {
+	  var length = array == null ? 0 : array.length;
+	  return length ? _baseFlatten(array, 1) : [];
+	}
+
+	var flatten_1 = flatten;
+
+	/**
+	 * A faster alternative to `Function#apply`, this function invokes `func`
+	 * with the `this` binding of `thisArg` and the arguments of `args`.
+	 *
+	 * @private
+	 * @param {Function} func The function to invoke.
+	 * @param {*} thisArg The `this` binding of `func`.
+	 * @param {Array} args The arguments to invoke `func` with.
+	 * @returns {*} Returns the result of `func`.
+	 */
+	function apply(func, thisArg, args) {
+	  switch (args.length) {
+	    case 0: return func.call(thisArg);
+	    case 1: return func.call(thisArg, args[0]);
+	    case 2: return func.call(thisArg, args[0], args[1]);
+	    case 3: return func.call(thisArg, args[0], args[1], args[2]);
+	  }
+	  return func.apply(thisArg, args);
+	}
+
+	var _apply = apply;
+
+	/* Built-in method references for those with the same name as other `lodash` methods. */
+	var nativeMax$2 = Math.max;
+
+	/**
+	 * A specialized version of `baseRest` which transforms the rest array.
+	 *
+	 * @private
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @param {number} [start=func.length-1] The start position of the rest parameter.
+	 * @param {Function} transform The rest array transform.
+	 * @returns {Function} Returns the new function.
+	 */
+	function overRest(func, start, transform) {
+	  start = nativeMax$2(start === undefined ? (func.length - 1) : start, 0);
+	  return function() {
+	    var args = arguments,
+	        index = -1,
+	        length = nativeMax$2(args.length - start, 0),
+	        array = Array(length);
+
+	    while (++index < length) {
+	      array[index] = args[start + index];
+	    }
+	    index = -1;
+	    var otherArgs = Array(start + 1);
+	    while (++index < start) {
+	      otherArgs[index] = args[index];
+	    }
+	    otherArgs[start] = transform(array);
+	    return _apply(func, this, otherArgs);
+	  };
+	}
+
+	var _overRest = overRest;
+
+	/**
+	 * Creates a function that returns `value`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 2.4.0
+	 * @category Util
+	 * @param {*} value The value to return from the new function.
+	 * @returns {Function} Returns the new constant function.
+	 * @example
+	 *
+	 * var objects = _.times(2, _.constant({ 'a': 1 }));
+	 *
+	 * console.log(objects);
+	 * // => [{ 'a': 1 }, { 'a': 1 }]
+	 *
+	 * console.log(objects[0] === objects[1]);
+	 * // => true
+	 */
+	function constant(value) {
+	  return function() {
+	    return value;
+	  };
+	}
+
+	var constant_1 = constant;
+
+	var defineProperty = (function() {
+	  try {
+	    var func = _getNative(Object, 'defineProperty');
+	    func({}, '', {});
+	    return func;
+	  } catch (e) {}
+	}());
+
+	var _defineProperty$2 = defineProperty;
+
+	/**
+	 * This method returns the first argument it receives.
+	 *
+	 * @static
+	 * @since 0.1.0
+	 * @memberOf _
+	 * @category Util
+	 * @param {*} value Any value.
+	 * @returns {*} Returns `value`.
+	 * @example
+	 *
+	 * var object = { 'a': 1 };
+	 *
+	 * console.log(_.identity(object) === object);
+	 * // => true
+	 */
+	function identity(value) {
+	  return value;
+	}
+
+	var identity_1 = identity;
+
+	/**
+	 * The base implementation of `setToString` without support for hot loop shorting.
+	 *
+	 * @private
+	 * @param {Function} func The function to modify.
+	 * @param {Function} string The `toString` result.
+	 * @returns {Function} Returns `func`.
+	 */
+	var baseSetToString = !_defineProperty$2 ? identity_1 : function(func, string) {
+	  return _defineProperty$2(func, 'toString', {
+	    'configurable': true,
+	    'enumerable': false,
+	    'value': constant_1(string),
+	    'writable': true
+	  });
+	};
+
+	var _baseSetToString = baseSetToString;
+
+	/** Used to detect hot functions by number of calls within a span of milliseconds. */
+	var HOT_COUNT = 800,
+	    HOT_SPAN = 16;
+
+	/* Built-in method references for those with the same name as other `lodash` methods. */
+	var nativeNow = Date.now;
+
+	/**
+	 * Creates a function that'll short out and invoke `identity` instead
+	 * of `func` when it's called `HOT_COUNT` or more times in `HOT_SPAN`
+	 * milliseconds.
+	 *
+	 * @private
+	 * @param {Function} func The function to restrict.
+	 * @returns {Function} Returns the new shortable function.
+	 */
+	function shortOut(func) {
+	  var count = 0,
+	      lastCalled = 0;
+
+	  return function() {
+	    var stamp = nativeNow(),
+	        remaining = HOT_SPAN - (stamp - lastCalled);
+
+	    lastCalled = stamp;
+	    if (remaining > 0) {
+	      if (++count >= HOT_COUNT) {
+	        return arguments[0];
+	      }
+	    } else {
+	      count = 0;
+	    }
+	    return func.apply(undefined, arguments);
+	  };
+	}
+
+	var _shortOut = shortOut;
+
+	/**
+	 * Sets the `toString` method of `func` to return `string`.
+	 *
+	 * @private
+	 * @param {Function} func The function to modify.
+	 * @param {Function} string The `toString` result.
+	 * @returns {Function} Returns `func`.
+	 */
+	var setToString = _shortOut(_baseSetToString);
+
+	var _setToString = setToString;
+
+	/**
+	 * A specialized version of `baseRest` which flattens the rest array.
+	 *
+	 * @private
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @returns {Function} Returns the new function.
+	 */
+	function flatRest(func) {
+	  return _setToString(_overRest(func, undefined, flatten_1), func + '');
+	}
+
+	var _flatRest = flatRest;
+
+	/** Used to store function metadata. */
+	var metaMap = _WeakMap && new _WeakMap;
+
+	var _metaMap = metaMap;
+
+	/**
+	 * This method returns `undefined`.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 2.3.0
+	 * @category Util
+	 * @example
+	 *
+	 * _.times(2, _.noop);
+	 * // => [undefined, undefined]
+	 */
+	function noop() {
+	  // No operation performed.
+	}
+
+	var noop_1 = noop;
+
+	/**
+	 * Gets metadata for `func`.
+	 *
+	 * @private
+	 * @param {Function} func The function to query.
+	 * @returns {*} Returns the metadata for `func`.
+	 */
+	var getData = !_metaMap ? noop_1 : function(func) {
+	  return _metaMap.get(func);
+	};
+
+	var _getData = getData;
+
+	/** Used to lookup unminified function names. */
+	var realNames = {};
+
+	var _realNames = realNames;
+
+	/** Used for built-in method references. */
+	var objectProto$7 = Object.prototype;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty$5 = objectProto$7.hasOwnProperty;
+
+	/**
+	 * Gets the name of `func`.
+	 *
+	 * @private
+	 * @param {Function} func The function to query.
+	 * @returns {string} Returns the function name.
+	 */
+	function getFuncName(func) {
+	  var result = (func.name + ''),
+	      array = _realNames[result],
+	      length = hasOwnProperty$5.call(_realNames, result) ? array.length : 0;
+
+	  while (length--) {
+	    var data = array[length],
+	        otherFunc = data.func;
+	    if (otherFunc == null || otherFunc == func) {
+	      return data.name;
+	    }
+	  }
+	  return result;
+	}
+
+	var _getFuncName = getFuncName;
+
+	/** Used as references for the maximum length and index of an array. */
+	var MAX_ARRAY_LENGTH = 4294967295;
+
+	/**
+	 * Creates a lazy wrapper object which wraps `value` to enable lazy evaluation.
+	 *
+	 * @private
+	 * @constructor
+	 * @param {*} value The value to wrap.
+	 */
+	function LazyWrapper(value) {
+	  this.__wrapped__ = value;
+	  this.__actions__ = [];
+	  this.__dir__ = 1;
+	  this.__filtered__ = false;
+	  this.__iteratees__ = [];
+	  this.__takeCount__ = MAX_ARRAY_LENGTH;
+	  this.__views__ = [];
+	}
+
+	// Ensure `LazyWrapper` is an instance of `baseLodash`.
+	LazyWrapper.prototype = _baseCreate(_baseLodash.prototype);
+	LazyWrapper.prototype.constructor = LazyWrapper;
+
+	var _LazyWrapper = LazyWrapper;
+
+	/**
+	 * Copies the values of `source` to `array`.
+	 *
+	 * @private
+	 * @param {Array} source The array to copy values from.
+	 * @param {Array} [array=[]] The array to copy values to.
+	 * @returns {Array} Returns `array`.
+	 */
+	function copyArray(source, array) {
+	  var index = -1,
+	      length = source.length;
+
+	  array || (array = Array(length));
+	  while (++index < length) {
+	    array[index] = source[index];
+	  }
+	  return array;
+	}
+
+	var _copyArray = copyArray;
+
+	/**
+	 * Creates a clone of `wrapper`.
+	 *
+	 * @private
+	 * @param {Object} wrapper The wrapper to clone.
+	 * @returns {Object} Returns the cloned wrapper.
+	 */
+	function wrapperClone(wrapper) {
+	  if (wrapper instanceof _LazyWrapper) {
+	    return wrapper.clone();
+	  }
+	  var result = new _LodashWrapper(wrapper.__wrapped__, wrapper.__chain__);
+	  result.__actions__ = _copyArray(wrapper.__actions__);
+	  result.__index__  = wrapper.__index__;
+	  result.__values__ = wrapper.__values__;
+	  return result;
+	}
+
+	var _wrapperClone = wrapperClone;
+
+	/** Used for built-in method references. */
+	var objectProto$8 = Object.prototype;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty$6 = objectProto$8.hasOwnProperty;
+
+	/**
+	 * Creates a `lodash` object which wraps `value` to enable implicit method
+	 * chain sequences. Methods that operate on and return arrays, collections,
+	 * and functions can be chained together. Methods that retrieve a single value
+	 * or may return a primitive value will automatically end the chain sequence
+	 * and return the unwrapped value. Otherwise, the value must be unwrapped
+	 * with `_#value`.
+	 *
+	 * Explicit chain sequences, which must be unwrapped with `_#value`, may be
+	 * enabled using `_.chain`.
+	 *
+	 * The execution of chained methods is lazy, that is, it's deferred until
+	 * `_#value` is implicitly or explicitly called.
+	 *
+	 * Lazy evaluation allows several methods to support shortcut fusion.
+	 * Shortcut fusion is an optimization to merge iteratee calls; this avoids
+	 * the creation of intermediate arrays and can greatly reduce the number of
+	 * iteratee executions. Sections of a chain sequence qualify for shortcut
+	 * fusion if the section is applied to an array and iteratees accept only
+	 * one argument. The heuristic for whether a section qualifies for shortcut
+	 * fusion is subject to change.
+	 *
+	 * Chaining is supported in custom builds as long as the `_#value` method is
+	 * directly or indirectly included in the build.
+	 *
+	 * In addition to lodash methods, wrappers have `Array` and `String` methods.
+	 *
+	 * The wrapper `Array` methods are:
+	 * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
+	 *
+	 * The wrapper `String` methods are:
+	 * `replace` and `split`
+	 *
+	 * The wrapper methods that support shortcut fusion are:
+	 * `at`, `compact`, `drop`, `dropRight`, `dropWhile`, `filter`, `find`,
+	 * `findLast`, `head`, `initial`, `last`, `map`, `reject`, `reverse`, `slice`,
+	 * `tail`, `take`, `takeRight`, `takeRightWhile`, `takeWhile`, and `toArray`
+	 *
+	 * The chainable wrapper methods are:
+	 * `after`, `ary`, `assign`, `assignIn`, `assignInWith`, `assignWith`, `at`,
+	 * `before`, `bind`, `bindAll`, `bindKey`, `castArray`, `chain`, `chunk`,
+	 * `commit`, `compact`, `concat`, `conforms`, `constant`, `countBy`, `create`,
+	 * `curry`, `debounce`, `defaults`, `defaultsDeep`, `defer`, `delay`,
+	 * `difference`, `differenceBy`, `differenceWith`, `drop`, `dropRight`,
+	 * `dropRightWhile`, `dropWhile`, `extend`, `extendWith`, `fill`, `filter`,
+	 * `flatMap`, `flatMapDeep`, `flatMapDepth`, `flatten`, `flattenDeep`,
+	 * `flattenDepth`, `flip`, `flow`, `flowRight`, `fromPairs`, `functions`,
+	 * `functionsIn`, `groupBy`, `initial`, `intersection`, `intersectionBy`,
+	 * `intersectionWith`, `invert`, `invertBy`, `invokeMap`, `iteratee`, `keyBy`,
+	 * `keys`, `keysIn`, `map`, `mapKeys`, `mapValues`, `matches`, `matchesProperty`,
+	 * `memoize`, `merge`, `mergeWith`, `method`, `methodOf`, `mixin`, `negate`,
+	 * `nthArg`, `omit`, `omitBy`, `once`, `orderBy`, `over`, `overArgs`,
+	 * `overEvery`, `overSome`, `partial`, `partialRight`, `partition`, `pick`,
+	 * `pickBy`, `plant`, `property`, `propertyOf`, `pull`, `pullAll`, `pullAllBy`,
+	 * `pullAllWith`, `pullAt`, `push`, `range`, `rangeRight`, `rearg`, `reject`,
+	 * `remove`, `rest`, `reverse`, `sampleSize`, `set`, `setWith`, `shuffle`,
+	 * `slice`, `sort`, `sortBy`, `splice`, `spread`, `tail`, `take`, `takeRight`,
+	 * `takeRightWhile`, `takeWhile`, `tap`, `throttle`, `thru`, `toArray`,
+	 * `toPairs`, `toPairsIn`, `toPath`, `toPlainObject`, `transform`, `unary`,
+	 * `union`, `unionBy`, `unionWith`, `uniq`, `uniqBy`, `uniqWith`, `unset`,
+	 * `unshift`, `unzip`, `unzipWith`, `update`, `updateWith`, `values`,
+	 * `valuesIn`, `without`, `wrap`, `xor`, `xorBy`, `xorWith`, `zip`,
+	 * `zipObject`, `zipObjectDeep`, and `zipWith`
+	 *
+	 * The wrapper methods that are **not** chainable by default are:
+	 * `add`, `attempt`, `camelCase`, `capitalize`, `ceil`, `clamp`, `clone`,
+	 * `cloneDeep`, `cloneDeepWith`, `cloneWith`, `conformsTo`, `deburr`,
+	 * `defaultTo`, `divide`, `each`, `eachRight`, `endsWith`, `eq`, `escape`,
+	 * `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`, `findLast`,
+	 * `findLastIndex`, `findLastKey`, `first`, `floor`, `forEach`, `forEachRight`,
+	 * `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `get`, `gt`, `gte`, `has`,
+	 * `hasIn`, `head`, `identity`, `includes`, `indexOf`, `inRange`, `invoke`,
+	 * `isArguments`, `isArray`, `isArrayBuffer`, `isArrayLike`, `isArrayLikeObject`,
+	 * `isBoolean`, `isBuffer`, `isDate`, `isElement`, `isEmpty`, `isEqual`,
+	 * `isEqualWith`, `isError`, `isFinite`, `isFunction`, `isInteger`, `isLength`,
+	 * `isMap`, `isMatch`, `isMatchWith`, `isNaN`, `isNative`, `isNil`, `isNull`,
+	 * `isNumber`, `isObject`, `isObjectLike`, `isPlainObject`, `isRegExp`,
+	 * `isSafeInteger`, `isSet`, `isString`, `isUndefined`, `isTypedArray`,
+	 * `isWeakMap`, `isWeakSet`, `join`, `kebabCase`, `last`, `lastIndexOf`,
+	 * `lowerCase`, `lowerFirst`, `lt`, `lte`, `max`, `maxBy`, `mean`, `meanBy`,
+	 * `min`, `minBy`, `multiply`, `noConflict`, `noop`, `now`, `nth`, `pad`,
+	 * `padEnd`, `padStart`, `parseInt`, `pop`, `random`, `reduce`, `reduceRight`,
+	 * `repeat`, `result`, `round`, `runInContext`, `sample`, `shift`, `size`,
+	 * `snakeCase`, `some`, `sortedIndex`, `sortedIndexBy`, `sortedLastIndex`,
+	 * `sortedLastIndexBy`, `startCase`, `startsWith`, `stubArray`, `stubFalse`,
+	 * `stubObject`, `stubString`, `stubTrue`, `subtract`, `sum`, `sumBy`,
+	 * `template`, `times`, `toFinite`, `toInteger`, `toJSON`, `toLength`,
+	 * `toLower`, `toNumber`, `toSafeInteger`, `toString`, `toUpper`, `trim`,
+	 * `trimEnd`, `trimStart`, `truncate`, `unescape`, `uniqueId`, `upperCase`,
+	 * `upperFirst`, `value`, and `words`
+	 *
+	 * @name _
+	 * @constructor
+	 * @category Seq
+	 * @param {*} value The value to wrap in a `lodash` instance.
+	 * @returns {Object} Returns the new `lodash` wrapper instance.
+	 * @example
+	 *
+	 * function square(n) {
+	 *   return n * n;
+	 * }
+	 *
+	 * var wrapped = _([1, 2, 3]);
+	 *
+	 * // Returns an unwrapped value.
+	 * wrapped.reduce(_.add);
+	 * // => 6
+	 *
+	 * // Returns a wrapped value.
+	 * var squares = wrapped.map(square);
+	 *
+	 * _.isArray(squares);
+	 * // => false
+	 *
+	 * _.isArray(squares.value());
+	 * // => true
+	 */
+	function lodash(value) {
+	  if (isObjectLike_1(value) && !isArray_1(value) && !(value instanceof _LazyWrapper)) {
+	    if (value instanceof _LodashWrapper) {
+	      return value;
+	    }
+	    if (hasOwnProperty$6.call(value, '__wrapped__')) {
+	      return _wrapperClone(value);
+	    }
+	  }
+	  return new _LodashWrapper(value);
+	}
+
+	// Ensure wrappers are instances of `baseLodash`.
+	lodash.prototype = _baseLodash.prototype;
+	lodash.prototype.constructor = lodash;
+
+	var wrapperLodash = lodash;
+
+	/**
+	 * Checks if `func` has a lazy counterpart.
+	 *
+	 * @private
+	 * @param {Function} func The function to check.
+	 * @returns {boolean} Returns `true` if `func` has a lazy counterpart,
+	 *  else `false`.
+	 */
+	function isLaziable(func) {
+	  var funcName = _getFuncName(func),
+	      other = wrapperLodash[funcName];
+
+	  if (typeof other != 'function' || !(funcName in _LazyWrapper.prototype)) {
+	    return false;
+	  }
+	  if (func === other) {
+	    return true;
+	  }
+	  var data = _getData(other);
+	  return !!data && func === data[0];
+	}
+
+	var _isLaziable = isLaziable;
+
+	/** Error message constants. */
+	var FUNC_ERROR_TEXT = 'Expected a function';
+
+	/** Used to compose bitmasks for function metadata. */
+	var WRAP_CURRY_FLAG = 8,
+	    WRAP_PARTIAL_FLAG = 32,
+	    WRAP_ARY_FLAG = 128,
+	    WRAP_REARG_FLAG = 256;
+
+	/**
+	 * Creates a `_.flow` or `_.flowRight` function.
+	 *
+	 * @private
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {Function} Returns the new flow function.
+	 */
+	function createFlow(fromRight) {
+	  return _flatRest(function(funcs) {
+	    var length = funcs.length,
+	        index = length,
+	        prereq = _LodashWrapper.prototype.thru;
+
+	    if (fromRight) {
+	      funcs.reverse();
+	    }
+	    while (index--) {
+	      var func = funcs[index];
+	      if (typeof func != 'function') {
+	        throw new TypeError(FUNC_ERROR_TEXT);
+	      }
+	      if (prereq && !wrapper && _getFuncName(func) == 'wrapper') {
+	        var wrapper = new _LodashWrapper([], true);
+	      }
+	    }
+	    index = wrapper ? index : length;
+	    while (++index < length) {
+	      func = funcs[index];
+
+	      var funcName = _getFuncName(func),
+	          data = funcName == 'wrapper' ? _getData(func) : undefined;
+
+	      if (data && _isLaziable(data[0]) &&
+	            data[1] == (WRAP_ARY_FLAG | WRAP_CURRY_FLAG | WRAP_PARTIAL_FLAG | WRAP_REARG_FLAG) &&
+	            !data[4].length && data[9] == 1
+	          ) {
+	        wrapper = wrapper[_getFuncName(data[0])].apply(wrapper, data[3]);
+	      } else {
+	        wrapper = (func.length == 1 && _isLaziable(func))
+	          ? wrapper[funcName]()
+	          : wrapper.thru(func);
+	      }
+	    }
+	    return function() {
+	      var args = arguments,
+	          value = args[0];
+
+	      if (wrapper && args.length == 1 && isArray_1(value)) {
+	        return wrapper.plant(value).value();
+	      }
+	      var index = 0,
+	          result = length ? funcs[index].apply(this, args) : value;
+
+	      while (++index < length) {
+	        result = funcs[index].call(this, result);
+	      }
+	      return result;
+	    };
+	  });
+	}
+
+	var _createFlow = createFlow;
+
+	/**
+	 * Creates a function that returns the result of invoking the given functions
+	 * with the `this` binding of the created function, where each successive
+	 * invocation is supplied the return value of the previous.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 3.0.0
+	 * @category Util
+	 * @param {...(Function|Function[])} [funcs] The functions to invoke.
+	 * @returns {Function} Returns the new composite function.
+	 * @see _.flowRight
+	 * @example
+	 *
+	 * function square(n) {
+	 *   return n * n;
+	 * }
+	 *
+	 * var addSquare = _.flow([_.add, square]);
+	 * addSquare(1, 2);
+	 * // => 9
+	 */
+	var flow = _createFlow();
+
+	var flow_1 = flow;
+
+	var TYPE_PRE_MONTH = -1;
+	var TYPE_NOW_MONTH = 0;
+	var TYPE_NEXT_MONTH = 1;
+
+	function handleActive(args, item) {
+	    var selectedDate = args.selectedDate;
+	    var _value = item._value;
+	    var start = selectedDate.start, end = selectedDate.end;
+	    var dayjsEnd = dayjs_min(end);
+	    var dayjsStart = start ? dayjs_min(start) : dayjsEnd;
+	    item.isSelected =
+	        _value.isSame(dayjsEnd) ||
+	            _value.isSame(dayjsStart) ||
+	            (_value.isAfter(dayjsStart) && _value.isBefore(dayjsEnd));
+	    item.isSelectedHead = _value.isSame(dayjsStart);
+	    item.isSelectedTail = _value.isSame(dayjsEnd);
+	    item.isToday = _value.diff(dayjs_min(Date.now()).startOf('day'), 'day') === 0;
+	    return item;
+	}
+	function handleMarks(args, item) {
+	    var options = args.options;
+	    var _value = item._value;
+	    var marks = options.marks;
+	    var markList = marks.filter(function (mark) {
+	        return dayjs_min(mark.value)
+	            .startOf('day')
+	            .isSame(_value);
+	    });
+	    item.marks = markList.slice(0, 1);
+	    return item;
+	}
+	// export function handleSelectedDates (args: PluginArg): Calendar.Item {
+	// const { item, options } = args
+	// const { _value } = item
+	// const { selectedDates } = options
+	// if (selectedDates.length === 0) return args
+	// _forEach(selectedDates, date => {
+	//   const { isSelected, isHead, isTail } = item
+	//   // 如果当前 Item 已经具备了 三种状态下 无需继续判断 跳出循环
+	//   if (isSelected) {
+	//     return false
+	//   }
+	//   const { start, end } = date
+	//   const dayjsEnd = dayjs(end).startOf('day')
+	//   const dayjsStart = dayjs(start).startOf('day')
+	//   item.isSelected =
+	//     item.isSelected ||
+	//     (_value.isAfter(dayjsStart) && _value.isBefore(dayjsEnd))
+	//   item.isHead = item.isHead || _value.isSame(dayjsStart)
+	//   item.isTail = item.isTail || _value.isSame(dayjsEnd)
+	// })
+	//   return item
+	// }
+	function handleDisabled(args, item) {
+	    var options = args.options;
+	    var _value = item._value;
+	    var minDate = options.minDate, maxDate = options.maxDate;
+	    var dayjsMinDate = dayjs_min(minDate);
+	    var dayjsMaxDate = dayjs_min(maxDate);
+	    item.isDisabled =
+	        !!(minDate && _value.isBefore(dayjsMinDate)) ||
+	            !!(maxDate && _value.isAfter(dayjsMaxDate));
+	    return item;
+	}
+	function handleValid(args, item) {
+	    var options = args.options;
+	    var _value = item._value;
+	    var validDates = options.validDates;
+	    if (!isEmpty_1(validDates)) {
+	        var isInclude = validDates.some(function (date) {
+	            return dayjs_min(date.value)
+	                .startOf('day')
+	                .isSame(_value);
+	        });
+	        item.isDisabled = !isInclude;
+	    }
+	    delete item._value;
+	    return item;
+	}
+	var plugins = [handleActive, handleMarks, handleDisabled, handleValid];
+
+	var TOTAL = 7 * 6;
+	function getFullItem(item, options, selectedDate, isShowStatus) {
+	    if (!isShowStatus)
+	        return item;
+	    var bindedPlugins = plugins.map(function (fn) {
+	        return fn.bind(null, {
+	            options: options,
+	            selectedDate: selectedDate
+	        });
+	    });
+	    return flow_1(bindedPlugins)(item);
+	}
+	function generateCalendarGroup(options) {
+	    return function (generateDate, selectedDate, isShowStatus) {
+	        var date = dayjs_min(generateDate);
+	        var format = options.format;
+	        // 获取生成日期的第一天 和 最后一天
+	        var firstDate = date.startOf('month');
+	        var lastDate = date.endOf('month');
+	        var preMonthDate = date.subtract(1, 'month');
+	        var list = [];
+	        var nowMonthDays = date.daysInMonth(); // 获取这个月有多少天
+	        var preMonthLastDay = preMonthDate.endOf('month').day(); // 获取上个月最后一天是周几
+	        // 生成上个月的日期
+	        for (var i_1 = 1; i_1 <= preMonthLastDay + 1; i_1++) {
+	            var thisDate = firstDate.subtract(i_1, 'day').startOf('day');
+	            var item = {
+	                marks: [],
+	                _value: thisDate,
+	                text: thisDate.date(),
+	                type: TYPE_PRE_MONTH,
+	                value: thisDate.format(format)
+	            };
+	            item = getFullItem(item, options, selectedDate, isShowStatus);
+	            list.push(item);
+	        }
+	        list.reverse();
+	        // 生成这个月的日期
+	        for (var i_2 = 0; i_2 < nowMonthDays; i_2++) {
+	            var thisDate = firstDate.add(i_2, 'day').startOf('day');
+	            var item = {
+	                marks: [],
+	                _value: thisDate,
+	                text: thisDate.date(),
+	                type: TYPE_NOW_MONTH,
+	                value: thisDate.format(format)
+	            };
+	            item = getFullItem(item, options, selectedDate, isShowStatus);
+	            list.push(item);
+	        }
+	        // 生成下个月的日期
+	        var i = 1;
+	        while (list.length < TOTAL) {
+	            var thisDate = lastDate.add(i++, 'day').startOf('day');
+	            var item = {
+	                marks: [],
+	                _value: thisDate,
+	                text: thisDate.date(),
+	                type: TYPE_NEXT_MONTH,
+	                value: thisDate.format(format)
+	            };
+	            item = getFullItem(item, options, selectedDate, isShowStatus);
+	            list.push(item);
+	        }
+	        return {
+	            list: list,
+	            value: generateDate
+	        };
+	    };
+	}
+
+	var _a;
+	var MAP = (_a = {},
+	    _a[TYPE_PRE_MONTH] = 'pre',
+	    _a[TYPE_NOW_MONTH] = 'now',
+	    _a[TYPE_NEXT_MONTH] = 'next',
+	    _a);
+	var AtCalendarList = Vue.extend({
+	    name: 'AtCalendarList',
+	    props: {
+	        list: {
+	            type: Array,
+	            default: function () {
+	                return [];
+	            },
+	        },
+	        onClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onLongClick: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	    },
+	    data: function () {
+	        return {
+	            options: { addGlobalClass: true },
+	        };
+	    },
+	    methods: {
+	        handleClick: function (item) {
+	            if (typeof this.onClick === 'function') {
+	                this.onClick(item);
+	            }
+	        },
+	        handleLongClick: function (item) {
+	            if (typeof this.onLongClick === 'function') {
+	                this.onLongClick(item);
+	            }
+	        },
+	    },
+	    render: function () {
+	        var _this = this;
+	        var list = this.list;
+	        if (!list || list.length === 0)
+	            return null;
+	        return (<view class="at-calendar__list flex">
+	        {list.map(function (item, index) { return (<view key={"list-item-" + item.value + "-" + index} onTap={_this.handleClick.bind(_this, item)} onLongPress={_this.handleLongClick.bind(_this, item)} class={_classnames_2_2_6_classnames('flex__item', "flex__item--" + MAP[item.type], {
+	            'flex__item--today': item.isToday,
+	            'flex__item--active': item.isActive,
+	            'flex__item--selected': item.isSelected,
+	            'flex__item--selected-head': item.isSelectedHead,
+	            'flex__item--selected-tail': item.isSelectedTail,
+	            'flex__item--blur': item.isDisabled ||
+	                item.type === TYPE_PRE_MONTH ||
+	                item.type === TYPE_NEXT_MONTH,
+	        })}>
+	            <view class="flex__item-container">
+	              <view class="container-text">{item.text}</view>
+	            </view>
+	            <view class="flex__item-extra extra">
+	              {item.marks && item.marks.length > 0 ? (<view class="extra-marks">
+	                  {item.marks.map(function (mark, key) { return (<text key={key} class="mark">
+	                      {mark}
+	                    </text>); })}
+	                </view>) : null}
+	            </view>
+	          </view>); })}
+	      </view>);
+	    },
+	});
+
+	var AtCalendarDayList = Vue.extend({
+	    name: 'AtCalendarDayList',
+	    data: function () {
+	        return {
+	            options: { addGlobalClass: true }
+	        };
+	    },
+	    render: function () {
+	        return (<view class='at-calendar__header header'>
+	        <view class='header__flex'>
+	          <view class='header__flex-item'>日</view>
+	          <view class='header__flex-item'>一</view>
+	          <view class='header__flex-item'>二</view>
+	          <view class='header__flex-item'>三</view>
+	          <view class='header__flex-item'>四</view>
+	          <view class='header__flex-item'>五</view>
+	          <view class='header__flex-item'>六</view>
+	        </view>
+	      </view>);
+	    }
+	});
+
+	var ANIMTE_DURATION = 300;
+	var AtCalendarBody = Vue.extend({
+	  name: 'AtCalendarBody',
+	  components: {
+	    AtCalendarDateList: AtCalendarList,
+	    AtCalendarDayList: AtCalendarDayList
+	  },
+	  mixins: [mixins],
+	  props: {
+	    marks: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    selectedDate: {
+	      type: Object,
+	      default: function _default() {
+	        return {
+	          end: Date.now(),
+	          start: Date.now()
+	        };
+	      }
+	    },
+	    selectedDates: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    format: {
+	      type: String,
+	      default: 'YYYY-MM-DD'
+	    },
+	    generateDate: {
+	      type: [Number, String],
+	      default: Date.now()
+	    },
+	    validDates: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    minDate: {
+	      type: [String, Number, Date],
+	      default: ''
+	    },
+	    maxDate: {
+	      type: [String, Number, Date],
+	      default: ''
+	    },
+	    isVertical: {
+	      type: Boolean,
+	      default: false
+	    },
+	    onDayClick: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    onLongClick: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    }
+	  },
+	  data: function data() {
+	    var validDates = this.validDates,
+	        marks = this.marks,
+	        format = this.format,
+	        minDate = this.minDate,
+	        maxDate = this.maxDate,
+	        selectedDates = this.selectedDates;
+	    this.generateFunc = generateCalendarGroup({
+	      validDates: validDates,
+	      format: format,
+	      minDate: minDate,
+	      maxDate: maxDate,
+	      marks: marks,
+	      selectedDates: selectedDates
+	    });
+	    return {
+	      changeCount: 0,
+	      currentSwiperIndex: 1,
+	      startX: 0,
+	      swipeStartPoint: 0,
+	      isPreMonth: false,
+	      maxWidth: 0,
+	      isTouching: false,
+	      options: {
+	        addGlobalClass: true
+	      },
+	      state: {
+	        listGroup: [],
+	        offsetSize: 0,
+	        isAnimate: false
+	      }
+	    };
+	  },
+	  computed: {
+	    nextProps: function nextProps() {
+	      var validDates = this.validDates,
+	          marks = this.marks,
+	          format = this.format,
+	          minDate = this.minDate,
+	          maxDate = this.maxDate,
+	          generateDate = this.generateDate,
+	          selectedDate = this.selectedDate,
+	          selectedDates = this.selectedDates;
+	      return {
+	        validDates: validDates,
+	        marks: marks,
+	        format: format,
+	        minDate: minDate,
+	        maxDate: maxDate,
+	        generateDate: generateDate,
+	        selectedDate: selectedDate,
+	        selectedDates: selectedDates
+	      };
+	    }
+	  },
+	  watch: {
+	    nextProps: function nextProps(val) {
+	      var validDates = val.validDates,
+	          marks = val.marks,
+	          format = val.format,
+	          minDate = val.minDate,
+	          maxDate = val.maxDate,
+	          generateDate = val.generateDate,
+	          selectedDate = val.selectedDate,
+	          selectedDates = val.selectedDates;
+	      this.generateFunc = generateCalendarGroup({
+	        validDates: validDates,
+	        format: format,
+	        minDate: minDate,
+	        maxDate: maxDate,
+	        marks: marks,
+	        selectedDates: selectedDates
+	      });
+	      var listGroup = this.getGroups(generateDate, selectedDate);
+	      this.setState({
+	        offsetSize: 0,
+	        listGroup: listGroup
+	      });
+	    }
+	  },
+	  created: function created() {
+	    var generateDate = this.generateDate,
+	        selectedDate = this.selectedDate;
+	    this.setState({
+	      listGroup: this.getGroups(generateDate, selectedDate)
+	    });
+	  },
+	  mounted: function mounted() {
+	    var _this = this;
+
+	    delayQuerySelector(this, '.at-calendar-slider__main').then(function (res) {
+	      _this.maxWidth = res[0].width;
+	    });
+	  },
+	  methods: {
+	    getRootCls: function getRootCls() {
+	      return _classnames_2_2_6_classnames('main', 'at-calendar-slider__main', "at-calendar-slider__main--".concat(process.env.TARO_ENV));
+	    },
+	    getGroups: function getGroups(generateDate, selectedDate) {
+	      var dayjsDate = dayjs_min(generateDate);
+	      var arr = [];
+	      var preList = this.generateFunc(dayjsDate.subtract(1, 'month').valueOf(), selectedDate);
+	      var nowList = this.generateFunc(generateDate, selectedDate, true);
+	      var nextList = this.generateFunc(dayjsDate.add(1, 'month').valueOf(), selectedDate);
+	      var preListIndex = this.currentSwiperIndex === 0 ? 2 : this.currentSwiperIndex - 1;
+	      var nextListIndex = this.currentSwiperIndex === 2 ? 0 : this.currentSwiperIndex + 1;
+	      arr[preListIndex] = preList;
+	      arr[nextListIndex] = nextList;
+	      arr[this.currentSwiperIndex] = nowList;
+	      return arr;
+	    },
+	    handleTouchStart: function handleTouchStart(e) {
+	      if (!this.isSwiper) {
+	        return;
+	      }
+
+	      this.isTouching = true;
+	      this.startX = e.touches[0].clientX;
+	    },
+	    handleTouchMove: function handleTouchMove(e) {
+	      if (!this.isSwiper) {
+	        return;
+	      }
+
+	      if (!this.isTouching) return;
+	      var clientX = e.touches[0].clientX;
+	      var offsetSize = clientX - this.startX;
+	      this.setState({
+	        offsetSize: offsetSize
+	      });
+	    },
+	    animateMoveSlide: function animateMoveSlide(offset, callback) {
+	      var _this2 = this;
+
+	      this.setState({
+	        isAnimate: true
+	      }, function () {
+	        _this2.setState({
+	          offsetSize: offset
+	        });
+
+	        setTimeout(function () {
+	          _this2.setState({
+	            isAnimate: false
+	          }, function () {
+	            callback && callback();
+	          });
+	        }, ANIMTE_DURATION);
+	      });
+	    },
+	    handleTouchEnd: function handleTouchEnd() {
+	      var _this3 = this;
+
+	      if (!this.isSwiper) {
+	        return;
+	      }
+
+	      var offsetSize = this.state.offsetSize;
+	      this.isTouching = false;
+	      var isRight = offsetSize > 0;
+	      var breakpoint = this.maxWidth / 2;
+	      var absOffsetSize = Math.abs(offsetSize);
+
+	      if (absOffsetSize > breakpoint) {
+	        var res = isRight ? this.maxWidth : -this.maxWidth;
+	        return this.animateMoveSlide(res, function () {
+	          _this3.atSwipeMonth(isRight ? -1 : 1);
+	        });
+	      }
+
+	      this.animateMoveSlide(0);
+	    },
+	    handleChange: function handleChange(e) {
+	      var _e$detail = e.detail,
+	          current = _e$detail.current,
+	          source = _e$detail.source;
+
+	      if (source === 'touch') {
+	        this.currentSwiperIndex = current;
+	        this.changeCount += 1;
+	      }
+	    },
+	    handleAnimateFinish: function handleAnimateFinish() {
+	      if (this.changeCount > 0) {
+	        this.atSwipeMonth(this.isPreMonth ? -this.changeCount : this.changeCount);
+	        this.changeCount = 0;
+	      }
+	    },
+	    handleSwipeTouchStart: function handleSwipeTouchStart(e) {
+	      var _e$changedTouches$ = e.changedTouches[0],
+	          clientY = _e$changedTouches$.clientY,
+	          clientX = _e$changedTouches$.clientX;
+	      this.swipeStartPoint = this.isVertical ? clientY : clientX;
+	    },
+	    handleSwipeTouchEnd: function handleSwipeTouchEnd(e) {
+	      var _e$changedTouches$2 = e.changedTouches[0],
+	          clientY = _e$changedTouches$2.clientY,
+	          clientX = _e$changedTouches$2.clientX;
+	      this.isPreMonth = this.isVertical ? clientY - this.swipeStartPoint > 0 : clientX - this.swipeStartPoint > 0;
+	    }
+	  },
+	  render: function render() {
+	    var _this4 = this;
+
+	    var h = arguments[0];
+	    var isSwiper = this.isSwiper;
+	    var listGroup = this.state.listGroup;
+
+	    if (!isSwiper) {
+	      return h("view", {
+	        "class": _classnames_2_2_6_classnames('main', 'at-calendar-slider__main', "at-calendar-slider__main--".concat(process.env.TARO_ENV))
+	      }, [h(AtCalendarDayList), h("view", {
+	        "class": "main__body body"
+	      }, [h("view", {
+	        "class": "body__slider body__slider--now"
+	      }, [h(AtCalendarList, helper([{
+	        "attrs": {
+	          "list": listGroup[1].list
+	        }
+	      }, {
+	        "props": {
+	          onClick: this.onDayClick,
+	          onLongClick: this.onLongClick
+	        }
+	      }]))])])]);
+	    }
+
+	    return h("view", {
+	      "class": _classnames_2_2_6_classnames('main', 'at-calendar-slider__main', "at-calendar-slider__main--".concat(process.env.TARO_ENV))
+	    }, [h(AtCalendarDayList), h("Swiper", helper([{
+	      "attrs": {
+	        "circular": true,
+	        "current": 1,
+	        "skipHiddenItemLayout": true,
+	        "vertical": this.isVertical
+	      },
+	      "class": _classnames_2_2_6_classnames('main__body')
+	    }, {
+	      "props": {
+	        onChange: this.handleChange,
+	        onAnimationFinish: this.handleAnimateFinish,
+	        onTouchEnd: this.handleSwipeTouchEnd,
+	        onTouchStart: this.handleSwipeTouchStart
+	      }
+	    }]), [listGroup.map(function (item, key) {
+	      return h("SwiperItem", {
+	        "key": item.value,
+	        "attrs": {
+	          "itemId": key.toString()
+	        }
+	      }, [h(AtCalendarList, helper([{
+	        "attrs": {
+	          "list": item.list
+	        }
+	      }, {
+	        "props": {
+	          onClick: _this4.onDayClick.bind(_this4),
+	          onLongClick: _this4.onLongClick
+	        }
+	      }]))]);
+	    })])]);
+	  }
+	});
+
+	var AtCalendarController = Vue.extend({
+	    name: 'AtCalendarController',
+	    props: {
+	        minDate: {
+	            type: [String, Number, Date],
+	            default: '',
+	        },
+	        maxDate: {
+	            type: [String, Number, Date],
+	            default: '',
+	        },
+	        onSelectDate: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onPreMonth: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        onNextMonth: {
+	            type: Function,
+	            default: function () {
+	                return function () { };
+	            },
+	        },
+	        monthFormat: {
+	            type: String,
+	            default: 'YYYY年MM月',
+	        },
+	        generateDate: {
+	            type: [Number, String],
+	            default: Date.now(),
+	        },
+	        hideArrow: {
+	            type: Boolean,
+	            default: false,
+	        },
+	    },
+	    render: function () {
+	        var _a = this, generateDate = _a.generateDate, minDate = _a.minDate, maxDate = _a.maxDate, monthFormat = _a.monthFormat, hideArrow = _a.hideArrow;
+	        var dayjsDate = dayjs_min(generateDate);
+	        var dayjsMinDate = !!minDate && dayjs_min(minDate);
+	        var dayjsMaxDate = !!maxDate && dayjs_min(maxDate);
+	        var isMinMonth = dayjsMinDate && dayjsMinDate.startOf('month').isSame(dayjsDate);
+	        var isMaxMonth = dayjsMaxDate && dayjsMaxDate.startOf('month').isSame(dayjsDate);
+	        var minDateValue = dayjsMinDate ? dayjsMinDate.format('YYYY-MM') : '';
+	        var maxDateValue = dayjsMaxDate ? dayjsMaxDate.format('YYYY-MM') : '';
+	        return (<view class="at-calendar__controller controller">
+	        {hideArrow ? null : (<view class={_classnames_2_2_6_classnames('controller__arrow controller__arrow--left', {
+	            'controller__arrow--disabled': isMinMonth,
+	        })} onTap={this.onPreMonth.bind(this, isMinMonth)}/>)}
+	        <picker mode="date" fields="month" end={maxDateValue} start={minDateValue} onChange={this.onSelectDate} value={dayjsDate.format('YYYY-MM')}>
+	          <text class="controller__info">{dayjsDate.format(monthFormat)}</text>
+	        </picker>
+	        {hideArrow ? null : (<view class={_classnames_2_2_6_classnames('controller__arrow controller__arrow--right', {
+	            'controller__arrow--disabled': isMaxMonth,
+	        })} onTap={this.onNextMonth.bind(this, isMaxMonth)}/>)}
+	      </view>);
+	    },
+	});
+
+	var AtCalendar = Vue.extend({
+	  name: 'AtCalendar',
+	  mixins: [mixins],
+	  props: {
+	    validDates: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    marks: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    selectedDates: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    isSwiper: {
+	      type: Boolean,
+	      default: true
+	    },
+	    hideArrow: {
+	      type: Boolean,
+	      default: false
+	    },
+	    isVertical: {
+	      type: Boolean,
+	      default: false
+	    },
+	    isMultiSelect: {
+	      type: Boolean,
+	      default: false
+	    },
+	    format: {
+	      type: String,
+	      default: 'YYYY-MM-DD'
+	    },
+	    currentDate: {
+	      type: Number,
+	      default: Date.now()
+	    },
+	    monthFormat: {
+	      type: String,
+	      default: 'YYYY年MM月'
+	    },
+	    onMonthChange: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    onClickPreMonth: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    onClickNextMonth: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    onDayClick: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    onSelectDate: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    onDayLongClick: {
+	      type: Function,
+	      default: function _default() {
+	        return function () {};
+	      }
+	    },
+	    minDate: {
+	      type: [String, Number, Date],
+	      default: function _default() {
+	        return '';
+	      }
+	    },
+	    maxDate: {
+	      type: [String, Number, Date],
+	      default: ''
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      state: {}
+	    };
+	  },
+	  computed: {
+	    nextProps: function nextProps() {
+	      var currentDate = this.currentDate,
+	          isMultiSelect = this.isMultiSelect;
+	      return {
+	        currentDate: currentDate,
+	        isMultiSelect: isMultiSelect
+	      };
+	    }
+	  },
+	  watch: {
+	    nextProps: function nextProps(val, oldVal) {
+	      var currentDate = val.currentDate,
+	          isMultiSelect = val.isMultiSelect;
+	      if (!currentDate || currentDate === oldVal.currentDate) return;
+
+	      if (isMultiSelect && oldVal.isMultiSelect) {
+	        var start = currentDate.start,
+	            end = currentDate.end;
+	        var _this$currentDate = this.currentDate,
+	            preStart = _this$currentDate.start,
+	            preEnd = _this$currentDate.end;
+
+	        if (start === preStart && preEnd === end) {
+	          return;
+	        }
+	      }
+
+	      var stateValue = this.getInitializeState(currentDate, isMultiSelect);
+	      this.setState(stateValue);
+	    }
+	  },
+	  created: function created() {
+	    var currentDate = this.currentDate,
+	        isMultiSelect = this.isMultiSelect;
+	    this.state = this.getInitializeState(currentDate, isMultiSelect);
+	  },
+	  methods: {
+	    getInitializeState: function getInitializeState(currentDate, isMultiSelect) {
+	      var end;
+	      var start;
+	      var generateDateValue;
+
+	      if (!currentDate) {
+	        var dayjsStart = dayjs_min();
+	        start = dayjsStart.startOf('day').valueOf();
+	        generateDateValue = dayjsStart.startOf('month').valueOf();
+	        return {
+	          generateDate: generateDateValue,
+	          selectedDate: {
+	            start: ''
+	          }
+	        };
+	      }
+
+	      if (isMultiSelect) {
+	        var cStart = currentDate.start,
+	            cEnd = currentDate.end;
+
+	        var _dayjsStart = dayjs_min(cStart);
+
+	        start = _dayjsStart.startOf('day').valueOf();
+	        generateDateValue = _dayjsStart.startOf('month').valueOf();
+	        end = cEnd ? dayjs_min(cEnd).startOf('day').valueOf() : start;
+	      } else {
+	        var _dayjsStart2 = dayjs_min(currentDate);
+
+	        start = _dayjsStart2.startOf('day').valueOf();
+	        generateDateValue = _dayjsStart2.startOf('month').valueOf();
+	        end = start;
+	      }
+
+	      return {
+	        generateDate: generateDateValue,
+	        selectedDate: this.getSelectedDate(start, end)
+	      };
+	    },
+	    getSingleSelectdState: function getSingleSelectdState(value) {
+	      var generateDate = this.state.generateDate;
+	      var stateValue = {
+	        selectedDate: this.getSelectedDate(value.valueOf())
+	      };
+	      var dayjsGenerateDate = value.startOf('month');
+	      var generateDateValue = dayjsGenerateDate.valueOf();
+
+	      if (generateDateValue !== generateDate) {
+	        this.triggerChangeDate(dayjsGenerateDate);
+	        stateValue.generateDate = generateDateValue;
+	      }
+
+	      return stateValue;
+	    },
+	    getMultiSelectedState: function getMultiSelectedState(value) {
+	      var selectedDate = this.state.selectedDate;
+	      var end = selectedDate.end,
+	          start = selectedDate.start;
+	      var valueUnix = value.valueOf();
+	      var state = {
+	        selectedDate: selectedDate
+	      };
+
+	      if (end) {
+	        state.selectedDate = this.getSelectedDate(valueUnix, 0);
+	      } else {
+	        state.selectedDate.end = Math.max(valueUnix, +start);
+	        state.selectedDate.start = Math.min(valueUnix, +start);
+	      }
+
+	      return state;
+	    },
+	    getSelectedDate: function getSelectedDate(start, end) {
+	      var stateValue = {
+	        start: start,
+	        end: start
+	      };
+
+	      if (typeof end !== 'undefined') {
+	        stateValue.end = end;
+	      }
+
+	      return stateValue;
+	    },
+	    triggerChangeDate: function triggerChangeDate(value) {
+	      var format = this.format;
+	      if (typeof this.onMonthChange !== 'function') return;
+	      this.onMonthChange(value.format(format));
+	    },
+	    setMonth: function setMonth(vectorCount) {
+	      var format = this.format;
+	      var generateDate = this.state.generateDate;
+
+	      var _generateDate = dayjs_min(generateDate).add(vectorCount, 'month');
+
+	      this.setState({
+	        generateDate: _generateDate.valueOf()
+	      });
+
+	      if (vectorCount && typeof this.onMonthChange === 'function') {
+	        this.onMonthChange(_generateDate.format(format));
+	      }
+	    },
+	    handleClickPreMonth: function handleClickPreMonth(isMinMonth) {
+	      if (isMinMonth === true) {
+	        return;
+	      }
+
+	      this.setMonth(-1);
+
+	      if (typeof this.onClickPreMonth === 'function') {
+	        this.onClickPreMonth();
+	      }
+	    },
+	    handleClickNextMonth: function handleClickNextMonth(isMaxMonth) {
+	      if (isMaxMonth === true) {
+	        return;
+	      }
+
+	      this.setMonth(1);
+
+	      if (typeof this.onClickNextMonth === 'function') {
+	        this.onClickNextMonth();
+	      }
+	    },
+	    handleSelectDate: function handleSelectDate(e) {
+	      var value = e.detail.value;
+
+	      var _generateDate = dayjs_min(value);
+
+	      var _generateDateValue = _generateDate.valueOf();
+
+	      if (this.state.generateDate === _generateDateValue) return;
+	      this.triggerChangeDate(_generateDate);
+	      this.setState({
+	        generateDate: _generateDateValue
+	      });
+	    },
+	    handleDayClick: function handleDayClick(item) {
+	      var _this = this;
+
+	      var isMultiSelect = this.isMultiSelect;
+	      var isDisabled = item.isDisabled,
+	          value = item.value;
+	      if (isDisabled) return;
+	      var dayjsDate = dayjs_min(value);
+	      var stateValue = {};
+
+	      if (isMultiSelect) {
+	        stateValue = this.getMultiSelectedState(dayjsDate);
+	      } else {
+	        stateValue = this.getSingleSelectdState(dayjsDate);
+	      }
+
+	      this.setState(stateValue, function () {
+	        _this.handleSelectedDate();
+	      });
+
+	      if (typeof this.onDayClick === 'function') {
+	        this.onDayClick({
+	          value: item.value
+	        });
+	      }
+	    },
+	    handleSelectedDate: function handleSelectedDate() {
+	      var selectDate = this.state.selectedDate;
+
+	      if (typeof this.onSelectDate === 'function') {
+	        var info = {
+	          start: dayjs_min(selectDate.start).format(this.format)
+	        };
+
+	        if (selectDate.end) {
+	          info.end = dayjs_min(selectDate.end).format(this.format);
+	        }
+
+	        this.onSelectDate({
+	          value: info
+	        });
+	      }
+	    },
+	    handleDayLongClick: function handleDayLongClick(item) {
+	      if (typeof this.onDayLongClick === 'function') {
+	        this.onDayLongClick({
+	          value: item.value
+	        });
+	      }
+	    }
+	  },
+	  render: function render() {
+	    var h = arguments[0];
+	    var _this$state = this.state,
+	        generateDate = _this$state.generateDate,
+	        selectedDate = _this$state.selectedDate;
+	    var validDates = this.validDates,
+	        marks = this.marks,
+	        format = this.format,
+	        minDate = this.minDate,
+	        maxDate = this.maxDate,
+	        isSwiper = this.isSwiper,
+	        className = this.className,
+	        hideArrow = this.hideArrow,
+	        isVertical = this.isVertical,
+	        monthFormat = this.monthFormat,
+	        selectedDates = this.selectedDates;
+	    return h("view", {
+	      "class": _classnames_2_2_6_classnames('at-calendar', className)
+	    }, [h(AtCalendarController, helper([{
+	      "attrs": {
+	        "minDate": minDate,
+	        "maxDate": maxDate,
+	        "hideArrow": hideArrow,
+	        "monthFormat": monthFormat,
+	        "generateDate": generateDate
+	      }
+	    }, {
+	      "props": {
+	        onPreMonth: this.handleClickPreMonth,
+	        onNextMonth: this.handleClickNextMonth,
+	        onSelectDate: this.handleSelectDate
+	      }
+	    }])), h(AtCalendarBody, helper([{
+	      "attrs": {
+	        "validDates": validDates,
+	        "marks": marks,
+	        "format": format,
+	        "minDate": minDate,
+	        "maxDate": maxDate,
+	        "isSwiper": isSwiper,
+	        "isVertical": isVertical,
+	        "selectedDate": selectedDate,
+	        "selectedDates": selectedDates,
+	        "generateDate": generateDate
+	      }
+	    }, {
+	      "props": {
+	        onDayClick: this.handleDayClick,
+	        onSwipeMonth: this.setMonth,
+	        onLongClick: this.handleDayLongClick
+	      }
+	    }]))]);
+	  }
+	});
+
 	var index$q = {
 	  name: 'AtFab',
 	  props: {
@@ -6191,15 +10144,21 @@
 	exports.AtAvatar = index$2;
 	exports.AtBadge = Badge;
 	exports.AtButton = Button;
+	exports.AtCalendar = AtCalendar;
 	exports.AtCard = index$3;
+	exports.AtCheckbox = AtCheckbox;
 	exports.AtCountdown = index$l;
 	exports.AtCurtain = index$n;
 	exports.AtDivider = index$k;
 	exports.AtFab = index$q;
 	exports.AtFloatLayout = index$4;
+	exports.AtForm = AtForm;
 	exports.AtGrid = index$5;
 	exports.AtIcon = index$6;
+	exports.AtImagePicker = AtImagePicker;
 	exports.AtIndexes = index$p;
+	exports.AtInput = AtInput;
+	exports.AtInputNumber = AtInputNumber;
 	exports.AtList = AtList;
 	exports.AtListItem = AtListItem;
 	exports.AtLoadMore = index$j;
@@ -6213,12 +10172,20 @@
 	exports.AtNoticebar = index$9;
 	exports.AtPagination = index$a;
 	exports.AtProgress = index$b;
+	exports.AtRadio = AtRadio;
+	exports.AtRange = AtRange;
+	exports.AtRate = AtRate;
+	exports.AtSearchBar = AtSearchBar;
 	exports.AtSegmentedControl = index$c;
+	exports.AtSlider = AtSlider;
 	exports.AtSteps = index$m;
 	exports.AtSwipeAction = index$i;
+	exports.AtSwitch = AtSwitch;
 	exports.AtTabBar = index$d;
 	exports.AtTabs = index$e;
 	exports.AtTabsPane = index$f;
+	exports.AtTag = AtTag;
+	exports.AtTextarea = AtTextarea;
 	exports.AtTimeline = index$g;
 	exports.AtToast = AtToast;
 

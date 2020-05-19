@@ -5,22 +5,15 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import Package from '../package.json'
-import babel from 'rollup-plugin-babel'
+import babel from '@rollup/plugin-babel'
 import babelrc from 'babelrc-rollup'
-import vue from 'rollup-plugin-vue'
+import VuePlugin from 'rollup-plugin-vue'
+import jsx from 'acorn-jsx'
 const babelConfig = require('../babel.config')
 
 const resolveFile = (path) => NodePath.resolve(__dirname, '..', path)
 
-const externalPackages = [
-  // 'react',
-  // 'react-dom',
-  'vue',
-  '@tarojs/components',
-  '@tarojs/runtime',
-  '@tarojs/taro',
-  // '@tarojs/react',
-]
+const externalPackages = ['vue', '@tarojs/components', '@tarojs/runtime', '@tarojs/taro']
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
 export default {
@@ -49,18 +42,10 @@ export default {
     },
   ],
   external: externalPackages,
+  acornInjectPlugins: [jsx()],
   plugins: [
-    vue(),
-    babel({
-      ...babelrc({
-        config: { ...babelConfig },
-        addModuleOptions: false,
-        addExternalHelpersPlugin: false,
-        plugins: ['transform-vue-jsx'],
-      }),
-      exclude: 'node_modules/**',
-      runtimeHelpers: true,
-    }),
+    VuePlugin(),
+
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules',
@@ -73,12 +58,22 @@ export default {
     RollupJson(),
     RollupTypescript({
       tsconfig: NodePath.resolve(__dirname, 'tsconfig.rollup.json'),
+      include: ['*.ts+(|x)', '**/*.ts+(|x)'],
+    }),
+    babel({
+      ...babelrc({
+        config: { ...babelConfig },
+        addModuleOptions: false,
+        addExternalHelpersPlugin: false,
+      }),
+      exclude: 'node_modules/**',
+      babelHelpers: 'runtime',
     }),
     RollupCopy({
       targets: [
         {
-          src: resolveFile('src/style'),
-          dest: resolveFile('bundle'),
+          src: '../src/style',
+          dest: '../bundle/',
         },
       ],
     }),
