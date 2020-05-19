@@ -29,14 +29,10 @@
 </template>
 <script>
 import { AtCalendar } from '../../components'
-import vueUi from 'vueAppts'
-// import { AtIcon, AtTag } from '../../../bundle/index.esm'
-const AtIcon = vueUi.AtIcon
-const AtTag = vueUi.AtTag
+import { AtIcon, AtTag } from '../../../bundle/index.esm'
 export default {
   components: {
     AtCalendar,
-    AtIcon,
     AtIcon,
     AtTag
   },

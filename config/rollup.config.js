@@ -11,6 +11,15 @@ import VuePlugin from 'rollup-plugin-vue'
 import jsx from 'acorn-jsx'
 const babelConfig = require('../babel.config')
 
+// 这里需要将 @vue/babel-preset-jsx参数injectH设置为 false, 否则打包报错
+// https://github.com/vuejs/jsx/issues/34
+babelConfig.presets[0] = [
+  '@vue/babel-preset-jsx',
+  {
+    injectH: false,
+  },
+]
+
 const resolveFile = (path) => NodePath.resolve(__dirname, '..', path)
 
 const externalPackages = ['vue', '@tarojs/components', '@tarojs/runtime', '@tarojs/taro']
@@ -45,7 +54,16 @@ export default {
   acornInjectPlugins: [jsx()],
   plugins: [
     VuePlugin(),
-
+    babel({
+      ...babelrc({
+        config: { ...babelConfig },
+        addModuleOptions: false,
+        addExternalHelpersPlugin: false,
+      }),
+      exclude: 'node_modules/**',
+      babelHelpers: 'runtime',
+      plugins: ['transform-vue-jsx'],
+    }),
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules',
@@ -60,15 +78,7 @@ export default {
       tsconfig: NodePath.resolve(__dirname, 'tsconfig.rollup.json'),
       include: ['*.ts+(|x)', '**/*.ts+(|x)'],
     }),
-    babel({
-      ...babelrc({
-        config: { ...babelConfig },
-        addModuleOptions: false,
-        addExternalHelpersPlugin: false,
-      }),
-      exclude: 'node_modules/**',
-      babelHelpers: 'runtime',
-    }),
+
     RollupCopy({
       targets: [
         {

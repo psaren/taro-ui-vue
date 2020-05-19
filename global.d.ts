@@ -1,4 +1,5 @@
 import * as CSS from 'csstype'
+import Vue from 'vue'
 
 declare module "*.png";
 declare module "*.gif";
@@ -25,3 +26,9 @@ declare const process: {
   }
 }
 export type CSSProperties = CSS.Properties<string | number>
+
+declare module 'vue/types/options' {
+  interface ComponentOptions<V extends Vue> {
+    [propName: string]: any;
+  }
+}
