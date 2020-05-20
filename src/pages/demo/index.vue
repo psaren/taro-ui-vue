@@ -29,7 +29,7 @@
 </template>
 <script>
 import { AtCalendar } from '../../components'
-import { AtIcon, AtTag } from '../../../bundle/index.esm'
+import { AtIcon, AtTag } from '../../components'
 export default {
   components: {
     AtCalendar,

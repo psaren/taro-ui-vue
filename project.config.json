@@ -1,5 +1,5 @@
 {
-	"miniprogramRoot": "dist/",
+	"miniprogramRoot": "bundle/",
 	"projectname": "vueAppTs",
 	"description": "taro-vue-app-ts",
 	"appid": "touristappid",

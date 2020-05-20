@@ -1,5 +1,5 @@
-const copyfiles = require('copyfiles')
+const copydir = require('copy-dir')
 const path = require('path')
-copyfiles(path.resolve('../src/style/**/*.scss'), path.resolve('../bundle'), () => {
-  console.log('copy files successfully!')
+copydir(path.resolve(__dirname, '../src/style'), path.resolve(__dirname, '../dist/style'), {
+  cover: true,
 })
