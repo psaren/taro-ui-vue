@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { getEnvs } from '../../utils/common'
 
 const SIZE_CLASS = {
   large: 'large',
@@ -52,7 +53,7 @@ export default {
     let letter = ''
     if (text) letter = text[0]
 
-    const isOpenData = openData && openData.type === 'userAvatarUrl' && this.$isWEAPP()
+    const isOpenData = openData && openData.type === 'userAvatarUrl' && getEnvs().isWEAPP
     const isImage = !isOpenData && image !== ''
     const isText = !isOpenData && !image
     return (

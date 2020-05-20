@@ -1,5 +1,6 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
+import { mergeStyle } from '../../utils/common'
 
 export default {
   name: 'AtNavBar',
@@ -158,7 +159,7 @@ export default {
           {leftIconType && (
             <view
               class={leftIconClass}
-              style={this.$mergeStyle(
+              style={mergeStyle(
                 {
                   color: leftIconInfo.color,
                   fontSize: `${Taro.pxTransform(parseInt(leftIconInfo.size.toString()) * 2)}`,
@@ -180,7 +181,7 @@ export default {
             {rightSecondIconType && (
               <view
                 class={rightSecondIconClass}
-                style={this.$mergeStyle(
+                style={mergeStyle(
                   {
                     color: rightSecondIconInfo.color,
                     fontSize: `${Taro.pxTransform(
@@ -201,7 +202,7 @@ export default {
             {rightFirstIconType && (
               <view
                 class={rightFirstIconClass}
-                style={this.$mergeStyle(
+                style={mergeStyle(
                   {
                     color: rightFirstIconInfo.color,
                     fontSize: `${Taro.pxTransform(

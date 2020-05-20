@@ -245,7 +245,7 @@ export default {
     const scrollY = tabDirection === 'vertical'
 
     return (
-      <view class={rootCls} style={this.$mergeStyle(heightStyle, customStyle)}>
+      <view class={rootCls} style={mergeStyle(heightStyle, customStyle)}>
         {scroll ? (
           <scroll-view
             id={this.tabId}
@@ -269,7 +269,7 @@ export default {
           onTouchStart={this.handleTouchStart.bind(this)}
           onTouchEnd={this.handleTouchEnd.bind(this)}
           onTouchMove={this.handleTouchMove.bind(this)}
-          style={this.$mergeStyle(bodyStyle, heightStyle)}>
+          style={mergeStyle(bodyStyle, heightStyle)}>
           <view class="at-tabs__underline" style={underlineStyle}></view>
           {this.$slots.default}
         </view>

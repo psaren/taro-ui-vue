@@ -1,5 +1,7 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
+import { mergeStyle } from '../../utils/common'
+
 export default {
   name: 'AtIcon',
   props: {
@@ -50,7 +52,7 @@ export default {
     return (
       <view
         class={classNames(prefixClass, iconName, className)}
-        style={this.$mergeStyle(rootStyle, customStyle)}
+        style={mergeStyle(rootStyle, customStyle)}
         onTab={this.handleTab}></view>
     )
   },

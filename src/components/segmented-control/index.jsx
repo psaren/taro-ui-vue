@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { pxTransform } from '../../utils/common'
+import { pxTransform, mergeStyle } from '../../utils/common'
 
 export default {
   name: 'AtSegmentedControl',
@@ -88,7 +88,7 @@ export default {
     )
 
     return (
-      <view class={rootCls} style={this.$mergeStyle(rootStyle, customStyle)}>
+      <view class={rootCls} style={mergeStyle(rootStyle, customStyle)}>
         {values.map((value, i) => (
           <view
             class={classNames('at-segmented-control__item', {

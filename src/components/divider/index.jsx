@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { mergeStyle } from '../../utils/common'
 
 export default {
   name: 'AtDivider',
@@ -45,9 +46,7 @@ export default {
     }
 
     return (
-      <view
-        class={classNames('at-divider', className)}
-        style={this.$mergeStyle(rootStyle, customStyle)}>
+      <view class={classNames('at-divider', className)} style={mergeStyle(rootStyle, customStyle)}>
         <view class="at-divider__content" style={fontStyle}>
           {content === '' ? this.$slots.default : content}
         </view>

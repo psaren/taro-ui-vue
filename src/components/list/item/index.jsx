@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { mergeStyle } from '../../../utils/common'
 
 export default {
   name: 'AtListItem',
@@ -141,7 +142,7 @@ export default {
             <view class="at-list__item-icon item-icon">
               <view
                 class={iconClass}
-                style={this.mergeStyle(
+                style={mergeStyle(
                   {
                     color: iconInfo.color || '',
                     fontSize: `${iconInfo.size || 24}px`,

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import _chunk from 'lodash/chunk'
+import { mergeStyle } from '../../utils/common'
 
 export default {
   name: 'AtGrid',
@@ -94,7 +95,7 @@ export default {
                             },
                             childItem.iconInfo.className
                           )}
-                          style={this.$mergeStyle(
+                          style={mergeStyle(
                             {
                               color: childItem.iconInfo.color,
                               fontSize: `${childItem.iconInfo.size || 24}px`,

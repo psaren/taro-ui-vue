@@ -1,8 +1,6 @@
-import Taro from '@tarojs/taro'
 import Loading from '../loading/index.jsx'
 import classNames from 'classnames'
-const { getEnv, ENV_TYPE } = Taro
-const env = getEnv()
+import { getEnvs } from '../../utils/common'
 
 const SIZE_CLASS = {
   normal: 'normal',
@@ -114,9 +112,7 @@ export default {
   },
   data() {
     return {
-      isWEB: env === ENV_TYPE.WEB,
-      isWEAPP: env === ENV_TYPE.WEAPP,
-      isALIPAY: env === ENV_TYPE.ALIPAY,
+      ...getEnvs(),
     }
   },
   mounted() {

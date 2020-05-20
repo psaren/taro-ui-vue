@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import Badge from '../badge/index'
+import { mergeStyle } from '../../utils/common'
 
 export default {
   name: 'AtTabBar',
@@ -96,7 +97,7 @@ export default {
           },
           className
         )}
-        style={this.$mergeStyle(rootStyle, customStyle)}>
+        style={mergeStyle(rootStyle, customStyle)}>
         {tabList.map((item, i) => (
           <view
             class={classNames('at-tab-bar__item', {

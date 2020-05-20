@@ -1,7 +1,8 @@
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { delayQuerySelector, getEventDetail } from '../../utils/common'
+import { delayQuerySelector, getEventDetail, mergeStyle } from '../../utils/common'
+
 import mixins from '../mixins'
 
 const AtRange = Vue.extend({
@@ -202,15 +203,15 @@ const AtRange = Vue.extend({
       <view class={rootCls} style={customStyle} onClick={this.handleClick}>
         <view class="at-range__container" style={containerStyle}>
           <view class="at-range__rail" style={railStyle}></view>
-          <view class="at-range__track" style={this.$mergeStyle(atTrackStyle, trackStyle)}></view>
+          <view class="at-range__track" style={mergeStyle(atTrackStyle, trackStyle)}></view>
           <view
             class="at-range__slider"
-            style={this.$mergeStyle(sliderAStyle, sliderStyle)}
+            style={mergeStyle(sliderAStyle, sliderStyle)}
             onTouchMove={this.handleTouchMove.bind(this, 'aX')}
             onTouchEnd={this.handleTouchEnd.bind(this, 'aX')}></view>
           <view
             class="at-range__slider"
-            style={this.$mergeStyle(sliderBStyle, sliderStyle)}
+            style={mergeStyle(sliderBStyle, sliderStyle)}
             onTouchMove={this.handleTouchMove.bind(this, 'bX')}
             onTouchEnd={this.handleTouchEnd.bind(this, 'bX')}></view>
         </view>
