@@ -5,8 +5,8 @@ import RollupCommonjs from '@rollup/plugin-commonjs'
 import RollupTypescript from 'rollup-plugin-typescript2'
 import RollupCopy from 'rollup-plugin-copy'
 import Package from '../package.json'
-import babel from '@rollup/plugin-babel'
-import babelrc from 'babelrc-rollup'
+import babel from 'rollup-plugin-babel'
+// import babelrc from 'babelrc-rollup'
 import VuePlugin from 'rollup-plugin-vue'
 import jsx from 'acorn-jsx'
 const babelConfig = require('../babel.config')
@@ -54,16 +54,7 @@ export default {
   acornInjectPlugins: [jsx()],
   plugins: [
     VuePlugin(),
-    babel({
-      ...babelrc({
-        config: { ...babelConfig },
-        addModuleOptions: false,
-        addExternalHelpersPlugin: false,
-      }),
-      exclude: 'node_modules/**',
-      babelHelpers: 'runtime',
-      plugins: ['transform-vue-jsx'],
-    }),
+
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules',
@@ -78,7 +69,19 @@ export default {
       tsconfig: NodePath.resolve(__dirname, 'tsconfig.rollup.json'),
       include: ['*.ts+(|x)', '**/*.ts+(|x)'],
     }),
-
+    babel({
+      // ...babelrc({
+      //   config: { ...babelConfig },
+      //   addModuleOptions: false,
+      //   addExternalHelpersPlugin: false,
+      // }),
+      extensions,
+      exclude: 'node_modules/**',
+      // babelHelpers: 'runtime',
+      runtimeHelpers: true,
+      externalHelpers: true,
+      plugins: ['transform-vue-jsx'],
+    }),
     RollupCopy({
       targets: [
         {
