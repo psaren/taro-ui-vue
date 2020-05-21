@@ -11,3 +11,5 @@ stats.html
 # Build outputs
 bundle
 lib
+# test
+tests/coverage

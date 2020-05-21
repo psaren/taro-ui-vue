@@ -68,7 +68,10 @@
     "@typescript-eslint/parser": "^2.x",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.2",
+    "@vue/test-utils": "^1.0.3",
     "acorn-jsx": "^5.2.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^26.0.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-taro": "3.0.0-beta.6",
@@ -80,6 +83,9 @@
     "eslint-config-taro": "3.0.0-beta.6",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^6.x",
+    "jest": "^26.0.1",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
     "prettier": "^2.0.5",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
@@ -87,6 +93,8 @@
     "rollup-plugin-visualizer": "^4.0.4",
     "rollup-plugin-vue": "^5.1.7",
     "stylelint": "9.3.0",
-    "typescript": "^3.7.0"
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.7.0",
+    "vue-jest": "^3.0.5"
   }
 }
