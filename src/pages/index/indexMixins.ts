@@ -1,37 +1,28 @@
 import Taro from '@tarojs/taro'
-// import Button from '../../components/button/index.jsx'
+// import Button from '../../components/button/index'
 import Badge from '../../components/badge/index'
 import Icon from '../../components/icon/index'
-import Fab from '../../components/fab/index.jsx'
-import Avatar from '../../components/avatar/index.jsx'
-// import Countdown from '../../components/countdown/index.jsx'
-import Curtain from '../../components/curtain/index.jsx'
-// import LoadMore from '../../components/load-more/index.jsx'
-import Noticebar from '../../components/noticebar/index.jsx'
-import Tag from '../../components/tag/index.jsx'
-import Timeline from '../../components/timeline/index.jsx'
-import Divider from '../../components/divider/index.jsx'
-import ActionSheet from '../../components/action-sheet/index.jsx'
-import ActionSheetItem from '../../components/action-sheet/body/item/index.jsx'
-import Progress from '../../components/progress/index.jsx'
-import Modal from '../../components/modal/index.jsx'
-import ModalHeader from '../../components/modal/header/index.jsx'
-import ModalContent from '../../components/modal/content/index.jsx'
-import ModalAction from '../../components/modal/action/index.jsx'
-import Toast from '../../components/toast/index.jsx'
-import SwipeAction from '../../components/swipe-action/index.jsx'
-import Message from '../../components/message/index.jsx'
+import Fab from '../../components/fab/index'
+import Avatar from '../../components/avatar/index'
+// import Countdown from '../../components/countdown/index'
+import Curtain from '../../components/curtain/index'
+// import LoadMore from '../../components/load-more/index'
+import Noticebar from '../../components/noticebar/index'
+import Tag from '../../components/tag/index'
+import Timeline from '../../components/timeline/index'
+import Divider from '../../components/divider/index'
+import ActionSheet from '../../components/action-sheet/index'
+import ActionSheetItem from '../../components/action-sheet/body/item/index'
+import Progress from '../../components/progress/index'
+import Modal from '../../components/modal/index'
+import ModalHeader from '../../components/modal/header/index'
+import ModalContent from '../../components/modal/content/index'
+import ModalAction from '../../components/modal/action/index'
+import Toast from '../../components/toast/index'
+import SwipeAction from '../../components/swipe-action/index'
+import Message from '../../components/message/index'
 import Demo from './demo'
 import {
-  Grid,
-  List,
-  ListItem,
-  Card,
-  FloatLayout,
-  Accordion,
-  NavBar,
-  TabBar,
-  SegmentedControl,
   AtTabs,
   AtTabsPane,
   AtPagination,
@@ -76,15 +67,6 @@ export default {
     Toast,
     SwipeAction,
     Message,
-    Grid,
-    List,
-    ListItem,
-    Card,
-    FloatLayout,
-    Accordion,
-    NavBar,
-    TabBar,
-    SegmentedControl,
     AtTabs,
     AtTabsPane,
     AtPagination,

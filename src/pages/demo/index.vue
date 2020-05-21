@@ -11,8 +11,9 @@
     <AtTag
       type="primary"
       circle
+      :on-click="handleClick"
     >
-      标签
+      index page
     </AtTag>
     <!-- <picker
       mode="date"
@@ -28,6 +29,7 @@
   </view>
 </template>
 <script>
+import Taro from '@tarojs/taro'
 import { AtCalendar } from '../../components'
 import { AtIcon, AtTag } from '../../components'
 export default {
@@ -43,9 +45,15 @@ export default {
   },
   methods: {
     bindDateChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.date = e.detail.value
-  }
+      console.log('picker发送选择改变，携带值为', e.detail.value)
+      this.date = e.detail.value
+    },
+    handleClick() {
+      Taro.navigateTo({url: '/pages/index/index'})
+        .then(() => {
+          console.log('success')
+        })
+    }
   }
 }
 </script>
