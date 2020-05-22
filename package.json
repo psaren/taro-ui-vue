@@ -2,7 +2,7 @@
   "name": "taro-ui-vue",
   "version": "0.0.3",
   "private": true,
-  "description": "taro-ui-vue",
+  "description": "UI KIT for Taro/vue",
   "browser": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "main": "dist/index.js",
@@ -10,6 +10,7 @@
   "files": [
     "dist"
   ],
+  "author": "psaren",
   "repository": {
     "type": "git",
     "url": "git@github.com:psaren/taro-ui-vue.git"
@@ -47,7 +48,6 @@
     "Android >= 4.1",
     "ios >= 8"
   ],
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.7.7",
