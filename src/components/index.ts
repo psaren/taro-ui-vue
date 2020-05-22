@@ -1,5 +1,6 @@
 import AtAccordion from './accordion/index'
 import AtActionSheet from './action-sheet/index'
+import AtActionSheetItem from './action-sheet/body/item/index'
 import AtActivityIndicator from './activity-indicator/index'
 import AtAvatar from './avatar/index'
 import AtBadge from './badge/index'
@@ -49,6 +50,7 @@ import AtToast from './toast/index'
 export {
   AtAccordion,
   AtActionSheet,
+  AtActionSheetItem,
   AtActivityIndicator,
   AtAvatar,
   AtBadge,
