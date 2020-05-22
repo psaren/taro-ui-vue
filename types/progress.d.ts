@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -25,6 +25,3 @@ export interface AtProgressProps extends AtComponent {
   isHidePercent?: boolean
 }
 
-declare const AtProgress: ComponentClass<AtProgressProps>
-
-export default AtProgress

@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 import { BaseEventOrig, ITouchEvent } from '@tarojs/components/types/common'
 import { InputProps } from '@tarojs/components/types/Input'
 import AtComponent from './base'
@@ -151,6 +151,3 @@ export interface AtInputProps extends AtComponent, OmitInputProps {
   onErrorClick?: (event?: ITouchEvent) => void
 }
 
-declare const AtInput: ComponentClass<AtInputProps>
-
-export default AtInput

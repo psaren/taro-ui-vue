@@ -1,4 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
 import { CommonEventFunction } from '@tarojs/components/types/common'
 
 import AtComponent, { AtIconBaseProps } from './base'
@@ -42,7 +41,3 @@ export interface AtCardProps extends AtComponent {
    */
   onClick?: CommonEventFunction
 }
-
-declare const AtCard: ComponentClass<AtCardProps>
-
-export default AtCard

@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -70,6 +70,3 @@ export interface AtIndexesState {
   isWEB: boolean
 }
 
-declare const AtIndexes: ComponentClass<AtIndexesProps>
-
-export default AtIndexes

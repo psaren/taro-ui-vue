@@ -1,4 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -46,10 +45,3 @@ export interface AtActionSheetItemProps extends AtComponent {
   onClick?: (event?: CommonEvent) => void
 }
 
-declare const AtActionSheetItem: ComponentClass<AtActionSheetItemProps>
-
-declare const AtActionSheet: ComponentClass<AtActionSheetProps>
-
-export default AtActionSheet
-
-export { AtActionSheetItem }

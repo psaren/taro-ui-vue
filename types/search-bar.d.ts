@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEventFunction, CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -92,6 +92,3 @@ export interface AtSearchBarState {
   isFocus: boolean
 }
 
-declare const AtSearchBar: ComponentClass<AtSearchBarProps>
-
-export default AtSearchBar

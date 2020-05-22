@@ -1,5 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
-
 import AtComponent from './base'
 
 export interface FormatObject {
@@ -83,7 +81,3 @@ export interface AtCountdownItemProps extends AtComponent {
   num: number
   separator: string
 }
-
-declare const AtCountDown: ComponentClass<AtCountDownProps>
-
-export default AtCountDown

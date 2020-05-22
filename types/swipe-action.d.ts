@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { SelectorQuery } from '@tarojs/taro'
 import {
   CommonEventFunction,
@@ -65,9 +65,5 @@ export interface AtSwipeActionState {
 export interface AtSwipeActionOptionsProps extends AtComponent {
   componentId: string
   options: SwipeActionOption[]
-  onQueryedDom: (res: SelectorQuery.execObject) => void
+  onQueryedDom: (res: SelectorQuery) => void
 }
-
-declare const AtSwipeAction: ComponentClass<AtSwipeActionProps>
-
-export default AtSwipeAction

@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -10,8 +10,6 @@ export interface AtMessageState {
   _type: 'info' | 'success' | 'error' | 'warning'
   _duration: number
 }
-
-declare const AtMessage: ComponentClass<AtComponent>
 
 interface Options {
   /**
@@ -32,4 +30,4 @@ interface Options {
 
 declare function message({ }: Options ): void
 
-export { AtMessage, message }
+export { message }

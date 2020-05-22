@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 declare type FormFunction = (event: CommonEvent) => void
@@ -20,7 +20,3 @@ export interface AtFormProps extends AtComponent {
    */
   onReset?: FormFunction
 }
-
-declare const AtForm: ComponentClass<AtFormProps>
-
-export default AtForm

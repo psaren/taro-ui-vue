@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -92,7 +92,3 @@ export interface AtTabBarProps extends AtComponent {
    */
   onClick: (index: number, event: CommonEvent) => void
 }
-
-declare const AtTabBar: ComponentClass<AtTabBarProps>
-
-export default AtTabBar

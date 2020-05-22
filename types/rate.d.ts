@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEventFunction } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -29,6 +29,3 @@ export interface AtRateProps extends AtComponent {
   onChange?: CommonEventFunction
 }
 
-declare const AtRate: ComponentClass<AtRateProps>
-
-export default AtRate

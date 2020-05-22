@@ -1,5 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
-
 import AtComponent from './base'
 
 export interface AtAvatarProps extends AtComponent{
@@ -32,7 +30,3 @@ export interface AtAvatarProps extends AtComponent{
 export interface AtAvatarState {
   isWEAPP: boolean
 }
-
-declare const AtAvatar: ComponentClass<AtAvatarProps>
-
-export default AtAvatar

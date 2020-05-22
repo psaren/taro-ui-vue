@@ -1,5 +1,3 @@
-import { ComponentClass } from 'react'
-
 import AtComponent from './base'
 
 export interface AtFlexItemProps extends AtComponent {
@@ -17,11 +15,3 @@ export interface AtFlexProps extends AtComponent {
   dirction: 'row' | 'column' | 'row-reverse' | 'column-reverse'
   alignContent: 'start' | 'end' | 'center' | 'stretch' | 'between' | 'around'
 }
-
-declare const AtFlexItem: ComponentClass<AtFlexItemProps>
-
-declare const AtFlex: ComponentClass<AtFlexProps>
-
-export { AtFlexItem, AtFlex }
-
-export default AtFlex

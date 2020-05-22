@@ -1,25 +1,25 @@
-import { CSSProperties } from 'react'
+import { CSSProperties } from '../global'
 
 export interface AtComponent {
-  className?: string
+  className?: string;
 
-  customStyle?: string | CSSProperties
+  customStyle?: string | CSSProperties;
 }
 
 export interface AtIconBaseProps2 extends AtComponent {
-  value: string
+  value: string;
 
-  color?: string
+  color?: string;
 }
 
 export interface AtIconBaseProps extends AtComponent {
-  value: string
+  value: string;
 
-  color?: string
+  color?: string;
 
-  prefixClass?: string
+  prefixClass?: string;
 
-  size?: number | string
+  size?: number | string;
 }
 
 export default AtComponent

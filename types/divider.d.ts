@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import AtComponent from './base'
 
 export interface AtDividerProps extends AtComponent {
@@ -28,6 +28,3 @@ export interface AtDividerProps extends AtComponent {
   lineColor?: string
 }
 
-declare const AtDivider: ComponentClass<AtDividerProps>
-
-export default AtDivider

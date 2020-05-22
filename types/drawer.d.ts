@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -42,6 +42,3 @@ export interface AtDrawerState {
   _show: boolean
 }
 
-declare const AtDrawer: ComponentClass<AtDrawerProps>
-
-export default AtDrawer

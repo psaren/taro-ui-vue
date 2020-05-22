@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -32,7 +32,3 @@ export interface AtSwitchProps extends AtComponent {
    */
   onChange?: (value: boolean) => void
 }
-
-declare const AtSwitch: ComponentClass<AtSwitchProps>
-
-export default AtSwitch

@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -57,7 +57,3 @@ export interface AtNoticeBarState {
   isALIPAY: boolean
   isWEB: boolean
 }
-
-declare const AtNoticeBar: ComponentClass<AtNoticeBarProps>
-
-export default AtNoticeBar

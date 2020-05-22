@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -46,6 +46,3 @@ export interface AtPaginationState {
   pickerRange: number[]
 }
 
-declare const AtPagination: ComponentClass<AtPaginationProps>
-
-export default AtPagination

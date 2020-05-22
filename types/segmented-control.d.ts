@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -38,7 +38,3 @@ export interface AtSegmentedControlProps extends AtComponent {
    */
   onClick: (index: number, event: CommonEvent) => void
 }
-
-declare const AtSegmentedControl: ComponentClass<AtSegmentedControlProps>
-
-export default AtSegmentedControl

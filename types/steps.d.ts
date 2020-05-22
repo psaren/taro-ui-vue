@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -63,7 +63,3 @@ export interface AtStepsProps extends AtComponent {
    */
   onChange: (current: number, event: CommonEvent) => void
 }
-
-declare const AtSteps: ComponentClass<AtStepsProps>
-
-export default AtSteps

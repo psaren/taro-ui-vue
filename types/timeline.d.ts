@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -33,7 +33,3 @@ export interface AtTimelineProps extends AtComponent {
    */
   items: Array<Item>
 }
-
-declare const AtTimeline: ComponentClass<AtTimelineProps>
-
-export default AtTimeline

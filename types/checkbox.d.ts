@@ -1,5 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
-
 import AtComponent from './base'
 
 export interface CheckboxOption<T> {
@@ -16,7 +14,3 @@ export interface AtCheckboxProps<T> extends AtComponent {
 
   onChange: (selectedList: Array<T>) => void
 }
-
-declare const AtCheckbox: ComponentClass<AtCheckboxProps<any>>
-
-export default AtCheckbox

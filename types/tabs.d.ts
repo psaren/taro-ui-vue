@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -56,7 +56,3 @@ export interface AtTabsState {
   _scrollTop: number
   _scrollIntoView: string
 }
-
-declare const AtTabs: ComponentClass<AtTabsProps>
-
-export default AtTabs

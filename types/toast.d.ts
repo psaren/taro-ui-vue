@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEventFunction } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -47,7 +47,3 @@ export interface AtToastProps extends AtComponent {
 export interface AtToastState {
   _isOpened: boolean
 }
-
-declare const AtToast: ComponentClass<AtToastProps>
-
-export default AtToast

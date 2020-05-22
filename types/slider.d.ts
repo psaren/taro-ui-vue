@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 import AtComponent from './base'
 
 declare type SliderFunction = (value: number) => void
@@ -68,6 +68,3 @@ export interface AtSliderState {
   _value: number
 }
 
-declare const AtSlider: ComponentClass<AtSliderProps>
-
-export default AtSlider

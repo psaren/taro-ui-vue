@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 import {
   CommonEvent,
   CommonEventFunction
@@ -107,7 +107,3 @@ export interface AtTextareaProps extends AtComponent {
    */
   onLinechange?: CommonEventFunction
 }
-
-declare const AtTextarea: ComponentClass<AtTextareaProps>
-
-export default AtTextarea

@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from "@tarojs/components/types/common";
 
 import AtComponent from './base'
@@ -38,6 +38,3 @@ export interface AtRadioProps<T> extends AtComponent {
   onClick: (vaule: T, event: CommonEvent) => void
 }
 
-declare const AtRadio: ComponentClass<AtRadioProps<any>>
-
-export default AtRadio

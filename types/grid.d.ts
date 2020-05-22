@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 import AtComponent, { AtIconBaseProps } from './base'
 
@@ -45,7 +45,3 @@ export interface AtGridProps extends AtComponent {
    */
   onClick?: (item: AtGridItem, index: number, event: CommonEvent) => void
 }
-
-declare const AtGrid: ComponentClass<AtGridProps>
-
-export default AtGrid

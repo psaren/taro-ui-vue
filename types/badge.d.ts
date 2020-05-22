@@ -1,4 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
 
 import AtComponent from './base'
 
@@ -18,7 +17,3 @@ export interface AtBadgeProps extends AtComponent {
    */
   maxValue?: number
 }
-
-declare const AtBadge: ComponentClass<AtBadgeProps>
-
-export default AtBadge

@@ -1,4 +1,3 @@
-import { MouseEvent, ComponentClass } from 'react'
 import { CommonEventFunction } from '@tarojs/components/types/common'
 import { ButtonProps } from '@tarojs/components/types/Button'
 
@@ -50,7 +49,3 @@ export interface AtButtonState {
   isWEAPP: boolean
   isALIPAY: boolean
 }
-
-declare const AtButton: ComponentClass<AtButtonProps>
-
-export default AtButton

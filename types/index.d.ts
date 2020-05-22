@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 import { Props } from '../src/components/calendar/interface'
 
 export { default as AtActionSheet, AtActionSheetItem } from './action-sheet'

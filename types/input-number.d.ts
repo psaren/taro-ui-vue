@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEventFunction, CommonEvent } from '@tarojs/components/types/common'
 import AtComponent from './base'
 
@@ -80,7 +80,3 @@ export interface AtInputNumberProps extends AtComponent {
    */
   onErrorInput?: (errCb: InputError) => void
 }
-
-declare const AtInputNumber: ComponentClass<AtInputNumberProps>
-
-export default AtInputNumber

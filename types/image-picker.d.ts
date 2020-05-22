@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -67,7 +67,3 @@ export interface AtImagePickerProps extends AtComponent {
    */
   onFail?: (message: string) => void
 }
-
-declare const AtImagePicker: ComponentClass<AtImagePickerProps>
-
-export default AtImagePicker

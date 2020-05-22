@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -58,6 +58,3 @@ export interface AtRangeState {
   [sliderName: string]: number
 }
 
-declare const AtRange: ComponentClass<AtRangeProps>
-
-export default AtRange

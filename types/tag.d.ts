@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 import { CommonEvent } from '@tarojs/components/types/common'
 
 import AtComponent from './base'
@@ -42,7 +42,3 @@ export interface AtTagProps extends AtComponent {
    */
   onClick?: (tagInfo: TagInfo, event: CommonEvent) => void
 }
-
-declare const AtTag: ComponentClass<AtTagProps>
-
-export default AtTag

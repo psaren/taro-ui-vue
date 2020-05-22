@@ -1,4 +1,4 @@
-import { MouseEvent, ComponentClass } from 'react'
+
 
 import AtComponent from './base'
 
@@ -20,6 +20,3 @@ export interface AtTabsPaneProps extends AtComponent {
   index: number
 }
 
-declare const AtTabsPane: ComponentClass<AtTabsPaneProps>
-
-export default AtTabsPane
