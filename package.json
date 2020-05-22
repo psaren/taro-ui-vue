@@ -1,7 +1,6 @@
 {
   "name": "taro-ui-vue",
   "version": "0.0.3",
-  "private": true,
   "description": "UI KIT for Taro/vue",
   "browser": "dist/index.umd.js",
   "module": "dist/index.esm.js",
@@ -41,7 +40,8 @@
     "build:lib": "tsc --project ./tsconfig.build.json",
     "build:rollup": "rollup --config ./config/rollup.config.js",
     "prepublish": "npm run build:rollup && node ./config/copy.js",
-    "clean": "rimraf dist lib"
+    "clean": "rimraf dist lib",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "browserslist": [
     "last 3 versions",
@@ -82,6 +82,7 @@
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-taro": "3.0.0-beta.6",
     "babelrc-rollup": "^3.0.0",
+    "conventional-changelog-cli": "^2.0.34",
     "copy-dir": "^1.2.0",
     "csstype": "^2.6.10",
     "eslint": "^6.8.0",

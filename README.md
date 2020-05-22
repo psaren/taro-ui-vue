@@ -100,6 +100,9 @@ export default {
 - 为组件添加测试用例
 - 修复现存[已知问题](./src/components/notes.md)
 
+## CHANGELOG
+[CHANGELOG](./CHANGELOG.md)
+
 ## License
 
 [MIT](./LECENSE)
