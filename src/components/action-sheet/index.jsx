@@ -77,7 +77,9 @@ export default {
           {title && <ActionSheetHeader>{title}</ActionSheetHeader>}
           <ActionSheetBody>{this.$slots.default}</ActionSheetBody>
           {cancelText && (
-            <ActionSheetFooter onTap={this.handleCancel}>{cancelText}</ActionSheetFooter>
+            <ActionSheetFooter props={{ onClick: this.handleCancel }}>
+              {cancelText}
+            </ActionSheetFooter>
           )}
         </view>
       </view>
