@@ -16,7 +16,7 @@ module.exports = {
   collectCoverageFrom: ['<rootDir>/src/components/**/*.{vue}', '!**/node_modules/**'],
   globals: {
     'ts-jest': {
-      tsConfig: './tsconfig.json',
+      tsConfig: './jest.tsconfig.json',
     },
   },
 }
