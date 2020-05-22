@@ -4,11 +4,11 @@
 ![David](https://img.shields.io/david/psaren/taro-ui-vue)
 [![npm](https://img.shields.io/npm/dm/taro-ui-vue)](https://www.npmjs.com/package/taro-ui-vue)
 ## 项目背景 
-`tarojs` 已经开始支持 `vue` 去写 taro 应用了，由于缺少相关的 ui 库，因此决定 按照 taro-ui 重写用 (j|t)sx成 vue 组件。
-形成了 taro-ui-vue 这个库。
+`tarojs` 已经开始支持 `vue` 去写 taro 应用了，由于缺少相关的 ui 库，因此决定 按照 taro-ui 重写用 `(j|t)sx` 成 `vue` 组件。
+形成了 `taro-ui-vue` 这个库。
 重写是基于 @tarojs 3.0.0-beta.6, 样式是复用的 taro-ui@2.2.x。
 ## 安装
-```
+``` bash
 npm i -S taro-ui-vue
 ```
 ## 使用
