@@ -10,6 +10,10 @@
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:psaren/taro-ui-vue.git"
+  },
   "templateInfo": {
     "name": "vuex",
     "typescript": true,
@@ -34,7 +38,9 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test:analyze": "rollup --config ./config/rollup.config.analyze.js",
     "build:lib": "tsc --project ./tsconfig.build.json",
-    "build:rollup": "rollup --config ./config/rollup.config.js"
+    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "prepublish": "npm run build:rollup && node ./config/copy.js",
+    "clean": "rimraf dist lib"
   },
   "browserslist": [
     "last 3 versions",
@@ -87,6 +93,7 @@
     "jest-serializer-vue": "^2.0.2",
     "jest-transform-stub": "^2.0.0",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-typescript2": "^0.27.1",
