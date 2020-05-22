@@ -11,6 +11,7 @@ const TYPE_CLASS = {
   primary: 'primary',
   secondary: 'secondary',
 }
+
 export default {
   name: 'AtButton',
   components: {
@@ -56,6 +57,7 @@ export default {
     openType: {
       type: String,
       default: undefined,
+      validator: (val) => ['contact', 'share', 'getPhoneNumber'],
     },
     lang: {
       type: String,
@@ -155,6 +157,27 @@ export default {
         })
       }
     },
+    getWxButtonProps() {
+      if (!this.openType) return {}
+      const wxButtonProps = {}
+      switch (this.openType) {
+        case 'concact':
+          wxButtonProps.onConcact = this.handleContact
+          break
+        case 'openSetting':
+          wxButtonProps.onOpenSetting = this.hanldeSetting
+          break
+        case 'getPhoneNumber':
+          wxButtonProps.onGetPhoneNumber = this.hanldeGetPhoneNumber
+          break
+        case 'getUserInfo':
+          wxButtonProps.ongetUserInfo = this.handleGetUserInfo
+          break
+        default:
+          break
+      }
+      return wxButtonProps
+    },
   },
   render() {
     // props
@@ -179,7 +202,8 @@ export default {
     } = this
     // data
     const { isWEB, isWEAPP, isALIPAY } = this
-
+    console.log('isWEAPP >> ', isWEAPP)
+    console.log('disabled >> ', disabled)
     const rootClassName = ['at-button']
     const classObject = {
       [`at-button--${SIZE_CLASS[size]}`]: SIZE_CLASS[size],
@@ -215,11 +239,8 @@ export default {
         sendMessageImg={sendMessageImg}
         showMessageCard={showMessageCard}
         appParameter={appParameter}
-        ongetUserInfo={this.handleGetUserInfo}
-        onGetPhoneNumber={this.hanldeGetPhoneNumber}
-        onOpenSetting={this.hanldeSetting}
-        onError={this.hanldeError}
-        onContact={this.hanldeContact}></button>
+        {...this.getWxButtonProps()}
+        onError={this.hanldeError}></button>
     )
     return (
       <view
@@ -229,7 +250,19 @@ export default {
         {isWEB && !disabled && webButton}
         {isWEAPP && !disabled && (
           <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
-            {button}
+            <button
+              className="at-button__wxbutton"
+              formType={formType}
+              openType={openType}
+              lang={lang}
+              sessionFrom={sessionFrom}
+              sendMessageTitle={sendMessageTitle}
+              sendMessagePath={sendMessagePath}
+              sendMessageImg={sendMessageImg}
+              showMessageCard={showMessageCard}
+              appParameter={appParameter}
+              {...this.getWxButtonProps()}
+              onError={this.hanldeError}></button>
           </form>
         )}
         {isALIPAY && !disabled && button}

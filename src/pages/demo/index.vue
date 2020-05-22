@@ -15,6 +15,12 @@
     >
       index page
     </AtTag>
+    <button open-type="getUserInfo">
+      getUserInfo
+    </button>
+    <AtButton open-type="getUserInfo">
+      getUserInfo
+    </AtButton>
     <!-- <picker
       mode="date"
       :value="date"
@@ -31,12 +37,13 @@
 <script>
 import Taro from '@tarojs/taro'
 import { AtCalendar } from '../../components'
-import { AtIcon, AtTag } from '../../components'
+import { AtIcon, AtTag, AtButton } from '../../components'
 export default {
   components: {
     AtCalendar,
     AtIcon,
-    AtTag
+    AtTag,
+    AtButton
   },
   data() {
     return {
