@@ -10,7 +10,6 @@ import babel from 'rollup-plugin-babel'
 import VuePlugin from 'rollup-plugin-vue'
 import jsx from 'acorn-jsx'
 const babelConfig = require('../babel.config')
-const copydir = require('copy-dir')
 
 // 这里需要将 @vue/babel-preset-jsx参数injectH设置为 false, 否则打包报错
 // https://github.com/vuejs/jsx/issues/34
@@ -25,7 +24,7 @@ const resolveFile = (path) => NodePath.resolve(__dirname, '..', path)
 
 const externalPackages = ['vue', '@tarojs/components', '@tarojs/runtime', '@tarojs/taro']
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
-copydir(resolveFile('./src/style', resolveFile('./dist')))
+
 export default {
   input: resolveFile(Package.source),
   output: [
