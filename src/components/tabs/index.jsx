@@ -1,7 +1,7 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import mixins from '../mixins'
-import { isTest, uuid } from '../../utils/common'
+import { isTest, uuid, mergeStyle } from '../../utils/common'
 
 const ENV = Taro.getEnv()
 const MIN_DISTANCE = 100
