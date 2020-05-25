@@ -15,13 +15,20 @@
     >
       index page
     </AtTag>
-    <button open-type="getUserInfo">
+    <button
+      open-type="getPhoneNumber"
+      @getphonenumber="handleUserInfo"
+    >
       getUserInfo
     </button>
-    <AtButton open-type="getUserInfo">
-      getUserInfo
+    <AtButton
+      open-type="getPhoneNumber"
+      :on-get-phone-number="handleUserInfo"
+    >
+      getPhoneNumber
     </AtButton>
-    <!-- <picker
+    <form />
+    <picker
       mode="date"
       :value="date"
       start="2015-09-01"
@@ -31,7 +38,7 @@
       <view class="picker">
         当前选择: {{ date }}
       </view>
-    </picker> -->
+    </picker>
   </view>
 </template>
 <script>
@@ -60,7 +67,11 @@ export default {
         .then(() => {
           console.log('success')
         })
+    },
+    handleUserInfo(e) {
+      console.log('handleUserInfo', e)
     }
+
   }
 }
 </script>
