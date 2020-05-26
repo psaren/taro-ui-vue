@@ -22,8 +22,8 @@
       getUserInfo
     </button>
     <AtButton
-      open-type="getPhoneNumber"
-      :on-get-phone-number="handleUserInfo"
+      open-type="getUserInfo"
+      :on-get-user-info="handleUserInfo"
     >
       getPhoneNumber
     </AtButton>
@@ -39,18 +39,22 @@
         当前选择: {{ date }}
       </view>
     </picker>
+    <AtNoticebar marquee>
+      这是 NoticeBar 通告栏，这是 NoticeBar 通告栏，这是 NoticeBar 通告栏
+    </AtNoticebar>
   </view>
 </template>
 <script>
 import Taro from '@tarojs/taro'
 import { AtCalendar } from '../../components'
-import { AtIcon, AtTag, AtButton } from '../../components'
+import { AtIcon, AtTag, AtButton, AtNoticebar } from '../../components'
 export default {
   components: {
     AtCalendar,
     AtIcon,
     AtTag,
-    AtButton
+    AtButton,
+    AtNoticebar
   },
   data() {
     return {
