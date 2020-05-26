@@ -11,6 +11,7 @@ const TYPE_CLASS = {
   primary: 'primary',
   secondary: 'secondary',
 }
+
 export default {
   name: 'AtButton',
   components: {
@@ -56,6 +57,7 @@ export default {
     openType: {
       type: String,
       default: undefined,
+      validator: (val) => ['contact', 'share', 'getPhoneNumber'],
     },
     lang: {
       type: String,
@@ -115,9 +117,7 @@ export default {
       ...getEnvs(),
     }
   },
-  mounted() {
-    console.log('this.onGetPhoneNumber', this.onGetPhoneNumber)
-  },
+  mounted() {},
   methods: {
     hanldeClick(event) {
       if (!this.disabled) {
@@ -155,6 +155,27 @@ export default {
         })
       }
     },
+    getWxButtonProps() {
+      if (!this.openType) return {}
+      const wxButtonProps = { error: this.handleError }
+      switch (this.openType) {
+        case 'concact':
+          wxButtonProps.onConcact = this.handleContact
+          break
+        case 'opensetting':
+          wxButtonProps.onOpenSetting = this.hanldeSetting
+          break
+        case 'getPhoneNumber':
+          wxButtonProps.getphonenumber = this.hanldeGetPhoneNumber
+          break
+        case 'getUserInfo':
+          wxButtonProps.getuserinfo = this.handleGetUserInfo
+          break
+        default:
+          break
+      }
+      return wxButtonProps
+    },
   },
   render() {
     // props
@@ -179,7 +200,6 @@ export default {
     } = this
     // data
     const { isWEB, isWEAPP, isALIPAY } = this
-
     const rootClassName = ['at-button']
     const classObject = {
       [`at-button--${SIZE_CLASS[size]}`]: SIZE_CLASS[size],
@@ -198,14 +218,14 @@ export default {
 
     const webButton = (
       <button
-        className="at-button__wxbutton"
+        class="at-button__wxbutton"
         lang={lang}
         formType={formType === 'submit' || formType === 'reset' ? formType : undefined}></button>
     )
 
     const button = (
       <button
-        className="at-button__wxbutton"
+        class="at-button__wxbutton"
         formType={formType}
         openType={openType}
         lang={lang}
@@ -215,11 +235,7 @@ export default {
         sendMessageImg={sendMessageImg}
         showMessageCard={showMessageCard}
         appParameter={appParameter}
-        ongetUserInfo={this.handleGetUserInfo}
-        onGetPhoneNumber={this.hanldeGetPhoneNumber}
-        onOpenSetting={this.hanldeSetting}
-        onError={this.hanldeError}
-        onContact={this.hanldeContact}></button>
+        {...{ on: this.getWxButtonProps() }}></button>
     )
     return (
       <view

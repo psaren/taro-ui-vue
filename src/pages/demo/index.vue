@@ -15,7 +15,20 @@
     >
       index page
     </AtTag>
-    <!-- <picker
+    <button
+      open-type="getPhoneNumber"
+      @getphonenumber="handleUserInfo"
+    >
+      getUserInfo
+    </button>
+    <AtButton
+      open-type="getPhoneNumber"
+      :on-get-phone-number="handleUserInfo"
+    >
+      getPhoneNumber
+    </AtButton>
+    <form />
+    <picker
       mode="date"
       :value="date"
       start="2015-09-01"
@@ -25,18 +38,19 @@
       <view class="picker">
         当前选择: {{ date }}
       </view>
-    </picker> -->
+    </picker>
   </view>
 </template>
 <script>
 import Taro from '@tarojs/taro'
 import { AtCalendar } from '../../components'
-import { AtIcon, AtTag } from '../../components'
+import { AtIcon, AtTag, AtButton } from '../../components'
 export default {
   components: {
     AtCalendar,
     AtIcon,
-    AtTag
+    AtTag,
+    AtButton
   },
   data() {
     return {
@@ -53,7 +67,11 @@ export default {
         .then(() => {
           console.log('success')
         })
+    },
+    handleUserInfo(e) {
+      console.log('handleUserInfo', e)
     }
+
   }
 }
 </script>
