@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtAccordion Snap render AtAccordion -- props icon 1`] = `
+<view
+  class="at-accordion"
+>
+  <view
+    class="at-accordion__header"
+  >
+    <view
+      class="at-icon at-icon-chevron-down at-accordion__icon"
+      style="color: red;"
+    />
+    <view
+      class="at-accordion__info"
+    >
+      <view
+        class="at-accordion__info__title"
+      />
+      <view
+        class="at-accordion__info__note"
+      />
+    </view>
+    <view
+      class="at-accordion__arrow"
+    >
+      <view
+        class="at-icon at-icon-chevron-down"
+      />
+    </view>
+  </view>
+  <view
+    class="at-accordion__content at-accordion__content--inactive"
+  >
+    <view
+      class="at-accordion__body"
+    >
+      <view />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtAccordion Snap render AtAccordion -- props icon prefixClass 1`] = `
+<view
+  class="at-accordion"
+>
+  <view
+    class="at-accordion__header"
+  >
+    <view
+      class="prefixClass prefixClass-star at-accordion__icon"
+      style="color: red;"
+    />
+    <view
+      class="at-accordion__info"
+    >
+      <view
+        class="at-accordion__info__title"
+      />
+      <view
+        class="at-accordion__info__note"
+      />
+    </view>
+    <view
+      class="at-accordion__arrow"
+    >
+      <view
+        class="at-icon at-icon-chevron-down"
+      />
+    </view>
+  </view>
+  <view
+    class="at-accordion__content at-accordion__content--inactive"
+  >
+    <view
+      class="at-accordion__body"
+    >
+      <view />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtAccordion Snap render AtAccordion -- props note 1`] = `
+<view
+  class="at-accordion"
+>
+  <view
+    class="at-accordion__header"
+  >
+    <view
+      class="at-accordion__info"
+    >
+      <view
+        class="at-accordion__info__title"
+      />
+      <view
+        class="at-accordion__info__note"
+      >
+        note
+      </view>
+    </view>
+    <view
+      class="at-accordion__arrow"
+    >
+      <view
+        class="at-icon at-icon-chevron-down"
+      />
+    </view>
+  </view>
+  <view
+    class="at-accordion__content at-accordion__content--inactive"
+  >
+    <view
+      class="at-accordion__body"
+    >
+      <view />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtAccordion Snap render AtAccordion -- props open 1`] = `
+<view
+  class="at-accordion"
+>
+  <view
+    class="at-accordion__header"
+  >
+    <view
+      class="at-accordion__info"
+    >
+      <view
+        class="at-accordion__info__title"
+      />
+      <view
+        class="at-accordion__info__note"
+      />
+    </view>
+    <view
+      class="at-accordion__arrow at-accordion__arrow--folded"
+    >
+      <view
+        class="at-icon at-icon-chevron-down"
+      />
+    </view>
+  </view>
+  <view
+    class="at-accordion__content"
+  >
+    <view
+      class="at-accordion__body"
+    >
+      按钮
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtAccordion Snap render AtAccordion -- props title 1`] = `
+<view
+  class="at-accordion"
+>
+  <view
+    class="at-accordion__header"
+  >
+    <view
+      class="at-accordion__info"
+    >
+      <view
+        class="at-accordion__info__title"
+      >
+        title
+      </view>
+      <view
+        class="at-accordion__info__note"
+      />
+    </view>
+    <view
+      class="at-accordion__arrow"
+    >
+      <view
+        class="at-icon at-icon-chevron-down"
+      />
+    </view>
+  </view>
+  <view
+    class="at-accordion__content at-accordion__content--inactive"
+  >
+    <view
+      class="at-accordion__body"
+    >
+      按钮
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtAccordion Snap render initial AtAccordion 1`] = `
+<view
+  class="at-accordion"
+>
+  <view
+    class="at-accordion__header"
+  >
+    <view
+      class="at-accordion__info"
+    >
+      <view
+        class="at-accordion__info__title"
+      />
+      <view
+        class="at-accordion__info__note"
+      />
+    </view>
+    <view
+      class="at-accordion__arrow"
+    >
+      <view
+        class="at-icon at-icon-chevron-down"
+      />
+    </view>
+  </view>
+  <view
+    class="at-accordion__content at-accordion__content--inactive"
+  >
+    <view
+      class="at-accordion__body"
+    >
+      按钮
+    </view>
+  </view>
+</view>
+`;

@@ -40,7 +40,9 @@ export default {
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return () => {}
+      },
     },
   },
   data() {
@@ -54,10 +56,8 @@ export default {
   },
   watch: {
     open(val, oldVal) {
-      if (val !== oldVal) {
-        this.startOpen = !!val && !!this.isAnimation
-        this.toggleWithAnimation()
-      }
+      this.startOpen = !!val && !!this.isAnimation
+      this.toggleWithAnimation()
     },
   },
   methods: {
@@ -77,29 +77,20 @@ export default {
       this.isCompleted = false
       delayQuerySelector(this, '.at-accordion__body', 0).then((rect) => {
         const height = parseInt(rect[0].height.toString())
-        const startHeight = open ? height : 0
-        const endHeight = open ? 0 : height
+        const startHeight = open ? 0 : height
+        const endHeight = open ? height : 0
         this.startOpen = false
-        this.setState(
-          {
-            wrapperHeight: startHeight,
-          },
-          () => {
-            setTimeout(() => {
-              this.setState(
-                {
-                  wrapperHeight: endHeight,
-                },
-                () => {
-                  setTimeout(() => {
-                    this.isCompleted = true
-                    this.setState({})
-                  }, 700)
-                }
-              )
-            }, 100)
-          }
-        )
+        this.setState({
+          wrapperHeight: startHeight,
+        })
+        setTimeout(() => {
+          this.setState({
+            wrapperHeight: endHeight,
+          })
+        }, 100)
+        setTimeout(() => {
+          this.isCompleted = true
+        }, 700)
       })
     },
   },
