@@ -218,7 +218,7 @@ export default {
 
     const webButton = (
       <button
-        className="at-button__wxbutton"
+        class="at-button__wxbutton"
         lang={lang}
         formType={formType === 'submit' || formType === 'reset' ? formType : undefined}></button>
     )

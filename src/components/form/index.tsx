@@ -48,7 +48,7 @@ const AtForm = Vue.extend({
 
     return (
       <form
-        className={rootCls}
+        class={rootCls}
         style={customStyle}
         onSubmit={this.handleSubmit.bind(this)}
         reportSubmit={reportSubmit}
