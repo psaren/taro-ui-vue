@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtNoticebar Snap render AtNoticebar -- props icon 1`] = `
+<view
+  class="at-noticebar"
+>
+  <view
+    class="at-noticebar__content"
+  >
+    <view
+      class="at-noticebar__content-icon"
+    >
+      <view
+        class="at-icon at-icon-volume-plus at-icon at-icon-volume-plus"
+      />
+    </view>
+    <view
+      class="at-noticebar__content-text"
+    >
+      <view
+        animation="[object Object]"
+        class="at-noticebar__content-inner"
+      >
+        这是内容
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtNoticebar Snap render AtNoticebar -- props moreText & showMore 1`] = `
+<view
+  class="at-noticebar at-noticebar--single"
+>
+  <view
+    class="at-noticebar__content"
+  >
+    <view
+      class="at-noticebar__content-text"
+    >
+      <view
+        animation="[object Object]"
+        class="at-noticebar__content-inner"
+      >
+        这是内容
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-noticebar__more"
+  >
+    <view
+      class="text"
+    >
+      查看更多
+    </view>
+    <view
+      class="at-noticebar__more-icon"
+    >
+      <view
+        class="at-icon at-icon-chevron-right"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtNoticebar Snap render AtNoticebar -- props show 1`] = `
+<view
+  class="at-noticebar"
+>
+  <view
+    class="at-noticebar__close"
+  >
+    <view
+      class="at-icon at-icon-close"
+    />
+  </view>
+  <view
+    class="at-noticebar__content"
+  >
+    <view
+      class="at-noticebar__content-text"
+    >
+      <view
+        animation="[object Object]"
+        class="at-noticebar__content-inner"
+      >
+        这是内容
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtNoticebar Snap render AtNoticebar -- props single 1`] = `
+<view
+  class="at-noticebar at-noticebar--single"
+>
+  <view
+    class="at-noticebar__content"
+  >
+    <view
+      class="at-noticebar__content-text"
+    >
+      <view
+        animation="[object Object]"
+        class="at-noticebar__content-inner"
+      >
+        这是内容
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtNoticebar Snap render AtNoticebar -- props speed 1`] = `
+<view
+  class="at-noticebar"
+>
+  <view
+    class="at-noticebar__content"
+  >
+    <view
+      class="at-noticebar__content-text"
+    >
+      <view
+        animation="[object Object]"
+        class="at-noticebar__content-inner"
+      >
+        这是内容
+      </view>
+    </view>
+  </view>
+</view>
+`;
