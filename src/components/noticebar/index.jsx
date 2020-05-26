@@ -87,9 +87,7 @@ export default {
           const dura = width / +this.speed
           this.setState({ dura })
         } else if (isWEAPP || isALIPAY) {
-          const query = isALIPAY
-            ? Taro.createSelectorQuery()
-            : Taro.createSelectorQuery().in(this.$scope)
+          const query = Taro.createSelectorQuery()
           query
             .select(`.${this.state.animElemId}`)
             .boundingClientRect()
@@ -168,7 +166,7 @@ export default {
       this.state.show && (
         <view class={classNames(rootClassName, classObject, className)} style={customStyle}>
           {close && (
-            <view class="at-noticebar__close" onClick={this.handlClose}>
+            <view class="at-noticebar__close" onTap={this.handleClose}>
               <view class="at-icon at-icon-close"></view>
             </view>
           )}
@@ -181,7 +179,6 @@ export default {
             )}
             <view class="at-noticebar__content-text">
               <view
-                // @ts-ignore
                 animation={this.state.animationData}
                 class={classNames(innerClassName)}
                 style={style}>
@@ -190,7 +187,7 @@ export default {
             </view>
           </view>
           {showMore && (
-            <view class="at-noticebar__more" onClick={this.handleGotoMore}>
+            <view class="at-noticebar__more" onTap={this.handleGotoMore}>
               <view class="text">{_moreText}</view>
               <view class="at-noticebar__more-icon">
                 <view class="at-icon at-icon-chevron-right"></view>
