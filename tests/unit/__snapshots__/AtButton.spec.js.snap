@@ -140,33 +140,3 @@ exports[`AtButton.vue render AtButton -- props size(small) 1`] = `
   </view>
 </view>
 `;
-
-exports[`AtButton.vue snapshot test 1`] = `
-<view
-  class="at-button at-button--normal"
->
-  <button
-    class="at-button__wxbutton"
-    lang="en"
-  />
-  <view
-    class="at-button__text"
-  />
-</view>
-`;
-
-exports[`AtButton.vue test default slot 1`] = `
-<view
-  class="at-button at-button--normal"
->
-  <button
-    class="at-button__wxbutton"
-    lang="en"
-  />
-  <view
-    class="at-button__text"
-  >
-    按钮
-  </view>
-</view>
-`;

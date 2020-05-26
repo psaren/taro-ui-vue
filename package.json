@@ -41,7 +41,8 @@
     "build:rollup": "rollup --config ./config/rollup.config.js",
     "prepublish": "npm run build:rollup && node ./config/copy.js",
     "clean": "rimraf dist lib",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "test": "cross-env NODE_ENV=test && jest --coverage"
   },
   "browserslist": [
     "last 3 versions",
@@ -84,6 +85,7 @@
     "babelrc-rollup": "^3.0.0",
     "conventional-changelog-cli": "^2.0.34",
     "copy-dir": "^1.2.0",
+    "cross-env": "^7.0.2",
     "csstype": "^2.6.10",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
