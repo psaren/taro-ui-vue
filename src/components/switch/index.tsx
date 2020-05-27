@@ -51,7 +51,7 @@ const AtSwitch = Vue.extend({
       this.onChange && this.onChange(state)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { customStyle, className, disabled, border, title, checked, color } = this
 
     const rootCls = classNames(

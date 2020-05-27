@@ -44,7 +44,7 @@ const AtCalendarController = Vue.extend({
       default: false,
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { generateDate, minDate, maxDate, monthFormat, hideArrow } = this
 
     const dayjsDate: Dayjs = dayjs(generateDate)

@@ -164,7 +164,7 @@ const AtRange = Vue.extend({
       })
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { className, customStyle, sliderStyle, railStyle, trackStyle, blockSize, disabled } = this
 
     const rootCls = classNames(

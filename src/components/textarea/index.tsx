@@ -143,7 +143,7 @@ const AtTextarea = Vue.extend({
       this.onLinechange && this.onLinechange(event)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const {
       customStyle,
       className,

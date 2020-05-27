@@ -225,7 +225,7 @@ const AtInput = Vue.extend({
       }
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const {
       className,
       customStyle,

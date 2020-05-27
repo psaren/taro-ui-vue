@@ -102,7 +102,7 @@ const AtSlider = Vue.extend({
       this.onChange && this.onChange(value)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { _value } = this.state
     const {
       customStyle,

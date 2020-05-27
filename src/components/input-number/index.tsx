@@ -182,7 +182,7 @@ const AtInputNumber = Vue.extend({
       this.onErrorInput(errorValue)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const {
       customStyle,
       className,
