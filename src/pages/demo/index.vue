@@ -2,10 +2,17 @@
   <view>
     <text />
     <view />
+    <input type="text">
     <AtIcon
       value="clock"
       size="30"
-      color="#F00"
+      color="#F92"
+    />
+    <AtInput
+      name="value"
+      title="标准五个字"
+      type="text"
+      placeholder="标准五个字"
     />
     <AtAccordion
       title="标题三"
@@ -74,8 +81,8 @@
 </template>
 <script>
 import Taro from '@tarojs/taro'
-import { AtCalendar } from '../../components'
-import { AtIcon, AtTag, AtButton, AtNoticebar, AtAccordion, AtList, AtListItem } from '../../components'
+import { AtCalendar, AtTag, AtIcon, AtInput } from '../../../dist'
+import { AtButton, AtNoticebar, AtAccordion, AtList, AtListItem } from '../../components'
 export default {
   components: {
     AtCalendar,
@@ -85,7 +92,7 @@ export default {
     AtNoticebar,
     AtAccordion,
     AtList,
-    AtListItem
+    AtListItem, AtInput
   },
   data() {
     return {

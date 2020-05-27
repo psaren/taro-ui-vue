@@ -7,7 +7,7 @@ const AtCalendarDayList = Vue.extend({
       options: { addGlobalClass: true }
     }
   },
-  render() {
+  render(h) {
     return (
       <view class='at-calendar__header header'>
         <view class='header__flex'>

@@ -41,7 +41,7 @@ const AtRadio = Vue.extend({
       this.onClick(option.value, event)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { customStyle, className, options, value } = this
     console.log('value :>> ', value)
     return (

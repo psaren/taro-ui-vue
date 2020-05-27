@@ -49,7 +49,7 @@ const AtCalendarList = Vue.extend({
       }
     },
   },
-  render() {
+  render(h) {
     const { list } = this
     if (!list || list.length === 0) return null
 

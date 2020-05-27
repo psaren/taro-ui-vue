@@ -130,7 +130,7 @@ const AtSearchBar = Vue.extend({
       this.onActionClick && this.onActionClick(event)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const {
       value,
       placeholder,

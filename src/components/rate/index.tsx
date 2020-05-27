@@ -46,7 +46,7 @@ const AtRate = Vue.extend({
       this.onChange && this.onChange(event)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { customStyle, className, value, max, size, margin } = this
 
     const iconStyle = {

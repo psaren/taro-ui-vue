@@ -154,7 +154,7 @@ const AtImagePicker = Vue.extend({
       this.onChange(newFiles, 'remove', idx)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { className, customStyle, files, mode, length = 4, showAddBtn = true } = this
     const rowLength = length <= 0 ? 1 : length
     // 行数

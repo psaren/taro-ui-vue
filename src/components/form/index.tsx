@@ -42,7 +42,7 @@ const AtForm = Vue.extend({
       this.onReset && this.onReset(arguments)
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { customStyle, className, reportSubmit } = this
     const rootCls = classNames('at-form', className)
 

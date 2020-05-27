@@ -2,7 +2,7 @@ import Vue, { VNode } from 'vue'
 
 const Demo = Vue.extend({
   name: 'Demo',
-  render(): VNode {
+  render(h): VNode {
     return <view>demo!</view>
   },
 })

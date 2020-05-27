@@ -51,7 +51,7 @@ const AtCheckbox = Vue.extend({
       this.onChange([...selectedSet])
     },
   },
-  render(): VNode {
+  render(h): VNode {
     const { customStyle, className, options, selectedList } = this
 
     const rootCls = classNames('at-checkbox', className)
