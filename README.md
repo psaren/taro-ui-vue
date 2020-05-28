@@ -51,7 +51,7 @@ export default {
 </script>
 ```
 ### 全局引入所有组件
-```
+``` javascript
 // app.js
 import TaroUiVue from 'taro-ui-vue'
 import 'taro-ui-vue/dist/style/index.scss'
