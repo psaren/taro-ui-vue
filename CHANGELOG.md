@@ -1,3 +1,5 @@
+## [0.0.6]
+* 压缩 rollup 打包后的代码
 ## [0.0.5](https://github.com/psaren/taro-ui-vue/compare/v0.0.4...v0.0.5) (2020-05-28)
 
 
