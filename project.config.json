@@ -1,6 +1,6 @@
 {
 	"miniprogramRoot": "bundle/",
-	"projectname": "vueAppTs",
+	"projectname": "taro-ui-vue",
 	"description": "taro-vue-app-ts",
 	"appid": "touristappid",
 	"setting": {

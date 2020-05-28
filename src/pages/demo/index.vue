@@ -81,19 +81,7 @@
 </template>
 <script>
 import Taro from '@tarojs/taro'
-import { AtCalendar, AtTag, AtIcon, AtInput } from '../../../dist'
-import { AtButton, AtNoticebar, AtAccordion, AtList, AtListItem } from '../../components'
 export default {
-  components: {
-    AtCalendar,
-    AtIcon,
-    AtTag,
-    AtButton,
-    AtNoticebar,
-    AtAccordion,
-    AtList,
-    AtListItem, AtInput
-  },
   data() {
     return {
       date: '',

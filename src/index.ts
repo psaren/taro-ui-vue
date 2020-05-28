@@ -159,10 +159,28 @@ const components = [
   AtFab,
   AtLoading,
 ]
+interface Comp {
+  options?: {
+    [key: string]: Comp,
+  };
+  [key: string]: any;
+}
 
 const install = function (Vue) {
-  components.forEach((comp) => {
-    Vue.component(comp.name, comp)
+  components.forEach((comp: Comp) => {
+    if (comp.extendOptions) {
+      // 压缩后 vue-class-component 组件的 options.name 会改变需要找回正确的组件名
+      let options = comp.options || {}
+      const name = comp.extendOptions.name
+      // 压缩后 vue-class-component 组件的 options.name 会是小写字母开头的
+      if (/^[a-z]/.test(name)) {
+        options.name = comp.options ? comp.options.components[name].superOptions.name : name
+      }
+      Vue.component(options.name, options)
+    } else {
+      Vue.component(comp.name, comp)
+    }
   })
 }
+
 export default install

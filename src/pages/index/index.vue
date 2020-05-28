@@ -72,19 +72,19 @@
       :page-size="10"
       :current="1"
     />
-    <SegmentedControl
+    <AtSegmentedControl
       :on-click="segmentedClick"
       selected-color="#FF4949"
       font-size="30"
       :current="segmentedIndex"
       :values="segmentedList"
     />
-    <TabBar
+    <AtTabBar
       :tab-list="tabBarList"
       :on-click="onTabClick"
       :current="tabIndex"
     />
-    <NavBar
+    <AtNavBar
       :on-click-rg-icon-st="onClick"
       :on-click-rg-icon-nd="onClick"
       :on-click-left-icon="onClick"
@@ -94,68 +94,69 @@
       right-first-icon-type="bullet-list"
       right-second-icon-type="user"
     />
-    <Accordion
+    <AtAccordion
       title="标题三"
       :icon="accordionIcon"
       :open="openAccordion"
       :on-click="handleAccordionOpen"
     >
-      <List :has-border="false">
-        <ListItem
+      <AtList :has-border="false">
+        <AtListItem
           title="标题文字"
           arrow="right"
           thumb="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
         />
-        <ListItem
+        <AtListItem
           title="标题文字"
           note="描述信息"
           arrow="right"
           thumb="http://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
         />
-        <ListItem
+        <AtListItem
           title="标题文字"
           note="描述信息"
           extra-text="详细信息"
           arrow="right"
           thumb="http://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
         />
-      </List>
-    </Accordion>
-    <FloatLayout
+        </List>
+      </atlist>
+    </AtAccordion>
+    <AtFloatLayout
       title="这是个标题"
     >
       这是内容区 随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
       随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写
-    </FloatLayout>
-    <Card
+    </AtFloatLayout>
+    <AtCard
       note="小Tips"
       extra="额外信息"
       title="这是个标题"
       thumb="http://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
     >
-      <Icon
+      <AtIcon
         slot="renderIcon"
         value="bell"
       />
       这也是内容区 可以随意定义功能
-    </Card>
-    <List>
-      <ListItem
+    </AtCard>
+    <AtList>
+      <AtListItem
         title="标题文字"
         arrow="right"
         thumb="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
       />
-      <ListItem
+      <AtListItem
         title="标题文字"
         extra-text="详细信息"
       />
-      <ListItem
+      <AtListItem
         title="禁用状态"
         disabled
         extra-text="详细信息"
       />
-    </List>
-    <Grid
+    </AtList>
+    <AtGrid
       mode="square"
       :data="gridData"
     />
@@ -173,35 +174,35 @@
         D
       </view>
     </view>
-    <Message />
+    <AtMessage />
     <button @tap="showMessage">
       show Message
     </button>
     <button @tap="showMessage('success')">
       show success Message
     </button>
-    <SwipeAction
+    <AtSwipeAction
       :options="SAOptions"
     >
       <view class-name="normal">
         AtSwipeAction 一般使用场景
       </view>
-    </SwipeAction>
-    <Toast
+    </AtSwipeAction>
+    <AtToast
       is-opened
       text="{text}"
       icon="clock"
     />
-    <Modal>
-      <ModalHeader>标题</ModalHeader>
-      <ModalContent>
+    <AtModal>
+      <AtModalHeader>标题</AtModalHeader>
+      <AtModalContent>
         这里是正文内容，欢迎加入京东凹凸实验室
         这里是正文内容，欢迎加入京东凹凸实验室
         这里是正文内容，欢迎加入京东凹凸实验室
-      </ModalContent>
-      <ModalAction> <button>取消</button> <button>确定</button> </ModalAction>
-    </Modal>
-    <Modal
+      </AtModalContent>
+      <AtModalAction> <button>取消</button> <button>确定</button> </AtModalAction>
+    </AtModal>
+    <AtModal
       title="标题"
       cancel-text="取消"
       confirm-text="确认"
@@ -210,22 +211,22 @@
       :on-confirm="onClick"
       content="欢迎加入京东凹凸实验室\n\r欢迎加入京东凹凸实验室"
     />
-    <Progress :percent="80" />
-    <ActionSheet>
-      <ActionSheetItem>
+    <AtProgress :percent="80" />
+    <AtActionSheet>
+      <AtActionSheetItem>
         按钮一
-      </ActionSheetItem>
-      <ActionSheetItem>
+      </AtActionSheetItem>
+      <AtActionSheetItem>
         按钮二
-      </ActionSheetItem>
-    </ActionSheet>
-    <Badge dot>
-      <Icon
+      </AtActionSheetItem>
+    </AtActionSheet>
+    <AtBadge dot>
+      <AtIcon
         class-name="at-icon at-icon-settings"
         size="30"
         color="#F00"
       />
-    </Badge>
+    </AtBadge>
     <!-- <Button 
       loading 
       type="primary"
@@ -233,34 +234,34 @@
     >
       hello
     </Button> -->
-    <Fab>fab</Fab>
-    <Avatar text="111" />
-    <Curtain 
+    <AtFab>fab</AtFab>
+    <AtAvatar text="111" />
+    <AtCurtain 
       :is-opened="show"
       :on-close="changeShow"
     >
       <image src="https://taro-ui.jd.com/h5/static/images/curtain.png" />
-    </Curtain>
+    </AtCurtain>
     <button @tap="changeShow">
       changeShow
     </button>
     <!-- <LoadMore status="loading" /> -->
-    <Noticebar icon="volume-plus">
+    <AtNoticebar icon="volume-plus">
       这是 NoticeBar 通告栏
-    </Noticebar>
-    <Tag>标签</Tag>
-    <Tag
+    </AtNoticebar>
+    <AtTag>标签</AtTag>
+    <AtTag
       type="primary"
       circle
       :active="activeTag"
       :on-click="changeTagActive"
     >
       标签
-    </Tag>
-    <Tag size="small">
+    </AtTag>
+    <AtTag size="small">
       标签
-    </Tag>
-    <Timeline 
+    </AtTag>
+    <AtTimeline 
       :items="[
         { title: '刷牙洗脸' }, 
         { title: '吃早餐', color: 'green' }, 
@@ -293,17 +294,17 @@
         </view>
       </swiper-item>
     </swiper>
-    <Divider
+    <AtDivider
       content="没有更多了"
       font-color="#ed3f14"
       line-color="#ed3f14"
     />
-    <Divider
+    <AtDivider
       content="没有更多了"
       font-color="#ff9900"
       line-color="#ff9900"
     />
-    <Divider
+    <AtDivider
       content="没有更多了"
       font-color="#2d8cf0"
       line-color="#2d8cf0"
@@ -339,8 +340,7 @@
         </view>
       </AtTabsPane>
     </AtTabs>
-    
-    <Demo />
+    </modal>
   </view>
 </template>
 

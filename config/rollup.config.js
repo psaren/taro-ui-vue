@@ -9,6 +9,7 @@ import babel from 'rollup-plugin-babel'
 // import babelrc from 'babelrc-rollup'
 import VuePlugin from 'rollup-plugin-vue'
 import jsx from 'acorn-jsx'
+import { terser } from 'rollup-plugin-terser'
 const babelConfig = require('../babel.config')
 
 // 这里需要将 @vue/babel-preset-jsx参数injectH设置为 false, 否则打包报错
@@ -65,6 +66,7 @@ export default {
       include: /\/node_modules\//,
     }),
     RollupJson(),
+    terser(),
     RollupTypescript({
       tsconfig: NodePath.resolve(__dirname, 'tsconfig.rollup.json'),
       include: ['*.ts+(|x)', '**/*.ts+(|x)'],

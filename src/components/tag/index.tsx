@@ -13,6 +13,7 @@ const TYPE_CLASS = {
 }
 
 const AtTagProps = Vue.extend({
+  name: 'AtTag',
   props: {
     size: {
       type: String,
