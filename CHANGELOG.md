@@ -1,4 +1,15 @@
-## 0.0.4 (2020-05-22)
+## [0.0.5](https://github.com/psaren/taro-ui-vue/compare/v0.0.4...v0.0.5) (2020-05-28)
+
+
+### Bug Fixes
+* AtAccordion [421c336](https://github.com/psaren/taro-ui-vue/commit/421c3363e6593c287fd65b9d00abd3827a7872c5)  
+* AtNoticebar [de5e4b8](https://github.com/psaren/taro-ui-vue/commit/de5e4b81d7df526b018fde4143fcff96b4409403)  
+* AtButton [5d75d6f](https://github.com/psaren/taro-ui-vue/commit/5d75d6f642ad80c533544c0d86680fa8f0fd9c7b)  
+* **build:** 修复tsx组件构建后 ( h is not defined ) ([#4](https://github.com/psaren/taro-ui-vue/issues/4)) ([cb849d2](https://github.com/psaren/taro-ui-vue/commit/cb849d2fad9dafe49f8f63593f59f00c3101b6c2))
+
+
+
+## [0.0.4](https://github.com/psaren/taro-ui-vue/compare/6f80b97f903c3a94f0e6832789780fabbfa92842...v0.0.4) (2020-05-22)
 
 
 ### Bug Fixes
