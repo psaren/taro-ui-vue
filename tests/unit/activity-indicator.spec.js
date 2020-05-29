@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import AtActionSheet from '../../src/components/activity-indicator/index'
+import ActivityIndicator from '../../src/components/activity-indicator/index'
 import AtLoading from '../../src/components/loading'
 
-const factory = (values = {}, slots = { default: ['这是内容'] }) => {
-  return mount(AtActionSheet, {
+const factory = (values = {}, slots = { default: [] }) => {
+  return mount(ActivityIndicator, {
     slots,
     components: { AtLoading },
     propsData: { ...values },
