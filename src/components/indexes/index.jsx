@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import Taro from '@tarojs/taro'
 import mixins from '../mixins'
-import { delayQuerySelector, isTest, uuid } from '../../utils/common'
+import { delayQuerySelector, isTest, uuid, pxTransform } from '../../utils/common'
 import AtList from '../list/index'
 import AtListItem from '../list/item/index'
 import AtToast from '../toast/index'
@@ -196,7 +196,7 @@ export default {
     const { className, customStyle, animation, topKey, list } = this
     const { _scrollTop, _scrollIntoView, _tipText, _isShowToast, isWEB } = this.state
 
-    const toastStyle = { minWidth: Taro.pxTransform(100) }
+    const toastStyle = { minWidth: pxTransform(100) }
     const rootCls = classNames('at-indexes', className)
 
     const menuList = list.map((dataList, i) => {

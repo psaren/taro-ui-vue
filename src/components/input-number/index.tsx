@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { InputError } from 'types/input-number'
 import _toString from 'lodash/toString'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
+import { pxTransform } from '../../utils/common'
 
 // 实现两数相加并保留小数点后最短尾数
 function addNum(num1: number, num2: number): number {
@@ -197,7 +198,7 @@ const AtInputNumber = Vue.extend({
     } = this
 
     const inputStyle = {
-      width: width ? `${Taro.pxTransform(width)}` : '',
+      width: width ? `${pxTransform(width)}` : '',
     }
     const inputValue = Number(this.handleValue(value))
     const rootCls = classNames(

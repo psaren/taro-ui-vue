@@ -1,6 +1,5 @@
-import Taro from '@tarojs/taro'
 import classNames from 'classnames'
-import { mergeStyle } from '../../utils/common'
+import { mergeStyle, pxTransform } from '../../utils/common'
 
 export default {
   name: 'AtIcon',
@@ -43,7 +42,7 @@ export default {
     const { customStyle, className, prefixClass, value, size, color } = this
 
     const rootStyle = {
-      fontSize: `${Taro.pxTransform(parseInt(String(size)) * 2)}`,
+      fontSize: `${pxTransform(parseInt(String(size)) * 2)}`,
       color,
     }
 
