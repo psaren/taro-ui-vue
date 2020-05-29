@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Snap render Avatar -- props circle 1`] = `
+<view
+  class="at-avatar at-avatar--normal at-avatar--circle"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
+
+exports[`Avatar Snap render Avatar -- props image 1`] = `
+<view
+  class="at-avatar at-avatar--normal"
+>
+  <image
+    class="at-avatar__img"
+    src="https://jdc.jd.com/img/100"
+  />
+</view>
+`;
+
+exports[`Avatar Snap render Avatar -- props size(large)  1`] = `
+<view
+  class="at-avatar at-avatar--large"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
+
+exports[`Avatar Snap render Avatar -- props size(normal)  1`] = `
+<view
+  class="at-avatar at-avatar--normal"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
+
+exports[`Avatar Snap render Avatar -- props size(small)  1`] = `
+<view
+  class="at-avatar at-avatar--small"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
+
+exports[`Avatar Snap render Avatar -- props text 1`] = `
+<view
+  class="at-avatar at-avatar--normal"
+>
+  <view
+    class="at-avatar__text"
+  >
+    凹
+  </view>
+</view>
+`;
