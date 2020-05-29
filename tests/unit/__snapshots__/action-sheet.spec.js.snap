@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionSheet Snap render initial ActionSheet 1`] = `
+<view
+  class="at-action-sheet"
+>
+  <view
+    class="at-action-sheet__overlay"
+  />
+  <view
+    class="at-action-sheet__container"
+  >
+    <view
+      class="at-action-sheet__body"
+    >
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮一
+      </view>
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮二
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActionSheet Snap render opened ActionSheet -- props cancelText 1`] = `
+<view
+  class="at-action-sheet at-action-sheet--active"
+>
+  <view
+    class="at-action-sheet__overlay"
+  />
+  <view
+    class="at-action-sheet__container"
+  >
+    <view
+      class="at-action-sheet__body"
+    >
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮一
+      </view>
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮二
+      </view>
+    </view>
+    <view
+      class="at-action-sheet__footer"
+    >
+      取消
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActionSheet Snap render opened ActionSheet -- props completed 1`] = `
+<view
+  class="at-action-sheet at-action-sheet--active"
+>
+  <view
+    class="at-action-sheet__overlay"
+  />
+  <view
+    class="at-action-sheet__container"
+  >
+    <view
+      class="at-action-sheet__header"
+    >
+      清除位置信息后， 别人将不能查看到你
+可以通过转义字符换行
+    </view>
+    <view
+      class="at-action-sheet__body"
+    >
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮一
+      </view>
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮二
+      </view>
+    </view>
+    <view
+      class="at-action-sheet__footer"
+    >
+      取消
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActionSheet Snap render opened ActionSheet -- props title 1`] = `
+<view
+  class="at-action-sheet at-action-sheet--active"
+>
+  <view
+    class="at-action-sheet__overlay"
+  />
+  <view
+    class="at-action-sheet__container"
+  >
+    <view
+      class="at-action-sheet__header"
+    >
+      清除位置信息后， 别人将不能查看到你
+可以通过转义字符换行
+    </view>
+    <view
+      class="at-action-sheet__body"
+    >
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮一
+      </view>
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮二
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActionSheet Snap render opened ActionSheet 1`] = `
+<view
+  class="at-action-sheet at-action-sheet--active"
+>
+  <view
+    class="at-action-sheet__overlay"
+  />
+  <view
+    class="at-action-sheet__container"
+  >
+    <view
+      class="at-action-sheet__body"
+    >
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮一
+      </view>
+      <view
+        class="at-action-sheet__item"
+      >
+        按钮二
+      </view>
+    </view>
+  </view>
+</view>
+`;
