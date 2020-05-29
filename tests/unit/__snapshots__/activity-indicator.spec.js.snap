@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActivityIndicator Snap render ActivityIndicator -- props color 1`] = `
+<view
+  class="at-activity-indicator at-activity-indicator--isopened"
+>
+  <view
+    class="at-activity-indicator__body"
+  >
+    <view
+      class="at-loading"
+    >
+      <view
+        class="at-loading__ring"
+        style="border: 1px solid #13ce66; border-color: #13ce66 transparent transparent transparent;"
+      />
+      <view
+        class="at-loading__ring"
+        style="border: 1px solid #13ce66; border-color: #13ce66 transparent transparent transparent;"
+      />
+      <view
+        class="at-loading__ring"
+        style="border: 1px solid #13ce66; border-color: #13ce66 transparent transparent transparent;"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActivityIndicator Snap render ActivityIndicator -- props content 1`] = `
+<view
+  class="at-activity-indicator at-activity-indicator--isopened"
+>
+  <view
+    class="at-activity-indicator__body"
+  >
+    <view
+      class="at-loading"
+    >
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+    </view>
+  </view>
+  <view
+    class="at-activity-indicator__content"
+  >
+    加载中...
+  </view>
+</view>
+`;
+
+exports[`ActivityIndicator Snap render ActivityIndicator -- props isOpened 1`] = `
+<view
+  class="at-activity-indicator at-activity-indicator--isopened"
+>
+  <view
+    class="at-activity-indicator__body"
+  >
+    <view
+      class="at-loading"
+    >
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActivityIndicator Snap render ActivityIndicator -- props mode 1`] = `
+<view
+  class="at-activity-indicator at-activity-indicator--center at-activity-indicator--isopened"
+>
+  <view
+    class="at-activity-indicator__body"
+  >
+    <view
+      class="at-loading"
+    >
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActivityIndicator Snap render ActivityIndicator -- props size 1`] = `
+<view
+  class="at-activity-indicator at-activity-indicator--isopened"
+>
+  <view
+    class="at-activity-indicator__body"
+  >
+    <view
+      class="at-loading"
+    >
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`ActivityIndicator Snap render initial ActivityIndicator 1`] = `
+<view
+  class="at-activity-indicator at-activity-indicator--isopened"
+>
+  <view
+    class="at-activity-indicator__body"
+  >
+    <view
+      class="at-loading"
+    >
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+      <view
+        class="at-loading__ring"
+      />
+    </view>
+  </view>
+</view>
+`;
