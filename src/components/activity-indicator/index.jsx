@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Loading from '../loading/index.jsx'
+import AtLoading from '../loading/index.jsx'
 
 export default {
   name: 'AtActivityIndicator',
@@ -44,7 +44,7 @@ export default {
     return (
       <view class={rootClass}>
         <view class="at-activity-indicator__body">
-          <Loading size={size} color={color} />
+          <AtLoading size={size} color={color} />
         </view>
         {content && <view class="at-activity-indicator__content">{content}</view>}
       </view>
