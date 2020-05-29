@@ -52,6 +52,7 @@ export default {
     },
     close() {
       this.show = false
+      this.handleClose()
     },
     handleTouchMove(e) {
       e.stopPropagation()

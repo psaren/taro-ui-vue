@@ -12,7 +12,7 @@ export default {
       default: () => () => {},
     },
   },
-  methds: {
+  methods: {
     handleClick(e) {
       this.onClick && this.onClick(e)
     },
