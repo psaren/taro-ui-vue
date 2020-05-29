@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
-import { mergeStyle } from '../../utils/common'
+import { mergeStyle, pxTransform } from '../../utils/common'
 
 export default {
   name: 'AtNavBar',
@@ -162,7 +162,7 @@ export default {
               style={mergeStyle(
                 {
                   color: leftIconInfo.color,
-                  fontSize: `${Taro.pxTransform(parseInt(leftIconInfo.size.toString()) * 2)}`,
+                  fontSize: `${pxTransform(parseInt(leftIconInfo.size.toString()) * 2)}`,
                 },
                 leftIconInfo.customStyle
               )}></view>
@@ -184,9 +184,7 @@ export default {
                 style={mergeStyle(
                   {
                     color: rightSecondIconInfo.color,
-                    fontSize: `${Taro.pxTransform(
-                      parseInt(rightSecondIconInfo.size.toString()) * 2
-                    )}`,
+                    fontSize: `${pxTransform(parseInt(rightSecondIconInfo.size.toString()) * 2)}`,
                   },
                   rightSecondIconInfo.customStyle
                 )}></view>
@@ -205,9 +203,7 @@ export default {
                 style={mergeStyle(
                   {
                     color: rightFirstIconInfo.color,
-                    fontSize: `${Taro.pxTransform(
-                      parseInt(rightFirstIconInfo.size.toString()) * 2
-                    )}`,
+                    fontSize: `${pxTransform(parseInt(rightFirstIconInfo.size.toString()) * 2)}`,
                   },
                   rightFirstIconInfo.customStyle
                 )}></view>

@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { mergeStyle } from '../../utils/common'
+import { mergeStyle, pxTransform } from '../../utils/common'
 
 export default {
   name: 'AtDivider',
@@ -33,12 +33,12 @@ export default {
     const { className, customStyle, content, height, fontColor, fontSize, lineColor } = this
 
     const rootStyle = {
-      height: height ? `${Taro.pxTransform(Number(height))}` : '',
+      height: height ? `${pxTransform(Number(height))}` : '',
     }
 
     const fontStyle = {
       color: fontColor,
-      'font-size': fontSize ? `${Taro.pxTransform(Number(fontSize))}` : '',
+      'font-size': fontSize ? `${pxTransform(Number(fontSize))}` : '',
     }
 
     const lineStyle = {

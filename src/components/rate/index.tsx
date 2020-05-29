@@ -1,7 +1,7 @@
 import Vue, { VNode } from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
-import Taro from '@tarojs/taro'
+import { pxTransform } from '../../utils/common'
 
 const AtRate = Vue.extend({
   name: 'AtRate',
@@ -50,7 +50,7 @@ const AtRate = Vue.extend({
     const { customStyle, className, value, max, size, margin } = this
 
     const iconStyle = {
-      marginRight: Taro.pxTransform(margin),
+      marginRight: pxTransform(margin),
     }
     const starIconStyle = {
       fontSize: size ? `${size}px` : '',

@@ -1,3 +1,5 @@
+import { pxTransform } from '../../utils/common'
+
 export default {
   name: 'AtLoading',
   props: {
@@ -14,8 +16,8 @@ export default {
     const { color, size } = this
     const loadingSize = typeof size === 'string' ? size : String(size)
     const sizeStyle = {
-      width: size ? `${Taro.pxTransform(parseInt(loadingSize))}` : '',
-      height: size ? `${Taro.pxTransform(parseInt(loadingSize))}` : '',
+      width: size ? `${pxTransform(parseInt(loadingSize))}` : '',
+      height: size ? `${pxTransform(parseInt(loadingSize))}` : '',
     }
     const colorStyle = {
       border: color ? `1px solid ${color}` : '',

@@ -2,6 +2,7 @@ import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
+import { pxTransform } from '../../utils/common'
 
 type ExtendEvent = {
   target: {
@@ -167,7 +168,7 @@ const AtTextarea = Vue.extend({
 
     const _maxLength = parseInt(maxLength.toString())
     const actualMaxLength = getMaxLength(_maxLength, textOverflowForbidden)
-    const textareaStyle = height ? `height:${Taro.pxTransform(Number(height))}` : ''
+    const textareaStyle = height ? `height:${pxTransform(Number(height))}` : ''
     const rootCls = classNames(
       'at-textarea',
       `at-textarea--${ENV}`,
