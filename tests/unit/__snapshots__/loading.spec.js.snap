@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtLoading Snap render AtLoading -- props color 1`] = `
+<view
+  class="at-loading"
+>
+  <view
+    class="at-loading__ring"
+    style="border: 1px solid #fff; border-color: #fff transparent transparent transparent;"
+  />
+  <view
+    class="at-loading__ring"
+    style="border: 1px solid #fff; border-color: #fff transparent transparent transparent;"
+  />
+  <view
+    class="at-loading__ring"
+    style="border: 1px solid #fff; border-color: #fff transparent transparent transparent;"
+  />
+</view>
+`;
+
+exports[`AtLoading Snap render AtLoading -- props size 1`] = `
+<view
+  class="at-loading"
+>
+  <view
+    class="at-loading__ring"
+  />
+  <view
+    class="at-loading__ring"
+  />
+  <view
+    class="at-loading__ring"
+  />
+</view>
+`;
+
+exports[`AtLoading Snap render initial AtLoading 1`] = `
+<view
+  class="at-loading"
+>
+  <view
+    class="at-loading__ring"
+  />
+  <view
+    class="at-loading__ring"
+  />
+  <view
+    class="at-loading__ring"
+  />
+</view>
+`;
