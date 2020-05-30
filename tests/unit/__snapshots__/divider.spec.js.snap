@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtDivider Snap render AtDivider -- props childen 1`] = `
+<view
+  childen="content"
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+  >
+    test
+  </view>
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props className 1`] = `
+<view
+  class="at-divider test"
+>
+  <view
+    class="at-divider__content"
+  />
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props content 1`] = `
+<view
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+  >
+    content
+  </view>
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props customStyle 1`] = `
+<view
+  class="at-divider"
+  customStyle="color:red;"
+>
+  <view
+    class="at-divider__content"
+  />
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props fontColor 1`] = `
+<view
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+    style="color: rgb(255, 255, 255);"
+  />
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props fontSize 1`] = `
+<view
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+  />
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props height 1`] = `
+<view
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+  />
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render AtDivider -- props lineColor 1`] = `
+<view
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+  />
+  <view
+    class="at-divider__line"
+    style="background-color: rgb(255, 255, 255);"
+  />
+</view>
+`;
+
+exports[`AtDivider Snap render initial AtDivider 1`] = `
+<view
+  class="at-divider"
+>
+  <view
+    class="at-divider__content"
+  />
+  <view
+    class="at-divider__line"
+  />
+</view>
+`;
