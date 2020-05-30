@@ -26,7 +26,7 @@ export default {
       default: '',
     },
     leftIconType: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     leftText: {
