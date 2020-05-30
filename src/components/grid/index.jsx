@@ -40,7 +40,7 @@ export default {
      * @param {event} event
      */
     handleClick(item, index, row, event) {
-      const { onClick, columnNum } = this.props
+      const { onClick, columnNum } = this
       if (typeof onClick === 'function') {
         const clickIndex = row * columnNum + index
         onClick(item, clickIndex, event)
@@ -70,7 +70,7 @@ export default {
                 class={classNames(bodyClass, {
                   'at-grid-item--last': index === columnNum - 1,
                 })}
-                onClick={this.handleClick.bind(this, childItem, index, i)}
+                onTap={this.handleClick.bind(this, childItem, index, i)}
                 style={{
                   flex: `0 0 ${100 / columnNum}%`,
                 }}>
