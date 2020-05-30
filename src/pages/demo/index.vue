@@ -3,6 +3,11 @@
     <text />
     <view />
     <input type="text">
+    <AtBadge dot>
+      <AtButton loading>
+        按钮文字
+      </AtButton>
+    </AtBadge>
     <AtIcon
       value="clock"
       size="30"

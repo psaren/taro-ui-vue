@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtBadge Snap render AtBadge -- props dot 1`] = `
+<view
+  class="at-avatar at-avatar--normal"
+  dot="true"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
+
+exports[`AtBadge Snap render AtBadge -- props maxValue 1`] = `
+<view
+  class="at-avatar at-avatar--normal"
+  maxValue="9"
+  value="10"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
+
+exports[`AtBadge Snap render AtBadge -- props value 1`] = `
+<view
+  class="at-avatar at-avatar--normal"
+  value="3"
+>
+  <view
+    class="at-avatar__text"
+  />
+</view>
+`;
