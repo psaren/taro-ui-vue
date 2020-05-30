@@ -28,14 +28,14 @@ export default {
       type: [String, Number],
       default: '',
     },
-    handleClick: {
+    onClick: {
       type: Function,
-      default: () => {},
+      default: () => () => {},
     },
   },
   methods: {
-    handleTab(event) {
-      this.handleClick && this.handleClick(event)
+    handleClick(event) {
+      this.onClick && this.onClick(event)
     },
   },
   render() {
@@ -52,7 +52,7 @@ export default {
       <view
         class={classNames(prefixClass, iconName, className)}
         style={mergeStyle(rootStyle, customStyle)}
-        onTab={this.handleTab}></view>
+        onTap={this.handleClick}></view>
     )
   },
 }
