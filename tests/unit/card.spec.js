@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import AtCard from '../../src/components/card'
 
 const factory = (values = {}, slots = { default: ['这也是内容区 可以随意定义功能'] }) => {
