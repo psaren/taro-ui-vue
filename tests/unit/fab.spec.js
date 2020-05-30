@@ -30,7 +30,8 @@ describe('AtFab Event', () => {
   it('AtFab onClick', () => {
     const onClick = jest.fn()
     const wrapper = factory({ onClick: onClick })
+
     wrapper.find('.at-fab').trigger('tap')
-    expect(wrapper.element).toMatchSnapshot()
+    expect(onClick).toBeCalled()
   })
 })
