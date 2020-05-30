@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import CountdownItem from './item/index'
+import AtCountdownItem from './item/index'
 
 /**
  *
@@ -59,9 +59,9 @@ export default {
       type: Number,
       default: 0,
     },
-    handleTimeUp: {
+    onTimeUp: {
       type: Function,
-      default: () => {},
+      default: () => () => {},
     },
   },
   data() {
@@ -136,10 +136,10 @@ export default {
           className
         )}
         style={customStyle}>
-        {isShowDay && <CountdownItem num={day} separator={format.day} />}
-        {isShowHour && <CountdownItem num={hours} separator={format.hours} />}
-        <CountdownItem num={minutes} separator={format.minutes} />
-        <CountdownItem num={seconds} separator={format.seconds} />
+        {isShowDay && <AtCountdownItem num={day} separator={format.day} />}
+        {isShowHour && <AtCountdownItem num={hours} separator={format.hours} />}
+        <AtCountdownItem num={minutes} separator={format.minutes} />
+        <AtCountdownItem num={seconds} separator={format.seconds} />
       </view>
     )
   },
