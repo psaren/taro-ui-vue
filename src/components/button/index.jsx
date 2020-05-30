@@ -1,4 +1,4 @@
-import Loading from '../loading/index.jsx'
+import AtLoading from '../loading/index.jsx'
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
 
@@ -15,7 +15,7 @@ const TYPE_CLASS = {
 export default {
   name: 'AtButton',
   components: {
-    Loading,
+    AtLoading,
   },
   props: {
     size: {
@@ -251,7 +251,7 @@ export default {
         {isALIPAY && !disabled && button}
         {loading && (
           <view class="at-button__icon">
-            <Loading color={loadingColor} size={loadingSize} />
+            <AtLoading color={loadingColor} size={loadingSize} />
           </view>
         )}
         <view class="at-button__text">{this.$slots.default}</view>
