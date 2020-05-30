@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FloatLayout Snap render FloatLayout -- props isOpened 1`] = `
+<view
+  class="at-float-layout at-float-layout--active"
+>
+  <view
+    class="at-float-layout__overlay"
+  />
+  <view
+    class="at-float-layout__container layout"
+  >
+    <view
+      class="layout-body"
+    >
+      <scroll-view
+        class="layout-body__content"
+        lowerThreshold="0"
+        scrollLeft="0"
+        scrollTop="0"
+        scrollY="true"
+        upperThreshold="0"
+      >
+        这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+随你怎么写
+      </scroll-view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`FloatLayout Snap render FloatLayout -- props title 1`] = `
+<view
+  class="at-float-layout at-float-layout--active"
+>
+  <view
+    class="at-float-layout__overlay"
+  />
+  <view
+    class="at-float-layout__container layout"
+  >
+    <view
+      class="layout-header"
+    >
+      <view
+        class="layout-header__title"
+      >
+        这是个标题
+      </view>
+      <view
+        class="layout-header__btn-close"
+      />
+    </view>
+    <view
+      class="layout-body"
+    >
+      <scroll-view
+        class="layout-body__content"
+        lowerThreshold="0"
+        scrollLeft="0"
+        scrollTop="0"
+        scrollY="true"
+        upperThreshold="0"
+      >
+        这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+随你怎么写
+      </scroll-view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`FloatLayout Snap render initial FloatLayout 1`] = `
+<view
+  class="at-float-layout"
+>
+  <view
+    class="at-float-layout__overlay"
+  />
+  <view
+    class="at-float-layout__container layout"
+  >
+    <view
+      class="layout-body"
+    >
+      <scroll-view
+        class="layout-body__content"
+        lowerThreshold="0"
+        scrollLeft="0"
+        scrollTop="0"
+        scrollY="true"
+        upperThreshold="0"
+      >
+        这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+随你怎么写
+      </scroll-view>
+    </view>
+  </view>
+</view>
+`;
