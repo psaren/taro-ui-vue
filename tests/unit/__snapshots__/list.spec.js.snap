@@ -1,0 +1,616 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Snap render completed List -- no border 1`] = `
+<view
+  class="at-list at-list--no-border"
+>
+  <view
+    class="at-list__item at-list__item--no-border"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--no-border"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`List Snap render completed List 1`] = `
+<view
+  class="at-list"
+>
+  <view
+    class="at-list__item"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--multiple"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+          <view
+            class="item-content__info-note"
+          >
+            描述信息
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--disabled"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            禁用状态
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__info"
+        >
+          详细信息
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--multiple"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+          <view
+            class="item-content__info-note"
+          >
+            描述信息
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__info"
+        >
+          详细信息
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--multiple"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字标题文字标题文字标题文字标题文字
+          </view>
+          <view
+            class="item-content__info-note"
+          >
+            描述信息
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__info"
+        >
+          详细信息详细信息详细信息详细信息
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--thumb at-list__item--multiple"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-thumb item-thumb"
+      >
+        <image
+          class="item-thumb__info"
+          mode="scaleToFill"
+          src="http://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
+        />
+      </view>
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+          <view
+            class="item-content__info-note"
+          >
+            描述信息
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__info"
+        >
+          详细信息
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--thumb at-list__item--multiple"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-thumb item-thumb"
+      >
+        <image
+          class="item-thumb__info"
+          mode="scaleToFill"
+          src="http://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
+        />
+      </view>
+      <view
+        class="at-list__item-icon item-icon"
+      >
+        <view
+          class="at-icon at-icon-calendar"
+          style="color: rgb(120, 164, 250); font-size: 25px;"
+        />
+      </view>
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+          <view
+            class="item-content__info-note"
+          >
+            描述信息
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__info"
+        >
+          详细信息
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__switch"
+        >
+          <switch
+            color="#6190E8"
+          />
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--disabled"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__switch"
+        >
+          <switch
+            color="#6190E8"
+            disabled="disabled"
+          />
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__switch"
+        >
+          <switch
+            checked="checked"
+            color="#6190E8"
+          />
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  <view
+    class="at-list__item at-list__item--disabled"
+  >
+    <view
+      class="at-list__item-container"
+    >
+      <view
+        class="at-list__item-content item-content"
+      >
+        <view
+          class="item-content__info"
+        >
+          <view
+            class="item-content__info-title"
+          >
+            标题文字
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item-extra item-extra"
+      >
+        <view
+          class="item-extra__switch"
+        >
+          <switch
+            checked="checked"
+            color="#6190E8"
+            disabled="disabled"
+          />
+        </view>
+        <view
+          class="item-extra__icon"
+        >
+          <view
+            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
