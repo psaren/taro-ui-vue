@@ -1,0 +1,768 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtCountdown Snap render AtCountdown -- hours > 24 and not show day 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        25
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- hours > 24 and show day 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        01
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      天
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        01
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props className 1`] = `
+<view
+  class="at-countdown test"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props customStyle 1`] = `
+<view
+  class="at-countdown"
+  style="color: red;"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props day 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        24
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props format 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      :
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      :
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props hours 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        01
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props isCard 1`] = `
+<view
+  class="at-countdown at-countdown--card"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props isShowDay 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      天
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props minutes 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        01
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render AtCountdown -- props seconds 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        01
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCountdown Snap render initial AtCountdown 1`] = `
+<view
+  class="at-countdown"
+>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      时
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      分
+    </view>
+  </view>
+  <view
+    class="at-countdown__item"
+  >
+    <view
+      class="at-countdown__time-box"
+    >
+      <view
+        class="at-countdown__time"
+      >
+        00
+      </view>
+    </view>
+    <view
+      class="at-countdown__separator"
+    >
+      秒
+    </view>
+  </view>
+</view>
+`;

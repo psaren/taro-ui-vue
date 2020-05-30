@@ -8,6 +8,7 @@
         按钮文字
       </AtButton>
     </AtBadge>
+    <AtCountdown :hours="25" />
     <AtIcon
       value="clock"
       size="30"
