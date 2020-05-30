@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtIcon Snap render AtIcon -- props className 1`] = `
+<view
+  class="at-icon test"
+/>
+`;
+
+exports[`AtIcon Snap render AtIcon -- props color 1`] = `
+<view
+  class="at-icon"
+  style="color: rgb(255, 255, 255);"
+/>
+`;
+
+exports[`AtIcon Snap render AtIcon -- props customStyle 1`] = `
+<view
+  class="at-icon"
+  style="color: red;"
+/>
+`;
+
+exports[`AtIcon Snap render AtIcon -- props prefixClass 1`] = `
+<view
+  class="prefixClass prefixClass-star"
+/>
+`;
+
+exports[`AtIcon Snap render AtIcon -- props size 1`] = `
+<view
+  class="at-icon"
+/>
+`;
+
+exports[`AtIcon Snap render AtIcon -- props value 1`] = `
+<view
+  class="at-icon at-icon-star"
+/>
+`;
+
+exports[`AtIcon Snap render initial AtIcon 1`] = `
+<view
+  class="at-icon"
+/>
+`;
