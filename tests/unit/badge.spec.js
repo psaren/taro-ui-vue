@@ -15,27 +15,6 @@ const factory = (values = {}, slots = { default: ['<AtButton loading>按钮文�
     propsData: { ...values },
   })
 }
-// const factory = (values = {}) => {
-//   const propsDataStr = Object.keys(values)
-//     .map((k) => {
-//       return (typeof values[k] == 'string' ? '' : ':') + `${k}="${values[k]}"`
-//     })
-//     .join(' ')
-//   console.log(propsDataStr)
-//   return mount({
-//     localVue,
-//     components: {
-//       AtBadge,
-//       AtButton,
-//       AtLoading,
-//     },
-//     template: `
-//       <AtBadge ${propsDataStr}>
-//         按钮文字
-//       </AtBadge>
-//     `,
-//   })
-// }
 
 describe('AtBadge Snap', () => {
   it('render AtBadge -- props value', () => {
