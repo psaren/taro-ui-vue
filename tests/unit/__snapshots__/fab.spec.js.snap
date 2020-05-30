@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtFab Event AtFab onClick 1`] = `
+<view
+  class="at-fab at-fab--normal"
+  onClick="function () {
+        return fn.apply(this, arguments);
+      }"
+>
+  按钮
+</view>
+`;
+
+exports[`AtFab Snap render AtFab -- default props 1`] = `
+<view
+  class="at-fab at-fab--normal"
+>
+  按钮
+</view>
+`;
+
+exports[`AtFab Snap render AtFab -- props className 1`] = `
+<view
+  class="at-fab button at-fab--normal"
+>
+  按钮
+</view>
+`;
+
+exports[`AtFab Snap render AtFab -- props size small 1`] = `
+<view
+  class="at-fab at-fab--small"
+>
+  按钮
+</view>
+`;
