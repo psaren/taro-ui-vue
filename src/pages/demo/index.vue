@@ -3,6 +3,9 @@
     <text />
     <view />
     <input type="text">
+    <AtFab :on-click="clickFab">
+      fab
+    </AtFab>
     <AtBadge dot>
       <AtButton loading>
         按钮文字
@@ -110,6 +113,9 @@ export default {
     },
     clickAccordion() {
       this.open = !this.open
+    },
+    clickFab(e) {
+      console.log('clickFab', e)
     }
   }
 }

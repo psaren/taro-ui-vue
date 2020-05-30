@@ -12,14 +12,14 @@ export default {
       type: [Object, String],
       default: '',
     },
-    handleClick: {
+    onClick: {
       type: Function,
       default: () => () => {},
     },
   },
   methods: {
     handleTab(event) {
-      this.handleClick && this.handleClick(event)
+      this.onClick && this.onClick(event)
     },
   },
   render() {
@@ -28,7 +28,7 @@ export default {
       [`at-fab--${size}`]: size,
     })
     return (
-      <view class={rootClass} onTab={this.handleTab}>
+      <view class={rootClass} onTap={this.handleTab}>
         {this.$slots.default}
       </view>
     )
