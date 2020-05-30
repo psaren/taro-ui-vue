@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import mixins from '../mixins'
+import AtButton from '../button/index'
 
 const MIN_MAXPAGE = 1
 /**
@@ -101,14 +102,14 @@ export default {
       <view class={classNames(rootClassName, classObject, this.className)} style={customStyle}>
         <view class="at-pagination__btn-prev">
           {icon && (
-            <button onTap={this.onPrev.bind(this)} size="small" disabled={prevDisabled}>
+            <AtButton props={{ onClick: this.onPrev }} size="small" disabled={prevDisabled}>
               <view class="at-icon at-icon-chevron-left text"></view>
-            </button>
+            </AtButton>
           )}
           {!icon && (
-            <button onTap={this.onPrev.bind(this)} size="small" disabled={prevDisabled}>
+            <AtButton props={{ onClick: this.onPrev }} size="small" disabled={prevDisabled}>
               上一页
-            </button>
+            </AtButton>
           )}
         </view>
         <view class="at-pagination__number">
@@ -116,14 +117,14 @@ export default {
         </view>
         <view class="at-pagination__btn-next">
           {icon && (
-            <button onTap={this.onNext.bind(this)} size="small" disabled={nextDisabled}>
+            <AtButton props={{ onClick: this.onNext }} size="small" disabled={nextDisabled}>
               <view class="at-icon at-icon-chevron-right text"></view>
-            </button>
+            </AtButton>
           )}
           {!icon && (
-            <button onTap={this.onNext.bind(this)} size="small" disabled={nextDisabled}>
+            <AtButton props={{ onClick: this.onNext }} size="small" disabled={nextDisabled}>
               下一页
-            </button>
+            </AtButton>
           )}
         </view>
         {/* {pickerSelect && <view class='at-pagination__number'>
