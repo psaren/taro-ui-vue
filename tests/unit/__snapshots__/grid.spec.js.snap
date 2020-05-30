@@ -1,0 +1,741 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid Snap render icon Grid 1`] = `
+<view
+  class="at-grid"
+>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            领取中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            找折扣
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--last"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            领会员
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            subtract
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`Grid Snap render image Grid 1`] = `
+<view
+  class="at-grid"
+>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            领取中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            找折扣
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--last"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            领会员
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            新品首发
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <view
+              class="at-icon at-icon-bookmark"
+              style="color: red; font-size: 30px;"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            支持Icon
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`Grid Snap render no border of image Grid 1`] = `
+<view
+  class="at-grid"
+>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--no-border"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            领取中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--no-border"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            找折扣
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--no-border at-grid-item--last"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            领会员
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--no-border"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            新品首发
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--square at-grid-item--no-border"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <view
+              class="at-icon at-icon-bookmark"
+              style="color: red; font-size: 30px;"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            支持Icon
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`Grid Snap render rect icon Grid -- props columnNum 1`] = `
+<view
+  class="at-grid"
+>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 25%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            领取中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 25%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            找折扣
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 25%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            领会员
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect at-grid-item--last"
+      style="flex: 0 0 25%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            subtract
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`Grid Snap render rect icon Grid 1`] = `
+<view
+  class="at-grid"
+>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            领取中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            找折扣
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect at-grid-item--last"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            领会员
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          />
+          <view
+            class="content-inner__text"
+          >
+            subtract
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`Grid Snap render rect image Grid 1`] = `
+<view
+  class="at-grid"
+>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            领取中心
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img20.360buyimg.com/jdphoto/s72x72_jfs/t15151/308/1012305375/2300/536ee6ef/5a411466N040a074b.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            找折扣
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect at-grid-item--last"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img10.360buyimg.com/jdphoto/s72x72_jfs/t5872/209/5240187906/2872/8fa98cd/595c3b2aN4155b931.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            领会员
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-grid__flex"
+  >
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <image
+              class="content-inner__img"
+              mode="scaleToFill"
+              src="https://img12.360buyimg.com/jdphoto/s72x72_jfs/t10660/330/203667368/1672/801735d7/59c85643N31e68303.png"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            新品首发
+          </view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-grid__flex-item at-grid-item at-grid-item--rect"
+      style="flex: 0 0 33.333333333333336%;"
+    >
+      <view
+        class="at-grid-item__content"
+      >
+        <view
+          class="at-grid-item__content-inner"
+        >
+          <view
+            class="content-inner__icon"
+          >
+            <view
+              class="at-icon at-icon-bookmark"
+              style="color: red; font-size: 30px;"
+            />
+          </view>
+          <view
+            class="content-inner__text"
+          >
+            支持Icon
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
