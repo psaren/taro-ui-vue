@@ -9,12 +9,12 @@ export default {
       validator: (val) => ['normal', 'small'].includes(val),
     },
     className: {
-      type: String,
+      type: [Object, String],
       default: '',
     },
     handleClick: {
       type: Function,
-      default: () => {},
+      default: () => () => {},
     },
   },
   methods: {
