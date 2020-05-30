@@ -9,7 +9,7 @@ export default {
       default: '',
     },
     height: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     fontColor: {
@@ -17,7 +17,7 @@ export default {
       default: '',
     },
     fontSize: {
-      type: Number,
+      type: [Number, String],
       default: 0,
     },
     lineColor: {
