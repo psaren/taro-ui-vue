@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtCurtain Snap render AtCurtain -- prop className 1`] = `
+<view
+  class="at-curtain at-curtain--closed test"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render AtCurtain -- prop closeBtnPosition 1`] = `
+<view
+  class="at-curtain at-curtain--closed"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      test
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--top"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render AtCurtain -- prop closeBtnPosition 2`] = `
+<view
+  class="at-curtain at-curtain--closed"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      test
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render AtCurtain -- prop customStyle 1`] = `
+<view
+  class="at-curtain at-curtain--closed"
+  style="color: red;"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render AtCurtain -- prop isOpened 1`] = `
+<view
+  class="at-curtain at-curtain--closed"
+  style="color: red;"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render AtCurtain -- prop isOpened 2`] = `
+<view
+  class="at-curtain"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render AtCurtain -- prop isOpened 3`] = `
+<view
+  class="at-curtain at-curtain--closed"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCurtain Snap render initial AtCurtain 1`] = `
+<view
+  class="at-curtain at-curtain--closed"
+>
+  <view
+    class="at-curtain__container"
+  >
+    <view
+      class="at-curtain__body"
+    >
+      <view
+        class="at-curtain__btn-close at-curtain__btn-close--bottom"
+      />
+    </view>
+  </view>
+</view>
+`;
