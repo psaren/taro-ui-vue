@@ -73,7 +73,7 @@ export default {
     }
 
     return (
-      <view onClick={this.handleClick} class={rootClass}>
+      <view onTap={this.handleClick} class={rootClass}>
         <view class="at-card__header">
           {thumb && (
             <view class="at-card__header-thumb">
