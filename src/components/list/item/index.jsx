@@ -62,8 +62,8 @@ export default {
     },
     arrow: {
       type: String,
-      default: 'up',
-      validator: (val) => ['up', 'down', 'right'].includes(val),
+      default: '',
+      validator: (val) => ['up', 'down', 'right', ''].includes(val),
     },
   },
   methods: {
@@ -80,8 +80,8 @@ export default {
      *
      * @param {event} event
      */
-    handleSwitchClick(evente) {
-      event.stopPropagation()
+    handleSwitchClick(event) {
+      // event.stopPropagation()
     },
     /**
      *
