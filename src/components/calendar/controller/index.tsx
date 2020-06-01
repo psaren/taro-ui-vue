@@ -1,3 +1,4 @@
+import { View, Picker, Text } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classnames from 'classnames'
 import dayjs, { Dayjs } from 'dayjs'
@@ -59,33 +60,33 @@ const AtCalendarController = Vue.extend({
     const maxDateValue: string = dayjsMaxDate ? dayjsMaxDate.format('YYYY-MM') : ''
 
     return (
-      <view class="at-calendar__controller controller">
+      <View class="at-calendar__controller controller">
         {hideArrow ? null : (
-          <view
+          <View
             class={classnames('controller__arrow controller__arrow--left', {
               'controller__arrow--disabled': isMinMonth,
             })}
             onTap={this.onPreMonth.bind(this, isMinMonth)}
           />
         )}
-        <picker
+        <Picker
           mode="date"
           fields="month"
           end={maxDateValue}
           start={minDateValue}
           onChange={this.onSelectDate}
           value={dayjsDate.format('YYYY-MM')}>
-          <text class="controller__info">{dayjsDate.format(monthFormat)}</text>
-        </picker>
+          <Text class="controller__info">{dayjsDate.format(monthFormat)}</Text>
+        </Picker>
         {hideArrow ? null : (
-          <view
+          <View
             class={classnames('controller__arrow controller__arrow--right', {
               'controller__arrow--disabled': isMaxMonth,
             })}
             onTap={this.onNextMonth.bind(this, isMaxMonth)}
           />
         )}
-      </view>
+      </View>
     )
   },
 })

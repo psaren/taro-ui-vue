@@ -1,3 +1,4 @@
+import { View, Input } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import {
@@ -267,15 +268,15 @@ const AtInput = Vue.extend({
     const placeholderCls = classNames('placeholder', placeholderClass)
 
     return (
-      <view class={rootCls} style={customStyle}>
-        <view class={containerCls}>
-          <view class={overlayCls} onTap={this.handleClick}></view>
+      <View class={rootCls} style={customStyle}>
+        <View class={containerCls}>
+          <View class={overlayCls} onTap={this.handleClick}></View>
           {title && (
-            <view class={`at-input__title ${required && 'at-input__title--required'}`} for={name}>
+            <View class={`at-input__title ${required && 'at-input__title--required'}`} for={name}>
               {title}
-            </view>
+            </View>
           )}
-          <input
+          <Input
             class="at-input__input"
             id={name}
             name={name}
@@ -301,18 +302,18 @@ const AtInput = Vue.extend({
             onKeyboardHeightChange={this.handleKeyboardHeightChange}
           />
           {clear && value && (
-            <view class="at-input__icon" onTouchEnd={this.handleClearValue}>
-              <view class="at-icon at-icon-close-circle at-input__icon-close"></view>
-            </view>
+            <View class="at-input__icon" onTouchEnd={this.handleClearValue}>
+              <View class="at-icon at-icon-close-circle at-input__icon-close"></View>
+            </View>
           )}
           {error && (
-            <view class="at-input__icon" onTouchStart={this.handleErrorClick}>
-              <view class="at-icon at-icon-alert-circle at-input__icon-alert"></view>
-            </view>
+            <View class="at-input__icon" onTouchStart={this.handleErrorClick}>
+              <View class="at-icon at-icon-alert-circle at-input__icon-alert"></View>
+            </View>
           )}
-          <view class="at-input__children">{this.$slots.default}</view>
-        </view>
-      </view>
+          <View class="at-input__children">{this.$slots.default}</View>
+        </View>
+      </View>
     )
   },
 })

@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import ActionSheetBody from './body/index'
 import ActionSheetFooter from './footer/index'
@@ -72,9 +73,9 @@ export default {
     )
 
     return (
-      <view class={rootClass} onTouchMove={this.handleTouchMove}>
-        <view onTap={this.close} class="at-action-sheet__overlay" />
-        <view class="at-action-sheet__container">
+      <View class={rootClass} onTouchMove={this.handleTouchMove}>
+        <View onTap={this.close} class="at-action-sheet__overlay" />
+        <View class="at-action-sheet__container">
           {title && <ActionSheetHeader>{title}</ActionSheetHeader>}
           <ActionSheetBody>{this.$slots.default}</ActionSheetBody>
           {cancelText && (
@@ -82,8 +83,8 @@ export default {
               {cancelText}
             </ActionSheetFooter>
           )}
-        </view>
-      </view>
+        </View>
+      </View>
     )
   },
 }

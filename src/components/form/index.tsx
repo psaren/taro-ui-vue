@@ -1,3 +1,4 @@
+import { Form } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 
@@ -47,14 +48,14 @@ const AtForm = Vue.extend({
     const rootCls = classNames('at-form', className)
 
     return (
-      <form
+      <Form
         class={rootCls}
         style={customStyle}
         onSubmit={this.handleSubmit.bind(this)}
         reportSubmit={reportSubmit}
         onReset={this.handleReset.bind(this)}>
         {this.$slots.default}
-      </form>
+      </Form>
     )
   },
 })

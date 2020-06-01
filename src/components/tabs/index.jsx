@@ -1,3 +1,4 @@
+import { View, Scroll } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import mixins from '../mixins'
@@ -222,14 +223,14 @@ export default {
       })
 
       return (
-        <view
+        <View
           class={itemCls}
           id={`tab${idx}`}
           key={item.title}
           onTap={this.handleClick.bind(this, idx)}>
           {item.title}
-          <view class="at-tabs__item-underline"></view>
-        </view>
+          <View class="at-tabs__item-underline"></View>
+        </View>
       )
     })
     const rootCls = classNames(
@@ -245,7 +246,7 @@ export default {
     const scrollY = tabDirection === 'vertical'
 
     return (
-      <view class={rootCls} style={mergeStyle(heightStyle, customStyle)}>
+      <View class={rootCls} style={mergeStyle(heightStyle, customStyle)}>
         {scroll ? (
           <scroll-view
             id={this.tabId}
@@ -260,20 +261,20 @@ export default {
             {tabItems}
           </scroll-view>
         ) : (
-          <view id={this.tabId} class="at-tabs__header">
+          <View id={this.tabId} class="at-tabs__header">
             {tabItems}
-          </view>
+          </View>
         )}
-        <view
+        <View
           class="at-tabs__body"
           onTouchStart={this.handleTouchStart.bind(this)}
           onTouchEnd={this.handleTouchEnd.bind(this)}
           onTouchMove={this.handleTouchMove.bind(this)}
           style={mergeStyle(bodyStyle, heightStyle)}>
-          <view class="at-tabs__underline" style={underlineStyle}></view>
+          <View class="at-tabs__underline" style={underlineStyle}></View>
           {this.$slots.default}
-        </view>
-      </view>
+        </View>
+      </View>
     )
   },
 }

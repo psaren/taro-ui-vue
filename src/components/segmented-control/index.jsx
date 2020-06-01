@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import { pxTransform, mergeStyle } from '../../utils/common'
 
@@ -88,9 +89,9 @@ export default {
     )
 
     return (
-      <view class={rootCls} style={mergeStyle(rootStyle, customStyle)}>
+      <View class={rootCls} style={mergeStyle(rootStyle, customStyle)}>
         {values.map((value, i) => (
-          <view
+          <View
             class={classNames('at-segmented-control__item', {
               'at-segmented-control__item--active': current === i,
             })}
@@ -98,9 +99,9 @@ export default {
             key={value}
             onTap={this.handleClick.bind(this, i)}>
             {value}
-          </view>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 }

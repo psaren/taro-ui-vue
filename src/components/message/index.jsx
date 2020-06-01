@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import mixins from '../mixins'
@@ -69,9 +70,9 @@ export default {
     )
 
     return (
-      <view class={rootCls} style={customStyle}>
+      <View class={rootCls} style={customStyle}>
         {_message}
-      </view>
+      </View>
     )
   },
 }

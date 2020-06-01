@@ -1,3 +1,4 @@
+import { View, Slider } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -119,7 +120,7 @@ const AtSlider = Vue.extend({
     } = this
 
     return (
-      <view
+      <View
         class={classNames(
           {
             'at-slider': true,
@@ -128,8 +129,8 @@ const AtSlider = Vue.extend({
           className
         )}
         style={customStyle}>
-        <view class="at-slider__inner">
-          <slider
+        <View class="at-slider__inner">
+          <Slider
             min={min}
             max={max}
             step={step}
@@ -140,10 +141,10 @@ const AtSlider = Vue.extend({
             blockSize={blockSize}
             blockColor={blockColor}
             onChanging={this.handleChanging.bind(this)}
-            onChange={this.handleChange.bind(this)}></slider>
-        </view>
-        {showValue && <view clas="at-slider__text">{`${_value}`}</view>}
-      </view>
+            onChange={this.handleChange.bind(this)}></Slider>
+        </View>
+        {showValue && <View clas="at-slider__text">{`${_value}`}</View>}
+      </View>
     )
   },
 })

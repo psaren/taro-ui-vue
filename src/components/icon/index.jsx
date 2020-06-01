@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import { mergeStyle, pxTransform } from '../../utils/common'
 
@@ -49,10 +50,10 @@ export default {
     const iconName = value ? `${prefixClass}-${value}` : ''
 
     return (
-      <view
+      <View
         class={classNames(prefixClass, iconName, className)}
         style={mergeStyle(rootStyle, customStyle)}
-        onTap={this.handleClick}></view>
+        onTap={this.handleClick}></View>
     )
   },
 }

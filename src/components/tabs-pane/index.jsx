@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -29,7 +30,7 @@ export default {
     const { customStyle, className, tabDirection, index, current } = this
 
     return (
-      <view
+      <View
         class={classNames(
           {
             'at-tabs-pane': true,
@@ -41,7 +42,7 @@ export default {
         )}
         style={customStyle}>
         {this.$slots.default}
-      </view>
+      </View>
     )
   },
 }

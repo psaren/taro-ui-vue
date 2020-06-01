@@ -1,3 +1,4 @@
+import { View, Scroll } from '@tarojs/components'
 import classNames from 'classnames'
 import Taro from '@tarojs/taro'
 import mixins from '../mixins'
@@ -203,18 +204,18 @@ export default {
       const { key } = dataList
       const targetView = `at-indexes__list-${key}`
       return (
-        <view
+        <View
           class="at-indexes__menu-item"
           key={key}
           onTap={this.jumpTarget.bind(this, targetView, i + 1)}>
           {key}
-        </view>
+        </View>
       )
     })
 
     const indexesList = list.map((dataList) => (
-      <view id={`at-indexes__list-${dataList.key}`} class="at-indexes__list" key={dataList.key}>
-        <view class="at-indexes__list-title">{dataList.title}</view>
+      <View id={`at-indexes__list-${dataList.key}`} class="at-indexes__list" key={dataList.key}>
+        <View class="at-indexes__list-title">{dataList.title}</View>
         <AtList>
           {dataList.items &&
             dataList.items.map((item) => (
@@ -225,23 +226,23 @@ export default {
               />
             ))}
         </AtList>
-      </view>
+      </View>
     ))
 
     return (
-      <view class={rootCls} style={customStyle}>
+      <View class={rootCls} style={customStyle}>
         <AtToast customStyle={toastStyle} isOpened={_isShowToast} text={_tipText} duration={2000} />
-        <view
+        <View
           class="at-indexes__menu"
           onTouchMove={this.handleTouchMove}
           onTouchEnd={this.handleTouchEnd}>
-          <view
+          <View
             class="at-indexes__menu-item"
             onTap={this.jumpTarget.bind(this, 'at-indexes__top', 0)}>
             {topKey}
-          </view>
+          </View>
           {menuList}
-        </view>
+        </View>
         <scroll-view
           class="at-indexes__body"
           id={this.listId}
@@ -250,12 +251,12 @@ export default {
           scrollTop={isWEB ? _scrollTop : undefined}
           scrollIntoView={!isWEB ? _scrollIntoView : ''}
           onScroll={this.handleScroll.bind(this)}>
-          <view class="at-indexes__content" id="at-indexes__top">
+          <View class="at-indexes__content" id="at-indexes__top">
             {this.$slots.default}
-          </view>
+          </View>
           {indexesList}
         </scroll-view>
-      </view>
+      </View>
     )
   },
 }

@@ -1,3 +1,4 @@
+import { View, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import statusImg from './img.json'
 import mixins from '../mixins'
@@ -149,28 +150,28 @@ export default {
     })
 
     return _isOpened ? (
-      <view class={classNames('at-toast', this.className)}>
-        {hasMask && <view class="at-toast__overlay" />}
-        <view class={bodyClass} style={customStyle} onClick={this.handleClick}>
-          <view class="toast-body-content">
+      <View class={classNames('at-toast', this.className)}>
+        {hasMask && <View class="at-toast__overlay" />}
+        <View class={bodyClass} style={customStyle} onClick={this.handleClick}>
+          <View class="toast-body-content">
             {realImg ? (
-              <view class="toast-body-content__img">
-                <image class="toast-body-content__img-item" src={realImg} mode="scaleToFill" />
-              </view>
+              <View class="toast-body-content__img">
+                <Image class="toast-body-content__img-item" src={realImg} mode="scaleToFill" />
+              </View>
             ) : null}
             {isRenderIcon && (
-              <view class="toast-body-content__icon">
-                <view class={iconClass} />
-              </view>
+              <View class="toast-body-content__icon">
+                <View class={iconClass} />
+              </View>
             )}
             {text && (
-              <view class="toast-body-content__info">
-                <view>{text}</view>
-              </view>
+              <View class="toast-body-content__info">
+                <View>{text}</View>
+              </View>
             )}
-          </view>
-        </view>
-      </view>
+          </View>
+        </View>
+      </View>
     ) : null
   },
 }

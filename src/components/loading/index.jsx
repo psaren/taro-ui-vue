@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import { pxTransform } from '../../utils/common'
 
 export default {
@@ -26,11 +27,11 @@ export default {
     const ringStyle = Object.assign({}, colorStyle, sizeStyle)
 
     return (
-      <view class="at-loading" style={sizeStyle}>
-        <view class="at-loading__ring" style={ringStyle}></view>
-        <view class="at-loading__ring" style={ringStyle}></view>
-        <view class="at-loading__ring" style={ringStyle}></view>
-      </view>
+      <View class="at-loading" style={sizeStyle}>
+        <View class="at-loading__ring" style={ringStyle}></View>
+        <View class="at-loading__ring" style={ringStyle}></View>
+        <View class="at-loading__ring" style={ringStyle}></View>
+      </View>
     )
   },
 }

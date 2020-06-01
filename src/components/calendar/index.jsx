@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Vue from 'vue'
 import classNames from 'classnames'
 // import { View } from '@tarojs/components'
@@ -320,7 +321,7 @@ const AtCalendar = Vue.extend({
     } = this
 
     return (
-      <view class={classNames('at-calendar', className)}>
+      <View class={classNames('at-calendar', className)}>
         <AtCalendarController
           minDate={minDate}
           maxDate={maxDate}
@@ -350,7 +351,7 @@ const AtCalendar = Vue.extend({
             onLongClick: this.handleDayLongClick,
           }}
         />
-      </view>
+      </View>
     )
   },
 })

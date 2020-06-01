@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -34,10 +35,10 @@ export default {
     const { customStyle, className, items, current } = this
 
     return (
-      <view class={classNames('at-steps', className)} style={customStyle}>
+      <View class={classNames('at-steps', className)} style={customStyle}>
         {!!items &&
           items.map((item, i) => (
-            <view
+            <View
               key={item.title}
               class={classNames({
                 'at-steps__item': true,
@@ -45,10 +46,10 @@ export default {
                 'at-steps__item--inactive': i !== current,
               })}
               onClick={this.handleClick.bind(this, i)}>
-              <view class="at-steps__circular-wrap">
-                {i !== 0 && <view class="at-steps__left-line"></view>}
+              <View class="at-steps__circular-wrap">
+                {i !== 0 && <View class="at-steps__left-line"></View>}
                 {item.status ? (
-                  <view
+                  <View
                     class={classNames({
                       'at-icon': true,
                       'at-icon-check-circle': item.status === 'success',
@@ -56,27 +57,27 @@ export default {
                       'at-steps__single-icon': true,
                       'at-steps__single-icon--success': item.status === 'success',
                       'at-steps__single-icon--error': item.status === 'error',
-                    })}></view>
+                    })}></View>
                 ) : (
-                  <view class="at-steps__circular">
+                  <View class="at-steps__circular">
                     {item.icon ? (
-                      <view
+                      <View
                         class={classNames('at-icon', {
                           [`at-icon-${item.icon.value}`]: item.icon.value,
                           'at-steps__circle-icon': true,
-                        })}></view>
+                        })}></View>
                     ) : (
-                      <view class="at-steps__num">{i + 1}</view>
+                      <View class="at-steps__num">{i + 1}</View>
                     )}
-                  </view>
+                  </View>
                 )}
-                {i !== items.length - 1 && <view class="at-steps__right-line"></view>}
-              </view>
-              <view class="at-steps__title">{item.title}</view>
-              <view class="at-steps__desc">{item.desc}</view>
-            </view>
+                {i !== items.length - 1 && <View class="at-steps__right-line"></View>}
+              </View>
+              <View class="at-steps__title">{item.title}</View>
+              <View class="at-steps__desc">{item.desc}</View>
+            </View>
           ))}
-      </view>
+      </View>
     )
   },
 }

@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -28,9 +29,9 @@ export default {
       [`at-fab--${size}`]: size,
     })
     return (
-      <view class={rootClass} onTap={this.handleTab}>
+      <View class={rootClass} onTap={this.handleTab}>
         {this.$slots.default}
-      </view>
+      </View>
     )
   },
 }

@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import AtLoading from '../loading/index.jsx'
 
@@ -42,12 +43,12 @@ export default {
     )
 
     return (
-      <view class={rootClass}>
-        <view class="at-activity-indicator__body">
+      <View class={rootClass}>
+        <View class="at-activity-indicator__body">
           <AtLoading size={size} color={color} />
-        </view>
-        {content && <view class="at-activity-indicator__content">{content}</view>}
-      </view>
+        </View>
+        {content && <View class="at-activity-indicator__content">{content}</View>}
+      </View>
     )
   },
 }

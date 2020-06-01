@@ -1,3 +1,4 @@
+import { Button, View, Form } from '@tarojs/components'
 import AtLoading from '../loading/index.jsx'
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
@@ -217,14 +218,14 @@ export default {
     }
 
     const webButton = (
-      <button
+      <Button
         class="at-button__wxbutton"
         lang={lang}
-        formType={formType === 'submit' || formType === 'reset' ? formType : undefined}></button>
+        formType={formType === 'submit' || formType === 'reset' ? formType : undefined}></Button>
     )
 
     const button = (
-      <button
+      <Button
         class="at-button__wxbutton"
         formType={formType}
         openType={openType}
@@ -235,27 +236,27 @@ export default {
         sendMessageImg={sendMessageImg}
         showMessageCard={showMessageCard}
         appParameter={appParameter}
-        {...{ on: this.getWxButtonProps() }}></button>
+        {...{ on: this.getWxButtonProps() }}></Button>
     )
     return (
-      <view
+      <View
         onTap={this.hanldeClick}
         class={classNames(rootClassName, classObject, className)}
         style={customStyle}>
         {isWEB && !disabled && webButton}
         {isWEAPP && !disabled && (
-          <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
+          <Form onSubmit={this.handleSubmit} onReset={this.handleReset}>
             {button}
-          </form>
+          </Form>
         )}
         {isALIPAY && !disabled && button}
         {loading && (
-          <view class="at-button__icon">
+          <View class="at-button__icon">
             <AtLoading color={loadingColor} size={loadingSize} />
-          </view>
+          </View>
         )}
-        <view class="at-button__text">{this.$slots.default}</view>
-      </view>
+        <View class="at-button__text">{this.$slots.default}</View>
+      </View>
     )
   },
 }

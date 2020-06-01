@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import { delayQuerySelector } from '../../../utils/common'
 
@@ -28,9 +29,9 @@ export default {
     const rootClass = classNames('at-swipe-action__options', this.className)
 
     return (
-      <view id={`swipeActionOptions-${this.componentId}`} class={rootClass}>
+      <View id={`swipeActionOptions-${this.componentId}`} class={rootClass}>
         {this.$slots.default}
-      </view>
+      </View>
     )
   },
 }

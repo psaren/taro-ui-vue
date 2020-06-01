@@ -1,3 +1,4 @@
+import { View, Switch } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -66,18 +67,18 @@ const AtSwitch = Vue.extend({
     })
 
     return (
-      <view class={rootCls} style={customStyle}>
-        <view class="at-switch__title">{title}</view>
-        <view class={containerCls}>
-          <view class="at-switch__mask"></view>
-          <switch
+      <View class={rootCls} style={customStyle}>
+        <View class="at-switch__title">{title}</View>
+        <View class={containerCls}>
+          <View class="at-switch__mask"></View>
+          <Switch
             class="at-switch__switch"
             checked={checked}
             color={color}
             onChange={this.handleChange}
           />
-        </view>
-      </view>
+        </View>
+      </View>
     )
   },
 })

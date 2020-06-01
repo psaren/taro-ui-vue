@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -51,14 +52,14 @@ export default {
     })
 
     return (
-      <view class={curtainClass} style={customStyle} onTap={this.stopPropagation}>
-        <view class="at-curtain__container">
-          <view class="at-curtain__body">
+      <View class={curtainClass} style={customStyle} onTap={this.stopPropagation}>
+        <View class="at-curtain__container">
+          <View class="at-curtain__body">
             {this.$slots.default}
-            <view class={btnCloseClass} onTap={this.handleTab}></view>
-          </view>
-        </view>
-      </view>
+            <View class={btnCloseClass} onTap={this.handleTab}></View>
+          </View>
+        </View>
+      </View>
     )
   },
 }

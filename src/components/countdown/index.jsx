@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import AtCountdownItem from './item/index'
 
@@ -127,7 +128,7 @@ export default {
     const { isShowDay, isShowHour, className, customStyle, isCard, format } = this
     const { day, hours, minutes, seconds } = this.state
     return (
-      <view
+      <View
         class={classNames(
           {
             'at-countdown': true,
@@ -140,7 +141,7 @@ export default {
         {isShowHour && <AtCountdownItem num={hours} separator={format.hours} />}
         <AtCountdownItem num={minutes} separator={format.minutes} />
         <AtCountdownItem num={seconds} separator={format.seconds} />
-      </view>
+      </View>
     )
   },
 }

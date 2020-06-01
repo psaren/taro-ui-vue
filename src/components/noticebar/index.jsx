@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
@@ -164,37 +165,37 @@ export default {
 
     return (
       this.state.show && (
-        <view class={classNames(rootClassName, classObject, className)} style={customStyle}>
+        <View class={classNames(rootClassName, classObject, className)} style={customStyle}>
           {close && (
-            <view class="at-noticebar__close" onTap={this.handleClose}>
-              <view class="at-icon at-icon-close"></view>
-            </view>
+            <View class="at-noticebar__close" onTap={this.handleClose}>
+              <View class="at-icon at-icon-close"></View>
+            </View>
           )}
-          <view class="at-noticebar__content">
+          <View class="at-noticebar__content">
             {icon && (
-              <view class="at-noticebar__content-icon">
+              <View class="at-noticebar__content-icon">
                 {/* start hack 百度小程序 */}
-                <view class={classNames(iconClass, iconClass)}></view>
-              </view>
+                <View class={classNames(iconClass, iconClass)}></View>
+              </View>
             )}
-            <view class="at-noticebar__content-text">
-              <view
+            <View class="at-noticebar__content-text">
+              <View
                 animation={this.state.animationData}
                 class={classNames(innerClassName)}
                 style={style}>
                 {this.$slots.default}
-              </view>
-            </view>
-          </view>
+              </View>
+            </View>
+          </View>
           {showMore && (
-            <view class="at-noticebar__more" onTap={this.handleGotoMore}>
-              <view class="text">{_moreText}</view>
-              <view class="at-noticebar__more-icon">
-                <view class="at-icon at-icon-chevron-right"></view>
-              </view>
-            </view>
+            <View class="at-noticebar__more" onTap={this.handleGotoMore}>
+              <View class="text">{_moreText}</View>
+              <View class="at-noticebar__more-icon">
+                <View class="at-icon at-icon-chevron-right"></View>
+              </View>
+            </View>
           )}
-        </view>
+        </View>
       )
     )
   },

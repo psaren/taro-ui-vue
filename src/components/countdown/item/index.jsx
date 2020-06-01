@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 /**
  *
  * @param {number} num
@@ -21,12 +22,12 @@ export default {
   render() {
     const { num, separator } = this
     return (
-      <view class="at-countdown__item">
-        <view class="at-countdown__time-box">
-          <view class="at-countdown__time">{formatNum(num)}</view>
-        </view>
-        <view class="at-countdown__separator">{separator}</view>
-      </view>
+      <View class="at-countdown__item">
+        <View class="at-countdown__time-box">
+          <View class="at-countdown__time">{formatNum(num)}</View>
+        </View>
+        <View class="at-countdown__separator">{separator}</View>
+      </View>
     )
   },
 }

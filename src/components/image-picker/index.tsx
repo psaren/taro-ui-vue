@@ -1,3 +1,4 @@
+import { View, Image } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { uuid } from '../../utils/common'
@@ -162,40 +163,40 @@ const AtImagePicker = Vue.extend({
     const rootCls = classNames('at-image-picker', className)
 
     return (
-      <view class={rootCls} style={customStyle}>
+      <View class={rootCls} style={customStyle}>
         {matrix.map((row, i) => (
-          <view class="at-image-picker__flex-box" key={i + 1}>
+          <View class="at-image-picker__flex-box" key={i + 1}>
             {row.map((item, j) =>
               item.url ? (
-                <view class="at-image-picker__flex-item" key={i * length + j}>
-                  <view class="at-image-picker__item">
-                    <view
+                <View class="at-image-picker__flex-item" key={i * length + j}>
+                  <View class="at-image-picker__item">
+                    <View
                       class="at-image-picker__remove-btn"
-                      onTap={this.handleRemoveImg.bind(this, i * length + j)}></view>
-                    <image
+                      onTap={this.handleRemoveImg.bind(this, i * length + j)}></View>
+                    <Image
                       class="at-image-picker__preview-img"
                       mode={mode}
                       src={item.url}
                       onTap={this.handleImageClick.bind(this, i * length + j)}
                     />
-                  </view>
-                </view>
+                  </View>
+                </View>
               ) : (
-                <view class="at-image-picker__flex-item" key={i * length + j}>
+                <View class="at-image-picker__flex-item" key={i * length + j}>
                   {item.type === 'btn' && (
-                    <view
+                    <View
                       class="at-image-picker__item at-image-picker__choose-btn"
                       onTap={this.chooseFile}>
-                      <view class="add-bar"></view>
-                      <view class="add-bar"></view>
-                    </view>
+                      <View class="add-bar"></View>
+                      <View class="add-bar"></View>
+                    </View>
                   )}
-                </view>
+                </View>
               )
             )}
-          </view>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 })

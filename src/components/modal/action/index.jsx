@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -22,9 +23,9 @@ export default {
     )
 
     return (
-      <view class={rootClass}>
-        <view class="at-modal__action">{this.$slots.default}</view>
-      </view>
+      <View class={rootClass}>
+        <View class="at-modal__action">{this.$slots.default}</View>
+      </View>
     )
   },
 }

@@ -1,3 +1,4 @@
+import { Any, View } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -36,7 +37,7 @@ const AtRadio = Vue.extend({
     },
   },
   methods: {
-    handleClick(option: RadioOption<any>, event: CommonEvent) {
+    handleClick(option: RadioOption<Any>, event: CommonEvent) {
       if (option.disabled) return
       this.onClick(option.value, event)
     },
@@ -45,31 +46,31 @@ const AtRadio = Vue.extend({
     const { customStyle, className, options, value } = this
     console.log('value :>> ', value)
     return (
-      <view class={classNames('at-radio', className)} style={customStyle}>
+      <View class={classNames('at-radio', className)} style={customStyle}>
         {options.map((option) => (
-          <view
+          <View
             key={option.value}
             onTap={this.handleClick.bind(this, option)}
             class={classNames({
               'at-radio__option': true,
               'at-radio__option--disabled': option.disabled,
             })}>
-            <view class="at-radio__option-wrap">
-              <view class="at-radio__option-container">
-                <view class="at-radio__title">{option.label}</view>
-                <view
+            <View class="at-radio__option-wrap">
+              <View class="at-radio__option-container">
+                <View class="at-radio__title">{option.label}</View>
+                <View
                   class={classNames({
                     'at-radio__icon': true,
                     'at-radio__icon--checked': value === option.value,
                   })}>
-                  <view class="at-icon at-icon-check text"></view>
-                </view>
-              </view>
-              {option.desc && <view class="at-radio__desc">{option.desc}</view>}
-            </view>
-          </view>
+                  <View class="at-icon at-icon-check text"></View>
+                </View>
+              </View>
+              {option.desc && <View class="at-radio__desc">{option.desc}</View>}
+            </View>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 })
