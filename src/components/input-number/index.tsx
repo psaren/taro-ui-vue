@@ -1,3 +1,4 @@
+import { View, Input } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { InputError } from 'types/input-number'
@@ -216,11 +217,11 @@ const AtInputNumber = Vue.extend({
     })
 
     return (
-      <view class={rootCls} style={customStyle}>
-        <view class={minusBtnCls} onTap={this.handleClick.bind(this, 'minus')}>
-          <view class="at-icon at-icon-subtract at-input-number__btn-subtract"></view>
-        </view>
-        <input
+      <View class={rootCls} style={customStyle}>
+        <View class={minusBtnCls} onTap={this.handleClick.bind(this, 'minus')}>
+          <View class="at-icon at-icon-subtract at-input-number__btn-subtract"></View>
+        </View>
+        <Input
           class="at-input-number__input"
           style={inputStyle}
           type={type}
@@ -229,10 +230,10 @@ const AtInputNumber = Vue.extend({
           onInput={this.handleInput}
           onBlur={this.handleBlur}
         />
-        <view class={plusBtnCls} onTap={this.handleClick.bind(this, 'plus')}>
-          <view class="at-icon at-icon-add at-input-number__btn-add"></view>
-        </view>
-      </view>
+        <View class={plusBtnCls} onTap={this.handleClick.bind(this, 'plus')}>
+          <View class="at-icon at-icon-add at-input-number__btn-add"></View>
+        </View>
+      </View>
     )
   },
 })

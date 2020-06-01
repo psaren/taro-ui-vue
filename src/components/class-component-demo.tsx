@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import Component from 'vue-class-component'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -95,12 +96,12 @@ export default class AtTag extends AtTagProps {
     }
 
     return (
-      <view
+      <View
         class={classNames(rootClassName, classObject, this.className)}
         style={customStyle}
         onTap={this.handleClick.bind(this)}>
         {this.$slots.default}
-      </view>
+      </View>
     )
   }
 }

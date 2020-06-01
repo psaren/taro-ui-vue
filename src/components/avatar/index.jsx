@@ -1,3 +1,4 @@
+import { View, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
 
@@ -57,11 +58,11 @@ export default {
     const isImage = !isOpenData && image !== ''
     const isText = !isOpenData && !image
     return (
-      <view class={classNames(rootClassName, classObject, className)} style={customStyle}>
+      <View class={classNames(rootClassName, classObject, className)} style={customStyle}>
         {isOpenData && <OpenData type={openData.type}></OpenData>}
-        {isImage && <image class="at-avatar__img" src={image} />}
-        {isText && <view class="at-avatar__text">{letter}</view>}
-      </view>
+        {isImage && <Image class="at-avatar__img" src={image} />}
+        {isText && <View class="at-avatar__text">{letter}</View>}
+      </View>
     )
   },
 }

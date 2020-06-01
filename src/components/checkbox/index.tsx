@@ -1,3 +1,4 @@
+import { View, Text } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 
@@ -57,7 +58,7 @@ const AtCheckbox = Vue.extend({
     const rootCls = classNames('at-checkbox', className)
 
     return (
-      <view class={rootCls} style={customStyle}>
+      <View class={rootCls} style={customStyle}>
         {options.map((option, idx) => {
           const { value, disabled, label, desc } = option
           const optionCls = classNames('at-checkbox__option', {
@@ -66,20 +67,20 @@ const AtCheckbox = Vue.extend({
           })
 
           return (
-            <view class={optionCls} key={value} onTap={this.handleClick.bind(this, idx)}>
-              <view class="at-checkbox__option-wrap">
-                <view class="at-checkbox__option-cnt">
-                  <view class="at-checkbox__icon-cnt">
-                    <text class="at-icon at-icon-check"></text>
-                  </view>
-                  <view class="at-checkbox__title">{label}</view>
-                </view>
-                {desc && <view class="at-checkbox__desc">{desc}</view>}
-              </view>
-            </view>
+            <View class={optionCls} key={value} onTap={this.handleClick.bind(this, idx)}>
+              <View class="at-checkbox__option-wrap">
+                <View class="at-checkbox__option-cnt">
+                  <View class="at-checkbox__icon-cnt">
+                    <Text class="at-icon at-icon-check"></Text>
+                  </View>
+                  <View class="at-checkbox__title">{label}</View>
+                </View>
+                {desc && <View class="at-checkbox__desc">{desc}</View>}
+              </View>
+            </View>
           )
         })}
-      </view>
+      </View>
     )
   },
 })

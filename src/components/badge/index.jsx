@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 /**
@@ -46,14 +47,14 @@ export default {
 
     const val = formatValue(value, maxValue)
     return (
-      <view class={classNames(rootClassName, className)} style={customStyle}>
+      <View class={classNames(rootClassName, className)} style={customStyle}>
         {this.$slots.default}
         {dot ? (
-          <view class="at-badge__dot"></view>
+          <View class="at-badge__dot"></View>
         ) : (
-          val !== '' && <view class="at-badge__num">{val}</view>
+          val !== '' && <View class="at-badge__num">{val}</View>
         )}
-      </view>
+      </View>
     )
   },
 }

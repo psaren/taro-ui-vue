@@ -1,3 +1,4 @@
+import { View, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import Badge from '../badge/index'
 import { mergeStyle } from '../../utils/common'
@@ -88,7 +89,7 @@ export default {
     }
 
     return (
-      <view
+      <View
         class={classNames(
           {
             'at-tab-bar': true,
@@ -99,7 +100,7 @@ export default {
         )}
         style={mergeStyle(rootStyle, customStyle)}>
         {tabList.map((item, i) => (
-          <view
+          <View
             class={classNames('at-tab-bar__item', {
               'at-tab-bar__item--active': current === i,
             })}
@@ -108,8 +109,8 @@ export default {
             onTap={this.handleClick.bind(this, i)}>
             {item.iconType ? (
               <Badge dot={!!item.dot} value={item.text} maxValue={Number(item.max)}>
-                <view class="at-tab-bar__icon">
-                  <view
+                <View class="at-tab-bar__icon">
+                  <View
                     class={classNames(`${item.iconPrefixClass || 'at-icon'}`, {
                       [`${item.iconPrefixClass || 'at-icon'}-${item.selectedIconType}`]:
                         current === i && item.selectedIconType,
@@ -120,45 +121,45 @@ export default {
                     style={{
                       color: current === i ? selectedColor : color,
                       fontSize: iconSize ? `${iconSize}px` : '',
-                    }}></view>
-                </view>
+                    }}></View>
+                </View>
               </Badge>
             ) : null}
 
             {item.image ? (
               <Badge dot={!!item.dot} value={item.text} maxValue={Number(item.max)}>
-                <view class="at-tab-bar__icon">
-                  <image
+                <View class="at-tab-bar__icon">
+                  <Image
                     class={classNames('at-tab-bar__inner-img', {
                       'at-tab-bar__inner-img--inactive': current !== i,
                     })}
                     mode="widthFix"
                     src={item.selectedImage || item.image}
-                    style={imgStyle}></image>
-                  <image
+                    style={imgStyle}></Image>
+                  <Image
                     class={classNames('at-tab-bar__inner-img', {
                       'at-tab-bar__inner-img--inactive': current === i,
                     })}
                     mode="widthFix"
                     src={item.image}
-                    style={imgStyle}></image>
-                </view>
+                    style={imgStyle}></Image>
+                </View>
               </Badge>
             ) : null}
 
-            <view>
+            <View>
               <Badge
                 dot={item.iconType || item.image ? false : !!item.dot}
                 value={item.iconType || item.image ? '' : item.text}
                 maxValue={item.iconType || item.image ? 0 : Number(item.max)}>
-                <view class="at-tab-bar__title" style={titleStyle}>
+                <View class="at-tab-bar__title" style={titleStyle}>
                   {item.title}
-                </view>
+                </View>
               </Badge>
-            </view>
-          </view>
+            </View>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 }

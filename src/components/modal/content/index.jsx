@@ -1,3 +1,4 @@
+import { Scroll } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {

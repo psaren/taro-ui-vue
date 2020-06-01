@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Vue from 'vue'
 import classnames from 'classnames'
 import dayjs from 'dayjs'
@@ -273,15 +274,15 @@ const AtCalendarBody = Vue.extend({
 
     if (!isSwiper) {
       return (
-        <view
+        <View
           class={classnames(
             'main',
             'at-calendar-slider__main',
             `at-calendar-slider__main--${process.env.TARO_ENV}`
           )}>
           <AtCalendarDayList />
-          <view class="main__body body">
-            <view class="body__slider body__slider--now">
+          <View class="main__body body">
+            <View class="body__slider body__slider--now">
               <AtCalendarDateList
                 list={listGroup[1].list}
                 props={{
@@ -289,14 +290,14 @@ const AtCalendarBody = Vue.extend({
                   onLongClick: this.onLongClick,
                 }}
               />
-            </view>
-          </view>
-        </view>
+            </View>
+          </View>
+        </View>
       )
     }
 
     return (
-      <view
+      <View
         class={classnames(
           'main',
           'at-calendar-slider__main',
@@ -327,7 +328,7 @@ const AtCalendarBody = Vue.extend({
             </SwiperItem>
           ))}
         </Swiper>
-      </view>
+      </View>
     )
   },
 })

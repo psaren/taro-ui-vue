@@ -1,3 +1,4 @@
+import { View, Textarea } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -180,8 +181,8 @@ const AtTextarea = Vue.extend({
     const placeholderCls = classNames('placeholder', placeholderClass)
 
     return (
-      <view class={rootCls} style={customStyle}>
-        <textarea
+      <View class={rootCls} style={customStyle}>
+        <Textarea
           class="at-textarea__textarea"
           style={textareaStyle}
           placeholderStyle={placeholderStyle}
@@ -204,11 +205,11 @@ const AtTextarea = Vue.extend({
           onLineChange={this.handleLinechange}
         />
         {count && (
-          <view class="at-textarea__counter">
+          <View class="at-textarea__counter">
             {value.length}/{_maxLength}
-          </view>
+          </View>
         )}
-      </view>
+      </View>
     )
   },
 })

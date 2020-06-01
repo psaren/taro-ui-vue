@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import _inRange from 'lodash/inRange'
 import _isEmpty from 'lodash/isEmpty'
@@ -247,19 +248,19 @@ export default {
     const transformStyle = transform ? { transform } : {}
 
     return (
-      <view
+      <View
         id={`swipeAction-${componentId}`}
         class={rootClass}
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}
         onTouchStart={this.handleTouchStart}>
-        <view
+        <View
           class={classNames('at-swipe-action__content', {
             animtion: !this.isTouching,
           })}
           style={transformStyle}>
           {this.$slots.default}
-        </view>
+        </View>
 
         {Array.isArray(options) && options.length > 0 ? (
           <AtSwipeActionOptions
@@ -267,17 +268,17 @@ export default {
             componentId={componentId}
             onQueryedDom={this.handleDomInfo}>
             {options.map((item, key) => (
-              <view
+              <View
                 key={`${item.text}-${key}`}
                 style={item.style}
                 onTap={(e) => this.handleClick(item, key, e)}
                 class={classNames('at-swipe-action__option', item.className)}>
-                <view class="option__text">{item.text}</view>
-              </view>
+                <View class="option__text">{item.text}</View>
+              </View>
             ))}
           </AtSwipeActionOptions>
         ) : null}
-      </view>
+      </View>
     )
   },
 }

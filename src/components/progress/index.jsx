@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -63,18 +64,18 @@ export default {
     }
 
     return (
-      <view class={rootClass}>
-        <view class="at-progress__outer">
-          <view class="at-progress__outer-inner">
-            <view class="at-progress__outer-inner-background" style={progressStyle} />
-          </view>
-        </view>
+      <View class={rootClass}>
+        <View class="at-progress__outer">
+          <View class="at-progress__outer-inner">
+            <View class="at-progress__outer-inner-background" style={progressStyle} />
+          </View>
+        </View>
         {!isHidePercent && (
-          <view class="at-progress__content">
-            {!status || status === 'progress' ? `${percent}%` : <view class={iconClass}></view>}
-          </view>
+          <View class="at-progress__content">
+            {!status || status === 'progress' ? `${percent}%` : <View class={iconClass}></View>}
+          </View>
         )}
-      </view>
+      </View>
     )
   },
 }

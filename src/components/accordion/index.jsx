@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import mixins from '../mixins'
 import { delayQuerySelector } from '../../utils/common'
@@ -125,21 +126,21 @@ export default {
     }
 
     return (
-      <view class={rootCls} style={customStyle}>
-        <view class={headerCls} onTap={this.handleClick}>
-          {icon && icon.value && <view class={iconCls} style={iconStyle}></view>}
-          <view class="at-accordion__info">
-            <view class="at-accordion__info__title">{title}</view>
-            <view class="at-accordion__info__note">{note}</view>
-          </view>
-          <view class={arrowCls}>
-            <view class="at-icon at-icon-chevron-down"></view>
-          </view>
-        </view>
-        <view style={contentStyle} class={contentCls}>
-          <view class="at-accordion__body">{this.$slots.default}</view>
-        </view>
-      </view>
+      <View class={rootCls} style={customStyle}>
+        <View class={headerCls} onTap={this.handleClick}>
+          {icon && icon.value && <View class={iconCls} style={iconStyle}></View>}
+          <View class="at-accordion__info">
+            <View class="at-accordion__info__title">{title}</View>
+            <View class="at-accordion__info__note">{note}</View>
+          </View>
+          <View class={arrowCls}>
+            <View class="at-icon at-icon-chevron-down"></View>
+          </View>
+        </View>
+        <View style={contentStyle} class={contentCls}>
+          <View class="at-accordion__body">{this.$slots.default}</View>
+        </View>
+      </View>
     )
   },
 }

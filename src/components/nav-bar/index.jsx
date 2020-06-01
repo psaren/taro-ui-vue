@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import classNames from 'classnames'
 import { mergeStyle, pxTransform } from '../../utils/common'
@@ -142,7 +143,7 @@ export default {
     )
 
     return (
-      <view
+      <View
         class={classNames(
           {
             'at-nav-bar': true,
@@ -152,12 +153,12 @@ export default {
           className
         )}
         style={customStyle}>
-        <view
+        <View
           class="at-nav-bar__left-view"
           onTap={this.handleClickLeftView.bind(this)}
           style={linkStyle}>
           {leftIconType && (
-            <view
+            <View
               class={leftIconClass}
               style={mergeStyle(
                 {
@@ -165,13 +166,13 @@ export default {
                   fontSize: `${pxTransform(parseInt(leftIconInfo.size.toString()) * 2)}`,
                 },
                 leftIconInfo.customStyle
-              )}></view>
+              )}></View>
           )}
-          <view class="at-nav-bar__text">{leftText}</view>
-        </view>
-        <view class="at-nav-bar__title">{title || this.$slots.default}</view>
-        <view class="at-nav-bar__right-view">
-          <view
+          <View class="at-nav-bar__text">{leftText}</View>
+        </View>
+        <View class="at-nav-bar__title">{title || this.$slots.default}</View>
+        <View class="at-nav-bar__right-view">
+          <View
             class={classNames({
               'at-nav-bar__container': true,
               'at-nav-bar__container--hide': !rightSecondIconType,
@@ -179,7 +180,7 @@ export default {
             style={linkStyle}
             onTap={this.handleClickNd.bind(this)}>
             {rightSecondIconType && (
-              <view
+              <View
                 class={rightSecondIconClass}
                 style={mergeStyle(
                   {
@@ -187,10 +188,10 @@ export default {
                     fontSize: `${pxTransform(parseInt(rightSecondIconInfo.size.toString()) * 2)}`,
                   },
                   rightSecondIconInfo.customStyle
-                )}></view>
+                )}></View>
             )}
-          </view>
-          <view
+          </View>
+          <View
             class={classNames({
               'at-nav-bar__container': true,
               'at-nav-bar__container--hide': !rightFirstIconType,
@@ -198,7 +199,7 @@ export default {
             style={linkStyle}
             onTap={this.handleClickSt.bind(this)}>
             {rightFirstIconType && (
-              <view
+              <View
                 class={rightFirstIconClass}
                 style={mergeStyle(
                   {
@@ -206,11 +207,11 @@ export default {
                     fontSize: `${pxTransform(parseInt(rightFirstIconInfo.size.toString()) * 2)}`,
                   },
                   rightFirstIconInfo.customStyle
-                )}></view>
+                )}></View>
             )}
-          </view>
-        </view>
-      </view>
+          </View>
+        </View>
+      </View>
     )
   },
 }

@@ -1,3 +1,4 @@
+import { View, Br, Button } from '@tarojs/components'
 import classNames from 'classnames'
 import ModalAction from './action/index'
 import ModalContent from './content/index'
@@ -111,45 +112,45 @@ export default {
     if (title || content) {
       const isRenderAction = cancelText || confirmText
       return (
-        <view class={rootClass}>
-          <view onTap={this.handleClickOverlay} class="at-modal__overlay" />
-          <view class="at-modal__container">
+        <View class={rootClass}>
+          <View onTap={this.handleClickOverlay} class="at-modal__overlay" />
+          <View class="at-modal__container">
             {title && (
               <ModalHeader>
-                <view>{title}</view>
+                <View>{title}</View>
               </ModalHeader>
             )}
             {content && (
               <ModalContent>
-                <view class="content-simple">
+                <View class="content-simple">
                   {isWEB ? (
-                    <view
+                    <View
                       // @ts-ignore
                       dangerouslySetInnerHTML={{
-                        __html: content.replace(/\n/g, '<br/>'),
-                      }}></view>
+                        __html: content.replace(/\n/g, '<Br/>'),
+                      }}></View>
                   ) : (
-                    <view>{content}</view>
+                    <View>{content}</View>
                   )}
-                </view>
+                </View>
               </ModalContent>
             )}
             {isRenderAction && (
               <ModalAction isSimple>
-                {cancelText && <button onTap={this.handleCancel}>{cancelText}</button>}
-                {confirmText && <button onTap={this.handleConfirm}>{confirmText}</button>}
+                {cancelText && <Button onTap={this.handleCancel}>{cancelText}</Button>}
+                {confirmText && <Button onTap={this.handleConfirm}>{confirmText}</Button>}
               </ModalAction>
             )}
-          </view>
-        </view>
+          </View>
+        </View>
       )
     }
 
     return (
-      <view onTouchMove={this.handleTouchMove} class={rootClass}>
-        <view class="at-modal__overlay" onTap={this.handleClickOverlay} />
-        <view class="at-modal__container">{this.$slots.default}</view>
-      </view>
+      <View onTouchMove={this.handleTouchMove} class={rootClass}>
+        <View class="at-modal__overlay" onTap={this.handleClickOverlay} />
+        <View class="at-modal__container">{this.$slots.default}</View>
+      </View>
     )
   },
 }

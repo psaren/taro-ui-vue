@@ -1,3 +1,4 @@
+import { View, Scroll } from '@tarojs/components'
 import classNames from 'classnames'
 import mixins from '../mixins'
 import { handleTouchScroll } from '../../utils/common'
@@ -128,16 +129,16 @@ export default {
     )
 
     return (
-      <view class={rootClass} onTouchMove={this.handleTouchMove}>
-        <view onTap={this.close} class="at-float-layout__overlay" />
-        <view class="at-float-layout__container layout">
+      <View class={rootClass} onTouchMove={this.handleTouchMove}>
+        <View onTap={this.close} class="at-float-layout__overlay" />
+        <View class="at-float-layout__container layout">
           {title ? (
-            <view class="layout-header">
-              <view class="layout-header__title">{title}</view>
-              <view class="layout-header__btn-close" onTap={this.close} />
-            </view>
+            <View class="layout-header">
+              <View class="layout-header__title">{title}</View>
+              <View class="layout-header__btn-close" onTap={this.close} />
+            </View>
           ) : null}
-          <view class="layout-body">
+          <View class="layout-body">
             <scroll-view
               scrollY={scrollY}
               scrollX={scrollX}
@@ -155,9 +156,9 @@ export default {
               class="layout-body__content">
               {this.$slots.default}
             </scroll-view>
-          </view>
-        </view>
-      </view>
+          </View>
+        </View>
+      </View>
     )
   },
 }

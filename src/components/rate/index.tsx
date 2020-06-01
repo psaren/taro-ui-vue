@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
@@ -71,20 +72,20 @@ const AtRate = Vue.extend({
     }
 
     return (
-      <view class={classNames('at-rate', className)} style={customStyle}>
+      <View class={classNames('at-rate', className)} style={customStyle}>
         {classNameArr.map((cls, i) => (
-          <view
+          <View
             class={cls}
             key={`at-rate-star-${i}`}
             style={iconStyle}
             onTap={this.handleClick.bind(this, i + 1)}>
-            <view class="at-icon at-icon-star-2" style={starIconStyle}></view>
-            <view class="at-rate__left">
-              <view class="at-icon at-icon-star-2" style={starIconStyle}></view>
-            </view>
-          </view>
+            <View class="at-icon at-icon-star-2" style={starIconStyle}></View>
+            <View class="at-rate__left">
+              <View class="at-icon at-icon-star-2" style={starIconStyle}></View>
+            </View>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 })

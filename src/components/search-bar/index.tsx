@@ -1,3 +1,4 @@
+import { View, Input } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
@@ -176,15 +177,15 @@ const AtSearchBar = Vue.extend({
     }
 
     return (
-      <view class={rootCls} style={customStyle}>
-        <view class="at-search-bar__input-cnt">
-          <view class="at-search-bar__placeholder-wrap" style={placeholderWrapStyle}>
-            <view class="at-icon at-icon-search"></view>
-            <view class="at-search-bar__placeholder" style={placeholderStyle}>
+      <View class={rootCls} style={customStyle}>
+        <View class="at-search-bar__input-cnt">
+          <View class="at-search-bar__placeholder-wrap" style={placeholderWrapStyle}>
+            <View class="at-icon at-icon-search"></View>
+            <View class="at-search-bar__placeholder" style={placeholderStyle}>
               {isFocus ? '' : placeholder}
-            </view>
-          </view>
-          <input
+            </View>
+          </View>
+          <Input
             class="at-search-bar__input"
             type={inputType}
             confirmType="search"
@@ -197,14 +198,14 @@ const AtSearchBar = Vue.extend({
             onBlur={this.handleBlur}
             onConfirm={this.handleConfirm}
           />
-          <view class="at-search-bar__clear" style={clearIconStyle} onTouchStart={this.handleClear}>
-            <view class="at-icon at-icon-close-circle"></view>
-          </view>
-        </view>
-        <view class="at-search-bar__action" style={actionStyle} onTap={this.handleActionClick}>
+          <View class="at-search-bar__clear" style={clearIconStyle} onTouchStart={this.handleClear}>
+            <View class="at-icon at-icon-close-circle"></View>
+          </View>
+        </View>
+        <View class="at-search-bar__action" style={actionStyle} onTap={this.handleActionClick}>
           {actionName}
-        </view>
-      </view>
+        </View>
+      </View>
     )
   },
 })

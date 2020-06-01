@@ -1,3 +1,4 @@
+import { View, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import _chunk from 'lodash/chunk'
 import { mergeStyle } from '../../utils/common'
@@ -61,11 +62,11 @@ export default {
     })
 
     return (
-      <view class={classNames('at-grid', this.className)}>
+      <View class={classNames('at-grid', this.className)}>
         {gridGroup.map((item, i) => (
-          <view class="at-grid__flex" key={`at-grid-group-${i}`}>
+          <View class="at-grid__flex" key={`at-grid-group-${i}`}>
             {item.map((childItem, index) => (
-              <view
+              <View
                 key={`at-grid-item-${index}`}
                 class={classNames(bodyClass, {
                   'at-grid-item--last': index === columnNum - 1,
@@ -74,18 +75,18 @@ export default {
                 style={{
                   flex: `0 0 ${100 / columnNum}%`,
                 }}>
-                <view class="at-grid-item__content">
-                  <view class="at-grid-item__content-inner">
-                    <view class="content-inner__icon">
+                <View class="at-grid-item__content">
+                  <View class="at-grid-item__content-inner">
+                    <View class="content-inner__icon">
                       {childItem.image && (
-                        <image
+                        <Image
                           class="content-inner__img"
                           src={childItem.image}
                           mode="scaleToFill"
                         />
                       )}
                       {childItem.iconInfo && !childItem.image && (
-                        <view
+                        <View
                           class={classNames(
                             childItem.iconInfo.prefixClass || 'at-icon',
                             {
@@ -104,15 +105,15 @@ export default {
                           )}
                         />
                       )}
-                    </view>
-                    <view class="content-inner__text">{childItem.value}</view>
-                  </view>
-                </view>
-              </view>
+                    </View>
+                    <View class="content-inner__text">{childItem.value}</View>
+                  </View>
+                </View>
+              </View>
             ))}
-          </view>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 }

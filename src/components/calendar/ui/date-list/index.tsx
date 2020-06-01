@@ -1,3 +1,4 @@
+import { View, Text } from '@tarojs/components'
 import Vue from 'vue'
 import classnames from 'classnames'
 import { Calendar } from 'types/calendar'
@@ -54,9 +55,9 @@ const AtCalendarList = Vue.extend({
     if (!list || list.length === 0) return null
 
     return (
-      <view class="at-calendar__list flex">
+      <View class="at-calendar__list flex">
         {list.map((item: Calendar.Item, index: number) => (
-          <view
+          <View
             key={`list-item-${item.value}-${index}`}
             onTap={this.handleClick.bind(this, item)}
             onLongPress={this.handleLongClick.bind(this, item)}
@@ -71,23 +72,23 @@ const AtCalendarList = Vue.extend({
                 item.type === constant.TYPE_PRE_MONTH ||
                 item.type === constant.TYPE_NEXT_MONTH,
             })}>
-            <view class="flex__item-container">
-              <view class="container-text">{item.text}</view>
-            </view>
-            <view class="flex__item-extra extra">
+            <View class="flex__item-container">
+              <View class="container-text">{item.text}</View>
+            </View>
+            <View class="flex__item-extra extra">
               {item.marks && item.marks.length > 0 ? (
-                <view class="extra-marks">
+                <View class="extra-marks">
                   {item.marks.map((mark, key) => (
-                    <text key={key} class="mark">
+                    <Text key={key} class="mark">
                       {mark}
-                    </text>
+                    </Text>
                   ))}
-                </view>
+                </View>
               ) : null}
-            </view>
-          </view>
+            </View>
+          </View>
         ))}
-      </view>
+      </View>
     )
   },
 })

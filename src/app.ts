@@ -2,8 +2,8 @@ import Vue from 'vue'
 import store from './store'
 import './app.scss'
 // Vue.config.productionTip = false
-import TaroUi from '../dist'
-// import TaroUi from './index'
+// import TaroUi from '../dist'
+import TaroUi from './index'
 Vue.use(TaroUi)
 
 const App = new Vue({

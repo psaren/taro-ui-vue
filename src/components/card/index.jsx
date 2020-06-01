@@ -1,3 +1,4 @@
+import { View, Image } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -73,28 +74,28 @@ export default {
     }
 
     return (
-      <view onTap={this.handleClick} class={rootClass}>
-        <view class="at-card__header">
+      <View onTap={this.handleClick} class={rootClass}>
+        <View class="at-card__header">
           {thumb && (
-            <view class="at-card__header-thumb">
-              <image class="at-card__header-thumb-info" mode="scaleToFill" src={thumb} />
-            </view>
+            <View class="at-card__header-thumb">
+              <Image class="at-card__header-thumb-info" mode="scaleToFill" src={thumb} />
+            </View>
           )}
           {renderIcon || this.$slots.renderIcon || ''}
-          {!thumb && icon && icon.value && <view class={iconClass} style={iconStyle}></view>}
+          {!thumb && icon && icon.value && <View class={iconClass} style={iconStyle}></View>}
 
-          <view class="at-card__header-title">{title}</view>
+          <View class="at-card__header-title">{title}</View>
           {extra && (
-            <view style={{ ...extraStyle }} class="at-card__header-extra">
+            <View style={{ ...extraStyle }} class="at-card__header-extra">
               {extra}
-            </view>
+            </View>
           )}
-        </view>
-        <view class="at-card__content">
-          <view class="at-card__content-info">{this.$slots.default}</view>
-          {note && <view class="at-card__content-note">{note}</view>}
-        </view>
-      </view>
+        </View>
+        <View class="at-card__content">
+          <View class="at-card__content-info">{this.$slots.default}</View>
+          {note && <View class="at-card__content-note">{note}</View>}
+        </View>
+      </View>
     )
   },
 }

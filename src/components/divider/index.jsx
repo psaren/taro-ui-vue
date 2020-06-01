@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import { mergeStyle, pxTransform } from '../../utils/common'
 
@@ -46,12 +47,12 @@ export default {
     }
 
     return (
-      <view class={classNames('at-divider', className)} style={mergeStyle(rootStyle, customStyle)}>
-        <view class="at-divider__content" style={fontStyle}>
+      <View class={classNames('at-divider', className)} style={mergeStyle(rootStyle, customStyle)}>
+        <View class="at-divider__content" style={fontStyle}>
           {content === '' ? this.$slots.default : content}
-        </view>
-        <view class="at-divider__line" style={lineStyle}></view>
-      </view>
+        </View>
+        <View class="at-divider__line" style={lineStyle}></View>
+      </View>
     )
   },
 }

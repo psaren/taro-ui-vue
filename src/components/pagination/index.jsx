@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import mixins from '../mixins'
 import AtButton from '../button/index'
@@ -99,11 +100,11 @@ export default {
     }
 
     return (
-      <view class={classNames(rootClassName, classObject, this.className)} style={customStyle}>
-        <view class="at-pagination__btn-prev">
+      <View class={classNames(rootClassName, classObject, this.className)} style={customStyle}>
+        <View class="at-pagination__btn-prev">
           {icon && (
             <AtButton props={{ onClick: this.onPrev }} size="small" disabled={prevDisabled}>
-              <view class="at-icon at-icon-chevron-left text"></view>
+              <View class="at-icon at-icon-chevron-left text"></View>
             </AtButton>
           )}
           {!icon && (
@@ -111,14 +112,14 @@ export default {
               上一页
             </AtButton>
           )}
-        </view>
-        <view class="at-pagination__number">
-          <view class="at-pagination__number-current text">{currentPage}</view>/{maxPage}
-        </view>
-        <view class="at-pagination__btn-next">
+        </View>
+        <View class="at-pagination__number">
+          <View class="at-pagination__number-current text">{currentPage}</View>/{maxPage}
+        </View>
+        <View class="at-pagination__btn-next">
           {icon && (
             <AtButton props={{ onClick: this.onNext }} size="small" disabled={nextDisabled}>
-              <view class="at-icon at-icon-chevron-right text"></view>
+              <View class="at-icon at-icon-chevron-right text"></View>
             </AtButton>
           )}
           {!icon && (
@@ -126,16 +127,16 @@ export default {
               下一页
             </AtButton>
           )}
-        </view>
-        {/* {pickerSelect && <view class='at-pagination__number'>
+        </View>
+        {/* {pickerSelect && <View class='at-pagination__number'>
           {<Picker mode='selector' range={pickerRange} value={currentPage - 1} onChange={this.onPickerChange.bind(this)}>
-            <view class='at-pagination__number-current'>{currentPage}</view>/{ maxPage }
+            <View class='at-pagination__number-current'>{currentPage}</View>/{ maxPage }
           </Picker>}
-        </view>} */}
-        {/* {!pickerSelect && <view class='at-pagination__number'>
-          <view class='at-pagination__number-current'>{currentPage}</view>/{ maxPage }
-        </view>} */}
-      </view>
+        </View>} */}
+        {/* {!pickerSelect && <View class='at-pagination__number'>
+          <View class='at-pagination__number-current'>{currentPage}</View>/{ maxPage }
+        </View>} */}
+      </View>
     )
   },
 }

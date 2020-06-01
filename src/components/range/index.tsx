@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
@@ -200,22 +201,22 @@ const AtRange = Vue.extend({
     }
 
     return (
-      <view class={rootCls} style={customStyle} onClick={this.handleClick}>
-        <view class="at-range__container" style={containerStyle}>
-          <view class="at-range__rail" style={railStyle}></view>
-          <view class="at-range__track" style={mergeStyle(atTrackStyle, trackStyle)}></view>
-          <view
+      <View class={rootCls} style={customStyle} onClick={this.handleClick}>
+        <View class="at-range__container" style={containerStyle}>
+          <View class="at-range__rail" style={railStyle}></View>
+          <View class="at-range__track" style={mergeStyle(atTrackStyle, trackStyle)}></View>
+          <View
             class="at-range__slider"
             style={mergeStyle(sliderAStyle, sliderStyle)}
             onTouchMove={this.handleTouchMove.bind(this, 'aX')}
-            onTouchEnd={this.handleTouchEnd.bind(this, 'aX')}></view>
-          <view
+            onTouchEnd={this.handleTouchEnd.bind(this, 'aX')}></View>
+          <View
             class="at-range__slider"
             style={mergeStyle(sliderBStyle, sliderStyle)}
             onTouchMove={this.handleTouchMove.bind(this, 'bX')}
-            onTouchEnd={this.handleTouchEnd.bind(this, 'bX')}></view>
-        </view>
-      </view>
+            onTouchEnd={this.handleTouchEnd.bind(this, 'bX')}></View>
+        </View>
+      </View>
     )
   },
 })

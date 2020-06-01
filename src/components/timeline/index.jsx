@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -50,26 +51,26 @@ export default {
       }
 
       return (
-        <view class={classNames(itemRootClassName)} key={`at-timeline-item-${index}`}>
-          <view class="at-timeline-item__tail"></view>
-          <view class={classNames(dotClass)}>{icon && <view class={iconClass}></view>}</view>
-          <view class="at-timeline-item__content">
-            <view class="at-timeline-item__content-item">{title}</view>
+        <View class={classNames(itemRootClassName)} key={`at-timeline-item-${index}`}>
+          <View class="at-timeline-item__tail"></View>
+          <View class={classNames(dotClass)}>{icon && <View class={iconClass}></View>}</View>
+          <View class="at-timeline-item__content">
+            <View class="at-timeline-item__content-item">{title}</View>
             {content.map((sub, subIndex) => (
-              <view
+              <View
                 class="at-timeline-item__content-item at-timeline-item__content--sub"
                 key={subIndex}>
                 {sub}
-              </view>
+              </View>
             ))}
-          </view>
-        </view>
+          </View>
+        </View>
       )
     })
     return (
-      <view class={classNames(rootClassName, rootClassObject, className)} style={customStyle}>
+      <View class={classNames(rootClassName, rootClassObject, className)} style={customStyle}>
         {itemElems}
-      </view>
+      </View>
     )
   },
 }

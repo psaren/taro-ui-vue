@@ -1,3 +1,4 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 
 export default {
@@ -21,9 +22,9 @@ export default {
     const rootClass = classNames('at-action-sheet__footer', this.className)
 
     return (
-      <view onTap={this.handleClick} class={rootClass}>
+      <View onTap={this.handleClick} class={rootClass}>
         {this.$slots.default}
-      </view>
+      </View>
     )
   },
 }
