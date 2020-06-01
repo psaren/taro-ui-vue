@@ -1,4 +1,4 @@
-import { View, Scroll } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import Taro from '@tarojs/taro'
 import mixins from '../mixins'

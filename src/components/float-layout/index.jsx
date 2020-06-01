@@ -1,4 +1,4 @@
-import { View, Scroll } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import mixins from '../mixins'
 import { handleTouchScroll } from '../../utils/common'

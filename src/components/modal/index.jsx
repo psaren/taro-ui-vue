@@ -1,4 +1,4 @@
-import { View, Br, Button } from '@tarojs/components'
+import { View, Button } from '@tarojs/components'
 import classNames from 'classnames'
 import ModalAction from './action/index'
 import ModalContent from './content/index'
@@ -127,7 +127,7 @@ export default {
                     <View
                       // @ts-ignore
                       dangerouslySetInnerHTML={{
-                        __html: content.replace(/\n/g, '<Br/>'),
+                        __html: content.replace(/\n/g, '<br/>'),
                       }}></View>
                   ) : (
                     <View>{content}</View>
