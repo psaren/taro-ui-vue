@@ -119,6 +119,11 @@ export interface AtInputProps extends AtComponent, OmitInputProps {
    */
   required?: boolean
   /**
+   * 最大长度
+   * @default 140
+   */
+  maxLength?: number
+  /**
    * 输入框失去焦点时触发的事件，v2.0.3 版本可以获取 event 参数
    */
   onBlur?: InputFunction<string | number, BlurEventDetail>
