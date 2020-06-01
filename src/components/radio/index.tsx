@@ -1,4 +1,4 @@
-import { Any, View } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import Vue, { VNode } from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -37,7 +37,7 @@ const AtRadio = Vue.extend({
     },
   },
   methods: {
-    handleClick(option: RadioOption<Any>, event: CommonEvent) {
+    handleClick(option: RadioOption<any>, event: CommonEvent) {
       if (option.disabled) return
       this.onClick(option.value, event)
     },
