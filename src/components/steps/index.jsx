@@ -19,7 +19,6 @@ export default {
     items: {
       type: Array,
       default: () => [],
-      validator: (ary) => ary.every((item) => Array.isArray(item) || typeof item === 'string'),
     },
     onChange: {
       type: Function,
