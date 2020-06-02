@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtIcon from '../../src/components/icon'
+import AtIcon from '../components/icon'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtIcon, {

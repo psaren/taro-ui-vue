@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtPagination from '../../src/components/pagination'
-import { sleep } from '../utils'
+import AtPagination from '../components/pagination'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtPagination, {

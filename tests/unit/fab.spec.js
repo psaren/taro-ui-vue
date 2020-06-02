@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtFab from '../../src/components/fab'
+import AtFab from '../components/fab'
 
 const factory = (values = {}, slots = { default: ['按钮'] }) => {
   return mount(AtFab, {

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtAccordion from '../../src/components/accordion'
+import AtAccordion from '../components/accordion'
 
 const factory = (values = {}, slots = { default: ['按钮'] }) => {
   return mount(AtAccordion, {

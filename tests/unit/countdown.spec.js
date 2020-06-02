@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import AtCountdown from '../../src/components/countdown'
-import { sleep } from '../utils'
+import AtCountdown from '../components/countdown'
+import { sleep } from '../helper'
 
 const factory = async (values = {}, slots = { default: [] }) => {
   const component = mount(AtCountdown, {
@@ -11,7 +11,7 @@ const factory = async (values = {}, slots = { default: [] }) => {
   return component
 }
 
-describe('AtCountdown Snap', async () => {
+describe('AtCountdown Snap', () => {
   it('render initial AtCountdown', async () => {
     const wrapper = await factory()
     expect(wrapper.element).toMatchSnapshot()

@@ -1,8 +1,8 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import AtActionSheet from '../../src/components/action-sheet/index'
-import AtActionSheetItem from '../../src/components/action-sheet/body/item'
-import AtActionSheetHeader from '../../src/components/action-sheet/header/index'
-import AtActionSheetFooter from '../../src/components/action-sheet/footer/index'
+import AtActionSheet from '../components/action-sheet/index'
+import AtActionSheetItem from '../components/action-sheet/body/item'
+import AtActionSheetHeader from '../components/action-sheet/header/index'
+import AtActionSheetFooter from '../components/action-sheet/footer/index'
 
 const localVue = createLocalVue()
 

@@ -25,15 +25,7 @@ exports[`List Snap render completed List -- no border 1`] = `
       </view>
       <view
         class="at-list__item-extra item-extra"
-      >
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
-        </view>
-      </view>
+      />
     </view>
   </view>
    
@@ -58,15 +50,7 @@ exports[`List Snap render completed List -- no border 1`] = `
       </view>
       <view
         class="at-list__item-extra item-extra"
-      >
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
-        </view>
-      </view>
+      />
     </view>
   </view>
 </view>
@@ -97,15 +81,7 @@ exports[`List Snap render completed List 1`] = `
       </view>
       <view
         class="at-list__item-extra item-extra"
-      >
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
-        </view>
-      </view>
+      />
     </view>
   </view>
    
@@ -168,15 +144,7 @@ exports[`List Snap render completed List 1`] = `
       </view>
       <view
         class="at-list__item-extra item-extra"
-      >
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
-        </view>
-      </view>
+      />
     </view>
   </view>
    
@@ -206,13 +174,6 @@ exports[`List Snap render completed List 1`] = `
           class="item-extra__info"
         >
           详细信息
-        </view>
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
         </view>
       </view>
     </view>
@@ -478,13 +439,6 @@ exports[`List Snap render completed List 1`] = `
             color="#6190E8"
           />
         </view>
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
-        </view>
       </view>
     </view>
   </view>
@@ -517,13 +471,6 @@ exports[`List Snap render completed List 1`] = `
           <switch
             color="#6190E8"
             disabled="disabled"
-          />
-        </view>
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
           />
         </view>
       </view>
@@ -560,13 +507,6 @@ exports[`List Snap render completed List 1`] = `
             color="#6190E8"
           />
         </view>
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
-          />
-        </view>
       </view>
     </view>
   </view>
@@ -600,13 +540,6 @@ exports[`List Snap render completed List 1`] = `
             checked="checked"
             color="#6190E8"
             disabled="disabled"
-          />
-        </view>
-        <view
-          class="item-extra__icon"
-        >
-          <view
-            class="at-icon item-extra__icon-arrow at-icon-chevron-up"
           />
         </view>
       </view>

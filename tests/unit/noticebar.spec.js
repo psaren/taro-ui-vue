@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtNoticebar from '../../src/components/noticebar'
+import AtNoticebar from '../components/noticebar'
 
 const factory = (values = {}, slots = { default: ['这是内容'] }) => {
   return mount(AtNoticebar, {

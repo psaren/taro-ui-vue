@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtButton from '../../src/components/button'
+import AtButton from '../components/button'
 
 const factory = (values = {}, slots = { default: ['按钮'] }) => {
   return mount(AtButton, {

@@ -38,11 +38,12 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "test:analyze": "rollup --config ./config/rollup.config.analyze.js",
     "build:lib": "tsc --project ./tsconfig.build.json",
+    "build:lib-dev": "cross-env LIB_ENV=dev rollup --config ./config/rollup.config.js",
     "build:rollup": "rollup --config ./config/rollup.config.js",
     "prepublish": "npm run build:rollup && node ./config/copy.js",
     "clean": "rimraf dist lib",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "test": "cross-env NODE_ENV=test && jest --coverage"
+    "test": "node ./tests/transform-component.js && cross-env NODE_ENV=test && jest --coverage"
   },
   "browserslist": [
     "last 3 versions",

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtNavBar from '../../src/components/nav-bar'
+import AtNavBar from '../components/nav-bar'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtNavBar, {

@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtGrid from '../../src/components/grid'
+import AtGrid from '../components/grid'
 
 const factory = (values = {}, slots = { default: ['按钮'] }) => {
   return mount(AtGrid, {

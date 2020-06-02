@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import AtModal from '../../src/components/modal'
-import AtModalAction from '../../src/components/modal/action/index'
-import AtModalHeader from '../../src/components/modal/header/index'
-import AtModalContent from '../../src/components/modal/content/index'
-import { sleep } from '../utils'
+import AtModal from '../components/modal'
+import AtModalAction from '../components/modal/action/index'
+import AtModalHeader from '../components/modal/header/index'
+import AtModalContent from '../components/modal/content/index'
+import { sleep } from '../helper'
 
 const components = {
   AtModal,
