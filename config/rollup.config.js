@@ -11,6 +11,7 @@ import VuePlugin from 'rollup-plugin-vue'
 import jsx from 'acorn-jsx'
 import { terser } from 'rollup-plugin-terser'
 const babelConfig = require('../babel.config')
+const DEV_ENV = process.env.LIB_ENV === 'dev'
 
 // 这里需要将 @vue/babel-preset-jsx参数injectH设置为 false, 否则打包报错
 // https://github.com/vuejs/jsx/issues/34
@@ -66,7 +67,7 @@ export default {
       include: /\/node_modules\//,
     }),
     RollupJson(),
-    terser(),
+    !DEV_ENV && terser(),
     RollupTypescript({
       tsconfig: NodePath.resolve(__dirname, 'tsconfig.rollup.json'),
       include: ['*.ts+(|x)', '**/*.ts+(|x)'],
