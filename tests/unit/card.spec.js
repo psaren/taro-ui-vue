@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtCard from '../../src/components/card'
+import AtCard from '../components/card'
 
 const factory = (values = {}, slots = { default: ['这也是内容区 可以随意定义功能'] }) => {
   return mount(AtCard, {

@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AtTag.vue snapshot test 1`] = `
-<view>
-  <text>
-    AtTag
-  </text>
-</view>
-`;

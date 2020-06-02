@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import AtList from '../../src/components/list'
-import AtListItem from '../../src/components/list/item/index'
+import AtList from '../components/list'
+import AtListItem from '../components/list/item/index'
 
 describe('List Snap', () => {
   it('render completed List', () => {

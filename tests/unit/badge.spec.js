@@ -1,7 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
-import AtBadge from '../../src/components/avatar'
-import AtButton from '../../src/components/button'
-import AtLoading from '../../src/components/loading'
+import AtBadge from '../components/avatar'
+import AtButton from '../components/button'
+import AtLoading from '../components/loading'
 
 const localVue = createLocalVue()
 localVue.component('AtButton', AtButton)

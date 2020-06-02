@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtLoading from '../../src/components/loading'
+import AtLoading from '../components/loading'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtLoading, {

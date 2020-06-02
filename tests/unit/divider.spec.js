@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtDivider from '../../src/components/divider'
+import AtDivider from '../components/divider'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtDivider, {

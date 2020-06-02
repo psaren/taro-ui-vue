@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtCurtain from '../../src/components/curtain'
+import AtCurtain from '../components/curtain'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtCurtain, {

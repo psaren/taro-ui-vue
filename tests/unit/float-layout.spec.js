@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
-import AtFloatLayout from '../../src/components/float-layout'
-import { sleep } from '../utils'
+import AtFloatLayout from '../components/float-layout'
+import { sleep } from '../helper'
 
 const factory = (
   values = {},

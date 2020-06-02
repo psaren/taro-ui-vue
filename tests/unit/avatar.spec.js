@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtAvatar from '../../src/components/avatar'
+import AtAvatar from '../components/avatar'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtAvatar, {

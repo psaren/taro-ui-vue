@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import AtMessage from '../../src/components/message'
+import AtMessage from '../components/message'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtMessage, {
