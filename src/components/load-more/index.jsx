@@ -1,6 +1,6 @@
 import { View } from '@tarojs/components'
 import classNames from 'classnames'
-import Button from '../button/index'
+import AtButton from '../button/index'
 import AtActivityIndicator from '../activity-indicator/index'
 
 export default {
@@ -63,9 +63,9 @@ export default {
     } else if (status === 'more') {
       component = (
         <View class="at-load-more__cnt">
-          <Button full onTap={this.onClick} customStyle={moreBtnStyle}>
+          <AtButton full onTap={this.onClick} customStyle={moreBtnStyle}>
             {moreText}
-          </Button>
+          </AtButton>
         </View>
       )
     } else {
