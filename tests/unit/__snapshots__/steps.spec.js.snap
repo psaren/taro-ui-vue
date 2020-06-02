@@ -1,0 +1,308 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtSteps Snap render AtSteps -- props className 1`] = `
+<view
+  class="at-steps test"
+/>
+`;
+
+exports[`AtSteps Snap render AtSteps -- props current 1`] = `
+<view
+  class="at-steps"
+>
+  <view
+    class="at-steps__item at-steps__item--inactive"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-icon at-icon-sound at-steps__circle-icon"
+        />
+      </view>
+      <view
+        class="at-steps__right-line"
+      />
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤一
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+  <view
+    class="at-steps__item at-steps__item--active"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__left-line"
+      />
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-icon at-icon-shopping-cart at-steps__circle-icon"
+        />
+      </view>
+      <view
+        class="at-steps__right-line"
+      />
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤二
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+  <view
+    class="at-steps__item at-steps__item--inactive"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__left-line"
+      />
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-icon at-icon-camera at-steps__circle-icon"
+        />
+      </view>
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤三
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtSteps Snap render AtSteps -- props customStyle 1`] = `
+<view
+  class="at-steps"
+  style="color: red;"
+/>
+`;
+
+exports[`AtSteps Snap render AtSteps -- props items 1`] = `
+<view
+  class="at-steps"
+>
+  <view
+    class="at-steps__item at-steps__item--active"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-icon at-icon-sound at-steps__circle-icon"
+        />
+      </view>
+      <view
+        class="at-steps__right-line"
+      />
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤一
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+  <view
+    class="at-steps__item at-steps__item--inactive"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__left-line"
+      />
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-icon at-icon-shopping-cart at-steps__circle-icon"
+        />
+      </view>
+      <view
+        class="at-steps__right-line"
+      />
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤二
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+  <view
+    class="at-steps__item at-steps__item--inactive"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__left-line"
+      />
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-icon at-icon-camera at-steps__circle-icon"
+        />
+      </view>
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤三
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtSteps Snap render AtSteps -- props items 2`] = `
+<view
+  class="at-steps"
+>
+  <view
+    class="at-steps__item at-steps__item--active"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-steps__num"
+        >
+          1
+        </view>
+      </view>
+      <view
+        class="at-steps__right-line"
+      />
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤一
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+  <view
+    class="at-steps__item at-steps__item--inactive"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__left-line"
+      />
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-steps__num"
+        >
+          2
+        </view>
+      </view>
+      <view
+        class="at-steps__right-line"
+      />
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤二
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+  <view
+    class="at-steps__item at-steps__item--inactive"
+  >
+    <view
+      class="at-steps__circular-wrap"
+    >
+      <view
+        class="at-steps__left-line"
+      />
+      <view
+        class="at-steps__circular"
+      >
+        <view
+          class="at-steps__num"
+        >
+          3
+        </view>
+      </view>
+    </view>
+    <view
+      class="at-steps__title"
+    >
+      步骤三
+    </view>
+    <view
+      class="at-steps__desc"
+    >
+      这里是额外的信息，最多两行
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtSteps Snap render initial AtSteps 1`] = `
+<view
+  class="at-steps"
+/>
+`;
