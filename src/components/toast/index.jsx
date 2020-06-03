@@ -38,7 +38,7 @@ export default {
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: null,
     },
     onClose: {
       type: Function,
@@ -109,7 +109,7 @@ export default {
       if (status === 'loading') {
         return
       }
-      if (onClick) {
+      if (typeof onClick == 'function') {
         return onClick(event)
       }
       this.close()
@@ -152,7 +152,7 @@ export default {
     return _isOpened ? (
       <View class={classNames('at-toast', this.className)}>
         {hasMask && <View class="at-toast__overlay" />}
-        <View class={bodyClass} style={customStyle} onClick={this.handleClick}>
+        <View class={bodyClass} style={customStyle} onTap={this.handleClick}>
           <View class="toast-body-content">
             {realImg ? (
               <View class="toast-body-content__img">
