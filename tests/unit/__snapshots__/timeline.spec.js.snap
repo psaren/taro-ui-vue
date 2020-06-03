@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtTimeline Snap render AtNoticebar -- props items 1`] = `
+<view
+  class="at-timeline"
+>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        刷牙洗脸
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        吃早餐
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        上班
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        睡觉
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtTimeline Snap render AtNoticebar -- props items.color 1`] = `
+<view
+  class="at-timeline"
+>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        刷牙洗脸
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item at-timeline-item--green"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        吃早餐
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item at-timeline-item--red"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        上班
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item at-timeline-item--yellow"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        睡觉
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtTimeline Snap render AtNoticebar -- props items.content 1`] = `
+<view
+  class="at-timeline"
+>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-check-circle"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        刷牙洗脸
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        大概8:00
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-clock"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        吃早餐
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        牛奶+面包
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        餐后记得吃药
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-clock"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        上班
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        查看邮件
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        写PPT
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        发送PPT给领导
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-clock"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        睡觉
+      </view>
+      <view
+        class="at-timeline-item__content-item at-timeline-item__content--sub"
+      >
+        不超过23:00
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtTimeline Snap render AtNoticebar -- props items.icon 1`] = `
+<view
+  class="at-timeline"
+>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-check-circle"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        刷牙洗脸
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-clock"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        吃早餐
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-clock"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        上班
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__icon"
+    >
+      <view
+        class="at-icon at-icon-clock"
+      />
+    </view>
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        睡觉
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtTimeline Snap render AtNoticebar -- props pending 1`] = `
+<view
+  class="at-timeline at-timeline--pending at-timeline--pending"
+>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        刷牙洗脸
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        吃早餐
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        上班
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-timeline-item"
+  >
+    <view
+      class="at-timeline-item__tail"
+    />
+    <view
+      class="at-timeline-item__dot"
+    />
+    <view
+      class="at-timeline-item__content"
+    >
+      <view
+        class="at-timeline-item__content-item"
+      >
+        睡觉
+      </view>
+    </view>
+  </view>
+</view>
+`;
