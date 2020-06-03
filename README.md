@@ -1,5 +1,5 @@
 # taro-ui-vue
-[![NPM version](https://img.shields.io/npm/v/taro-ui-vue.svg)](https://npmjs.org/package/dva)
+[![NPM version](https://img.shields.io/npm/v/taro-ui-vue.svg)](https://npmjs.org/package/taro-ui-vue)
 [![NPM](https://img.shields.io/npm/l/taro-ui-vue)](./LECENSE)
 ![David](https://img.shields.io/david/psaren/taro-ui-vue)
 [![npm](https://img.shields.io/npm/dm/taro-ui-vue)](https://www.npmjs.com/package/taro-ui-vue)
