@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtCheckbox Snap render AtCheckbox -- props options 1`] = `
+<view
+  class="at-checkbox"
+>
+  <view
+    class="at-checkbox__option"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          iPhone X
+        </view>
+      </view>
+      <view
+        class="at-checkbox__desc"
+      >
+        部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-checkbox__option"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          HUAWEI P20
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-checkbox__option at-checkbox__option--disabled"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          OPPO Find X
+        </view>
+      </view>
+      <view
+        class="at-checkbox__desc"
+      >
+        部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-checkbox__option at-checkbox__option--disabled"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          vivo NEX
+        </view>
+      </view>
+      <view
+        class="at-checkbox__desc"
+      >
+        部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCheckbox Snap render AtCheckbox -- props selectedList 1`] = `
+<view
+  class="at-checkbox"
+>
+  <view
+    class="at-checkbox__option"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          iPhone X
+        </view>
+      </view>
+      <view
+        class="at-checkbox__desc"
+      >
+        部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-checkbox__option at-checkbox__option--selected"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          HUAWEI P20
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-checkbox__option at-checkbox__option--disabled"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          OPPO Find X
+        </view>
+      </view>
+      <view
+        class="at-checkbox__desc"
+      >
+        部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-checkbox__option at-checkbox__option--disabled"
+  >
+    <view
+      class="at-checkbox__option-wrap"
+    >
+      <view
+        class="at-checkbox__option-cnt"
+      >
+        <view
+          class="at-checkbox__icon-cnt"
+        >
+          <text
+            class="at-icon at-icon-check"
+          />
+        </view>
+        <view
+          class="at-checkbox__title"
+        >
+          vivo NEX
+        </view>
+      </view>
+      <view
+        class="at-checkbox__desc"
+      >
+        部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtCheckbox Snap render initial AtCheckbox 1`] = `
+<view
+  class="at-checkbox"
+/>
+`;

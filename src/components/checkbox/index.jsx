@@ -1,5 +1,5 @@
 import { View, Text } from '@tarojs/components'
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 
 const AtCheckbox = Vue.extend({
@@ -37,7 +37,7 @@ const AtCheckbox = Vue.extend({
     },
   },
   methods: {
-    handleClick(idx: number): void {
+    handleClick(idx) {
       const { selectedList, options } = this
       const option = options[idx]
       const { disabled, value } = option
@@ -52,7 +52,7 @@ const AtCheckbox = Vue.extend({
       this.onChange([...selectedSet])
     },
   },
-  render(h): VNode {
+  render(h) {
     const { customStyle, className, options, selectedList } = this
 
     const rootCls = classNames('at-checkbox', className)
