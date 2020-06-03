@@ -1,3 +1,30 @@
+## [0.0.7](https://github.com/psaren/taro-ui-vue/compare/v0.0.6...v0.0.7) (2020-06-03)
+
+
+### Bug Fixes
+
+* **ActionSheet:** 修复 ActionSheet 点击事件 ([70c9f47](https://github.com/psaren/taro-ui-vue/commit/70c9f47ec48d699e67b34850f19708c3f6f4faba))
+* **AtFab:** 修复 AtFab 点击事件 ([3609d01](https://github.com/psaren/taro-ui-vue/commit/3609d01f0f36e52f1e54428e3e5cff57564180a5))
+* **AtFab:** 修复AtFab props 类型 ([91bb7ca](https://github.com/psaren/taro-ui-vue/commit/91bb7ca9df29e7b1b1459fcaff0e9c0ab8cd65da))
+* **AtGrid:**  修复 AtGrid 点击事件 ([6cc1af9](https://github.com/psaren/taro-ui-vue/commit/6cc1af9c0e6b1eae7595fb1635e733b6b4bf39cb))
+* **AtIcon:** 修复 AtIcon 点击事件 ([ffb273b](https://github.com/psaren/taro-ui-vue/commit/ffb273baaf746af51e5824a60841d11cdc6f17b4))
+* 修复 divider props 类型 ([53b5d3c](https://github.com/psaren/taro-ui-vue/commit/53b5d3c0901e1a5fcb4a874e56082f369168f42c))
+* 修复 pxTransform 问题 ([be17641](https://github.com/psaren/taro-ui-vue/commit/be17641a7c31b7dfe8713ce486a5fe48e08528fe))
+* **AtListItem:** 修复 AtListItem ([078bac9](https://github.com/psaren/taro-ui-vue/commit/078bac9ca11b00d203160df90a35649aa1b83124))
+* **AtPagination:** 修复 AtPagination 按钮点击 ([9f05de0](https://github.com/psaren/taro-ui-vue/commit/9f05de0969d2205d82c22a91698bea811ef69844))
+* **AtSeps:** 删除无效validator ([21eabff](https://github.com/psaren/taro-ui-vue/commit/21eabffad5f49d0311e86f6e6d46d4887f1e6dd6))
+* **AtToast:** AtToast onClick 默认值问题 ([59d1d25](https://github.com/psaren/taro-ui-vue/commit/59d1d2584ef577abc15d085aabe0a48a93097da3))
+* **components:** 删除无用的标签 ([18a05f3](https://github.com/psaren/taro-ui-vue/commit/18a05f3c4ceb89a530bbbd5a0d40eebb55ccb1e3))
+* **input:** 修复input maxLength 类型 ([f5e5ff5](https://github.com/psaren/taro-ui-vue/commit/f5e5ff523488812620af3b4e63168b78bd22d5b1))
+* **NavBar:**  休息 NavBar leftIconType 类型 ([21ee293](https://github.com/psaren/taro-ui-vue/commit/21ee2937dc5351f377494639f716710a605b8758))
+
+
+### Features
+
+* **components:** JSX 内置组件需要从@tarojs/components 引入 ([7a0bd9c](https://github.com/psaren/taro-ui-vue/commit/7a0bd9ce93546708e273cf8d4e0e3945def79299))
+
+
+
 ## [0.0.6]
 * 压缩 rollup 打包后的代码
 ## [0.0.5](https://github.com/psaren/taro-ui-vue/compare/v0.0.4...v0.0.5) (2020-05-28)
