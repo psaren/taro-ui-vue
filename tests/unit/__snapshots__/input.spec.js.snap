@@ -1,0 +1,610 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtInput Snap render AtInput -- props border 1`] = `
+<view
+  class="at-input at-input--without-border"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props clear 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props disabled 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container at-input--disabled"
+  >
+    <view
+      class="at-input__overlay"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props editable 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container at-input--disabled"
+  >
+    <view
+      class="at-input__overlay"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props error 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container at-input--error"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__icon"
+    >
+      <view
+        class="at-icon at-icon-alert-circle at-input__icon-alert"
+      />
+    </view>
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props maxLength 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="10"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props name 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id="name"
+      maxLength="140"
+      name="name"
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props placeholder 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder="placeholder"
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props required 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props style 1`] = `
+<view
+  class="at-input"
+  style="border:none;"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props title 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <view
+      class="at-input__title false"
+      for=""
+    >
+      title
+    </view>
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props type(digit) 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="digit"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props type(idcard) 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="idcard"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props type(number) 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="number"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props type(password) 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      password="true"
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props type(phone) 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="11"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="number"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render AtInput -- props value 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInput Snap render initial AtInput 1`] = `
+<view
+  class="at-input"
+>
+  <view
+    class="at-input__container"
+  >
+    <view
+      class="at-input__overlay at-input__overlay--hidden"
+    />
+    <input
+      adjustPosition="true"
+      class="at-input__input"
+      confirmType=""
+      cursor="0"
+      cursorSpacing="50"
+      id=""
+      maxLength="140"
+      name=""
+      placeholder=""
+      placeholderClass="placeholder"
+      placeholderStyle=""
+      selectionEnd="-1"
+      selectionStart="-1"
+      type="text"
+    />
+    <view
+      class="at-input__children"
+    />
+  </view>
+</view>
+`;

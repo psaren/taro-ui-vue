@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtRadio Snap render AtRadio 1`] = `
+<view
+  class="at-radio"
+>
+  <view
+    class="at-radio__option"
+  >
+    <view
+      class="at-radio__option-wrap"
+    >
+      <view
+        class="at-radio__option-container"
+      >
+        <view
+          class="at-radio__title"
+        >
+          单选项一
+        </view>
+        <view
+          class="at-radio__icon"
+        >
+          <view
+            class="at-icon at-icon-check text"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-radio__option"
+  >
+    <view
+      class="at-radio__option-wrap"
+    >
+      <view
+        class="at-radio__option-container"
+      >
+        <view
+          class="at-radio__title"
+        >
+          单选项二
+        </view>
+        <view
+          class="at-radio__icon"
+        >
+          <view
+            class="at-icon at-icon-check text"
+          />
+        </view>
+      </view>
+      <view
+        class="at-radio__desc"
+      >
+        单选项描述二
+      </view>
+    </view>
+  </view>
+  <view
+    class="at-radio__option at-radio__option--disabled"
+  >
+    <view
+      class="at-radio__option-wrap"
+    >
+      <view
+        class="at-radio__option-container"
+      >
+        <view
+          class="at-radio__title"
+        >
+          单选项三
+        </view>
+        <view
+          class="at-radio__icon"
+        >
+          <view
+            class="at-icon at-icon-check text"
+          />
+        </view>
+      </view>
+      <view
+        class="at-radio__desc"
+      >
+        单选项描述三
+      </view>
+    </view>
+  </view>
+</view>
+`;

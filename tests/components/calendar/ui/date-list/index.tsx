@@ -1,3 +1,6 @@
+import Vue from 'vue'
+import classnames from 'classnames'
+import { Calendar } from 'types/calendar'
 import * as constant from '../../common/constant'
 
 const MAP: { [key: number]: string } = {

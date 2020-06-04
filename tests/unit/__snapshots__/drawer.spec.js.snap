@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtDrawer Snap render AtDrawer -- props items 1`] = `
+<view
+  class="at-drawer at-drawer--left"
+>
+  <view
+    class="at-drawer__mask"
+    style="display: block; opacity: 0;"
+  />
+  <view
+    class="at-drawer__content"
+    style="transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1);"
+  >
+    <view
+      class="at-list"
+    >
+      <view
+        class="at-list__item"
+        data-index="0"
+      >
+        <view
+          class="at-list__item-container"
+        >
+          <view
+            class="at-list__item-content item-content"
+          >
+            <view
+              class="item-content__info"
+            >
+              <view
+                class="item-content__info-title"
+              >
+                菜单1
+              </view>
+            </view>
+          </view>
+          <view
+            class="at-list__item-extra item-extra"
+          >
+            <view
+              class="item-extra__icon"
+            >
+              <view
+                class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+              />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="at-list__item"
+        data-index="1"
+      >
+        <view
+          class="at-list__item-container"
+        >
+          <view
+            class="at-list__item-content item-content"
+          >
+            <view
+              class="item-content__info"
+            >
+              <view
+                class="item-content__info-title"
+              >
+                菜单2
+              </view>
+            </view>
+          </view>
+          <view
+            class="at-list__item-extra item-extra"
+          >
+            <view
+              class="item-extra__icon"
+            >
+              <view
+                class="at-icon item-extra__icon-arrow at-icon-chevron-right"
+              />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`AtDrawer Snap render AtDrawer -- props show 1`] = `
+<view
+  class="at-drawer at-drawer--left"
+>
+  <view
+    class="at-drawer__mask"
+    style="display: block; opacity: 0;"
+  />
+  <view
+    class="at-drawer__content"
+    style="transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1);"
+  />
+</view>
+`;
+
+exports[`AtDrawer Snap render AtDrawer -- props width 1`] = `
+<view
+  class="at-drawer at-drawer--left"
+>
+  <view
+    class="at-drawer__mask"
+    style="display: block; opacity: 0;"
+  />
+  <view
+    class="at-drawer__content"
+    style="transition: all 195ms cubic-bezier(0.4, 0, 0.6, 1);"
+  />
+</view>
+`;
+
+exports[`AtDrawer Snap render initial AtDrawer 1`] = `<view />`;

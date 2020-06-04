@@ -2,7 +2,6 @@ import { View, Text } from '@tarojs/components'
 import Vue from 'vue'
 import classnames from 'classnames'
 import { Calendar } from 'types/calendar'
-// import { Text, View } from '@tarojs/components'
 import * as constant from '../../common/constant'
 
 const MAP: { [key: number]: string } = {

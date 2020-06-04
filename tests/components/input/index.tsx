@@ -181,7 +181,7 @@ const AtInput = Vue.extend({
     },
   },
   methods: {
-    handleInput(event: BaseEventOrig<inputEventDetail>): void {
+    handleInput(event: BaseEventOrig<InputEventDetail>): void {
       this.onChange(event.detail.value, event)
     },
     handleFocus(event: BaseEventOrig<FocusEventDetail>): void {

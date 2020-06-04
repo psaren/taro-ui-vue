@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtInputNumber Snap render AtInputNumber -- props className 1`] = `
+<view
+  class="at-input-number test"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props customStyle 1`] = `
+<view
+  class="at-input-number"
+  style="color: red;"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props disabled 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn at-input-number--disabled"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    disabled="disabled"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn at-input-number--disabled"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props disabledInput 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    disabled="disabled"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props size 1`] = `
+<view
+  class="at-input-number at-input-number--lg"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props step 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props type(digit) 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="digit"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props type(number) 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props value 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render AtInputNumber -- props width 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
+
+exports[`AtInputNumber Snap render initial AtInputNumber 1`] = `
+<view
+  class="at-input-number"
+>
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-subtract at-input-number__btn-subtract"
+    />
+  </view>
+  <input
+    class="at-input-number__input"
+    type="number"
+  />
+  <view
+    class="at-input-number__btn"
+  >
+    <view
+      class="at-icon at-icon-add at-input-number__btn-add"
+    />
+  </view>
+</view>
+`;
