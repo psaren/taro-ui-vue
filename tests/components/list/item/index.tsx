@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import { mergeStyle } from '../../../utils/common'
+import Vue from 'vue'
 
-export default {
+const AtListItem = Vue.extend({
   name: 'AtListItem',
   props: {
     className: {
@@ -26,7 +27,9 @@ export default {
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return () => {}
+      },
     },
     isSwitch: {
       type: Boolean,
@@ -54,11 +57,15 @@ export default {
     },
     iconInfo: {
       type: Object,
-      default: () => ({ value: '' }),
+      default: function () {
+        return { value: '' }
+      },
     },
     onSwitchChange: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return () => {}
+      },
     },
     arrow: {
       type: String,
@@ -80,7 +87,7 @@ export default {
      *
      * @param {event} event
      */
-    handleSwitchClick(event) {
+    handleSwitchClick() {
       // event.stopPropagation()
     },
     /**
@@ -93,7 +100,7 @@ export default {
       }
     },
   },
-  render() {
+  render(h) {
     const {
       note,
       arrow,
@@ -187,4 +194,6 @@ export default {
       </view>
     )
   },
-}
+})
+
+export default AtListItem

@@ -1,6 +1,8 @@
+import { View } from '@tarojs/components'
 import classNames from 'classnames'
+import Vue from 'vue'
 
-export default {
+const AtList = Vue.extend({
   name: 'AtList',
   props: {
     hasBorder: {
@@ -12,7 +14,7 @@ export default {
       default: '',
     },
   },
-  render() {
+  render(h) {
     const rootClass = classNames(
       'at-list',
       {
@@ -21,6 +23,8 @@ export default {
       this.className
     )
 
-    return <view class={rootClass}>{this.$slots.default}</view>
+    return <View class={rootClass}>{this.$slots.default}</View>
   },
-}
+})
+
+export default AtList
