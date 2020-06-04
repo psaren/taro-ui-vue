@@ -31,7 +31,8 @@ function main() {
   console.log('transform components ... ')
   console.time('Time')
   glob(resolve('../src/{components, utils}/**/*.ts'), {}, function (er, files) {
-    files.forEach((file) => {
+    const fileList = files.concat([resolve('../src/index.ts')])
+    fileList.forEach((file) => {
       const dest = file.replace('src', 'tests').replace(/[(a-z)|-]+.ts$/, '')
       shell.mkdir('-p', dest)
       shell.cp('-Rfu', file, dest)
