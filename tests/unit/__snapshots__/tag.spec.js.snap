@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtTag Snap render AtTag -- props active 1`] = `
+<view
+  class="at-tag at-tag--normal at-tag--active"
+>
+  标签
+</view>
+`;
+
+exports[`AtTag Snap render AtTag -- props circle 1`] = `
+<view
+  class="at-tag at-tag--normal at-tag--circle"
+>
+  标签
+</view>
+`;
+
+exports[`AtTag Snap render AtTag -- props disabled 1`] = `
+<view
+  class="at-tag at-tag--normal at-tag--disabled"
+>
+  标签
+</view>
+`;
+
+exports[`AtTag Snap render AtTag -- props name 1`] = `
+<view
+  class="at-tag at-tag--normal"
+>
+  标签
+</view>
+`;
+
+exports[`AtTag Snap render AtTag -- props size 1`] = `
+<view
+  class="at-tag at-tag--small"
+>
+  标签
+</view>
+`;
+
+exports[`AtTag Snap render AtTag -- props type 1`] = `
+<view
+  class="at-tag at-tag--normal at-tag--primary"
+>
+  标签
+</view>
+`;
