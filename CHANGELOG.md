@@ -1,3 +1,19 @@
+## [0.0.8](https://github.com/psaren/taro-ui-vue/compare/v0.0.7...v0.0.8) (2020-06-04)
+
+
+### Bug Fixes
+
+* **tabs:** tabs props height ([f97a7bf](https://github.com/psaren/taro-ui-vue/commit/f97a7bf933094acfe14c83689506740e7070b080))
+* 修复 divider props 类型 ([53b5d3c](https://github.com/psaren/taro-ui-vue/commit/53b5d3c0901e1a5fcb4a874e56082f369168f42c))
+* 修复 pxTransform 问题 ([be17641](https://github.com/psaren/taro-ui-vue/commit/be17641a7c31b7dfe8713ce486a5fe48e08528fe))
+
+
+### Features
+
+* **components:** JSX 内置组件需要从@tarojs/components 引入 ([e4e7785](https://github.com/psaren/taro-ui-vue/commit/e4e778571b050025f6e3059b2b327dcb3fbf81b5))
+* **drawer:** 新增 AtDrawer 组件 ([0f6db73](https://github.com/psaren/taro-ui-vue/commit/0f6db73e4eefad1ccd21ca6430e3117fe5333128))
+
+
 ## [0.0.7](https://github.com/psaren/taro-ui-vue/compare/v0.0.6...v0.0.7) (2020-06-03)
 
 
@@ -27,6 +43,8 @@
 
 ## [0.0.6]
 * 压缩 rollup 打包后的代码
+
+
 ## [0.0.5](https://github.com/psaren/taro-ui-vue/compare/v0.0.4...v0.0.5) (2020-05-28)
 
 
