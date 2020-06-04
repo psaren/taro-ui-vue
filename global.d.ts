@@ -1,5 +1,5 @@
 import * as CSS from 'csstype'
-import Vue from 'vue'
+import Vue, { VNode } from 'vue'
 
 declare module "*.png";
 declare module "*.gif";
@@ -13,6 +13,8 @@ declare module "*.sass";
 declare module "*.styl";
 
 declare namespace JSX {
+  interface Element extends VNode {}
+  interface ElementClass extends Vue {}
     interface IntrinsicElements {
       [elem: string]: any;
     }
