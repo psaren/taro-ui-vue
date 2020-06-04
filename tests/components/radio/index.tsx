@@ -43,7 +43,6 @@ const AtRadio = Vue.extend({
   },
   render(h): VNode {
     const { customStyle, className, options, value } = this
-    console.log('value :>> ', value)
     return (
       <view class={classNames('at-radio', className)} style={customStyle}>
         {options.map((option) => (
