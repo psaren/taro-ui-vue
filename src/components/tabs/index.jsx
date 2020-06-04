@@ -26,8 +26,8 @@ export default {
       validator: (val) => ['horizontal', 'vertical'].includes(val),
     },
     height: {
-      type: Number,
-      default: 0,
+      type: String,
+      default: '',
     },
     current: {
       type: Number,
