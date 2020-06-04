@@ -9,8 +9,6 @@
 
 
 ### Features
-
-* **components:** JSX 内置组件需要从@tarojs/components 引入 ([e4e7785](https://github.com/psaren/taro-ui-vue/commit/e4e778571b050025f6e3059b2b327dcb3fbf81b5))
 * **drawer:** 新增 AtDrawer 组件 ([0f6db73](https://github.com/psaren/taro-ui-vue/commit/0f6db73e4eefad1ccd21ca6430e3117fe5333128))
 
 
