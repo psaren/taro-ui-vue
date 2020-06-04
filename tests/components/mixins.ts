@@ -4,7 +4,7 @@ interface StateInterFace {
 
 export default {
   methods: {
-    setState(newState: StateInterFace, fn: Function) {
+    setState(newState: StateInterFace, fn?: Function) {
       const ks = Object.keys(newState)
       if (Array.isArray(ks)) {
         ks.forEach((k) => {
