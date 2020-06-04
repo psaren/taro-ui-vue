@@ -48,6 +48,7 @@ import AtRange from './components/range'
 import AtIndexes from './components/indexes'
 import AtCalendar from './components/calendar'
 import AtFab from './components/fab'
+import AtDrawer from './components/drawer'
 
 /* 私有的组件  */
 import AtLoading from './components/loading'
@@ -104,6 +105,7 @@ export {
   AtCalendar,
   AtFab,
   AtLoading,
+  AtDrawer,
 }
 
 const components = [
@@ -158,6 +160,7 @@ const components = [
   AtCalendar,
   AtFab,
   AtLoading,
+  AtDrawer,
 ]
 interface Comp {
   options?: {
