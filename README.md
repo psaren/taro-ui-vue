@@ -94,7 +94,8 @@ Vue.use(TaroUiVue)
 ```
 | AtCalendar | AtActionSheet | AtTabBar |
 | :--------: | :--------: | :--------: |
-|![AtCalendar](./src/assets/images/AtCalendar.gif)|![AtActionSheet](./src/assets/images/AtActionSheet.gif)|![AtTabBar](./src/assets/images/AtTabBar.gif)
+|![AtCalendar](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtCalendar.gif)|![AtActionSheet](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtActionSheet.gif)|![AtTabBar](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtTabBar.gif)
+
 ## 更多使用方式
 更多组件使用及属性请参考 [taro-ui 使用文档](https://taro-ui.jd.com/#/docs/introduction)   
 所有参数基本一致

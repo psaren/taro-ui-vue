@@ -1,8 +1,5 @@
 <template>
   <view>
-    <text />
-    <view />
-    <input type="text">
     <AtFab :on-click="clickFab">
       fab
     </AtFab>
@@ -72,17 +69,6 @@
       getPhoneNumber
     </AtButton>
     <form />
-    <picker
-      mode="date"
-      :value="date"
-      start="2015-09-01"
-      end="2017-09-01"
-      @change="bindDateChange"
-    >
-      <view class="picker">
-        当前选择: {{ date }}
-      </view>
-    </picker>
     <AtNoticebar marquee>
       这是 NoticeBar 通告栏，这是 NoticeBar 通告栏，这是 NoticeBar 通告栏
     </AtNoticebar>
