@@ -1,6 +1,6 @@
 {
   "name": "taro-ui-vue",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "UI KIT for Taro/vue",
   "browser": "dist/index.umd.js",
   "module": "dist/index.esm.js",
