@@ -100,16 +100,18 @@ Vue.use(TaroUiVue)
 更多组件使用及属性请参考 [taro-ui 使用文档](https://taro-ui.jd.com/#/docs/introduction)   
 所有参数基本一致
 
-## 先关链接
+## 相关链接
 [taro](https://github.com/NervJS/taro)  
 [taro-ui](https://github.com/NervJS/taro-ui)
-
 ## TODO
 - 为组件添加测试用例
-- 修复现存[已知问题](./src/components/notes.md)
+- 修复现存[已知问题](https://github.com/psaren/taro-ui-vue/blob/master/src/components/notes.md)
 
 ## CHANGELOG
-[CHANGELOG](./CHANGELOG.md)
+[CHANGELOG](https://github.com/psaren/taro-ui-vue/blob/master/CHANGELOG.md)
+
+## 贡献
+如果你在使用 Taro-UI-Vue 时遇到问题，或者有好的建议，欢迎给我们提 Issue 或 Pull Request。在开始之前，请阅读 [贡献指南](https://github.com/psaren/taro-ui-vue/blob/master/.github/CONTRIBUTING.md)
 
 ## License
 
