@@ -6,7 +6,7 @@ exports[`AtTabs Snap render AtTabs -- props animated 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="GNPHIEGE"
+    id="tabs-AOTU2018"
   >
     <view
       class="at-tabs__item at-tabs__item--active"
@@ -54,7 +54,7 @@ exports[`AtTabs Snap render AtTabs -- props className 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="NMHBADOB"
+    id="tabs-AOTU2018"
   />
   <view
     class="at-tabs__body"
@@ -74,7 +74,7 @@ exports[`AtTabs Snap render AtTabs -- props current 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="BFJGHKJI"
+    id="tabs-AOTU2018"
   >
     <view
       class="at-tabs__item"
@@ -123,7 +123,7 @@ exports[`AtTabs Snap render AtTabs -- props customStyle 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="LENGCCKE"
+    id="tabs-AOTU2018"
   />
   <view
     class="at-tabs__body"
@@ -144,7 +144,7 @@ exports[`AtTabs Snap render AtTabs -- props height 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="INPKCMOB"
+    id="tabs-AOTU2018"
   >
     <view
       class="at-tabs__item at-tabs__item--active"
@@ -192,7 +192,7 @@ exports[`AtTabs Snap render AtTabs -- props swipeable 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="BIGOCDBA"
+    id="tabs-AOTU2018"
   >
     <view
       class="at-tabs__item at-tabs__item--active"
@@ -240,7 +240,7 @@ exports[`AtTabs Snap render AtTabs -- props tabDirection 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="FPJNDFIA"
+    id="tabs-AOTU2018"
   >
     <view
       class="at-tabs__item at-tabs__item--active"
@@ -288,7 +288,7 @@ exports[`AtTabs Snap render AtTabs -- props tabList 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="KFMPHGDJ"
+    id="tabs-AOTU2018"
   >
     <view
       class="at-tabs__item at-tabs__item--active"
@@ -336,7 +336,7 @@ exports[`AtTabs Snap render initial AtTabs 1`] = `
 >
   <view
     class="at-tabs__header"
-    id="GOAGBONL"
+    id="tabs-AOTU2018"
   />
   <view
     class="at-tabs__body"

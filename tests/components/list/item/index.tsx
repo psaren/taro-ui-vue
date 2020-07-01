@@ -1,4 +1,3 @@
-import { View, Image, Switch } from '@tarojs/components'
 import classNames from 'classnames'
 import { mergeStyle } from '../../../utils/common'
 import Vue from 'vue'
@@ -139,16 +138,16 @@ const AtListItem = Vue.extend({
     )
 
     return (
-      <View class={rootClass} onTap={this.handleClick}>
-        <View class="at-list__item-container">
+      <view class={rootClass} onTap={this.handleClick}>
+        <view class="at-list__item-container">
           {thumb && (
-            <View class="at-list__item-thumb item-thumb">
-              <Image class="item-thumb__info" mode="scaleToFill" src={thumb} />
-            </View>
+            <view class="at-list__item-thumb item-thumb">
+              <image class="item-thumb__info" mode="scaleToFill" src={thumb} />
+            </view>
           )}
           {iconInfo.value && (
-            <View class="at-list__item-icon item-icon">
-              <View
+            <view class="at-list__item-icon item-icon">
+              <view
                 class={iconClass}
                 style={mergeStyle(
                   {
@@ -156,43 +155,43 @@ const AtListItem = Vue.extend({
                     fontSize: `${iconInfo.size || 24}px`,
                   },
                   iconInfo.customStyle
-                )}></View>
-            </View>
+                )}></view>
+            </view>
           )}
-          <View class="at-list__item-content item-content">
-            <View class="item-content__info">
-              <View class="item-content__info-title">{title}</View>
-              {note && <View class="item-content__info-note">{note}</View>}
-            </View>
-          </View>
-          <View class="at-list__item-extra item-extra">
-            {extraText && <View class="item-extra__info">{extraText}</View>}
+          <view class="at-list__item-content item-content">
+            <view class="item-content__info">
+              <view class="item-content__info-title">{title}</view>
+              {note && <view class="item-content__info-note">{note}</view>}
+            </view>
+          </view>
+          <view class="at-list__item-extra item-extra">
+            {extraText && <view class="item-extra__info">{extraText}</view>}
 
             {extraThumb && !extraText && (
-              <View class="item-extra__image">
-                <Image class="item-extra__image-info" mode="aspectFit" src={extraThumb} />
-              </View>
+              <view class="item-extra__image">
+                <image class="item-extra__image-info" mode="aspectFit" src={extraThumb} />
+              </view>
             )}
 
             {isSwitch && !extraThumb && !extraText && (
-              <View class="item-extra__switch" onTap={this.handleSwitchClick}>
-                <Switch
+              <view class="item-extra__switch" onTap={this.handleSwitchClick}>
+                <switch
                   color={switchColor}
                   disabled={disabled}
                   checked={switchIsCheck}
                   onChange={this.handleSwitchChange}
                 />
-              </View>
+              </view>
             )}
 
             {arrow ? (
-              <View class="item-extra__icon">
-                <View class={`at-icon item-extra__icon-arrow at-icon-chevron-${arrow}`} />
-              </View>
+              <view class="item-extra__icon">
+                <view class={`at-icon item-extra__icon-arrow at-icon-chevron-${arrow}`} />
+              </view>
             ) : null}
-          </View>
-        </View>
-      </View>
+          </view>
+        </view>
+      </view>
     )
   },
 })

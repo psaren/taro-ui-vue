@@ -107,7 +107,7 @@ function uuid(len = 8, radix = 16): string {
 }
 
 function isTest(): boolean {
-  return process.env.LIB_ENV === 'test'
+  return process.env.LIB_ENV === 'test' || process.env.NODE_ENV === 'test'
 }
 
 let scrollTop = 0

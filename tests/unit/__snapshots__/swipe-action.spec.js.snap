@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SwipeAction Snap render options -- isOpened 1`] = `
+<view
+  class="at-swipe-action swipe-action--test"
+  id="swipeAction-tabs-AOTU2018"
+>
+  <view
+    class="at-swipe-action__content animtion"
+  >
+    <view
+      className="normal"
+    >
+      AtSwipeAction 一般使用场景
+    </view>
+  </view>
+  <view
+    class="at-swipe-action__options"
+    id="swipeActionOptions-tabs-AOTU2018"
+    options="[object Object],[object Object]"
+  >
+    <view
+      class="at-swipe-action__option cancel"
+      style="background-color: rgb(97, 144, 232);"
+    >
+      <view
+        class="option__text"
+      >
+        取消
+      </view>
+    </view>
+    <view
+      class="at-swipe-action__option confirm"
+      style="background-color: rgb(255, 73, 73);"
+    >
+      <view
+        class="option__text"
+      >
+        确认
+      </view>
+    </view>
+  </view>
+</view>
+`;
+
+exports[`SwipeAction Snap render options 1`] = `
+<view
+  class="at-swipe-action swipe-action--test"
+  id="swipeAction-tabs-AOTU2018"
+>
+  <view
+    class="at-swipe-action__content animtion"
+  >
+    <view
+      className="normal"
+    >
+      AtSwipeAction 一般使用场景
+    </view>
+  </view>
+  <view
+    class="at-swipe-action__options"
+    id="swipeActionOptions-tabs-AOTU2018"
+    options="[object Object],[object Object]"
+  >
+    <view
+      class="at-swipe-action__option cancel"
+      style="background-color: rgb(97, 144, 232);"
+    >
+      <view
+        class="option__text"
+      >
+        取消
+      </view>
+    </view>
+    <view
+      class="at-swipe-action__option confirm"
+      style="background-color: rgb(255, 73, 73);"
+    >
+      <view
+        class="option__text"
+      >
+        确认
+      </view>
+    </view>
+  </view>
+</view>
+`;

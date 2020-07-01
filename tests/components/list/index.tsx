@@ -1,4 +1,3 @@
-import { View } from '@tarojs/components'
 import classNames from 'classnames'
 import Vue from 'vue'
 
@@ -23,7 +22,7 @@ const AtList = Vue.extend({
       this.className
     )
 
-    return <View class={rootClass}>{this.$slots.default}</View>
+    return <view class={rootClass}>{this.$slots.default}</view>
   },
 })
 
