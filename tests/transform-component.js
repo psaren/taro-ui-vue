@@ -1,3 +1,13 @@
+/**
+ * 将 src/components 组件转换后放到 tests/components
+ * 因为 src/components 组件引入了 @tarojs/components Taro 内置组件，无法进行测试
+ * 转换主要是将
+ * <View></View> => <view></view>,
+ * <Text></Text> => <text></text>,
+ * ...
+ * 并去掉 @tarojs/components 的引用
+ * 拷贝 utils 等依赖文件
+ */
 const fs = require('fs')
 const path = require('path')
 const glob = require('glob')
@@ -30,7 +40,7 @@ function main() {
   // 匹配 所有组件
   console.log('transform components ... ')
   console.time('Time')
-  glob(resolve('../src/{components, utils}/**/*.ts'), {}, function (er, files) {
+  glob(resolve('../src/{components,utils}/**/*.ts'), {}, function (er, files) {
     const fileList = files.concat([resolve('../src/index.ts')])
     fileList.forEach((file) => {
       const dest = file.replace('src', 'tests').replace(/[(a-z)|-]+.ts$/, '')

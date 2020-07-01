@@ -1,4 +1,4 @@
-# Taro UI 贡献指南
+# Taro-UI-Vue 贡献指南
 
 首先感谢您使用 Taro ，Taro 是由凹凸实验室打造的一套遵循 React 语法规范的多端统一开发框架。使用 Taro，我们可以只书写一套代码，再通过 Taro 的编译工具，将源代码分别编译出可以在不同端（微信小程序、H5、App 端等）运行的代码。
 
@@ -22,7 +22,6 @@ Issues 是用来提交 Bug 或 Feature 相关的内容，一个 Bug Issue 应该
 - Fork 一份代码到自己的账号下，请不要直接在仓库中创建分支
 - 基于 `dev` 创建一个新分支，如果你想添加新的组件，分支的命名请使用 `feature_component_[Component Name]`。（例如：`feature_component_list`）
 - Git Commit Message 的格式请遵循：`feat(Component Name): info about this commit`
-- 编写组件的测试用例，小程序端暂时无法做测试，请确保 H5 下测试用例可通过即可
 - 提交 PR 的时候，请使用 Rebase，这是为了保持 Commit 历史的干净（Merge request 到分支 `dev`）
 - 提交 PR 的时候，请添加一些关于你此次 PR 的描述信息
 
@@ -35,7 +34,7 @@ npm install -g rollup
 ``` 
 
 ```bash
-git clone git@github.com:psaren/taro-ui-vue.git
+git clone https://github.com/psaren/taro-ui-vue.git
 npm install
 # OR
 cnpm install
@@ -55,6 +54,19 @@ npm run build:weapp
 
 # 组件打包
 npm run build:rollup
+```
+
+## 组件测试
+测试代码 位于 tests 目录下。
+测试的组件位于 tests/components 目录，由src/components 转换而来。
+### 单个组件测试
+如果在 src/components 中修改了某个组件，需要进行测试, 假设是 button 组件。
+``` bash
+node ./tests/transform-component.js && jest ./tests/unit/button.spec.js
+```
+### 所有组件测试
+``` bash
+npm run test
 ```
 
 ## 代码规范
