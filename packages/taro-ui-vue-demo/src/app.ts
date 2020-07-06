@@ -8,7 +8,7 @@ import Taro from '@tarojs/taro'
 Vue.prototype.$taro = Taro
 
 import DocsHeader from './components/DocsHeader.vue'
-import TaroUi from '../taro-ui-vue'
+import TaroUi from 'taro-ui-vue'
 Vue.component('DocsHeader', DocsHeader)
 Vue.use(TaroUi)
 
