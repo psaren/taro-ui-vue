@@ -166,5 +166,7 @@ module.exports = function (source) {
     .replace(/<hr>/g, '<hr />')
     .replace(/<br>/g, '<br />')
     .replace(/class=/g, 'className=')
-  return formatModule(imports, moduleJS.join('\n'), content, state)
+    .replace(/style=\"text-align:left\"/g, ``)
+  const res = formatModule(imports, moduleJS.join('\n'), content, state)
+  return res
 }

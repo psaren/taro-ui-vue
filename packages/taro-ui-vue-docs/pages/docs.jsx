@@ -48,7 +48,7 @@ class Docs extends React.Component {
             }`}
           >
             {curDemoPath && (
-              <div className='qrcode-menu' style='right: 420px'>
+              <div className='qrcode-menu' style={{right: '420px'}}>
                 <div className='qrcode-container'>
                   <img src={qrCodeImg} alt='qrcode' />
                   <div className='qrcode-modal'>

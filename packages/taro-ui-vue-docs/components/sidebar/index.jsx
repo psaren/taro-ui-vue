@@ -32,11 +32,10 @@ class Sidebar extends React.Component {
 
   render() {
     const { data: items } = this.props
-
     return (
       <nav className='at-nav'>
-        {items.map(item => (
-          <div key={item.name}>
+        {items.map((item, index) => (
+          <div key={item.name + index}>
             <h2 className='at-nav__title'>{item.title}</h2>
             <ul className='at-nav__items'>
               {item.items &&
