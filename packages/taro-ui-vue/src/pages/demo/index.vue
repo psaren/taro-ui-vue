@@ -1,6 +1,9 @@
 <template>
   <view>
-    <AtFab :on-click="clickFab">
+    <AtFab
+      :on-click="handleClick"
+      @tap="handleClick"
+    >
       fab
     </AtFab>
     <AtBadge dot>
@@ -89,10 +92,11 @@ export default {
       this.date = e.detail.value
     },
     handleClick() {
-      Taro.navigateTo({url: '/pages/index/index'})
-        .then(() => {
-          console.log('success')
-        })
+      console.log(123)
+      // Taro.navigateTo({url: '/pages/index/index'})
+      //   .then(() => {
+      //     console.log('success')
+      //   })
     },
     handleUserInfo(e) {
       console.log('handleUserInfo', e)
