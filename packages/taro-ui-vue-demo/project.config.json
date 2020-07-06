@@ -1,7 +1,7 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "taro-ui-vue-demo",
-	"description": "taro-vue-app-ts",
+	"description": "demo for Taro-UI-Vue",
 	"appid": "wx9bcb37a08f9f5bf8",
 	"setting": {
 		"urlCheck": true,

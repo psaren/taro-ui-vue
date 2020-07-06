@@ -17,4 +17,4 @@ fs.copy(
   .then(() => {
     spinner.stop()
   })
-  .catch(err => console.error(err))
+  .catch((err) => console.error(err))

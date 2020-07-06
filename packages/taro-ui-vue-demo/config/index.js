@@ -1,7 +1,7 @@
 /*
  * @Author: pengyue
  * @Date: 2020-07-06 21:54:17
- * @LastEditTime: 2020-07-06 21:58:04
+ * @LastEditTime: 2020-07-07 02:00:52
  * @LastEditors: pengyue
  * @Description:
  * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/config/index.js
@@ -17,7 +17,7 @@ const config = {
     828: 1.81 / 2,
   },
   sourceRoot: 'src',
-  outputRoot: 'bundle',
+  outputRoot: 'dist',
   plugins: [],
   defineConstants: {},
   copy: {

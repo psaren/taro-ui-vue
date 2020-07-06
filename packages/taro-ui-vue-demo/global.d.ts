@@ -1,3 +1,11 @@
+/*
+ * @Author: pengyue
+ * @Date: 2020-07-06 21:43:33
+ * @LastEditTime: 2020-07-07 00:37:27
+ * @LastEditors: pengyue
+ * @Description: 
+ * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/global.d.ts
+ */ 
 import * as CSS from 'csstype'
 import Vue, { VNode } from 'vue'
 
@@ -11,6 +19,7 @@ declare module "*.less";
 declare module "*.scss";
 declare module "*.sass";
 declare module "*.styl";
+declare module "*.vue";
 
 declare namespace JSX {
   interface Element extends VNode {}
