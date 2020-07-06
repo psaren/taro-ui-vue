@@ -126,7 +126,10 @@ export default {
 
     return (
       <view class={rootCls} style={customStyle}>
-        <view class={headerCls} onTap={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)}>
+        <view
+          class={headerCls}
+          onTap={this.handleClick.bind(this)}
+          onClick={this.handleClick.bind(this)}>
           {icon && icon.value && <view class={iconCls} style={iconStyle}></view>}
           <view class="at-accordion__info">
             <view class="at-accordion__info__title">{title}</view>

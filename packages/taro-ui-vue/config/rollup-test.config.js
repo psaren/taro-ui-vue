@@ -60,7 +60,6 @@ export default {
       'process.env.VUE_ENV': JSON.stringify('browser'),
     }),
     VuePlugin(),
-
     RollupNodeResolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules',
