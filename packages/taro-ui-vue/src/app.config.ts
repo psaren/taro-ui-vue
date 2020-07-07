@@ -8,7 +8,7 @@
  */
 
 export default {
-  pages: ['pages/demo/index', 'pages/index/index'],
+  pages: ['pages/demo/index'],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
