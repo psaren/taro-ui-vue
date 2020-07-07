@@ -13,11 +13,12 @@ export default {
     'pages/panel/index',
     'pages/basic/color/index',
     'pages/basic/icon/index',
+    'pages/action/action-sheet/index',
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: 'Taro UI Vue',
     navigationBarTextStyle: 'black',
   },
 }

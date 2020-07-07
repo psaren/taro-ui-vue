@@ -6,7 +6,7 @@
  * @Description:
  * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/config/index.js
  */
-
+const path = require('path')
 const config = {
   projectName: 'taro-ui-vue',
   date: '2020-6-12',
@@ -63,6 +63,12 @@ const config = {
       },
     },
   },
+  sass: {
+    resource: [
+      'src/styles/variable.scss'
+    ],
+    projectDirectory: path.resolve(__dirname, '..'),
+  }
 }
 
 module.exports = function (merge) {
