@@ -53,18 +53,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.7.7",
-    "@tarojs/components": "3.0.2",
-    "@tarojs/runtime": "3.0.2",
-    "@tarojs/taro": "3.0.2",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.27",
     "lodash": "^4.17.15",
     "vue": "^2.5.0",
-    "vue-class-component": "^7.2.3",
-    "vue-template-compiler": "^2.5.0"
+    "vue-class-component": "^7.2.3"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.7.7",
+    "@tarojs/components": "3.0.2",
     "@babel/core": "^7.8.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-json": "^4.0.3",
@@ -73,6 +70,8 @@
     "@tarojs/mini-runner": "3.0.2",
     "@tarojs/webpack-runner": "3.0.2",
     "@types/webpack-env": "^1.13.6",
+    "@tarojs/runtime": "3.0.2",
+    "@tarojs/taro": "3.0.2",
     "@typescript-eslint/eslint-plugin": "^2.x",
     "@typescript-eslint/parser": "^2.x",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
@@ -111,6 +110,7 @@
     "typescript": "^3.7.0",
     "vue-eslint-parser": "^7.1.0",
     "vue-jest": "^3.0.5",
-    "vue-loader": "^15.9.3"
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.5.0"
   }
 }
