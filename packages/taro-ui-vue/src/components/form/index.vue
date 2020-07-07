@@ -1,7 +1,17 @@
-import Vue, { VNode } from 'vue'
-import classNames from 'classnames'
+<template>
+   <form
+    :class="rootCls"
+    :style="customStyle"
+    @submit="handleSubmit"
+    :reportSubmit="reportSubmit"
+    @reset="handleReset">
+    <slot></slot>
+  </form>
+</template>
 
-const AtForm = Vue.extend({
+<script lang="ts">
+import classNames from 'classnames'
+export default {
   name: 'AtForm',
   props: {
     customStyle: {
@@ -33,6 +43,11 @@ const AtForm = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls() {
+      return classNames('at-form', this.className)
+    }
+  },
   methods: {
     handleSubmit(): void {
       this.onSubmit && this.onSubmit(arguments)
@@ -42,21 +57,5 @@ const AtForm = Vue.extend({
       this.onReset && this.onReset(arguments)
     },
   },
-  render(h): VNode {
-    const { customStyle, className, reportSubmit } = this
-    const rootCls = classNames('at-form', className)
-
-    return (
-      <form
-        class={rootCls}
-        style={customStyle}
-        onSubmit={this.handleSubmit.bind(this)}
-        reportSubmit={reportSubmit}
-        onReset={this.handleReset.bind(this)}>
-        {this.$slots.default}
-      </form>
-    )
-  },
-})
-
-export default AtForm
+}
+</script>

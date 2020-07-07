@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { AtForm } from '../dist/index.esm'
+import AtForm from '../../src/components/form/index.vue'
 
 const factory = (values = {}, slots = { default: [] }) => {
   return mount(AtForm, {
