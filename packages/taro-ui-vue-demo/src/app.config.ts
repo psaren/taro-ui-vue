@@ -14,6 +14,7 @@ export default {
     'pages/basic/color/index',
     'pages/basic/icon/index',
     'pages/action/action-sheet/index',
+    'pages/action/activity-indicator/index',
   ],
   window: {
     backgroundTextStyle: 'light',
