@@ -1,7 +1,8 @@
-@import "~taro-ui/dist/style/mixins/index.scss";
-@import "~taro-ui/dist/style/variables/default.scss";
+@import "~taro-ui-vue/dist/style/mixins/index.scss";
+@import "~taro-ui-vue/dist/style/variables/default.scss";
 
 .activity-indicator-page .panel__content {
+  position: relative;
   .example-item {
     @include display-flex;
     @include align-items(center);
