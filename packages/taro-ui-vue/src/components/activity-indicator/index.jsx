@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import AtLoading from '../loading/index.jsx'
+import AtLoading from '../loading/index.vue'
 
 export default {
   name: 'AtActivityIndicator',

@@ -17,6 +17,7 @@
       size="30"
       color="#F92"
     />
+    <view><AtLoading size="30"></AtLoading></view>
     <AtInput
       name="value"
       title="标准五个字"
@@ -51,7 +52,7 @@
         />
       </AtList>
     </AtAccordion>
-    <AtCalendar />
+    <!-- <AtCalendar /> -->
     <AtTag
       type="primary"
       circle
@@ -79,12 +80,16 @@
 </template>
 <script>
 import Taro from '@tarojs/taro'
+import AtLoading from '../../components/loading/index.vue'
 export default {
   data() {
     return {
       date: '',
       open: false
     }
+  },
+  components: {
+    AtLoading
   },
   methods: {
     bindDateChange: function(e) {

@@ -1,4 +1,4 @@
-import AtLoading from '../loading/index.jsx'
+import AtLoading from '../loading/index.vue'
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
 

@@ -7,7 +7,7 @@ import AtButton from './components/button'
 import AtCard from './components/card'
 import AtCheckbox from './components/checkbox'
 import AtFloatLayout from './components/float-layout'
-import AtForm from './components/form'
+import AtForm from './components/form/index.vue'
 import AtGrid from './components/grid'
 import AtIcon from './components/icon'
 import AtInput from './components/input'
@@ -51,7 +51,7 @@ import AtFab from './components/fab'
 import AtDrawer from './components/drawer'
 
 /* 私有的组件  */
-import AtLoading from './components/loading'
+import AtLoading from './components/loading/index.vue'
 
 export {
   AtActionSheet,
@@ -162,15 +162,9 @@ const components = [
   AtLoading,
   AtDrawer,
 ]
-interface Comp {
-  options?: {
-    [key: string]: Comp,
-  };
-  [key: string]: any;
-}
 
 const install = function (Vue) {
-  components.forEach((comp: Comp) => {
+  components.forEach((comp) => {
     if (comp.extendOptions) {
       // 压缩后 vue-class-component 组件的 options.name 会改变需要找回正确的组件名
       let options = comp.options || {}
