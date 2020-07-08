@@ -182,67 +182,39 @@ const AtInputNumber = Vue.extend({
       }
       this.onErrorInput(errorValue)
     },
-  },
-  render(h): VNode {
-    const {
-      customStyle,
-      className,
-      width,
-      disabled,
-      value,
-      type,
-      min,
-      max,
-      size,
-      disabledInput,
-    } = this
-
-    const inputStyle = {
-      width: width ? `${pxTransform(width)}` : '',
-    }
-    const inputValue = Number(this.handleValue(value))
-    const rootCls = classNames(
-      'at-input-number',
-      {
-        'at-input-number--lg': size === 'large',
+    computed: {
+      inputStyle() {
+        const { width } = this
+        return {
+          width: width ? `${pxTransform(width)}` : ''
+        }
       },
-      className
-    )
-    const minusBtnCls = classNames('at-input-number__btn', {
-      'at-input-number--disabled': inputValue <= min || disabled,
-    })
-    const plusBtnCls = classNames('at-input-number__btn', {
-      'at-input-number--disabled': inputValue >= max || disabled,
-    })
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        <view 
-          class={minusBtnCls} 
-          onTap={this.handleClick.bind(this, 'minus')}
-          onClick={this.handleClick.bind(this, 'minus')}
-        >
-          <view class="at-icon at-icon-subtract at-input-number__btn-subtract"></view>
-        </view>
-        <input
-          class="at-input-number__input"
-          style={inputStyle}
-          type={type}
-          value={String(inputValue)}
-          disabled={disabledInput || disabled}
-          onInput={this.handleInput}
-          onBlur={this.handleBlur}
-        />
-        <view 
-          class={plusBtnCls} 
-          onTap={this.handleClick.bind(this, 'plus')}
-          onClick={this.handleClick.bind(this, 'plus')}
-        >
-          <view class="at-icon at-icon-add at-input-number__btn-add"></view>
-        </view>
-      </view>
-    )
-  },
+      rootCls() {
+        const { size, className } = this
+        return classNames(
+          'at-input-number',
+          {
+            'at-input-number--lg': size === 'large',
+          },
+          className
+        )
+      }, 
+      minusBtnCls() {
+        const { min, disabled, value } = this
+        const inputValue = Number(this.handleValue(value))
+        return classNames('at-input-number__btn', {
+          'at-input-number--disabled': inputValue <= min || disabled,
+        })
+      }, 
+      plusBtnCls() {
+        const { max, disabled, value } = this
+        const inputValue = Number(this.handleValue(value))
+        return classNames('at-input-number__btn', {
+          'at-input-number--disabled': inputValue >= max || disabled,
+        })
+      }
+    },
+  }
 })
 
 export default AtInputNumber
