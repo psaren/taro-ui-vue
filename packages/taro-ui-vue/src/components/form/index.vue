@@ -9,7 +9,7 @@
   </form>
 </template>
 
-<script lang="ts">
+<script>
 import classNames from 'classnames'
 export default {
   name: 'AtForm',
@@ -49,11 +49,11 @@ export default {
     }
   },
   methods: {
-    handleSubmit(): void {
+    handleSubmit() {
       this.onSubmit && this.onSubmit(arguments)
     },
 
-    handleReset(): void {
+    handleReset() {
       this.onReset && this.onReset(arguments)
     },
   },
