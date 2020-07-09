@@ -22,8 +22,10 @@
       name="value"
       title="标准五个字"
       type="text"
-      placeholder="标准五个字"
+      placeholder="标准五个字",
+      error
     />
+    <InputNumber v-model="inputNumber"></InputNumber>
     <AtAccordion
       title="标题三"
       :open="open"
@@ -81,15 +83,18 @@
 <script>
 import Taro from '@tarojs/taro'
 import AtLoading from '../../components/loading/index.vue'
+import InputNumber from '../../components/input-number/index.vue'
 export default {
   data() {
     return {
       date: '',
-      open: false
+      open: false,
+      inputNumber: 10
     }
   },
   components: {
-    AtLoading
+    AtLoading,
+    InputNumber,
   },
   methods: {
     bindDateChange: function(e) {

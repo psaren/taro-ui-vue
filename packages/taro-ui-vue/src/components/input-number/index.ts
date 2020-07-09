@@ -1,6 +1,6 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
-import { InputError } from 'types/input-number'
+import { InputError } from '../../../types/input-number'
 import _toString from 'lodash/toString'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { pxTransform } from '../../utils/common'
@@ -130,6 +130,7 @@ const AtInputNumber = Vue.extend({
       const deltaValue = clickType === 'minus' ? -step : step
       let newValue = addNum(Number(value), deltaValue)
       newValue = Number(this.handleValue(newValue))
+      this.$emit('input', newValue)
       this.onChange(newValue, e)
     },
     handleValue(value: string | number): string {
@@ -182,39 +183,42 @@ const AtInputNumber = Vue.extend({
       }
       this.onErrorInput(errorValue)
     },
-    computed: {
-      inputStyle() {
-        const { width } = this
-        return {
-          width: width ? `${pxTransform(width)}` : ''
-        }
-      },
-      rootCls() {
-        const { size, className } = this
-        return classNames(
-          'at-input-number',
-          {
-            'at-input-number--lg': size === 'large',
-          },
-          className
-        )
-      }, 
-      minusBtnCls() {
-        const { min, disabled, value } = this
-        const inputValue = Number(this.handleValue(value))
-        return classNames('at-input-number__btn', {
-          'at-input-number--disabled': inputValue <= min || disabled,
-        })
-      }, 
-      plusBtnCls() {
-        const { max, disabled, value } = this
-        const inputValue = Number(this.handleValue(value))
-        return classNames('at-input-number__btn', {
-          'at-input-number--disabled': inputValue >= max || disabled,
-        })
+  },
+  computed: {
+    inputValue() {
+      return Number(this.handleValue(this.value))
+    },
+    inputStyle() {
+      const { width } = this
+      return {
+        width: width ? `${pxTransform(width)}` : ''
       }
     },
-  }
+    rootCls() {
+      const { size, className } = this
+      return classNames(
+        'at-input-number',
+        {
+          'at-input-number--lg': size === 'large',
+        },
+        className
+      )
+    }, 
+    minusBtnCls() {
+      const { min, disabled, value } = this
+      const inputValue = Number(this.handleValue(value))
+      return classNames('at-input-number__btn', {
+        'at-input-number--disabled': inputValue <= min || disabled,
+      })
+    }, 
+    plusBtnCls() {
+      const { max, disabled, value } = this
+      const inputValue = Number(this.handleValue(value))
+      return classNames('at-input-number__btn', {
+        'at-input-number--disabled': inputValue >= max || disabled,
+      })
+    }
+  },
 })
 
 export default AtInputNumber
