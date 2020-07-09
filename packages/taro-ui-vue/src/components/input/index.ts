@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 import {
   AtInputProps,
@@ -7,7 +7,7 @@ import {
   FocusEventDetail,
   InputEventDetail,
   KeyboardHeightEventDetail,
-} from 'types/input'
+} from '../../../types/input'
 // import { InputProps } from '@tarojs/components/types/Input'
 import { BaseEventOrig, ITouchEvent } from '@tarojs/components/types/common'
 
@@ -180,6 +180,37 @@ const AtInput = Vue.extend({
       },
     },
   },
+  computed: {
+    inputProps() {
+      return getInputProps(this)
+    },
+    rootCls() {
+      const { border, className } = this
+      return classNames(
+        'at-input',
+        {
+          'at-input--without-border': !border,
+        },
+        className
+      )
+    },
+    containerCls() {
+      const { error, inputProps } = this
+      return classNames('at-input__container', {
+        'at-input--error': error,
+        'at-input--disabled': inputProps.disabled,
+      })
+    },
+    overlayCls() {
+      const { inputProps } = this
+      return classNames('at-input__overlay', {
+        'at-input__overlay--hidden': !inputProps.disabled,
+      })
+    },
+    placeholderCls() {
+      return classNames('placeholder', this.placeholderClass)
+    }
+  },
   methods: {
     handleInput(event: BaseEventOrig<InputEventDetail>): void {
       this.onChange(event.detail.value, event)
@@ -224,100 +255,6 @@ const AtInput = Vue.extend({
         this.onErrorClick(event)
       }
     },
-  },
-  render(h): VNode {
-    const {
-      className,
-      customStyle,
-      name,
-      cursorSpacing,
-      confirmType,
-      cursor,
-      selectionStart,
-      selectionEnd,
-      adjustPosition,
-      border,
-      title,
-      error,
-      clear,
-      placeholder,
-      placeholderStyle,
-      placeholderClass,
-      autoFocus,
-      focus,
-      value,
-      required,
-    } = this
-    const { type, maxLength, disabled, password } = getInputProps(this)
-
-    const rootCls = classNames(
-      'at-input',
-      {
-        'at-input--without-border': !border,
-      },
-      className
-    )
-    const containerCls = classNames('at-input__container', {
-      'at-input--error': error,
-      'at-input--disabled': disabled,
-    })
-    const overlayCls = classNames('at-input__overlay', {
-      'at-input__overlay--hidden': !disabled,
-    })
-    const placeholderCls = classNames('placeholder', placeholderClass)
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        <view class={containerCls}>
-          <view 
-            class={overlayCls} 
-            onTap={this.handleClick.bind(this)}
-            onClick={this.handleClick.bind(this)}
-          ></view>
-          {title && (
-            <view class={`at-input__title ${required && 'at-input__title--required'}`} for={name}>
-              {title}
-            </view>
-          )}
-          <input
-            class="at-input__input"
-            id={name}
-            name={name}
-            type={type}
-            password={password}
-            placeholderStyle={placeholderStyle}
-            placeholderClass={placeholderCls}
-            placeholder={placeholder}
-            cursorSpacing={cursorSpacing}
-            maxLength={maxLength}
-            autoFocus={autoFocus}
-            focus={focus}
-            value={value}
-            confirmType={confirmType}
-            cursor={cursor}
-            selectionStart={selectionStart}
-            selectionEnd={selectionEnd}
-            adjustPosition={adjustPosition}
-            onInput={this.handleInput}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            onConfirm={this.handleConfirm}
-            onKeyboardHeightChange={this.handleKeyboardHeightChange}
-          />
-          {clear && value && (
-            <view class="at-input__icon" onTouchEnd={this.handleClearValue}>
-              <view class="at-icon at-icon-close-circle at-input__icon-close"></view>
-            </view>
-          )}
-          {error && (
-            <view class="at-input__icon" onTouchStart={this.handleErrorClick}>
-              <view class="at-icon at-icon-alert-circle at-input__icon-alert"></view>
-            </view>
-          )}
-          <view class="at-input__children">{this.$slots.default}</view>
-        </view>
-      </view>
-    )
   },
 })
 
