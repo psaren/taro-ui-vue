@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import ModalAction from './action/index'
-import ModalContent from './content/index'
+import ModalContent from './content/index.vue'
 import ModalHeader from './header/index'
 // import Button from '../button/index'
 import { getEnvs } from '../../utils/common'
