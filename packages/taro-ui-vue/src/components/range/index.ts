@@ -95,7 +95,55 @@ const AtRange = Vue.extend({
     this.setValue(value)
   },
 
+  computed: {
+    rootCls() {
+      return classNames(
+        'at-range',
+        {
+          'at-range--disabled': this.disabled,
+        },
+        this.className
+      )
+    },
+    sliderCommonStyle() {
+      const { blockSize } = this
+      return {
+        width: blockSize ? `${blockSize}PX` : '',
+        height: blockSize ? `${blockSize}PX` : '',
+        marginLeft: blockSize ? `${-blockSize / 2}PX` : '',
+      }
+    },
+    sliderAStyle() {
+      return {
+        ...this.sliderCommonStyle,
+        left: `${this.state.aX}%`,
+      }
+    },
+    sliderBStyle() {
+      return {
+        ...this.sliderCommonStyle,
+        left: `${this.state.bX}%`,
+      }
+    },
+    containerStyle() {
+      const { blockSize } = this
+      return {
+        height: blockSize ? `${blockSize}PX` : '',
+      }
+    },
+    atTrackStyle() {
+      const { aX, bX } = this.state
+      const smallerX = Math.min(aX, bX)
+      const deltaX = Math.abs(aX - bX)
+      return {
+        left: `${smallerX}%`,
+        width: `${deltaX}%`,
+      }
+    }
+  },
+
   methods: {
+    mergeStyle,
     handleClick(event: CommonEvent): void {
       if (this.currentSlider && !this.disabled) {
         let sliderValue = 0
@@ -163,60 +211,6 @@ const AtRange = Vue.extend({
         this.left = Math.round(temp[0].left)
       })
     },
-  },
-  render(h): VNode {
-    const { className, customStyle, sliderStyle, railStyle, trackStyle, blockSize, disabled } = this
-
-    const rootCls = classNames(
-      'at-range',
-      {
-        'at-range--disabled': disabled,
-      },
-      className
-    )
-
-    const { aX, bX } = this.state
-    const sliderCommonStyle = {
-      width: blockSize ? `${blockSize}PX` : '',
-      height: blockSize ? `${blockSize}PX` : '',
-      marginLeft: blockSize ? `${-blockSize / 2}PX` : '',
-    }
-    const sliderAStyle = {
-      ...sliderCommonStyle,
-      left: `${aX}%`,
-    }
-    const sliderBStyle = {
-      ...sliderCommonStyle,
-      left: `${bX}%`,
-    }
-    const containerStyle = {
-      height: blockSize ? `${blockSize}PX` : '',
-    }
-    const smallerX = Math.min(aX, bX)
-    const deltaX = Math.abs(aX - bX)
-    const atTrackStyle = {
-      left: `${smallerX}%`,
-      width: `${deltaX}%`,
-    }
-
-    return (
-      <view class={rootCls} style={customStyle} onClick={this.handleClick}>
-        <view class="at-range__container" style={containerStyle}>
-          <view class="at-range__rail" style={railStyle}></view>
-          <view class="at-range__track" style={mergeStyle(atTrackStyle, trackStyle)}></view>
-          <view
-            class="at-range__slider"
-            style={mergeStyle(sliderAStyle, sliderStyle)}
-            onTouchMove={this.handleTouchMove.bind(this, 'aX')}
-            onTouchEnd={this.handleTouchEnd.bind(this, 'aX')}></view>
-          <view
-            class="at-range__slider"
-            style={mergeStyle(sliderBStyle, sliderStyle)}
-            onTouchMove={this.handleTouchMove.bind(this, 'bX')}
-            onTouchEnd={this.handleTouchEnd.bind(this, 'bX')}></view>
-        </view>
-      </view>
-    )
   },
 })
 
