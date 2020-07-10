@@ -3,8 +3,8 @@ import classnames from 'classnames'
 import dayjs from 'dayjs'
 import { delayQuerySelector } from '../../../utils/common'
 import generateCalendarGroup from '../common/helper'
-import AtCalendarDateList from '../ui/date-list/index'
-import AtCalendarDayList from '../ui/day-list/index'
+import AtCalendarDateList from '../ui/date-list/index.vue'
+import AtCalendarDayList from '../ui/day-list/index.vue'
 import mixins from '../../mixins'
 
 const ANIMTE_DURATION = 300
@@ -266,69 +266,13 @@ const AtCalendarBody = Vue.extend({
         ? clientY - this.swipeStartPoint > 0
         : clientX - this.swipeStartPoint > 0
     },
-  },
-  render() {
-    const { isSwiper } = this
-    const { listGroup } = this.state
-
-    if (!isSwiper) {
-      return (
-        <view
-          class={classnames(
-            'main',
-            'at-calendar-slider__main',
-            `at-calendar-slider__main--${process.env.TARO_ENV}`
-          )}>
-          <AtCalendarDayList />
-          <view class="main__body body">
-            <view class="body__slider body__slider--now">
-              <AtCalendarDateList
-                list={listGroup[1].list}
-                props={{
-                  onClick: this.onDayClick,
-                  onLongClick: this.onLongClick,
-                }}
-              />
-            </view>
-          </view>
-        </view>
+    getCls() {
+      return classnames(
+        'main',
+        'at-calendar-slider__main',
+        `at-calendar-slider__main--${process.env.TARO_ENV}`
       )
-    }
-
-    return (
-      <view
-        class={classnames(
-          'main',
-          'at-calendar-slider__main',
-          `at-calendar-slider__main--${process.env.TARO_ENV}`
-        )}>
-        <AtCalendarDayList />
-        <Swiper
-          circular
-          current={1}
-          skipHiddenItemLayout
-          class={classnames('main__body')}
-          vertical={this.isVertical}
-          props={{
-            onChange: this.handleChange,
-            onAnimationFinish: this.handleAnimateFinish,
-            onTouchEnd: this.handleSwipeTouchEnd,
-            onTouchStart: this.handleSwipeTouchStart,
-          }}>
-          {listGroup.map((item, key) => (
-            <SwiperItem key={item.value} itemId={key.toString()}>
-              <AtCalendarDateList
-                list={item.list}
-                props={{
-                  onClick: this.onDayClick.bind(this),
-                  onLongClick: this.onLongClick,
-                }}
-              />
-            </SwiperItem>
-          ))}
-        </Swiper>
-      </view>
-    )
+    },
   },
 })
 

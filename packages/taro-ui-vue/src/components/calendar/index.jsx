@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
 import AtCalendarBody from './body/index.jsx'
-import AtCalendarController from './controller/index.tsx'
+import AtCalendarController from './controller/index.vue'
 
 const AtCalendar = Vue.extend({
   name: 'AtCalendar',
