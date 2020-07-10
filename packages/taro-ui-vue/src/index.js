@@ -48,7 +48,7 @@ import AtRange from './components/range'
 import AtIndexes from './components/indexes'
 import AtCalendar from './components/calendar'
 import AtFab from './components/fab'
-import AtDrawer from './components/drawer'
+import AtDrawer from './components/drawer/index.vue'
 
 /* 私有的组件  */
 import AtLoading from './components/loading/index.vue'
