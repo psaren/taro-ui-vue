@@ -18,7 +18,7 @@
           class="extra-marks"
         >
           <text 
-            v-for="(mark, ikey)item.marks" 
+            v-for="(mark, ikey) in item.marks" 
             :key="ikey" 
             class="mark">
             {{ mark }}

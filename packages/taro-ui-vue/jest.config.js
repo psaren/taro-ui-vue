@@ -13,7 +13,7 @@ module.exports = {
   testMatch: ['**/tests/unit/**/*.spec.[jt]s?(x)', '**/__tests__/*.[jt]s?(x)'],
   coverageDirectory: '<rootDir>/tests/coverage',
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/components/**/*.{vue}', '!**/node_modules/**'],
+  collectCoverageFrom: ['<rootDir>/src/components/**/*.{js, ts, vue}', '!**/node_modules/**'],
   globals: {
     'ts-jest': {
       tsConfig: './jest.tsconfig.json',

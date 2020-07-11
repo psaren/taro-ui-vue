@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
 import { CSSProperties } from '../../../global'
@@ -93,6 +93,63 @@ const AtSearchBar = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls () {
+      const { fixed, className } = this
+      return classNames(
+        'at-search-bar',
+        {
+          'at-search-bar--fixed': fixed,
+        },
+        className
+      )
+    },
+    placeholderWrapStyle(): CSSProperties {
+      const { value } = this
+      const { isFocus } = this.state
+      const wrapStyle: CSSProperties = {}
+      if (isFocus || (!isFocus && value)) {
+        wrapStyle.flexGrow = 0
+      } else if (!isFocus && !value) {
+        wrapStyle.flexGrow = 1
+      }
+      return wrapStyle
+    }, 
+    actionStyle (): CSSProperties {
+      const { value, actionName, showActionButton } = this
+      const { isFocus } = this.state
+      const fontSize = 14
+      const actionStyle: CSSProperties = {}
+      if (isFocus || (!isFocus && value)) {
+        actionStyle.opacity = 1
+        actionStyle.marginRight = `0`
+      } else if (!isFocus && !value) {
+        actionStyle.opacity = 0
+        actionStyle.marginRight = `-${(actionName.length + 1) * fontSize + fontSize / 2 + 10}px`
+      }
+      if (showActionButton) {
+        actionStyle.opacity = 1
+        actionStyle.marginRight = `0`
+      }
+      return actionStyle
+    }, 
+    clearIconStyle(): CSSProperties {
+      const { value } = this
+      const clearIconStyle: CSSProperties = { display: 'flex' }
+      if (!value.length) {
+        clearIconStyle.display = 'none'
+      }
+      return clearIconStyle
+    },
+    placeholderStyle(): CSSProperties {
+      const { value } = this
+      const placeholderStyle: CSSProperties = { visibility: 'hidden' }
+      if (!value.length) {
+        placeholderStyle.visibility = 'visible'
+      }
+      return placeholderStyle
+    },
+  },
   data() {
     return {
       state: {
@@ -129,88 +186,6 @@ const AtSearchBar = Vue.extend({
     handleActionClick(event: CommonEvent): void {
       this.onActionClick && this.onActionClick(event)
     },
-  },
-  render(h): VNode {
-    const {
-      value,
-      placeholder,
-      maxLength,
-      fixed,
-      disabled,
-      showActionButton,
-      actionName,
-      inputType,
-      className,
-      customStyle,
-    } = this
-    const { isFocus } = this.state
-    const fontSize = 14
-    const rootCls = classNames(
-      'at-search-bar',
-      {
-        'at-search-bar--fixed': fixed,
-      },
-      className
-    )
-    const placeholderWrapStyle: CSSProperties = {}
-    const actionStyle: CSSProperties = {}
-    if (isFocus || (!isFocus && value)) {
-      actionStyle.opacity = 1
-      actionStyle.marginRight = `0`
-      placeholderWrapStyle.flexGrow = 0
-    } else if (!isFocus && !value) {
-      placeholderWrapStyle.flexGrow = 1
-      actionStyle.opacity = 0
-      actionStyle.marginRight = `-${(actionName.length + 1) * fontSize + fontSize / 2 + 10}px`
-    }
-    if (showActionButton) {
-      actionStyle.opacity = 1
-      actionStyle.marginRight = `0`
-    }
-
-    const clearIconStyle: CSSProperties = { display: 'flex' }
-    const placeholderStyle: CSSProperties = { visibility: 'hidden' }
-    if (!value.length) {
-      clearIconStyle.display = 'none'
-      placeholderStyle.visibility = 'visible'
-    }
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        <view class="at-search-bar__input-cnt">
-          <view class="at-search-bar__placeholder-wrap" style={placeholderWrapStyle}>
-            <view class="at-icon at-icon-search"></view>
-            <view class="at-search-bar__placeholder" style={placeholderStyle}>
-              {isFocus ? '' : placeholder}
-            </view>
-          </view>
-          <input
-            class="at-search-bar__input"
-            type={inputType}
-            confirmType="search"
-            value={value}
-            focus={isFocus}
-            disabled={disabled}
-            maxLength={maxLength}
-            onInput={this.handleChange}
-            onFocus={this.handleFocus}
-            onBlur={this.handleBlur}
-            onConfirm={this.handleConfirm}
-          />
-          <view class="at-search-bar__clear" style={clearIconStyle} onTouchStart={this.handleClear}>
-            <view class="at-icon at-icon-close-circle"></view>
-          </view>
-        </view>
-        <view 
-          class="at-search-bar__action" 
-          style={actionStyle} 
-          onTap={this.handleActionClick}
-          onClick={this.handleActionClick}
-        >
-          {actionName}
-        </view>
-      </view>
-    )
   },
 })
 
