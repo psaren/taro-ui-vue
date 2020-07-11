@@ -17,6 +17,7 @@ export default {
     'pages/action/activity-indicator/index',
     'pages/action/message/index',
     'pages/action/modal/index',
+    'pages/action/progress/index',
   ],
   window: {
     backgroundTextStyle: 'light',
