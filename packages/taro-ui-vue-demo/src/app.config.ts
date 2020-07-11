@@ -18,6 +18,7 @@ export default {
     'pages/action/message/index',
     'pages/action/modal/index',
     'pages/action/progress/index',
+    'pages/action/swipe-action/index',
   ],
   window: {
     backgroundTextStyle: 'light',

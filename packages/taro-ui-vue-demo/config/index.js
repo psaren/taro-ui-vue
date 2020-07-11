@@ -68,6 +68,9 @@ const config = {
       'src/styles/variable.scss'
     ],
     projectDirectory: path.resolve(__dirname, '..'),
+  },
+  alias: {
+    '@/taro-ui-vue': path.resolve(__dirname, '../../taro-ui-vue'),
   }
 }
 
