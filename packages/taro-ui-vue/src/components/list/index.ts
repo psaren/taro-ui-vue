@@ -13,16 +13,16 @@ const AtList = Vue.extend({
       default: '',
     },
   },
-  render(h) {
-    const rootClass = classNames(
-      'at-list',
-      {
-        'at-list--no-border': !this.hasBorder,
-      },
-      this.className
-    )
-
-    return <view class={rootClass}>{this.$slots.default}</view>
+  computed: {
+    rootClass () {
+      return classNames(
+        'at-list',
+        {
+          'at-list--no-border': !this.hasBorder,
+        },
+        this.className
+      )
+    }
   },
 })
 
