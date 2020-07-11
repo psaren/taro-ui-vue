@@ -26,8 +26,8 @@
     ]
   },
   "include": [
-    "src/components/**",
-    "src/utils/**",
+    "src/components/**.jsx",
+    "src/utils/**.ts",
     "src/index.ts"
   ],
   "exclude": [

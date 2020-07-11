@@ -1,3 +1,12 @@
+/*
+ * @Author: pengyue
+ * @Date: 2020-07-11 06:40:46
+ * @LastEditTime: 2020-07-11 14:33:44
+ * @LastEditors: pengyue
+ * @Description:
+ * @FilePath: /taro-ui-vue/packages/taro-ui-vue/src/components/index.js
+ */
+
 import AtAccordion from './accordion/index'
 import AtActionSheet from './action-sheet/index'
 import AtActionSheetItem from './action-sheet/body/item/index'
@@ -28,7 +37,7 @@ import AtMessage from './message/index'
 import AtModal from './modal/index'
 import AtNavBar from './nav-bar/index'
 import AtNoticebar from './noticebar/index'
-import AtPagination from './pagination/index'
+import AtPagination from './pagination/index.vue'
 import AtProgress from './progress/index'
 import AtRadio from './radio/index.vue'
 import AtRange from './range/index.vue'
