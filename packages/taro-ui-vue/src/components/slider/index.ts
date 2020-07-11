@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import mixins from '../mixins'
@@ -84,8 +84,19 @@ const AtSlider = Vue.extend({
       },
     }
   },
+  computed: {
+    rootCls () {
+      const { disabled, className } = this
+      return classNames(
+        {
+          'at-slider': true,
+          'at-slider--disabled': disabled,
+        },
+        className
+      )
+    }
+  },
   methods: {
-    clampNumber,
     handleChanging(e: CommonEvent): void {
       const { _value } = this.state
       const { value }: { value: number } = e.detail
@@ -101,50 +112,6 @@ const AtSlider = Vue.extend({
       this.setState({ _value: value })
       this.onChange && this.onChange(value)
     },
-  },
-  render(h): VNode {
-    const { _value } = this.state
-    const {
-      customStyle,
-      className,
-      min,
-      max,
-      step,
-      disabled,
-      activeColor,
-      backgroundColor,
-      blockSize,
-      blockColor,
-      showValue,
-    } = this
-
-    return (
-      <view
-        class={classNames(
-          {
-            'at-slider': true,
-            'at-slider--disabled': disabled,
-          },
-          className
-        )}
-        style={customStyle}>
-        <view class="at-slider__inner">
-          <slider
-            min={min}
-            max={max}
-            step={step}
-            value={_value}
-            disabled={disabled}
-            activeColor={activeColor}
-            backgroundColor={backgroundColor}
-            blockSize={blockSize}
-            blockColor={blockColor}
-            onChanging={this.handleChanging.bind(this)}
-            onChange={this.handleChange.bind(this)}></slider>
-        </view>
-        {showValue && <view clas="at-slider__text">{`${_value}`}</view>}
-      </view>
-    )
   },
 })
 
