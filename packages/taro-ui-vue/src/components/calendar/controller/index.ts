@@ -69,8 +69,8 @@ const AtCalendarController = Vue.extend({
       return dayjsMinDate ? dayjsMinDate.format('YYYY-MM') : ''
     },
     maxDateValue(): string {
-      const { maxDateValue } = this
-      return maxDateValue ? maxDateValue.format('YYYY-MM') : ''
+      const { dayjsMaxDate } = this
+      return dayjsMaxDate ? dayjsMaxDate.format('YYYY-MM') : ''
     }
   },
   methods: {

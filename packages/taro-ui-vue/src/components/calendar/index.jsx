@@ -2,12 +2,16 @@ import Vue from 'vue'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
-import AtCalendarBody from './body/index.jsx'
+import AtCalendarBody from './body/index.vue'
 import AtCalendarController from './controller/index.vue'
 
 const AtCalendar = Vue.extend({
   name: 'AtCalendar',
   mixins: [mixins],
+  components: {
+    AtCalendarBody,
+    AtCalendarController
+  },
   props: {
     validDates: {
       type: Array,

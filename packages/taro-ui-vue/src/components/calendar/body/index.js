@@ -56,6 +56,10 @@ const AtCalendarBody = Vue.extend({
       type: Boolean,
       default: false,
     },
+    isSwiper: {
+      type: Boolean,
+      default: true,
+    },
     onDayClick: {
       type: Function,
       default: () => () => {},

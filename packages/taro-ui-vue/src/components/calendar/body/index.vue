@@ -7,7 +7,7 @@
       <view class="main__body body">
         <view class="body__slider body__slider--now">
           <AtCalendarDateList
-            :list="listGroup[1].list"
+            :list="state.listGroup[1].list"
             :on-click="onDayClick"
             :on-long-click="onLongClick"
           />
@@ -30,7 +30,7 @@
         :on-touch-start="handleSwipeTouchStart"
       >
         <swiper-item 
-          v-for="(item, key) in listGroup" 
+          v-for="(item, key) in state.listGroup" 
           :key="item.value" 
           :itemId="key.toString()">
           <AtCalendarDateList

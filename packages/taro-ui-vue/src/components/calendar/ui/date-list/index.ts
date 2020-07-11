@@ -46,7 +46,7 @@ const AtCalendarList = Vue.extend({
         this.onLongClick(item)
       }
     },
-    getCLs(item) {
+    getCls(item) {
       return classnames('flex__item', `flex__item--${MAP[item.type]}`, {
         'flex__item--today': item.isToday,
         'flex__item--active': item.isActive,

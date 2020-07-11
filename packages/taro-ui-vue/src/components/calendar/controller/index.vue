@@ -1,8 +1,8 @@
 <template>
   <view class="at-calendar__controller controller">
     <view
-      v-if="hideArrow"
-      :class="getLeftArrowCls"
+      v-if="!hideArrow"
+      :class="getLeftArrowCls()"
       @tap="onPreMonth(isMinMonth)"
     />
     <picker
@@ -18,8 +18,8 @@
       </text>
     </picker>
     <view
-      v-if="hideArrow"
-      :class="getRightArrowCls"
+      v-if="!hideArrow"
+      :class="getRightArrowCls()"
       @tap="onNextMonth(isMaxMonth)"
     />
   </view>
