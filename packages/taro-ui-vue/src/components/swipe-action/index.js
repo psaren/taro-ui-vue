@@ -1,12 +1,15 @@
 import classNames from 'classnames'
 import _inRange from 'lodash/inRange'
 import _isEmpty from 'lodash/isEmpty'
-import AtSwipeActionOptions from './options/index'
+import AtSwipeActionOptions from './options/index.vue'
 import { delayGetClientRect, delayGetScrollOffset, isTest, uuid } from '../../utils/common'
 import mixins from '../mixins'
 
 export default {
   name: 'AtSwipeAction',
+  components: {
+    AtSwipeActionOptions
+  },
   mixins: [mixins],
   props: {
     isOpened: {
@@ -82,6 +85,23 @@ export default {
         offsetSize: 0,
         _isOpened: !!isOpened,
       },
+    }
+  },
+  computed: {
+    rootClass () {
+      return classNames('at-swipe-action', this.className)
+    },
+    contentCls () {
+      return classNames('at-swipe-action__content', {
+        animtion: !this.isTouching,
+      })
+    },
+    transform () {
+      return this.computeTransform(this.state.offsetSize)
+    },
+    transformStyle() {
+      const { transform } = this
+      return transform ? { transform } : {}
     }
   },
   methods: {
@@ -238,47 +258,8 @@ export default {
         this.handleClosed(event)
       }
     },
-  },
-  render() {
-    const { offsetSize, componentId } = this.state
-    const { options } = this
-    const rootClass = classNames('at-swipe-action', this.className)
-    const transform = this.computeTransform(offsetSize)
-    const transformStyle = transform ? { transform } : {}
-
-    return (
-      <view
-        id={`swipeAction-${componentId}`}
-        class={rootClass}
-        onTouchMove={this.handleTouchMove}
-        onTouchEnd={this.handleTouchEnd}
-        onTouchStart={this.handleTouchStart}>
-        <view
-          class={classNames('at-swipe-action__content', {
-            animtion: !this.isTouching,
-          })}
-          style={transformStyle}>
-          {this.$slots.default}
-        </view>
-
-        {Array.isArray(options) && options.length > 0 ? (
-          <AtSwipeActionOptions
-            options={options}
-            componentId={componentId}
-            onQueryedDom={this.handleDomInfo}>
-            {options.map((item, key) => (
-              <view
-                key={`${item.text}-${key}`}
-                style={item.style}
-                onTap={(e) => this.handleClick(item, key, e)}
-                onClick={(e) => this.handleClick(item, key, e)}
-                class={classNames('at-swipe-action__option', item.className)}>
-                <view class="option__text">{item.text}</view>
-              </view>
-            ))}
-          </AtSwipeActionOptions>
-        ) : null}
-      </view>
-    )
+    getOptionsCls(item) {
+      return classNames('at-swipe-action__option', item.className)
+    }
   },
 }

@@ -17,20 +17,16 @@ export default {
       default: () => '',
     },
   },
+  computed: {
+    rootClass () {
+      return classNames('at-swipe-action__options', this.className)
+    }
+  },
   methods: {
     trrigerOptionsDomUpadte() {
       delayQuerySelector(this, `#swipeActionOptions-${this.componentId}`).then((res) => {
         this.onQueryedDom(res[0])
       })
     },
-  },
-  render() {
-    const rootClass = classNames('at-swipe-action__options', this.className)
-
-    return (
-      <view id={`swipeActionOptions-${this.componentId}`} class={rootClass}>
-        {this.$slots.default}
-      </view>
-    )
   },
 }
