@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { delayQuerySelector, getEventDetail, mergeStyle } from '../../utils/common'
