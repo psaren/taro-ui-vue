@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 
@@ -44,41 +44,30 @@ const AtSwitch = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls () {
+      const { border, className } = this
+      return classNames(
+        'at-switch',
+        {
+          'at-switch--without-border': !border,
+        },
+        className
+      )
+    },
+    containerCls () {
+      const { disabled } = this
+      return classNames('at-switch__container', {
+        'at-switch--disabled': disabled,
+      })
+    }
+  },
   methods: {
     handleChange(event: CommonEvent): void {
       const { value, checked } = event.detail
       const state = typeof value === 'undefined' ? checked : value
       this.onChange && this.onChange(state)
     },
-  },
-  render(h): VNode {
-    const { customStyle, className, disabled, border, title, checked, color } = this
-
-    const rootCls = classNames(
-      'at-switch',
-      {
-        'at-switch--without-border': !border,
-      },
-      className
-    )
-    const containerCls = classNames('at-switch__container', {
-      'at-switch--disabled': disabled,
-    })
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        <view class="at-switch__title">{title}</view>
-        <view class={containerCls}>
-          <view class="at-switch__mask"></view>
-          <switch
-            class="at-switch__switch"
-            checked={checked}
-            color={color}
-            onChange={this.handleChange}
-          />
-        </view>
-      </view>
-    )
   },
 })
 
