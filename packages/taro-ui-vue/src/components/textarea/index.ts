@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
@@ -23,6 +23,12 @@ const AtTextarea = Vue.extend({
   name: 'AtTextarea',
   props: {
     customStyle: {
+      type: [Object, String],
+      default: function () {
+        return {}
+      },
+    },
+    placeholderStyle: {
       type: [Object, String],
       default: function () {
         return {}
@@ -123,6 +129,32 @@ const AtTextarea = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls () {
+      const { maxLength, value, className } = this
+      const _maxLength = parseInt(maxLength.toString())
+      return classNames(
+        'at-textarea',
+        `at-textarea--${ENV}`,
+        {
+          'at-textarea--error': _maxLength < value.length,
+        },
+        className
+      )
+    },
+    textareaStyle () {
+      const { height } = this
+      return height ? `height:${pxTransform(Number(height))}` : ''
+    },
+    actualMaxLength () {
+      const { maxLength,textOverflowForbidden } = this
+      const _maxLength = parseInt(maxLength.toString())
+      return getMaxLength(_maxLength, textOverflowForbidden)
+    },
+    placeholderCls () {
+      return classNames('placeholder', this.placeholderClass)
+    }
+  },
   methods: {
     handleInput(event: CommonEvent & ExtendEvent): void {
       this.onChange(event.target.value, event)
@@ -143,73 +175,6 @@ const AtTextarea = Vue.extend({
     handleLinechange(event: CommonEvent) {
       this.onLinechange && this.onLinechange(event)
     },
-  },
-  render(h): VNode {
-    const {
-      customStyle,
-      className,
-      value,
-      cursorSpacing,
-      placeholder,
-      placeholderStyle,
-      placeholderClass,
-      maxLength,
-      count,
-      disabled,
-      autoFocus,
-      focus,
-      showConfirmBar,
-      selectionStart,
-      selectionEnd,
-      fixed,
-      textOverflowForbidden,
-      height,
-    } = this
-
-    const _maxLength = parseInt(maxLength.toString())
-    const actualMaxLength = getMaxLength(_maxLength, textOverflowForbidden)
-    const textareaStyle = height ? `height:${pxTransform(Number(height))}` : ''
-    const rootCls = classNames(
-      'at-textarea',
-      `at-textarea--${ENV}`,
-      {
-        'at-textarea--error': _maxLength < value.length,
-      },
-      className
-    )
-    const placeholderCls = classNames('placeholder', placeholderClass)
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        <textarea
-          class="at-textarea__textarea"
-          style={textareaStyle}
-          placeholderStyle={placeholderStyle}
-          placeholderClass={placeholderCls}
-          cursorSpacing={cursorSpacing}
-          value={value}
-          maxlength={actualMaxLength}
-          placeholder={placeholder}
-          disabled={disabled}
-          autoFocus={autoFocus}
-          focus={focus}
-          showConfirmBar={showConfirmBar}
-          selectionStart={selectionStart}
-          selectionEnd={selectionEnd}
-          fixed={fixed}
-          onInput={this.handleInput}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-          onConfirm={this.handleConfirm}
-          onLineChange={this.handleLinechange}
-        />
-        {count && (
-          <view class="at-textarea__counter">
-            {value.length}/{_maxLength}
-          </view>
-        )}
-      </view>
-    )
   },
 })
 

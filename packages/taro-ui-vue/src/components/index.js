@@ -43,7 +43,7 @@ import AtTabBar from './tab-bar/index'
 import AtTabs from './tabs/index'
 import AtTabsPane from './tabs-pane/index'
 import AtTag from './tag/index.vue'
-import AtTextarea from './textarea/index'
+import AtTextarea from './textarea/index/index.vue'
 import AtTimeline from './timeline/index'
 import AtToast from './toast/index'
 
