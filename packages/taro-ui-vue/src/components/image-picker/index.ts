@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue from 'vue'
 import classNames from 'classnames'
 import { uuid } from '../../utils/common'
 import Taro from '@tarojs/taro'
@@ -111,6 +111,16 @@ const AtImagePicker = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls () {
+      return classNames('at-image-picker', this.className)
+    },
+    matrix () {
+      const { files, length = 4, showAddBtn = true } = this
+      const rowLength = length <= 0 ? 1 : length
+      return generateMatrix(files, rowLength, showAddBtn)
+    }
+  },
   methods: {
     chooseFile(): void {
       const { files = [], multiple, count, sizeType, sourceType } = this
@@ -153,55 +163,6 @@ const AtImagePicker = Vue.extend({
       const newFiles = files.filter((_, i) => i !== idx)
       this.onChange(newFiles, 'remove', idx)
     },
-  },
-  render(h): VNode {
-    const { className, customStyle, files, mode, length = 4, showAddBtn = true } = this
-    const rowLength = length <= 0 ? 1 : length
-    // 行数
-    const matrix = generateMatrix(files, rowLength, showAddBtn)
-    const rootCls = classNames('at-image-picker', className)
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        {matrix.map((row, i) => (
-          <view class="at-image-picker__flex-box" key={i + 1}>
-            {row.map((item, j) =>
-              item.url ? (
-                <view class="at-image-picker__flex-item" key={i * length + j}>
-                  <view class="at-image-picker__item">
-                    <view
-                      class="at-image-picker__remove-btn"
-                      onTap={this.handleRemoveImg.bind(this, i * length + j)}
-                      onClick={this.handleRemoveImg.bind(this, i * length + j)}
-                      ></view>
-                    <image
-                      class="at-image-picker__preview-img"
-                      mode={mode}
-                      src={item.url}
-                      onTap={this.handleImageClick.bind(this, i * length + j)}
-                      onClick={this.handleImageClick.bind(this, i * length + j)}
-                    />
-                  </view>
-                </view>
-              ) : (
-                <view class="at-image-picker__flex-item" key={i * length + j}>
-                  {item.type === 'btn' && (
-                    <view
-                      class="at-image-picker__item at-image-picker__choose-btn"
-                      onTap={this.chooseFile.bind(this)}
-                      onClick={this.chooseFile.bind(this)}
-                    >
-                      <view class="add-bar"></view>
-                      <view class="add-bar"></view>
-                    </view>
-                  )}
-                </view>
-              )
-            )}
-          </view>
-        ))}
-      </view>
-    )
   },
 })
 
