@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Taro from '@tarojs/taro'
-import TaroUi from 'taro-ui-vue'
+import TaroUi from '@/taro-ui-vue/src/index'
 import 'taro-ui-vue/dist/style/index.scss'
 import './app.scss'
 
