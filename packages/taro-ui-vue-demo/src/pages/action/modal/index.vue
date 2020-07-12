@@ -78,10 +78,10 @@
         </view>
       </AtModalContent>
       <AtModalAction>
-        <Button :on-click="closeModal.bind(this, 1, '点击了取消')">
+        <Button @tap="closeModal(1, '点击了取消')" @click="closeModal(1, '点击了取消')">
           取消
         </Button>
-        <Button :on-click="closeModal.bind(this, 1, '点击了确定')">
+        <Button @tap="closeModal(1, '点击了确定')" @click="closeModal(1, '点击了确定')">
           确定
         </Button>
       </AtModalAction>
@@ -99,7 +99,7 @@
         </view>
       </AtModalContent>
       <AtModalAction>
-        <Button :on-click="closeModal.bind(this, 2, '点击了确定')">
+        <Button @tap="closeModal(2, '点击了确定')" @click="closeModal(2, '点击了确定')">
           确定
         </Button>
       </AtModalAction>
@@ -107,10 +107,11 @@
 
     <!-- 无标题 -->
     <AtModal
+      :key="3"
       :isOpened="state.isOpened3"
-      content="`这里是正文内容，欢迎加入京东凹凸实验室
+      content="这里是正文内容，欢迎加入京东凹凸实验室
       这里是正文内容，欢迎加入京东凹凸实验室
-      这里是正文内容，欢迎加入京东凹凸实验室`"
+      这里是正文内容，欢迎加入京东凹凸实验室"
       :on-close="closeModal.bind(this, 3, 'Modal被关闭了')"
       :on-cancel="closeModal.bind(this, 3, '点击了取消')"
       :on-confirm="closeModalConfirm.bind(this, 3, '点击了确认')"
@@ -145,6 +146,7 @@
 </template>
 
 <script>
+import Taro from '@tarojs/taro'
 import setStateMixin from '../../../mixins/setStateMixin'
 import mockData from '../../navigation/indexes/mock-data'
 export default {
