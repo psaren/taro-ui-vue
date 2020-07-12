@@ -1,7 +1,7 @@
 /*
  * @Author: pengyue
  * @Date: 2020-07-06 21:54:17
- * @LastEditTime: 2020-07-11 23:53:52
+ * @LastEditTime: 2020-07-12 16:19:27
  * @LastEditors: pengyue
  * @Description:
  * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/config/index.js
@@ -68,7 +68,7 @@ const config = {
     projectDirectory: path.resolve(__dirname, '..'),
   },
   alias: {
-    'taro-ui-vue': path.resolve(__dirname, '../../taro-ui-vue/src'),
+    '@/taro-ui-vue': path.resolve(__dirname, '../../taro-ui-vue'),
   },
 }
 

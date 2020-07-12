@@ -22,9 +22,12 @@
       name="value"
       title="标准五个字"
       type="text"
-      placeholder="标准五个字",
+      placeholder="标准五个字"
       error
     />
+    <AtSwipeAction :on-click="handleClick" :options="OPTIONS">
+      <view class='normal'>AtSwipeAction 一般使用场景</view>
+    </AtSwipeAction>
     <InputNumber v-model="inputNumber"></InputNumber>
     <AtAccordion
       title="标题三"
@@ -84,9 +87,25 @@
 import Taro from '@tarojs/taro'
 import AtLoading from '../../components/loading/index.vue'
 import InputNumber from '../../components/input-number/index.vue'
+const OPTIONS = [
+  {
+    text: '删除',
+    style: {
+      color: '#333',
+      backgroundColor: '#F7F7F7'
+    }
+  },
+  {
+    text: '确认',
+    style: {
+      backgroundColor: '#E93B3D'
+    }
+  }
+]
 export default {
   data() {
     return {
+      OPTIONS,
       date: '',
       open: false,
       inputNumber: 10

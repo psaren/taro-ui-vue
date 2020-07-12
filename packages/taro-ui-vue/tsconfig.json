@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.build",
+  "extends": "./tsconfig.build",
   "compilerOptions": {
     "baseUrl": ".",
     "experimentalDecorators": true

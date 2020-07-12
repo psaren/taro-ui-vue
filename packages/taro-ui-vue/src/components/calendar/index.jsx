@@ -46,7 +46,7 @@ const AtCalendar = Vue.extend({
       default: 'YYYY-MM-DD',
     },
     currentDate: {
-      type: Number,
+      type: [Number, String],
       default: Date.now(),
     },
     monthFormat: {

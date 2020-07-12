@@ -67,6 +67,29 @@ export default {
       this.handleChange()
     },
   },
+  computed: {
+    rootCls() {
+      return classNames('at-toast', this.className)
+    },
+    bodyClass() {
+      const { icon, status, image, realImg } = this
+      return classNames('toast-body', {
+        'at-toast__body--custom-image': image,
+        'toast-body--text': !realImg && !icon,
+        [`at-toast__body--${status}`]: !!status,
+      })
+    },
+    realImg() {
+      const { status, image } = this
+      return image || statusImg[status] || null
+    },
+    iconClass() {
+      const { icon } = this
+      return classNames('at-icon', {
+        [`at-icon-${icon}`]: icon,
+      })
+    }
+  },
   methods: {
     clearTimmer() {
       if (this._timer) {
@@ -130,52 +153,5 @@ export default {
       }
       this.makeTimer(duration || 0)
     },
-  },
-  render() {
-    const { _isOpened } = this.state
-    const { customStyle, text, icon, status, image, hasMask } = this
-
-    const realImg = image || statusImg[status] || null
-    const isRenderIcon = !!(icon && !(image || statusImg[status]))
-
-    const bodyClass = classNames('toast-body', {
-      'at-toast__body--custom-image': image,
-      'toast-body--text': !realImg && !icon,
-      [`at-toast__body--${status}`]: !!status,
-    })
-
-    const iconClass = classNames('at-icon', {
-      [`at-icon-${icon}`]: icon,
-    })
-
-    return _isOpened ? (
-      <view class={classNames('at-toast', this.className)}>
-        {hasMask && <view class="at-toast__overlay" />}
-        <view 
-          class={bodyClass} 
-          style={customStyle} 
-          onTap={this.handleClick}
-          onClick={this.handleClick}
-        >
-          <view class="toast-body-content">
-            {realImg ? (
-              <view class="toast-body-content__img">
-                <image class="toast-body-content__img-item" src={realImg} mode="scaleToFill" />
-              </view>
-            ) : null}
-            {isRenderIcon && (
-              <view class="toast-body-content__icon">
-                <view class={iconClass} />
-              </view>
-            )}
-            {text && (
-              <view class="toast-body-content__info">
-                <view>{text}</view>
-              </view>
-            )}
-          </view>
-        </view>
-      </view>
-    ) : null
   },
 }

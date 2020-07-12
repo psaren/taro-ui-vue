@@ -19,6 +19,10 @@ export default {
     'pages/action/activity-indicator/index',
     'pages/action/message/index',
     'pages/action/modal/index',
+    'pages/action/progress/index',
+    'pages/action/swipe-action/index',
+    'pages/action/toast/index',
+    'pages/advanced/calendar/index',
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -46,7 +46,7 @@ import AtSearchBar from './search-bar/index.vue'
 import AtSegmentedControl from './segmented-control/index'
 import AtSlider from './slider/index.vue'
 import AtSteps from './steps/index'
-import AtSwipeAction from './swipe-action/index'
+import AtSwipeAction from './swipe-action/index.vue'
 import AtSwitch from './switch/index.vue'
 import AtTabBar from './tab-bar/index'
 import AtTabs from './tabs/index'
@@ -54,7 +54,7 @@ import AtTabsPane from './tabs-pane/index'
 import AtTag from './tag/index.vue'
 import AtTextarea from './textarea/index/index.vue'
 import AtTimeline from './timeline/index'
-import AtToast from './toast/index'
+import AtToast from './toast/index.vue'
 
 export {
   AtAccordion,

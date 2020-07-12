@@ -26,9 +26,9 @@
     ]
   },
   "include": [
-    "src/pages/**.vue",
-    "src/components/**.vue",
-    "src/utils/**.ts",
+    "src/pages/**/*.vue",
+    "src/components/**/*.vue",
+    "src/utils/**/*.ts",
     "src/*.ts"
   ],
   "exclude": [

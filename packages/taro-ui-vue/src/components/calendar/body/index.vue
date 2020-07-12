@@ -1,7 +1,7 @@
 <template>
   <view>
     <view
-      v-if="isSwiper"
+      v-if="!isSwiper"
       :class="getCls()">
       <AtCalendarDayList />
       <view class="main__body body">
