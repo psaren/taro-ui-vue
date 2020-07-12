@@ -1,10 +1,10 @@
 <!--
  * @Author: pengyue
  * @Date: 2020-07-05 16:36:32
- * @LastEditTime: 2020-07-05 16:53:34
+ * @LastEditTime: 2020-07-11 14:55:35
  * @LastEditors: pengyue
  * @Description: 
- * @FilePath: /taro-ui-vue/src/pages/basic/color/index.vue
+ * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/src/pages/basic/color/index.vue
 --> 
 <template>
   <view>
@@ -168,7 +168,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-
-</style>

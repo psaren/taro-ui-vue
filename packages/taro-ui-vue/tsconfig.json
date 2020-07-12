@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.build",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "experimentalDecorators": true
   }
 }

@@ -1,10 +1,10 @@
 /*
  * @Author: pengyue
  * @Date: 2020-07-03 21:34:49
- * @LastEditTime: 2020-07-06 21:27:27
+ * @LastEditTime: 2020-07-11 14:58:45
  * @LastEditors: pengyue
  * @Description:
- * @FilePath: /taro-ui-vue/packages/taro-ui-vue/src/app.config.ts
+ * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/src/app.config.ts
  */
 
 export default {
@@ -13,6 +13,8 @@ export default {
     'pages/panel/index',
     'pages/basic/color/index',
     'pages/basic/icon/index',
+    'pages/basic/typo/index',
+    'pages/basic/button/index',
     'pages/action/action-sheet/index',
     'pages/action/activity-indicator/index',
     'pages/action/message/index',

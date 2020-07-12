@@ -1,7 +1,16 @@
+/*
+ * @Author: pengyue
+ * @Date: 2020-07-11 06:40:46
+ * @LastEditTime: 2020-07-11 23:54:04
+ * @LastEditors: pengyue
+ * @Description:
+ * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/src/app.ts
+ */
+
 import Vue from 'vue'
 import Taro from '@tarojs/taro'
 import TaroUi from 'taro-ui-vue'
-import 'taro-ui-vue/dist/style/index.scss'
+import 'taro-ui-vue/style/index.scss'
 import './app.scss'
 
 import DocsHeader from './components/DocsHeader.vue'

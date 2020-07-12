@@ -1,7 +1,7 @@
 /*
  * @Author: pengyue
  * @Date: 2020-07-06 21:54:17
- * @LastEditTime: 2020-07-07 02:00:52
+ * @LastEditTime: 2020-07-11 23:53:52
  * @LastEditors: pengyue
  * @Description:
  * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/config/index.js
@@ -64,11 +64,12 @@ const config = {
     },
   },
   sass: {
-    resource: [
-      'src/styles/variable.scss'
-    ],
+    resource: ['src/styles/variable.scss'],
     projectDirectory: path.resolve(__dirname, '..'),
-  }
+  },
+  alias: {
+    'taro-ui-vue': path.resolve(__dirname, '../../taro-ui-vue/src'),
+  },
 }
 
 module.exports = function (merge) {

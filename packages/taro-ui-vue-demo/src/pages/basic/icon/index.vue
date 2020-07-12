@@ -1,21 +1,19 @@
-<!--
- * @Author: pengyue
- * @Date: 2020-07-05 16:36:32
- * @LastEditTime: 2020-07-05 17:50:21
- * @LastEditors: pengyue
- * @Description: 
- * @FilePath: /taro-ui-vue/src/pages/basic/icon/index.vue
---> 
 <template>
   <view>
     <DocsHeader title="ICON 图标" />
-    <view class="doc-body">
+    <view
+      class="doc-body"
+    >
       <view
         v-for="(item, index) in types"
         :key="index"
         class="panel"
       >
-        <view class="panel__title">
+        <view
+          class="panel__title"
+          @tap="handleClick"
+          @click="handleClick"
+        >
           {{ item.name }}
         </view>
         <view class="panel__content">
@@ -45,12 +43,12 @@
 
 <script lang="ts">
 import './index.scss'
-import icons from './icons'
+import icons from './data'
 
 export default {
 	data() {
 		return {
-			iconSize: 30,
+			iconSize: 15,
 			icons: icons,
 			iconColor: '#999',
 			types: [
@@ -78,10 +76,11 @@ export default {
 				}
 			]
 		}
-	}
+  },
+  methods: {
+    handleClick(event) {
+      console.log(event)
+    }
+  }
 }
 </script>
-
-<style>
-
-</style>
