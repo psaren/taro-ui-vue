@@ -1,22 +1,23 @@
 <template>
-  <view scrollY :class="rootClass">
+  <view :class="rootClass">
     <slot></slot>
   </view>
 </template>
+
 <script>
 import classNames from 'classnames'
 export default {
-  name: 'AtModalContent',
+  name: 'AtModalHeader',
   props: {
     className: {
       type: [Object, String],
-      default: () => '',
+      default: '',
     },
   },
   computed: {
     rootClass() {
-      return classNames('at-modal__content', this.className)
+      return classNames('at-modal__header', this.className)
     }
-  }
+  },
 }
 </script>

@@ -3,7 +3,6 @@
     :class="classNames(rootClassName, classObject, className)"
     :style="customStyle"
     @tap="handleClick"
-    @click="handleClick"
   >
     <button
       class="at-button__wxbutton"
