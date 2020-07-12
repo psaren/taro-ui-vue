@@ -36,7 +36,7 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
 import './index.scss'
 
 export default {

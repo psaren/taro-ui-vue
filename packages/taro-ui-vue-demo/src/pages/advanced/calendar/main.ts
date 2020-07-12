@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Taro from '@tarojs/taro'
 import setStateMixin  from '../../../mixins/setStateMixin'
-import '@/taro-ui-vue/src/style/components/calendar.scss'
+import 'taro-ui-vue/style/components/calendar.scss'
 import './index.scss'
 
 type DateObject = {

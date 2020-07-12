@@ -26,9 +26,9 @@
     ]
   },
   "include": [
-    "src/components/**.jsx",
-    "src/utils/**.js",
-    "src/**.ts"
+    "src/**/**.jsx",
+    "src/**/**.vue",
+    "src/**/**.ts",
   ],
   "exclude": [
     "node_modules/*",

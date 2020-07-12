@@ -1,108 +1,149 @@
 <template>
-  <view class='page swipe-action-page'>
+  <view class="page swipe-action-page">
     <!-- S Header -->
-    <DocsHeader title='SwipeAction 滑动操作' />
+    <DocsHeader title="SwipeAction 滑动操作" />
     <!-- E Header -->
 
     <!-- S Body -->
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 无 Title -->
-      <view class='panel'>
-        <view class='panel__title'>一般用法</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item example-item--border'>
-            <AtSwipeAction :onClick="handleClick" :options="OPTIONS">
-              <view class='normal'>AtSwipeAction 一般使用场景</view>
+      <view class="panel">
+        <view class="panel__title">
+          一般用法
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item example-item--border">
+            <AtSwipeAction
+              :on-click="handleClick"
+              :options="OPTIONS"
+            >
+              <view class="normal">
+                AtSwipeAction 一般使用场景
+              </view>
             </AtSwipeAction>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>禁止滑动</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item example-item--border'>
-            <AtSwipeAction disabled :options="OPTIONS">
-              <view class='normal'>禁止滑动展示</view>
+      <view class="panel">
+        <view class="panel__title">
+          禁止滑动
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item example-item--border">
+            <AtSwipeAction
+              disabled
+              :options="OPTIONS"
+            >
+              <view class="normal">
+                禁止滑动展示
+              </view>
             </AtSwipeAction>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>使用变量控制开关</view>
-        <view class='panel__controller' style='margin-bottom: 10px'>
-          <AtButton size='small' :on-click="handleStatusClick">
-            当前状态: {{ state.isOpened2 ? '开' : '关' }}{{' '}}
+      <view class="panel">
+        <view class="panel__title">
+          使用变量控制开关
+        </view>
+        <view
+          class="panel__controller"
+          style="margin-bottom: 10px"
+        >
+          <AtButton
+            size="small"
+            :on-click="handleStatusClick"
+          >
+            当前状态: {{ state.isOpened2 ? '开' : '关' }}{{ ' ' }}
           </AtButton>
         </view>
 
-        <view class='panel__content no-padding'>
-          <view class='example-item example-item--border'>
+        <view class="panel__content no-padding">
+          <view class="example-item example-item--border">
             <AtSwipeAction
               :options="OPTIONS"
               :is-opened="state.isOpened2"
-              :onClosed="handleStatusClosed"
-              :onOpened="handleStatusOpened"
+              :on-closed="handleStatusClosed"
+              :on-opened="handleStatusOpened"
             >
-              <view class='normal'>使用变量控制开关</view>
+              <view class="normal">
+                使用变量控制开关
+              </view>
             </AtSwipeAction>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>自动关闭</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item example-item--border'>
+      <view class="panel">
+        <view class="panel__title">
+          自动关闭
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item example-item--border">
             <AtSwipeAction
-              :onClick="handleClick"
-              autoClose
+              :on-click="handleClick"
+              auto-close
               :options="OPTIONS"
             >
-              <view class='normal'>点击按钮自动关闭</view>
+              <view class="normal">
+                点击按钮自动关闭
+              </view>
             </AtSwipeAction>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>传递点击事件</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item example-item--border'>
-            <AtSwipeAction :onClick="handleClick" :options="OPTIONS">
-              <view class='normal'>点击事件触发</view>
+      <view class="panel">
+        <view class="panel__title">
+          传递点击事件
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item example-item--border">
+            <AtSwipeAction
+              :on-click="handleClick"
+              :options="OPTIONS"
+            >
+              <view class="normal">
+                点击事件触发
+              </view>
             </AtSwipeAction>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>开启和关闭事件</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item example-item--border'>
+      <view class="panel">
+        <view class="panel__title">
+          开启和关闭事件
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item example-item--border">
             <AtSwipeAction
               :options="OPTIONS"
-              :onClick="handleClick"
-              :onOpened="handleOpened"
-              :onClosed="handleClosed"
+              :on-click="handleClick"
+              :on-opened="handleOpened"
+              :on-closed="handleClosed"
             >
-              <view class='normal'>开启和关闭时触发事件</view>
+              <view class="normal">
+                开启和关闭时触发事件
+              </view>
             </AtSwipeAction>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>与List组件使用</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">
+          与List组件使用
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtList>
               <AtSwipeAction :options="OPTIONS">
-                <AtListItem title='Item1' />
+                <AtListItem title="Item1" />
               </AtSwipeAction>
               <AtSwipeAction :options="OPTIONS">
-                <AtListItem title='Item2' />
+                <AtListItem title="Item2" />
               </AtSwipeAction>
               <AtSwipeAction
                 :options="[
@@ -114,25 +155,27 @@
                   }
                 ]"
               >
-                <AtListItem title='Item3123123123123' />
+                <AtListItem title="Item3123123123123" />
               </AtSwipeAction>
             </AtList>
           </view>
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>控制只显示单个</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">
+          控制只显示单个
+        </view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtList>
               <AtSwipeAction
                 v-for="(item, index) in state.list"
                 :key="item.title + index"
                 :options="item.options"
-                :isOpened="item.isOpened"
-                :onClick="handleClicked.bind(this, index)"
-                :onOpened="handleSingle.bind(this, index)"
+                :is-opened="item.isOpened"
+                :on-click="handleClicked.bind(this, index)"
+                :on-opened="handleSingle.bind(this, index)"
               >
                 <AtListItem :title="item.title" />
               </AtSwipeAction>
@@ -146,7 +189,7 @@
 
 <script>
 import setStateMixin from '../../../mixins/setStateMixin'
-import { AtButton, AtList, AtListItem, AtSwipeAction } from '@/taro-ui-vue/src/index'
+import { AtButton, AtList, AtListItem, AtSwipeAction } from 'taro-ui-vue'
 import Taro from '@tarojs/taro'
 import './index.scss'
 
@@ -168,13 +211,13 @@ const OPTIONS = [
 
 export default {
   name: 'SwipeActionPage',
-  mixins: [setStateMixin],
   components: { 
     AtButton, 
     AtList, 
     AtListItem, 
     AtSwipeAction 
   },
+  mixins: [setStateMixin],
   data() {
     return {
       OPTIONS,
