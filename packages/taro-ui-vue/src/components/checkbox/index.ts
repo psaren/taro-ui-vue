@@ -35,6 +35,11 @@ const AtCheckbox = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls() {
+      return classNames('at-checkbox', this.className)
+    }
+  },
   methods: {
     handleClick(idx: number): void {
       const { selectedList, options } = this
