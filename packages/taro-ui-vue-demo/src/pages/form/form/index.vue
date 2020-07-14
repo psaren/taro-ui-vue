@@ -61,7 +61,7 @@
 
 <script>
 import setStateMixin from '../../../mixins/setStateMixin'
-
+import './index.scss'
 export default {
   name: 'FormPage',
   mixins: [setStateMixin],
