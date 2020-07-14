@@ -23,6 +23,7 @@ export default {
     'pages/action/swipe-action/index',
     'pages/action/toast/index',
     'pages/advanced/calendar/index',
+    'pages/form/form/index',
   ],
   window: {
     backgroundTextStyle: 'light',
