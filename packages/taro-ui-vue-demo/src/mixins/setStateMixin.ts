@@ -1,8 +1,8 @@
-import merge from 'lodash/merge'
+import assign from 'lodash/assign'
 export default {
   methods: {
     setState(state) {
-      merge(this.state, state)
+      assign(this.state, state)
     }
   }
 }
