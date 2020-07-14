@@ -24,6 +24,7 @@ export default {
     'pages/action/toast/index',
     'pages/advanced/calendar/index',
     'pages/form/form/index',
+    'pages/form/checkbox/index',
   ],
   window: {
     backgroundTextStyle: 'light',
