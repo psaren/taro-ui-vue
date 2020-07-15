@@ -25,6 +25,7 @@ export default {
     'pages/advanced/calendar/index',
     'pages/form/form/index',
     'pages/form/checkbox/index',
+    'pages/form/input/index',
   ],
   window: {
     backgroundTextStyle: 'light',
