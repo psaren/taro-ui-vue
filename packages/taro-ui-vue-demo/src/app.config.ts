@@ -28,6 +28,7 @@ export default {
     'pages/form/input/index',
     'pages/form/input-number/index',
     'pages/form/picker/index',
+    'pages/form/picker-view/index',
   ],
   window: {
     backgroundTextStyle: 'light',
