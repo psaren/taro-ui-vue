@@ -27,6 +27,7 @@ export default {
     'pages/form/checkbox/index',
     'pages/form/input/index',
     'pages/form/input-number/index',
+    'pages/form/picker/index',
   ],
   window: {
     backgroundTextStyle: 'light',
