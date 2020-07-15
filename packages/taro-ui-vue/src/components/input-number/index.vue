@@ -2,7 +2,7 @@
   <view :class="rootCls" :style="customStyle">
     <view 
       :class="minusBtnCls" 
-      @Tap="handleClick('minus')"
+      @tap="handleClick('minus')"
     >
       <view class="at-icon at-icon-subtract at-input-number__btn-subtract"></view>
     </view>
@@ -17,7 +17,7 @@
     />
     <view 
       :class="plusBtnCls" 
-      @Tap="handleClick('plus')"
+      @tap="handleClick('plus')"
     >
       <view class="at-icon at-icon-add at-input-number__btn-add"></view>
     </view>
