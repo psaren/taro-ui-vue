@@ -37,10 +37,10 @@
         :on-confirm="handleConfirm"
         @keyboardHeightChange="handleKeyboardHeightChange"
       />
-      <view v-if="clear && value" class="at-input__icon" @touchEnd="handleClearValue">
+      <view v-if="clear && value" class="at-input__icon" @touchend="handleClearValue">
         <view class="at-icon at-icon-close-circle at-input__icon-close"></view>
       </view>
-      <view v-if="error" class="at-input__icon" @touchStart="handleErrorClick">
+      <view v-if="error" class="at-input__icon" @touchstart="handleErrorClick">
         <view class="at-icon at-icon-alert-circle at-input__icon-alert"></view>
       </view>
       <view class="at-input__children">
