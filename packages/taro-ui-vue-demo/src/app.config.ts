@@ -32,6 +32,7 @@ export default {
     'pages/form/radio/index',
     'pages/form/range/index',
     'pages/form/rate/index',
+    'pages/form/search-bar/index',
   ],
   window: {
     backgroundTextStyle: 'light',
