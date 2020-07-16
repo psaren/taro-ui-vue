@@ -30,6 +30,7 @@ export default {
     'pages/form/picker/index',
     'pages/form/picker-view/index',
     'pages/form/radio/index',
+    'pages/form/range/index',
   ],
   window: {
     backgroundTextStyle: 'light',
