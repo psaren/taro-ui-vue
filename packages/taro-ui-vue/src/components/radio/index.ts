@@ -35,6 +35,11 @@ const AtRadio = Vue.extend({
       },
     },
   },
+  computed: {
+    rootCls() {
+      return classNames('at-radio', this.className)
+    }
+  },
   methods: {
     handleClick(option: RadioOption<any>, event: CommonEvent) {
       if (option.disabled) return

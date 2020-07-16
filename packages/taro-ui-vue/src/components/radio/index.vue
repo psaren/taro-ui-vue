@@ -1,6 +1,6 @@
 <template>
   <view 
-    :class="classNames('at-radio', className)" 
+    :class="rootCls" 
     :style="customStyle"
   >
     <view
