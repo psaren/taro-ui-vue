@@ -17,9 +17,9 @@
         :type="inputType"
         confirmType="search"
         :value="value"
-        :focus="state.isFocus"
-        :disabled="disable"
-        :maxLength="maxLengt"
+        :focus="isFocus"
+        :disabled="disabled"
+        :maxLength="maxLength"
         @input="handleChange"
         @focus="handleFocus"
         @blur="handleBlur"
@@ -28,7 +28,7 @@
       <view 
         class="at-search-bar__clear" 
         :style="clearIconStyle" 
-        @touchStart="handleClear"
+        @touchstart="handleClear"
       >
         <view class="at-icon at-icon-close-circle"></view>
       </view>

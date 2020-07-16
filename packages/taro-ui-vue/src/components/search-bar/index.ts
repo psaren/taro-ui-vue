@@ -2,7 +2,6 @@ import Vue from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
 import { CSSProperties } from '../../../global'
-import mixins from '../mixins'
 
 type ExtendEvent = {
   target: {
@@ -12,7 +11,6 @@ type ExtendEvent = {
 
 const AtSearchBar = Vue.extend({
   name: 'AtSearchBar',
-  mixins: [mixins],
   props: {
     customStyle: {
       type: [Object, String],
@@ -106,7 +104,7 @@ const AtSearchBar = Vue.extend({
     },
     placeholderWrapStyle(): CSSProperties {
       const { value } = this
-      const { isFocus } = this.state
+      const { isFocus } = this
       const wrapStyle: CSSProperties = {}
       if (isFocus || (!isFocus && value)) {
         wrapStyle.flexGrow = 0
@@ -117,7 +115,7 @@ const AtSearchBar = Vue.extend({
     }, 
     actionStyle (): CSSProperties {
       const { value, actionName, showActionButton } = this
-      const { isFocus } = this.state
+      const { isFocus } = this
       const fontSize = 14
       const actionStyle: CSSProperties = {}
       if (isFocus || (!isFocus && value)) {
@@ -152,22 +150,16 @@ const AtSearchBar = Vue.extend({
   },
   data() {
     return {
-      state: {
-        isFocus: !!this.focus,
-      },
+      isFocus: !!this.focus,
     }
   },
   methods: {
     handleFocus(event: CommonEvent): void {
-      this.setState({
-        isFocus: true,
-      })
+      this.isFocus = true
       this.onFocus && this.onFocus(event)
     },
     handleBlur(event: CommonEvent): void {
-      this.setState({
-        isFocus: false,
-      })
+      this.isFocus = false
       this.onBlur && this.onBlur(event)
     },
     handleChange(e: CommonEvent & ExtendEvent): void {
