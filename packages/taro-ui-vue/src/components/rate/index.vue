@@ -4,7 +4,7 @@
     :style="customStyle"
   >
     <view
-      v-if="(cls, i) in classNameArr"
+      v-for="(cls, i) in classNameArr"
       :class="cls"
       :key="`at-rate-star-${i}`"
       :style="iconStyle"
