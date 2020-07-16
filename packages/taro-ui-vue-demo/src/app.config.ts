@@ -34,6 +34,7 @@ export default {
     'pages/form/rate/index',
     'pages/form/search-bar/index',
     'pages/form/slider/index',
+    'pages/form/switch/index',
   ],
   window: {
     backgroundTextStyle: 'light',
