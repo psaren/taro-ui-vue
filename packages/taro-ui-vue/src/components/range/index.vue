@@ -9,14 +9,14 @@
       <view
         class="at-range__slider"
         :style="mergeStyle(sliderAStyle, sliderStyle)"
-        @touchMove="handleTouchMove('aX')"
-        @touchEnd="handleTouchEnd('aX')"
+        @touchmove="handleTouchMove('aX', $event)"
+        @touchend="handleTouchEnd('aX', $event)"
       ></view>
       <view
         class="at-range__slider"
         :style="mergeStyle(sliderBStyle, sliderStyle)"
-        @touchMove="handleTouchMove('bX')"
-        @touchEnd="handleTouchEnd('bX')"
+        @touchmove="handleTouchMove('bX', $event)"
+        @touchend="handleTouchEnd('bX', $event)"
       ></view>
     </view>
   </view>

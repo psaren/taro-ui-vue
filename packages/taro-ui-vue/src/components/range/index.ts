@@ -22,7 +22,7 @@ const AtRange = Vue.extend({
       },
     },
     sliderStyle: {
-      type: String,
+      type: [String, Object],
       default: '',
     },
     railStyle: {
