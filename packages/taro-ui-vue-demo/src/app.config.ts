@@ -31,6 +31,7 @@ export default {
     'pages/form/picker-view/index',
     'pages/form/radio/index',
     'pages/form/range/index',
+    'pages/form/rate/index',
   ],
   window: {
     backgroundTextStyle: 'light',
