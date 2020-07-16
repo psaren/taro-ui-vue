@@ -33,6 +33,7 @@ export default {
     'pages/form/range/index',
     'pages/form/rate/index',
     'pages/form/search-bar/index',
+    'pages/form/slider/index',
   ],
   window: {
     backgroundTextStyle: 'light',
