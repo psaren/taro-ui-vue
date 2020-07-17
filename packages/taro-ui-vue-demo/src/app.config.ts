@@ -38,6 +38,7 @@ export default {
     'pages/form/textarea/index',
     'pages/layout/accordion/index',
     'pages/layout/card/index',
+    'pages/layout/flex/index',
   ],
   window: {
     backgroundTextStyle: 'light',
