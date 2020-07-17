@@ -35,6 +35,7 @@ export default {
     'pages/form/search-bar/index',
     'pages/form/slider/index',
     'pages/form/switch/index',
+    'pages/form/textarea/index',
   ],
   window: {
     backgroundTextStyle: 'light',
