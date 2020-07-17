@@ -63,6 +63,18 @@ export default {
       default: '',
     },
   },
+  computed: {
+    rootClass() {
+      const { _isOpened } = this.state
+      return classNames(
+        'at-float-layout',
+        {
+          'at-float-layout--active': _isOpened,
+        },
+        this.className
+      )
+    }
+  },
   data() {
     const { isOpened } = this
     return {
@@ -104,68 +116,5 @@ export default {
     handleTouchMove(e) {
       e.stopPropagation()
     },
-  },
-  render() {
-    const { _isOpened } = this.state
-    const {
-      title,
-
-      scrollY,
-      scrollX,
-      scrollTop,
-      scrollLeft,
-      upperThreshold,
-      lowerThreshold,
-      scrollWithAnimation,
-    } = this
-
-    const rootClass = classNames(
-      'at-float-layout',
-      {
-        'at-float-layout--active': _isOpened,
-      },
-      this.className
-    )
-
-    return (
-      <view class={rootClass} onTouchMove={this.handleTouchMove}>
-        <view 
-          onTap={this.close.bind(this)} 
-          onClick={this.close.bind(this)} 
-          class="at-float-layout__overlay" 
-        />
-        <view class="at-float-layout__container layout">
-          {title ? (
-            <view class="layout-header">
-              <view class="layout-header__title">{title}</view>
-              <view 
-                class="layout-header__btn-close" 
-                onTap={this.close.bind(this)} 
-                onClick={this.close.bind(this)} 
-              />
-            </view>
-          ) : null}
-          <view class="layout-body">
-            <scroll-view
-              scrollY={scrollY}
-              scrollX={scrollX}
-              scrollTop={scrollTop}
-              scrollLeft={scrollLeft}
-              upperThreshold={upperThreshold}
-              lowerThreshold={lowerThreshold}
-              scrollWithAnimation={scrollWithAnimation}
-              // @ts-ignore // TODO: Fix typings
-              onScroll={this.onScroll}
-              // @ts-ignore // TODO: Fix typings
-              onScrollToLower={this.onScrollToLower}
-              // @ts-ignore // TODO: Fix typings
-              onScrollToUpper={this.onScrollToUpper}
-              class="layout-body__content">
-              {this.$slots.default}
-            </scroll-view>
-          </view>
-        </view>
-      </view>
-    )
   },
 }
