@@ -41,6 +41,7 @@ export default {
     'pages/layout/flex/index',
     'pages/layout/float-layout/index',
     'pages/layout/grid/index',
+    'pages/layout/list/index',
   ],
   window: {
     backgroundTextStyle: 'light',
