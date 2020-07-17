@@ -39,6 +39,7 @@ export default {
     'pages/layout/accordion/index',
     'pages/layout/card/index',
     'pages/layout/flex/index',
+    'pages/layout/float-layout/index',
   ],
   window: {
     backgroundTextStyle: 'light',
