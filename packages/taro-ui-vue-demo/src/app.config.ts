@@ -37,6 +37,7 @@ export default {
     'pages/form/switch/index',
     'pages/form/textarea/index',
     'pages/layout/accordion/index',
+    'pages/layout/card/index',
   ],
   window: {
     backgroundTextStyle: 'light',
