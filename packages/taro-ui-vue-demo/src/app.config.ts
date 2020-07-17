@@ -40,6 +40,7 @@ export default {
     'pages/layout/card/index',
     'pages/layout/flex/index',
     'pages/layout/float-layout/index',
+    'pages/layout/grid/index',
   ],
   window: {
     backgroundTextStyle: 'light',
