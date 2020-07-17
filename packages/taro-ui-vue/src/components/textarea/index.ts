@@ -130,9 +130,11 @@ const AtTextarea = Vue.extend({
     },
   },
   computed: {
+    _maxLength() {
+      return parseInt(this.maxLength.toString())
+    },
     rootCls () {
-      const { maxLength, value, className } = this
-      const _maxLength = parseInt(maxLength.toString())
+      const { _maxLength, value, className } = this
       return classNames(
         'at-textarea',
         `at-textarea--${ENV}`,
