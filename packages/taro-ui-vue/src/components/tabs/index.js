@@ -86,7 +86,59 @@ export default {
   beforeDestroy() {
     this.tabHeaderRef = null
   },
+  computed: {
+    heightStyle () {
+      const { height } = this
+      return { height }
+    },
+    rootCls() {
+      const { tabDirection, className } = this
+      return classNames(
+        {
+          'at-tabs': true,
+          'at-tabs--scroll': scroll,
+          [`at-tabs--${tabDirection}`]: true,
+          [`at-tabs--${ENV}`]: true,
+        },
+        className
+      )
+    },
+    rootStyle() {
+      const { customStyle, height } = this
+      return mergeStyle({ height }, customStyle)
+    },
+    underlineStyle () {
+      const { tabDirection, tabList } = this
+      return {
+        height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
+        width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX',
+      }
+    },
+    bodySty() {
+      const { current, animated, height, tabDirection } = this
+      const bodyStyle = {}
+      let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`
+      if (tabDirection === 'horizontal') {
+        transformStyle = `translate3d(-${current * 100}%, 0px, 0px)`
+      }
+      Object.assign(bodyStyle, {
+        transform: transformStyle,
+        '-webkit-transform': transformStyle,
+      })
+      if (!animated) {
+        bodyStyle.transition = 'unset'
+      }
+      return mergeStyle(bodyStyle, { height })
+    },
+    scrollX() {
+      return this.tabDirection === 'horizontal'
+    },
+    scrollY() {
+      return this.tabDirection === 'vertical'
+    }
+  },
   methods: {
+    classNames,
     /**
      *
      * @param {number} idx
@@ -183,99 +235,5 @@ export default {
         this.tabHeaderRef = document.getElementById(this.tabId)
       }
     },
-  },
-  render() {
-    const {
-      customStyle,
-      className,
-      height,
-      tabDirection,
-      animated,
-      tabList,
-      scroll,
-      current,
-    } = this
-    const { _scrollLeft, _scrollTop, _scrollIntoView } = this.state
-
-    const heightStyle = { height }
-    const underlineStyle = {
-      height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
-      width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX',
-    }
-    const bodyStyle = {}
-    let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`
-    if (tabDirection === 'horizontal') {
-      transformStyle = `translate3d(-${current * 100}%, 0px, 0px)`
-    }
-    Object.assign(bodyStyle, {
-      transform: transformStyle,
-      '-webkit-transform': transformStyle,
-    })
-    if (!animated) {
-      bodyStyle.transition = 'unset'
-    }
-
-    const tabItems = tabList.map((item, idx) => {
-      const itemCls = classNames({
-        'at-tabs__item': true,
-        'at-tabs__item--active': current === idx,
-      })
-
-      return (
-        <view
-          class={itemCls}
-          id={`tab${idx}`}
-          key={item.title}
-          onTap={this.handleClick.bind(this, idx)}
-          onClick={this.handleClick.bind(this, idx)}
-        >
-          {item.title}
-          <view class="at-tabs__item-underline"></view>
-        </view>
-      )
-    })
-    const rootCls = classNames(
-      {
-        'at-tabs': true,
-        'at-tabs--scroll': scroll,
-        [`at-tabs--${tabDirection}`]: true,
-        [`at-tabs--${ENV}`]: true,
-      },
-      className
-    )
-    const scrollX = tabDirection === 'horizontal'
-    const scrollY = tabDirection === 'vertical'
-
-    return (
-      <view class={rootCls} style={mergeStyle(heightStyle, customStyle)}>
-        {scroll ? (
-          <scroll-view
-            id={this.tabId}
-            class="at-tabs__header"
-            style={heightStyle}
-            scrollX={scrollX}
-            scrollY={scrollY}
-            scrollWithAnimation
-            scrollLeft={_scrollLeft}
-            scrollTop={_scrollTop}
-            scrollIntoView={_scrollIntoView}>
-            {tabItems}
-          </scroll-view>
-        ) : (
-          <view id={this.tabId} class="at-tabs__header">
-            {tabItems}
-          </view>
-        )}
-        <view
-          class="at-tabs__body"
-          onTouchStart={this.handleTouchStart.bind(this)}
-          onTouchEnd={this.handleTouchEnd.bind(this)}
-          onTouchMove={this.handleTouchMove.bind(this)}
-          style={mergeStyle(bodyStyle, heightStyle)}>
-          <view class="at-tabs__underline" style={underlineStyle}></view>
-          {this.$slots.default}
-        </view>
-      </view>
-    )
   },
 }
