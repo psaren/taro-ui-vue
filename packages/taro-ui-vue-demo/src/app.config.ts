@@ -44,6 +44,7 @@ export default {
     'pages/layout/list/index',
     'pages/navigation/drawer/index',
     'pages/navigation/navbar/index',
+    'pages/navigation/pagination/index',
   ],
   window: {
     backgroundTextStyle: 'light',
