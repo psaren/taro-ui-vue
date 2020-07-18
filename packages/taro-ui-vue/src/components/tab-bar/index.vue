@@ -1,0 +1,68 @@
+<template>
+  <view
+    :class="rootCls"
+    :style="rootSty"
+  >
+      <view
+        v-for="(item, i) in tabList"
+        :class="classNames('at-tab-bar__item', {
+          'at-tab-bar__item--active': current === i,
+        })"
+        :style="current === i ? selectedStyle : defaultStyle"
+        :key="item.title"
+        @tap="handleClick(i, $event)"
+      >
+        <AtBadge v-if="item.iconType" :dot="!!item.dot" :value="item.text" :maxValue="Number(item.max)">
+          <view class="at-tab-bar__icon">
+            <view
+              :class="classNames(`${item.iconPrefixClass || 'at-icon'}`, {
+                [`${item.iconPrefixClass || 'at-icon'}-${item.selectedIconType}`]:
+                  current === i && item.selectedIconType,
+                [`${item.iconPrefixClass || 'at-icon'}-${item.iconType}`]: !(
+                  current === i && item.selectedIconType
+                ),
+              })"
+              :style="{
+                color: current === i ? selectedColor : color,
+                fontSize: iconSize ? `${iconSize}px` : '',
+              }"></view>
+          </view>
+        </AtBadge>
+
+        <AtBadge v-if="item.image" :dot="!!item.dot" :value="item.text" :maxValue="Number(item.max)">
+          <view class="at-tab-bar__icon">
+            <image
+              :class="classNames('at-tab-bar__inner-img', {
+                'at-tab-bar__inner-img--inactive': current !== i,
+              })"
+              mode="widthFix"
+              :src="item.selectedImage || item.image"
+              :style="imgStyle"></image>
+            <image
+              :class="classNames('at-tab-bar__inner-img', {
+                'at-tab-bar__inner-img--inactive': current === i,
+              })"
+              mode="widthFix"
+              :src="item.image"
+              :style="imgStyle"></image>
+          </view>
+        </AtBadge>
+
+        <view>
+          <AtBadge
+            :dot="item.iconType || item.image ? false : !!item.dot"
+            :value="item.iconType || item.image ? '' : item.text"
+            :maxValue="item.iconType || item.image ? 0 : Number(item.max)">
+            <view class="at-tab-bar__title" :style="titleStyle">
+              {{ item.title }}
+            </view>
+          </AtBadge>
+        </view>
+      </view>
+  </view>
+</template>
+
+<script>
+import AtTabBar from './index'
+export default AtTabBar
+</script>
