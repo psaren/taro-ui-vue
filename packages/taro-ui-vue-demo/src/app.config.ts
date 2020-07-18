@@ -43,6 +43,7 @@ export default {
     'pages/layout/grid/index',
     'pages/layout/list/index',
     'pages/navigation/drawer/index',
+    'pages/navigation/navbar/index',
   ],
   window: {
     backgroundTextStyle: 'light',
