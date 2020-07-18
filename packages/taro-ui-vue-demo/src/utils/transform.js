@@ -3,7 +3,7 @@
 const fs = require('fs')
 const { resolve } = require('path')
 
-const relativePath = '../pages/form/picker/index.vue'
+const relativePath = '../pages/navigation/tabs/index.vue'
 
 const encoding = 'utf8'
 let content = fs.readFileSync(
