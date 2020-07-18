@@ -45,6 +45,7 @@ export default {
     'pages/navigation/drawer/index',
     'pages/navigation/navbar/index',
     'pages/navigation/pagination/index',
+    'pages/navigation/segmented-control/index',
   ],
   window: {
     backgroundTextStyle: 'light',
