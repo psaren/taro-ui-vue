@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import Vue from 'vue'
 import mixins from '../mixins'
-import AtList from '../list/index'
-import AtListItem from '../list/item/index'
+import AtList from '../list/index.vue'
+import AtListItem from '../list/item/index.vue'
 
 const setState = mixins.methods.setState
 
@@ -55,34 +55,56 @@ const AtDrawer = Vue.extend({
       },
     },
   },
+  data() {
+    return {
+      state: {
+        animShow: false,
+        _show: this.show
+      }
+    }
+  },
+  watch: {
+    show: {
+      immediate: true,
+      handler(val) {
+        this.state._show = val
+        if (val) this.animShow()
+      }
+    }
+  },
   mounted(): void {
     const { _show } = this.state
     if (_show) this.animShow()
   },
   computed: {
     maskStyle() {
-      const { animShow, mask } = this
+      const { state, mask } = this
       return {
         display: mask ? 'block' : 'none',
-        opacity: animShow ? 1 : 0,
+        opacity: state.animShow ? 1 : 0,
       }
     },
     classObject() {
-      const { animShow, right } = this
+      const { state, right } = this
       return {
-        'at-drawer--show': animShow,
+        'at-drawer--show': state.animShow,
         'at-drawer--right': right,
         'at-drawer--left': !right,
       }
     },
     listStyle() {
-      const { animShow, width } = this
+      const { state, width } = this
       return {
         width,
-        transition: animShow
+        opacity: state.animShow ? 1 : 0,
+        transition: state.animShow
           ? 'all 225ms cubic-bezier(0, 0, 0.2, 1)'
           : 'all 195ms cubic-bezier(0.4, 0, 0.6, 1)',
       }
+    },
+    rootCls () {
+      const rootClassName = ['at-drawer']
+      return classNames(rootClassName, this.classObject, this.className)
     }
   },
   methods: {
@@ -119,11 +141,7 @@ const AtDrawer = Vue.extend({
     onMaskClick(): void {
       this.animHide()
     },
-  
-    getCls() {
-      const rootClassName = ['at-drawer']
-      return classNames(rootClassName, this.classObject, this.className)
-    }
+
   }
 })
 

@@ -1,7 +1,7 @@
 <template>
   <view 
     v-if="state._show"
-    :class="getCls"
+    :class="rootCls"
   >
     <view 
       class="at-drawer__mask" 

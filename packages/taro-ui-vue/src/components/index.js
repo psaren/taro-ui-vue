@@ -20,6 +20,7 @@ import AtCheckbox from './checkbox/index.vue'
 import AtCountdown from './countdown/index'
 import AtCurtain from './curtain/index'
 import AtDivider from './divider/index'
+import AtDrawer from './drawer/index.vue'
 import AtFab from './fab/index'
 import AtFloatLayout from './float-layout/index.vue'
 import AtForm from './form/index.vue'
@@ -70,6 +71,7 @@ export {
   AtCountdown,
   AtCurtain,
   AtDivider,
+  AtDrawer,
   AtFab,
   AtFloatLayout,
   AtForm,
