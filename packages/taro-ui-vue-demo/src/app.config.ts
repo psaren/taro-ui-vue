@@ -56,6 +56,7 @@ export default {
     'pages/view/curtain/index',
     'pages/view/divider/index',
     'pages/view/load-more/index',
+    'pages/view/noticebar/index',
   ],
   window: {
     backgroundTextStyle: 'light',
