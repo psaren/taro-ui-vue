@@ -58,6 +58,7 @@ export default {
     'pages/view/load-more/index',
     'pages/view/noticebar/index',
     'pages/view/steps/index',
+    'pages/view/swiper/index',
   ],
   window: {
     backgroundTextStyle: 'light',
