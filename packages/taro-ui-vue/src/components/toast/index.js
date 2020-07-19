@@ -47,6 +47,10 @@ export default {
       type: [Object, String],
       default: () => '',
     },
+    customStyle: {
+      type: [Object, String],
+      default: '',
+    },
   },
   data() {
     return {
@@ -88,6 +92,10 @@ export default {
       return classNames('at-icon', {
         [`at-icon-${icon}`]: icon,
       })
+    },
+    isRenderIcon() {
+      const { icon, status, image } = this
+      return !!(icon && !(image || statusImg[status]))
     }
   },
   methods: {
