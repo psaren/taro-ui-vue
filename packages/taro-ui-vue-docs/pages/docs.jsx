@@ -25,13 +25,24 @@ class Docs extends React.Component {
     }
   }
 
-  render() {
-    const data = navsConfig.components
-    const { fixed } = this.state
+  getDemoPath() {
     const pathname = this.props.location.pathname
     const reg = /\/\S+\/(\S+)/
     const result = pathname.match(reg)
     const curDemoPath = pathMap[result[1]] || ''
+    return curDemoPath
+  }
+
+  getIframeUrl() {
+    const host = 'http://localhost:10086'
+    const curDemoPath = this.getDemoPath()
+    return `${host}/pages/${curDemoPath}/index`
+  }
+
+  render() {
+    const data = navsConfig.components
+    const { fixed } = this.state
+    const curDemoPath = this.getDemoPath()
     const curPageUrl = `${window.location.origin}${window.location.pathname}/h5/index.html#/pages/${curDemoPath}/index`
 
     return (
@@ -103,7 +114,7 @@ class Docs extends React.Component {
               >
                 {curDemoPath ? (
                   <iframe
-                    src={`./h5/index.html#/pages/${curDemoPath}/index`}
+                    src={this.getIframeUrl()}
                     frameBorder='0'
                   ></iframe>
                 ) : (
