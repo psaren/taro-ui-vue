@@ -60,6 +60,7 @@ export default {
     'pages/view/steps/index',
     'pages/view/swiper/index',
     'pages/view/tag/index',
+    'pages/view/timeline/index',
   ],
   window: {
     backgroundTextStyle: 'light',
