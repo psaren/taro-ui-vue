@@ -49,6 +49,8 @@ export default {
     'pages/navigation/tabbar/index',
     'pages/navigation/tabs/index',
     'pages/navigation/indexes/index',
+    'pages/view/article/index',
+    'pages/view/avatar/index',
   ],
   window: {
     backgroundTextStyle: 'light',
