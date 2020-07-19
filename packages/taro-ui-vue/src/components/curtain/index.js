@@ -47,7 +47,6 @@ export default {
   methods: {
     handleTab(event) {
       event.stopPropagation()
-      console.log(this.onClose)
       this.onClose && this.onClose(event)
     },
     stopPropagation(event) {

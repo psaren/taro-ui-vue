@@ -52,6 +52,8 @@ export default {
     'pages/view/article/index',
     'pages/view/avatar/index',
     'pages/view/badge/index',
+    'pages/view/countdown/index',
+    'pages/view/curtain/index',
   ],
   window: {
     backgroundTextStyle: 'light',
