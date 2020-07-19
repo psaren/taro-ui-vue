@@ -51,6 +51,7 @@ export default {
     'pages/navigation/indexes/index',
     'pages/view/article/index',
     'pages/view/avatar/index',
+    'pages/view/badge/index',
   ],
   window: {
     backgroundTextStyle: 'light',
