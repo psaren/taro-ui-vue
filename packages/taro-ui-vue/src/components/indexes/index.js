@@ -2,15 +2,20 @@ import classNames from 'classnames'
 import Taro from '@tarojs/taro'
 import mixins from '../mixins'
 import { delayQuerySelector, isTest, uuid, pxTransform } from '../../utils/common'
-import AtList from '../list/index'
-import AtListItem from '../list/item/index'
-import AtToast from '../toast/index'
+import AtList from '../list/index.vue'
+import AtListItem from '../list/item/index.vue'
+import AtToast from '../toast/index.vue'
 
 const ENV = Taro.getEnv()
 
 export default {
   name: 'AtIndexes',
   mixins: [mixins],
+  components: {
+    AtList,
+    AtListItem,
+    AtToast
+  },
   props: {
     customStyle: {
       type: [Object, String],
@@ -42,11 +47,15 @@ export default {
     },
     onClick: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return () => {}
+      },
     },
     onScrollIntoView: {
       type: Function,
-      default: () => () => {},
+      default: function () {
+        return () => {}
+      },
     },
   },
   data() {
@@ -61,12 +70,13 @@ export default {
       currentIndex: -1,
       listId: isTest() ? 'indexes-list-AOTU2018' : `list-${uuid()}`,
       timeoutTimerL: null,
+      isWEB: Taro.getEnv() === Taro.ENV_TYPE.WEB,
+      listRef: null,
       state: {
         _scrollIntoView: '',
         _scrollTop: 0,
         _tipText: '',
         _isShowToast: false,
-        isWEB: Taro.getEnv() === Taro.ENV_TYPE.WEB,
       },
     }
   },
@@ -74,6 +84,12 @@ export default {
     listLen() {
       return this.list.length
     },
+    rootCls() {
+      return classNames('at-indexes', this.className)
+    },
+    toastStyle() {
+      return { minWidth: pxTransform(100) }
+    }
   },
 
   watch: {
@@ -123,7 +139,8 @@ export default {
 
       if (ENV === Taro.ENV_TYPE.WEB) {
         delayQuerySelector(this, '.at-indexes', 0).then((rect) => {
-          const targetOffsetTop = this.listRef.childNodes[idx].offsetTop
+          const targetOffsetTop = this.listRef.children[idx].offsetTop
+          this.listRef.scrollTop = targetOffsetTop
           const _scrollTop = targetOffsetTop - rect[0].top
           this.updateState({
             _scrollTop,
@@ -191,76 +208,5 @@ export default {
         })
       }
     },
-  },
-  render() {
-    const { className, customStyle, animation, topKey, list } = this
-    const { _scrollTop, _scrollIntoView, _tipText, _isShowToast, isWEB } = this.state
-
-    const toastStyle = { minWidth: pxTransform(100) }
-    const rootCls = classNames('at-indexes', className)
-
-    const menuList = list.map((dataList, i) => {
-      const { key } = dataList
-      const targetView = `at-indexes__list-${key}`
-      return (
-        <view
-          class="at-indexes__menu-item"
-          key={key}
-          onTap={this.jumpTarget.bind(this, targetView, i + 1)}
-          onClick={this.jumpTarget.bind(this, targetView, i + 1)}
-        >
-          {key}
-        </view>
-      )
-    })
-
-    const indexesList = list.map((dataList) => (
-      <view id={`at-indexes__list-${dataList.key}`} class="at-indexes__list" key={dataList.key}>
-        <view class="at-indexes__list-title">{dataList.title}</view>
-        <AtList>
-          {dataList.items &&
-            dataList.items.map((item) => (
-              <AtListItem
-                key={item.name}
-                title={item.name}
-                onTap={this.handleClick.bind(this, item)}
-                onClick={this.handleClick.bind(this, item)}
-              />
-            ))}
-        </AtList>
-      </view>
-    ))
-
-    return (
-      <view class={rootCls} style={customStyle}>
-        <AtToast customStyle={toastStyle} isOpened={_isShowToast} text={_tipText} duration={2000} />
-        <view
-          class="at-indexes__menu"
-          onTouchMove={this.handleTouchMove}
-          onTouchEnd={this.handleTouchEnd}>
-          <view
-            class="at-indexes__menu-item"
-            onTap={this.jumpTarget.bind(this, 'at-indexes__top', 0)}
-            onClick={this.jumpTarget.bind(this, 'at-indexes__top', 0)}
-          >
-            {topKey}
-          </view>
-          {menuList}
-        </view>
-        <scroll-view
-          class="at-indexes__body"
-          id={this.listId}
-          scrollY
-          scrollWithAnimation={animation}
-          scrollTop={isWEB ? _scrollTop : undefined}
-          scrollIntoView={!isWEB ? _scrollIntoView : ''}
-          onScroll={this.handleScroll.bind(this)}>
-          <view class="at-indexes__content" id="at-indexes__top">
-            {this.$slots.default}
-          </view>
-          {indexesList}
-        </scroll-view>
-      </view>
-    )
   },
 }
