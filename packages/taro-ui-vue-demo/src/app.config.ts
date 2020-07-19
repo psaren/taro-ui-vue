@@ -59,6 +59,7 @@ export default {
     'pages/view/noticebar/index',
     'pages/view/steps/index',
     'pages/view/swiper/index',
+    'pages/view/tag/index',
   ],
   window: {
     backgroundTextStyle: 'light',
