@@ -3,7 +3,7 @@
 const fs = require('fs')
 const { resolve } = require('path')
 
-const relativePath = '../pages/view/noticebar/index.vue'
+const relativePath = '../pages/view/steps/index.vue'
 
 const encoding = 'utf8'
 let content = fs.readFileSync(
