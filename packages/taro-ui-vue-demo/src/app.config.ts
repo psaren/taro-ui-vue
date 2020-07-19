@@ -55,6 +55,7 @@ export default {
     'pages/view/countdown/index',
     'pages/view/curtain/index',
     'pages/view/divider/index',
+    'pages/view/load-more/index',
   ],
   window: {
     backgroundTextStyle: 'light',
