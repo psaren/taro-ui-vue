@@ -11,7 +11,7 @@
 
 :::demo
 ```js
-import { AtTabBar } from 'taro-ui'
+import { AtTabBar } from 'taro-ui-vue'
 ```
 :::
 
@@ -19,8 +19,8 @@ import { AtTabBar } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/tab-bar.scss";
-@import "~taro-ui/dist/style/components/badge.scss";
+@import "~taro-ui-vue/dist/style/components/tab-bar.scss";
+@import "~taro-ui-vue/dist/style/components/badge.scss";
 ```
 :::
 
@@ -28,7 +28,7 @@ import { AtTabBar } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -42,7 +42,7 @@ import { AtTabBar } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtTabBar }  from 'taro-ui'
+import { AtTabBar }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)

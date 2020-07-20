@@ -14,7 +14,7 @@
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/flex.scss";
+@import "~taro-ui-vue/dist/style/components/flex.scss";
 ```
 :::
 
@@ -23,11 +23,11 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View className='at-col'>A</View>
-  <View className='at-col'>B</View>
-  <View className='at-col'>C</View>
-</View>
+<view class='at-row'>
+  <view class='at-col'>A</view>
+  <view class='at-col'>B</view>
+  <view class='at-col'>C</view>
+</view>
 ```
 
 :::
@@ -37,12 +37,12 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View className='at-col at-col-3'>A</View>
-  <View className='at-col at-col-6'>B</View>
-  <View className='at-col at-col-2'>C</View>
-  <View className='at-col at-col-1'>D</View>
-</View>
+<view class='at-row'>
+  <view class='at-col at-col-3'>A</view>
+  <view class='at-col at-col-6'>B</view>
+  <view class='at-col at-col-2'>C</view>
+  <view class='at-col at-col-1'>D</view>
+</view>
 ```
 
 :::
@@ -52,15 +52,15 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View className='at-col at-col__offset-2'>
+<view class='at-row'>
+  <view class='at-col at-col__offset-2'>
     A
-  </View>
-  <View className='at-col at-col__offset-3'>
+  </view>
+  <view class='at-col at-col__offset-3'>
     B
-  </View>
-  <View className='at-col'>C</View>
-</View>
+  </view>
+  <view class='at-col'>C</view>
+</view>
 ```
 
 :::
@@ -70,13 +70,13 @@
 :::demo
 
 ```html
-<View className='at-row at-row--wrap'>
-  <View className='at-col at-col-4'>A</View>
-  <View className='at-col at-col-4'>B</View>
-  <View className='at-col at-col-4'>C</View>
-  <View className='at-col at-col-4'>D</View>
-  <View className='at-col at-col-4'>E</View>
-</View>
+<view class='at-row at-row--wrap'>
+  <view class='at-col at-col-4'>A</view>
+  <view class='at-col at-col-4'>B</view>
+  <view class='at-col at-col-4'>C</view>
+  <view class='at-col at-col-4'>D</view>
+  <view class='at-col at-col-4'>E</view>
+</view>
 ```
 
 :::
@@ -86,12 +86,12 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View className='at-col at-col-1 at-col--auto'>
+<view class='at-row'>
+  <view class='at-col at-col-1 at-col--auto'>
     被内容撑开
-  </View>
-  <View className='at-col'>B</View>
-</View>
+  </view>
+  <view class='at-col'>B</view>
+</view>
 ```
 
 :::
@@ -101,12 +101,12 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View className='at-col at-col-1 at-col--wrap'>
+<view class='at-row'>
+  <view class='at-col at-col-1 at-col--wrap'>
     内容自动换行
-  </View>
-  <View className='at-col'>B</View>
-</View>
+  </view>
+  <view class='at-col'>B</view>
+</view>
 ```
 
 :::
@@ -116,22 +116,22 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View style='height:100px' className='at-col'>A</View>
-  <View className='at-col'>默认对齐方式 -- stretch</View>
-</View>
-<View className='at-row at-row__align--start'>
-  <View style='height:100px' className='at-col'>B</View>
-  <View className='at-col'>顶部对齐 -- start</View>
-</View>
-<View className='at-row at-row__align--center'>
-  <View style='height:100px' className='at-col'>C</View>
-  <View className='at-col'>居中对齐 -- center</View>
-</View>
-<View className='at-row at-row__align--end'>
-  <View style='height:100px' className='at-col'>D</View>
-  <View className='at-col'>底部对齐 -- end</View>
-</View>
+<view class='at-row'>
+  <view style='height:100px' class='at-col'>A</view>
+  <view class='at-col'>默认对齐方式 -- stretch</view>
+</view>
+<view class='at-row at-row__align--start'>
+  <view style='height:100px' class='at-col'>B</view>
+  <view class='at-col'>顶部对齐 -- start</view>
+</view>
+<view class='at-row at-row__align--center'>
+  <view style='height:100px' class='at-col'>C</view>
+  <view class='at-col'>居中对齐 -- center</view>
+</view>
+<view class='at-row at-row__align--end'>
+  <view style='height:100px' class='at-col'>D</view>
+  <view class='at-col'>底部对齐 -- end</view>
+</view>
 ```
 
 :::
@@ -141,25 +141,25 @@
 :::demo
 
 ```html
-<View className='at-row'>
-  <View className='at-col at-col-5'>默认</View>
-  <View className='at-col at-col-5'>Start</View>
-</View>
-<View className='at-row at-row__justify--end'>
-  <View className='at-col at-col-5'>底部排列</View>
-  <View className='at-col at-col-5'>End</View>
-</View>
-<View className='at-row at-row__justify--center'>
-  <View className='at-col at-col-5'>居中排列</View>
-  <View className='at-col at-col-5'>Center</View>
-</View>
-<View className='at-row at-row__justify--between'>
-  <View className='at-col at-col-5'>左右排列</View>
-  <View className='at-col at-col-5'>Between</View>
-</View>
-<View className='at-row at-row__justify--around'>
-  <View className='at-col at-col-5'>平均排列</View>
-  <View className='at-col at-col-5'>Around</View>
-</View>
+<view class='at-row'>
+  <view class='at-col at-col-5'>默认</view>
+  <view class='at-col at-col-5'>Start</view>
+</view>
+<view class='at-row at-row__justify--end'>
+  <view class='at-col at-col-5'>底部排列</view>
+  <view class='at-col at-col-5'>End</view>
+</view>
+<view class='at-row at-row__justify--center'>
+  <view class='at-col at-col-5'>居中排列</view>
+  <view class='at-col at-col-5'>Center</view>
+</view>
+<view class='at-row at-row__justify--between'>
+  <view class='at-col at-col-5'>左右排列</view>
+  <view class='at-col at-col-5'>Between</view>
+</view>
+<view class='at-row at-row__justify--around'>
+  <view class='at-col at-col-5'>平均排列</view>
+  <view class='at-col at-col-5'>Around</view>
+</view>
 ```
 :::

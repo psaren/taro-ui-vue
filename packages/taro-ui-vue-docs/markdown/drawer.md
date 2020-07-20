@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtDrawer } from 'taro-ui'
+import { AtDrawer } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,20 +18,20 @@ import { AtDrawer } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/drawer.scss";
-@import "~taro-ui/dist/style/components/list.scss";
+@import "~taro-ui-vue/dist/style/components/drawer.scss";
+@import "~taro-ui-vue/dist/style/components/list.scss";
 ```
 :::
 
 ## 用法
 
 :::demo
-```html
+```vue
 <AtDrawer 
-  show={this.state.show} 
+  :show="show" 
   mask 
-  onClose={this.onClose.bind(this)} 
-  items={['菜单1', '菜单2']}
+  :onClose="onClose" 
+  :items="['菜单1', '菜单2']"
 ></AtDrawer>
 ```
 :::
@@ -39,13 +39,13 @@ import { AtDrawer } from 'taro-ui'
 ## 右边弹出
 
 :::demo
-```html
+```vue
 <AtDrawer 
-  show={this.state.show} 
+  :show="show" 
   right 
   mask 
-  onClose={this.onClose.bind(this)} 
-  items={['菜单1', '菜单2']}
+  :onClose="onClose"
+  :items="['菜单1', '菜单2']"
 ></AtDrawer>
 ```
 :::
@@ -53,15 +53,15 @@ import { AtDrawer } from 'taro-ui'
 ## 自定义内容
 
 :::demo
-```html
+```vue
 <AtDrawer
-  show={this.state.show}
+  :show="show"
   mask
 >
-  <View className='drawer-item'>优先展示items里的数据</View>
-  <View className='drawer-item'>如果items没有数据就会展示children</View>
-  <View className='drawer-item'>这是自定义内容 <AtIcon value='home' size='20' /></View>
-  <View className='drawer-item'>这是自定义内容</View>
+  <view class='drawer-item'>优先展示items里的数据</view>
+  <view class='drawer-item'>如果items没有数据就会展示children</view>
+  <view class='drawer-item'>这是自定义内容 <AtIcon value='home' size='20' /></view>
+  <view class='drawer-item'>这是自定义内容</view>
 </AtDrawer>
 ```
 :::

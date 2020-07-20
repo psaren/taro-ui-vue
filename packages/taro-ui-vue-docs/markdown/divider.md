@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtDivider } from 'taro-ui'
+import { AtDivider } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,8 +17,8 @@ import { AtDivider } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/divider.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/divider.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -51,7 +51,6 @@ import { AtDivider } from 'taro-ui'
 :::demo
 
 ```html
-/* import { AtDivider,AtIcon } from 'taro-ui' */
 <AtDivider>
   <AtIcon value='check-circle'></AtIcon>
 </AtDivider>

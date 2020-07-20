@@ -57,40 +57,40 @@ export default class PagePicker extends Component {
 
   render () {
     return (
-      <View className='container'>
-        <View className='page-body'>
-          <View className='page-section'>
-            <Text>地区选择器</Text>
-            <View>
+      <view class='container'>
+        <view class='page-body'>
+          <view class='page-section'>
+            <text>地区选择器</text>
+            <view>
               <Picker mode='selector' range={this.state.selector} onChange={this.onChange}>
-                <View className='picker'>
+                <view class='picker'>
                   当前选择：{this.state.selectorChecked}
-                </View>
+                </view>
               </Picker>
-            </View>
-          </View>
-          <View className='page-section'>
-            <Text>时间选择器</Text>
-            <View>
+            </view>
+          </view>
+          <view class='page-section'>
+            <text>时间选择器</text>
+            <view>
               <Picker mode='time' onChange={this.onTimeChange}>
-                <View className='picker'>
+                <view class='picker'>
                   当前选择：{this.state.timeSel}
-                </View>
+                </view>
               </Picker>
-            </View>
-          </View>
-          <View className='page-section'>
-            <Text>日期选择器</Text>
-            <View>
+            </view>
+          </view>
+          <view class='page-section'>
+            <text>日期选择器</text>
+            <view>
               <Picker mode='date' onChange={this.onDateChange}>
-                <View className='picker'>
+                <view class='picker'>
                   当前选择：{this.state.dateSel}
-                </View>
+                </view>
               </Picker>
-            </View>
-          </View>
-        </View>
-      </View>
+            </view>
+          </view>
+        </view>
+      </view>
     )
   }
 }

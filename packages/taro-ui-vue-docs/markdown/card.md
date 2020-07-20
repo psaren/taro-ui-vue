@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtCard } from "taro-ui"
+import { AtCard } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtCard } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/card.scss";
+@import "~taro-ui-vue/dist/style/components/card.scss";
 ```
 :::
 

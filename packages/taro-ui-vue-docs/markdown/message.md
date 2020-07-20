@@ -9,7 +9,7 @@ Taro-UI 版本需要在 `v1.4.1` 以上，在 Taro 文件中引入组件
 
 :::demo
 ```js
-import { AtMessage } from 'taro-ui'
+import { AtMessage } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtMessage } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/message.scss";
+@import "~taro-ui-vue/dist/style/components/message.scss";
 ```
 :::
 
@@ -32,7 +32,7 @@ import { AtMessage } from 'taro-ui'
 ```js
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtMessage } from 'taro-ui'
+import { AtMessage } from 'taro-ui-vue'
 
 export default class LoadMorePage extends Taro.Component {
   handleClick (type) {
@@ -43,7 +43,7 @@ export default class LoadMorePage extends Taro.Component {
   }
   render () {
     return (
-      <View>
+      <view>
         <AtMessage />
         <AtButton onClick={this.handleClick.bind(this)}>
           普通消息
@@ -57,7 +57,7 @@ export default class LoadMorePage extends Taro.Component {
         <AtButton onClick={this.handleClick.bind(this, 'warning')}>
           警告消息
         </AtButton>
-      </View>
+      </view>
     )
   }
 }

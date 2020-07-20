@@ -12,7 +12,7 @@
 
 :::demo
 ```js
-import { AtInput, AtForm } from 'taro-ui'
+import { AtInput, AtForm } from 'taro-ui-vue'
 ```
 :::
 
@@ -20,8 +20,8 @@ import { AtInput, AtForm } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/input.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/input.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -40,7 +40,7 @@ import { AtInput, AtForm } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtInput }  from 'taro-ui'
+import { AtInput }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)

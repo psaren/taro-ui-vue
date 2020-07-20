@@ -10,7 +10,7 @@ Taro-UI 版本需要在 `v1.3.1` 以上，在 Taro 文件中引入组件
 
 :::demo
 ```js
-import { AtSwipeAction } from "taro-ui"
+import { AtSwipeAction } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtSwipeAction } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/swipe-action.scss";
+@import "~taro-ui-vue/dist/style/components/swipe-action.scss";
 ```
 :::
 
@@ -41,7 +41,7 @@ import { AtSwipeAction } from "taro-ui"
     }
   }
 ]}>
-  <View className='normal'>AtSwipeAction 一般使用场景</View>
+  <view class='normal'>AtSwipeAction 一般使用场景</view>
 </AtSwipeAction>
 ```
 
@@ -66,7 +66,7 @@ import { AtSwipeAction } from "taro-ui"
     }
   }
 ]}>
-  <View className='normal'>禁止滑动展示</View>
+  <view class='normal'>禁止滑动展示</view>
 </AtSwipeAction>
 ```
 
@@ -91,7 +91,7 @@ import { AtSwipeAction } from "taro-ui"
     }
   }
 ]}>
-  <View className='normal'>点击按钮自动关闭</View>
+  <view class='normal'>点击按钮自动关闭</view>
 </AtSwipeAction>
 ```
 
@@ -116,7 +116,7 @@ import { AtSwipeAction } from "taro-ui"
     }
   }
 ]}>
-  <View className='normal'>点击事件触发</View>
+  <view class='normal'>点击事件触发</view>
 </AtSwipeAction>
 ```
 
@@ -145,7 +145,7 @@ import { AtSwipeAction } from "taro-ui"
   onOpened={this.handleOpened}
   onClosed={this.handleClosed}
 >
-  <View className='normal'>开启和关闭时触发事件</View>
+  <view class='normal'>开启和关闭时触发事件</view>
 </AtSwipeAction>
 ```
 

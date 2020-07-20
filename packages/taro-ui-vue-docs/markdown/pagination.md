@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtPagination } from 'taro-ui'
+import { AtPagination } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,9 +18,9 @@ import { AtPagination } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/pagination.scss";
-@import "~taro-ui/dist/style/components/button.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/pagination.scss";
+@import "~taro-ui-vue/dist/style/components/button.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 

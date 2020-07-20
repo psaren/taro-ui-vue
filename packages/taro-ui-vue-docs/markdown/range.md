@@ -9,7 +9,7 @@ Taro-UI 版本需要在 `v1.5.0` 以上，在 Taro 文件中引入组件
 
 :::demo
 ```js
-import { AtRange } from 'taro-ui'
+import { AtRange } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtRange } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/range.scss";
+@import "~taro-ui-vue/dist/style/components/range.scss";
 ```
 :::
 
@@ -28,7 +28,7 @@ import { AtRange } from 'taro-ui'
 ```jsx
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtRange,AtToast } from 'taro-ui'
+import { AtRange,AtToast } from 'taro-ui-vue'
 
 export default class Index extends Taro.Component {
   constructor () {
@@ -46,7 +46,7 @@ export default class Index extends Taro.Component {
   }
   render () {
     return (
-      <View>
+      <view>
         <AtToast
           text={this.state.text}
           isOpened={this.state.isOpened}
@@ -57,7 +57,7 @@ export default class Index extends Taro.Component {
           max={100}
           onChange={this.handleChange.bind(this)}
         />
-      </View>
+      </view>
     )
   }
 }

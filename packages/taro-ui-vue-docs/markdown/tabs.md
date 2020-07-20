@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtTabs, AtTabsPane } from 'taro-ui'
+import { AtTabs, AtTabsPane } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtTabs, AtTabsPane } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/tabs.scss";
+@import "~taro-ui-vue/dist/style/components/tabs.scss";
 ```
 :::
 
@@ -44,7 +44,7 @@ import { AtTabs, AtTabsPane } from 'taro-ui'
 ```js
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtTabs, AtTabsPane } from 'taro-ui'
+import { AtTabs, AtTabsPane } from 'taro-ui-vue'
 
 export default class Index extends Taro.Component {
   constructor () {
@@ -63,13 +63,13 @@ export default class Index extends Taro.Component {
     return (
       <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
         <AtTabsPane current={this.state.current} index={0} >
-          <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</View>
+          <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</view>
         </AtTabsPane>
         <AtTabsPane current={this.state.current} index={1}>
-          <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</View>
+          <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</view>
         </AtTabsPane>
         <AtTabsPane current={this.state.current} index={2}>
-          <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</View>
+          <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</view>
         </AtTabsPane>
       </AtTabs>
     )
@@ -98,22 +98,22 @@ export default class Index extends Taro.Component {
   ]}
   onClick={this.handleClick.bind(this)}>
   <AtTabsPane current={this.state.current} index={0}>
-    <View style='font-size:18px;text-align:center;height:100px;'>标签页一的内容</View>
+    <view style='font-size:18px;text-align:center;height:100px;'>标签页一的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={1}>
-    <View style='font-size:18px;text-align:center;height:100px;'>标签页二的内容</View>
+    <view style='font-size:18px;text-align:center;height:100px;'>标签页二的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={2}>
-    <View style='font-size:18px;text-align:center;height:100px;'>标签页三的内容</View>
+    <view style='font-size:18px;text-align:center;height:100px;'>标签页三的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={3}>
-    <View style='font-size:18px;text-align:center;height:100px;'>标签页四的内容</View>
+    <view style='font-size:18px;text-align:center;height:100px;'>标签页四的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={4}>
-    <View style='font-size:18px;text-align:center;height:100px;'>标签页五的内容</View>
+    <view style='font-size:18px;text-align:center;height:100px;'>标签页五的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={5}>
-    <View style='font-size:18px;text-align:center;height:100px;'>标签页六的内容</View>
+    <view style='font-size:18px;text-align:center;height:100px;'>标签页六的内容</view>
   </AtTabsPane>
 </AtTabs>
 ```
@@ -140,22 +140,22 @@ export default class Index extends Taro.Component {
   ]}
   onClick={this.handleClick.bind(this)}>
   <AtTabsPane tabDirection='vertical' current={this.state.current} index={0}>
-    <View style='font-size:18px;text-align:center;height:200px;'>标签页一的内容</View>
+    <view style='font-size:18px;text-align:center;height:200px;'>标签页一的内容</view>
   </AtTabsPane>
   <AtTabsPane tabDirection='vertical' current={this.state.current} index={1}>
-    <View style='font-size:18px;text-align:center;height:200px;'>标签页二的内容</View>
+    <view style='font-size:18px;text-align:center;height:200px;'>标签页二的内容</view>
   </AtTabsPane>
   <AtTabsPane tabDirection='vertical' current={this.state.current} index={2}>
-    <View style='font-size:18px;text-align:center;height:200px;'>标签页三的内容</View>
+    <view style='font-size:18px;text-align:center;height:200px;'>标签页三的内容</view>
   </AtTabsPane>
   <AtTabsPane tabDirection='vertical' current={this.state.current} index={3}>
-    <View style='font-size:18px;text-align:center;height:200px;'>标签页四的内容</View>
+    <view style='font-size:18px;text-align:center;height:200px;'>标签页四的内容</view>
   </AtTabsPane>
   <AtTabsPane tabDirection='vertical' current={this.state.current} index={4}>
-    <View style='font-size:18px;text-align:center;height:200px;'>标签页五的内容</View>
+    <view style='font-size:18px;text-align:center;height:200px;'>标签页五的内容</view>
   </AtTabsPane>
   <AtTabsPane tabDirection='vertical' current={this.state.current} index={5}>
-    <View style='font-size:18px;text-align:center;height:200px;'>标签页六的内容</View>
+    <view style='font-size:18px;text-align:center;height:200px;'>标签页六的内容</view>
   </AtTabsPane>
 </AtTabs>
 ```
@@ -177,13 +177,13 @@ export default class Index extends Taro.Component {
   ]}
   onClick={this.handleClick.bind(this)}>
   <AtTabsPane current={this.state.current} index={0} >
-    <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</View>
+    <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={1}>
-    <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</View>
+    <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</view>
   </AtTabsPane>
   <AtTabsPane current={this.state.current} index={2}>
-    <View style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</View>
+    <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</view>
   </AtTabsPane>
 </AtTabs>
 ```

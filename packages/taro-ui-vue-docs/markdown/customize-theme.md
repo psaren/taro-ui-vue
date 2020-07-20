@@ -24,7 +24,7 @@ Taro UI 的组件样式是使用 SCSS 编写的，如果你的项目中也使用
 $color-brand: #6190E8;
 
 /* 引入 Taro UI 默认样式 */
-@import "~taro-ui/dist/style/index.scss";
+@import "~taro-ui-vue/dist/style/index.scss";
 ```
 :::
 
@@ -54,13 +54,13 @@ import './custom-variables.scss'
 /* page/index/index.js   */
 import Taro from '@tarojs/taro'
 
-import { AtButton } from 'taro-ui'
+import { AtButton } from 'taro-ui-vue'
 
 import "./index.scss"
 
 export default IndexPage extends Taro.Component {  
   render () {
-    return <AtButton className='my-button' />
+    return <AtButton class='my-button' />
   }
 }
 ```

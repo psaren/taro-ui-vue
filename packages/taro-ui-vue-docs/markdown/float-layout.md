@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtFloatLayout } from "taro-ui"
+import { AtFloatLayout } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,19 +18,25 @@ import { AtFloatLayout } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/float-layout.scss";
+@import "~taro-ui-vue/dist/style/components/float-layout.scss";
 ```
 :::
 
 ## 一般用法
 
 :::demo
-
-```html
-<AtFloatLayout isOpened title="这是个标题" onClose={this.handleClose.bind(this)}>
-  这是内容区 随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
-  随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写
-</AtFloatLayout>
+```vue
+<template>
+  <view>
+      <AtFloatLayout 
+      isOpened 
+      title="这是个标题" 
+      :onClose="handleClose">
+    这是内容区 随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写这是内容区
+    随你怎么写这是内容区 随你怎么写这是内容区 随你怎么写
+  </AtFloatLayout>
+  </view>
+</template>
 ```
 
 :::

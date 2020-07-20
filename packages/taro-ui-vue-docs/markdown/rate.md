@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtRate } from 'taro-ui'
+import { AtRate } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,8 +17,8 @@ import { AtRate } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/rate.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/rate.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -34,7 +34,7 @@ import { AtRate } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtRate }  from 'taro-ui'
+import { AtRate }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)

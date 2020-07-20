@@ -19,10 +19,10 @@ Module parse failed: Unexpected token (101:11)
 You may need an appropriate loader to handle this file type.
 |     };
 |
->     return <View className={classNames(rootClassName, classObject, this.props.
+>     return <view class={classNames(rootClassName, classObject, this.props.
 className)} style={customStyle}>
-|         <View className="at-pagination__operate">
-|           <View className="at-pagination__btns">
+|         <view class="at-pagination__operate">
+|           <view class="at-pagination__btns">
 ```
 :::
 
@@ -30,7 +30,7 @@ className)} style={customStyle}>
 :::demo
 ```js
 h5: {
-  esnextModules: ['taro-ui']
+  esnextModules: ['taro-ui-vue']
 }
 ```
 :::

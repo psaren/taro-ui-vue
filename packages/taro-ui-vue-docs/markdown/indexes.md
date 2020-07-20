@@ -5,11 +5,11 @@
 
 ## 使用指南
 
-Taro-UI 版本需要在 `v1.5.0` 以上，在 Taro 文件中引入组件
+在 Taro 文件中引入组件
 
 :::demo
 ```js
-import { AtIndexes } from 'taro-ui'
+import { AtIndexes } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,9 +17,9 @@ import { AtIndexes } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/toast.scss";
-@import "~taro-ui/dist/style/components/indexes.scss";
-@import "~taro-ui/dist/style/components/list.scss";
+@import "~taro-ui-vue/dist/style/components/toast.scss";
+@import "~taro-ui-vue/dist/style/components/indexes.scss";
+@import "~taro-ui-vue/dist/style/components/list.scss";
 ```
 :::
 
@@ -34,7 +34,7 @@ import { AtIndexes } from 'taro-ui'
 ```jsx
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtIndexes } from 'taro-ui'
+import { AtIndexes } from 'taro-ui-vue'
 
 export default class Index extends Taro.Component {
   onClick (item) {
@@ -66,14 +66,14 @@ export default class Index extends Taro.Component {
       }
     ]
     return (
-      <View style='height:100vh'>
+      <view style='height:100vh'>
         <AtIndexes
           list={list}
           onClick={this.onClick.bind(this)}
         >
-          <View>自定义内容</View>
+          <view>自定义内容</view>
         </AtIndexes>
-      </View>
+      </view>
     )
   }
 ```
@@ -87,27 +87,48 @@ export default class Index extends Taro.Component {
 ##### html
 :::demo
 
-```html
-<AtIndexes
-  list={list}
-  onScrollIntoView={fn => { this.scrollIntoView = fn }}
->
-  <View className='custom-area'>
-    用户自定义内容
-    <AtSearchBar  placeholder='跳转到指定Key' onActionClick={this.handleActionClick.bind(this)} />
-  </View>
-</AtIndexes>
-```
-
-:::
-
-##### js
-:::demo
-
-```js
-handleActionClick () {
-  this.scrollIntoView && this.scrollIntoView(key)
+```vue
+<template>
+  <view>
+    <AtIndexes
+      :list="list"
+      :onScrollIntoView="handleScroll"
+    >
+      <view class='custom-area'>
+        用户自定义内容
+        <AtSearchBar  
+          placeholder='跳转到指定Key' 
+          :onActionClick="handleActionClick" 
+        />
+      </view>
+    </AtIndexes>
+  </view>
+</template>
+<script>
+import mockData from './mock-data'
+export default {
+  name: 'AtIndexesDemo',
+  data() {
+    return {
+      value: '',
+      list: mockData,
+      scrollToView: null
+    }
+  },
+  methods: {
+    handleActionClick() {
+      if (!this.value) {
+        return
+      }
+      this.scrollToView && this.scrollToView(this.value.toUpperCase())
+      this.value = ''
+    },
+    handleScroll(fn) {
+      this.scrollToView = fn
+    }
+  }
 }
+</script>
 ```
 
 :::

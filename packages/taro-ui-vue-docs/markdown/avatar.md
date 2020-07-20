@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtAvatar } from 'taro-ui'
+import { AtAvatar } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,19 +18,22 @@ import { AtAvatar } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/avatar.scss";
+@import "~taro-ui-vue/dist/style/components/avatar.scss";
 ```
 :::
 
 ## 用法
 
 :::demo
-```html
-<AtAvatar image='https://jdc.jd.com/img/200'></AtAvatar>
-<AtAvatar text='凹凸实验室'></AtAvatar>
-
-<AtAvatar circle image='https://jdc.jd.com/img/200'></AtAvatar>
-<AtAvatar circle text='凹凸实验室'></AtAvatar>
+```vue
+<template>
+  <view>
+    <AtAvatar image='https://jdc.jd.com/img/200'></AtAvatar>
+    <AtAvatar text='凹凸实验室'></AtAvatar>
+    <AtAvatar circle image='https://jdc.jd.com/img/200'></AtAvatar>
+    <AtAvatar circle text='凹凸实验室'></AtAvatar>
+  </view>
+</template>
 ```
 :::
 

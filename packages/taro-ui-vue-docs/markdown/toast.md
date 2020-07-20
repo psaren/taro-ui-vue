@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtToast } from "taro-ui"
+import { AtToast } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,8 +18,8 @@ import { AtToast } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/toast.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/toast.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 

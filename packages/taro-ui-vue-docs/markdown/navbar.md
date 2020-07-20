@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtNavBar } from 'taro-ui'
+import { AtNavBar } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,8 +17,8 @@ import { AtNavBar } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/nav-bar.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/nav-bar.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -57,7 +57,7 @@ import { AtNavBar } from 'taro-ui'
   rightFirstIconType='bullet-list'
   rightSecondIconType='user'
 >
-<View>Taro UI</View>
+<view>Taro UI</view>
 </AtNavBar>
 ```
 

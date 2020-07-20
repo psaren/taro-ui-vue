@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtForm, AtSwitch } from 'taro-ui'
+import { AtForm, AtSwitch } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtForm, AtSwitch } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/switch.scss";
+@import "~taro-ui-vue/dist/style/components/switch.scss";
 ```
 :::
 
@@ -31,7 +31,7 @@ import { AtForm, AtSwitch } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtForm, AtSwitch }  from 'taro-ui'
+import { AtForm, AtSwitch }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)
