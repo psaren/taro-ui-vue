@@ -25,7 +25,7 @@
                 <view class='at-article__p'>
                   这是文本段落。这是文本段落。
                 </view>
-                <Image
+                <image
                   class='at-article__img'
                   src='http://storage.360buyimg.com/mtd/home/32443566_635798770100444_2113947400891531264_n1533825816008.jpg'
                   mode='widthFix'
@@ -39,7 +39,7 @@
                   这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。1234567890123456789012345678901234567890
                   ABCDEFGHIJKLMNOPQRSTUVWXYZ
                 </view>
-                <Image
+                <image
                   class='at-article__img'
                   src='https://img30.360buyimg.com/sku/jfs/t19660/324/841553494/117886/ad2742c1/5aab8d20Ne56ae3bf.jpg'
                   mode='widthFix'
