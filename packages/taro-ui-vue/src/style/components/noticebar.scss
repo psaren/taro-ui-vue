@@ -56,7 +56,7 @@
   &__more {
     color: $color-grey-2;
     font-size: 0;
-
+    flex-shrink: 0;
     .text {
       font-size: $at-noticebar-font-size;
       line-height: $line-height-zh;

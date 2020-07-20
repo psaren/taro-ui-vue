@@ -5,7 +5,7 @@ import { mergeStyle } from '../../utils/common'
 export default {
   name: 'AtTabBar',
   conponents: {
-    AtBadge
+    AtBadge,
   },
   props: {
     customStyle: {
@@ -79,16 +79,16 @@ export default {
         height: `${iconSize}px`,
       }
     },
-    selectedStyle () {
+    selectedStyle() {
       return {
         color: this.selectedColor || '',
       }
     },
-    defaultStyle () {
+    defaultStyle() {
       return {
         color: this.color || '',
       }
-    }
+    },
   },
   methods: {
     /**
@@ -100,5 +100,5 @@ export default {
       this.onClick && this.onClick(index, event)
     },
     classNames,
-  }
+  },
 }

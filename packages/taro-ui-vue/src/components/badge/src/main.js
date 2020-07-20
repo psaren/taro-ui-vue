@@ -17,6 +17,11 @@ const formatValue = (value, maxValue) => {
 
 export default {
   name: 'AtBadge',
+  data() {
+    return {
+      rootClassName: ['at-badge'],
+    }
+  },
   props: {
     dot: {
       type: Boolean,
@@ -39,21 +44,12 @@ export default {
       default: '',
     },
   },
-
-  render() {
-    const { dot, customStyle, className, maxValue, value } = this
-    const rootClassName = ['at-badge']
-
-    const val = formatValue(value, maxValue)
-    return (
-      <view class={classNames(rootClassName, className)} style={customStyle}>
-        {this.$slots.default}
-        {dot ? (
-          <view class="at-badge__dot"></view>
-        ) : (
-          val !== '' && <view class="at-badge__num">{val}</view>
-        )}
-      </view>
-    )
+  computed: {
+    val() {
+      return formatValue(this.value, this.maxValue)
+    },
+  },
+  methods: {
+    classNames,
   },
 }
