@@ -98,7 +98,7 @@ export default {
     },
   },
   beforeMount() {
-    this.onScrollIntoView && this.onScrollIntoView(this.__jumpTarget.bind(this))
+    this.onScrollIntoView && this.onScrollIntoView(this.__jumpTarget)
   },
   mounted() {
     if (ENV === Taro.ENV_TYPE.WEB) {
