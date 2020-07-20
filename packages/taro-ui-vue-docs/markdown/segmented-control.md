@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtSegmentedControl } from 'taro-ui'
+import { AtSegmentedControl } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtSegmentedControl } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/segmented-control.scss";
+@import "~taro-ui-vue/dist/style/components/segmented-control.scss";
 ```
 :::
 
@@ -31,7 +31,7 @@ import { AtSegmentedControl } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtSegmentedControl }  from 'taro-ui'
+import { AtSegmentedControl }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)
@@ -53,17 +53,17 @@ export default class Index extends Taro.Component {
       />
       {
         this.state.current === 0
-        ? <View className='tab-content'>标签1的内容</View>
+        ? <view class='tab-content'>标签1的内容</view>
         : null
       }
       {
         this.state.current === 1
-        ? <View className='tab-content'>标签2的内容</View>
+        ? <view class='tab-content'>标签2的内容</view>
         : null
       }
       {
         this.state.current === 2
-        ? <View className='tab-content'>标签3的内容</View>
+        ? <view class='tab-content'>标签3的内容</view>
         : null
       }
     )

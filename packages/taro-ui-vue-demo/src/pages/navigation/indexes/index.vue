@@ -6,7 +6,7 @@
         :list="mockData"
         topKey='Top'
         :onClick="onClick"
-        :onScrollIntoview="handleScroll"
+        :onScrollIntoView="handleScroll"
       >
         <view class='custom-area'>
           用户自定义内容
@@ -54,8 +54,8 @@ export default {
       if (!this.value) {
         return
       }
+      this.scrollToView && this.scrollToView(this.value.toUpperCase())
       this.value = ''
-      this.scrollIntoView && this.scrollIntoView(this.value.toUpperCase())
     },
 
     handleChange(value) {
@@ -63,7 +63,7 @@ export default {
     },
 
     handleScroll(fn) {
-      this.scrollIntoview = fn
+      this.scrollToView = fn
     }
   },
 }

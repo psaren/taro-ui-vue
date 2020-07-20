@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtBadge } from 'taro-ui'
+import { AtBadge } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,35 +18,41 @@ import { AtBadge } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/badge.scss";
+@import "~taro-ui-vue/dist/style/components/badge.scss";
 ```
 :::
 
 ## 用法
 
 :::demo
-```html
-<AtBadge value={10} maxValue={99}>
+```vue
+<template>
+  <AtBadge :value="10" :maxValue="99">
     <AtButton size='small'>按钮</AtButton>
-</AtBadge>
+  </AtBadge>
+</template>
 ```
 :::
 
 ## 小红点与文本
 
 :::demo
-```html
-<AtBadge dot>
+```vue
+<template>
+  <view>
+    <AtBadge dot>
     <AtButton size='small'>按钮</AtButton>
-</AtBadge>
-
-<AtBadge value='NEW'>
-    <AtButton size='small'>按钮</AtButton>
-</AtBadge>
-
-<AtBadge value={'···'}>
-    <AtButton size='small'>按钮</AtButton>
-</AtBadge>
+    </AtBadge>  
+  
+    <AtBadge value='NEW'>
+        <AtButton size='small'>按钮</AtButton>
+    </AtBadge>  
+  
+    <AtBadge value="···"
+        <AtButton size='small'>按钮</AtButton>
+    </AtBadge>
+  </view>
+</template>
 ```
 :::
 

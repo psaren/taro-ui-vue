@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtActionSheet, AtActionSheetItem } from "taro-ui"
+import { AtActionSheet, AtActionSheetItem } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtActionSheet, AtActionSheetItem } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/action-sheet.scss";
+@import "~taro-ui-vue/dist/style/components/action-sheet.scss";
 ```
 :::
 
@@ -26,15 +26,52 @@ import { AtActionSheet, AtActionSheetItem } from "taro-ui"
 
 :::demo
 
-```html
-<AtActionSheet isOpened>
-  <AtActionSheetItem>
-    按钮一
-  </AtActionSheetItem>
-  <AtActionSheetItem>
-    按钮二
-  </AtActionSheetItem>
-</AtActionSheet>
+```vue
+<template>
+  <AtActionSheet
+    :isOpened="isOpened1"
+    :on-close="handleClose"
+  >
+    <AtActionSheetItem
+        :on-click="clickBtn1"
+    >
+      按钮一
+    </AtActionSheetItem>
+    <AtActionSheetItem
+        :on-click="clickBtn2"
+    >
+      按钮二
+    </AtActionSheetItem>
+  </AtActionSheet>
+</template>
+<script>
+import Taro from '@tarojs/taro'
+export default {
+  name: 'AtActionSheetDemo',
+  data() {
+    return {
+      isOpened1: true
+    }
+  },
+  methods: {
+    handleClose() {
+      this.isOpened1 = false
+    },
+    showToast (name) {
+      Taro.showToast({
+        icon: 'none',
+        title: name
+      })
+    },
+    clickBtn1() {
+      this.showToast('点击了按钮一')
+    },
+    clickBtn2() {
+      this.showToast('点击了按钮二')
+    },
+  }
+}
+</script>
 ```
 
 :::
@@ -43,15 +80,25 @@ import { AtActionSheet, AtActionSheetItem } from "taro-ui"
 
 :::demo
 
-```html
-<AtActionSheet isOpened cancelText='取消' title='头部标题可以用通过转义字符换行'>
-  <AtActionSheetItem>
-    按钮一
-  </AtActionSheetItem>
-  <AtActionSheetItem>
-    按钮二
-  </AtActionSheetItem>
-</AtActionSheet>
+```vue
+<template>
+  <AtActionSheet
+    cancelText='取消'
+    :isOpened="isOpened2"
+    title='清除位置信息后， 别人将不能查看到你'
+  >
+    <AtActionSheetItem
+        :on-click="clickBtn1"
+    >
+      按钮一
+    </AtActionSheetItem>
+    <AtActionSheetItem
+        :on-click="clickBtn2"
+    >
+      按钮二
+    </AtActionSheetItem>
+  </AtActionSheet>
+</template>
 ```
 
 :::
@@ -60,15 +107,32 @@ import { AtActionSheet, AtActionSheetItem } from "taro-ui"
 
 :::demo
 
-```html
-<AtActionSheet isOpened cancelText='取消' title='头部标题可以用通过转义字符换行' onCancel={ this.handleCancel } onClose={ this.handleClose }>
-  <AtActionSheetItem onClick={ this.handleClick }>
-    按钮一
-  </AtActionSheetItem>
-  <AtActionSheetItem>
-    按钮二
-  </AtActionSheetItem>
-</AtActionSheet>
+```vue
+<template>
+  <AtActionSheet
+    cancelText='取消'
+    :isOpened="state.isOpened3"
+    :on-cancel="handleCancel"
+    :on-close="handleClose"
+    title='清除位置信息后， 别人将不能查看到你'
+  >
+    <AtActionSheetItem
+        :on-click="clickBtn1"
+    >
+      按钮一
+    </AtActionSheetItem>
+    <AtActionSheetItem
+        :on-click="clickBtn2"
+    >
+      按钮二
+    </AtActionSheetItem>
+    <AtActionSheetItem
+        :on-click="clickBtn3"
+    >
+      <text class='danger'>清除位置信息并退出</text>
+    </AtActionSheetItem>
+  </AtActionSheet>
+</template>
 ```
 
 :::

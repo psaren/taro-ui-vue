@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtButton } from 'taro-ui'
+import { AtButton } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,35 +18,47 @@ import { AtButton } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/button.scss";
-@import "~taro-ui/dist/style/components/loading.scss";
+@import "~taro-ui-vue/dist/style/components/button.scss";
+@import "~taro-ui-vue/dist/style/components/loading.scss";
 ```
 :::
 
 ## 一般用法
 
 :::demo
-```html
-<AtButton>按钮文案</AtButton>
-<AtButton type='primary'>按钮文案</AtButton>
-<AtButton type='secondary'>按钮文案</AtButton>
+```vue
+<template>
+  <view>
+    <AtButton>按钮文案</AtButton>
+    <AtButton type='primary'>按钮文案</AtButton>
+    <AtButton type='secondary'>按钮文案</AtButton>
+  </view>
+</template>
 ```
 :::
 
 ## 不同尺寸
 
 :::demo
-```html
-<AtButton type='primary' size='normal'>按钮文案</AtButton>
-<AtButton type='primary' size='small'>按钮文案</AtButton>
+```vue
+<template>
+  <view>
+    <AtButton type='primary' size='normal'>按钮文案</AtButton>
+    <AtButton type='primary' size='small'>按钮文案</AtButton>
+  </view>
+</template>
 ```
 :::
 
 ## 带 loading icon
 
 :::demo
-```html
-<AtButton loading type='primary'>按钮文案</AtButton>
+```vue
+<template>
+  <view>
+    <AtButton loading type='primary'>按钮文案</AtButton>
+  </view>
+</template>
 ```
 :::
 

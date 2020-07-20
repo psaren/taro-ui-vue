@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtTag } from 'taro-ui'
+import { AtTag } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtTag } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/tag.scss";
+@import "~taro-ui-vue/dist/style/components/tag.scss";
 ```
 :::
 

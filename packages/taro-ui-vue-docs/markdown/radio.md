@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtRadio } from 'taro-ui'
+import { AtRadio } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,8 +17,8 @@ import { AtRadio } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/radio.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/radio.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -34,7 +34,7 @@ import { AtRadio } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtRadio }  from 'taro-ui'
+import { AtRadio }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)

@@ -11,7 +11,7 @@
 
 :::demo
 ```js
-import { AtTextarea } from 'taro-ui'
+import { AtTextarea } from 'taro-ui-vue'
 ```
 :::
 
@@ -19,7 +19,7 @@ import { AtTextarea } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/textarea.scss";
+@import "~taro-ui-vue/dist/style/components/textarea.scss";
 ```
 :::
 
@@ -38,7 +38,7 @@ import { AtTextarea } from 'taro-ui'
 ```js
 
 import Taro from '@tarojs/taro'
-import { AtTextarea }  from 'taro-ui'
+import { AtTextarea }  from 'taro-ui-vue'
 export default class Index extends Taro.Component {
   constructor () {
     super(...arguments)

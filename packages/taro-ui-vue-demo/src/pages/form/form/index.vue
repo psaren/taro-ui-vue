@@ -8,8 +8,8 @@
         <view class='panel__content no-padding'>
           <view class='component-item'>
             <AtForm
-              @submit="handleSubmit"
-              @reset="handleReset"
+              :onSubmit="handleSubmit"
+              :onReset="handleReset"
             >
               <AtInput
                 required
@@ -39,12 +39,12 @@
               />
               <view class='component-item__btn-group'>
                 <view class='component-item__btn-group__btn-item'>
-                  <AtButton type='primary' formType='submit'>
+                  <AtButton type='primary' formType='submit' :onClick="handleSubmit">
                     提交
                   </AtButton>
                 </view>
                 <view class='component-item__btn-group__btn-item'>
-                  <AtButton formType='reset'>重置</AtButton>
+                  <AtButton formType='reset' :onClick="handleReset">重置</AtButton>
                 </view>
               </view>
             </AtForm>
@@ -111,6 +111,7 @@ export default {
     },
 
     handleReset() {
+      console.log('handleReset')
       this.setState({
         isOpened: true,
         text: `表单已被重置`,

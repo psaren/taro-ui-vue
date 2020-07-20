@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtNoticebar } from 'taro-ui'
+import { AtNoticebar } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtNoticebar } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/noticebar.scss";
+@import "~taro-ui-vue/dist/style/components/noticebar.scss";
 ```
 :::
 

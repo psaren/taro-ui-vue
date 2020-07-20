@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtSlider } from 'taro-ui'
+import { AtSlider } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtSlider } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/slider.scss";
+@import "~taro-ui-vue/dist/style/components/slider.scss";
 ```
 :::
 

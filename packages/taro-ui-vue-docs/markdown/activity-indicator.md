@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtActivityIndicator } from 'taro-ui'
+import { AtActivityIndicator } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,8 +18,8 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/activity-indicator.scss";
-@import '~taro-ui/dist/style/components/loading.scss';
+@import "~taro-ui-vue/dist/style/components/activity-indicator.scss";
+@import '~taro-ui-vue/dist/style/components/loading.scss';
 ```
 :::
 
@@ -27,8 +27,10 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 
-```html
-<AtActivityIndicator></AtActivityIndicator>
+```vue
+<template>
+  <AtActivityIndicator></AtActivityIndicator>
+</template>
 ```
 
 :::
@@ -37,8 +39,10 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 
-```html
-<AtActivityIndicator size={32}></AtActivityIndicator>
+```vue
+<template>
+  <AtActivityIndicator :size="32"></AtActivityIndicator>
+</template>
 ```
 
 :::
@@ -47,8 +51,10 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 
-```html
-<AtActivityIndicator color='#13CE66'></AtActivityIndicator>
+```vue
+<template>
+  <AtActivityIndicator color='#13CE66'></AtActivityIndicator>
+</template>
 ```
 
 :::
@@ -57,8 +63,10 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 
-```html
-<AtActivityIndicator content='加载中...'></AtActivityIndicator>
+```vue
+<template>
+  <AtActivityIndicator content='加载中...'></AtActivityIndicator>
+</template>
 ```
 
 :::
@@ -67,8 +75,10 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 
-```html
-<AtActivityIndicator isOpened={true}></AtActivityIndicator>
+```vue
+<template>
+  <AtActivityIndicator :isOpened="true"></AtActivityIndicator>
+</template>
 ```
 
 :::
@@ -77,8 +87,10 @@ import { AtActivityIndicator } from 'taro-ui'
 
 :::demo
 
-```html
-<AtActivityIndicator mode='center'></AtActivityIndicator>
+```vue
+<template>
+  <AtActivityIndicator mode='center'></AtActivityIndicator>
+</template>
 ```
 
 :::

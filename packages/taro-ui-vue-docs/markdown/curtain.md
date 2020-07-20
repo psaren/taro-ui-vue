@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtCurtain } from 'taro-ui'
+import { AtCurtain } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtCurtain } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/curtain.scss";
+@import "~taro-ui-vue/dist/style/components/curtain.scss";
 ```
 :::
 
@@ -28,48 +28,51 @@ import { AtCurtain } from 'taro-ui'
 * 该组件为受控组件，组件的开关状态由 isOpened 来控制，开发者需要通过 onClose 事件来更新 isOpened 值变化,从而关闭幕帘。
 
 :::demo
+```vue
+<template>
+  <view>
+    <AtCurtain
+      :isOpened="isOpened"
+      onClose="onClose"
+    >
+      <image
+        style='width:100%;height:250px'
+        :src="curtainPng"
+      />
+    </AtCurtain>
+    <AtButton
+      :onClick="handleChange">
+      右上关闭幕帘
+    </AtButton>
+  </view>
+</template>
 
-```js
-import Taro from '@tarojs/taro'
-import { View, Image } from '@tarojs/components'
-import { AtCurtain,AtButton } from 'taro-ui'
+<script>
 import curtainPng from '../../../assets/images/curtain.png'
-
-export default class TagPage extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
+import { AtCurtain, AtButton } from 'taro-ui-vue'
+export default {
+  name: 'AtCurtainDemo',
+  components: {
+    AtCurtain, 
+    AtButton
+  },
+  data() {
+    return {
       isOpened: false,
+      curtainPng,
     }
-  }
-  handleChange () {
-    this.setState({
-      isOpened: true
-    })
-  }
-  onClose () {
-    this.setState({
-      isOpened: false
-    })
-  }
-  render () {
-    return (
-      <AtCurtain
-        isOpened={this.state.isOpened}
-        onClose={this.onClose.bind(this)}
-      >
-        <Image
-          style='width:100%;height:250px'
-          src={curtainPng}
-        />
-      </AtCurtain>
-      <AtButton
-        onClick={this.handleChange.bind(this)}>
-        右上关闭幕帘
-      </AtButton>
-    )
-  }
+  },
+  methods: {
+    handleChange () {
+      this.isOpened = true
+    },
+
+    onClose () {
+      this.isOpened = false
+    }
+  },
 }
+</script>
 ```
 
 :::

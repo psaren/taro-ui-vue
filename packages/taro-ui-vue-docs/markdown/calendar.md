@@ -12,7 +12,7 @@
 
 :::demo
 ```js
-import { AtCalendar } from "taro-ui"
+import { AtCalendar } from 'taro-ui-vue'
 ```
 :::
 
@@ -20,7 +20,7 @@ import { AtCalendar } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/calendar.scss";
+@import "~taro-ui-vue/dist/style/components/calendar.scss";
 ```
 :::
 
@@ -59,7 +59,7 @@ import { AtCalendar } from "taro-ui"
 :::demo
 
 ```html
-<AtCalendar marks={ [ { value: '2018/11/11' } ] } />
+<AtCalendar :marks="[ { value: '2018/11/11' } ]" />
 ```
 
 :::
@@ -69,7 +69,7 @@ import { AtCalendar } from "taro-ui"
 :::demo
 
 ```html
-<AtCalendar isSwiper="{false}" />
+<AtCalendar :isSwiper="false" />
 ```
 
 :::
@@ -89,8 +89,7 @@ import { AtCalendar } from "taro-ui"
 :::demo
 
 ```html
-<AtCalendar isMultiSelect currentDate={{start: '2018/10/28', end:
-'2018/11/11'}}/>
+<AtCalendar isMultiSelect currentDate="{start: '2018/10/28', end: '2018/11/11'}"/>
 ```
 
 :::
@@ -100,7 +99,7 @@ import { AtCalendar } from "taro-ui"
 :::demo
 
 ```html
-<AtCalendar validDates={ [ { value: '2020/01/01' } ] } />
+<AtCalendar :validDates="[ { value: '2020/01/01' } ]" />
 ```
 
 :::

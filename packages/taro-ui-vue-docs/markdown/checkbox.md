@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtCheckbox } from 'taro-ui'
+import { AtCheckbox } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,8 +17,8 @@ import { AtCheckbox } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/checkbox.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/checkbox.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -31,20 +31,23 @@ import { AtCheckbox } from 'taro-ui'
 * 由于小程序组件化的限制，AtCheckbox 嵌套在 AtForm 或原生小程序组件 Form 中的时候，onSubmit 事件获得的 event 中的 event.detail.value 始终为空对象，开发者要获取数据，可以自行在页面的 state 中获取
 
 :::demo
-
-```js
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtCheckbox } from 'taro-ui'
-
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      checkedList: ['list1']
-    }
-    this.checkboxOption = [{
+``` vue
+<template>
+  <view>
+    <AtCheckbox
+      :options="checkboxOption"
+      :selectedList="checkedList"
+      :onChange="handleChange"
+    />
+  </view>
+</template>
+<script>
+export default {
+  name: 'CheckBoxDemo',
+  data() {
+    return {
+      checkedList: ['list1'],
+      checkboxOption: [{
         value: 'list1',
         label: 'iPhone X',
         desc: '部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。'
@@ -62,22 +65,15 @@ export default class Index extends Taro.Component {
         desc: '部分地区提供电子普通发票，用户可自行打印，效力等同纸质普通发票，具体以实际出具的发票类型为准。',
         disabled: true
     }]
-  }
-  handleChange (value) {
-    this.setState({
-      checkedList: value
-    })
-  }
-  render () {
-    return (
-      <AtCheckbox
-        options={this.checkboxOption}
-        selectedList={this.state.checkedList}
-        onChange={this.handleChange.bind(this)}
-      />
-    )
-  }
+    }
+  },
+  methods: {
+    handleChange (value) {
+      this.checkedList = value
+    }
+  },
 }
+</script>
 
 ```
 

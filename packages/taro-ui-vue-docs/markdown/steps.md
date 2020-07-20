@@ -9,7 +9,7 @@ Taro-UI 版本需要在 `v1.4.0` 以上，在 Taro 文件中引入组件
 
 :::demo
 ```js
-import { AtSteps } from 'taro-ui'
+import { AtSteps } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,8 +17,8 @@ import { AtSteps } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/steps.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/steps.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -32,7 +32,7 @@ import { AtSteps } from 'taro-ui'
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtSteps } from 'taro-ui'
+import { AtSteps } from 'taro-ui-vue'
 export default class TimelinePage extends Taro.Component {
   constructor () {
     super(...arguments)
@@ -71,7 +71,7 @@ export default class TimelinePage extends Taro.Component {
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtSteps } from 'taro-ui'
+import { AtSteps } from 'taro-ui-vue'
 export default class TimelinePage extends Taro.Component {
   constructor () {
     super(...arguments)
@@ -136,7 +136,7 @@ export default class TimelinePage extends Taro.Component {
 
 ```js
 import Taro from '@tarojs/taro'
-import { AtSteps } from 'taro-ui'
+import { AtSteps } from 'taro-ui-vue'
 export default class TimelinePage extends Taro.Component {
   constructor () {
     super(...arguments)

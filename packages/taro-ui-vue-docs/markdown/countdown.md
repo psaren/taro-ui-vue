@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtCountdown } from 'taro-ui'
+import { AtCountdown } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,7 +17,7 @@ import { AtCountdown } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/countdown.scss";
+@import "~taro-ui-vue/dist/style/components/countdown.scss";
 ```
 :::
 
@@ -27,29 +27,33 @@ import { AtCountdown } from 'taro-ui'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtCountdown } from 'taro-ui'
+```vue
+<template>
+  <view>
+    <AtCountdown
+      :format="{ hours: ':', minutes: ':', seconds: '' }"
+      :seconds="10"
+      :onTimeUp="onTimeUp"
+    />
+  </view>
+</template>
 
-export default class CountdownPage extends Taro.Component {
-  onTimeUp () {
-    Taro.showToast({
-      title: '时间到',
-      icon: 'success',
-      duration: 2000
-    })
-  }
-  render () {
-    return (
-      <AtCountdown
-        format={{ hours: ':', minutes: ':', seconds: '' }}
-        seconds={10}
-        onTimeUp={this.onTimeUp.bind(this)}
-      />
-    )
+<script>
+import Taro from '@tarojs/taro'
+export default {
+  name: 'AtCountdownDemo',
+  methods: {
+    onTimeUp () {
+      Taro.showToast({
+        title: '时间到',
+        icon: 'success',
+        duration: 2000
+      })
+    }
   }
 }
+</script>
+
 ```
 
 :::
@@ -58,13 +62,13 @@ export default class CountdownPage extends Taro.Component {
 
 :::demo
 
-```html
+```vue
 <AtCountdown
   isShowDay
-  day={2}
-  hours={1}
-  minutes={1}
-  seconds={10}
+  :day="2"
+  :hours="1"
+  :minutes="1"
+  :seconds="10"
 />
 ```
 
@@ -74,14 +78,14 @@ export default class CountdownPage extends Taro.Component {
 
 :::demo
 
-```html
+```vue
 <AtCountdown
   isShowDay
-  format={{ hours: ':', minutes: ':', seconds: '' }}
-  day={2}
-  hours={1}
-  minutes={1}
-  seconds={10}
+  :format="{ hours: ':', minutes: ':', seconds: '' }"
+  :day="2"
+  :hours="1"
+  :minutes="1"
+  :seconds="10"
 />
 ```
 
@@ -92,11 +96,11 @@ export default class CountdownPage extends Taro.Component {
 
 :::demo
 
-```html
+```vue
 <AtCountdown
   isCard
-  minutes={1}
-  seconds={10}
+  :minutes="1"
+  :seconds="10"
 />
 ```
 

@@ -9,7 +9,7 @@
 
 :::demo
 ```js
-import { AtLoadMore } from 'taro-ui'
+import { AtLoadMore } from 'taro-ui-vue'
 ```
 :::
 
@@ -17,9 +17,9 @@ import { AtLoadMore } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/load-more.scss";
-@import "~taro-ui/dist/style/components/activity-indicator.scss";
-@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui-vue/dist/style/components/load-more.scss";
+@import "~taro-ui-vue/dist/style/components/activity-indicator.scss";
+@import "~taro-ui-vue/dist/style/components/button.scss";
 ```
 :::
 
@@ -32,7 +32,7 @@ import { AtLoadMore } from 'taro-ui'
 ```js
 import Taro from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtLoadMore } from 'taro-ui'
+import { AtLoadMore } from 'taro-ui-vue'
 
 export default class LoadMorePage extends Taro.Component {
   constructor () {

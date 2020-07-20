@@ -16,7 +16,7 @@ imports:
 
 :::demo
 ```js
-import { AtIcon } from 'taro-ui'
+import { AtIcon } from 'taro-ui-vue'
 ```
 :::
 
@@ -24,7 +24,7 @@ import { AtIcon } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 
@@ -32,7 +32,7 @@ import { AtIcon } from 'taro-ui'
 **推荐使用新的引入方式，采用传统的类名图标方式即可，例如：**
 
 ```js
-<View className='at-icon at-icon-settings'></View>
+<view class='at-icon at-icon-settings'></view>
 ```
 
 ## 一般用法

@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtTimeline } from 'taro-ui'
+import { AtTimeline } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,8 +18,8 @@ import { AtTimeline } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/timeline.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/timeline.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 

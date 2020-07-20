@@ -14,7 +14,7 @@
 
 :::demo
 ```js
-import { AtFab } from 'taro-ui'
+import { AtFab } from 'taro-ui-vue'
 ```
 :::
 
@@ -22,7 +22,7 @@ import { AtFab } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/fab.scss";
+@import "~taro-ui-vue/dist/style/components/fab.scss";
 ```
 :::
 
@@ -33,9 +33,9 @@ import { AtFab } from 'taro-ui'
 > 浮动按钮默认不会脱离文档流，请自行包含一个父元素并设置 `fixed` 定位
 
 :::demo
-```html
+```vue
 <AtFab>
-  <Text className='at-fab__icon at-icon at-icon-menu'></Text>
+  <text class='at-fab__icon at-icon at-icon-menu'></text>
 </AtFab>
 ```
 :::
@@ -43,9 +43,9 @@ import { AtFab } from 'taro-ui'
 ## 点击事件
 
 :::demo
-```html
-<AtFab onClick={this.onButtonClick.bind(this)}>
-  <Text className='at-fab__icon at-icon at-icon-menu'></Text>
+```vue
+<AtFab :onClick="onButtonClick">
+  <text class='at-fab__icon at-icon at-icon-menu'></text>
 </AtFab>
 ```
 :::

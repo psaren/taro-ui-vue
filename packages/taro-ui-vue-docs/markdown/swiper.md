@@ -27,7 +27,7 @@ class App extends Component {
   render () {
     return (
       <Swiper
-        className='test-h'
+        class='test-h'
         indicatorColor='#999'
         indicatorActiveColor='#333'
         vertical
@@ -35,13 +35,13 @@ class App extends Component {
         indicatorDots
         autoplay>
         <SwiperItem>
-          <View className='demo-text-1'>1</View>
+          <view class='demo-text-1'>1</view>
         </SwiperItem>
         <SwiperItem>
-          <View className='demo-text-2'>2</View>
+          <view class='demo-text-2'>2</view>
         </SwiperItem>
         <SwiperItem>
-          <View className='demo-text-3'>3</View>
+          <view class='demo-text-3'>3</view>
         </SwiperItem>
       </Swiper>
     )

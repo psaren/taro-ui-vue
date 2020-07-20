@@ -6,7 +6,7 @@
 
 ## 使用指南
 
-如果已经全局引入了 `taro-ui` 的样式文件，则无需再次引入
+如果已经全局引入了 `taro-ui-vue` 的样式文件，则无需再次引入
 
 > 由于 `app.js` 添加的样式文件 在小程序上只能影响 `page` 样式,不能影响 `component` 的样式，所以在自定义组件里面使用时，你可能需要再次引入
 
@@ -14,12 +14,12 @@
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/article.scss";
+@import "~taro-ui-vue/dist/style/components/article.scss";
 ```
 :::
 
 
-## 可用样式类目
+## 可用样式类目
 
 :::demo
 ```CSS
@@ -36,30 +36,46 @@
 ## 使用举例
 
 :::demo
-```html
-<View className='at-article'>
-  <View className='at-article__h1'>
-    这是一级标题这是一级标题
-  </View>
-  <View className='at-article__info'>
-    2017-05-07&nbsp;&nbsp;&nbsp;这是作者
-  </View>
-  <View className='at-article__content'>
-    <View className='at-article__section'>
-      <View className='at-article__h2'>这是二级标题</View>
-      <View className='at-article__h3'>这是三级标题</View>
-      <View className='at-article__p'>
-        这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本落。这是文本段落。1234567890123456789012345678901234567890 ABCDEFGHIJKLMNOPQRSTUVWXYZ
-      </View>
-      <View className='at-article__p'>
-        这是文本段落。这是文本段落。
-      </View>
-      <Image 
-        className='at-article__img' 
-        src='https://jdc.jd.com/img/400x400' 
-        mode='widthFix' />
-    </View>
-  </View>
-</View>
+```vue
+<template>
+  <view class='at-article'>
+    <view class='at-article__h1'>这是一级标题这是一级标题</view>
+    <view class='at-article__info'>
+      2017-05-07&nbsp;&nbsp;&nbsp;这是作者
+    </view>
+    <view class='at-article__content'>
+      <view class='at-article__section'>
+        <view class='at-article__h2'>这是二级标题</view>
+        <view class='at-article__h3'>这是三级标题</view>
+        <view class='at-article__p'>
+          这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。1234567890123456789012345678901234567890
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </view>
+        <view class='at-article__p'>
+          这是文本段落。这是文本段落。
+        </view>
+        <image
+          class='at-article__img'
+          src='http://storage.360buyimg.com/mtd/home/32443566_635798770100444_2113947400891531264_n1533825816008.jpg'
+          mode='widthFix'
+        />
+      </view>
+
+      <view class='at-article__section'>
+        <view class='at-article__h2'>这是二级标题</view>
+        <view class='at-article__h3'>这是三级标题</view>
+        <view class='at-article__p'>
+          这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。这是文本段落。1234567890123456789012345678901234567890
+          ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </view>
+        <image
+          class='at-article__img'
+          src='https://img30.360buyimg.com/sku/jfs/t19660/324/841553494/117886/ad2742c1/5aab8d20Ne56ae3bf.jpg'
+          mode='widthFix'
+        />
+      </view>
+    </view>
+  </view>
+</template>
 ```
 :::

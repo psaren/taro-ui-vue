@@ -25,6 +25,7 @@ export default {
     'pages/advanced/calendar/index',
     'pages/form/form/index',
     'pages/form/checkbox/index',
+    'pages/form/image-picker/index',
     'pages/form/input/index',
     'pages/form/input-number/index',
     'pages/form/picker/index',

@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtProgress } from 'taro-ui'
+import { AtProgress } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,8 +18,8 @@ import { AtProgress } from 'taro-ui'
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/progress.scss";
-@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui-vue/dist/style/components/progress.scss";
+@import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
 :::
 

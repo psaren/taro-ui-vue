@@ -49,7 +49,7 @@ $ npm install taro-ui
 :::demo
 ```js
 h5: {
-  esnextModules: ['taro-ui']
+  esnextModules: ['taro-ui-vue']
 }
 ```
 :::
@@ -63,7 +63,7 @@ h5: {
 :::demo
 ```js
 // page.js
-import { AtButton } from 'taro-ui'
+import { AtButton } from 'taro-ui-vue'
 
 // 除了引入所需的组件，还需要手动引入组件样式
 // app.js
@@ -83,14 +83,14 @@ import 'taro-ui/dist/style/index.scss' // 引入组件样式 - 方式一
 - **全局引入（CSS中）：** 在 `app.scss` 样式文件中 `import` 组件样式并按照文档说明使用
 :::demo
 ```scss
-@import "~taro-ui/dist/style/index.scss"; // 引入组件样式 - 方式二
+@import "~taro-ui-vue/dist/style/index.scss"; // 引入组件样式 - 方式二
 ```
 :::
 
 - **按需引入：** 在页面样式或全局样式中 `import` 需要的组件样式
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/button.scss"; // 引入所需的组件样式 - 方式三
+@import "~taro-ui-vue/dist/style/components/button.scss"; // 引入所需的组件样式 - 方式三
 ```
 :::
 
@@ -104,7 +104,7 @@ import 'taro-ui/dist/style/index.scss' // 引入组件样式 - 方式一
 ```jsx
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { AtButton } from 'taro-ui'
+import { AtButton } from 'taro-ui-vue'
 
 import './index.scss'
 
@@ -115,9 +115,9 @@ export default class Index extends Component {
   
   render () {
     return (
-      <View className='index'>
+      <view class='index'>
          <AtButton type='primary'>按钮文案</AtButton>
-      </View>
+      </view>
     )
   }
 }
@@ -128,7 +128,7 @@ export default class Index extends Component {
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/index.scss"; // 引入组件样式，仅需引入一次即可
+@import "~taro-ui-vue/dist/style/index.scss"; // 引入组件样式，仅需引入一次即可
 ```
 :::
 
@@ -138,7 +138,7 @@ export default class Index extends Component {
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui-vue/dist/style/components/button.scss";
 ```
 :::
 

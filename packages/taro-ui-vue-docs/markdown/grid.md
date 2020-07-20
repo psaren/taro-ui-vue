@@ -10,7 +10,7 @@
 
 :::demo
 ```js
-import { AtGrid } from "taro-ui"
+import { AtGrid } from 'taro-ui-vue'
 ```
 :::
 
@@ -18,7 +18,7 @@ import { AtGrid } from "taro-ui"
 
 :::demo
 ```scss
-@import "~taro-ui/dist/style/components/grid.scss";
+@import "~taro-ui-vue/dist/style/components/grid.scss";
 ```
 :::
 
@@ -27,7 +27,7 @@ import { AtGrid } from "taro-ui"
 :::demo
 
 ```html
-<AtGrid data={
+<AtGrid :data="
   [
     {
       image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
@@ -53,8 +53,8 @@ import { AtGrid } from "taro-ui"
       image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
       value: '手机馆'
     }
-  ]
-} />
+  ]"
+ />
 ```
 
 :::
@@ -64,7 +64,7 @@ import { AtGrid } from "taro-ui"
 :::demo
 
 ```html
-<AtGrid mode='rect' data={
+<AtGrid mode='rect' :data="
  [
     {
       image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
@@ -90,8 +90,8 @@ import { AtGrid } from "taro-ui"
       image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
       value: '手机馆'
     }
-  ]
-} />
+  ]"
+ />
 ```
 
 :::
@@ -101,7 +101,7 @@ import { AtGrid } from "taro-ui"
 :::demo
 
 ```html
-<AtGrid mode='rect' hasBorder={false} data={
+<AtGrid mode='rect' :hasBorder="false" :data="
  [
     {
       image: 'https://img12.360buyimg.com/jdphoto/s72x72_jfs/t6160/14/2008729947/2754/7d512a86/595c3aeeNa89ddf71.png',
@@ -127,8 +127,8 @@ import { AtGrid } from "taro-ui"
       image: 'https://img30.360buyimg.com/jdphoto/s72x72_jfs/t5770/97/5184449507/2423/294d5f95/595c3b4dNbc6bc95d.png',
       value: '手机馆'
     }
-  ]
-} />
+  ]"
+/>
 ```
 
 :::
