@@ -74,14 +74,8 @@ const AtListItem = Vue.extend({
     },
   },
   computed: {
-    rootClass () {
-      const {
-        note,
-        thumb,
-        disabled,
-        hasBorder,
-        className
-      } = this
+    rootClass() {
+      const { note, thumb, disabled, hasBorder, className } = this
       return classNames(
         'at-list__item',
         {
@@ -93,7 +87,7 @@ const AtListItem = Vue.extend({
         className
       )
     },
-    iconClass () {
+    iconClass() {
       const { iconInfo } = this
       return classNames(
         iconInfo.prefixClass || 'at-icon',
@@ -102,7 +96,7 @@ const AtListItem = Vue.extend({
         },
         iconInfo.className
       )
-    }
+    },
   },
   methods: {
     /**
@@ -130,7 +124,7 @@ const AtListItem = Vue.extend({
         this.onSwitchChange(event)
       }
     },
-    getIconStyle () {
+    getIconStyle() {
       const { iconInfo } = this
       return mergeStyle(
         {
@@ -139,7 +133,7 @@ const AtListItem = Vue.extend({
         },
         iconInfo.customStyle
       )
-    }
+    },
   },
 })
 

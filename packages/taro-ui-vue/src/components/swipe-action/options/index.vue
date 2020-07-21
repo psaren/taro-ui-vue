@@ -3,11 +3,11 @@
     :id="`swipeActionOptions-${componentId}`" 
     :class="rootClass"
   >
-    <slot></slot>
+    <slot />
   </view>
 </template>
 
-<script>
-import AtSwipeActionOptions from './index.js'
+<script lang='ts'>
+import AtSwipeActionOptions from './index'
 export default AtSwipeActionOptions
 </script>

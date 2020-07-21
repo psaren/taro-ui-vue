@@ -1,23 +1,24 @@
 <template>
-  <view class='page'>
+  <view class="page">
     <!-- S Header -->
-    <DocsHeader title='LoadMore 页面提示'></DocsHeader>
+    <DocsHeader title="LoadMore 页面提示" />
     <!-- E Header -->
 
     <!-- S Body -->
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 文字 -->
-      <view class='panel'>
-        <view class='panel__title'>一般用法</view>
-        <view class='panel__content no-padding'>
+      <view class="panel">
+        <view class="panel__title">
+          一般用法
+        </view>
+        <view class="panel__content no-padding">
           <AtLoadMore
-            :onClick="handleClick"
+            :on-click="handleClick"
             :status="status"
           />
         </view>
       </view>
     </view>
-    <!-- E Body -->
   </view>
 </template>
 <script>
@@ -31,6 +32,7 @@ export default {
   },
   methods: {
     handleClick() {
+      console.log(123)
       this.status = 'loading'
       setTimeout(() => {
         this.status = 'noMore'

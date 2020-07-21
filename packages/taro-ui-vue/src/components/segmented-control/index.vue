@@ -5,11 +5,11 @@
   >
     <view
       v-for="(value, i) in values"
+      :key="value"
       :class="classNames('at-segmented-control__item', {
         'at-segmented-control__item--active': current === i,
       })"
       :style="current === i ? selectedItemStyle : itemStyle"
-      :key="value"
       @tap="handleClick(i, $event)"
     >
       {{ value }}
@@ -17,7 +17,7 @@
   </view>
 </template>
 
-<script>
+<script lang='ts'>
 import AtSegmentedControl from './index'
 export default AtSegmentedControl
 </script>

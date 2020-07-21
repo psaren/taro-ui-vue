@@ -46,7 +46,7 @@
     </view>
   </view>
 </template>
-<script>
+<script lang="ts">
 import AtCard from './index'
 export default AtCard
 </script>

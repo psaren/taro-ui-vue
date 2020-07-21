@@ -1,11 +1,12 @@
 <template>
-   <form
+  <form
     :class="rootCls"
     :style="customStyle"
-    @submit="handleSubmit"
     :reportSubmit="reportSubmit"
-    @reset="handleReset">
-    <slot></slot>
+    @submit="handleSubmit"
+    @reset="handleReset"
+  >
+    <slot />
   </form>
 </template>
 
