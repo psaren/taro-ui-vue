@@ -62,12 +62,11 @@ export default {
     } else if (status === 'more') {
       component = (
         <view class="at-load-more__cnt">
-          <AtButton 
-            full 
-            onTap={this.onClick.bind(this)} 
-            onClick={this.onClick.bind(this)} 
-            customStyle={moreBtnStyle}
-          >
+          <AtButton
+            full
+            onTap={this.onClick.bind(this)}
+            onClick={this.onClick.bind(this)}
+            customStyle={moreBtnStyle}>
             {moreText}
           </AtButton>
         </view>
