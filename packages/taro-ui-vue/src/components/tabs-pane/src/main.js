@@ -25,23 +25,7 @@ export default {
       default: 0,
     },
   },
-  render() {
-    const { customStyle, className, tabDirection, index, current } = this
-
-    return (
-      <view
-        class={classNames(
-          {
-            'at-tabs-pane': true,
-            'at-tabs-pane--vertical': tabDirection === 'vertical',
-            'at-tabs-pane--active': index === current,
-            'at-tabs-pane--inactive': index !== current,
-          },
-          className
-        )}
-        style={customStyle}>
-        {this.$slots.default}
-      </view>
-    )
+  methods: {
+    classNames,
   },
 }

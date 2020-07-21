@@ -26,7 +26,7 @@ export default {
     },
     strokeWidth: {
       type: Number,
-      default: 0,
+      default: 10,
     },
     isHidePercent: {
       type: Boolean,

@@ -1,21 +1,36 @@
 <template>
-	<view
-			:class="classNames(
-				{
-					'at-countdown': true,
-					'at-countdown--card': isCard,
-				},
-				className
-			)"
-			:style="customStyle">
-			{{isShowDay && <AtCountdownItem num={day} separator={format.day} />}}
-			{{isShowHour && <AtCountdownItem num={hours} separator={format.hours} />}}
-			<AtCountdownItem num={minutes} separator={format.minutes} />
-			<AtCountdownItem num={seconds} separator={format.seconds} />
-		</view>
+  <view
+    :class="classNames(
+      {
+        'at-countdown': true,
+        'at-countdown--card': isCard,
+      },
+      className
+    )"
+    :style="customStyle"
+  >
+    <AtCountdownItem
+      v-if="isShowDay"
+      :num="state.day"
+      :separator="format.day"
+    />
+    <AtCountdownItem
+      v-if="isShowHour"
+      :num="state.hours"
+      :separator="format.hours"
+    />
+    <AtCountdownItem
+      :num="state.minutes"
+      :separator="format.minutes"
+    />
+    <AtCountdownItem
+      :num="state.seconds"
+      :separator="format.seconds"
+    />
+  </view>
 </template>
 
 <script>
-import AtCountdown from './index'
+import AtCountdown from './main'
 export default AtCountdown
 </script>

@@ -1,18 +1,12 @@
 import classNames from 'classnames'
-import AtCountdownItem from './item/index'
+import AtCountdownItem from './item.vue'
 
-/**
- *
- * @param {number} day
- * @param {number} hours
- * @param {number} minutes
- * @param {number} seconds
- */
 const toSeconds = (day, hours, minutes, seconds) =>
   day * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds
 
 export default {
   name: 'AtCountdown',
+  components: { AtCountdownItem },
   props: {
     customStyle: {
       type: [String, Object],
@@ -68,7 +62,6 @@ export default {
     const { day, hours, minutes, seconds } = this
     const stateSeconds = toSeconds(day, hours, minutes, seconds)
     const state = this.calculateTime()
-
     return {
       state,
       stateSeconds,
@@ -82,6 +75,7 @@ export default {
     this.clearTimer()
   },
   methods: {
+    classNames,
     calculateTime() {
       let [day, hours, minutes, seconds] = [0, 0, 0, 0]
 
@@ -100,7 +94,7 @@ export default {
       }
     },
     setTimer() {
-      if (!this.timer) this.countdonwn()
+      if (!this.timer) this.countdown()
     },
     clearTimer() {
       if (this.timer) {
@@ -108,7 +102,7 @@ export default {
         this.timer = null
       }
     },
-    countdonwn() {
+    countdown() {
       this.state = this.calculateTime()
       this.stateSeconds--
 
@@ -119,28 +113,8 @@ export default {
       }
 
       this.timer = setTimeout(() => {
-        this.countdonwn()
+        this.countdown()
       }, 1000)
     },
-  },
-  render() {
-    const { isShowDay, isShowHour, className, customStyle, isCard, format } = this
-    const { day, hours, minutes, seconds } = this.state
-    return (
-      <view
-        class={classNames(
-          {
-            'at-countdown': true,
-            'at-countdown--card': isCard,
-          },
-          className
-        )}
-        style={customStyle}>
-        {isShowDay && <AtCountdownItem num={day} separator={format.day} />}
-        {isShowHour && <AtCountdownItem num={hours} separator={format.hours} />}
-        <AtCountdownItem num={minutes} separator={format.minutes} />
-        <AtCountdownItem num={seconds} separator={format.seconds} />
-      </view>
-    )
   },
 }

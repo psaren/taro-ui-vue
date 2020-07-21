@@ -5,7 +5,7 @@
       <view class="at-progress__outer-inner">
         <view
           class="at-progress__outer-inner-background"
-          :style="{progressStyle}"
+          :style="progressStyle"
         />
       </view>
     </view>
@@ -24,6 +24,6 @@
 </template>
 
 <script>
-import AtProgress from './index'
+import AtProgress from './main'
 export default AtProgress
 </script>
