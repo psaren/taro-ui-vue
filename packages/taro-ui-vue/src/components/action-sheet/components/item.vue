@@ -1,3 +1,14 @@
+<template>
+  <view
+    :class="rootClass"
+    @tap="handleClick"
+    @click="handleClick"
+  >
+    <slot />
+  </view>
+</template>
+
+<script>
 import classNames from 'classnames'
 
 export default {
@@ -12,18 +23,15 @@ export default {
       default: () => () => {},
     },
   },
+	computed: {
+		rootClass() {
+			return classNames('at-action-sheet__item', this.className)
+		}
+	},
   methods: {
     handleClick(e) {
       this.onClick && this.onClick(e)
     },
-  },
-  render() {
-    const rootClass = classNames('at-action-sheet__item', this.className)
-
-    return (
-      <view class={rootClass} onTap={this.handleClick.bind(this)} onClick={this.handleClick.bind(this)}>
-        {this.$slots.default}
-      </view>
-    )
-  },
+	},
 }
+</script>

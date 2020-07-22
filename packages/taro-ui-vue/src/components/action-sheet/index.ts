@@ -1,10 +1,15 @@
 import classNames from 'classnames'
-import ActionSheetBody from './body/index'
-import ActionSheetFooter from './footer/index'
-import ActionSheetHeader from './header/index'
+import ActionSheetBody from './components/body.vue'
+import ActionSheetFooter from './components/footer.vue'
+import ActionSheetHeader from './components/header.vue'
 
 export default {
   name: 'AtActionSheet',
+  components: {
+    ActionSheetBody,
+    ActionSheetFooter,
+    ActionSheetHeader,
+  },
   props: {
     title: {
       type: String,
@@ -24,7 +29,10 @@ export default {
     },
     onCancel: {
       type: Function,
-      default: () => () => {},
+    },
+    className: {
+      type: [Array, String],
+      default: () => '',
     },
   },
   data() {
@@ -59,31 +67,16 @@ export default {
       e.preventDefault()
     },
   },
-  render() {
-    const { title, cancelText, className } = this
-    const { show } = this
-
-    const rootClass = classNames(
-      'at-action-sheet',
-      {
-        'at-action-sheet--active': show,
-      },
-      className
-    )
-
-    return (
-      <view class={rootClass} onTouchMove={this.handleTouchMove}>
-        <view onTap={this.close.bind(this)} onClick={this.close.bind(this)} class="at-action-sheet__overlay" />
-        <view class="at-action-sheet__container">
-          {title && <ActionSheetHeader>{title}</ActionSheetHeader>}
-          <ActionSheetBody>{this.$slots.default}</ActionSheetBody>
-          {cancelText && (
-            <ActionSheetFooter props={{ onClick: this.handleCancel }}>
-              {cancelText}
-            </ActionSheetFooter>
-          )}
-        </view>
-      </view>
-    )
+  computed: {
+    rootClass() {
+      const { show, className } = this
+      return classNames(
+        'at-action-sheet',
+        {
+          'at-action-sheet--active': show,
+        },
+        className
+      )
+    },
   },
 }

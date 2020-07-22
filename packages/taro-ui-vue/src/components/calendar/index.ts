@@ -1,11 +1,10 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
 import AtCalendarBody from './body/index.vue'
 import AtCalendarController from './controller/index.vue'
 
-const AtCalendar = Vue.extend({
+export default {
   name: 'AtCalendar',
   components: {
     AtCalendarBody,
@@ -85,6 +84,10 @@ const AtCalendar = Vue.extend({
       type: [String, Number, Date],
       default: '',
     },
+    className: {
+      type: [Array, String],
+      default: () => '',
+    },
   },
   data() {
     return {
@@ -109,10 +112,8 @@ const AtCalendar = Vue.extend({
           return
         }
       }
-
       const stateValue = this.getInitializeState(currentDate, isMultiSelect)
-
-      this.setState(stateValue)
+      this.state = stateValue
     },
   },
   created() {
@@ -120,6 +121,7 @@ const AtCalendar = Vue.extend({
     this.state = this.getInitializeState(currentDate, isMultiSelect)
   },
   methods: {
+    classNames,
     getInitializeState(currentDate, isMultiSelect) {
       let end
       let start
@@ -219,9 +221,7 @@ const AtCalendar = Vue.extend({
       const { generateDate } = this.state
 
       const _generateDate = dayjs(generateDate).add(vectorCount, 'month')
-      this.setState({
-        generateDate: _generateDate.valueOf(),
-      })
+      this.state.generateDate = _generateDate.valueOf()
       if (vectorCount && typeof this.onMonthChange === 'function') {
         this.onMonthChange(_generateDate.format(format))
       }
@@ -257,9 +257,7 @@ const AtCalendar = Vue.extend({
       if (this.state.generateDate === _generateDateValue) return
 
       this.triggerChangeDate(_generateDate)
-      this.setState({
-        generateDate: _generateDateValue,
-      })
+      this.state.generateDate = _generateDateValue
     },
     handleDayClick(item) {
       const { isMultiSelect } = this
@@ -276,10 +274,10 @@ const AtCalendar = Vue.extend({
       } else {
         stateValue = this.getSingleSelectdState(dayjsDate)
       }
-      this.setState(stateValue, () => {
+      this.state = stateValue
+      this.$nextTick(() => {
         this.handleSelectedDate()
       })
-
       if (typeof this.onDayClick === 'function') {
         this.onDayClick({ value: item.value })
       }
@@ -306,56 +304,4 @@ const AtCalendar = Vue.extend({
       }
     },
   },
-  render() {
-    const { generateDate, selectedDate } = this.state
-    const {
-      validDates,
-      marks,
-      format,
-      minDate,
-      maxDate,
-      isSwiper,
-      className,
-      hideArrow,
-      isVertical,
-      monthFormat,
-      selectedDates,
-    } = this
-
-    return (
-      <view class={classNames('at-calendar', className)}>
-        <AtCalendarController
-          minDate={minDate}
-          maxDate={maxDate}
-          hideArrow={hideArrow}
-          monthFormat={monthFormat}
-          generateDate={generateDate}
-          props={{
-            onPreMonth: this.handleClickPreMonth,
-            onNextMonth: this.handleClickNextMonth,
-            onSelectDate: this.handleSelectDate,
-          }}
-        />
-        <AtCalendarBody
-          validDates={validDates}
-          marks={marks}
-          format={format}
-          minDate={minDate}
-          maxDate={maxDate}
-          isSwiper={isSwiper}
-          isVertical={isVertical}
-          selectedDate={selectedDate}
-          selectedDates={selectedDates}
-          generateDate={generateDate}
-          props={{
-            onDayClick: this.handleDayClick,
-            onSwipeMonth: this.setMonth,
-            onLongClick: this.handleDayLongClick,
-          }}
-        />
-      </view>
-    )
-  },
-})
-
-export default AtCalendar
+}

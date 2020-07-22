@@ -53,7 +53,7 @@ export default {
     }
   },
   watch: {
-    open(val, oldVal) {
+    open(val) {
       this.startOpen = !!val && !!this.isAnimation
       this.toggleWithAnimation()
     },
@@ -74,7 +74,7 @@ export default {
       const { open, isAnimation } = this
       if (!this.isCompleted || !isAnimation) return
       this.isCompleted = false
-      delayQuerySelector(this, '.at-accordion__body', 0).then((rect) => {
+      delayQuerySelector(this, '.at-accordion__body', 0).then((rect: any) => {
         const height = parseInt(rect[0].height.toString())
         const startHeight = open ? 0 : height
         const endHeight = open ? height : 0
@@ -93,7 +93,7 @@ export default {
     contentStyle() {
       const res = { height: `${this.wrapperHeight}px` }
       if (this.isCompleted) {
-        contentStyle.height = ''
+        res.height = ''
       }
       return res
     },

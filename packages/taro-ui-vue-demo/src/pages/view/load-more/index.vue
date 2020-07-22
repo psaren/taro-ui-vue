@@ -32,7 +32,6 @@ export default {
   },
   methods: {
     handleClick() {
-      console.log(123)
       this.status = 'loading'
       setTimeout(() => {
         this.status = 'noMore'
