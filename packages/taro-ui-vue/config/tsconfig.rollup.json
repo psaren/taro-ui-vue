@@ -9,9 +9,9 @@
     "types": ["node"]
   },
   "include": [
-    "../esm/utils/*",
-    "../esm/components/*",
-    "../esm/index.ts"
+    "../src/utils/*",
+    "../src/components/*",
+    "../src/index.ts"
   ],
   "exclude": [
     "../node_modules/*"
