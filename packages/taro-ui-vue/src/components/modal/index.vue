@@ -48,7 +48,17 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
+import ModalAction from './action/index.vue'
+import ModalContent from './content/index.vue'
+import ModalHeader from './header/index.vue'
 import AtModal from './index'
-export default AtModal
+export default {
+  mixins: [AtModal],
+  components: {
+    ModalAction,
+    ModalContent,
+    ModalHeader
+  }
+}
 </script>

@@ -25,7 +25,8 @@ export default {
   methods: {
     trrigerOptionsDomUpadte() {
       delayQuerySelector(this, `#swipeActionOptions-${this.componentId}`).then((res) => {
-        this.onQueryedDom(res[0])
+        const arr = [...res]
+        this.onQueryedDom(arr[0])
       })
     },
   },

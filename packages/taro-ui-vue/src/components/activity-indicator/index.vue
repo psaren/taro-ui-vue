@@ -15,7 +15,13 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
+import AtLoading from '../loading/index.vue'
 import AtActivityIndicator from './index'
-export default AtActivityIndicator
+export default {
+  mixins: [AtActivityIndicator],
+  components: {
+    AtLoading
+  }
+}
 </script>

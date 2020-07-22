@@ -1,13 +1,8 @@
 import classNames from 'classnames'
-import AtButton from '../button/index.vue'
-import AtActivityIndicator from '../activity-indicator/index.vue'
+
 
 export default {
   name: 'AtLoadMore',
-  components: {
-    AtButton,
-    AtActivityIndicator,
-  },
   props: {
     customStyle: {
       type: [Object, String],

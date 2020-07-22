@@ -1,12 +1,8 @@
 import classNames from 'classnames'
-import AtBadge from '../badge/index.vue'
 import { mergeStyle } from '../../utils/common'
 
 export default {
   name: 'AtTabBar',
-  conponents: {
-    AtBadge,
-  },
   props: {
     customStyle: {
       type: [Object, String],

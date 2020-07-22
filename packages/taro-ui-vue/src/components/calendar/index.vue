@@ -28,7 +28,15 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script>
+import AtCalendarBody from './body/index.vue'
+import AtCalendarController from './controller/index.vue'
 import AtCalendar from './index'
-export default AtCalendar
+export default {
+  mixins: [AtCalendar],
+  components: {
+    AtCalendarBody,
+    AtCalendarController
+  }
+}
 </script>

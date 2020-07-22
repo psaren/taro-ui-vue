@@ -7,6 +7,10 @@ const ENV = Taro.getEnv()
 const MIN_DISTANCE = 100
 const MAX_INTERVAL = 10
 
+interface Style {
+  [key: string]: string|number
+}
+
 export default {
   name: 'AtTabs',
   mixins: [mixins],
@@ -116,7 +120,7 @@ export default {
     },
     bodySty() {
       const { current, animated, height, tabDirection } = this
-      const bodyStyle = {}
+      const bodyStyle: Style = {}
       let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`
       if (tabDirection === 'horizontal') {
         transformStyle = `translate3d(-${current * 100}%, 0px, 0px)`

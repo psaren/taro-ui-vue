@@ -30,7 +30,14 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script>
+import AtCountdownItem from './item.vue'
 import AtCountdown from './index'
-export default AtCountdown
+
+export default {
+  mixins: [AtCountdown],
+  components: {
+    AtCountdownItem
+  }
+}
 </script>

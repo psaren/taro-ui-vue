@@ -46,7 +46,13 @@
     </view>
   </view>
 </template>
-<script lang='ts'>
+<script>
+import AtButton from '../button/index.vue'
 import AtPagination from './index'
-export default AtPagination
+export default {
+  mixins: [AtPagination],
+  components: {
+    AtButton
+  }
+}
 </script>

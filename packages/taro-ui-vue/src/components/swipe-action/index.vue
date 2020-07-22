@@ -33,7 +33,13 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script>
+import AtSwipeActionOptions from './options/index.vue'
 import AtSwipeAction from './index'
-export default AtSwipeAction
+export default {
+  mixins: [AtSwipeAction],
+  components: {
+    AtSwipeActionOptions
+  }
+}
 </script>

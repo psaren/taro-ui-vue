@@ -74,8 +74,9 @@ export default {
       const { open, isAnimation } = this
       if (!this.isCompleted || !isAnimation) return
       this.isCompleted = false
-      delayQuerySelector(this, '.at-accordion__body', 0).then((rect: any) => {
-        const height = parseInt(rect[0].height.toString())
+      delayQuerySelector(this, '.at-accordion__body', 0).then((rect) => {
+        let arr = rect || [{height: ''}]
+        const height = parseInt(arr[0].height.toString())
         const startHeight = open ? 0 : height
         const endHeight = open ? height : 0
         this.startOpen = false

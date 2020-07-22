@@ -1,7 +1,5 @@
 import classNames from 'classnames'
-import ModalAction from './action/index.vue'
-import ModalContent from './content/index.vue'
-import ModalHeader from './header/index.vue'
+
 import { getEnvs } from '../../utils/common'
 import mixins from '../mixins'
 import Vue from 'vue'
@@ -9,11 +7,6 @@ import Vue from 'vue'
 export default Vue.extend({
   name: 'AtModal',
   mixins: [mixins],
-  components: {
-    ModalAction,
-    ModalContent,
-    ModalHeader,
-  },
   props: {
     title: {
       type: String,

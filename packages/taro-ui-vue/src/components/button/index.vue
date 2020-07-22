@@ -42,7 +42,13 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
+import AtLoading from '../loading/index.vue'
 import AtButton from './index'
-export default AtButton
+export default {
+  mixins: [AtButton],
+  components: {
+    AtLoading
+  }
+}
 </script>

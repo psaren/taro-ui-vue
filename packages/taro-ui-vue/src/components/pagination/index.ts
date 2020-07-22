@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import mixins from '../mixins'
-import AtButton from '../button/index.vue'
 
 const MIN_MAXPAGE = 1
 /**
@@ -16,16 +15,13 @@ const getMaxPage = (maxPage = 0) => {
  * @param {number} maxPage
  */
 const createPickerRange = (max) => {
-  const range = new Array(max).fill(0).map((val, index) => index + 1)
+  const range = new Array(max).fill(0).map((_, index) => index + 1)
   return range
 }
 
 export default {
   name: 'AtPagination',
   mixins: [mixins],
-  components: {
-    AtButton,
-  },
   props: {
     customStyle: {
       type: [Object, String],

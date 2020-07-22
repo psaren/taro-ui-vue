@@ -1,9 +1,7 @@
 import classNames from 'classnames'
-import AtLoading from '../loading/index.vue'
 
 export default {
   name: 'AtActivityIndicator',
-  components: { AtLoading },
   props: {
     size: {
       type: Number,

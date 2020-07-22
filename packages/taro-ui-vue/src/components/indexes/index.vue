@@ -67,7 +67,17 @@
     </scroll-view>
   </view>
 </template>
-<script lang='ts'>
+<script>
+import AtList from '../list/index.vue'
+import AtListItem from '../list/item/index.vue'
+import AtToast from '../toast/index.vue'
 import AtIndexes from './index'
-export default AtIndexes
+export default {
+  mixins: [AtIndexes],
+  components: {
+    AtList,
+    AtListItem,
+    AtToast,
+  }
+}
 </script>

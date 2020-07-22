@@ -7,11 +7,11 @@ import AtCalendarController from './controller/index.vue'
 
 const AtCalendar = Vue.extend({
   name: 'AtCalendar',
+  mixins: [mixins],
   components: {
     AtCalendarBody,
-    AtCalendarController,
+    AtCalendarController
   },
-  mixins: [mixins],
   props: {
     validDates: {
       type: Array,

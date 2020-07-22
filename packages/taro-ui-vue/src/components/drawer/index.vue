@@ -34,6 +34,14 @@
   </view>
 </template>
 <script>
+import AtList from '../list/index.vue'
+import AtListItem from '../list/item/index.vue'
 import AtDrawer from './index';
-export default AtDrawer
+export default {
+  mixins: [AtDrawer],
+  components: {
+    AtList,
+    AtListItem
+  }
+}
 </script>

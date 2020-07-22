@@ -1,15 +1,11 @@
 import classNames from 'classnames'
 import _inRange from 'lodash/inRange'
 import _isEmpty from 'lodash/isEmpty'
-import AtSwipeActionOptions from './options/index.vue'
 import { delayGetClientRect, delayGetScrollOffset, isTest, uuid } from '../../utils/common'
 import mixins from '../mixins'
 
 export default {
   name: 'AtSwipeAction',
-  components: {
-    AtSwipeActionOptions
-  },
   mixins: [mixins],
   props: {
     isOpened: {
@@ -36,7 +32,7 @@ export default {
             if (
               item.className &&
               typeof item.className !== 'string' &&
-              typeof item.className !== 'array' &&
+              Array.isArray(item.className) &&
               typeof item.className !== 'object'
             )
               return false
@@ -108,7 +104,7 @@ export default {
     getDomInfo() {
       return Promise.all([
         delayGetClientRect({
-          self: this,
+          // self: this,
           delayTime: 0,
           selectorStr: `#swipeAction-${this.state.componentId}`,
         }),

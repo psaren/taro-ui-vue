@@ -1,17 +1,12 @@
 import classNames from 'classnames'
 import Vue from 'vue'
 import mixins from '../mixins'
-import AtList from '../list/index.vue'
-import AtListItem from '../list/item/index.vue'
+
 
 const setState = mixins.methods.setState
 
 const AtDrawer = Vue.extend({
   name: 'AtDrawer',
-  components: {
-    AtList, 
-    AtListItem
-  },
   mixins: [mixins],
   props: {
     show: {

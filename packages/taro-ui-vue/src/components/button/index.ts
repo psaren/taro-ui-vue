@@ -1,4 +1,4 @@
-import AtLoading from '../loading/index.vue'
+
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
 import { CommonEvent } from '@tarojs/components/types/common'
@@ -20,7 +20,6 @@ export default {
       ...getEnvs(),
     }
   },
-  components: { AtLoading },
   props: {
     size: {
       type: String,

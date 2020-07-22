@@ -30,7 +30,15 @@
     </view>
   </view>
 </template>
-<script lang="ts">
+<script>
+import AtButton from '../button/index.vue'
+import AtActivityIndicator from '../activity-indicator/index.vue'
 import AtLoadMore from './main'
-export default AtLoadMore
+export default {
+  mixins: [AtLoadMore],
+  components: {
+    AtButton,
+    AtActivityIndicator
+  }
+}
 </script>

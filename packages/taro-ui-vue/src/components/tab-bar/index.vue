@@ -79,7 +79,13 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script>
 import AtTabBar from './index'
-export default AtTabBar
+import AtBadge from '../badge/index.vue'
+export default {
+  mixins: [AtTabBar],
+  conponents: {
+    AtBadge,
+  },
+}
 </script>
