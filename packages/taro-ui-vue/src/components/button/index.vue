@@ -26,16 +26,7 @@
         :showMessageCard="showMessageCard"
         :appParameter="appParameter"
       />
-    </form>
-    <view
-      v-if="loading"
-      class="at-button__icon"
-    >
-      <AtLoading
-        :color="loadingColor"
-        :size="loadingSize"
-      />
-    </view> -->
+    </form> -->
     <view
       v-if="loading"
       class="at-button__icon"
