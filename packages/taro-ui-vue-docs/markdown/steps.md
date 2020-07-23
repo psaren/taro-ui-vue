@@ -4,8 +4,7 @@
 步骤条组件，建议步骤在2～3之内
 
 ## 使用指南
-
-Taro-UI 版本需要在 `v1.4.0` 以上，在 Taro 文件中引入组件
+在 Taro 文件中引入组件
 
 :::demo
 ```js
@@ -30,36 +29,37 @@ import { AtSteps } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSteps } from 'taro-ui-vue'
-export default class TimelinePage extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      current: 0,
+``` vue
+<template>
+  <view class='example-item'>
+    <AtSteps
+      :items="items3"
+      :current="current3"
+      :onChange="onChange"
+    />
+  </view>
+</template>
+<script>
+const items3 = [
+  { title: '步骤一', desc: '这里是额外的信息，最多两行' },
+  { title: '步骤二', desc: '这里是额外的信息，最多两行' },
+  { title: '步骤三', desc: '这里是额外的信息，最多两行' }
+]
+export default {
+  name: 'AtStepsDemo',
+  data() {
+    return {
+      current3: 0,
+      item3
     }
-  }
-  onChange (current) {
-    this.setState({
-      current
-    })
-  }
-  render () {
-    const items = [
-      { 'title': '步骤一', 'desc': '这里是额外的信息，最多两行' },
-      { 'title': '步骤二', 'desc': '这里是额外的信息，最多两行' },
-      { 'title': '步骤三', 'desc': '这里是额外的信息，最多两行' }
-    ]
-    return (
-      <AtSteps
-        items={items}
-        current={this.state.current}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
+  },
+  methods: {
+    onChange(val) {
+      this.current3 = val
+    }
+  },
 }
+</script>
 
 ```
 
@@ -69,63 +69,64 @@ export default class TimelinePage extends Taro.Component {
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSteps } from 'taro-ui-vue'
-export default class TimelinePage extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      current: 0,
-    }
-  }
-  onChange (current) {
-    this.setState({
-      current
-    })
-  }
-  render () {
-    const items = [
-      {
-        'title': '步骤一',
-        'desc': '这里是额外的信息，最多两行',
-        'icon': {
-          value: 'sound',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      },
-      {
-        'title': '步骤二',
-        'desc': '这里是额外的信息，最多两行',
-        'icon': {
-          value: 'shopping-cart',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
-      },
-      {
-        'title': '步骤三',
-        'desc': '这里是额外的信息，最多两行',
-        'icon': {
-          value: 'camera',
-          activeColor: '#fff',
-          inactiveColor: '#78A4FA',
-          size: '14',
-        }
+```vue
+<template>
+  <view class='example-item'>
+    <AtSteps
+      :items="items"
+      :current="value"
+      :onChange="onChange"
+    />
+  </view>
+</template>
+<script>
+const items = [
+    {
+      title: '步骤一',
+      desc: '这里是额外的信息，最多两行',
+      icon: {
+        value: 'sound',
+        activeColor: '#fff',
+        inactiveColor: '#78A4FA',
+        size: '14'
       }
-    ]
-    return (
-      <AtSteps
-        items={items}
-        current={this.state.current}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
+    },
+    {
+      title: '步骤二',
+      desc: '这里是额外的信息，最多两行',
+      icon: {
+        value: 'shopping-cart',
+        activeColor: '#fff',
+        inactiveColor: '#78A4FA',
+        size: '14'
+      }
+    },
+    {
+      title: '步骤三',
+      desc: '这里是额外的信息，最多两行',
+      icon: {
+        value: 'camera',
+        activeColor: '#fff',
+        inactiveColor: '#78A4FA',
+        size: '14'
+      }
+    }
+  ]
+export default {
+  name: 'AtStepsDemo',
+  data() {
+    return {
+      value: 0,
+      items
+    }
+  },
+  methods: {
+    onChange(val) {
+      this.value = val
+    }
+  },
 }
+</script>
 ```
 
 :::
@@ -134,47 +135,48 @@ export default class TimelinePage extends Taro.Component {
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSteps } from 'taro-ui-vue'
-export default class TimelinePage extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      current: 0,
+```vue
+<template>
+  <view class='example-item'>
+    <AtSteps
+      :items="items"
+      :current="value"
+      :onChange="onChange"
+    />
+  </view>
+</template>
+<script>
+const items = [
+    {
+      title: '步骤一',
+      desc: '这里是额外的信息，最多两行',
+      status: 'success'
+    },
+    {
+      title: '步骤二',
+      desc: '这里是额外的信息，最多两行'
+    },
+    {
+      title: '步骤三',
+      desc: '这里是额外的信息，最多两行',
+      status: 'error'
     }
-  }
-  onChange (current) {
-    this.setState({
-      current
-    })
-  }
-  render () {
-    const items = [
-      {
-        title: '步骤一',
-        desc: '这里是额外的信息，最多两行',
-        status: 'success'
-      },
-      {
-        title: '步骤二',
-        desc: '这里是额外的信息，最多两行'
-      },
-      {
-        title: '步骤三',
-        desc: '这里是额外的信息，最多两行',
-        status: 'error'
-      }
-    ]
-    return (
-      <AtSteps
-        items={items}
-        current={this.state.current}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
+  ]
+export default {
+  name: 'AtStepsDemo',
+  data() {
+    return {
+      value: 0,
+      items
+    }
+  },
+  methods: {
+    onChange(val) {
+      this.value = val
+    }
+  },
 }
+</script>
 ```
 
 :::

@@ -46,6 +46,7 @@
 import AtLoading from '../loading/index.vue'
 import AtButton from './index'
 export default {
+  name: 'AtButton',
   mixins: [AtButton],
   components: {
     AtLoading

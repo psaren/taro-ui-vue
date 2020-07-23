@@ -5,7 +5,6 @@ import { delayGetClientRect, delayGetScrollOffset, isTest, uuid } from '../../ut
 import mixins from '../mixins'
 
 export default {
-  name: 'AtSwipeAction',
   mixins: [mixins],
   props: {
     isOpened: {

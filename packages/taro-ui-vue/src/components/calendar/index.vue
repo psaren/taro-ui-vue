@@ -33,6 +33,7 @@ import AtCalendarBody from './body/index.vue'
 import AtCalendarController from './controller/index.vue'
 import AtCalendar from './index'
 export default {
+  name: 'AtCalendar',
   mixins: [AtCalendar],
   components: {
     AtCalendarBody,

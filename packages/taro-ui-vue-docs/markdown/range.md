@@ -4,8 +4,7 @@
 范围选择器，允许用户在一个区间中选择特定值
 
 ## 使用指南
-
-Taro-UI 版本需要在 `v1.5.0` 以上，在 Taro 文件中引入组件
+在 Taro 文件中引入组件
 
 :::demo
 ```js
@@ -25,42 +24,35 @@ import { AtRange } from 'taro-ui-vue'
 
 :::demo
 
-```jsx
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtRange,AtToast } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      isOpened: false,
-      text: '',
+```vue
+<template>
+  <view class='panel__content'>
+    <view class='example-item'>
+      数值范围：{{ value[0] }}~{{ value[1] }}
+    </view>
+    <AtRange
+      :min="30"
+      :max="90"
+      :value="value"
+      :onChange="handleChange"
+    />
+  </view>
+</template>
+<script>
+export default {
+  name: 'AtRangePageDemo',
+  data() {
+    return {
+      value: [50, 60],
+    }
+  },
+  methods: {
+    handleChange(val) {
+      this.value = val
     }
   }
-  handleChange (value) {
-    this.setState({
-      isOpened: true,
-      text: `${value[0]}~${value[1]}`
-    })
-  }
-  render () {
-    return (
-      <view>
-        <AtToast
-          text={this.state.text}
-          isOpened={this.state.isOpened}
-        />
-        <AtRange
-          value={[20, 60]}
-          min={0}
-          max={100}
-          onChange={this.handleChange.bind(this)}
-        />
-      </view>
-    )
-  }
 }
+</script>
 ```
 
 :::

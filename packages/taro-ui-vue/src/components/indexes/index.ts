@@ -7,7 +7,6 @@ import { delayQuerySelector, isTest, uuid, pxTransform } from '../../utils/commo
 const ENV = Taro.getEnv()
 
 export default {
-  name: 'AtIndexes',
   mixins: [mixins],
   props: {
     customStyle: {

@@ -73,6 +73,7 @@ import AtListItem from '../list/item/index.vue'
 import AtToast from '../toast/index.vue'
 import AtIndexes from './index'
 export default {
+  name: 'AtIndexes',
   mixins: [AtIndexes],
   components: {
     AtList,

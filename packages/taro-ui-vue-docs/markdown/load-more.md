@@ -29,40 +29,34 @@ import { AtLoadMore } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
+``` vue
+<template>
+  <view>
+    <AtLoadMore
+      :on-click="handleClick"
+      :status="status"
+    />
+  </view>
+</template>
+<script>
 import { AtLoadMore } from 'taro-ui-vue'
-
-export default class LoadMorePage extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
+export default {
+  name: 'AtLoadMoreDemo',
+  data() {
+    return {
       status: 'more'
     }
-  }
-  handleClick () {
-    // 开始加载
-    this.setState({
-      status: 'loading'
-    })
-    // 模拟异步请求数据
-    setTimeout(() => {
-      // 没有更多了
-      this.setState({
-        status: 'noMore'
-      })
-    }, 2000)
-  }
-  render () {
-    return (
-      <AtLoadMore
-        onClick={this.handleClick.bind(this)}
-        status={this.state.status}
-      />
-    )
+  },
+  methods: {
+    handleClick() {
+      this.status = 'loading'
+      setTimeout(() => {
+        this.status = 'noMore'
+      }, 2000);
+    }
   }
 }
+</script>
 ```
 
 :::

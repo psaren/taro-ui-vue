@@ -32,9 +32,9 @@ import { AtNavBar } from 'taro-ui-vue'
 
 ```html
 <AtNavBar
-  onClickRgIconSt={this.handleClick}
-  onClickRgIconNd={this.handleClick}
-  onClickLeftIcon={this.handleClick}
+  :onClickRgIconSt="handleClick"
+  :onClickRgIconNd="handleClick"
+  :onClickLeftIcon="handleClick"
   color='#000'
   title='NavBar 导航栏示例'
   leftText='返回'
@@ -53,15 +53,15 @@ import { AtNavBar } from 'taro-ui-vue'
 
 ```html
 <AtNavBar
-  onClickRgIconSt={this.handleClick}
-  onClickRgIconNd={this.handleClick}
-  onClickLeftIcon={this.handleClick}
+  :onClickRgIconSt="handleClick"
+  :onClickRgIconNd="handleClick"
+  :onClickLeftIcon="handleClick"
   color='#000'
   leftText='返回'
   rightFirstIconType='bullet-list'
   rightSecondIconType='user'
 >
-<view>Taro UI</view>
+  <view>Taro UI</view>
 </AtNavBar>
 ```
 
@@ -73,7 +73,7 @@ import { AtNavBar } from 'taro-ui-vue'
 | ---------- | -------------------------------------- | ------- | ------------------------------------------------------------------- | -------- |
 | color | 链接文字跟图标颜色，不包括标题 | String  | - | `#6190E8` |
 | fixed | 是否固定顶部  | Boolean | - | false |
-| border | 是否显示下划线(v1.4.0 新增)  | Boolean | - | true |
+| border | 是否显示下划线  | Boolean | - | true |
 | leftIconType  | 左边图标类型，图标类型请看`AtIcon`文档  | String \| Object | - | 'chevron-left' |
 | leftText | 左边文字 | String  | - | - |
 | title | 标题文字 | String  | - | - |

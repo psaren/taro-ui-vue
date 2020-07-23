@@ -29,46 +29,33 @@ import { AtSegmentedControl } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSegmentedControl }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      current: 0
+```vue
+<template>
+  <view>
+    <AtSegmentedControl
+      :onClick="handleClick"
+      :current="current1"
+      :values="tabList2"
+    />
+    <view class='tab-content'>标签 {{ current1 + 1 }} 的内容</view>
+  </view>
+</template>
+<script>
+export default {
+  name: 'AtSegmentedControlDemo',
+  data() {
+    return {
+      current1: 0,
+      tabList2: ['标签页1', '标签页2', '标签页3'],
+    }
+  },
+  methods: {
+    handleClick(value) {
+      this.current1 = value
     }
   }
-  handleClick (value) {
-    this.setState({
-      current: value
-    })
-  }
-  render () {
-    return (
-      <AtSegmentedControl
-        values={['标签页1', '标签页2', '标签页3']}
-        onClick={this.handleClick.bind(this)}
-        current={this.state.current}
-      />
-      {
-        this.state.current === 0
-        ? <view class='tab-content'>标签1的内容</view>
-        : null
-      }
-      {
-        this.state.current === 1
-        ? <view class='tab-content'>标签2的内容</view>
-        : null
-      }
-      {
-        this.state.current === 2
-        ? <view class='tab-content'>标签3的内容</view>
-        : null
-      }
-    )
-  }
 }
+</script>
 ```
 
 :::
@@ -79,11 +66,11 @@ export default class Index extends Taro.Component {
 
 ```html
 <AtSegmentedControl
-  onClick={this.handleClick.bind(this)}
+  :onClick="handleClick"
   selectedColor='#FF4949'
   fontSize='30'
-  current={this.state.current}
-  values={['标签页1', '标签页2', '标签页3']}
+  :current="current"
+  :values="['标签页1', '标签页2', '标签页3']"
 />
 
 
@@ -98,9 +85,9 @@ export default class Index extends Taro.Component {
 ```html
 <AtSegmentedControl
   disabled
-  values={['标签页1', '标签页2', '标签页3']}
-  onClick={this.handleClick.bind(this)}
-  current={this.state.current}
+  :values="['标签页1', '标签页2', '标签页3']"
+  :onClick="handleClick"
+  :current="current"
 />
 ```
 

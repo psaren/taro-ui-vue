@@ -37,6 +37,7 @@
 import AtSwipeActionOptions from './options/index.vue'
 import AtSwipeAction from './index'
 export default {
+  name: 'AtSwipeAction',
   mixins: [AtSwipeAction],
   components: {
     AtSwipeActionOptions

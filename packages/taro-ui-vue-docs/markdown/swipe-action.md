@@ -6,7 +6,7 @@
 
 ## 使用指南
 
-Taro-UI 版本需要在 `v1.3.1` 以上，在 Taro 文件中引入组件
+在 Taro 文件中引入组件
 
 :::demo
 ```js
@@ -27,7 +27,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
 :::demo
 
 ```html
-<AtSwipeAction options={[
+<AtSwipeAction :options="[
   {
     text: '取消',
     style: {
@@ -40,7 +40,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}>
+]">
   <view class='normal'>AtSwipeAction 一般使用场景</view>
 </AtSwipeAction>
 ```
@@ -52,7 +52,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
 :::demo
 
 ```html
-<AtSwipeAction disabled options={[
+<AtSwipeAction disabled :options="[
   {
     text: '取消',
     style: {
@@ -65,7 +65,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}>
+]">
   <view class='normal'>禁止滑动展示</view>
 </AtSwipeAction>
 ```
@@ -77,7 +77,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
 :::demo
 
 ```html
-<AtSwipeAction autoClose options={[
+<AtSwipeAction autoClose :options="[
   {
     text: '取消',
     style: {
@@ -90,7 +90,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}>
+]">
   <view class='normal'>点击按钮自动关闭</view>
 </AtSwipeAction>
 ```
@@ -102,7 +102,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
 :::demo
 
 ```html
-<AtSwipeAction onClick={this.handleClick} options={[
+<AtSwipeAction :onClick="handleClick" :options="[
   {
     text: '取消',
     style: {
@@ -115,7 +115,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}>
+]">
   <view class='normal'>点击事件触发</view>
 </AtSwipeAction>
 ```
@@ -128,7 +128,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
 
 ```html
 <AtSwipeAction
-  options={[
+  :options="[
   {
     text: '取消',
     style: {
@@ -141,9 +141,9 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}
-  onOpened={this.handleOpened}
-  onClosed={this.handleClosed}
+]"
+  :onOpened="handleOpened"
+  :onClosed="handleClosed"
 >
   <view class='normal'>开启和关闭时触发事件</view>
 </AtSwipeAction>
@@ -157,7 +157,7 @@ import { AtSwipeAction } from 'taro-ui-vue'
 
 ```html
 <AtList>
-  <AtSwipeAction options={[
+  <AtSwipeAction :options="[
   {
     text: '取消',
     style: {
@@ -170,10 +170,10 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}>
+]">
     <AtListItem title='Item1' />
   </AtSwipeAction>
-  <AtSwipeAction options={[
+  <AtSwipeAction :options="[
   {
     text: '取消',
     style: {
@@ -186,18 +186,18 @@ import { AtSwipeAction } from 'taro-ui-vue'
       backgroundColor: '#FF4949'
     }
   }
-]}>
+]">
     <AtListItem title='Item2' />
   </AtSwipeAction>
   <AtSwipeAction
-    options={[
+    :options="[
       {
         text: '警告',
         style: {
           backgroundColor: '#FFC82C'
         }
       }
-    ]}
+    ]"
   >
     <AtListItem title='Item3' />
   </AtSwipeAction>
@@ -212,16 +212,16 @@ import { AtSwipeAction } from 'taro-ui-vue'
 
 ```html
 <AtList>
-  {list.map((item, index) => (
-    <AtSwipeAction
-      key={index}
-      onOpened={this.handleSingle.bind(this, index)}
-      isOpened={item.isOpened}
-      options={item.options}
-    >
-      <AtListItem title={item.title} />
-    </AtSwipeAction>
-  ))}
+  <AtSwipeAction
+    v-for="(item, index) in list"
+    :key="item.title + index"
+    :options="item.options"
+    :is-opened="item.isOpened"
+    :on-click="handleClicked"
+    :on-opened="handleSingle"
+  >
+    <AtListItem :title="item.title" />
+  </AtSwipeAction>
 </AtList>
 ```
 

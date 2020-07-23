@@ -54,6 +54,7 @@ import ModalContent from './content/index.vue'
 import ModalHeader from './header/index.vue'
 import AtModal from './index'
 export default {
+  name: 'AtModal',
   mixins: [AtModal],
   components: {
     ModalAction,

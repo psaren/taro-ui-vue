@@ -29,32 +29,50 @@ import { AtForm, AtSwitch } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtForm, AtSwitch }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: false
+```vue
+<template>
+  <view>
+    <AtForm>
+      <AtSwitch
+        title='开启中'
+        :checked="switchValue"
+        :onChange="handleChange"
+      />
+      <AtSwitch title='已关闭' :border="false" />
+    </AtForm>
+  </view>
+</template>
+<script>
+export default {
+  name: 'SwitchPage',
+  data() {
+    return {
+      switchValue: true
+    }
+  },
+  methods: {
+    handleChange (value) {
+      this.switchValue = value
     }
   }
-
-  handleChange = value => {
-    this.setState({ value })
-  }
-
-  render () {
-    return (
-      <AtForm>
-        <AtSwitch title='开启中' checked={this.state.value} onChange={this.handleChange} />
-        <AtSwitch title='已禁止' disabled onChange={this.handleChange} />
-        <AtSwitch border={false} title='已关闭' />
-      </AtForm>
-    )
-  }
 }
+</script>
 
+
+```
+
+:::
+
+## 禁用状态
+``` vue
+<template>
+  <view class='example-item'>
+    <AtForm>
+      <AtSwitch title='不可点击' checked disabled />
+      <AtSwitch title='不可点击' :border="false" disabled />
+    </AtForm>
+  </view>
+</template>
 ```
 
 :::

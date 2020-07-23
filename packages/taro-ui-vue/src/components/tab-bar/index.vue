@@ -83,6 +83,7 @@
 import AtTabBar from './index'
 import AtBadge from '../badge/index.vue'
 export default {
+  name: 'AtTabBar',
   mixins: [AtTabBar],
   conponents: {
     AtBadge,

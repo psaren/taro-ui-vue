@@ -6,7 +6,6 @@ import mixins from '../mixins'
 const setState = mixins.methods.setState
 
 const AtDrawer = Vue.extend({
-  name: 'AtDrawer',
   mixins: [mixins],
   props: {
     show: {
