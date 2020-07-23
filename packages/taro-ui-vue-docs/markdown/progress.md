@@ -9,26 +9,37 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtProgress } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/progress.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
 
 :::demo
 
-```html
-<AtProgress></AtProgress>
+```vue
+<template>
+  <AtProgress />
+</template>
+<script>
+export default {
+  name: 'AtProgressDemo'
+}
+</script>
 ```
 
 :::
@@ -37,10 +48,19 @@ import { AtProgress } from 'taro-ui-vue'
 
 :::demo
 
-```html
-<AtProgress percent={25} />
-<AtProgress percent={50} />
-<AtProgress percent={75} />
+```vue
+<template>
+ <view>
+  <AtProgress :percent="25" />
+  <AtProgress :percent="50" />
+  <AtProgress :percent="75" />
+ </view>
+</template>
+<script>
+export default {
+  name: 'AtProgressDemo'
+}
+</script>
 ```
 
 :::
@@ -49,9 +69,13 @@ import { AtProgress } from 'taro-ui-vue'
 
 :::demo
 
-```html
-<AtProgress percent={25} isHidePercent />
-<AtProgress percent={75} isHidePercent />
+```vue
+<template>
+ <view>
+  <AtProgress :percent="25" isHidePercent />
+  <AtProgress :percent="75" isHidePercent />
+ </view>
+</template>
 ```
 
 :::
@@ -60,10 +84,14 @@ import { AtProgress } from 'taro-ui-vue'
 
 :::demo
 
-```html
-<AtProgress percent={25} strokeWidth={6} />
-<AtProgress percent={50} strokeWidth={8} />
-<AtProgress percent={75} strokeWidth={10} />
+```vue
+<template>
+ <view>
+  <AtProgress :percent="25" :strokeWidth="6" />
+  <AtProgress :percent="50" :strokeWidth="8" />
+  <AtProgress :percent="75" :strokeWidth="10" />
+ </view>
+</template>
 ```
 
 :::
@@ -72,10 +100,14 @@ import { AtProgress } from 'taro-ui-vue'
 
 :::demo
 
-```html
-<AtProgress percent={25} color='#FF4949' />
-<AtProgress percent={50} color='#13CE66' />
-<AtProgress percent={75} color='#FFC82C' />
+```vue
+<template>
+ <view>
+  <AtProgress :percent="25" color='#FF4949' />
+  <AtProgress :percent="50" color='#13CE66' />
+  <AtProgress :percent="75" color='#FFC82C' />
+ </view>
+</template>
 ```
 
 :::
@@ -84,17 +116,21 @@ import { AtProgress } from 'taro-ui-vue'
 
 :::demo
 
-```html
-<AtProgress percent={75} status='error' />
-<AtProgress percent={50} status='progress' />
-<AtProgress percent={100} status='success' />
+```vue
+<template>
+ <view>
+  <AtProgress :percent="75" status='error' />
+  <AtProgress :percent="50" status='progress' />
+  <AtProgress :percent="100" status='success' />
+ </view>
+</template>
 ```
 
 :::
 
 ## AtProgress 参数
 
-| 参数          | 说明         | 类型    | 可选值                       | 默认值  |
+| 参数          | 说明          | 类型      | 可选值                      | 默认值  |
 | ------------- | ------------ | ------- | ---------------------------- | ------- |
 | color         | 元素的颜色   | String  | -                            | -       |
 | status        | 元素的状态   | String  | `progress`,`error`,`success` | -       |

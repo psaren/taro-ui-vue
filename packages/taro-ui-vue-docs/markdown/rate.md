@@ -8,18 +8,22 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtRate } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/rate.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
@@ -32,41 +36,16 @@ import { AtRate } from 'taro-ui-vue'
   
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtRate }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: 2
-    }
-  }
-  handleChange (value) {
-    this.setState({
-      value
-    })
-  }
-  render () {
-    return (
-      <AtRate
-        value={this.state.value}
-        onChange={this.handleChange.bind(this)}
-      />
-    )
-  }
-}
-
-```
-
-:::
-
 ## 自定义星星大小
 
 :::demo
 
-```html
-<AtRate size='15' value={this.state.value} onChange={this.handleChange} />
+```vue
+<template>
+ <view>
+  <AtRate :max="15" />
+ </view>
+</template>
 ```
 
 :::
@@ -75,8 +54,12 @@ export default class Index extends Taro.Component {
 
 :::demo
 
-```html
-<AtRate max={10} value={this.state.value} onChange={this.handleChange} />
+```vue
+<template>
+ <view>
+  <AtRate :max="10" />
+ </view>
+</template>
 ```
 
 :::
@@ -85,8 +68,14 @@ export default class Index extends Taro.Component {
 
 :::demo
 
-```html
-<AtRate value={3.5} />
+```vue
+<template>
+ <view>
+  <AtRate
+    :value="3.5"
+  />
+ </view>
+</template>
 ```
 
 :::

@@ -9,17 +9,21 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtActionSheet, AtActionSheetItem } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/action-sheet.scss";
 ```
+
 :::
 
 ## 一般用法

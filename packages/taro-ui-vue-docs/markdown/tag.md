@@ -9,43 +9,75 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtTag } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/tag.scss";
 ```
+
 :::
 
 ## 用法
 
 :::demo
-```html
-<AtTag>标签</AtTag>
-<AtTag type='primary' circle>标签</AtTag>
-<AtTag size='small'>标签</AtTag>
+
+```vue
+<template>
+ <view>
+  <AtTag>空心标签</AtTag>
+  <AtTag type='primary'>实心标签</AtTag>
+  <AtTag circle>大圆角</AtTag>
+  <AtTag disabled>不可点击</AtTag>
+  <AtTag size='small'>小标签</AtTag>
+ </view>
+</template>
+<script>
+export default {
+  name: 'AtTagDemo'
+}
+</script>
 ```
+
 :::
 
 ## 点击事件
 
 :::demo
+
 ```html
 <!-- 点击返回当前标签名字和是否选中 -->
-<AtTag 
-  name='tag-1' 
-  type='primary' 
-  circle 
-  onClick={this.onClick.bind(this)}
->
-  tag-1
-</AtTag>
+```vue
+<template>
+ <view>
+  <AtTag
+    name='tag-1'
+    type='primary'
+    circle
+    :onClick="onClick"
+  >tag-1</AtTag>
+ </view>
+</template>
+<script>
+export default {
+  name: 'AtTagDemo'，
+  methods: {
+    onClick() {
+      console.log('点击了')
+    }
+  }
+}
+</script>
 ```
+
 :::
 
 ## Tag 参数

@@ -8,18 +8,22 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtNavBar } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/nav-bar.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
