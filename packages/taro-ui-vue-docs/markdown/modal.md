@@ -52,9 +52,9 @@ import { AtModal, AtModalHeader, AtModalContent, AtModalAction } from 'taro-ui-v
   title='标题'
   cancelText='取消'
   confirmText='确认'
-  onClose={ this.handleClose }
-  onCancel={ this.handleCancel }
-  onConfirm={ this.handleConfirm }
+  :onClose="handleClose"
+  :onCancel="handleCancel"
+  :onConfirm="handleConfirm"
   content='欢迎加入京东凹凸实验室\n\r欢迎加入京东凹凸实验室'
 />
 ```

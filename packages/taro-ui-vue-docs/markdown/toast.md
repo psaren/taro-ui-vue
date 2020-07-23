@@ -28,7 +28,7 @@ import { AtToast } from 'taro-ui-vue'
 :::demo
 
 ```html
-<AtToast isOpened text="{text}" icon="{icon}"></AtToast>
+<AtToast isOpened :text="text" :icon="icon"></AtToast>
 ```
 
 :::

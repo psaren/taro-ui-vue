@@ -3,7 +3,7 @@
 ---
 多行文本输入框，可控制是否显示当前字数，可自定义高度。
 
-> 自 Taro UI 2.3.1 版本以后，AtTextarea 的 onChange 事件与 AtInput 保持一致，接收两个参数，函数签名为 `onChange: (value: string, event?: CommonEvent | undefined) => void`，不再需要使用 `event.target.value` 获取输入的值。
+> AtTextarea 的 onChange 事件与 AtInput 保持一致，接收两个参数，函数签名为 `onChange: (value: string, event?: CommonEvent | undefined) => void`，不再需要使用 `event.target.value` 获取输入的值。
 
 ## 使用指南
 
@@ -35,33 +35,32 @@ import { AtTextarea } from 'taro-ui-vue'
 
 :::demo
 
-```js
-
-import Taro from '@tarojs/taro'
-import { AtTextarea }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+  <view class='example-item'>
+    <AtTextarea
+      :value="value1"
+      :onChange="handleChange"
+      :maxLength="200"
+      placeholder='你的问题是...'
+    />
+  </view>
+</template>
+<script>
+export default {
+  name: 'AtTextareaDemo',
+  data() {
+    return {
+      value1: '',
+    }
+  },
+  methods: {
+    handleChange(value) {
+      this.value1 = value
     }
   }
-  handleChange (value) {
-    this.setState({
-      value
-    })
-  }
-  render () {
-    return (
-      <AtTextarea
-        value={this.state.value}
-        onChange={this.handleChange.bind(this)}
-        maxLength={200}
-        placeholder='你的问题是...'
-      />
-    )
-  }
 }
+</script>
 ```
 
 :::
@@ -72,10 +71,10 @@ export default class Index extends Taro.Component {
 
 ```html
 <AtTextarea
-  count={false}
-  value={this.state.value}
-  onChange={this.handleChange.bind(this)}
-  maxLength={200}
+  :count="false"
+  :value="value"
+  :onChange="handleChange"
+  :maxLength="200"
   placeholder='你的问题是...'
 />
 
@@ -109,7 +108,7 @@ export default class Index extends Taro.Component {
 | 事件名称 |   微信小程序 |  h5 | 说明          | 返回参数  |
 |---------| ---  | --------| --------- |---------- |
 | onChange |  √ | √ | 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，onChange 函数必填 | (value, event) => void  |
-| onFocus |  √ | √ | 输入框获得焦点时触发，event.detail = {'{value, height}'} ，height 为键盘高度，在基础库 1.9.90 起支持| event  |
+| onFocus |  √ | √ | 输入框获得焦点时触发，event.detail = {'{value, height}'} ，height 为键盘高度| event  |
 | onBlur |  √ | √ | 输入框失去焦点时触发，event.detail = {'{ value, cursor }'}  | event  |
 | onConfirm |  √ | x | 点击完成时，触发 confirm 事件，event.detail = {'{ value: value }'}  | event  |
 | onLinechange | √ | x | 输入框行数变化时调用，event.detail = {'{ height: 0, heightRpx: 0, lineCount: 0 }'}  | event  |

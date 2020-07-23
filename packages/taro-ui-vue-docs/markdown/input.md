@@ -38,36 +38,34 @@ import { AtInput, AtForm } from 'taro-ui-vue'
   
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtInput }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+  <view>
+    <AtInput
+      name='value1'
+      title='标准五个字'
+      type='text'
+      placeholder='标准五个字'
+      :value="value1"
+      :onChange="handleInput"
+    />
+  </view>
+</template>
+<script>
+export default {
+  name: 'AtInputDemo',
+  data() {
+    return {
+      value1: '',
     }
-  }
-  handleChange (value) {
-    this.setState({
-      value
-    })
-    // 在小程序中，如果想改变 value 的值，需要 `return value` 从而改变输入框的当前值
-    return value
-  }
-  render () {
-    return (
-      <AtInput
-        name='value'
-        title='标准五个字'
-        type='text'
-        placeholder='标准五个字'
-        value={this.state.value}
-        onChange={this.handleChange.bind(this)}
-      />
-    )
-  }
+  },
+  methods: {
+    handleInput(val) {
+      this.value1 = val
+    }
+  },
 }
+</script>
 ```
 
 :::
@@ -83,49 +81,49 @@ export default class Index extends Taro.Component {
     title='文本'
     type='text'
     placeholder='单行文本'
-    value={this.state.value1}
-    onChange={this.handleChange.bind(this)}
+    :value="value1"
+    :onChange="handleChange"
   />
   <AtInput
     name='value2'
     title='数字'
     type='number'
     placeholder='请输入数字'
-    value={this.state.value2}
-    onChange={this.handleChange.bind(this)}
+    :value="value2"
+    :onChange="handleChange"
   />
   <AtInput
     name='value3'
     title='密码'
     type='password'
     placeholder='密码不能少于10位数'
-    value={this.state.value3}
-    onChange={this.handleChange.bind(this)}
+    :value="value3"
+    :onChange="handleChange"
   />
   <AtInput
     name='value4'
     title='身份证'
     type='idcard'
     placeholder='身份证号码'
-    value={this.state.value4}
-    onChange={this.handleChange.bind(this)}
+    :value="value4"
+    :onChange="handleChange"
   />
   <AtInput
     name='value5'
     title='小数'
     type='digit'
     placeholder='请输入小数'
-    value={this.state.value5}
-    onChange={this.handleChange.bind(this)}
+    :value="value5"
+    :onChange="handleChange"
   />
   <AtInput
     name='value6'
-    border={false}
+    :border="false"
     title='手机号码'
     type='phone'
     placeholder='手机号码'
-    value={this.state.value6}
-    onChange={this.handleChange.bind(this)}
+    :value="value6"
+    :onChange="handleChange"
   />
 </AtForm>
 ```
@@ -143,42 +141,43 @@ export default class Index extends Taro.Component {
     title='禁用'
     type='text'
     placeholder='禁止输入'
-    value={this.state.value1}
-    onChange={this.handleChange.bind(this)}
+    :value="value1"
+    :onChange="handleChange"
   />
   <AtInput
     error
     title='出现错误'
     type='text'
     placeholder='点击按钮触发回调'
-    value={this.state.value2}
-    onChange={this.handleChange}
-    onErrorClick={this.handleClick.bind(this)}
+    :value="value2"
+    :onChange="handleChange"
+    :onErrorClick="handleClick"
   />
   <AtInput
-    editable={false}
+    :editable="false"
     title='不可编辑'
     type='text'
     placeholder='不可编辑'
-    value={this.state.value3}
-    onChange={this.handleChange.bind(this)}
+    :value="value3"
+    :onChange="handleChange"
   />
   <AtInput
     clear
-    border={false}
+    :border="false"
     title='清除按钮'
     placeholder='点击清除按钮清空内容'
     type='text'
-    value={this.state.value4}
-    onChange={this.handleChange.bind(this)}
+    :value="value4"
+    :onChange="handleChange"
   />
   <AtInput 
     required
-    border={false}  
+    :border="false"  
     title='必填项' 
-    type='text' placeholder='必填项' 
-    value={this.state.value5} 
-    onChange={this.handleInput.bind(this)} />
+    type='text' 
+    placeholder='必填项' 
+    :value="value5" 
+    :onChange="handleInput" />
 </AtForm>
 ```
 
@@ -196,8 +195,8 @@ export default class Index extends Taro.Component {
   type='text'
   maxLength='4'
   placeholder='验证码'
-  value={this.state.value}
-  onChange={this.handleChange.bind(this)}
+  :value="value"
+  :onChange="handleChange"
 >
   <Image src='https://aotu.io/img.png' />
 </AtInput>
@@ -236,10 +235,10 @@ export default class Index extends Taro.Component {
 
 | 事件名称 |  微信小程序 |  h5 | 说明  | 返回参数  |
 |------- |---  |----- |---- | -------- |
-| onChange | √ | √ | 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，onChange 函数必填。小程序中，如果想改变 value 的值，需要 `return value` 从而改变输入框的当前值, v2.0.3 版本可以获取 event 参数  | (value,event) => void  |
-| onFocus | √ | √ | 输入框被选中时触发的事件，v2.0.3 版本可以获取 event 参数 | (value,event) => void   |
-| onBlur | √ | √ | 输入框失去焦点时触发的事件，v2.0.3 版本可以获取 event 参数 | (value,event) => void   |
-| onConfirm | √ | x | 点击完成按钮时触发，v2.0.3 版本可以获取 event 参数 | (value,event) => void   |
+| onChange | √ | √ | 输入框值改变时触发的事件，开发者需要通过 onChange 事件来更新 value 值变化，onChange 函数必填。小程序中，如果想改变 value 的值，需要 `return value` 从而改变输入框的当前值, 可以获取 event 参数  | (value,event) => void  |
+| onFocus | √ | √ | 输入框被选中时触发的事件，可以获取 event 参数 | (value,event) => void   |
+| onBlur | √ | √ | 输入框失去焦点时触发的事件，可以获取 event 参数 | (value,event) => void   |
+| onConfirm | √ | x | 点击完成按钮时触发，可以获取 event 参数 | (value,event) => void   |
 | onErrorClick | √ | √ | 点击错误按钮触发的事件 | () => void |
 | onClick | √ | √ | 当 editable 为 false时，点击组件触发的事件  | () => void |
 | onKeyboardHeightChange | √ |   | 键盘高度发生变化的时候触发此事件 | (event) => void |

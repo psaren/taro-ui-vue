@@ -11,89 +11,80 @@
 
 ## 使用指南
 
-在 Taro 文件中引入组件
-> 注意，这边引入的是 taro 的基础组件库，H5 版本的 Picker 字体大小有问题，会在下个版本修复
-
-:::demo
-
-```js
-import { Picker } from '@tarojs/components'
-```
-
 :::
 
 ## 示例
 
 :::demo
 
-```js
-import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Picker } from '@tarojs/components'
-
-export default class PagePicker extends Component {
-  state = {
-    selector: ['美国', '中国', '巴西', '日本'],
-    selectorChecked: '美国',
-    timeSel: '12:01',
-    dateSel: '2018-04-22'
-  }
-
-  onChange = e => {
-    this.setState({
-      selectorChecked: this.state.selector[e.detail.value]
-    })
-  }
-
-  onTimeChange = e => {
-    this.setState({
-      timeSel: e.detail.value
-    })
-  }
-  onDateChange = e => {
-    this.setState({
-      dateSel: e.detail.value
-    })
-  }
-
-  render () {
-    return (
-      <view class='container'>
-        <view class='page-body'>
-          <view class='page-section'>
-            <text>地区选择器</text>
-            <view>
-              <Picker mode='selector' range={this.state.selector} onChange={this.onChange}>
-                <view class='picker'>
-                  当前选择：{this.state.selectorChecked}
-                </view>
-              </Picker>
-            </view>
-          </view>
-          <view class='page-section'>
-            <text>时间选择器</text>
-            <view>
-              <Picker mode='time' onChange={this.onTimeChange}>
-                <view class='picker'>
-                  当前选择：{this.state.timeSel}
-                </view>
-              </Picker>
-            </view>
-          </view>
-          <view class='page-section'>
-            <text>日期选择器</text>
-            <view>
-              <Picker mode='date' onChange={this.onDateChange}>
-                <view class='picker'>
-                  当前选择：{this.state.dateSel}
-                </view>
-              </Picker>
-            </view>
+```vue
+<template>
+  <view>
+    <view class='example-item'>
+      <picker
+        mode='selector'
+        :range="selector"
+        :value="selectorValue"
+        :onChange="handleChange"
+      >
+        <view class='demo-list-item'>
+          <view class='demo-list-item__label'>国家地区</view>
+          <view class='demo-list-item__value'>
+            {{ selector[selectorValue] }}
           </view>
         </view>
-      </view>
-    )
-  }
+      </picker>
+    </view>
+    <view class='example-item'>
+      <picker
+        mode='time'
+        :value="timeSel"
+        :onChange="handleTimeChange"
+      >
+        <view class='demo-list-item'>
+          <view class='demo-list-item__label'>请选择时间</view>
+          <view class='demo-list-item__value'>{{ timeSel }}</view>
+        </view>
+      </picker>
+    </view>
+    <view class='example-item'>
+      <picker
+        mode='date'
+        :value="dateSel"
+        :onChange="handleDateChange"
+      >
+        <view class='demo-list-item'>
+          <view class='demo-list-item__label'>请选择日期</view>
+          <view class='demo-list-item__value'>{{ dateSel }}</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+</template>
+<script>
+export default {
+  name: 'PickerDemo',
+  data() {
+    return {
+      timeSel: '06:18',
+      selector: ['中国', '美国', '巴西', '日本'],
+      selectorValue: 0,
+      dateSel: '2018-06-18',
+    }
+  },
+  methods: {
+    handleTimeChange (e) {
+      this.timeSel = e.detail.value
+    },
+    handleChange (e) {
+      this.selectorValue = e.detail.value
+    },
+    handleDateChange (e) {
+      this.dateSel = e.detail.value
+    },
+  },
 }
+</script>
 ```
 
 :::

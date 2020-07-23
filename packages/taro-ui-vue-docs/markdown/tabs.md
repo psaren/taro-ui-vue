@@ -38,43 +38,49 @@ import { AtTabs, AtTabsPane } from 'taro-ui-vue'
 
 * 边框下划线有些组件是使用 `::after` 伪类，在微信开发者工具审查不到，但是实际是存在的，建议用 H5 模式审查样式。
 
-* AtTabsPane 在 2.0.1 版本以前内容不会换行，升级到最新版本或自行增加 css 属性 white-space: initial;
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtTabs, AtTabsPane } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      current: 0,
+```vue
+<template>
+  <view class='panel__content'>
+    <AtTabs
+      :swipeable="false"
+      :current="current1"
+      :tabList="tabList1"
+      :onClick="handleClick"
+    >
+      <AtTabsPane :current="current1" :index="0">
+        <view class='tab-content'>标签页一的内容</view>
+      </AtTabsPane>
+      <AtTabsPane :current="current1" :index="1">
+        <view class='tab-content'>标签页二的内容</view>
+      </AtTabsPane>
+      <AtTabsPane :current="current1" :index="2">
+        <view class='tab-content'>标签页三的内容</view>
+      </AtTabsPane>
+    </AtTabs>
+  </view>
+</template>
+<script>
+export default {
+  name: 'AtTabsDemo',
+  data() {
+    return {
+      current1: 0,
+      tabList1: [
+        { title: '标签页1' },
+        { title: '标签页2' },
+        { title: '标签页3' }
+      ],
+    }
+  },
+  methods: {
+    handleClick(value) {
+      this.current1 = value
     }
   }
-  handleClick (value) {
-    this.setState({
-      current: value
-    })
-  }
-  render () {
-    const tabList = [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
-    return (
-      <AtTabs current={this.state.current} tabList={tabList} onClick={this.handleClick.bind(this)}>
-        <AtTabsPane current={this.state.current} index={0} >
-          <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</view>
-        </AtTabsPane>
-        <AtTabsPane current={this.state.current} index={1}>
-          <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</view>
-        </AtTabsPane>
-        <AtTabsPane current={this.state.current} index={2}>
-          <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</view>
-        </AtTabsPane>
-      </AtTabs>
-    )
-  }
 }
+</script>
 
 ```
 
@@ -86,7 +92,7 @@ export default class Index extends Taro.Component {
 
 ```html
 <AtTabs
-  current={this.state.current}
+  :current="current"
   scroll
   tabList={[
     { title: '标签页1' },
@@ -96,23 +102,23 @@ export default class Index extends Taro.Component {
     { title: '标签页5' },
     { title: '标签页6' }
   ]}
-  onClick={this.handleClick.bind(this)}>
-  <AtTabsPane current={this.state.current} index={0}>
+  :onClick="handleClick">
+  <AtTabsPane :current="current" :index="0">
     <view style='font-size:18px;text-align:center;height:100px;'>标签页一的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={1}>
+  <AtTabsPane :current="current" :index="1">
     <view style='font-size:18px;text-align:center;height:100px;'>标签页二的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={2}>
+  <AtTabsPane :current="current" :index="2">
     <view style='font-size:18px;text-align:center;height:100px;'>标签页三的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={3}>
+  <AtTabsPane :current="current" :index="3">
     <view style='font-size:18px;text-align:center;height:100px;'>标签页四的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={4}>
+  <AtTabsPane :current="current" :index="4">
     <view style='font-size:18px;text-align:center;height:100px;'>标签页五的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={5}>
+  <AtTabsPane :current="current" :index="5">
     <view style='font-size:18px;text-align:center;height:100px;'>标签页六的内容</view>
   </AtTabsPane>
 </AtTabs>
@@ -126,35 +132,35 @@ export default class Index extends Taro.Component {
 
 ```html
 <AtTabs
-  current={this.state.current}
+  :current="current"
   scroll
   height='200px'
   tabDirection='vertical'
-  tabList={[
+  :tabList="[
     { title: '标签页1' },
     { title: '标签页2' },
     { title: '标签页3' },
     { title: '标签页4' },
     { title: '标签页5' },
     { title: '标签页6' },
-  ]}
-  onClick={this.handleClick.bind(this)}>
-  <AtTabsPane tabDirection='vertical' current={this.state.current} index={0}>
+  ]"
+  :onClick="handleClick">
+  <AtTabsPane tabDirection='vertical' :current="current" :index="0">
     <view style='font-size:18px;text-align:center;height:200px;'>标签页一的内容</view>
   </AtTabsPane>
-  <AtTabsPane tabDirection='vertical' current={this.state.current} index={1}>
+  <AtTabsPane tabDirection='vertical' :current="current" :index="1">
     <view style='font-size:18px;text-align:center;height:200px;'>标签页二的内容</view>
   </AtTabsPane>
-  <AtTabsPane tabDirection='vertical' current={this.state.current} index={2}>
+  <AtTabsPane tabDirection='vertical' :current="current" :index="2">
     <view style='font-size:18px;text-align:center;height:200px;'>标签页三的内容</view>
   </AtTabsPane>
-  <AtTabsPane tabDirection='vertical' current={this.state.current} index={3}>
+  <AtTabsPane tabDirection='vertical' :current="current" :index="3">
     <view style='font-size:18px;text-align:center;height:200px;'>标签页四的内容</view>
   </AtTabsPane>
-  <AtTabsPane tabDirection='vertical' current={this.state.current} index={4}>
+  <AtTabsPane tabDirection='vertical' :current="current" :index="4">
     <view style='font-size:18px;text-align:center;height:200px;'>标签页五的内容</view>
   </AtTabsPane>
-  <AtTabsPane tabDirection='vertical' current={this.state.current} index={5}>
+  <AtTabsPane tabDirection='vertical' :current="current" :index="5">
     <view style='font-size:18px;text-align:center;height:200px;'>标签页六的内容</view>
   </AtTabsPane>
 </AtTabs>
@@ -168,21 +174,21 @@ export default class Index extends Taro.Component {
 
 ```html
 <AtTabs
-  animated={false}
-  current={this.state.current}
-  tabList={[
+  :animated="false"
+  :current="current"
+  :tabList="[
     { title: '标签页1' },
     { title: '标签页2' },
     { title: '标签页3' }
-  ]}
-  onClick={this.handleClick.bind(this)}>
-  <AtTabsPane current={this.state.current} index={0} >
+  ]"
+  :onClick="handleClick">
+  <AtTabsPane :current="current" :index="0" >
     <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;' >标签页一的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={1}>
+  <AtTabsPane :current="current" :index="1">
     <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页二的内容</view>
   </AtTabsPane>
-  <AtTabsPane current={this.state.current} index={2}>
+  <AtTabsPane :current="current" :index="2">
     <view style='padding: 100px 50px;background-color: #FAFBFC;text-align: center;'>标签页三的内容</view>
   </AtTabsPane>
 </AtTabs>

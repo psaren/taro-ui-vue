@@ -34,33 +34,29 @@ import { AtInputNumber } from 'taro-ui-vue'
   
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtInputNumber }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: 1
+```vue
+<template>
+  <view>
+    <AtInputNumber
+      :width="200"
+      :min="0"
+      :max="10"
+      :step="1"
+      :value="value"
+      :onChange="handleNumberChange"
+    />
+  </view>
+</template>
+<script>
+export default {
+  name: 'AtInputNumberDemo',
+  methods: {
+    handleNumberChange(val) {
+      this.value = val
     }
   }
-  handleChange (value) {
-    this.setState({
-      value
-    })
-  }
-  render () {
-    return (
-      <AtInputNumber
-        min={0}
-        max={10}
-        step={1}
-        value={this.state.value}
-        onChange={this.handleChange.bind(this)}
-      />
-    )
-  }
 }
+</script>
 
 ```
 
@@ -73,11 +69,11 @@ export default class Index extends Taro.Component {
 ```html
 <AtInputNumber
   type='digit'
-  min={0}
-  max={10}
-  step={0.1}
-  value={this.state.value}
-  onChange={this.handleChange.bind(this)}
+  :min="0"
+  :max="10"
+  :step="0.1"
+  :value="value"
+  :onChange="handleChange"
 />
 ```
 
@@ -90,11 +86,11 @@ export default class Index extends Taro.Component {
 ```html
 <AtInputNumber
   disabled
-  min={0}
-  max={10}
-  step={1}
-  value={this.state.value}
-  onChange={this.handleChange.bind(this)}
+  :min="0"
+  :max="10"
+  :step="1"
+  :value="value"
+  :onChange"handleChange"
 />
 ```
 
@@ -107,11 +103,11 @@ export default class Index extends Taro.Component {
 ```html
 <AtInputNumber
   disabledInput
-  min={0}
-  max={10}
-  step={1}
-  value={this.state.value}
-  onChange={this.handleChange.bind(this)}
+  :min="0"
+  :max="10"
+  :step="1"
+  :value="value"
+  :onChange="handleChange"
 />
 ```
 
@@ -123,12 +119,12 @@ export default class Index extends Taro.Component {
 
 ```html
 <AtInputNumber
-  min={0}
-  max={10}
-  step={1}
-  width={200}
-  value={this.state.value}
-  onChange={this.handleChange.bind(this)}
+  :min="0"
+  :max="10"
+  :step="1"
+  :width="200"
+  :value="value"
+  :onChange="handleChange"
 />
 ```
 

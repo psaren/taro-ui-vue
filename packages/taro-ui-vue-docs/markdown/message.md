@@ -5,8 +5,6 @@
 
 ## 使用指南
 
-Taro-UI 版本需要在 `v1.4.1` 以上，在 Taro 文件中引入组件
-
 :::demo
 ```js
 import { AtMessage } from 'taro-ui-vue'
@@ -29,38 +27,51 @@ import { AtMessage } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtMessage } from 'taro-ui-vue'
+```vue
+<template>
+  <view>
+    <view class='example-item'>
+      <AtButton :on-click="handleClick.bind(this, '')">
+        普通消息
+      </AtButton>
+    </view>
+    <view class='example-item'>
+      <AtButton :on-click="handleClick.bind(this, 'success')">
+        成功消息
+      </AtButton>
+    </view>
+    <view class='example-item'>
+      <AtButton :on-click="handleClick.bind(this, 'error')">
+        错误消息
+      </AtButton>
+    </view>
+    <view class='example-item'>
+      <AtButton :on-click="handleClick.bind(this, 'warning')">
+        警告消息
+      </AtButton>
+    </view>
+    <view class='example-item'>
+      <AtButton :on-click="handleClick.bind(this, 'info')">
+        提示消息
+      </AtButton>
+    </view>
+  </view>
+</template>
 
-export default class LoadMorePage extends Taro.Component {
-  handleClick (type) {
-    Taro.atMessage({
-      'message': '消息通知',
-      'type': type,
-    })
+<script>
+  import Taro from '@tarojs/taro'
+  export default {
+    name: 'ToastPage',
+    methods: {
+      handleClick(type) {
+        Taro.atMessage({
+          message: '消息通知',
+          type
+        })
+      }
+    }
   }
-  render () {
-    return (
-      <view>
-        <AtMessage />
-        <AtButton onClick={this.handleClick.bind(this)}>
-          普通消息
-        </AtButton>
-        <AtButton onClick={this.handleClick.bind(this, 'success')}>
-          成功消息
-        </AtButton>
-        <AtButton onClick={this.handleClick.bind(this, 'error')}>
-          错误消息
-        </AtButton>
-        <AtButton onClick={this.handleClick.bind(this, 'warning')}>
-          警告消息
-        </AtButton>
-      </view>
-    )
-  }
-}
+</script>
 ```
 
 :::
