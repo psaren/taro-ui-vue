@@ -2,7 +2,9 @@
 
 ----
 
-`Taro UI` 是一款基于 [Taro](https://taro.aotu.io) 框架开发的多端 UI 组件库
+`Taro UI Vue` 是一款基于 [Taro](https://taro.aotu.io) 框架开发的多端 UI 组件库  
+
+主要参考 [Taro UI](https://taro-ui.jd.com/#/) 实现
 
 ## Taro
 
@@ -18,26 +20,24 @@ Taro 是由 [京东·凹凸实验室](https://aotu.io) 倾力打造的多端开�
 
 ## 体验
 
-使用微信扫一扫体验 `小程序` 和 `H5` 组件示例
-
-![QRCode](https://user-images.githubusercontent.com/1240899/46650700-25a4e600-cbd0-11e8-90ff-905edb39c340.jpg)
+--
 
 ## 官方示例
 
-[Taro UI 官方示例](https://github.com/NervJS/taro-ui-demo)
+--
 
 ## 版本
 
-`Taro-UI`：[![npm version](https://badge.fury.io/js/taro-ui.svg)](https://badge.fury.io/js/taro-ui)
+`Taro-UI-Vue`：[![NPM version](https://img.shields.io/npm/v/taro-ui-vue.svg)](https://npmjs.org/package/taro-ui-vue)
 
 ## 开发交流
 
-[官方微信交流群](https://github.com/NervJS/taro-ui/issues/16)
+--
 
 ## 开发计划
 
-[Taro UI 开发计划](https://github.com/NervJS/taro-ui/blob/dev/PLANS.md)
+--
 
 ## 贡献
 
-如果你在使用 `Taro UI` 时遇到问题，或者有好的建议，欢迎给我们提 [Issue](https://github.com/nervjs/taro-ui/issues) 或 [Pull Request](https://github.com/nervjs/taro-ui/pulls)
+如果你在使用 `Taro UI Vue` 时遇到问题，或者有好的建议，欢迎给我们提 [Issue](https://github.com/psaren/taro-ui-vue/issues) 或 [Pull Request](https://github.com/psaren/taro-ui-vue/pulls)

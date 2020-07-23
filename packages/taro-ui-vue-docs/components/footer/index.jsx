@@ -66,7 +66,7 @@ const Footer = () => (
           <h3 className='footer_link_tit footer_link_tit2'>社区</h3>
           <p>
             <a
-              href='https://github.com/NervJS/taro/issues'
+              href='https://github.com/psaren/taro-ui-vue/issues'
               target='_blank'
               rel='noopener noreferrer'
             >

@@ -63,7 +63,7 @@ class Index extends React.Component {
               </a>
               <a
                 className='btn btn-github'
-                href='https://github.com/NervJS/taro-ui'
+              href='https://github.com/psaren/taro-ui-vue'
               >
                 GitHub
               </a>
