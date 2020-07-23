@@ -8,18 +8,22 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtImagePicker } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/image-picker.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
@@ -33,6 +37,7 @@ import { AtImagePicker } from 'taro-ui-vue'
 * 开发者可以获取 files 数据并通过 [Taro.uploadFile](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/wx.uploadFile.html) 上传图片
 
 :::demo
+
 ``` vue
 <template>
   <view>
@@ -147,7 +152,7 @@ export default {
 | 参数       | 说明                                                                                                      | 类型    | 可选值                                                                                                                                             | 默认值                                                                      |
 | ---------- | --------------------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | files      | 图片文件数组, 元素为对象, 包含属性 url（必选)                                                             | Array   | -                                                                                                                                                  | []                                                                          |
-| mode       | 图片预览模式，详见(微信开发者文档)[https://developers.weixin.qq.com/miniprogram/dev/component/image.html] | String  | ```'scaleToFill'|'aspectFit'|'aspectFill'|'widthFix'|'top'|'bottom'|'center'|'left'|'right'|'top left'|'top right'|'bottom left'|'bottom right'``` | aspectFill                                                                  |
+| mode       | 图片预览模式，详见[微信开发者文档](https://developers.weixin.qq.com/miniprogram/dev/component/image.html) | String  | ```'scaleToFill'|'aspectFit'|'aspectFill'|'widthFix'|'top'|'bottom'|'center'|'left'|'right'|'top left'|'top right'|'bottom left'|'bottom right'``` | aspectFill                                                                  |
 | showAddBtn | 是否显示添加图片按钮                                                                                      | Boolean | -                                                                                                                                                  | true                                                                        |
 | multiple   | 是否支持多选                                                                                              | Boolean | -                                                                                                                                                  | false                                                                       |
 | count      | 最多可以选择的图片张数                                                                  | Number  | 0 ～ 99                                                                                                                                            | 默认为1，当multiple为true时候，为99，此选项设置和multiple冲突时，以该项优先 |

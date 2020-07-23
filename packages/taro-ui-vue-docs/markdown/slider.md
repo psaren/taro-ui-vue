@@ -8,33 +8,49 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtSlider } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/slider.scss";
 ```
+
 :::
 
 ## 一般用法
 
 :::demo
-```html
-<AtSlider></AtSlider>
+
+```vue
+<template>
+ <view>
+  <AtSlider />
+ </view>
+</template>
 ```
+
 :::
 
 ## 传入当前值
 
 :::demo
-```html
-<AtSlider value={50}></AtSlider>
+
+```vue
+<template>
+ <view>
+  <AtSlider :value="50" />
+ </view>
+</template>
 ```
+
 :::
 
 ## 设置步长
@@ -42,33 +58,57 @@ import { AtSlider } from 'taro-ui-vue'
 取值必须大于 0，并且可被(max - min)整除
 
 :::demo
-```html
-<AtSlider step={2}></AtSlider>
+
+```vue
+<template>
+ <view>
+  <AtSlider :step="2" />
+ </view>
+</template>
 ```
+
 :::
 
 ## 设置取值范围
 
 :::demo
-```html
-<AtSlider min={10} max={60}></AtSlider>
+
+```vue
+<template>
+ <view>
+  <AtSlider :min="2" :max="60" />
+ </view>
+</template>
 ```
+
 :::
 
 ## 自定义样式
 
 :::demo
-```html
-<AtSlider step={1} value={50} activeColor='#4285F4' backgroundColor='#BDBDBD' blockColor='#4285F4' blockSize={24}></AtSlider>
+
+```vue
+<template>
+ <view>
+  <AtSlider :step="1" :value="50" :blockSize="24 activeColor='#4285F4' backgroundColor='#BDBDBD' blockColor='#4285F4'/>
+ </view>
+</template>
 ```
+
 :::
 
 ## 禁用状态
 
 :::demo
-```html
-<AtSlider step={1} value={50} showValue disabled></AtSlider>
+
+```vue
+<template>
+ <view>
+  <AtSlider :step="1" :value="50" :blockSize="24 showValue disabled/>
+ </view>
+</template>
 ```
+
 :::
 
 ## AtSlider 参数

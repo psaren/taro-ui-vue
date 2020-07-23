@@ -8,18 +8,22 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtRadio } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/radio.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
@@ -32,43 +36,43 @@ import { AtRadio } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtRadio }  from 'taro-ui-vue'
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+ <view>
+  <AtRadio
+    :options="radioOptions1"
+    :value="radioValue1"
+    :onClick="handleRadioChange"
+  />
+ </view>
+</template>
+<script>
+export default {
+  name: 'AtRadioDemo',
+  data() {
+    return {
+      radioValue1: 'option1',
+      radioOptions1: [
+        { label: '单选项一', value: 'option1' },
+        { label: '单选项二', value: 'option2' },
+        { label: '单选项三', value: 'option3' }
+      ],
     }
-  }
-  handleChange (value) {
-    this.setState({
-      value
-    })
-  }
-  render () {
-    return (
-      <AtRadio
-        options={[
-          { label: '单选项一', value: 'option1', desc: '单选项描述' },
-          { label: '单选项二', value: 'option2' },
-          { label: '单选项三禁用', value: 'option3', desc: '单选项描述', disabled: true }
-        ]}
-        value={this.state.value}
-        onClick={this.handleChange.bind(this)}
-      />
-    )
+  },
+  methods: {
+    handleRadioChange(value){
+      this.radioValue1 = value
+    },
   }
 }
-
+</script>
 ```
 
 :::
 
 ## 参数
 
-| 参数       | 说明                                   | 类型    | 可选值                                                              | 默认值   |
+| 参数       | 说明                                   | 类型    | 可选    值                                                              | 默认值   |
 | ---------- | -------------------------------------- | ------- | ------------------------------------------------------------------- | -------- |
 | value | 输入框当前值，用户需要通过 onClick 事件来更新 value 值，必填   | String  | - | 0 |
 | options  | object 选项列表，object 字段详细看下表  | Array | - | - |

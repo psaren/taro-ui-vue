@@ -5,22 +5,24 @@
 
 ## 使用指南
 
-Taro-UI 版本需要在 `v1.3.1` 以上，在 Taro 文件中引入组件
-
 :::demo
+
 ```js
 import { AtSearchBar } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/search-bar.scss";
 @import "~taro-ui-vue/dist/style/components/button.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
@@ -35,32 +37,32 @@ import { AtSearchBar } from 'taro-ui-vue'
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSearchBar } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+  <AtSearchBar
+    :value="value1"
+    :onChange="onChange.bind(this, 'value1')"
+    :onActionClick="onActionClick"
+  />
+</template>
+<script>
+export default {
+  name: 'AtSearchBarDemo',
+  data() {
+    return {
+      value1: '',
+    }
+  },
+  methods: {
+    onChange(stateName, value) {
+      this[stateName] = value
+    },
+    onActionClick() {
+      console.log('点击了搜索按钮')
     }
   }
-  onChange (value) {
-    this.setState({
-      value: value
-    })
-  }
-  render () {
-    return (
-      <AtSearchBar
-        value={this.state.value}
-        onChange={this.onChange.bind(this)}
-      />
-    )
-  }
 }
-
+</script>
 ```
 
 :::
@@ -69,36 +71,33 @@ export default class Index extends Taro.Component {
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSearchBar } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+  <AtSearchBar
+    actionName='搜一下'
+    :value="value2"
+    :onChange="onChange.bind(this, 'value2')"
+    :onActionClick="onActionClick"
+  />
+</template>
+<script>
+export default {
+  name: 'AtSearchBarDemo',
+  data() {
+    return {
+      value2: '',
+    }
+  },
+  methods: {
+    onChange(stateName, value) {
+      this[stateName] = value
+    },
+    onActionClick() {
+      console.log('点击了搜索按钮')
     }
   }
-  onChange (value) {
-    this.setState({
-      value: value
-    })
-  }
-  onActionClick () {
-    console.log('开始搜索')
-  }
-  render () {
-    return (
-      <AtSearchBar
-        actionName='搜一下'
-        value={this.state.value}
-        onChange={this.onChange.bind(this)}
-        onActionClick={this.onActionClick.bind(this)}
-      />
-    )
-  }
 }
+</script>
 ```
 
 :::
@@ -107,36 +106,34 @@ export default class Index extends Taro.Component {
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSearchBar } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+   <AtSearchBar
+      placeholder='请输入ISBN号'
+      showActionButton
+      :value="value3"
+      :onChange="onChange.bind(this, 'value3')"
+      :onActionClick="onActionClick"
+    />
+</template>
+<script>
+export default {
+  name: 'AtSearchBarDemo',
+  data() {
+    return {
+      value3: '',
+    }
+  },
+  methods: {
+    onChange(stateName, value) {
+      this[stateName] = value
+    },
+    onActionClick() {
+      console.log('点击了搜索按钮')
     }
   }
-  onChange (value) {
-    this.setState({
-      value: value
-    })
-  }
-  onActionClick () {
-    console.log('开始搜索')
-  }
-  render () {
-    return (
-      <AtSearchBar
-        showActionButton
-        value={this.state.value}
-        onChange={this.onChange.bind(this)}
-        onActionClick={this.onActionClick.bind(this)}
-      />
-    )
-  }
 }
+</script>
 ```
 
 :::
@@ -145,36 +142,34 @@ export default class Index extends Taro.Component {
 
 :::demo
 
-```js
-import Taro from '@tarojs/taro'
-import { AtSearchBar } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  constructor () {
-    super(...arguments)
-    this.state = {
-      value: ''
+```vue
+<template>
+  <AtSearchBar
+    placeholder='请输入数字'
+    inputType='number'
+    :value="value4"
+    :onChange="onChange.bind(this, 'value4')"
+    :onActionClick="onActionClick"
+  />
+</template>
+<script>
+export default {
+  name: 'AtSearchBarDemo',
+  data() {
+    return {
+      value4: '',
+    }
+  },
+  methods: {
+    onChange(stateName, value) {
+      this[stateName] = value
+    },
+    onActionClick() {
+      console.log('点击了搜索按钮')
     }
   }
-  onChange (value) {
-    this.setState({
-      value: value
-    })
-  }
-  onActionClick () {
-    console.log('开始搜索')
-  }
-  render () {
-    return (
-      <AtSearchBar
-        inputType='number'
-        value={this.state.value}
-        onChange={this.onChange.bind(this)}
-        onActionClick={this.onActionClick.bind(this)}
-      />
-    )
-  }
 }
+</script>
 ```
 
 :::

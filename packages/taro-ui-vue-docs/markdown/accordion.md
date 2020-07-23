@@ -6,18 +6,22 @@
 ## 使用指南
 
 :::demo
+
 ```js
 import { AtAccordion } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/accordion.scss";
 @import "~taro-ui-vue/dist/style/components/icon.scss";
 ```
+
 :::
 
 ## 一般用法
@@ -54,8 +58,8 @@ import { AtAccordion, AtList, AtListItem } from 'taro-ui-vue'
 export default {
   name: 'AccordionDemo',
   components: {
-    AtAccordion, 
-    AtList, 
+    AtAccordion,
+    AtList,
     AtListItem
   },
   data() {
@@ -108,8 +112,8 @@ import { AtAccordion, AtList, AtListItem } from 'taro-ui-vue'
 export default {
   name: 'AccordionDemo',
   components: {
-    AtAccordion, 
-    AtList, 
+    AtAccordion,
+    AtList,
     AtListItem
   },
   data() {

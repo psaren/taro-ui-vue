@@ -9,17 +9,21 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtCard } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/card.scss";
 ```
+
 :::
 
 ## 一般用法
@@ -48,10 +52,8 @@ import { AtCard } from 'taro-ui-vue'
 | thumb  | 元素的缩略图   | String  | -      | -      |
 | renderIcon | 元素自定义图标 | Jsx | - | - |  
 | extra  | 元素的额外信息 | String  | -      | -      |
-| extraStyle | 元素的额外信息自定义样式 | Object | - | - | 
+| extraStyle | 元素的额外信息自定义样式 | Object | - | - |
 | isFull | 是否通栏       | Boolean | -      | -      |
-
-
 
 ## AtCard 事件
 

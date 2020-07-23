@@ -9,22 +9,27 @@
 在 Taro 文件中引入组件
 
 :::demo
+
 ```js
 import { AtAvatar } from 'taro-ui-vue'
 ```
+
 :::
 
 **组件依赖的样式文件（仅按需引用时需要）**
 
 :::demo
+
 ```scss
 @import "~taro-ui-vue/dist/style/components/avatar.scss";
 ```
+
 :::
 
 ## 用法
 
 :::demo
+
 ```vue
 <template>
   <view>
@@ -35,9 +40,8 @@ import { AtAvatar } from 'taro-ui-vue'
   </view>
 </template>
 ```
+
 :::
-
-
 
 ## Avatar 参数
 
