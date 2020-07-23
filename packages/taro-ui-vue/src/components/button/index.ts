@@ -14,7 +14,6 @@ const TYPE_CLASS = {
 }
 
 export default {
-  name: 'AtButton',
   data() {
     return {
       ...getEnvs(),

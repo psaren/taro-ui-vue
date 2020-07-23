@@ -38,6 +38,7 @@ import AtList from '../list/index.vue'
 import AtListItem from '../list/item/index.vue'
 import AtDrawer from './index';
 export default {
+  name: 'AtDrawer',
   mixins: [AtDrawer],
   components: {
     AtList,

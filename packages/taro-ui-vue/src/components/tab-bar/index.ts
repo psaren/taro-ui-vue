@@ -2,7 +2,6 @@ import classNames from 'classnames'
 import { mergeStyle } from '../../utils/common'
 
 export default {
-  name: 'AtTabBar',
   props: {
     customStyle: {
       type: [Object, String],

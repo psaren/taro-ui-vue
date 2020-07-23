@@ -35,6 +35,7 @@ import AtCountdownItem from './item.vue'
 import AtCountdown from './index'
 
 export default {
+  name: 'AtCountdown',
   mixins: [AtCountdown],
   components: {
     AtCountdownItem

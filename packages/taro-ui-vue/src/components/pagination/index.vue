@@ -50,6 +50,7 @@
 import AtButton from '../button/index.vue'
 import AtPagination from './index'
 export default {
+  name: 'AtPagination',
   mixins: [AtPagination],
   components: {
     AtButton

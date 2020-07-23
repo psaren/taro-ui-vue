@@ -5,7 +5,6 @@ import mixins from '../mixins'
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'AtModal',
   mixins: [mixins],
   props: {
     title: {

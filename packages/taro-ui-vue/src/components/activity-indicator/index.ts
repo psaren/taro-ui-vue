@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 
 export default {
-  name: 'AtActivityIndicator',
   props: {
     size: {
       type: Number,

@@ -20,7 +20,6 @@ const createPickerRange = (max) => {
 }
 
 export default {
-  name: 'AtPagination',
   mixins: [mixins],
   props: {
     customStyle: {

@@ -2,7 +2,6 @@ import classNames from 'classnames'
 
 
 export default {
-  name: 'AtLoadMore',
   props: {
     customStyle: {
       type: [Object, String],

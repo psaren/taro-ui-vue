@@ -4,11 +4,6 @@ import mixins from '../mixins'
 
 
 export default {
-  name: 'AtCalendar',
-  components: {
-    AtCalendarBody,
-    AtCalendarController,
-  },
   mixins: [mixins],
   props: {
     validDates: {

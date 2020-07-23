@@ -19,6 +19,7 @@
 import AtLoading from '../loading/index.vue'
 import AtActivityIndicator from './index'
 export default {
+  name: 'AtActivityIndicator',
   mixins: [AtActivityIndicator],
   components: {
     AtLoading

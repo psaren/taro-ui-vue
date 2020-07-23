@@ -35,6 +35,7 @@ import AtButton from '../button/index.vue'
 import AtActivityIndicator from '../activity-indicator/index.vue'
 import AtLoadMore from './main'
 export default {
+  name: 'AtLoadMore',
   mixins: [AtLoadMore],
   components: {
     AtButton,
