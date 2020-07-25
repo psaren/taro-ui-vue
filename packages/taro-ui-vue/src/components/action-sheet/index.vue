@@ -22,7 +22,17 @@
   </view>
 </template>
 
-<script lang="ts">
+<script>
+import ActionSheetBody from './components/body.vue'
+import ActionSheetFooter from './components/footer.vue'
+import ActionSheetHeader from './components/header.vue'
 import AtActionSheet from './index'
-export default AtActionSheet
+export default {
+  name: 'AtActionSheet',
+  components: {
+    ActionSheetBody,
+    ActionSheetFooter,
+    ActionSheetHeader,
+  },
+}
 </script>

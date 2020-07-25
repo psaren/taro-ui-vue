@@ -1,15 +1,6 @@
 import classNames from 'classnames'
-import ActionSheetBody from './components/body.vue'
-import ActionSheetFooter from './components/footer.vue'
-import ActionSheetHeader from './components/header.vue'
 
 export default {
-  name: 'AtActionSheet',
-  components: {
-    ActionSheetBody,
-    ActionSheetFooter,
-    ActionSheetHeader,
-  },
   props: {
     title: {
       type: String,
