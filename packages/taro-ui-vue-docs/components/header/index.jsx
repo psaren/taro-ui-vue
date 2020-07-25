@@ -38,7 +38,7 @@ class PageHeader extends React.Component {
             <div className='logo'>
               <Link to='/'>
                 <img className='logo-img' src={taroUILogo} />
-                <span>Taro UI</span>
+                <span>Taro UI Vue</span>
               </Link>
             </div>
             <i className='icon icon-menu nav-icon' onClick={this.toggleMenu} />

@@ -44,7 +44,7 @@ class Index extends React.Component {
           <div className='bg-bottom-shadow'></div>
           <div className='info-container'>
             <div className='img-container'></div>
-            <h1>Taro UI</h1>
+            <h1>Taro UI Vue</h1>
             <div className='info-desc'>
               一套基于 Taro 框架开发的多端 UI 组件库
             </div>
