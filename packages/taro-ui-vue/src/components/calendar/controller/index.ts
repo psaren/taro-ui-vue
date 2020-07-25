@@ -3,7 +3,6 @@ import classnames from 'classnames'
 import dayjs, { Dayjs } from 'dayjs'
 
 const AtCalendarController = Vue.extend({
-  name: 'AtCalendarController',
   props: {
     minDate: {
       type: [String, Number, Date],

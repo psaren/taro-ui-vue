@@ -46,7 +46,7 @@ import AtMessage from './components/message/index.vue'
 import AtImagePicker from './components/image-picker/index.vue'
 import AtRange from './components/range/index.vue'
 import AtIndexes from './components/indexes/index.vue'
-import AtCalendar from './components/calendar/index'
+import AtCalendar from './components/calendar/index.vue'
 import AtFab from './components/fab/index.vue'
 import AtDrawer from './components/drawer/index.vue'
 
@@ -164,7 +164,7 @@ const components = [
 ]
 
 const install = function (Vue) {
-  components.forEach((comp) => {
+  components.forEach((comp, index) => {
     if (comp.extendOptions) {
       // 压缩后 vue-class-component 组件的 options.name 会改变需要找回正确的组件名
       let options = comp.options || {}

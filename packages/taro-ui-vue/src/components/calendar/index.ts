@@ -2,7 +2,6 @@ import classNames from 'classnames'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
 
-
 export default {
   mixins: [mixins],
   props: {

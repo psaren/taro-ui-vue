@@ -43,7 +43,7 @@
     </view>
   </view>
 </template>
-<script lang="ts">
+<script>
 import AtCalendarBody from './index';
 export default AtCalendarBody
 </script>

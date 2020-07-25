@@ -24,7 +24,10 @@
     />
   </view>
 </template>
-<script lang="ts">
+<script>
 import AtCalendarController from './index'
-export default AtCalendarController
+export default {
+  name: 'AtCalendarController',
+  mixins: [AtCalendarController]
+}
 </script>
