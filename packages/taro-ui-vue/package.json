@@ -7,7 +7,8 @@
   "main": "dist/index.js",
   "source": "src/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "author": "psaren",
   "repository": {
@@ -25,7 +26,6 @@
     "build:lib-dev": "cross-env LIB_ENV=dev rollup --config ./config/rollup.config.js",
     "build:rollup": "rollup --config ./config/rollup.config.js",
     "rollup:test": "node tests/transform-component.js && rollup --config ./config/rollup-test.config.js",
-    "prepublish": "npm run build:rollup && node ./config/copy.js",
     "clean": "rimraf dist lib",
     "clog": "conventional-changelog -p angular -i CHANGELOG.md -s -r",
     "test": "node ./tests/transform-component.js && cross-env NODE_ENV=test && jest --coverage"
