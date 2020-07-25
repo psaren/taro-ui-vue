@@ -36,7 +36,7 @@ class Docs extends React.Component {
   }
 
   getIframeUrl() {
-    const host = BUILD_MODE === 'dev' ? 'http://localhost:10086' : 'http://taro-ui-vue-demo.fontend.com/'
+    const host = BUILD_MODE === 'dev' ? 'http://localhost:10086' : 'http://taro-ui-vue-demo.fontend.com'
     const curDemoPath = this.getDemoPath()
     return `${host}/pages/${curDemoPath}/index`
   }
@@ -45,7 +45,6 @@ class Docs extends React.Component {
     const data = navsConfig.components
     const { fixed } = this.state
     const curDemoPath = this.getDemoPath()
-    const curPageUrl = `${window.location.origin}${window.location.pathname}/h5/index.html#/pages/${curDemoPath}/index`
 
     return (
       <div className='app' id='app'>
@@ -67,7 +66,7 @@ class Docs extends React.Component {
                   <div className='qrcode-modal'>
                     <h6>扫描二维码查看演示效果</h6>
                     <div className='code-image'>
-                      <QRCode value={curPageUrl} size='140' />
+                      <QRCode value={this.getIframeUrl()} size={140} />
                     </div>
                   </div>
                 </div>
