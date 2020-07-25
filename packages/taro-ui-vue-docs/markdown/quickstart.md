@@ -31,12 +31,12 @@ $ taro init myApp
 ```
 :::
 
-### 3. 安装 Taro UI
+### 3. 安装 Taro UI Vue
 
 :::demo
 ```bash
 $ cd myApp
-$ npm install taro-ui
+$ npm install taro-ui-vue
 ```
 :::
 
@@ -44,7 +44,7 @@ $ npm install taro-ui
 
 #### 配置需要额外编译的源码模块
 
-<p style="color: #f00;">由于引用 `node_modules` 的模块，默认不会编译，所以需要额外给 H5 配置 `esnextModules`，在 taro 项目的 `config/index.js` 中新增如下配置项：</p>
+由于引用 `node_modules` 的模块，默认不会编译，所以需要额外给 H5 配置 `esnextModules`，在 taro 项目的 `config/index.js` 中新增如下配置项：
 
 :::demo
 ```js
@@ -101,27 +101,26 @@ import 'taro-ui/dist/style/index.scss' // 引入组件样式 - 方式一
 在 `/myApp/src/pages/index/index.tsx` 文件添加以下代码
 
 :::demo
-```jsx
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtButton } from 'taro-ui-vue'
 
+```vue
+<template>
+  <view class='index'>
+    <AtButton type='primary' :onClick="handleClick">按钮文案</AtButton>
+  </view>
+</template>
+<script>
 import './index.scss'
-
-export default class Index extends Component {
-  config: Config = {
-    navigationBarTitleText: '首页'
-  }
-  
-  render () {
-    return (
-      <view class='index'>
-         <AtButton type='primary'>按钮文案</AtButton>
-      </view>
-    )
+export default {
+  name: 'Index',
+  methods: {
+    handleClick () {
+      console.log('click button)
+    }
   }
 }
+</script>
 ```
+
 :::
 
 在 `/myApp/src/app.scss` 文件中添加如下代码
