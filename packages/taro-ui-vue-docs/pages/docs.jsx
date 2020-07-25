@@ -11,6 +11,8 @@ import wxAppLogo from '../assets/wxapp-logo.png'
 import qrCodeWxApp from '../assets/wxapp.jpg'
 import '../assets/style/docs.scss'
 
+// `./h5/index.html#/pages/${curDemoPath}/index`
+
 class Docs extends React.Component {
   constructor() {
     super(...arguments)
@@ -34,7 +36,7 @@ class Docs extends React.Component {
   }
 
   getIframeUrl() {
-    const host = 'http://localhost:10086'
+    const host = BUILD_MODE === 'dev' ? 'http://localhost:10086' : 'http://taro-ui-vue-demo.fontend.com/'
     const curDemoPath = this.getDemoPath()
     return `${host}/pages/${curDemoPath}/index`
   }
@@ -114,7 +116,7 @@ class Docs extends React.Component {
               >
                 {curDemoPath ? (
                   <iframe
-                    src={this.getIframeUrl()}
+                    src={`./h5/index.html#/pages/${curDemoPath}/index`}
                     frameBorder='0'
                   ></iframe>
                 ) : (

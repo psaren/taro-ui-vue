@@ -18,7 +18,8 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
-      BASE_NAME: '`/`'
+      BASE_NAME: '`/`',
+      BUILD_MODE: `'dev'`,
     })
   ]
 }

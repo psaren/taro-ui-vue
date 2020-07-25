@@ -28,7 +28,8 @@ module.exports = {
       ]
     }),
     new webpack.DefinePlugin({
-      BASE_NAME: `'/taro-ui'`
+      BASE_NAME: `'/taro-ui'`,
+      BUILD_MODE: `'prod'`,
     }),
     new FaviconWebpackPlugin({
       logo: path.resolve(projectRoot, 'assets/favicon.png'),
