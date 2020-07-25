@@ -14,7 +14,7 @@
         v-for="(item, index) in list"
         :key="index"
         class="module-list__item"
-        @tap="gotoPanel(item.id)"
+        @touchstart="gotoPanel(item.id)"
       >
         <view class="module-list__icon">
           <image

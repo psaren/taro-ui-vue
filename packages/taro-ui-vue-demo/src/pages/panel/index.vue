@@ -23,7 +23,7 @@
           v-for="(item, index) in itemList"
           :key="index"
           class="component-list__item"
-          @tap="gotoComponent(item.id, currentId)"
+          @touchstart="gotoComponent(item.id, currentId)"
         >
           <Text class="name">
             {{ `${item.id} ${item.name}` }}

@@ -78,10 +78,10 @@
         </view>
       </AtModalContent>
       <AtModalAction>
-        <Button @tap="closeModal(1, '点击了取消')" @click="closeModal(1, '点击了取消')">
+        <Button @touchstart="closeModal(1, '点击了取消')" @click="closeModal(1, '点击了取消')">
           取消
         </Button>
-        <Button @tap="closeModal(1, '点击了确定')" @click="closeModal(1, '点击了确定')">
+        <Button @touchstart="closeModal(1, '点击了确定')" @click="closeModal(1, '点击了确定')">
           确定
         </Button>
       </AtModalAction>
@@ -99,7 +99,7 @@
         </view>
       </AtModalContent>
       <AtModalAction>
-        <Button @tap="closeModal(2, '点击了确定')" @click="closeModal(2, '点击了确定')">
+        <Button @touchstart="closeModal(2, '点击了确定')" @click="closeModal(2, '点击了确定')">
           确定
         </Button>
       </AtModalAction>

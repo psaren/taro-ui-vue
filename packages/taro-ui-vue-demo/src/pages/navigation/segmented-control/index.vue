@@ -13,7 +13,7 @@
           <view>
             <AtSegmentedControl
               :onClick="handleClick.bind(this, 1)"
-              @tap="handleClick"
+              @touchstart="handleClick"
               :current="current1"
               :values="tabList2"
             />
