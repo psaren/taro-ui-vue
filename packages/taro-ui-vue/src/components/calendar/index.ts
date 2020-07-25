@@ -2,6 +2,11 @@ import classNames from 'classnames'
 import dayjs from 'dayjs'
 import mixins from '../mixins'
 
+interface StateValue {
+  selectedDate: any;
+  generateDate?: string;
+}
+
 export default {
   mixins: [mixins],
   props: {
@@ -158,7 +163,7 @@ export default {
     getSingleSelectdState(value) {
       const { generateDate } = this.state
 
-      const stateValue = {
+      const stateValue: StateValue = {
         selectedDate: this.getSelectedDate(value.valueOf()),
       }
 
@@ -278,7 +283,7 @@ export default {
     handleSelectedDate() {
       const selectDate = this.state.selectedDate
       if (typeof this.onSelectDate === 'function') {
-        const info = {
+        const info: {start: string, end?:string} = {
           start: dayjs(selectDate.start).format(this.format),
         }
 
