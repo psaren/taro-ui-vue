@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "taro-ui-vue-demo",
-  "version": "0.0.9",
+  "version": "1.0.0-alpha.0",
   "description": "demo for Taro-UI-Vue",
   "author": "psaren",
   "repository": {
@@ -45,9 +45,9 @@
     "classnames": "^2.2.6",
     "dayjs": "^1.8.27",
     "lodash": "^4.17.15",
+    "taro-ui-vue": "file:../taro-ui-vue",
     "vue": "^2.5.0",
-    "vue-template-compiler": "^2.5.0",
-    "taro-ui-vue": "file:../taro-ui-vue"
+    "vue-template-compiler": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
