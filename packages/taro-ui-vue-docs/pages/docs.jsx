@@ -116,7 +116,7 @@ class Docs extends React.Component {
               >
                 {curDemoPath ? (
                   <iframe
-                    src={`./h5/index.html#/pages/${curDemoPath}/index`}
+                    src={this.getIframeUrl()}
                     frameBorder='0'
                   ></iframe>
                 ) : (
