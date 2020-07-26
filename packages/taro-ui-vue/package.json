@@ -2,13 +2,14 @@
   "name": "taro-ui-vue",
   "version": "1.0.0-alpha.0",
   "description": "UI KIT for Taro/vue",
-  "browser": "dist/index.umd.js",
-  "module": "dist/index.esm.js",
-  "main": "dist/index.js",
+  "browser": "src/index.js",
+  "module": "src/index.js",
+  "main": "src/index.js",
   "source": "src/index.js",
   "files": [
     "dist",
-    "src"
+    "src",
+    "../../README.md"
   ],
   "author": "psaren",
   "repository": {
