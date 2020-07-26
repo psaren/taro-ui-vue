@@ -140,7 +140,7 @@ function pxTransform(size: number): string {
     750: 1,
     828: 1.81 / 2,
   }
-  return `${size / deviceRatio[designWidth]}${getEnvs().isWEB ? 'px' : 'rpx'}`
+  return `${size / deviceRatio[designWidth]}rpx`
 }
 
 interface EventDetail {
