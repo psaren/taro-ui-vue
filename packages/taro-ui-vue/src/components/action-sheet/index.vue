@@ -29,6 +29,7 @@ import ActionSheetHeader from './components/header.vue'
 import AtActionSheet from './index'
 export default {
   name: 'AtActionSheet',
+  mixins: [AtActionSheet],
   components: {
     ActionSheetBody,
     ActionSheetFooter,
