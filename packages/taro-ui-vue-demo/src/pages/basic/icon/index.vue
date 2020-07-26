@@ -11,7 +11,7 @@
       >
         <view
           class="panel__title"
-          @touchstart="handleClick"
+          @tap="handleClick"
           @click="handleClick"
         >
           {{ item.name }}

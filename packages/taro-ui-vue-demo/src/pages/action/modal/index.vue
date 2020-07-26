@@ -8,7 +8,7 @@
         <view class='panel__title'>基础模态框</view>
         <view class='panel__content'>
           <view class='example-item'>
-            <AtButton :on-click="handleClick.bind(this, 1)">
+            <AtButton :onClick="handleClick.bind(this, 1)">
               打开基础模态框
             </AtButton>
           </view>
@@ -78,12 +78,12 @@
         </view>
       </AtModalContent>
       <AtModalAction>
-        <Button @touchstart="closeModal(1, '点击了取消')" @click="closeModal(1, '点击了取消')">
+        <AtButton :onClick="closeModal(1, '点击了取消')">
           取消
-        </Button>
-        <Button @touchstart="closeModal(1, '点击了确定')" @click="closeModal(1, '点击了确定')">
+        </AtButton>
+        <AtButton :onClick="closeModal(1, '点击了确定')">
           确定
-        </Button>
+        </AtButton>
       </AtModalAction>
     </AtModal>
 
@@ -99,9 +99,9 @@
         </view>
       </AtModalContent>
       <AtModalAction>
-        <Button @touchstart="closeModal(2, '点击了确定')" @click="closeModal(2, '点击了确定')">
+        <AtButton :onClick="closeModal.bind(this, 2, '点击了确定')">
           确定
-        </Button>
+        </AtButton>
       </AtModalAction>
     </AtModal>
 
