@@ -18,10 +18,9 @@ npm i -S taro-ui-vue
 ### 按需引入
 ``` javascript
 // page.js
-import { AtButton } from 'taro-ui-vue/src'
-// 除了引入所需的组件，还需要手动引入组件样式
+import { AtButton } from 'taro-ui-vue'
 // OR
-import AtButton from 'taro-ui-vue/src/components/button'
+import AtButton from 'taro-ui-vue/src/components/button/index.vue'
 ```
 按需引入样式
 ``` javascript
