@@ -31,17 +31,17 @@ export default {
   input: resolveFile(Package.source),
   output: [
     {
-      file: resolveFile(Package.main),
+      file: resolveFile('dist/index.js'),
       format: 'cjs',
       sourcemap: true,
     },
     {
-      file: resolveFile(Package.module),
+      file: resolveFile('dist/index.esm.js'),
       format: 'es',
       sourcemap: true,
     },
     {
-      file: resolveFile(Package.browser),
+      file: resolveFile('dist/index.umd.js'),
       format: 'umd',
       name: 'taro-ui',
       sourcemap: true,
