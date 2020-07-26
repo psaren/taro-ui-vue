@@ -64,7 +64,10 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script>
 import AtTabs from './index'
-export default AtTabs
+export default {
+  name: 'AtTabs',
+  mixins: [AtTabs]
+}
 </script>

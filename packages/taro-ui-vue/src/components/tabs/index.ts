@@ -12,7 +12,6 @@ interface Style {
 }
 
 export default {
-  name: 'AtTabs',
   mixins: [mixins],
   props: {
     customStyle: {
@@ -96,7 +95,7 @@ export default {
       return { height }
     },
     rootCls() {
-      const { tabDirection, className } = this
+      const { tabDirection, className, scroll } = this
       return classNames(
         {
           'at-tabs': true,
@@ -183,6 +182,7 @@ export default {
      * @param {event} event
      */
     handleClick(index, event) {
+      console.log(index, event)
       this.onClick(index, event)
     },
     /**
