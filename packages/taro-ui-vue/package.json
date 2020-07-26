@@ -39,7 +39,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "dayjs": "^1.8.27",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "vue": "^2.5.0",
     "vue-class-component": "^7.2.3"
   },
