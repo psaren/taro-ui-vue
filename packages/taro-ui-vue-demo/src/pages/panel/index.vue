@@ -8,7 +8,7 @@
           class="img"
           mode="widthFix"
         />
-        <Text
+        <text
           v-else
           class="at-icon at-icon-list"
         />
@@ -25,10 +25,10 @@
           class="component-list__item"
           @tap="gotoComponent(item.id, currentId)"
         >
-          <Text class="name">
+          <text class="name">
             {{ `${item.id} ${item.name}` }}
-          </Text>
-          <Text class="at-icon at-icon-chevron-right" />
+          </text>
+          <text class="at-icon at-icon-chevron-right" />
         </view>
       </view>
     </view>

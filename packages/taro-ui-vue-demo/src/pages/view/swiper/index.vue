@@ -68,7 +68,7 @@
                 </view>
                 <view class='slider-list__item'>
                   <view class='slider-list__item-header'>
-                    <Text>自动播放间隔时长(ms)</Text>
+                    <text>自动播放间隔时长(ms)</text>
                   </view>
                   <view class='slider-list__item-body'>
                     <slider
