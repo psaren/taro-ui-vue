@@ -141,7 +141,7 @@
 </template>
 
 <script>
-import { AtButton, AtToast } from 'taro-ui-vue/style/components/calendar.scss'
+import { AtButton, AtToast } from 'taro-ui-vue'
 import './index.scss'
 
 const INIT_STATE = {
