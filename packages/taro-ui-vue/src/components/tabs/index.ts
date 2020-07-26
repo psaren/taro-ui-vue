@@ -182,7 +182,6 @@ export default {
      * @param {event} event
      */
     handleClick(index, event) {
-      console.log(index, event)
       this.onClick(index, event)
     },
     /**
