@@ -23,12 +23,14 @@ $ yarn global add @tarojs/cli
 
 ### 2. 初始化项目
 
-使用命令创建模板项目
 
 :::demo
 ```bash
 $ taro init myApp
 ```
+>使用注意
+Taro Ui Vue 提供的是源文件，源文件部分代码使用 `ts` 编写，需要项目支持 ts。
+如果是用 `taro init` 命令创建，则需在使用时选择 `ts` 。
 :::
 
 ### 3. 安装 Taro UI Vue
