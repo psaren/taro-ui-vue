@@ -8,8 +8,7 @@
   "source": "src/index.js",
   "files": [
     "dist",
-    "src",
-    "../../README.md"
+    "src"
   ],
   "author": "psaren",
   "repository": {
