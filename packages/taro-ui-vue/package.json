@@ -1,6 +1,6 @@
 {
   "name": "taro-ui-vue",
-  "version": "1.0.0-alpha.1",
+  "version": "0.0.10",
   "description": "UI KIT for Taro/vue",
   "browser": "src/index.js",
   "module": "src/index.js",
