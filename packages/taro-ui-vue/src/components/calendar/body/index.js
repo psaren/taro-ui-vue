@@ -3,18 +3,11 @@ import classnames from 'classnames'
 import dayjs from 'dayjs'
 import { delayQuerySelector } from '../../../utils/common'
 import generateCalendarGroup from '../common/helper'
-import AtCalendarDateList from '../ui/date-list/index.vue'
-import AtCalendarDayList from '../ui/day-list/index.vue'
 import mixins from '../../mixins'
 
 const ANIMTE_DURATION = 300
 
 const AtCalendarBody = Vue.extend({
-  name: 'AtCalendarBody',
-  components: {
-    AtCalendarDateList,
-    AtCalendarDayList,
-  },
   mixins: [mixins],
   props: {
     marks: {
@@ -62,12 +55,22 @@ const AtCalendarBody = Vue.extend({
     },
     onDayClick: {
       type: Function,
-      default: () => () => {},
+      default: function() {
+        return () => {}
+      },
     },
     onLongClick: {
       type: Function,
-      default: () => () => {},
+      default: function() {
+        return () => {}
+      },
     },
+    onSwipeMonth: {
+      type: Function,
+      default: function() {
+        return () => {}
+      }
+    }
   },
   data() {
     const { validDates, marks, format, minDate, maxDate, selectedDates } = this
@@ -93,6 +96,7 @@ const AtCalendarBody = Vue.extend({
         offsetSize: 0,
         isAnimate: false,
       },
+      isH5: process.env.TARO_ENV === 'h5',
     }
   },
   computed: {
@@ -118,6 +122,32 @@ const AtCalendarBody = Vue.extend({
         selectedDates,
       }
     },
+    h5CalendarBody() {
+      return classnames(
+        'main',
+        'at-calendar-slider__main',
+        `at-calendar-slider__main--${process.env.TARO_ENV}`
+      )
+    },
+    h5CalendarMainBodyCls() {
+      const { isSwiper, isAnimate } = this
+      return classnames('main__body  body', {
+        'main__body--slider': isSwiper,
+        'main__body--animate': isAnimate
+      })
+    },
+    h5CalendarMainBodyStyle() {
+      const { isSwiper } = this
+      const { offsetSize } = this.state
+      return {
+        transform: isSwiper
+          ? `translateX(-100%) translate3d(${offsetSize},0,0)`
+          : '',
+        WebkitTransform: isSwiper
+          ? `translateX(-100%) translate3d(${offsetSize}px,0,0)`
+          : ''
+      }
+    }
   },
   watch: {
     nextProps(val) {
@@ -155,7 +185,9 @@ const AtCalendarBody = Vue.extend({
   },
   mounted() {
     delayQuerySelector(this, '.at-calendar-slider__main').then((res) => {
-      this.maxWidth = res[0].width
+      if (res[0]) {
+        this.maxWidth = res[0].width
+      }
     })
   },
   methods: {
@@ -241,7 +273,7 @@ const AtCalendarBody = Vue.extend({
       if (absOffsetSize > breakpoint) {
         const res = isRight ? this.maxWidth : -this.maxWidth
         return this.animateMoveSlide(res, () => {
-          this.atSwipeMonth(isRight ? -1 : 1)
+          this.onSwipeMonth(isRight ? -1 : 1)
         })
       }
       this.animateMoveSlide(0)
@@ -256,7 +288,7 @@ const AtCalendarBody = Vue.extend({
     },
     handleAnimateFinish() {
       if (this.changeCount > 0) {
-        this.atSwipeMonth(this.isPreMonth ? -this.changeCount : this.changeCount)
+        this.onSwipeMonth(this.isPreMonth ? -this.changeCount : this.changeCount)
         this.changeCount = 0
       }
     },
