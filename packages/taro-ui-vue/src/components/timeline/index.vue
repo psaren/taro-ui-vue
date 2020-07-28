@@ -1,36 +1,34 @@
 <template>
-  <dir>
+  <view
+    :class="classNames(rootClassName, { 'at-timeline--pending': pending }, className)"
+    :style="customStyle"
+  >
     <view
-      :class="classNames(rootClassName, { 'at-timeline--pending': pending }, className)"
-      :style="customStyle"
+      v-for="(item, index) in items"
+      :key="index"
+      :class="itemRootClassName(item)"
     >
-      <view
-        v-for="(item, index) in items"
-        :key="index"
-        :class="itemRootClassName(item)"
-      >
-        <view class="at-timeline-item__tail" />
-        <view :class="dotClass(item)">
-          <view
-            v-if="item.icon"
-            :class="fileIconClass(item)"
-          />
+      <view class="at-timeline-item__tail" />
+      <view :class="dotClass(item)">
+        <view
+          v-if="item.icon"
+          :class="fileIconClass(item)"
+        />
+      </view>
+      <view class="at-timeline-item__content">
+        <view class="at-timeline-item__content-item">
+          {{ item.title }}
         </view>
-        <view class="at-timeline-item__content">
-          <view class="at-timeline-item__content-item">
-            {{ item.title }}
-          </view>
-          <view
-            v-for="(sub, subIndex) in item.content"
-            :key="subIndex"
-            class="at-timeline-item__content-item at-timeline-item__content--sub"
-          >
-            {{ sub }}
-          </view>
+        <view
+          v-for="(sub, subIndex) in item.content"
+          :key="subIndex"
+          class="at-timeline-item__content-item at-timeline-item__content--sub"
+        >
+          {{ sub }}
         </view>
       </view>
     </view>
-  </dir>
+  </view>
 </template>
 
 <script lang='ts'>
