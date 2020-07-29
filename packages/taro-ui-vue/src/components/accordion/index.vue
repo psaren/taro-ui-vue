@@ -35,7 +35,7 @@
       </view>
     </view>
     <view
-      :style="{ height: `${wrapperHeight}px` }"
+      :style="contentStyle"
       :class="classNames('at-accordion__content', {
         'at-accordion__content--inactive': (!open && isCompleted) || startOpen,
       })"
