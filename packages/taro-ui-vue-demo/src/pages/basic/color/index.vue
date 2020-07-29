@@ -38,15 +38,15 @@
                 />
               </view>
               <view class="color-item__info">
-                <Text class="name">
+                <text class="name">
                   {{ color.name }}
-                </Text>
-                <Text
+                </text>
+                <text
                   class="hex"
                   selectable
                 >
                   {{ color.hex }}
-                </Text>
+                </text>
               </view>
             </view>
           </view>
