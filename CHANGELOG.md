@@ -1,3 +1,31 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [1.0.0-alpha.3](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2020-07-29)
+
+
+### Bug Fixes
+
+* calendar body wrapCls ([8c48a20](https://github.com/psaren/taro-ui-vue/commit/8c48a2066690ef87c149002039276bb14cad905b))
+* calendar swiper class ([79caab1](https://github.com/psaren/taro-ui-vue/commit/79caab17eaeb5538d8750fe7b9f3a4c18689773b))
+* **AtModal:** Button 改为 AtButton ([84c803e](https://github.com/psaren/taro-ui-vue/commit/84c803ecf0b6bf53f463d86886e3fdb6c1259ed9))
+* DocsHeader 样式失效 ([6cdc027](https://github.com/psaren/taro-ui-vue/commit/6cdc0278b2c1b4ee4cdf1c623e36e88a69b71c3f))
+* 修复 Accordion 默认开启时内容不显示 ([abc0da7](https://github.com/psaren/taro-ui-vue/commit/abc0da7b0d953663b455a0c83949042ed9e4a4e2))
+* 修复找不到 View、Text、Image 等模板的问题 ([6714ffb](https://github.com/psaren/taro-ui-vue/commit/6714ffb090701d4ca53414e88db7096343a88859))
+* 改写 Vue.extend 组件 ([8f5615e](https://github.com/psaren/taro-ui-vue/commit/8f5615e40d606fc4a4fb0d5c34ea6df92a1aa461))
+* **progress:** replace View to view ([16c71e4](https://github.com/psaren/taro-ui-vue/commit/16c71e404d5a53e8155183fd3a254006cf1cf869))
+* **taro-ui-vue:** action-sheet  缺少 mixins ([18cd9c6](https://github.com/psaren/taro-ui-vue/commit/18cd9c6f9cff4f9a691006feb2ad79375b948628))
+* **taro-ui-vue:** H5 calendar swipe event ([e6eeabd](https://github.com/psaren/taro-ui-vue/commit/e6eeabd03b7f9dc8e85d3233c391fea65a5da6e1))
+* **taro-ui-vue:** tabs missing scroll props ([24d4219](https://github.com/psaren/taro-ui-vue/commit/24d42196a1e53a09a6a6526a7fa6543d90f73a98))
+* **taro-ui-vue:** timeline root tag ([79423f9](https://github.com/psaren/taro-ui-vue/commit/79423f9eb38956114dc10c2709fd3cc0b7ade1ea))
+* **taro-ui-vue-demo:** toast import AtButton ([4862900](https://github.com/psaren/taro-ui-vue/commit/486290089cb93153d058031a389066905f61ae65))
+
+
+
+
+
 ## [0.0.9](https://github.com/psaren/taro-ui-vue/compare/v0.0.8...v0.0.9) (2020-06-28)
 ### Docs update
 * update README
@@ -111,6 +139,3 @@
 * 完善Calendar ([d6cdf33](https://github.com/psaren/taro-ui-vue/commit/d6cdf336c098820a3037f293bf7488392170fd3b))
 * 添加 基础& 视图组件 ([c545f89](https://github.com/psaren/taro-ui-vue/commit/c545f89f3e83e44500647997e341735167185ea2))
 * 移除vue-prototype ([dce28a0](https://github.com/psaren/taro-ui-vue/commit/dce28a0593a71a4b45f55f64ca73ca10516325ad))
-
-
-
