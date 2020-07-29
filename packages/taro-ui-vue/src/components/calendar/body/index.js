@@ -147,7 +147,7 @@ const AtCalendarBody = {
           : ''
       }
     },
-    swiperCls() {
+    wrapCls() {
       return classnames(
         'main',
         'at-calendar-slider__main',

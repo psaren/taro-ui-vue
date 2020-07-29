@@ -2,7 +2,7 @@
   <view>
     <view
       v-if="!isSwiper"
-      :class="getCls()">
+      :class="wrapCls">
       <AtCalendarDayList />
       <view class="main__body body">
         <view class="body__slider body__slider--now">
@@ -50,7 +50,7 @@
     </view>
     <view
       v-if="isSwiper && !isH5"
-      :class="swiperCls">
+      :class="wrapCls">
       <AtCalendarDayList />
       <swiper
         circular
