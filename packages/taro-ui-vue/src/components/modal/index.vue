@@ -22,20 +22,20 @@
           </view>
         </ModalContent>
         <ModalAction v-if="cancelText || confirmText" isSimple>
-          <Button
+          <AtButton
             v-if="cancelText" 
             @tap="handleCancel"
             @click="handleCancel"
           >
             {{ cancelText }}
-          </Button>
-          <Button 
+          </AtButton>
+          <AtButton 
             v-if="confirmText"
             @tap="handleConfirm"
             @click="handleConfirm"
           >
             {{ confirmText }}
-          </Button>
+          </AtButton>
         </ModalAction>
       </view>
     </view>
@@ -52,6 +52,7 @@
 import ModalAction from './action/index.vue'
 import ModalContent from './content/index.vue'
 import ModalHeader from './header/index.vue'
+import AtButton from '../button/index.vue'
 import AtModal from './index'
 export default {
   name: 'AtModal',
@@ -59,7 +60,8 @@ export default {
   components: {
     ModalAction,
     ModalContent,
-    ModalHeader
+    ModalHeader,
+    AtButton
   }
 }
 </script>
