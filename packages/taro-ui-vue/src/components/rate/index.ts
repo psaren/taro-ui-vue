@@ -1,9 +1,8 @@
-import Vue from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
 import { pxTransform } from '../../utils/common'
 
-const AtRate = Vue.extend({
+const AtRate = {
   name: 'AtRate',
   props: {
     customStyle: {
@@ -78,6 +77,6 @@ const AtRate = Vue.extend({
       this.onChange && this.onChange(event)
     },
   },
-})
+}
 
 export default AtRate

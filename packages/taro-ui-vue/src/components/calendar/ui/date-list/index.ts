@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classnames from 'classnames'
 import * as constant from '../../common/constant'
 
@@ -8,7 +7,7 @@ const MAP: { [key: number]: string } = {
   [constant.TYPE_NEXT_MONTH]: 'next',
 }
 
-const AtCalendarList = Vue.extend({
+const AtCalendarList = {
   name: 'AtCalendarList',
   props: {
     list: {
@@ -60,6 +59,6 @@ const AtCalendarList = Vue.extend({
       })
     }
   },
-})
+}
 
 export default AtCalendarList

@@ -1,7 +1,6 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 
-const AtCheckbox = Vue.extend({
+const AtCheckbox = {
   name: 'AtCheckbox',
   props: {
     customStyle: {
@@ -63,6 +62,6 @@ const AtCheckbox = Vue.extend({
       })
     }
   },
-})
+}
 
 export default AtCheckbox

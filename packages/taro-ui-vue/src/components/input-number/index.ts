@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { InputError } from '../../../types/input-number'
 import _toString from 'lodash/toString'
@@ -40,7 +39,7 @@ type ExtendEvent = {
   },
 }
 
-const AtInputNumber = Vue.extend({
+const AtInputNumber = {
   name: 'AtInputNumber',
   props: {
     customStyle: {
@@ -219,6 +218,6 @@ const AtInputNumber = Vue.extend({
       })
     }
   },
-})
+}
 
 export default AtInputNumber

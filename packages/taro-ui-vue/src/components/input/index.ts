@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import {
   AtInputProps,
@@ -40,7 +39,7 @@ function getInputProps(props: AtInputProps) {
   return actualProps
 }
 
-const AtInput = Vue.extend({
+const AtInput = {
   name: 'AtInput',
   props: {
     customStyle: {
@@ -256,6 +255,6 @@ const AtInput = Vue.extend({
       }
     },
   },
-})
+}
 
 export default AtInput

@@ -1,8 +1,7 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 
-const AtSwitch = Vue.extend({
+const AtSwitch = {
   name: 'AtSwitch',
   props: {
     customStyle: {
@@ -69,6 +68,6 @@ const AtSwitch = Vue.extend({
       this.onChange && this.onChange(state)
     },
   },
-})
+}
 
 export default AtSwitch

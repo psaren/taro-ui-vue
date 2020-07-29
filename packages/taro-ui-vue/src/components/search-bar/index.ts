@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
 import { CSSProperties } from '../../../global'
@@ -9,7 +8,7 @@ type ExtendEvent = {
   },
 }
 
-const AtSearchBar = Vue.extend({
+const AtSearchBar = {
   name: 'AtSearchBar',
   props: {
     customStyle: {
@@ -179,6 +178,6 @@ const AtSearchBar = Vue.extend({
       this.onActionClick && this.onActionClick(event)
     },
   },
-})
+}
 
 export default AtSearchBar

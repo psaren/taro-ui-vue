@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classnames from 'classnames'
 import dayjs from 'dayjs'
 import { delayQuerySelector } from '../../../utils/common'
@@ -7,7 +6,7 @@ import mixins from '../../mixins'
 
 const ANIMTE_DURATION = 300
 
-const AtCalendarBody = Vue.extend({
+const AtCalendarBody = {
   mixins: [mixins],
   props: {
     marks: {
@@ -310,6 +309,6 @@ const AtCalendarBody = Vue.extend({
       )
     },
   },
-})
+}
 
 export default AtCalendarBody

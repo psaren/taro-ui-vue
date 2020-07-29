@@ -2,9 +2,8 @@ import classNames from 'classnames'
 
 import { getEnvs } from '../../utils/common'
 import mixins from '../mixins'
-import Vue from 'vue'
 
-export default Vue.extend({
+export default {
   mixins: [mixins],
   props: {
     title: {
@@ -112,4 +111,4 @@ export default Vue.extend({
       e.stopPropagation()
     },
   },
-})
+}

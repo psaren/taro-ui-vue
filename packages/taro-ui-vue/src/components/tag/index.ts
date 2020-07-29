@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { CommonEvent } from '@tarojs/components/types/common'
 import classNames from 'classnames'
 
@@ -11,7 +10,7 @@ const TYPE_CLASS = {
   primary: 'primary',
 }
 
-const AtTag = Vue.extend({
+const AtTag = {
   name: 'AtTag',
   props: {
     size: {
@@ -93,6 +92,6 @@ const AtTag = Vue.extend({
       }
     }
   }
-})
+}
 
 export default AtTag

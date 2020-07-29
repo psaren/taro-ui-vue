@@ -1,11 +1,10 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
 import { delayQuerySelector, getEventDetail, mergeStyle } from '../../utils/common'
 
 import mixins from '../mixins'
 
-const AtRange = Vue.extend({
+const AtRange = {
   name: 'AtRange',
   mixins: [mixins],
   props: {
@@ -212,6 +211,6 @@ const AtRange = Vue.extend({
       })
     },
   },
-})
+}
 
 export default AtRange
