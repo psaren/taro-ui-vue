@@ -16,7 +16,7 @@ export default {
 	}
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .doc-header {
   display: flex;
   align-items: center;
