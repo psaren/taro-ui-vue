@@ -1,8 +1,7 @@
-import Vue from 'vue'
 import classnames from 'classnames'
 import dayjs, { Dayjs } from 'dayjs'
 
-const AtCalendarController = Vue.extend({
+const AtCalendarController = {
   props: {
     minDate: {
       type: [String, Number, Date],
@@ -84,6 +83,6 @@ const AtCalendarController = Vue.extend({
       })
     }
   }
-})
+}
 
 export default AtCalendarController

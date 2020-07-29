@@ -1,7 +1,6 @@
 import classNames from 'classnames'
-import Vue from 'vue'
 
-const AtList = Vue.extend({
+const AtList = {
   name: 'AtList',
   props: {
     hasBorder: {
@@ -24,6 +23,6 @@ const AtList = Vue.extend({
       )
     }
   },
-})
+}
 
 export default AtList

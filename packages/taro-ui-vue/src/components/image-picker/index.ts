@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { uuid } from '../../utils/common'
 import Taro from '@tarojs/taro'
@@ -37,7 +36,7 @@ const generateMatrix = (files: MatrixFile[], col: number, showAddBtn: boolean) =
 
 const ENV = Taro.getEnv()
 
-const AtImagePicker = Vue.extend({
+const AtImagePicker = {
   name: 'AtImagePicker',
   props: {
     customStyle: {
@@ -164,6 +163,6 @@ const AtImagePicker = Vue.extend({
       this.onChange(newFiles, 'remove', idx)
     },
   },
-})
+}
 
 export default AtImagePicker

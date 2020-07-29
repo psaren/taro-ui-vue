@@ -1,9 +1,8 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import { RadioOption } from '../../../types/radio'
 
-const AtRadio = Vue.extend({
+const AtRadio = {
   name: 'AtRadio',
   props: {
     customStyle: {
@@ -58,6 +57,6 @@ const AtRadio = Vue.extend({
       })
     },
   },
-})
+}
 
 export default AtRadio

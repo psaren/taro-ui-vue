@@ -1,8 +1,7 @@
 import classNames from 'classnames'
 import { mergeStyle } from '../../../utils/common'
-import Vue from 'vue'
 
-const AtListItem = Vue.extend({
+const AtListItem = {
   name: 'AtListItem',
   props: {
     className: {
@@ -135,6 +134,6 @@ const AtListItem = Vue.extend({
       )
     },
   },
-})
+}
 
 export default AtListItem

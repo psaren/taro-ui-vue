@@ -1,11 +1,10 @@
 import classNames from 'classnames'
-import Vue from 'vue'
 import mixins from '../mixins'
 
 
 const setState = mixins.methods.setState
 
-const AtDrawer = Vue.extend({
+const AtDrawer = {
   mixins: [mixins],
   props: {
     show: {
@@ -137,6 +136,6 @@ const AtDrawer = Vue.extend({
     },
 
   }
-})
+}
 
 export default AtDrawer

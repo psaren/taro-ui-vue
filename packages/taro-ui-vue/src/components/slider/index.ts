@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import mixins from '../mixins'
@@ -7,7 +6,7 @@ function clampNumber(value: number, lower: number, upper: number): number {
   return Math.max(lower, Math.min(upper, value))
 }
 
-const AtSlider = Vue.extend({
+const AtSlider = {
   name: 'AtSlider',
   mixins: [mixins],
   props: {
@@ -113,6 +112,6 @@ const AtSlider = Vue.extend({
       this.onChange && this.onChange(value)
     },
   },
-})
+}
 
 export default AtSlider

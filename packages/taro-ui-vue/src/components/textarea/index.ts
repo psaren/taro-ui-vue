@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import classNames from 'classnames'
 import { CommonEvent } from '@tarojs/components/types/common'
 import Taro from '@tarojs/taro'
@@ -19,7 +18,7 @@ function getMaxLength(maxLength: number, textOverflowForbidden: boolean): number
 
 const ENV = Taro.getEnv()
 
-const AtTextarea = Vue.extend({
+const AtTextarea = {
   name: 'AtTextarea',
   props: {
     customStyle: {
@@ -178,6 +177,6 @@ const AtTextarea = Vue.extend({
       this.onLinechange && this.onLinechange(event)
     },
   },
-})
+}
 
 export default AtTextarea
