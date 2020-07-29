@@ -184,7 +184,7 @@
                 :onChange="handleInput.bind(this, 'value14')"
               >
                 <img v-if="env === 'WEB'" :src="verification_code" />
-                <Image v-else :src="verification_code" />
+                <image v-else :src="verification_code" />
               </AtInput>
               <AtInput
                 name='value15'

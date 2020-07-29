@@ -13,12 +13,12 @@
       v-if="!isHidePercent"
       class="at-progress__content"
     >
-      <View v-if="!status || status === 'progress'">
+      <view v-if="!status || status === 'progress'">
         {{ `${percent}%` }}
-      </View>
-      <View v-else>
+      </view>
+      <view v-else>
         <view :class="iconClass()" />
-      </View>
+      </view>
     </view>
   </view>
 </template>

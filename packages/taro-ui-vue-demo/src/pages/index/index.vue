@@ -32,7 +32,7 @@
           </view>
         </view>
         <view class="module-list__arrow">
-          <Text class="at-icon at-icon-chevron-right" />
+          <text class="at-icon at-icon-chevron-right" />
         </view>
       </view>
     </view>
