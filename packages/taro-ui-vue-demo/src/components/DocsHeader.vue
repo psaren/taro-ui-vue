@@ -1,9 +1,9 @@
 <template>
-  <View class="doc-header">
-    <View class="doc-header__title">
+  <view class="doc-header">
+    <view class="doc-header__title">
       {{ title }}
-    </View>
-  </View>
+    </view>
+  </view>
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
 	}
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .doc-header {
   display: flex;
   align-items: center;
