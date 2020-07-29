@@ -146,7 +146,14 @@ const AtCalendarBody = {
           ? `translateX(-100%) translate3d(${offsetSize}px,0,0)`
           : ''
       }
-    }
+    },
+    swiperCls() {
+      return classnames(
+        'main',
+        'at-calendar-slider__main',
+        `at-calendar-slider__main--${process.env.TARO_ENV}`
+      )
+    },
   },
   watch: {
     nextProps(val) {
@@ -300,13 +307,6 @@ const AtCalendarBody = {
       this.isPreMonth = this.isVertical
         ? clientY - this.swipeStartPoint > 0
         : clientX - this.swipeStartPoint > 0
-    },
-    getCls() {
-      return classnames(
-        'main',
-        'at-calendar-slider__main',
-        `at-calendar-slider__main--${process.env.TARO_ENV}`
-      )
     },
   },
 }
