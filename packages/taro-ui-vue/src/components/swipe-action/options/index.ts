@@ -21,12 +21,14 @@ export default {
       default: () => []
     }
   },
+  mounted() {
+    setTimeout(() => {
+      this.trrigerOptionsDomUpadte()
+    }, 16);
+  },
   watch: {
-    options: {
-      immediate: true,
-      handler() {
-        this.trrigerOptionsDomUpadte()
-      }
+    options() {
+      this.trrigerOptionsDomUpadte()
     }
   },
   computed: {
