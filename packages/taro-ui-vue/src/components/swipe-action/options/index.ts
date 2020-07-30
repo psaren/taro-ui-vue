@@ -16,6 +16,18 @@ export default {
       type: [Array, String],
       default: () => '',
     },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
+  watch: {
+    options: {
+      immediate: true,
+      handler() {
+        this.trrigerOptionsDomUpadte()
+      }
+    }
   },
   computed: {
     rootClass () {
