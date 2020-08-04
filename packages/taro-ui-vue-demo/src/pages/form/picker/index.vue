@@ -15,7 +15,8 @@
               mode='selector'
               :range="state.selector"
               :value="state.selectorValue"
-              :onChange="handleChange"
+              @change="handleChange"
+              @cancel="handleCancel"
             >
               <view class='demo-list-item'>
                 <view class='demo-list-item__label'>国家地区</view>
@@ -29,7 +30,7 @@
       </view>
 
       <!-- 多列选择器 -->
-      <view v-if="isAlipay" class='panel'>
+      <view class='panel'>
         <view class='panel__title'>多列选择器</view>
         <view class='panel__content'>
           <view class='example-item'>
@@ -37,7 +38,8 @@
               mode='multiSelector'
               :range="state.multiSelector"
               :value="state.mulitSelectorValues"
-              :onChange="handleMulitChange"
+              @change="handleMulitChange"
+              @columnchange="handleColumnChange"
             >
               <view class='demo-list-item'>
                 <view class='demo-list-item__label'>请选择早餐</view>
@@ -60,7 +62,7 @@
             <picker
               mode='time'
               :value="state.timeSel"
-              :onChange="handleTimeChange"
+              @change="handleTimeChange"
             >
               <view class='demo-list-item'>
                 <view class='demo-list-item__label'>请选择时间</view>
@@ -79,7 +81,7 @@
             <picker
               mode='date'
               :value="state.dateSel"
-              :onChange="handleDateChange"
+              @change="handleDateChange"
             >
               <view class='demo-list-item'>
                 <view class='demo-list-item__label'>请选择日期</view>
@@ -145,6 +147,14 @@ export default {
       this.setState({
         dateSel: e.detail.value
       })
+    },
+
+    handleCancel(e) {
+      console.log('handleCancel', e)
+    },
+
+    handleColumnChange(e) {
+      console.log('handleColumnChange', e)
     }
   }
 }
