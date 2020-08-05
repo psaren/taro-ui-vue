@@ -94,7 +94,7 @@ export default {
     style() {
       const style = {}
       if (this.marquee) {
-        style['animation-duration'] = `${this.dura}s`
+        style['animation-duration'] = `${this.state.dura}s`
       }
       return style
     },
