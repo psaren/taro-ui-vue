@@ -294,6 +294,15 @@
           </view>
         </view>
       </view>
+      <AtButton
+        type="primary"
+        open-type="getUserInfo"
+        loading
+        circle
+        :on-get-user-info="hanldeClick"
+      >
+        登录
+      </AtButton>
     </view>
   </view>
 </template>
@@ -304,6 +313,11 @@ import './index.scss'
 export default {
 	data() {
 		return {}
-	}
+  },
+  methods: {
+    hanldeClick(e) {
+      console.log(e)
+    }
+  }
 }
 </script>

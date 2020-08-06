@@ -32,8 +32,10 @@
   /* elements */
 
   &__icon {
-    display: inline-block;
-    margin: 2PX 20px 0 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0PX 20px;
   }
 
   &__text {
