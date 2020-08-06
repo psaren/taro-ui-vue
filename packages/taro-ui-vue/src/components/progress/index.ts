@@ -17,8 +17,8 @@ export default {
     },
     status: {
       type: String,
-      default: 'progress',
-      validator: (val) => ['progress', 'error', 'success'].includes(val),
+      default: '',
+      validator: (val) => ['progress', 'error', 'success', ''].includes(val),
     },
     percent: {
       type: Number,
@@ -40,7 +40,7 @@ export default {
   computed: {
     progressStyle() {
       return {
-        width: this.percent && `${+this.percent}%`,
+        width: this.percent ? `${+this.percent}%` : '0%',
         height: this.strokeWidth && `${+this.strokeWidth}px`,
         backgroundColor: this.color,
       }
