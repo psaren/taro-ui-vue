@@ -1,6 +1,9 @@
 <template>
-  <view scrollY :class="rootClass">
-    <slot></slot>
+  <view
+    scroll-y
+    :class="rootClass"
+  >
+    <slot />
   </view>
 </template>
 <script>
