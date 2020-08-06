@@ -90,9 +90,9 @@
         <button @tap="closeModal(1, '点击了取消')">
           取消
         </button>
-        <Button @tap="closeModal(1, '点击了确定')">
+        <button @tap="closeModal(1, '点击了确定')">
           确定
-        </Button>
+        </button>
       </AtModalAction>
     </AtModal>
 
@@ -175,7 +175,6 @@ export default {
   },
   methods: {
     handleClickShow(type) {
-      console.log(type)
       this.state[`isOpened${type}`] = true
     },
     closeModal(type, msg) {
