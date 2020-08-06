@@ -1,3 +1,22 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [1.0.0-alpha.5](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-08-06)
+
+
+### Bug Fixes
+
+* **modal:** fix modal style and footer slot button ([2a0defa](https://github.com/psaren/taro-ui-vue/commit/2a0defa2fbf7893e3b78afa3a5e7fbdccb295e21))
+* **Noticebar:** 修复Noticebar H5滚动 ([a0b35eb](https://github.com/psaren/taro-ui-vue/commit/a0b35ebb79734914b2d0b25eac90fd1254c653a4))
+* **progress:** set default status to '' and fix pogressbar is full at 0% ([38a062a](https://github.com/psaren/taro-ui-vue/commit/38a062a6aba526b6073a43608391c388e7efdcda))
+* **tabs:** 修复tabs在 H5 内容偏移 [#26](https://github.com/psaren/taro-ui-vue/issues/26) ([00923a7](https://github.com/psaren/taro-ui-vue/commit/00923a7b6aaa1742c5009b655d1cfb2d8b8b1373))
+
+
+
+
+
 # [1.0.0-alpha.4](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2020-08-02)
 
 
@@ -224,6 +243,3 @@
 * 完善Calendar ([d6cdf33](https://github.com/psaren/taro-ui-vue/commit/d6cdf336c098820a3037f293bf7488392170fd3b))
 * 添加 基础& 视图组件 ([c545f89](https://github.com/psaren/taro-ui-vue/commit/c545f89f3e83e44500647997e341735167185ea2))
 * 移除vue-prototype ([dce28a0](https://github.com/psaren/taro-ui-vue/commit/dce28a0593a71a4b45f55f64ca73ca10516325ad))
-
-
-
