@@ -5,8 +5,8 @@
       :class="rootClass"
     >
       <view 
-        @tap="handleClickOverlay"  
-        class="at-modal__overlay" 
+        class="at-modal__overlay"  
+        @tap="handleClickOverlay" 
       />
       <view class="at-modal__container">
         <ModalHeader v-if="title">
@@ -16,33 +16,45 @@
           <view class="content-simple">
             <view
               v-if="isWEB"
-              v-html="content.replace(/\n/g, '<br/>')">
+              v-html="content.replace(/\n/g, '<br/>')"
+            />
+            <view v-else>
+              {{ content }}
             </view>
-            <view v-else>{{ content }}</view>
           </view>
         </ModalContent>
-        <ModalAction v-if="cancelText || confirmText" isSimple>
-          <AtButton
+        <ModalAction
+          v-if="cancelText || confirmText"
+          is-simple
+        >
+          <button
             v-if="cancelText" 
             @tap="handleCancel"
             @click="handleCancel"
           >
             {{ cancelText }}
-          </AtButton>
-          <AtButton 
+          </button>
+          <button
             v-if="confirmText"
             @tap="handleConfirm"
             @click="handleConfirm"
           >
             {{ confirmText }}
-          </AtButton>
+          </button>
         </ModalAction>
       </view>
     </view>
-    <view v-else @touchmove="handleTouchMove" :class="rootClass">
-      <view class='at-modal__overlay' @tap="handleClickOverlay" />
-      <view class='at-modal__container'>
-        <slot></slot>
+    <view
+      v-else
+      :class="rootClass"
+      @touchmove="handleTouchMove"
+    >
+      <view
+        class="at-modal__overlay"
+        @tap="handleClickOverlay"
+      />
+      <view class="at-modal__container">
+        <slot />
       </view>
     </view>
   </view>
@@ -52,16 +64,14 @@
 import ModalAction from './action/index.vue'
 import ModalContent from './content/index.vue'
 import ModalHeader from './header/index.vue'
-import AtButton from '../button/index.vue'
 import AtModal from './index'
 export default {
   name: 'AtModal',
-  mixins: [AtModal],
   components: {
     ModalAction,
     ModalContent,
     ModalHeader,
-    AtButton
-  }
+  },
+  mixins: [AtModal]
 }
 </script>

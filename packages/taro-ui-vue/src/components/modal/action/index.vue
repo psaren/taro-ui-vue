@@ -1,7 +1,7 @@
 <template>
   <view :class="rootClass">
     <view class="at-modal__action">
-      <slot></slot>
+      <slot />
     </view>
   </view>
 </template>
