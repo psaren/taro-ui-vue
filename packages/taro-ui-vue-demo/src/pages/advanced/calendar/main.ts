@@ -62,6 +62,10 @@ export default Vue.extend({
       })
     },
     handleDateChange(arg: any): void {
+      if(arg.value.end) {
+        this.state.multiCurentDate = arg.value
+      }
+      
       Taro.showToast({
         title: `handleDateChange: ${JSON.stringify(arg)}`,
         icon: 'none'
