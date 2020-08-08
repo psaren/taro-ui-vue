@@ -43,7 +43,7 @@ export default {
       default: 'YYYY-MM-DD',
     },
     currentDate: {
-      type: [Number, String],
+      type: [Number, String, Date, Object],
       default: Date.now(),
     },
     monthFormat: {
