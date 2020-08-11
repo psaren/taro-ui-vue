@@ -122,7 +122,9 @@ export default {
       const bodyStyle: Style = {}
       let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`
       if (tabDirection === 'horizontal') {
-        transformStyle = `translate3d(-${current * 100}%, 0px, 0px)`
+        // fix Tabs 标签页 页面内容偏移 https://github.com/psaren/taro-ui-vue/issues/26
+        const fixWebNum = ENV === Taro.ENV_TYPE.WEB ? 2 : 0
+        transformStyle = `translate3d(-${current * (100 + fixWebNum)}%, 0px, 0px)`
       }
       Object.assign(bodyStyle, {
         transform: transformStyle,

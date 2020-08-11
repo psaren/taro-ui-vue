@@ -2,14 +2,16 @@
   <view
     :class="classNames(rootClassName, classObject, className)"
     :style="customStyle"
-    @tap="handleClick"
+    @tap="handelOnClick"
+    @click="handelOnClick"
   >
     <button
+      v-if="isWEB && !disabled"
       class="at-button__wxbutton"
       :lang="lang"
       :formType="formType === 'submit' || formType === 'reset' ? formType : undefined"
     />
-    <!-- <form
+    <form
       v-if="isWEAPP && !disabled"
       @submit="handleSubmit"
       @reset="handleReset"
@@ -25,8 +27,31 @@
         :sendMessageImg="sendMessageImg"
         :showMessageCard="showMessageCard"
         :appParameter="appParameter"
+        @getUserInfo="handelOnGetUserInfo"
+        @getPhoneNumber="handelOnGetPhoneNumber"
+        @openSetting="handelOnOpenSetting"
+        @error="handelOnError"
+        @contact="handelOnContact"
       />
-    </form> -->
+    </form>
+    <button
+      v-if="isALIPAY && !disabled"
+      class="at-button__wxbutton"
+      :formType="formType"
+      :openType="openType"
+      :lang="lang"
+      :sessionFrom="sessionFrom"
+      :sendMessageTitle="sendMessageTitle"
+      :sendMessagePath="sendMessagePath"
+      :sendMessageImg="sendMessageImg"
+      :showMessageCard="showMessageCard"
+      :appParameter="appParameter"
+      @getUserInfo="onGetUserInfo"
+      @getPhoneNumber="onGetPhoneNumber"
+      @openSetting="onOpenSetting"
+      @error="onError"
+      @contact="onContact"
+    />
     <view
       v-if="loading"
       class="at-button__icon"
@@ -47,9 +72,9 @@ import AtLoading from '../loading/index.vue'
 import AtButton from './index'
 export default {
   name: 'AtButton',
-  mixins: [AtButton],
   components: {
     AtLoading
-  }
+  },
+  mixins: [AtButton]
 }
 </script>

@@ -1,7 +1,7 @@
-
 import classNames from 'classnames'
 import { getEnvs } from '../../utils/common'
-import { CommonEvent } from '@tarojs/components/types/common'
+import { BaseEventOrig, CommonEvent } from '@tarojs/components/types/common'
+import { ButtonProps } from '@tarojs/components/types/Button'
 
 const SIZE_CLASS = {
   normal: 'normal',
@@ -59,7 +59,20 @@ export default {
     openType: {
       type: String,
       default: undefined,
-      validator: (val) => ['contact', 'share', 'getPhoneNumber'].indexOf(val) > -1,
+      validator: (val) =>
+        [
+          'contact',
+          'share',
+          'getUserInfo',
+          'getPhoneNumber',
+          'launchApp',
+          'openSetting',
+          'feedback',
+          'getRealnameAuthInfo',
+          'getAuthorize',
+          'contactShare',
+          '',
+        ].indexOf(val) > -1,
     },
     lang: {
       type: String,
@@ -141,25 +154,43 @@ export default {
   },
   methods: {
     classNames,
-    handleClick(event: CommonEvent) {
+    handelOnClick(event: CommonEvent): void {
+      console.log(event)
       if (!this.disabled) {
         this.onClick && this.onClick(event)
       }
     },
-    handleGetUserInfo(event: CommonEvent) {
+    handelOnGetUserInfo(event: CommonEvent): void {
+      console.log(event)
       this.onGetUserInfo && this.onGetUserInfo(event)
     },
-    handleGetPhoneNumber(event: CommonEvent) {
+    handelOnContact(event: BaseEventOrig<ButtonProps.onContactEventDetail>): void {
+      this.onContact && this.onContact(event)
+    },
+    handelOnGetPhoneNumber(event: CommonEvent): void {
       this.onGetPhoneNumber && this.onGetPhoneNumber(event)
     },
-    handleOpenSetting(event: CommonEvent) {
-      this.onOpenSetting && this.onOpenSetting(event)
-    },
-    handleError(event: CommonEvent) {
+    handelOnError(event: CommonEvent): void {
       this.onError && this.onError(event)
     },
-    handleContact(event: CommonEvent) {
-      this.onContact && this.onContact(event)
+    handelOnOpenSetting(event: CommonEvent): void {
+      this.onOpenSetting && this.onOpenSetting(event)
+    },
+    handleSubmit(event: CommonEvent): void {
+      if (this.isWEAPP || this.isWEB) {
+        this.$scope.triggerEvent('submit', event.detail, {
+          bubbles: true,
+          composed: true,
+        })
+      }
+    },
+    handleReset(event: CommonEvent): void {
+      if (this.isWEAPP || this.isWEB) {
+        this.$scope.triggerEvent('reset', event.detail, {
+          bubbles: true,
+          composed: true,
+        })
+      }
     },
   },
 }

@@ -20,19 +20,19 @@ export default {
     },
     onCancel: {
       type: Function,
-      default: function(){
+      default: function () {
         return () => {}
       },
     },
     onConfirm: {
       type: Function,
-      default: function(){
+      default: function () {
         return () => {}
       },
     },
     onClose: {
       type: Function,
-      default: function(){
+      default: function () {
         return () => {}
       },
     },
@@ -60,9 +60,7 @@ export default {
   watch: {
     isOpened(val) {
       if (val !== this.state._isOpened) {
-        this.setState({
-          _isOpened: val,
-        })
+        this.state._isOpened = val
       }
     },
   },
@@ -75,7 +73,7 @@ export default {
         },
         this.className
       )
-    }
+    },
   },
   methods: {
     handleClickOverlay() {

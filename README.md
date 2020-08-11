@@ -81,30 +81,6 @@ Vue.use(TaroUiVue)
   </view>
 </template>
 ```
-在 jsx 中需要按下面这样写, 明确 onXXX(on开头的props) 属于 props 
-``` javascript
-{
-  ...
-  methods: {
-    handleClick() {
-      // TODO
-    }
-  },
-  render() {
-    return (
-      <AtTag
-      type="primary"
-      props={{onClick: this.handleClick}}
-    >
-      标签
-    </AtTag>
-    )
-  }
-}
-```
-| AtCalendar | AtActionSheet | AtTabBar |
-| :--------: | :--------: | :--------: |
-|![AtCalendar](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtCalendar.gif)|![AtActionSheet](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtActionSheet.gif)|![AtTabBar](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtTabBar.gif)
 
 ## 更多使用方式
 更多组件使用及属性请参考 [taro-ui 使用文档](https://taro-ui.jd.com/#/docs/introduction)   
@@ -112,7 +88,6 @@ Vue.use(TaroUiVue)
 
 ## TODO
 - 为组件添加测试用例
-- 修复现存[已知问题](https://github.com/psaren/taro-ui-vue/blob/master/src/components/notes.md)
 
 ## CHANGELOG
 [CHANGELOG](https://github.com/psaren/taro-ui-vue/blob/master/CHANGELOG.md)

@@ -59,7 +59,7 @@ $at-modal-duration: 200ms;
     .at-modal__action {
       @include display-flex;
 
-      & > button {
+      & > taro-button-core, button {
         @include flex(auto);
         @include line(1);
         @include active;

@@ -16,6 +16,20 @@ export default {
       type: [Array, String],
       default: () => '',
     },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
+  mounted() {
+    setTimeout(() => {
+      this.trrigerOptionsDomUpadte()
+    }, 16);
+  },
+  watch: {
+    options() {
+      this.trrigerOptionsDomUpadte()
+    }
   },
   computed: {
     rootClass () {
