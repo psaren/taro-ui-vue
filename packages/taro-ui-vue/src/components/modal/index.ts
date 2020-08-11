@@ -1,8 +1,10 @@
 import classNames from 'classnames'
 
 import { getEnvs } from '../../utils/common'
+import mixins from '../mixins'
 
 export default {
+  mixins: [mixins],
   props: {
     title: {
       type: String,

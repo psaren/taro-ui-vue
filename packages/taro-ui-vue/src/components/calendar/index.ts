@@ -43,7 +43,7 @@ export default {
       default: 'YYYY-MM-DD',
     },
     currentDate: {
-      type: [Number, String],
+      type: [Number, String, Date, Object],
       default: Date.now(),
     },
     monthFormat: {
@@ -104,7 +104,7 @@ export default {
       if (!currentDate || currentDate === oldVal.currentDate) return
       if (isMultiSelect && oldVal.isMultiSelect) {
         const { start, end } = currentDate
-        const { start: preStart, end: preEnd } = this.currentDate
+        const { start: preStart, end: preEnd } = oldVal.currentDate
 
         if (start === preStart && preEnd === end) {
           return
@@ -272,7 +272,7 @@ export default {
       } else {
         stateValue = this.getSingleSelectdState(dayjsDate)
       }
-      this.state = stateValue
+      Object.assign(this.state, stateValue)
       this.$nextTick(() => {
         this.handleSelectedDate()
       })
