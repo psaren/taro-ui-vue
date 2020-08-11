@@ -1,8 +1,5 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle"
-  >
+  <view :class="rootCls" :style="customStyle">
     <view class="at-switch__title">{{ title }}</view>
     <view :class="containerCls">
       <view class="at-switch__mask"></view>

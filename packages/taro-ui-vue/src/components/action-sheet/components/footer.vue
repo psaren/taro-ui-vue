@@ -1,9 +1,5 @@
 <template>
-  <view
-    :class="rootClass"
-    @tap="handleClick"
-    @click="handleClick"
-  >
+  <view :class="rootClass" @tap="handleClick" @click="handleClick">
     <slot />
   </view>
 </template>
@@ -12,23 +8,23 @@
 import classNames from 'classnames'
 
 export default {
-	name: 'ActionSheetHeader',
-	props: {
+  name: 'ActionSheetHeader',
+  props: {
     className: {
       type: [Array, String],
       default: () => '',
-		},
-		onClick: {
+    },
+    onClick: {
       type: Function,
       default: () => () => {},
     },
-	},
-	computed: {
-		rootClass() {
-			return classNames('at-action-sheet__footer', this.className)
-		}
-	},
-	methods: {
+  },
+  computed: {
+    rootClass() {
+      return classNames('at-action-sheet__footer', this.className)
+    },
+  },
+  methods: {
     handleClick(e) {
       this.onClick && this.onClick(e)
     },

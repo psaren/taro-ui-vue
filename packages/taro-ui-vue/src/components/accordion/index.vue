@@ -1,12 +1,11 @@
 <template>
-  <view
-    :class="classNames('at-accordion', className)"
-    :style="customStyle"
-  >
+  <view :class="classNames('at-accordion', className)" :style="customStyle">
     <view
-      :class="classNames('at-accordion__header', {
-        'at-accordion__header--noborder': !hasBorder,
-      })"
+      :class="
+        classNames('at-accordion__header', {
+          'at-accordion__header--noborder': !hasBorder,
+        })
+      "
       @tap="handleClick"
       @click="handleClick"
     >
@@ -27,18 +26,23 @@
         </view>
       </view>
       <view
-        :class="classNames('at-accordion__arrow', {
-          'at-accordion__arrow--folded': !!open,
-        })"
+        :class="
+          classNames('at-accordion__arrow', {
+            'at-accordion__arrow--folded': !!open,
+          })
+        "
       >
         <view class="at-icon at-icon-chevron-down" />
       </view>
     </view>
     <view
       :style="contentStyle"
-      :class="classNames('at-accordion__content', {
-        'at-accordion__content--inactive': (!open && isCompleted) || startOpen,
-      })"
+      :class="
+        classNames('at-accordion__content', {
+          'at-accordion__content--inactive':
+            (!open && isCompleted) || startOpen,
+        })
+      "
     >
       <view class="at-accordion__body">
         <slot />

@@ -92,7 +92,8 @@ export default {
       currentPage -= 1
       currentPage = Math.max(1, currentPage)
       if (originCur === currentPage) return
-      this.onPageChange && this.onPageChange({ type: 'prev', current: currentPage })
+      this.onPageChange &&
+        this.onPageChange({ type: 'prev', current: currentPage })
       this.setState({ currentPage })
     },
     onNext() {
@@ -102,7 +103,8 @@ export default {
       currentPage += 1
       currentPage = Math.min(maxPage, currentPage)
       if (originCur === currentPage) return
-      this.onPageChange && this.onPageChange({ type: 'next', current: currentPage })
+      this.onPageChange &&
+        this.onPageChange({ type: 'next', current: currentPage })
       this.setState({ currentPage })
     },
   },

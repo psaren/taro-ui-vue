@@ -1,12 +1,12 @@
 <template>
-  <view class='page'>
-    <DocsHeader title='Drawer 抽屉'></DocsHeader>
+  <view class="page">
+    <DocsHeader title="Drawer 抽屉"></DocsHeader>
 
-    <view class='doc-body'>
-      <view class='panel'>
-        <view class='panel__title'>左边滑出</view>
-        <view class='panel__content no-padding'>
-          <view class='example'>
+    <view class="doc-body">
+      <view class="panel">
+        <view class="panel__title">左边滑出</view>
+        <view class="panel__content no-padding">
+          <view class="example">
             <AtButton :onClick="leftDrawerClick">
               显示 Drawer
             </AtButton>
@@ -21,10 +21,10 @@
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>右边滑出</view>
-        <view class='panel__content no-padding'>
-          <view class='example'>
+      <view class="panel">
+        <view class="panel__title">右边滑出</view>
+        <view class="panel__content no-padding">
+          <view class="example">
             <AtButton :onClick="rightDrawerClick">
               显示 Drawer
             </AtButton>
@@ -40,10 +40,10 @@
         </view>
       </view>
 
-      <view class='panel'>
-        <view class='panel__title'>自定义内容</view>
-        <view class='panel__content no-padding'>
-          <view class='example'>
+      <view class="panel">
+        <view class="panel__title">自定义内容</view>
+        <view class="panel__content no-padding">
+          <view class="example">
             <AtButton :onClick="childrenDrawerClick">
               显示 Drawer
             </AtButton>
@@ -53,20 +53,26 @@
               :onItemClick="onItemClick"
               :onClose="onClose"
             >
-                <view
-                  v-for="(item, index) in childrenItem"
-                  :class="classNames('drawer-item', {
-                    'drawer-item--sub': index === 1 || index === 2
-                  })"
-                  :onClick="onItemClick.bind(this, index)"
-                  :key="`drawer-item-${index}`"
-                >
-                  {{ item }}
-                  <AtIcon v-if="index !== 3 && icons[index]" value={icons[index]} size='20' />
-                  <AtBadge value='3' v-if="index === 3 && icons[index]">
-                    <AtIcon value={icons[index]} size='20' />
-                  </AtBadge>
-                </view>
+              <view
+                v-for="(item, index) in childrenItem"
+                :class="
+                  classNames('drawer-item', {
+                    'drawer-item--sub': index === 1 || index === 2,
+                  })
+                "
+                :onClick="onItemClick.bind(this, index)"
+                :key="`drawer-item-${index}`"
+              >
+                {{ item }}
+                <AtIcon
+                  v-if="index !== 3 && icons[index]"
+                  value="{icons[index]}"
+                  size="20"
+                />
+                <AtBadge value="3" v-if="index === 3 && icons[index]">
+                  <AtIcon value="{icons[index]}" size="20" />
+                </AtBadge>
+              </view>
             </AtDrawer>
           </view>
         </view>
@@ -87,7 +93,7 @@ export default {
       rightDrawerShow: false,
       childrenDrawerShow: false,
       childrenItem: ['首页', '可自定义结构', '或自定义样式', '消息', '个人'],
-      icons: ['home', '', '', 'message', 'user']
+      icons: ['home', '', '', 'message', 'user'],
     }
   },
   methods: {
@@ -113,7 +119,8 @@ export default {
       } else {
         content = `你点击了第 ${+index + 1} 个项目`
       }
-      if (ENV !== 'WEB') content && Taro.showModal({ content, showCancel: false })
+      if (ENV !== 'WEB')
+        content && Taro.showModal({ content, showCancel: false })
       else content && alert(content)
     },
 
@@ -121,7 +128,7 @@ export default {
       this.leftDrawerShow = false
       this.rightDrawerShow = false
       this.childrenDrawerShow = false
-    }
-  }
+    },
+  },
 }
 </script>

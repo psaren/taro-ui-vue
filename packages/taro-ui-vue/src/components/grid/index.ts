@@ -37,9 +37,12 @@ export default {
     },
     bodyClass() {
       const { mode, hasBorder } = this
-      return classNames(['at-grid__flex-item', 'at-grid-item', `at-grid-item--${mode}`], {
-        'at-grid-item--no-border': !hasBorder,
-      })
+      return classNames(
+        ['at-grid__flex-item', 'at-grid-item', `at-grid-item--${mode}`],
+        {
+          'at-grid-item--no-border': !hasBorder,
+        }
+      )
     },
     gridGroup() {
       const { data, columnNum } = this

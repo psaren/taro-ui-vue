@@ -28,6 +28,6 @@
 import AtCalendarController from './index'
 export default {
   name: 'AtCalendarController',
-  mixins: [AtCalendarController]
+  mixins: [AtCalendarController],
 }
 </script>

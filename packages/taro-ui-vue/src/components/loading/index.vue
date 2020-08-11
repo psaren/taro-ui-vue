@@ -22,8 +22,10 @@ export default {
   },
   methods: {
     transformStyle(style = {}) {
-      return Object.keys(style).map(item => `${item}: ${style[item]}`).join(';')
-    }
+      return Object.keys(style)
+        .map((item) => `${item}: ${style[item]}`)
+        .join(';')
+    },
   },
   computed: {
     sizeStyle() {
@@ -39,10 +41,12 @@ export default {
       const { color, sizeStyle } = this
       const colorStyle = {
         border: color ? `1px solid ${color}` : '',
-        'border-color': color ? `${color} transparent transparent transparent` : '',
+        'border-color': color
+          ? `${color} transparent transparent transparent`
+          : '',
       }
       return Object.assign({}, colorStyle, sizeStyle)
-    }
-  }
+    },
+  },
 }
 </script>

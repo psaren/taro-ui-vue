@@ -1,13 +1,6 @@
 <template>
-  <view
-    :class="rootClass"
-    :on-touch-move="handleTouchMove"
-  >
-    <view
-      class="at-action-sheet__overlay"
-      @tap="close"
-      @click="close"
-    />
+  <view :class="rootClass" :on-touch-move="handleTouchMove">
+    <view class="at-action-sheet__overlay" @tap="close" @click="close" />
     <view class="at-action-sheet__container">
       <ActionSheetHeader v-if="title">
         {{ title }}

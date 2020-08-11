@@ -1,36 +1,36 @@
 <template>
-  <view class='page'>
+  <view class="page">
     <!-- S Header -->
-    <DocsHeader title='Switch 开关'></DocsHeader>
+    <DocsHeader title="Switch 开关"></DocsHeader>
     <!-- E Header -->
 
     <!-- S Body -->
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 基础用法 -->
-      <view class='panel'>
-        <view class='panel__title'>基础用法</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">基础用法</view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtForm>
               <AtSwitch
-                title='开启中'
+                title="开启中"
                 :checked="switchValue"
                 :onChange="handleChange"
               />
-              <AtSwitch title='已关闭' :border="false" />
+              <AtSwitch title="已关闭" :border="false" />
             </AtForm>
           </view>
         </view>
       </view>
 
       <!-- 禁用状态 -->
-      <view class='panel'>
-        <view class='panel__title'>禁用状态</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">禁用状态</view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtForm>
-              <AtSwitch title='不可点击' checked disabled />
-              <AtSwitch title='不可点击' :border="false" disabled />
+              <AtSwitch title="不可点击" checked disabled />
+              <AtSwitch title="不可点击" :border="false" disabled />
             </AtForm>
           </view>
         </view>
@@ -45,13 +45,13 @@ export default {
   name: 'SwitchPage',
   data() {
     return {
-      switchValue: true
+      switchValue: true,
     }
   },
   methods: {
-    handleChange (value) {
+    handleChange(value) {
       this.switchValue = value
-    }
-  }
+    },
+  },
 }
 </script>

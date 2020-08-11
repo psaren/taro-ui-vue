@@ -30,7 +30,7 @@ export default {
         },
         this.className
       )
-    }
+    },
   },
 }
 </script>

@@ -57,7 +57,7 @@ const AtCalendarList = {
           item.type === constant.TYPE_PRE_MONTH ||
           item.type === constant.TYPE_NEXT_MONTH,
       })
-    }
+    },
   },
 }
 

@@ -55,11 +55,11 @@ const AtCalendarController = {
       return !!maxDate && dayjs(maxDate)
     },
     isMinMonth(): boolean {
-      const { dayjsMinDate,dayjsDate } = this
+      const { dayjsMinDate, dayjsDate } = this
       return dayjsMinDate && dayjsMinDate.startOf('month').isSame(dayjsDate)
     },
     isMaxMonth(): boolean {
-      const { dayjsMaxDate,dayjsDate } = this
+      const { dayjsMaxDate, dayjsDate } = this
       return dayjsMaxDate && dayjsMaxDate.startOf('month').isSame(dayjsDate)
     },
     minDateValue(): string {
@@ -69,20 +69,20 @@ const AtCalendarController = {
     maxDateValue(): string {
       const { dayjsMaxDate } = this
       return dayjsMaxDate ? dayjsMaxDate.format('YYYY-MM') : ''
-    }
+    },
   },
   methods: {
-    getLeftArrowCls (): string {
+    getLeftArrowCls(): string {
       return classnames('controller__arrow controller__arrow--left', {
         'controller__arrow--disabled': this.isMinMonth,
       })
     },
-    getRightArrowCls (): string {
+    getRightArrowCls(): string {
       return classnames('controller__arrow controller__arrow--right', {
         'controller__arrow--disabled': this.isMaxMonth,
       })
-    }
-  }
+    },
+  },
 }
 
 export default AtCalendarController

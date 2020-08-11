@@ -1,13 +1,13 @@
 <template>
   <view :class="rootCls" :style="customStyle">
     <view :class="containerCls">
-      <view 
-        :class="overlayCls" 
-        @tap="handleClick"
-      ></view>
-      <view 
-        v-if="title" 
-        :class="['at-input__title', required ? 'at-input__title--required' : '']" 
+      <view :class="overlayCls" @tap="handleClick"></view>
+      <view
+        v-if="title"
+        :class="[
+          'at-input__title',
+          required ? 'at-input__title--required' : '',
+        ]"
         :for="name"
       >
         {{ title }}
@@ -37,7 +37,11 @@
         :on-confirm="handleConfirm"
         @keyboardHeightChange="handleKeyboardHeightChange"
       />
-      <view v-if="clear && value" class="at-input__icon" @touchend="handleClearValue">
+      <view
+        v-if="clear && value"
+        class="at-input__icon"
+        @touchend="handleClearValue"
+      >
         <view class="at-icon at-icon-close-circle at-input__icon-close"></view>
       </view>
       <view v-if="error" class="at-input__icon" @touchstart="handleErrorClick">

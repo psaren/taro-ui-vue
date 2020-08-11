@@ -1,8 +1,6 @@
 <template>
   <view>
-    <view
-      v-if="!isSwiper"
-      :class="wrapCls">
+    <view v-if="!isSwiper" :class="wrapCls">
       <AtCalendarDayList />
       <view class="main__body body">
         <view class="body__slider body__slider--now">
@@ -22,17 +20,14 @@
       @touchstart="handleTouchStart"
     >
       <AtCalendarDayList />
-      <view
-        :class="h5CalendarMainBodyCls"
-        :style="h5CalendarMainBodyStyle"
-      >
-        <view class='body__slider body__slider--pre'>
-          <AtCalendarDateList 
-            :key="state.listGroup[0].value" 
-            :list="state.listGroup.length ? state.listGroup[0].list : []" 
+      <view :class="h5CalendarMainBodyCls" :style="h5CalendarMainBodyStyle">
+        <view class="body__slider body__slider--pre">
+          <AtCalendarDateList
+            :key="state.listGroup[0].value"
+            :list="state.listGroup.length ? state.listGroup[0].list : []"
           />
         </view>
-        <view class='body__slider body__slider--now'>
+        <view class="body__slider body__slider--now">
           <AtCalendarDateList
             :key="state.listGroup[1].value"
             :list="state.listGroup.length ? state.listGroup[1].list : []"
@@ -40,17 +35,15 @@
             :on-long-click="onLongClick"
           />
         </view>
-        <view class='body__slider body__slider--next'>
-          <AtCalendarDateList 
+        <view class="body__slider body__slider--next">
+          <AtCalendarDateList
             :key="state.listGroup[2].value"
-            :list="state.listGroup.length ? state.listGroup[2].list : []" 
+            :list="state.listGroup.length ? state.listGroup[2].list : []"
           />
         </view>
       </view>
     </view>
-    <view
-      v-if="isSwiper && !isH5"
-      :class="wrapCls">
+    <view v-if="isSwiper && !isH5" :class="wrapCls">
       <AtCalendarDayList />
       <swiper
         circular
@@ -63,12 +56,13 @@
         @touchend="handleSwipeTouchEnd"
         @touchstart="handleSwipeTouchStart"
       >
-        <swiper-item 
+        <swiper-item
           v-for="(item, key) in state.listGroup"
-          :key="key.toString()" 
-          :itemId="key.toString()">
+          :key="key.toString()"
+          :itemId="key.toString()"
+        >
           <AtCalendarDateList
-            :key="item.value" 
+            :key="item.value"
             :list="item.list"
             :on-click="onDayClick"
             :on-long-click="onLongClick"
@@ -79,7 +73,7 @@
   </view>
 </template>
 <script>
-import AtCalendarBody from './index';
+import AtCalendarBody from './index'
 import AtCalendarDateList from '../ui/date-list/index.vue'
 import AtCalendarDayList from '../ui/day-list/index.vue'
 export default {

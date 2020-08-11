@@ -4,7 +4,7 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import classNames from 'classnames'
 export default {
   name: 'ActionSheetBody',
@@ -13,11 +13,11 @@ export default {
       type: [Array, String],
       default: () => '',
     },
-	},
-	computed: {
-		rootClass() {
-			return classNames('at-action-sheet__body', this.className)
-		}
-	},
+  },
+  computed: {
+    rootClass() {
+      return classNames('at-action-sheet__body', this.className)
+    },
+  },
 }
 </script>

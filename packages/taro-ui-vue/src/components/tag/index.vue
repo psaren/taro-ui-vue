@@ -1,9 +1,5 @@
 <template>
-  <view
-    :class="rootCls"
-    :style="customStyle"
-    @tap="handleClick"
-  >
+  <view :class="rootCls" :style="customStyle" @tap="handleClick">
     <slot></slot>
   </view>
 </template>

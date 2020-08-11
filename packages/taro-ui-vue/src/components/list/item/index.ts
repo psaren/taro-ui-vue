@@ -91,7 +91,9 @@ const AtListItem = {
       return classNames(
         iconInfo.prefixClass || 'at-icon',
         {
-          [`${iconInfo.prefixClass || 'at-icon'}-${iconInfo.value}`]: iconInfo.value,
+          [`${iconInfo.prefixClass || 'at-icon'}-${
+            iconInfo.value
+          }`]: iconInfo.value,
         },
         iconInfo.className
       )

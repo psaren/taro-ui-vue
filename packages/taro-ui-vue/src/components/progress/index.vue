@@ -1,4 +1,3 @@
-
 <template>
   <view :class="rootClass(status)">
     <view class="at-progress__outer">
@@ -9,10 +8,7 @@
         />
       </view>
     </view>
-    <view
-      v-if="!isHidePercent"
-      class="at-progress__content"
-    >
+    <view v-if="!isHidePercent" class="at-progress__content">
       <view v-if="!status || status === 'progress'">
         {{ `${percent}%` }}
       </view>
@@ -23,7 +19,7 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import AtProgress from './index'
 export default AtProgress
 </script>

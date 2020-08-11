@@ -1,6 +1,8 @@
 <template>
   <view
-    :class="classNames(rootClassName, { 'at-timeline--pending': pending }, className)"
+    :class="
+      classNames(rootClassName, { 'at-timeline--pending': pending }, className)
+    "
     :style="customStyle"
   >
     <view
@@ -10,10 +12,7 @@
     >
       <view class="at-timeline-item__tail" />
       <view :class="dotClass(item)">
-        <view
-          v-if="item.icon"
-          :class="fileIconClass(item)"
-        />
+        <view v-if="item.icon" :class="fileIconClass(item)" />
       </view>
       <view class="at-timeline-item__content">
         <view class="at-timeline-item__content-item">
@@ -31,7 +30,7 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import AtTimeline from './index'
 export default AtTimeline
 </script>

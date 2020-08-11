@@ -4,8 +4,8 @@ import { CSSProperties } from '../../../global'
 
 type ExtendEvent = {
   target: {
-    value: string,
-  },
+    value: string
+  }
 }
 
 const AtSearchBar = {
@@ -91,7 +91,7 @@ const AtSearchBar = {
     },
   },
   computed: {
-    rootCls () {
+    rootCls() {
       const { fixed, className } = this
       return classNames(
         'at-search-bar',
@@ -111,8 +111,8 @@ const AtSearchBar = {
         wrapStyle.flexGrow = 1
       }
       return wrapStyle
-    }, 
-    actionStyle (): CSSProperties {
+    },
+    actionStyle(): CSSProperties {
       const { value, actionName, showActionButton } = this
       const { isFocus } = this
       const fontSize = 14
@@ -122,14 +122,16 @@ const AtSearchBar = {
         actionStyle.marginRight = `0`
       } else if (!isFocus && !value) {
         actionStyle.opacity = 0
-        actionStyle.marginRight = `-${(actionName.length + 1) * fontSize + fontSize / 2 + 10}px`
+        actionStyle.marginRight = `-${
+          (actionName.length + 1) * fontSize + fontSize / 2 + 10
+        }px`
       }
       if (showActionButton) {
         actionStyle.opacity = 1
         actionStyle.marginRight = `0`
       }
       return actionStyle
-    }, 
+    },
     clearIconStyle(): CSSProperties {
       const { value } = this
       const clearIconStyle: CSSProperties = { display: 'flex' }

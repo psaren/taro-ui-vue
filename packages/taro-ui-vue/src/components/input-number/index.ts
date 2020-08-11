@@ -35,8 +35,8 @@ function parseValue(num: string): string {
 
 type ExtendEvent = {
   target: {
-    value: string | number,
-  },
+    value: string | number
+  }
 }
 
 const AtInputNumber = {
@@ -190,7 +190,7 @@ const AtInputNumber = {
     inputStyle() {
       const { width } = this
       return {
-        width: width ? `${pxTransform(width)}` : ''
+        width: width ? `${pxTransform(width)}` : '',
       }
     },
     rootCls() {
@@ -202,21 +202,21 @@ const AtInputNumber = {
         },
         className
       )
-    }, 
+    },
     minusBtnCls() {
       const { min, disabled, value } = this
       const inputValue = Number(this.handleValue(value))
       return classNames('at-input-number__btn', {
         'at-input-number--disabled': inputValue <= min || disabled,
       })
-    }, 
+    },
     plusBtnCls() {
       const { max, disabled, value } = this
       const inputValue = Number(this.handleValue(value))
       return classNames('at-input-number__btn', {
         'at-input-number--disabled': inputValue >= max || disabled,
       })
-    }
+    },
   },
 }
 

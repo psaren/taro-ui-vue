@@ -1,9 +1,5 @@
 <template>
-  <view
-    :class="rootClass"
-    @tap="handleClick"
-    @click="handleClick"
-  >
+  <view :class="rootClass" @tap="handleClick" @click="handleClick">
     <slot />
   </view>
 </template>
@@ -23,15 +19,15 @@ export default {
       default: () => () => {},
     },
   },
-	computed: {
-		rootClass() {
-			return classNames('at-action-sheet__item', this.className)
-		}
-	},
+  computed: {
+    rootClass() {
+      return classNames('at-action-sheet__item', this.className)
+    },
+  },
   methods: {
     handleClick(e) {
       this.onClick && this.onClick(e)
     },
-	},
+  },
 }
 </script>

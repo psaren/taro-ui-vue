@@ -8,12 +8,12 @@
 
 <script>
 export default {
-	props: {
-		title: {
-			type: String,
-			default: '标题'
-		}
-	}
+  props: {
+    title: {
+      type: String,
+      default: '标题',
+    },
+  },
 }
 </script>
 <style lang="scss">
@@ -36,11 +36,10 @@ export default {
       bottom: 0;
       display: inline-block;
       width: 120px;
-      height: 2PX;
-      border-radius: 1PX;
-      background-color: #6190E8;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #6190e8;
     }
   }
 }
-
 </style>

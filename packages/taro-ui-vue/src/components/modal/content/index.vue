@@ -1,8 +1,5 @@
 <template>
-  <view
-    scroll-y
-    :class="rootClass"
-  >
+  <view scroll-y :class="rootClass">
     <slot />
   </view>
 </template>
@@ -19,7 +16,7 @@ export default {
   computed: {
     rootClass() {
       return classNames('at-modal__content', this.className)
-    }
-  }
+    },
+  },
 }
 </script>

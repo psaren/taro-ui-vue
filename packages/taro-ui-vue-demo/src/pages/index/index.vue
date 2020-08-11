@@ -1,10 +1,7 @@
 <template>
   <view class="page page-index">
     <view class="logo">
-      <image
-        class="img"
-        :src="taroLogo"
-      />
+      <image class="img" :src="taroLogo" />
     </view>
     <view class="page-title">
       Taro UI Vue
@@ -17,11 +14,7 @@
         @tap="gotoPanel(item.id)"
       >
         <view class="module-list__icon">
-          <image
-            :src="item.icon"
-            class="img"
-            mode="widthFix"
-          />
+          <image :src="item.icon" class="img" mode="widthFix" />
         </view>
         <view class="module-list__info">
           <view class="title">
@@ -54,58 +47,58 @@ const list = [
     id: 'Basic',
     title: '基础',
     content: '包含颜色、文本、图标等',
-    icon: iconBasic
+    icon: iconBasic,
   },
   {
     id: 'View',
     title: '视图',
     content: '包含通告栏、标签、徽标等',
-    icon: iconView
+    icon: iconView,
   },
   {
     id: 'Action',
     title: '操作反馈',
     content: '包含对话框、进度条、动作面板等',
-    icon: iconAction
+    icon: iconAction,
   },
   {
     id: 'Form',
     title: '表单',
     content: '包含输入框、单选框、复选框等',
-    icon: iconForm
+    icon: iconForm,
   },
   {
     id: 'Layout',
     title: '布局',
     content: '包含列表、浮层、卡片等',
-    icon: iconLayout
+    icon: iconLayout,
   },
   {
     id: 'Navigation',
     title: '导航',
     content: '包含标签栏、导航栏、分段器等',
-    icon: iconNavigation
+    icon: iconNavigation,
   },
   {
     id: 'Advanced',
     title: '高阶组件',
     content: '包含日历等',
-    icon: iconHOC
-  }
+    icon: iconHOC,
+  },
 ]
 export default {
   data() {
     return {
       taroLogo,
-      list
+      list,
     }
   },
   methods: {
     gotoPanel(id) {
       this.$taro.navigateTo({
-        url: `/pages/panel/index?id=${id.toLowerCase()}`
+        url: `/pages/panel/index?id=${id.toLowerCase()}`,
       })
-    }
-  }
+    },
+  },
 }
 </script>

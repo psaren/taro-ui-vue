@@ -9,7 +9,9 @@
       v-if="isWEB && !disabled"
       class="at-button__wxbutton"
       :lang="lang"
-      :formType="formType === 'submit' || formType === 'reset' ? formType : undefined"
+      :formType="
+        formType === 'submit' || formType === 'reset' ? formType : undefined
+      "
     />
     <form
       v-if="isWEAPP && !disabled"
@@ -52,14 +54,8 @@
       @error="onError"
       @contact="onContact"
     />
-    <view
-      v-if="loading"
-      class="at-button__icon"
-    >
-      <AtLoading
-        :color="loadingColor"
-        :size="loadingSize"
-      />
+    <view v-if="loading" class="at-button__icon">
+      <AtLoading :color="loadingColor" :size="loadingSize" />
     </view>
     <view class="at-button__text">
       <slot />
@@ -73,8 +69,8 @@ import AtButton from './index'
 export default {
   name: 'AtButton',
   components: {
-    AtLoading
+    AtLoading,
   },
-  mixins: [AtButton]
+  mixins: [AtButton],
 }
 </script>

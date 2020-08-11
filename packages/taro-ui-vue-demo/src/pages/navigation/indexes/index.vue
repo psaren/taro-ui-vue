@@ -1,19 +1,19 @@
 <template>
-  <view class='page' style='height: 100vh;'>
+  <view class="page" style="height: 100vh;">
     <!-- 基础用法 -->
-    <view style='height: 100%;'>
+    <view style="height: 100%;">
       <AtIndexes
         :list="mockData"
-        topKey='Top'
+        topKey="Top"
         :onClick="onClick"
         :onScrollIntoView="handleScroll"
       >
-        <view class='custom-area'>
+        <view class="custom-area">
           用户自定义内容
           <AtSearchBar
             :value="value"
             :onChange="handleChange"
-            placeholder='跳转到指定Key'
+            placeholder="跳转到指定Key"
             :onActionClick="handleActionClick"
           />
         </view>
@@ -32,21 +32,21 @@ export default {
   data() {
     return {
       value: '',
-      mockData
+      mockData,
     }
   },
   methods: {
     scrollIntoView(key) {
       Taro.showToast({
         title: `scrollIntoView: ${key}`,
-        icon: 'none'
+        icon: 'none',
       })
     },
 
     onClick(item) {
       Taro.showToast({
         title: `onClick: ${item}`,
-        icon: 'none'
+        icon: 'none',
       })
     },
 
@@ -64,7 +64,7 @@ export default {
 
     handleScroll(fn) {
       this.scrollToView = fn
-    }
+    },
   },
 }
 </script>

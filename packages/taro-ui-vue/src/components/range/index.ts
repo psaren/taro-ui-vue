@@ -1,6 +1,10 @@
 import classNames from 'classnames'
 import { CommonEvent, ITouchEvent } from '@tarojs/components/types/common'
-import { delayQuerySelector, getEventDetail, mergeStyle } from '../../utils/common'
+import {
+  delayQuerySelector,
+  getEventDetail,
+  mergeStyle,
+} from '../../utils/common'
 
 import mixins from '../mixins'
 
@@ -138,7 +142,7 @@ const AtRange = {
         left: `${smallerX}%`,
         width: `${deltaX}%`,
       }
-    }
+    },
   },
 
   methods: {
@@ -167,7 +171,11 @@ const AtRange = {
       this.triggerEvent('onAfterChange')
     },
 
-    setSliderValue(sliderName: string, targetValue: number, funcName: string): void {
+    setSliderValue(
+      sliderName: string,
+      targetValue: number,
+      funcName: string
+    ): void {
       const distance = Math.min(Math.max(targetValue, 0), this.width)
       const sliderValue = Math.floor((distance / this.width) * 100)
       if (funcName) {

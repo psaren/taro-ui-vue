@@ -13,10 +13,7 @@
       <view class="at-icon at-icon-close" />
     </view>
     <view class="at-noticebar__content">
-      <view
-        v-if="icon"
-        class="at-noticebar__content-icon"
-      >
+      <view v-if="icon" class="at-noticebar__content-icon">
         <view :class="classNames(iconClass, iconClass)" />
       </view>
       <view class="at-noticebar__content-text">
@@ -45,7 +42,7 @@
   </view>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import AtNoticebar from './index'
 export default AtNoticebar
 </script>

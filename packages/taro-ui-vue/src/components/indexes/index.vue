@@ -1,9 +1,6 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle"
-  >
-    <AtToast 
+  <view :class="rootCls" :style="customStyle">
+    <AtToast
       :custom-style="toastStyle"
       :is-opened="state._isShowToast"
       :text="state._tipText"
@@ -38,16 +35,13 @@
       :scroll-into-view="!isWEB ? state._scrollIntoView : ''"
       @scroll="handleScroll"
     >
-      <view
-        id="at-indexes__top"
-        class="at-indexes__content"
-      >
+      <view id="at-indexes__top" class="at-indexes__content">
         <slot />
       </view>
       <view
-        v-for="dataList in list" 
-        :id="`at-indexes__list-${dataList.key}`" 
-        :key="dataList.key" 
+        v-for="dataList in list"
+        :id="`at-indexes__list-${dataList.key}`"
+        :key="dataList.key"
         class="at-indexes__list"
       >
         <view class="at-indexes__list-title">
@@ -79,6 +73,6 @@ export default {
     AtList,
     AtListItem,
     AtToast,
-  }
+  },
 }
 </script>

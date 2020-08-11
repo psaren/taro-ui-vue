@@ -1,8 +1,5 @@
 <template>
-  <view 
-    :class="rootCls"
-    :style="customStyle"
-  >
+  <view :class="rootCls" :style="customStyle">
     <view
       v-for="(cls, i) in classNameArr"
       :class="cls"

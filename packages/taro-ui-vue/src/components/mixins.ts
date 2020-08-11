@@ -1,5 +1,5 @@
 interface StateInterFace {
-  [id: string]: any;
+  [id: string]: any
 }
 
 export default {

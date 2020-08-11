@@ -10,5 +10,4 @@
 <script lang="ts">
 import AtIcon from './main'
 export default AtIcon
-
 </script>

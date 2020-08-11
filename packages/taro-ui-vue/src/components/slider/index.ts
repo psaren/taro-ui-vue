@@ -84,7 +84,7 @@ const AtSlider = {
     }
   },
   computed: {
-    rootCls () {
+    rootCls() {
       const { disabled, className } = this
       return classNames(
         {
@@ -93,7 +93,7 @@ const AtSlider = {
         },
         className
       )
-    }
+    },
   },
   methods: {
     handleChanging(e: CommonEvent): void {

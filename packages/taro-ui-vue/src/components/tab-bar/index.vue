@@ -1,14 +1,13 @@
 <template>
-  <view
-    :class="rootCls"
-    :style="rootSty"
-  >
+  <view :class="rootCls" :style="rootSty">
     <view
       v-for="(item, i) in tabList"
       :key="item.title"
-      :class="classNames('at-tab-bar__item', {
-        'at-tab-bar__item--active': current === i,
-      })"
+      :class="
+        classNames('at-tab-bar__item', {
+          'at-tab-bar__item--active': current === i,
+        })
+      "
       :style="current === i ? selectedStyle : defaultStyle"
       @tap="handleClick(i, $event)"
     >
@@ -20,13 +19,16 @@
       >
         <view class="at-tab-bar__icon">
           <view
-            :class="classNames(`${item.iconPrefixClass || 'at-icon'}`, {
-              [`${item.iconPrefixClass || 'at-icon'}-${item.selectedIconType}`]:
-                current === i && item.selectedIconType,
-              [`${item.iconPrefixClass || 'at-icon'}-${item.iconType}`]: !(
-                current === i && item.selectedIconType
-              ),
-            })"
+            :class="
+              classNames(`${item.iconPrefixClass || 'at-icon'}`, {
+                [`${item.iconPrefixClass || 'at-icon'}-${
+                  item.selectedIconType
+                }`]: current === i && item.selectedIconType,
+                [`${item.iconPrefixClass || 'at-icon'}-${item.iconType}`]: !(
+                  current === i && item.selectedIconType
+                ),
+              })
+            "
             :style="{
               color: current === i ? selectedColor : color,
               fontSize: iconSize ? `${iconSize}px` : '',
@@ -43,17 +45,21 @@
       >
         <view class="at-tab-bar__icon">
           <image
-            :class="classNames('at-tab-bar__inner-img', {
-              'at-tab-bar__inner-img--inactive': current !== i,
-            })"
+            :class="
+              classNames('at-tab-bar__inner-img', {
+                'at-tab-bar__inner-img--inactive': current !== i,
+              })
+            "
             mode="widthFix"
             :src="item.selectedImage || item.image"
             :style="imgStyle"
           />
           <image
-            :class="classNames('at-tab-bar__inner-img', {
-              'at-tab-bar__inner-img--inactive': current === i,
-            })"
+            :class="
+              classNames('at-tab-bar__inner-img', {
+                'at-tab-bar__inner-img--inactive': current === i,
+              })
+            "
             mode="widthFix"
             :src="item.image"
             :style="imgStyle"
@@ -67,10 +73,7 @@
           :value="item.iconType || item.image ? '' : item.text"
           :max-value="item.iconType || item.image ? 0 : Number(item.max)"
         >
-          <view
-            class="at-tab-bar__title"
-            :style="titleStyle"
-          >
+          <view class="at-tab-bar__title" :style="titleStyle">
             {{ item.title }}
           </view>
         </AtBadge>

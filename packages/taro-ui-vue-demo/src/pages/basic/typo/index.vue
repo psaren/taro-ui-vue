@@ -5,7 +5,7 @@
  * @LastEditors: pengyue
  * @Description: 
  * @FilePath: /taro-ui-vue/packages/taro-ui-vue-demo/src/pages/basic/typo/index.vue
---> 
+-->
 <template>
   <view>
     <DocsHeader title="Typography 字体" />
@@ -106,8 +106,8 @@
 import './index.scss'
 
 export default {
-	data() {
-		return {}
-	}
+  data() {
+    return {}
+  },
 }
 </script>

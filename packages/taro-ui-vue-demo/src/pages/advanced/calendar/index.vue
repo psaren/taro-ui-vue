@@ -18,11 +18,13 @@
             <AtButton
               size="small"
               :onClick="handleClick.bind(this, 'now', '2018/01/01')"
-            >跳转到 2018/01/01</AtButton>
+              >跳转到 2018/01/01</AtButton
+            >
             <AtButton
               size="small"
               :onClick="handleClick.bind(this, 'now', '2018/06/18')"
-            >跳转到 2018/6/18</AtButton>
+              >跳转到 2018/6/18</AtButton
+            >
           </view>
         </view>
       </view>
@@ -30,19 +32,18 @@
       <view class="panel">
         <view class="panel__title">指定最小日期和最大日期</view>
         <view class="panel__content">
-          <AtCalendar
-            :minDate="state.minDate"
-            :maxDate="state.maxDate"
-          />
+          <AtCalendar :minDate="state.minDate" :maxDate="state.maxDate" />
           <view class="body_controllers">
             <AtButton
               size="small"
               :onClick="handleClick.bind(this, 'minDate', '2018/01/01')"
-            >设置最小值 2018/1/1</AtButton>
+              >设置最小值 2018/1/1</AtButton
+            >
             <AtButton
               size="small"
               :onClick="handleClick.bind(this, 'maxDate', '2019/12/31')"
-            >设置最大值 2019/12/31</AtButton>
+              >设置最大值 2019/12/31</AtButton
+            >
           </view>
         </view>
       </view>
@@ -55,12 +56,15 @@
             <AtButton
               size="small"
               class="button"
-              :onClick="handleClick.bind(this, 'mark', [
-                {
-                  value: Date.now()
-                }
-              ])"
-            >标记当前时间</AtButton>
+              :onClick="
+                handleClick.bind(this, 'mark', [
+                  {
+                    value: Date.now(),
+                  },
+                ])
+              "
+              >标记当前时间</AtButton
+            >
           </view>
         </view>
       </view>
@@ -75,10 +79,7 @@
       <view class="panel">
         <view class="panel__title">垂直滑动</view>
         <view class="panel__content">
-          <AtCalendar
-            isVertical
-            :onSelectDate="handleDateChange"
-          />
+          <AtCalendar isVertical :onSelectDate="handleDateChange" />
         </view>
       </view>
 
@@ -94,11 +95,14 @@
             <AtButton
               size="small"
               class="button"
-              :onClick="handleClick.bind(this, 'multiCurentDate', {
-                start: '2018/10/28',
-                end: '2018/11/11'
-              })"
-            >设置选择区间为 2018/10/28 - 2018/11/11</AtButton>
+              :onClick="
+                handleClick.bind(this, 'multiCurentDate', {
+                  start: '2018/10/28',
+                  end: '2018/11/11',
+                })
+              "
+              >设置选择区间为 2018/10/28 - 2018/11/11</AtButton
+            >
           </view>
         </view>
       </view>

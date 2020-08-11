@@ -47,7 +47,7 @@ export default {
   computed: {
     rootCls() {
       return classNames('at-form', this.className)
-    }
+    },
   },
   methods: {
     handleSubmit() {

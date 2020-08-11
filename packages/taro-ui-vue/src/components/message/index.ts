@@ -44,7 +44,10 @@ export default {
         }, this.duration)
       })
       // 绑定函数
-      Taro.atMessage = Taro.eventCenter.trigger.bind(Taro.eventCenter, 'atMessage')
+      Taro.atMessage = Taro.eventCenter.trigger.bind(
+        Taro.eventCenter,
+        'atMessage'
+      )
     },
   },
 }

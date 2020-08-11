@@ -12,10 +12,7 @@
           一般用法
         </view>
         <view class="panel__content no-padding">
-          <AtLoadMore
-            :on-click="handleClick"
-            :status="status"
-          />
+          <AtLoadMore :on-click="handleClick" :status="status" />
         </view>
       </view>
     </view>
@@ -27,7 +24,7 @@ export default {
   name: 'LoadMorePage',
   data() {
     return {
-      status: 'more'
+      status: 'more',
     }
   },
   methods: {
@@ -36,7 +33,7 @@ export default {
       setTimeout(() => {
         this.status = 'noMore'
       }, 2000)
-    }
-  }
+    },
+  },
 }
 </script>

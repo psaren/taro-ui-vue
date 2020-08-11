@@ -208,7 +208,7 @@ const AtInput = {
     },
     placeholderCls() {
       return classNames('placeholder', this.placeholderClass)
-    }
+    },
   },
   methods: {
     handleInput(event: BaseEventOrig<InputEventDetail>): void {
@@ -244,7 +244,9 @@ const AtInput = {
       this.inputClearing = true
       this.onChange('', event)
     },
-    handleKeyboardHeightChange(event: BaseEventOrig<KeyboardHeightEventDetail>): void {
+    handleKeyboardHeightChange(
+      event: BaseEventOrig<KeyboardHeightEventDetail>
+    ): void {
       if (typeof this.onKeyboardHeightChange === 'function') {
         this.onKeyboardHeightChange(event)
       }

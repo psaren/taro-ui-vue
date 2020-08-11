@@ -1,12 +1,14 @@
 <template>
   <view
-    :class="classNames(
-      {
-        'at-countdown': true,
-        'at-countdown--card': isCard,
-      },
-      className
-    )"
+    :class="
+      classNames(
+        {
+          'at-countdown': true,
+          'at-countdown--card': isCard,
+        },
+        className
+      )
+    "
     :style="customStyle"
   >
     <AtCountdownItem
@@ -19,14 +21,8 @@
       :num="state.hours"
       :separator="format.hours"
     />
-    <AtCountdownItem
-      :num="state.minutes"
-      :separator="format.minutes"
-    />
-    <AtCountdownItem
-      :num="state.seconds"
-      :separator="format.seconds"
-    />
+    <AtCountdownItem :num="state.minutes" :separator="format.minutes" />
+    <AtCountdownItem :num="state.seconds" :separator="format.seconds" />
   </view>
 </template>
 
@@ -38,7 +34,7 @@ export default {
   name: 'AtCountdown',
   mixins: [AtCountdown],
   components: {
-    AtCountdownItem
-  }
+    AtCountdownItem,
+  },
 }
 </script>

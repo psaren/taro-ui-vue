@@ -13,7 +13,7 @@ const AtList = {
     },
   },
   computed: {
-    rootClass () {
+    rootClass() {
       return classNames(
         'at-list',
         {
@@ -21,7 +21,7 @@ const AtList = {
         },
         this.className
       )
-    }
+    },
   },
 }
 

@@ -1,15 +1,9 @@
 <template>
   <view :class="rootClass">
     <view class="at-activity-indicator__body">
-      <AtLoading
-        :size="size"
-        :color="color"
-      />
+      <AtLoading :size="size" :color="color" />
     </view>
-    <view
-      v-if="content"
-      class="at-activity-indicator__content"
-    >
+    <view v-if="content" class="at-activity-indicator__content">
       {{ content }}
     </view>
   </view>
@@ -22,7 +16,7 @@ export default {
   name: 'AtActivityIndicator',
   mixins: [AtActivityIndicator],
   components: {
-    AtLoading
-  }
+    AtLoading,
+  },
 }
 </script>

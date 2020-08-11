@@ -1,8 +1,10 @@
 <template>
   <view
-    :class="classNames('at-fab', className, {
-      [`at-fab--${size}`]: size,
-    })"
+    :class="
+      classNames('at-fab', className, {
+        [`at-fab--${size}`]: size,
+      })
+    "
     @tap="handleTab"
     @click="handleTab"
   >

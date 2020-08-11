@@ -37,7 +37,7 @@ const AtCheckbox = {
   computed: {
     rootCls() {
       return classNames('at-checkbox', this.className)
-    }
+    },
   },
   methods: {
     handleClick(idx: number): void {
@@ -60,7 +60,7 @@ const AtCheckbox = {
         'at-checkbox__option--disabled': disabled,
         'at-checkbox__option--selected': this.selectedList.includes(value),
       })
-    }
+    },
   },
 }
 

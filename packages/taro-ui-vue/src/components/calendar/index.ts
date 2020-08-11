@@ -3,8 +3,8 @@ import dayjs from 'dayjs'
 import mixins from '../mixins'
 
 interface StateValue {
-  selectedDate: any;
-  generateDate?: string;
+  selectedDate: any
+  generateDate?: string
 }
 
 export default {
@@ -283,7 +283,7 @@ export default {
     handleSelectedDate() {
       const selectDate = this.state.selectedDate
       if (typeof this.onSelectDate === 'function') {
-        const info: {start: string, end?:string} = {
+        const info: { start: string; end?: string } = {
           start: dayjs(selectDate.start).format(this.format),
         }
 

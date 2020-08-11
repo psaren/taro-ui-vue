@@ -1,24 +1,12 @@
 <template>
-  <view 
-    :class="rootClass" 
-    @touchmove="handleTouchMove"
-  >
-    <view 
-      class="at-float-layout__overlay" 
-      @tap="close" 
-    />
+  <view :class="rootClass" @touchmove="handleTouchMove">
+    <view class="at-float-layout__overlay" @tap="close" />
     <view class="at-float-layout__container layout">
-      <view
-        v-if="title"
-        class="layout-header"
-      >
+      <view v-if="title" class="layout-header">
         <view class="layout-header__title">
           {{ title }}
         </view>
-        <view 
-          class="layout-header__btn-close" 
-          @tap="close" 
-        />
+        <view class="layout-header__btn-close" @tap="close" />
       </view>
       <view class="layout-body">
         <scroll-view
@@ -40,7 +28,7 @@
     </view>
   </view>
 </template>
-<script lang='ts'>
+<script lang="ts">
 import AtFloatLayout from './index'
 export default AtFloatLayout
 </script>

@@ -75,7 +75,8 @@ export default {
     classObject() {
       return {
         'at-noticebar--marquee': this.marquee,
-        'at-noticebar--weapp': this.marquee && (this.state.isWEAPP || this.state.isALIPAY),
+        'at-noticebar--weapp':
+          this.marquee && (this.state.isWEAPP || this.state.isALIPAY),
         'at-noticebar--single': !this.marquee && this.single,
       }
     },

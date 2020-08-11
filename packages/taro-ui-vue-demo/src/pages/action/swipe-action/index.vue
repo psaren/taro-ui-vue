@@ -13,10 +13,7 @@
         </view>
         <view class="panel__content no-padding">
           <view class="example-item example-item--border">
-            <AtSwipeAction
-              :on-click="handleClick"
-              :options="OPTIONS"
-            >
+            <AtSwipeAction :on-click="handleClick" :options="OPTIONS">
               <view class="normal">
                 AtSwipeAction 一般使用场景
               </view>
@@ -31,10 +28,7 @@
         </view>
         <view class="panel__content no-padding">
           <view class="example-item example-item--border">
-            <AtSwipeAction
-              disabled
-              :options="OPTIONS"
-            >
+            <AtSwipeAction disabled :options="OPTIONS">
               <view class="normal">
                 禁止滑动展示
               </view>
@@ -47,14 +41,8 @@
         <view class="panel__title">
           使用变量控制开关
         </view>
-        <view
-          class="panel__controller"
-          style="margin-bottom: 10px"
-        >
-          <AtButton
-            size="small"
-            :on-click="handleStatusClick"
-          >
+        <view class="panel__controller" style="margin-bottom: 10px;">
+          <AtButton size="small" :on-click="handleStatusClick">
             当前状态: {{ state.isOpened2 ? '开' : '关' }}{{ ' ' }}
           </AtButton>
         </view>
@@ -100,10 +88,7 @@
         </view>
         <view class="panel__content no-padding">
           <view class="example-item example-item--border">
-            <AtSwipeAction
-              :on-click="handleClick"
-              :options="OPTIONS"
-            >
+            <AtSwipeAction :on-click="handleClick" :options="OPTIONS">
               <view class="normal">
                 点击事件触发
               </view>
@@ -150,9 +135,9 @@
                   {
                     text: '警告',
                     style: {
-                      backgroundColor: '#FFC82C'
-                    }
-                  }
+                      backgroundColor: '#FFC82C',
+                    },
+                  },
                 ]"
               >
                 <AtListItem title="Item3123123123123" />
@@ -198,24 +183,24 @@ const OPTIONS = [
     text: '删除',
     style: {
       color: '#333',
-      backgroundColor: '#F7F7F7'
-    }
+      backgroundColor: '#F7F7F7',
+    },
   },
   {
     text: '确认',
     style: {
-      backgroundColor: '#E93B3D'
-    }
-  }
+      backgroundColor: '#E93B3D',
+    },
+  },
 ]
 
 export default {
   name: 'SwipeActionPage',
-  components: { 
-    AtButton, 
-    AtList, 
-    AtListItem, 
-    AtSwipeAction 
+  components: {
+    AtButton,
+    AtList,
+    AtListItem,
+    AtSwipeAction,
   },
   mixins: [setStateMixin],
   data() {
@@ -227,92 +212,92 @@ export default {
           {
             title: 'item1',
             isOpened: false,
-            options: OPTIONS
+            options: OPTIONS,
           },
           {
             title: 'item2',
             isOpened: false,
-            options: OPTIONS
+            options: OPTIONS,
           },
           {
             title: 'item3',
             isOpened: false,
-            options: OPTIONS
+            options: OPTIONS,
           },
           {
             title: 'item4',
             isOpened: false,
-            options: OPTIONS
+            options: OPTIONS,
           },
           {
             title: 'item5',
             isOpened: false,
-            options: OPTIONS
+            options: OPTIONS,
           },
           {
             title: 'item0',
             isOpened: false,
-            options: OPTIONS
-          }
-        ]
-      }
+            options: OPTIONS,
+          },
+        ],
+      },
     }
   },
   methods: {
-    handleClick (item, key) {
+    handleClick(item, key) {
       this.showToast(`点击了${item.text}按钮，Key: ${key}`)
     },
 
-    handleClicked (index) {
+    handleClicked(index) {
       const list = this.state.list.filter((_item, key) => key !== index)
       console.log(list)
       this.setState({
-        list
+        list,
       })
     },
 
-    handleStatusClick () {
+    handleStatusClick() {
       this.setState({
-        isOpened2: !this.state.isOpened2
+        isOpened2: !this.state.isOpened2,
       })
     },
 
-    handleStatusOpened () {
+    handleStatusOpened() {
       this.setState({
-        isOpened2: true
+        isOpened2: true,
       })
     },
 
-    handleStatusClosed () {
+    handleStatusClosed() {
       this.setState({
-        isOpened2: false
+        isOpened2: false,
       })
     },
 
-    handleSingle (index) {
+    handleSingle(index) {
       const list = this.state.list.map((item, key) => {
         item.isOpened = key === index
         return item
       })
       this.setState({
-        list
+        list,
       })
     },
 
-    handleOpened () {
+    handleOpened() {
       this.showToast('Handle Opened')
     },
 
-    handleClosed () {
+    handleClosed() {
       this.showToast('Handle Closed')
     },
 
-    showToast (name) {
-        Taro.showToast({
-          icon: 'none',
-          title: name
-        })
-    }
-  }
+    showToast(name) {
+      Taro.showToast({
+        icon: 'none',
+        title: name,
+      })
+    },
+  },
 }
 </script>

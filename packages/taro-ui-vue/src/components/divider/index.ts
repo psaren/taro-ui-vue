@@ -42,7 +42,9 @@ export default {
     fontStyle() {
       return {
         color: this.fontColor,
-        'font-size': this.fontSize ? `${pxTransform(Number(this.fontSize))}` : '',
+        'font-size': this.fontSize
+          ? `${pxTransform(Number(this.fontSize))}`
+          : '',
       }
     },
     lineStyle() {

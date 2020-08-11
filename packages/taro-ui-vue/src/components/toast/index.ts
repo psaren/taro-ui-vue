@@ -96,7 +96,7 @@ export default {
     isRenderIcon() {
       const { icon, status, image } = this
       return !!(icon && !(image || statusImg[status]))
-    }
+    },
   },
   methods: {
     clearTimmer() {

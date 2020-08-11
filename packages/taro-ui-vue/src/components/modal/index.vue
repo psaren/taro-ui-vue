@@ -1,37 +1,21 @@
 <template>
   <view>
-    <view 
-      v-if="title || content" 
-      :class="rootClass"
-    >
-      <view 
-        class="at-modal__overlay"  
-        @tap="handleClickOverlay" 
-      />
+    <view v-if="title || content" :class="rootClass">
+      <view class="at-modal__overlay" @tap="handleClickOverlay" />
       <view class="at-modal__container">
         <ModalHeader v-if="title">
           <view>{{ title }}</view>
         </ModalHeader>
         <ModalContent v-if="content">
           <view class="content-simple">
-            <view
-              v-if="isWEB"
-              v-html="content.replace(/\n/g, '<br/>')"
-            />
+            <view v-if="isWEB" v-html="content.replace(/\n/g, '<br/>')" />
             <view v-else>
               {{ content }}
             </view>
           </view>
         </ModalContent>
-        <ModalAction
-          v-if="cancelText || confirmText"
-          is-simple
-        >
-          <button
-            v-if="cancelText" 
-            @tap="handleCancel"
-            @click="handleCancel"
-          >
+        <ModalAction v-if="cancelText || confirmText" is-simple>
+          <button v-if="cancelText" @tap="handleCancel" @click="handleCancel">
             {{ cancelText }}
           </button>
           <button
@@ -44,15 +28,8 @@
         </ModalAction>
       </view>
     </view>
-    <view
-      v-else
-      :class="rootClass"
-      @touchmove="handleTouchMove"
-    >
-      <view
-        class="at-modal__overlay"
-        @tap="handleClickOverlay"
-      />
+    <view v-else :class="rootClass" @touchmove="handleTouchMove">
+      <view class="at-modal__overlay" @tap="handleClickOverlay" />
       <view class="at-modal__container">
         <slot />
       </view>
@@ -72,6 +49,6 @@ export default {
     ModalContent,
     ModalHeader,
   },
-  mixins: [AtModal]
+  mixins: [AtModal],
 }
 </script>

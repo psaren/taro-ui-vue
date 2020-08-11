@@ -1,13 +1,13 @@
 <template>
-  <view class='page'>
-    <DocsHeader title='Steps 步骤条'></DocsHeader>
+  <view class="page">
+    <DocsHeader title="Steps 步骤条"></DocsHeader>
 
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 基础用法 -->
-      <view class='panel'>
-        <view class='panel__title'>基础用法</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">基础用法</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtSteps
               :items="items1"
               :current="current1"
@@ -23,10 +23,10 @@
       </view>
 
       <!-- 带附加信息 -->
-      <view class='panel'>
-        <view class='panel__title'>带附加信息</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">带附加信息</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtSteps
               :items="items3"
               :current="current3"
@@ -37,10 +37,10 @@
       </view>
 
       <!-- 自定义图标 -->
-      <view class='panel'>
-        <view class='panel__title'>自定义图标</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">自定义图标</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtSteps
               :items="items4"
               :current="current4"
@@ -51,10 +51,10 @@
       </view>
 
       <!-- 状态步骤条 -->
-      <view class='panel'>
-        <view class='panel__title'>状态步骤条</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">状态步骤条</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtSteps
               :items="items5"
               :current="current5"
@@ -68,69 +68,65 @@
 </template>
 
 <script>
-  const items1 = [{ title: '步骤一' }, { title: '步骤二' }]
+const items1 = [{ title: '步骤一' }, { title: '步骤二' }]
 
-  const items2 = [
-    { title: '步骤一' },
-    { title: '步骤二' },
-    { title: '步骤三' }
-  ]
+const items2 = [{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]
 
-  const items3 = [
-    { title: '步骤一', desc: '这里是额外的信息，最多两行' },
-    { title: '步骤二', desc: '这里是额外的信息，最多两行' },
-    { title: '步骤三', desc: '这里是额外的信息，最多两行' }
-  ]
+const items3 = [
+  { title: '步骤一', desc: '这里是额外的信息，最多两行' },
+  { title: '步骤二', desc: '这里是额外的信息，最多两行' },
+  { title: '步骤三', desc: '这里是额外的信息，最多两行' },
+]
 
-  const items4 = [
-    {
-      title: '步骤一',
-      desc: '这里是额外的信息，最多两行',
-      icon: {
-        value: 'sound',
-        activeColor: '#fff',
-        inactiveColor: '#78A4FA',
-        size: '14'
-      }
+const items4 = [
+  {
+    title: '步骤一',
+    desc: '这里是额外的信息，最多两行',
+    icon: {
+      value: 'sound',
+      activeColor: '#fff',
+      inactiveColor: '#78A4FA',
+      size: '14',
     },
-    {
-      title: '步骤二',
-      desc: '这里是额外的信息，最多两行',
-      icon: {
-        value: 'shopping-cart',
-        activeColor: '#fff',
-        inactiveColor: '#78A4FA',
-        size: '14'
-      }
+  },
+  {
+    title: '步骤二',
+    desc: '这里是额外的信息，最多两行',
+    icon: {
+      value: 'shopping-cart',
+      activeColor: '#fff',
+      inactiveColor: '#78A4FA',
+      size: '14',
     },
-    {
-      title: '步骤三',
-      desc: '这里是额外的信息，最多两行',
-      icon: {
-        value: 'camera',
-        activeColor: '#fff',
-        inactiveColor: '#78A4FA',
-        size: '14'
-      }
-    }
-  ]
+  },
+  {
+    title: '步骤三',
+    desc: '这里是额外的信息，最多两行',
+    icon: {
+      value: 'camera',
+      activeColor: '#fff',
+      inactiveColor: '#78A4FA',
+      size: '14',
+    },
+  },
+]
 
-  const items5 = [
-    {
-      title: '步骤一',
-      desc: '这里是额外的信息，最多两行',
-      status: 'success'
-    },
-    {
-      title: '步骤二',
-      desc: '这里是额外的信息，最多两行'
-    },
-    {
-      title: '步骤三',
-      desc: '这里是额外的信息，最多两行',
-      status: 'error'
-    }
-  ]
+const items5 = [
+  {
+    title: '步骤一',
+    desc: '这里是额外的信息，最多两行',
+    status: 'success',
+  },
+  {
+    title: '步骤二',
+    desc: '这里是额外的信息，最多两行',
+  },
+  {
+    title: '步骤三',
+    desc: '这里是额外的信息，最多两行',
+    status: 'error',
+  },
+]
 export default {
   name: 'StepsPage',
   data() {
@@ -150,7 +146,7 @@ export default {
   methods: {
     onChange(stateName, current) {
       this[stateName] = current
-    }
+    },
   },
 }
 </script>

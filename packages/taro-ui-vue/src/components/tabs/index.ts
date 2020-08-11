@@ -8,7 +8,7 @@ const MIN_DISTANCE = 100
 const MAX_INTERVAL = 10
 
 interface Style {
-  [key: string]: string|number
+  [key: string]: string | number
 }
 
 export default {
@@ -90,7 +90,7 @@ export default {
     this.tabHeaderRef = null
   },
   computed: {
-    heightStyle () {
+    heightStyle() {
       const { height } = this
       return { height }
     },
@@ -110,11 +110,13 @@ export default {
       const { customStyle, height } = this
       return mergeStyle({ height }, customStyle)
     },
-    underlineStyle () {
+    underlineStyle() {
       const { tabDirection, tabList } = this
       return {
-        height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
-        width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX',
+        height:
+          tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
+        width:
+          tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX',
       }
     },
     bodySty() {
@@ -124,7 +126,9 @@ export default {
       if (tabDirection === 'horizontal') {
         // fix Tabs 标签页 页面内容偏移 https://github.com/psaren/taro-ui-vue/issues/26
         const fixWebNum = ENV === Taro.ENV_TYPE.WEB ? 2 : 0
-        transformStyle = `translate3d(-${current * (100 + fixWebNum)}%, 0px, 0px)`
+        transformStyle = `translate3d(-${
+          current * (100 + fixWebNum)
+        }%, 0px, 0px)`
       }
       Object.assign(bodyStyle, {
         transform: transformStyle,
@@ -140,7 +144,7 @@ export default {
     },
     scrollY() {
       return this.tabDirection === 'vertical'
-    }
+    },
   },
   methods: {
     classNames,
@@ -212,7 +216,11 @@ export default {
       const moveDistance = touchMove - this.touchDot
       const maxIndex = tabList.length
 
-      if (!this.isMoving && this.interval < MAX_INTERVAL && this.touchDot > 20) {
+      if (
+        !this.isMoving &&
+        this.interval < MAX_INTERVAL &&
+        this.touchDot > 20
+      ) {
         // 向左滑动
         if (current + 1 < maxIndex && moveDistance <= -MIN_DISTANCE) {
           this.isMoving = true

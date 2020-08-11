@@ -1,11 +1,11 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle" 
-    @tap="handleClick">
+  <view :class="rootCls" :style="customStyle" @tap="handleClick">
     <view class="at-range__container" :style="containerStyle">
       <view class="at-range__rail" :style="railStyle"></view>
-      <view class="at-range__track" :style="mergeStyle(atTrackStyle, trackStyle)"></view>
+      <view
+        class="at-range__track"
+        :style="mergeStyle(atTrackStyle, trackStyle)"
+      ></view>
       <view
         class="at-range__slider"
         :style="mergeStyle(sliderAStyle, sliderStyle)"

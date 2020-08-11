@@ -18,30 +18,32 @@ export default {
     },
     options: {
       type: Array,
-      default: () => []
-    }
+      default: () => [],
+    },
   },
   mounted() {
     setTimeout(() => {
       this.trrigerOptionsDomUpadte()
-    }, 16);
+    }, 16)
   },
   watch: {
     options() {
       this.trrigerOptionsDomUpadte()
-    }
+    },
   },
   computed: {
-    rootClass () {
+    rootClass() {
       return classNames('at-swipe-action__options', this.className)
-    }
+    },
   },
   methods: {
     trrigerOptionsDomUpadte() {
-      delayQuerySelector(this, `#swipeActionOptions-${this.componentId}`).then((res) => {
-        const arr = [...res]
-        this.onQueryedDom(arr[0])
-      })
+      delayQuerySelector(this, `#swipeActionOptions-${this.componentId}`).then(
+        (res) => {
+          const arr = [...res]
+          this.onQueryedDom(arr[0])
+        }
+      )
     },
   },
 }

@@ -61,14 +61,14 @@ export default {
         [`at-icon-${icon && icon.value}`]: icon && icon.value,
         'at-card__header-icon': true,
       })
-    }, 
+    },
     iconStyle() {
       const { icon } = this
       return {
         color: (icon && icon.color) || '',
         fontSize: (icon && `${icon.size}px`) || '',
       }
-    }
+    },
   },
   methods: {
     handleClick(args) {

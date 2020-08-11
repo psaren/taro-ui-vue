@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import mixins from '../mixins'
 
-
 const setState = mixins.methods.setState
 
 const AtDrawer = {
@@ -52,8 +51,8 @@ const AtDrawer = {
     return {
       state: {
         animShow: false,
-        _show: this.show
-      }
+        _show: this.show,
+      },
     }
   },
   watch: {
@@ -62,8 +61,8 @@ const AtDrawer = {
       handler(val) {
         this.state._show = val
         if (val) this.animShow()
-      }
-    }
+      },
+    },
   },
   mounted(): void {
     const { _show } = this.state
@@ -95,10 +94,10 @@ const AtDrawer = {
           : 'all 195ms cubic-bezier(0.4, 0, 0.6, 1)',
       }
     },
-    rootCls () {
+    rootCls() {
       const rootClassName = ['at-drawer']
       return classNames(rootClassName, this.classObject, this.className)
-    }
+    },
   },
   methods: {
     setState,
@@ -106,13 +105,13 @@ const AtDrawer = {
       this.onItemClick && this.onItemClick(index)
       this.animHide()
     },
-  
+
     onHide(): void {
       this.setState({ _show: false }, () => {
         this.onClose && this.onClose()
       })
     },
-  
+
     animHide(): void {
       this.setState({
         animShow: false,
@@ -121,7 +120,7 @@ const AtDrawer = {
         this.onHide()
       }, 300)
     },
-  
+
     animShow(): void {
       this.setState({ _show: true })
       setTimeout(() => {
@@ -130,12 +129,11 @@ const AtDrawer = {
         })
       }, 200)
     },
-  
+
     onMaskClick(): void {
       this.animHide()
     },
-
-  }
+  },
 }
 
 export default AtDrawer

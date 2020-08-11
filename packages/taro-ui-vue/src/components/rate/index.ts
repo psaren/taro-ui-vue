@@ -41,23 +41,23 @@ const AtRate = {
     },
   },
   computed: {
-    rootCls () {
+    rootCls() {
       return classNames('at-rate', this.className)
     },
-    iconStyle () {
+    iconStyle() {
       return {
-        marginRight: pxTransform(this.margin)
+        marginRight: pxTransform(this.margin),
       }
     },
-    starIconStyle () {
+    starIconStyle() {
       const { size } = this
       return {
-        fontSize: size ? `${size}px` : ''
+        fontSize: size ? `${size}px` : '',
       }
     },
-    classNameArr (): string[] {
-      const { value, max }= this
-      const arr: string[]= []
+    classNameArr(): string[] {
+      const { value, max } = this
+      const arr: string[] = []
       const floorValue = Math.floor(value)
       const ceilValue = Math.ceil(value)
       for (let i = 0; i < max; i++) {
@@ -70,7 +70,7 @@ const AtRate = {
         }
       }
       return arr
-    }
+    },
   },
   methods: {
     handleClick(event: CommonEvent) {

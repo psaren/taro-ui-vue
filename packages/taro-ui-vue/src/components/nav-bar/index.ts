@@ -148,7 +148,9 @@ export default {
       return mergeStyle(
         {
           color: leftIconInfo.color,
-          fontSize: `${pxTransform(parseInt(leftIconInfo.size.toString()) * 2)}`,
+          fontSize: `${pxTransform(
+            parseInt(leftIconInfo.size.toString()) * 2
+          )}`,
         },
         leftIconInfo.customStyle
       )
@@ -158,7 +160,9 @@ export default {
       return mergeStyle(
         {
           color: rightSecondIconInfo.color,
-          fontSize: `${pxTransform(parseInt(rightSecondIconInfo.size.toString()) * 2)}`,
+          fontSize: `${pxTransform(
+            parseInt(rightSecondIconInfo.size.toString()) * 2
+          )}`,
         },
         rightSecondIconInfo.customStyle
       )
@@ -168,7 +172,9 @@ export default {
       return mergeStyle(
         {
           color: rightFirstIconInfo.color,
-          fontSize: `${pxTransform(parseInt(rightFirstIconInfo.size.toString()) * 2)}`,
+          fontSize: `${pxTransform(
+            parseInt(rightFirstIconInfo.size.toString()) * 2
+          )}`,
         },
         rightFirstIconInfo.customStyle
       )

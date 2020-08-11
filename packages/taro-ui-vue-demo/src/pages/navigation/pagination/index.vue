@@ -1,15 +1,15 @@
 <template>
-  <view class='page'>
+  <view class="page">
     <!-- S Header -->
-    <DocsHeader title='Pagination 分页器'></DocsHeader>
+    <DocsHeader title="Pagination 分页器"></DocsHeader>
     <!-- E Header -->
 
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 基础用法 -->
-      <view class='panel'>
-        <view class='panel__title'>基础用法</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">基础用法</view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtPagination
               :total="20"
               :pageSize="10"
@@ -20,10 +20,10 @@
       </view>
 
       <!-- 图标类型 -->
-      <view class='panel'>
-        <view class='panel__title'>图标类型</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">图标类型</view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtPagination
               icon
               :total="20"
@@ -35,10 +35,10 @@
       </view>
 
       <!-- 点击页码出是否出现picker选择页码 -->
-      <view class='panel'>
-        <view class='panel__title'>picker快速选择页码</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">picker快速选择页码</view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtPagination
               icon
               :total="20"
@@ -50,10 +50,10 @@
       </view>
 
       <!-- 改变数据长度 -->
-      <view class='panel'>
-        <view class='panel__title'>改变数据长度</view>
-        <view class='panel__content no-padding'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">改变数据长度</view>
+        <view class="panel__content no-padding">
+          <view class="example-item">
             <AtPagination
               icon
               :total="len"
@@ -61,19 +61,16 @@
               :current="current"
               :onPageChange="onPage"
             ></AtPagination>
-            <view class='btn-item'>
+            <view class="btn-item">
               当前页：{{ current }}，当前数据：{{ len }}条，分页大小：
               {{ pageSize }}
             </view>
-            <view class='btn-item'>
-              <AtButton
-                type='primary'
-                :onClick="onPageDataChange"
-              >
+            <view class="btn-item">
+              <AtButton type="primary" :onClick="onPageDataChange">
                 增加10条数据
               </AtButton>
             </view>
-            <view class='btn-item'>
+            <view class="btn-item">
               <AtButton :onClick="onCurrentChange">
                 重置
               </AtButton>
@@ -93,13 +90,13 @@ export default {
   computed: {
     len() {
       return this.list.length
-    }
+    },
   },
   data() {
     return {
       list: [],
       current: 1,
-      pageSize: 10
+      pageSize: 10,
     }
   },
   methods: {
@@ -107,7 +104,7 @@ export default {
       this.current = data.current
       Taro.showToast({
         title: `Pagination: ${data}`,
-        icon: 'none'
+        icon: 'none',
       })
     },
 
@@ -119,7 +116,7 @@ export default {
     onCurrentChange() {
       this.current = 1
       this.list = []
-    }
-  }
+    },
+  },
 }
 </script>

@@ -1,7 +1,5 @@
 <template>
-  <view
-    :class="rootCls"
-    :style="customStyle">
+  <view :class="rootCls" :style="customStyle">
     <view class="at-slider__inner">
       <slider
         :min="min"

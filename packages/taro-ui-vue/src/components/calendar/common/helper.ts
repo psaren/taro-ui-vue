@@ -14,10 +14,10 @@ function getFullItem(
 ) {
   if (!isShowStatus) return item
 
-  const bindedPlugins = plugins.map(fn =>
+  const bindedPlugins = plugins.map((fn) =>
     fn.bind(null, {
       options,
-      selectedDate
+      selectedDate,
     })
   )
   return _flow(bindedPlugins)(item)
@@ -30,7 +30,7 @@ export default function generateCalendarGroup(
   selectedDate: Calendar.SelectedDate,
   isShowStatus?: boolean
 ) => Calendar.ListInfo<Calendar.Item> {
-  return function(
+  return function (
     generateDate: number,
     selectedDate: Calendar.SelectedDate,
     isShowStatus?: boolean
@@ -59,7 +59,7 @@ export default function generateCalendarGroup(
         _value: thisDate,
         text: thisDate.date(),
         type: constant.TYPE_PRE_MONTH,
-        value: thisDate.format(format)
+        value: thisDate.format(format),
       }
 
       item = getFullItem(item, options, selectedDate, isShowStatus)
@@ -76,7 +76,7 @@ export default function generateCalendarGroup(
         _value: thisDate,
         text: thisDate.date(),
         type: constant.TYPE_NOW_MONTH,
-        value: thisDate.format(format)
+        value: thisDate.format(format),
       }
 
       item = getFullItem(item, options, selectedDate, isShowStatus)
@@ -93,7 +93,7 @@ export default function generateCalendarGroup(
         _value: thisDate,
         text: thisDate.date(),
         type: constant.TYPE_NEXT_MONTH,
-        value: thisDate.format(format)
+        value: thisDate.format(format),
       }
 
       item = getFullItem(item, options, selectedDate, isShowStatus)
@@ -103,7 +103,7 @@ export default function generateCalendarGroup(
 
     return {
       list,
-      value: generateDate
+      value: generateDate,
     }
   }
 }

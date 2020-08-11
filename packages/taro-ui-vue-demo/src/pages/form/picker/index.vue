@@ -1,26 +1,26 @@
 <template>
-  <view class='page picker__page'>
+  <view class="page picker__page">
     <!-- S Header -->
-    <DocsHeader title='Picker 选择器'></DocsHeader>
+    <DocsHeader title="Picker 选择器"></DocsHeader>
     <!-- E Header -->
 
     <!-- S Body -->
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 普通选择器 -->
-      <view class='panel'>
-        <view class='panel__title'>普通选择器</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">普通选择器</view>
+        <view class="panel__content">
+          <view class="example-item">
             <picker
-              mode='selector'
+              mode="selector"
               :range="state.selector"
               :value="state.selectorValue"
               @change="handleChange"
               @cancel="handleCancel"
             >
-              <view class='demo-list-item'>
-                <view class='demo-list-item__label'>国家地区</view>
-                <view class='demo-list-item__value'>
+              <view class="demo-list-item">
+                <view class="demo-list-item__label">国家地区</view>
+                <view class="demo-list-item__value">
                   {{ state.selector[state.selectorValue] }}
                 </view>
               </view>
@@ -30,24 +30,24 @@
       </view>
 
       <!-- 多列选择器 -->
-      <view class='panel'>
-        <view class='panel__title'>多列选择器</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">多列选择器</view>
+        <view class="panel__content">
+          <view class="example-item">
             <picker
-              mode='multiSelector'
+              mode="multiSelector"
               :range="state.multiSelector"
               :value="state.mulitSelectorValues"
               @change="handleMulitChange"
               @columnchange="handleColumnChange"
             >
-              <view class='demo-list-item'>
-                <view class='demo-list-item__label'>请选择早餐</view>
-                <view class='demo-list-item__value'>{{
-                  `${
-                  state.multiSelector[0][state.mulitSelectorValues[0]]
-                } & ${state.multiSelector[1][state.mulitSelectorValues[1]]}`
-                  }}</view>
+              <view class="demo-list-item">
+                <view class="demo-list-item__label">请选择早餐</view>
+                <view class="demo-list-item__value">{{
+                  `${state.multiSelector[0][state.mulitSelectorValues[0]]} & ${
+                    state.multiSelector[1][state.mulitSelectorValues[1]]
+                  }`
+                }}</view>
               </view>
             </picker>
           </view>
@@ -55,18 +55,18 @@
       </view>
 
       <!-- 时间选择器 -->
-      <view class='panel'>
-        <view class='panel__title'>时间选择器</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">时间选择器</view>
+        <view class="panel__content">
+          <view class="example-item">
             <picker
-              mode='time'
+              mode="time"
               :value="state.timeSel"
               @change="handleTimeChange"
             >
-              <view class='demo-list-item'>
-                <view class='demo-list-item__label'>请选择时间</view>
-                <view class='demo-list-item__value'>{{ state.timeSel }}</view>
+              <view class="demo-list-item">
+                <view class="demo-list-item__label">请选择时间</view>
+                <view class="demo-list-item__value">{{ state.timeSel }}</view>
               </view>
             </picker>
           </view>
@@ -74,18 +74,18 @@
       </view>
 
       <!-- 日期选择器 -->
-      <view class='panel'>
-        <view class='panel__title'>日期选择器</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">日期选择器</view>
+        <view class="panel__content">
+          <view class="example-item">
             <picker
-              mode='date'
+              mode="date"
               :value="state.dateSel"
               @change="handleDateChange"
             >
-              <view class='demo-list-item'>
-                <view class='demo-list-item__label'>请选择日期</view>
-                <view class='demo-list-item__value'>{{ state.dateSel }}</view>
+              <view class="demo-list-item">
+                <view class="demo-list-item__label">请选择日期</view>
+                <view class="demo-list-item__value">{{ state.dateSel }}</view>
               </view>
             </picker>
           </view>
@@ -115,37 +115,37 @@ export default {
         selector: ['中国', '美国', '巴西', '日本'],
         multiSelector: [
           ['饭', '粥', '粉'],
-          ['猪肉', '牛肉']
+          ['猪肉', '牛肉'],
         ],
         selectorValue: 0,
         mulitSelectorValues: [0, 1],
         timeSel: '06:18',
         dateSel: '2018-06-18',
-      }
+      },
     }
   },
   methods: {
-    handleChange (e) {
+    handleChange(e) {
       this.setState({
-        selectorValue: e.detail.value
+        selectorValue: e.detail.value,
       })
     },
 
-    handleMulitChange (e) {
+    handleMulitChange(e) {
       this.setState({
-        mulitSelectorValues: e.detail.value
+        mulitSelectorValues: e.detail.value,
       })
     },
 
-    handleTimeChange (e) {
+    handleTimeChange(e) {
       this.setState({
-        timeSel: e.detail.value
+        timeSel: e.detail.value,
       })
     },
 
-    handleDateChange (e) {
+    handleDateChange(e) {
       this.setState({
-        dateSel: e.detail.value
+        dateSel: e.detail.value,
       })
     },
 
@@ -155,7 +155,7 @@ export default {
 
     handleColumnChange(e) {
       console.log('handleColumnChange', e)
-    }
-  }
+    },
+  },
 }
 </script>

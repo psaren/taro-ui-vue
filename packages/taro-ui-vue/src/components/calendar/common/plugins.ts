@@ -41,10 +41,8 @@ export function handleMarks(
   const { _value } = item
   const { marks } = options
 
-  const markList = marks.filter(mark =>
-    dayjs(mark.value)
-      .startOf('day')
-      .isSame(_value)
+  const markList = marks.filter((mark) =>
+    dayjs(mark.value).startOf('day').isSame(_value)
   )
 
   item.marks = markList.slice(0, 1)
@@ -111,10 +109,8 @@ export function handleValid(
   const { validDates } = options
 
   if (!_isEmpty(validDates)) {
-    const isInclude = validDates.some(date =>
-      dayjs(date.value)
-        .startOf('day')
-        .isSame(_value)
+    const isInclude = validDates.some((date) =>
+      dayjs(date.value).startOf('day').isSame(_value)
     )
 
     item.isDisabled = !isInclude

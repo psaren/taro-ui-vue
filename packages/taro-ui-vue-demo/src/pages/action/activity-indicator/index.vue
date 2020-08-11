@@ -63,7 +63,7 @@
         <view class="panel__title">
           状态切换
         </view>
-        <view class="panel__content ">
+        <view class="panel__content">
           <AtSwitch
             :border="false"
             :title="state.isOpened ? '开启中' : '关闭中'"
@@ -89,10 +89,7 @@
             <AtActivityIndicator mode="center" />
           </view>
           <view class="example-item example-item--center">
-            <AtActivityIndicator
-              mode="center"
-              content="Loading..."
-            />
+            <AtActivityIndicator mode="center" content="Loading..." />
           </view>
         </view>
       </view>
@@ -107,26 +104,26 @@ import setStateMixin from '../../../mixins/setStateMixin'
 export default {
   name: 'ActivityIndicatorPage',
   components: {
-    AtActivityIndicator, 
-    AtSwitch
+    AtActivityIndicator,
+    AtSwitch,
   },
   mixins: [setStateMixin],
   data() {
     return {
       state: {
-        isOpened: true
-      }
+        isOpened: true,
+      },
     }
   },
   methods: {
     handleChange(value) {
       this.setState({
-        isOpened: value
+        isOpened: value,
       })
-    }
-  }
+    },
+  },
 }
 </script>
 <style lang="scss">
-  @import './index.scss';
+@import './index.scss';
 </style>

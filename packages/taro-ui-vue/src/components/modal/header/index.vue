@@ -17,7 +17,7 @@ export default {
   computed: {
     rootClass() {
       return classNames('at-modal__header', this.className)
-    }
+    },
   },
 }
 </script>

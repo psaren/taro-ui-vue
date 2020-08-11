@@ -164,7 +164,9 @@ export default {
       console.log(event)
       this.onGetUserInfo && this.onGetUserInfo(event)
     },
-    handelOnContact(event: BaseEventOrig<ButtonProps.onContactEventDetail>): void {
+    handelOnContact(
+      event: BaseEventOrig<ButtonProps.onContactEventDetail>
+    ): void {
       this.onContact && this.onContact(event)
     },
     handelOnGetPhoneNumber(event: CommonEvent): void {

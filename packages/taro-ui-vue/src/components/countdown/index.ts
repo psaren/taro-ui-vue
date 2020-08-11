@@ -77,11 +77,17 @@ export default {
       let [day, hours, minutes, seconds] = [0, 0, 0, 0]
 
       if (this.stateSeconds > 0) {
-        day = this.isShowDay ? Math.floor(this.stateSeconds / (60 * 60 * 24)) : 0
+        day = this.isShowDay
+          ? Math.floor(this.stateSeconds / (60 * 60 * 24))
+          : 0
         hours = Math.floor(this.stateSeconds / (60 * 60)) - day * 24
-        minutes = Math.floor(this.stateSeconds / 60) - day * 24 * 60 - hours * 60
+        minutes =
+          Math.floor(this.stateSeconds / 60) - day * 24 * 60 - hours * 60
         seconds =
-          Math.floor(this.stateSeconds) - day * 24 * 60 * 60 - hours * 60 * 60 - minutes * 60
+          Math.floor(this.stateSeconds) -
+          day * 24 * 60 * 60 -
+          hours * 60 * 60 -
+          minutes * 60
       }
       return {
         day,

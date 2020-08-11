@@ -5,11 +5,14 @@ import { pxTransform } from '../../utils/common'
 
 type ExtendEvent = {
   target: {
-    value: string,
-  },
+    value: string
+  }
 }
 
-function getMaxLength(maxLength: number, textOverflowForbidden: boolean): number {
+function getMaxLength(
+  maxLength: number,
+  textOverflowForbidden: boolean
+): number {
   if (!textOverflowForbidden) {
     return maxLength + 500
   }
@@ -132,7 +135,7 @@ const AtTextarea = {
     _maxLength() {
       return parseInt(this.maxLength.toString())
     },
-    rootCls () {
+    rootCls() {
       const { _maxLength, value, className } = this
       return classNames(
         'at-textarea',
@@ -143,18 +146,18 @@ const AtTextarea = {
         className
       )
     },
-    textareaStyle () {
+    textareaStyle() {
       const { height } = this
       return height ? `height:${pxTransform(Number(height))}` : ''
     },
-    actualMaxLength () {
-      const { maxLength,textOverflowForbidden } = this
+    actualMaxLength() {
+      const { maxLength, textOverflowForbidden } = this
       const _maxLength = parseInt(maxLength.toString())
       return getMaxLength(_maxLength, textOverflowForbidden)
     },
-    placeholderCls () {
+    placeholderCls() {
       return classNames('placeholder', this.placeholderClass)
-    }
+    },
   },
   methods: {
     handleInput(event: CommonEvent & ExtendEvent): void {

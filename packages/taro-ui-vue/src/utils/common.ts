@@ -4,9 +4,9 @@ const { getEnv, ENV_TYPE } = Taro
 const ENV = Taro.getEnv()
 
 type ENVS = {
-  isWEAPP: boolean,
-  isALIPAY: boolean,
-  isWEB: boolean,
+  isWEAPP: boolean
+  isALIPAY: boolean
+  isWEB: boolean
 }
 
 const getEnvs = (): ENVS => {
@@ -59,7 +59,11 @@ function delayGetClientRect({ _, selectorStr, delayTime = 500 }): Promise<[]> {
   })
 }
 
-function delayQuerySelector(_, selectorStr: string, delayTime = 500): Promise<[]> {
+function delayQuerySelector(
+  _,
+  selectorStr: string,
+  delayTime = 500
+): Promise<[]> {
   false && console.log(_)
   const selector: SelectorQuery = Taro.createSelectorQuery()
 
@@ -144,14 +148,14 @@ function pxTransform(size: number): string {
 }
 
 interface EventDetail {
-  pageX: number;
-  pageY: number;
-  clientX: number;
-  clientY: number;
-  offsetX: number;
-  offsetY: number;
-  x: number;
-  y: number;
+  pageX: number
+  pageY: number
+  clientX: number
+  clientY: number
+  offsetX: number
+  offsetY: number
+  x: number
+  y: number
 }
 
 function getEventDetail(event: any): EventDetail {
@@ -240,8 +244,16 @@ const objectToString = (style: object | string): string => {
   return ''
 }
 
-function mergeStyle(style1: object | string, style2: object | string): object | string {
-  if (style1 && typeof style1 === 'object' && style2 && typeof style2 === 'object') {
+function mergeStyle(
+  style1: object | string,
+  style2: object | string
+): object | string {
+  if (
+    style1 &&
+    typeof style1 === 'object' &&
+    style2 &&
+    typeof style2 === 'object'
+  ) {
     return Object.assign({}, style1, style2)
   }
   return objectToString(style1) + objectToString(style2)

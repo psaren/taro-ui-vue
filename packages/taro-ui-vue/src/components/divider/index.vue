@@ -3,18 +3,12 @@
     :class="classNames('at-divider', className)"
     :style="mergeStyle(rootStyle, customStyle)"
   >
-    <view
-      class="at-divider__content"
-      :style="fontStyle"
-    >
+    <view class="at-divider__content" :style="fontStyle">
       <slot>
         {{ content }}
       </slot>
     </view>
-    <view
-      class="at-divider__line"
-      :style="lineStyle"
-    />
+    <view class="at-divider__line" :style="lineStyle" />
   </view>
 </template>
 

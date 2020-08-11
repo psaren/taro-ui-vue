@@ -1,8 +1,5 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle"
-  >
+  <view :class="rootCls" :style="customStyle">
     <textarea
       class="at-textarea__textarea"
       :style="textareaStyle"

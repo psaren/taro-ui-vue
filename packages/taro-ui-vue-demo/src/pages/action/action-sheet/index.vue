@@ -1,16 +1,16 @@
 <template>
-  <view class='page'>
+  <view class="page">
     <!-- S Header -->
-    <DocsHeader title='ActionSheet 动作面板' />
+    <DocsHeader title="ActionSheet 动作面板" />
     <!-- S Header -->
 
     <!-- S Body -->
-    <view class='doc-body'>
+    <view class="doc-body">
       <!-- 无 Title -->
-      <view class='panel'>
-        <view class='panel__title'>无标题</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">无标题</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton :on-click="handleClick.bind(this, 1)">
               打开 ActionSheet
             </AtButton>
@@ -19,10 +19,10 @@
       </view>
 
       <!-- 含标题 -->
-      <view class='panel'>
-        <view class='panel__title'>含标题</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">含标题</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton :on-click="handleClick.bind(this, 2)">
               打开 ActionSheet
             </AtButton>
@@ -31,10 +31,10 @@
       </view>
 
       <!-- 自定义选项 -->
-      <view class='panel'>
-        <view class='panel__title'>自定义选项</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">自定义选项</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton :on-click="handleClick.bind(this, 3)">
               打开 ActionSheet
             </AtButton>
@@ -44,61 +44,47 @@
     </view>
 
     <AtActionSheet
-      cancelText='取消'
+      cancelText="取消"
       :isOpened="state.isOpened1"
       :on-close="handleClose.bind(this, 1)"
     >
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '点击了按钮一')"
-      >
+      <AtActionSheetItem :on-click="showToast.bind(this, '点击了按钮一')">
         按钮一
       </AtActionSheetItem>
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '点击了按钮二')"
-      >
+      <AtActionSheetItem :on-click="showToast.bind(this, '点击了按钮二')">
         按钮二
       </AtActionSheetItem>
     </AtActionSheet>
 
     <AtActionSheet
-      cancelText='取消'
+      cancelText="取消"
       :isOpened="state.isOpened2"
-      :on-close="handleClose.bind(this,2)"
-      title='清除位置信息后， 别人将不能查看到你'
+      :on-close="handleClose.bind(this, 2)"
+      title="清除位置信息后， 别人将不能查看到你"
     >
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '点击了按钮一')"
-      >
+      <AtActionSheetItem :on-click="showToast.bind(this, '点击了按钮一')">
         按钮一
       </AtActionSheetItem>
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '点击了按钮二')"
-      >
+      <AtActionSheetItem :on-click="showToast.bind(this, '点击了按钮二')">
         按钮二
       </AtActionSheetItem>
     </AtActionSheet>
 
     <AtActionSheet
-      cancelText='取消'
+      cancelText="取消"
       :isOpened="state.isOpened3"
       :on-cancel="handleCancel"
       :on-close="handleClose.bind(this, 3)"
-      title='清除位置信息后， 别人将不能查看到你'
+      title="清除位置信息后， 别人将不能查看到你"
     >
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '点击了按钮一')"
-      >
+      <AtActionSheetItem :on-click="showToast.bind(this, '点击了按钮一')">
         按钮一
       </AtActionSheetItem>
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '点击了按钮二')"
-      >
+      <AtActionSheetItem :on-click="showToast.bind(this, '点击了按钮二')">
         按钮二
       </AtActionSheetItem>
-      <AtActionSheetItem
-         :on-click="showToast.bind(this, '成功清除位置')"
-      >
-        <text class='danger'>清除位置信息并退出</text>
+      <AtActionSheetItem :on-click="showToast.bind(this, '成功清除位置')">
+        <text class="danger">清除位置信息并退出</text>
       </AtActionSheetItem>
     </AtActionSheet>
   </view>
@@ -113,41 +99,41 @@ export default {
   name: 'ActionSheetPage',
   mixins: [setStateMixin],
   components: {
-    AtActionSheet, 
-    AtActionSheetItem, 
-    AtButton
+    AtActionSheet,
+    AtActionSheetItem,
+    AtButton,
   },
   data() {
     return {
       state: {
         isOpened1: false,
         isOpened2: false,
-        isOpened3: false
-      }
+        isOpened3: false,
+      },
     }
   },
   methods: {
-    handleClick (type) {
+    handleClick(type) {
       this.setState({
-        [`isOpened${type}`]: true
+        [`isOpened${type}`]: true,
       })
     },
-    handleClose (name) {
+    handleClose(name) {
       this.setState({
-        [`isOpened${name}`]: false
+        [`isOpened${name}`]: false,
       })
       Taro.showToast({
         title: `第 ${name} 个Action Sheet已经关闭`,
-        icon: 'none'
+        icon: 'none',
       })
     },
-    handleCancel () {
+    handleCancel() {
       this.showToast('点击了取消按钮')
     },
-    showToast (name) {
+    showToast(name) {
       Taro.showToast({
         icon: 'none',
-        title: name
+        title: name,
       })
     },
   },

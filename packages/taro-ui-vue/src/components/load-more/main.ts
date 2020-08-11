@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 
-
 export default {
   props: {
     customStyle: {

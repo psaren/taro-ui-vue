@@ -44,7 +44,7 @@ const AtSwitch = {
     },
   },
   computed: {
-    rootCls () {
+    rootCls() {
       const { border, className } = this
       return classNames(
         'at-switch',
@@ -54,12 +54,12 @@ const AtSwitch = {
         className
       )
     },
-    containerCls () {
+    containerCls() {
       const { disabled } = this
       return classNames('at-switch__container', {
         'at-switch--disabled': disabled,
       })
-    }
+    },
   },
   methods: {
     handleChange(event: CommonEvent): void {

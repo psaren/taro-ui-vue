@@ -1,8 +1,5 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle"
-  >
+  <view :class="rootCls" :style="customStyle">
     <view class="at-pagination__btn-prev">
       <AtButton
         v-if="icon"
@@ -23,8 +20,8 @@
     </view>
     <view class="at-pagination__number">
       <view class="at-pagination__number-current text">
-        {{ state.currentPage }}
-      </view>/{{ state.maxPage }}
+        {{ state.currentPage }} </view
+      >/{{ state.maxPage }}
     </view>
     <view class="at-pagination__btn-next">
       <AtButton
@@ -53,7 +50,7 @@ export default {
   name: 'AtPagination',
   mixins: [AtPagination],
   components: {
-    AtButton
-  }
+    AtButton,
+  },
 }
 </script>

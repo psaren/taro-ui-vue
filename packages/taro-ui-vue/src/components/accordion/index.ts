@@ -75,7 +75,7 @@ export default {
       if (!this.isCompleted || !isAnimation) return
       this.isCompleted = false
       delayQuerySelector(this, '.at-accordion__body', 0).then((rect) => {
-        let arr = rect || [{height: ''}]
+        let arr = rect || [{ height: '' }]
         const height = parseInt(arr[0].height.toString())
         const startHeight = open ? 0 : height
         const endHeight = open ? height : 0

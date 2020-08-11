@@ -9,7 +9,7 @@
         </view>
         <view class="panel__content">
           <view class="example-item">
-            <AtButton :on-click="handleClickShow.bind(this,1)">
+            <AtButton :on-click="handleClickShow.bind(this, 1)">
               打开基础模态框
             </AtButton>
           </view>
@@ -23,7 +23,7 @@
         </view>
         <view class="panel__content">
           <view class="example-item">
-            <AtButton :on-click="handleClickShow.bind(this,2)">
+            <AtButton :on-click="handleClickShow.bind(this, 2)">
               打开单个按钮模态框
             </AtButton>
           </view>
@@ -37,7 +37,7 @@
         </view>
         <view class="panel__content">
           <view class="example-item">
-            <AtButton :on-click="handleClickShow.bind(this,3)">
+            <AtButton :on-click="handleClickShow.bind(this, 3)">
               打开无标题模态框
             </AtButton>
           </view>
@@ -51,7 +51,7 @@
         </view>
         <view class="panel__content">
           <view class="example-item">
-            <AtButton :on-click="handleClickShow.bind(this,4)">
+            <AtButton :on-click="handleClickShow.bind(this, 4)">
               打开简化使用模态框
             </AtButton>
           </view>
@@ -65,7 +65,7 @@
         </view>
         <view class="panel__content">
           <view class="example-item">
-            <AtButton :on-click="handleClickShow.bind(this,5)">
+            <AtButton :on-click="handleClickShow.bind(this, 5)">
               打开城市索引
             </AtButton>
           </view>
@@ -169,8 +169,8 @@ export default {
         isOpened2: false,
         isOpened3: false,
         isOpened4: false,
-        isOpened5: false
-      }
+        isOpened5: false,
+      },
     }
   },
   methods: {
@@ -181,7 +181,7 @@ export default {
       this.state[`isOpened${type}`] = false
       Taro.showToast({
         icon: 'none',
-        title: msg
+        title: msg,
       })
     },
 
@@ -189,9 +189,9 @@ export default {
       this.state[`isOpened${type}`] = false
       Taro.showToast({
         icon: 'none',
-        title: msg
+        title: msg,
       })
-    }
-  }
+    },
+  },
 }
 </script>

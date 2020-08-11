@@ -1,8 +1,5 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="rootStyle"
-  >
+  <view :class="rootCls" :style="rootStyle">
     <scroll-view
       v-if="scroll"
       :id="this.tabId"
@@ -19,29 +16,29 @@
         v-for="(item, idx) in tabList"
         :id="`tab${idx}`"
         :key="item.title"
-        :class="classNames({
-          'at-tabs__item': true,
-          'at-tabs__item--active': current === idx,
-        })"
+        :class="
+          classNames({
+            'at-tabs__item': true,
+            'at-tabs__item--active': current === idx,
+          })
+        "
         @tap="handleClick(idx, $event)"
       >
         {{ item.title }}
         <view class="at-tabs__item-underline" />
       </view>
     </scroll-view>
-    <view
-      v-else
-      :id="this.tabId"
-      class="at-tabs__header"
-    >
+    <view v-else :id="this.tabId" class="at-tabs__header">
       <view
         v-for="(item, idx) in tabList"
         :id="`tab${idx}`"
         :key="item.title"
-        :class="classNames({
-          'at-tabs__item': true,
-          'at-tabs__item--active': current === idx,
-        })"
+        :class="
+          classNames({
+            'at-tabs__item': true,
+            'at-tabs__item--active': current === idx,
+          })
+        "
         @tap="handleClick(idx, $event)"
       >
         {{ item.title }}
@@ -55,10 +52,7 @@
       @touchend="handleTouchEnd"
       @touchmove="handleTouchMove"
     >
-      <view
-        class="at-tabs__underline"
-        :style="underlineStyle"
-      />
+      <view class="at-tabs__underline" :style="underlineStyle" />
       <slot />
     </view>
   </view>
@@ -68,6 +62,6 @@
 import AtTabs from './index'
 export default {
   name: 'AtTabs',
-  mixins: [AtTabs]
+  mixins: [AtTabs],
 }
 </script>

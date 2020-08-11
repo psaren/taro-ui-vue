@@ -6,10 +6,7 @@
     @touchend="handleTouchEnd"
     @touchstart="handleTouchStart"
   >
-    <view
-      :class="contentCls"
-      :style="transformStyle"
-    >
+    <view :class="contentCls" :style="transformStyle">
       <slot />
     </view>
     <AtSwipeActionOptions
@@ -40,7 +37,7 @@ export default {
   name: 'AtSwipeAction',
   mixins: [AtSwipeAction],
   components: {
-    AtSwipeActionOptions
-  }
+    AtSwipeActionOptions,
+  },
 }
 </script>

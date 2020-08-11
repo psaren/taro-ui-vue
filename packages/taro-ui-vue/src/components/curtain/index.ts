@@ -25,7 +25,7 @@ export default {
     },
   },
   computed: {
-    curtainClass () {
+    curtainClass() {
       const { isOpened, className } = this
       return classNames(
         {
@@ -35,14 +35,13 @@ export default {
         className
       )
     },
-    btnCloseClass () {
+    btnCloseClass() {
       const { closeBtnPosition } = this
       return classNames({
         'at-curtain__btn-close': true,
         [`at-curtain__btn-close--${closeBtnPosition}`]: closeBtnPosition,
       })
     },
-
   },
   methods: {
     handleTab(event) {

@@ -1,13 +1,7 @@
 <template>
-  <view
-    :class="classNames(rootClassName, className)"
-    :style="customStyle"
-  >
+  <view :class="classNames(rootClassName, className)" :style="customStyle">
     <slot />
-    <view
-      v-if="dot"
-      class="at-badge__dot"
-    />
+    <view v-if="dot" class="at-badge__dot" />
     <view v-if="!dot && val">
       <view class="at-badge__num">
         {{ val }}

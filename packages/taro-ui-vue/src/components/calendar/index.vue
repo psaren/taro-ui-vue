@@ -37,7 +37,7 @@ export default {
   mixins: [AtCalendar],
   components: {
     AtCalendarBody,
-    AtCalendarController
-  }
+    AtCalendarController,
+  },
 }
 </script>

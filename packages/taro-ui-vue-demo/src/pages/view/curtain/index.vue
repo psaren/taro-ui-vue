@@ -1,30 +1,26 @@
 <template>
-  <view class='page'>
+  <view class="page">
     <!-- S Header -->
-    <DocsHeader title='Curtain 幕帘'></DocsHeader>
+    <DocsHeader title="Curtain 幕帘"></DocsHeader>
     <!-- E Header -->
 
     <!-- S Body -->
-    <view class='doc-body'>
+    <view class="doc-body">
       <AtCurtain
         :isOpened="isOpened"
         :closeBtnPosition="closeBtnPosition"
         :onClose="onClose"
       >
-        <image style='width:100%' mode='widthFix' :src="curtainPng" />
+        <image style="width: 100%;" mode="widthFix" :src="curtainPng" />
       </AtCurtain>
 
       <!-- 顶部关闭 -->
-      <view class='panel'>
-        <view class='panel__title'>顶部关闭</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">顶部关闭</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton
-              :onClick="handleChange.bind(
-                this,
-                'closeBtnPosition',
-                'top'
-              )"
+              :onClick="handleChange.bind(this, 'closeBtnPosition', 'top')"
             >
               顶部关闭幕帘
             </AtButton>
@@ -33,16 +29,12 @@
       </view>
 
       <!-- 底部关闭 -->
-      <view class='panel'>
-        <view class='panel__title'>底部关闭</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">底部关闭</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton
-              :onClick="handleChange.bind(
-                this,
-                'closeBtnPosition',
-                'bottom'
-              )"
+              :onClick="handleChange.bind(this, 'closeBtnPosition', 'bottom')"
             >
               底部关闭幕帘
             </AtButton>
@@ -51,16 +43,12 @@
       </view>
 
       <!-- 左上关闭 -->
-      <view class='panel'>
-        <view class='panel__title'>左上关闭</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">左上关闭</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton
-              :onClick="handleChange.bind(
-                this,
-                'closeBtnPosition',
-                'top-left'
-              )"
+              :onClick="handleChange.bind(this, 'closeBtnPosition', 'top-left')"
             >
               左上关闭幕帘
             </AtButton>
@@ -69,16 +57,14 @@
       </view>
 
       <!-- 右上关闭 -->
-      <view class='panel'>
-        <view class='panel__title'>右上关闭</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">右上关闭</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton
-              :onClick="handleChange.bind(
-                this,
-                'closeBtnPosition',
-                'top-right'
-              )"
+              :onClick="
+                handleChange.bind(this, 'closeBtnPosition', 'top-right')
+              "
             >
               右上关闭幕帘
             </AtButton>
@@ -87,16 +73,14 @@
       </view>
 
       <!-- 左下关闭 -->
-      <view class='panel'>
-        <view class='panel__title'>左下关闭</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">左下关闭</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton
-              :onClick="handleChange.bind(
-                this,
-                'closeBtnPosition',
-                'bottom-left'
-              )"
+              :onClick="
+                handleChange.bind(this, 'closeBtnPosition', 'bottom-left')
+              "
             >
               左下关闭幕帘
             </AtButton>
@@ -105,16 +89,14 @@
       </view>
 
       <!-- 右下关闭 -->
-      <view class='panel'>
-        <view class='panel__title'>右下关闭</view>
-        <view class='panel__content'>
-          <view class='example-item'>
+      <view class="panel">
+        <view class="panel__title">右下关闭</view>
+        <view class="panel__content">
+          <view class="example-item">
             <AtButton
-              :onClick="handleChange.bind(
-                this,
-                'closeBtnPosition',
-                'bottom-right'
-              )"
+              :onClick="
+                handleChange.bind(this, 'closeBtnPosition', 'bottom-right')
+              "
             >
               右下关闭幕帘
             </AtButton>
@@ -134,7 +116,7 @@ export default {
     return {
       isOpened: false,
       closeBtnPosition: 'bottom',
-      curtainPng
+      curtainPng,
     }
   },
   methods: {
@@ -145,7 +127,7 @@ export default {
 
     onClose() {
       this.isOpened = false
-    }
-  }
+    },
+  },
 }
 </script>

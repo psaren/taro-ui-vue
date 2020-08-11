@@ -1,8 +1,5 @@
 <template>
-  <view 
-    :class="rootCls" 
-    :style="customStyle"
-  >
+  <view :class="rootCls" :style="customStyle">
     <view
       v-for="option in options"
       :key="option.value"
@@ -12,8 +9,7 @@
       <view class="at-radio__option-wrap">
         <view class="at-radio__option-container">
           <view class="at-radio__title">{{ option.label }}</view>
-          <view
-            :class="getIconCls(option.value)">
+          <view :class="getIconCls(option.value)">
             <view class="at-icon at-icon-check text"></view>
           </view>
         </view>

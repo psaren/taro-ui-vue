@@ -13,13 +13,13 @@
 
 <script>
 export default {
-	name: 'AtCountdownItem',
+  name: 'AtCountdownItem',
   filters: {
-    formatNum (num) {
-			return num <= 9 ? `0${num}` : `${num}`
-		}
+    formatNum(num) {
+      return num <= 9 ? `0${num}` : `${num}`
+    },
   },
-	props: {
+  props: {
     num: {
       type: Number,
       default: 0,
@@ -28,10 +28,8 @@ export default {
       type: String,
       default: '',
     },
-  }
+  },
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

@@ -73,7 +73,7 @@ export default {
         },
         this.className
       )
-    }
+    },
   },
   data() {
     const { isOpened } = this

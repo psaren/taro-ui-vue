@@ -59,7 +59,7 @@ const AtTag = {
     },
   },
   computed: {
-    rootCls () {
+    rootCls() {
       const {
         size = 'normal',
         type = '',
@@ -76,7 +76,7 @@ const AtTag = {
         'at-tag--circle': circle,
       }
       return classNames(rootClassName, classObject, this.className)
-    }
+    },
   },
   methods: {
     handleClick(event: CommonEvent): void {
@@ -90,8 +90,8 @@ const AtTag = {
             event
           )
       }
-    }
-  }
+    },
+  },
 }
 
 export default AtTag

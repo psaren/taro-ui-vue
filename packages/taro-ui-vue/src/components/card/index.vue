@@ -1,13 +1,7 @@
 <template>
-  <view 
-    class="rootClass"  
-    @tap="handleClick"
-  >
+  <view class="rootClass" @tap="handleClick">
     <view class="at-card__header">
-      <view
-        v-if="thumb"
-        class="at-card__header-thumb"
-      >
+      <view v-if="thumb" class="at-card__header-thumb">
         <image
           class="at-card__header-thumb-info"
           mode="scaleToFill"
@@ -37,10 +31,7 @@
       <view class="at-card__content-info">
         <slot />
       </view>
-      <view
-        v-if="note"
-        class="at-card__content-note"
-      >
+      <view v-if="note" class="at-card__content-note">
         {{ note }}
       </view>
     </view>

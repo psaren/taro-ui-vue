@@ -59,13 +59,9 @@ export default {
     },
     rootSty() {
       return mergeStyle(this.rootStyle, this.customStyle)
-    }, 
+    },
     itemStyle() {
-      const {
-        selectedColor,
-        color,
-        fontSize,
-      } = this
+      const { selectedColor, color, fontSize } = this
       return {
         color: selectedColor,
         fontSize: pxTransform(fontSize),
@@ -74,18 +70,14 @@ export default {
       }
     },
     selectedItemStyle() {
-      const {
-        selectedColor,
-        color,
-        fontSize,
-      } = this
+      const { selectedColor, color, fontSize } = this
       return {
         color,
         fontSize: pxTransform(fontSize),
         borderColor: selectedColor,
         backgroundColor: selectedColor,
       }
-    }
+    },
   },
   methods: {
     classNames,

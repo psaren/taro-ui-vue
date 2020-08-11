@@ -1,8 +1,12 @@
 import classNames from 'classnames'
 import Taro from '@tarojs/taro'
 import mixins from '../mixins'
-import { delayQuerySelector, isTest, uuid, pxTransform } from '../../utils/common'
-
+import {
+  delayQuerySelector,
+  isTest,
+  uuid,
+  pxTransform,
+} from '../../utils/common'
 
 const ENV = Taro.getEnv()
 
@@ -131,7 +135,7 @@ export default {
 
       if (ENV === Taro.ENV_TYPE.WEB) {
         delayQuerySelector(this, '.at-indexes', 0).then((rect) => {
-          const arr = [...rect, {top: 0}]
+          const arr = [...rect, { top: 0 }]
           const targetOffsetTop = this.listRef.children[idx].offsetTop
           this.listRef.scrollTop = targetOffsetTop
           const _scrollTop = targetOffsetTop - arr[0].top
@@ -188,7 +192,7 @@ export default {
     },
     initData() {
       delayQuerySelector(this, '.at-indexes__menu').then((rect) => {
-        const arr = [...rect, {top: 0, height: 0}]
+        const arr = [...rect, { top: 0, height: 0 }]
         const len = this.list.length
         this.menuHeight = arr[0].height
         this.startTop = arr[0].top

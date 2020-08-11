@@ -3,13 +3,17 @@ import { uuid } from '../../utils/common'
 import Taro from '@tarojs/taro'
 
 interface MatrixFile extends Partial<File> {
-  type: 'blank' | 'btn';
-  uuid: string;
-  url?: string;
+  type: 'blank' | 'btn'
+  uuid: string
+  url?: string
 }
 
 // 生成 jsx 二维矩阵
-const generateMatrix = (files: MatrixFile[], col: number, showAddBtn: boolean) => {
+const generateMatrix = (
+  files: MatrixFile[],
+  col: number,
+  showAddBtn: boolean
+) => {
   const matrix: Array<MatrixFile>[] = []
   const length = showAddBtn ? files.length + 1 : files.length
   const row = Math.ceil(length / col)
@@ -111,19 +115,20 @@ const AtImagePicker = {
     },
   },
   computed: {
-    rootCls () {
+    rootCls() {
       return classNames('at-image-picker', this.className)
     },
-    matrix () {
+    matrix() {
       const { files, length = 4, showAddBtn = true } = this
       const rowLength = length <= 0 ? 1 : length
       return generateMatrix(files, rowLength, showAddBtn)
-    }
+    },
   },
   methods: {
     chooseFile(): void {
       const { files = [], multiple, count, sizeType, sourceType } = this
-      const filePathName = ENV === Taro.ENV_TYPE.ALIPAY ? 'apFilePaths' : 'tempFiles'
+      const filePathName =
+        ENV === Taro.ENV_TYPE.ALIPAY ? 'apFilePaths' : 'tempFiles'
       // const count = multiple ? 99 : 1
       const params: any = {}
       if (multiple) {
