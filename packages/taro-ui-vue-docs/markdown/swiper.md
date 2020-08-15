@@ -6,51 +6,54 @@
 
 ## 使用指南
 
-在 Taro 文件中引入组件
-> 注意，这边引入的是 taro 的基础组件库
-
-:::demo
-```js
-import { Swiper, SwiperItem } from '@tarojs/components'
-```
-:::
+无需引入，直接在 vue template 中使用 swiper, swiper-item  
 
 ## 示例
 
 :::demo
-```js
-import Taro, { Component } from '@tarojs/taro'
-// 引入 Swiper, SwiperItem 组件
-import { Swiper, SwiperItem } from '@tarojs/components'
-
-class App extends Component {
-  render () {
-    return (
-      <Swiper
-        class='test-h'
-        indicatorColor='#999'
-        indicatorActiveColor='#333'
-        vertical
-        circular
-        indicatorDots
-        autoplay>
-        <SwiperItem>
-          <view class='demo-text-1'>1</view>
-        </SwiperItem>
-        <SwiperItem>
-          <view class='demo-text-2'>2</view>
-        </SwiperItem>
-        <SwiperItem>
-          <view class='demo-text-3'>3</view>
-        </SwiperItem>
-      </Swiper>
-    )
+``` vue
+<template>
+  <view>
+    <swiper
+      class='test-h'
+      indicatorColor='#999'
+      indicatorActiveColor='#333'
+      current="current"
+      :duration="duration"
+      :interval="interval"
+      :circular="isCircular"
+      :autoplay="isAutoplay"
+      :indicatorDots="hasIndicatorDots">
+      <swiper-item v-for="(item, idx) in imgUrls" :key="idx">
+        <image :src="item" class="slide-image" />
+      </swiper-item>
+    </swiper>
+  </view>
+</template>
+<script>
+export default {
+  name: 'SwiperDemo',
+  data() {
+    return {
+      current: 1,
+      duration: 500,
+      interval: 5000,
+      isCircular: false,
+      isAutoplay: false,
+      hasIndicatorDots: true,
+      imgUrls: [
+        'https://img10.360buyimg.com/babel/s700x360_jfs/t25855/203/725883724/96703/5a598a0f/5b7a22e1Nfd6ba344.jpg!q90!cc_350x180',
+        'https://img11.360buyimg.com/babel/s700x360_jfs/t1/4776/39/2280/143162/5b9642a5E83bcda10/d93064343eb12276.jpg!q90!cc_350x180',
+        'https://img14.360buyimg.com/babel/s700x360_jfs/t1/4099/12/2578/101668/5b971b4bE65ae279d/89dd1764797acfd9.jpg!q90!cc_350x180',
+      ],
+    }
   }
 }
+</script>
 ```
 :::
 
-## Swiper 参数
+## [Swiper 参数](https://taro-docs.jd.com/taro/docs/components/viewcontainer/swiper/) 
 
 | 微信 | H5 | 参数     | 说明                         | 类型    | 可选值                 | 默认值   |
 |:-----|:---|:---------|:-----------------------------|:--------|:-----------------------|:---------|
