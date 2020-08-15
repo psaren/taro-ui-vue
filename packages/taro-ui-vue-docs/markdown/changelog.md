@@ -13,6 +13,22 @@
         <i class="icon icon-award"></i>
       </div>
       <div class="at-timeline__content">
+        <p class="head">v1.0.0-alpha.5</p>
+        <p class="time">
+          <span>2020-08-06</span>
+        </p>
+        <ul class="content">
+          <li><span>Noticebar</span>修复 Noticebar H5滚动</li>
+          <li><span>Tabs</span>修复 tabs 在 H5 内容偏移(<a href="https://github.com/psaren/taro-ui-vue/issues/17">#26</a>)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="at-timeline__item at-timeline__item--last at-timeline__item--custom at-timeline__item--error">
+      <div class="at-timeline__tail"></div>
+      <div class="at-timeline__dot">
+        <i class="icon icon-award"></i>
+      </div>
+      <div class="at-timeline__content">
         <p class="head">v1.0.0-alpha.3</p>
         <p class="time">
           <span>2020-07-29</span>
