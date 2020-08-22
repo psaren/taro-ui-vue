@@ -5,6 +5,9 @@
       "packages/*"
     ]
   },
+  "scripts": {
+    "publish": "lerna publish --conventional-commits"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
