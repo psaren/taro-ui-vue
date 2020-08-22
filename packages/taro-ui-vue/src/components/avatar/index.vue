@@ -1,6 +1,6 @@
 <template>
   <view :class="rootCls" :style="customStyle">
-    <OpenData v-if="isOpenData" :type="openData.type" />
+    <open-data v-if="isOpenData" :type="openData.type" />
     <image v-if="isImage" class="at-avatar__img" :src="image" />
     <view v-if="isText" class="at-avatar__text">
       {{ letter }}
