@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.6](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2020-08-22)
+
+
+### Bug Fixes
+
+* **calendar demo:** fix multi-selection demo ([1d0c165](https://github.com/psaren/taro-ui-vue/commit/1d0c165ec89e52bae1f368dc75843ec69fe3dd6d))
+* DocsHeader 样式失效 ([6d80dc3](https://github.com/psaren/taro-ui-vue/commit/6d80dc3a377dff1405fcd4cc4f3fa85750e3b65c))
+* 修复找不到 View、Text、Image 等模板的问题 ([103a998](https://github.com/psaren/taro-ui-vue/commit/103a9989bfafaa26b9f403b9b2eacf2ba13836e5))
+
+
+
+
+
+
 # [1.0.0-alpha.5](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-08-06)
 
 

@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.6](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2020-08-22)
+
+
+### Bug Fixes
+
+* **AtModal:** Button 改为 AtButton ([5972d62](https://github.com/psaren/taro-ui-vue/commit/5972d62167cd199e50c90e2ba6a21447a0b38b18))
+* **avatar:** avatar 无法显示头像 [#42](https://github.com/psaren/taro-ui-vue/issues/42) ([cd6ed45](https://github.com/psaren/taro-ui-vue/commit/cd6ed45788018a04fcfb3f021d978383264fd5e3))
+* **calendar:** 修复 currentDate 类型以便进行多日期选择 ([0f33fd4](https://github.com/psaren/taro-ui-vue/commit/0f33fd418162f4d6712db965b5111ddb3102c8e9))
+* **calendar:** 修复非当前月份不能选取日期的问题 ([6fef79e](https://github.com/psaren/taro-ui-vue/commit/6fef79ee8c61f1efa5a947a3c4e7a570fb86d62e))
+* **calendar demo:** fix multi-selection demo ([1d0c165](https://github.com/psaren/taro-ui-vue/commit/1d0c165ec89e52bae1f368dc75843ec69fe3dd6d))
+* calendar body wrapCls ([33817c3](https://github.com/psaren/taro-ui-vue/commit/33817c341aba5386a6b324fd7ffa79b32f4f6481))
+* calendar swiper class ([c6c86de](https://github.com/psaren/taro-ui-vue/commit/c6c86de140401c0464c705c1ef4734bf63d86007))
+* DocsHeader 样式失效 ([6d80dc3](https://github.com/psaren/taro-ui-vue/commit/6d80dc3a377dff1405fcd4cc4f3fa85750e3b65c))
+* 修复 Accordion 默认开启时内容不显示 ([82d376d](https://github.com/psaren/taro-ui-vue/commit/82d376db989d9d6245f953a53492530da48b2569))
+* 修复找不到 View、Text、Image 等模板的问题 ([103a998](https://github.com/psaren/taro-ui-vue/commit/103a9989bfafaa26b9f403b9b2eacf2ba13836e5))
+* 改写 Vue.extend 组件 ([51bdc60](https://github.com/psaren/taro-ui-vue/commit/51bdc605f3ac2b1ed984f3934490215a0c310014))
+* **progress:** replace View to view ([625bab1](https://github.com/psaren/taro-ui-vue/commit/625bab1d9bee3e05baa0b20c86da01da98811036))
+* **taro-ui-vue:** H5 calendar swipe event ([08880e8](https://github.com/psaren/taro-ui-vue/commit/08880e872bb5e6dd3e983b7dad148e9c08fb174f))
+* **taro-ui-vue:** timeline root tag ([9d18b80](https://github.com/psaren/taro-ui-vue/commit/9d18b80574a652ad621dfcc7aa24d4c0f9b5409d))
+
+
+
+
+
+
 # [1.0.0-alpha.5](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-08-06)
 
 
