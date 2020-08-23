@@ -36,6 +36,18 @@ import { AtButton } from 'taro-ui-vue'
 </template>
 ```
 :::
+## 传递参数
+
+:::demo
+```vue
+<template>
+  <view>
+    <AtButton type='secondary' :on-click="(e) => handleClick('secondary')">事件传参</AtButton>
+    <AtButton type='primary' :on-click="handleClick.bind(this, 'primary')">事件传参</AtButton>
+  </view>
+</template>
+```
+:::
 
 ## 不同尺寸
 
