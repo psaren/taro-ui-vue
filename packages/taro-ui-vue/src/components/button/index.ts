@@ -155,13 +155,11 @@ export default {
   methods: {
     classNames,
     handelOnClick(event: CommonEvent): void {
-      console.log(event)
       if (!this.disabled) {
         this.onClick && this.onClick(event)
       }
     },
     handelOnGetUserInfo(event: CommonEvent): void {
-      console.log(event)
       this.onGetUserInfo && this.onGetUserInfo(event)
     },
     handelOnContact(
