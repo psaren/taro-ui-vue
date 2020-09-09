@@ -14,8 +14,7 @@
     >
       <view
         v-for="(item, idx) in tabList"
-        :id="`tab${idx}`"
-        :key="item.title"
+        :key="`tab${idx}`"
         :class="
           classNames({
             'at-tabs__item': true,
@@ -31,8 +30,7 @@
     <view v-else :id="this.tabId" class="at-tabs__header">
       <view
         v-for="(item, idx) in tabList"
-        :id="`tab${idx}`"
-        :key="item.title"
+        :key="`tab${idx}`"
         :class="
           classNames({
             'at-tabs__item': true,
