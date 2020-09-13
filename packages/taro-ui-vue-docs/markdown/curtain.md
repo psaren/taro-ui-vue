@@ -33,7 +33,7 @@ import { AtCurtain } from 'taro-ui-vue'
   <view>
     <AtCurtain
       :isOpened="isOpened"
-      onClose="onClose"
+      :onClose="onClose"
     >
       <image
         style='width:100%;height:250px'

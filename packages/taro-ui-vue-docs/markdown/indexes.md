@@ -31,51 +31,30 @@ import { AtIndexes } from 'taro-ui-vue'
 
 :::demo
 
-```jsx
-import Taro from '@tarojs/taro'
-import { View } from '@tarojs/components'
-import { AtIndexes } from 'taro-ui-vue'
-
-export default class Index extends Taro.Component {
-  onClick (item) {
-    console.log(item)
-  }
-  render() {
-    const list = [{
-      title: 'A',
-      key: 'A',
-      items: [
-        {
-          'name': '阿坝'
-          // 此处可加其他业务字段
-        },
-        {
-          'name': '阿拉善'
-        }]
-      },
-      {
-        title: 'B',
-        key: 'B',
-        items: [
-          {
-            'name': '北京'
-          },
-          {
-            'name': '保定'
-          }]
-      }
-    ]
-    return (
-      <view style='height:100vh'>
-        <AtIndexes
-          list={list}
-          onClick={this.onClick.bind(this)}
-        >
-          <view>自定义内容</view>
-        </AtIndexes>
-      </view>
-    )
-  }
+```vue
+<template>
+  <view class="page" style="height: 100vh;">
+    <!-- 基础用法 -->
+    <view style="height: 100%;">
+      <AtIndexes
+        :list="mockData"
+        topKey="Top"
+        :onClick="onClick"
+        :onScrollIntoView="handleScroll"
+      >
+        <view class="custom-area">
+          用户自定义内容
+          <AtSearchBar
+            :value="value"
+            :onChange="handleChange"
+            placeholder="跳转到指定Key"
+            :onActionClick="handleActionClick"
+          />
+        </view>
+      </AtIndexes>
+    </view>
+  </view>
+</template>
 ```
 
 :::
