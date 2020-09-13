@@ -29,7 +29,7 @@
     <scroll-view
       :id="listId"
       class="at-indexes__body"
-      scroll-y
+      :scroll-y="true"
       :scroll-with-animation="animation"
       :scroll-top="isWEB ? state._scrollTop : undefined"
       :scroll-into-view="!isWEB ? state._scrollIntoView : ''"

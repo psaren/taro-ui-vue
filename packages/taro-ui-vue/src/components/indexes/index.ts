@@ -27,7 +27,7 @@ export default {
     },
     isVibrate: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     isShowToast: {
       type: Boolean,
@@ -190,7 +190,7 @@ export default {
         Taro.vibrateShort()
       }
     },
-    initData() {
+    getItemHeight () {
       delayQuerySelector(this, '.at-indexes__menu').then((rect) => {
         const arr = [...rect, { top: 0, height: 0 }]
         const len = this.list.length
@@ -198,6 +198,15 @@ export default {
         this.startTop = arr[0].top
         this.itemHeight = Math.floor(this.menuHeight / (len + 1))
       })
+    },
+    initData() {
+      if (this.isWeb) {
+        this.getItemHeight()
+      } else {
+        setTimeout(() => {
+          this.getItemHeight()
+        }, 100)
+      }
     },
     handleScroll(e) {
       if (e && e.detail) {
