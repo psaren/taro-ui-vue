@@ -27,7 +27,7 @@ export default {
     },
     isVibrate: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     isShowToast: {
       type: Boolean,
