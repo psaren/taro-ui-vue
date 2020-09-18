@@ -1,3 +1,84 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [1.0.0-alpha.7](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2020-09-05)
+
+
+### Bug Fixes
+
+* **image-picker:** duplicate keys ([9843ea4](https://github.com/psaren/taro-ui-vue/commit/9843ea4d83d3f4c902aaad0a5c1fb4d1398cb5ab))
+
+
+
+
+
+
+# [1.0.0-alpha.6](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2020-08-22)
+
+
+### Bug Fixes
+
+* **AtModal:** Button 改为 AtButton ([5972d62](https://github.com/psaren/taro-ui-vue/commit/5972d62167cd199e50c90e2ba6a21447a0b38b18))
+* **avatar:** avatar 无法显示头像 [#42](https://github.com/psaren/taro-ui-vue/issues/42) ([cd6ed45](https://github.com/psaren/taro-ui-vue/commit/cd6ed45788018a04fcfb3f021d978383264fd5e3))
+* **calendar:** 修复 currentDate 类型以便进行多日期选择 ([0f33fd4](https://github.com/psaren/taro-ui-vue/commit/0f33fd418162f4d6712db965b5111ddb3102c8e9))
+* **calendar:** 修复非当前月份不能选取日期的问题 ([6fef79e](https://github.com/psaren/taro-ui-vue/commit/6fef79ee8c61f1efa5a947a3c4e7a570fb86d62e))
+* **calendar demo:** fix multi-selection demo ([1d0c165](https://github.com/psaren/taro-ui-vue/commit/1d0c165ec89e52bae1f368dc75843ec69fe3dd6d))
+* calendar body wrapCls ([33817c3](https://github.com/psaren/taro-ui-vue/commit/33817c341aba5386a6b324fd7ffa79b32f4f6481))
+* calendar swiper class ([c6c86de](https://github.com/psaren/taro-ui-vue/commit/c6c86de140401c0464c705c1ef4734bf63d86007))
+* DocsHeader 样式失效 ([6d80dc3](https://github.com/psaren/taro-ui-vue/commit/6d80dc3a377dff1405fcd4cc4f3fa85750e3b65c))
+* 修复 Accordion 默认开启时内容不显示 ([82d376d](https://github.com/psaren/taro-ui-vue/commit/82d376db989d9d6245f953a53492530da48b2569))
+* 修复找不到 View、Text、Image 等模板的问题 ([103a998](https://github.com/psaren/taro-ui-vue/commit/103a9989bfafaa26b9f403b9b2eacf2ba13836e5))
+* 改写 Vue.extend 组件 ([51bdc60](https://github.com/psaren/taro-ui-vue/commit/51bdc605f3ac2b1ed984f3934490215a0c310014))
+* **progress:** replace View to view ([625bab1](https://github.com/psaren/taro-ui-vue/commit/625bab1d9bee3e05baa0b20c86da01da98811036))
+* **taro-ui-vue:** H5 calendar swipe event ([08880e8](https://github.com/psaren/taro-ui-vue/commit/08880e872bb5e6dd3e983b7dad148e9c08fb174f))
+* **taro-ui-vue:** timeline root tag ([9d18b80](https://github.com/psaren/taro-ui-vue/commit/9d18b80574a652ad621dfcc7aa24d4c0f9b5409d))
+
+
+
+
+
+
+# [1.0.0-alpha.5](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-08-06)
+
+
+### Bug Fixes
+
+* **modal:** fix modal style and footer slot button ([4a73786](https://github.com/psaren/taro-ui-vue/commit/4a73786fe159f488b6527a15ee6bc941221c086b))
+* **modal:** fix modal style and footer slot button ([2a0defa](https://github.com/psaren/taro-ui-vue/commit/2a0defa2fbf7893e3b78afa3a5e7fbdccb295e21))
+* **Noticebar:** 修复Noticebar H5滚动 ([a0b35eb](https://github.com/psaren/taro-ui-vue/commit/a0b35ebb79734914b2d0b25eac90fd1254c653a4))
+* **progress:** set default status to '' and fix pogressbar is full at 0% ([38a062a](https://github.com/psaren/taro-ui-vue/commit/38a062a6aba526b6073a43608391c388e7efdcda))
+* **tabs:** 修复tabs在 H5 内容偏移 [#26](https://github.com/psaren/taro-ui-vue/issues/26) ([00923a7](https://github.com/psaren/taro-ui-vue/commit/00923a7b6aaa1742c5009b655d1cfb2d8b8b1373))
+
+
+
+
+
+
+# [1.0.0-alpha.3](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2020-07-29)
+
+
+### Bug Fixes
+
+* calendar body wrapCls ([8c48a20](https://github.com/psaren/taro-ui-vue/commit/8c48a2066690ef87c149002039276bb14cad905b))
+* calendar swiper class ([79caab1](https://github.com/psaren/taro-ui-vue/commit/79caab17eaeb5538d8750fe7b9f3a4c18689773b))
+* **AtModal:** Button 改为 AtButton ([84c803e](https://github.com/psaren/taro-ui-vue/commit/84c803ecf0b6bf53f463d86886e3fdb6c1259ed9))
+* DocsHeader 样式失效 ([6cdc027](https://github.com/psaren/taro-ui-vue/commit/6cdc0278b2c1b4ee4cdf1c623e36e88a69b71c3f))
+* 修复 Accordion 默认开启时内容不显示 ([abc0da7](https://github.com/psaren/taro-ui-vue/commit/abc0da7b0d953663b455a0c83949042ed9e4a4e2))
+* 修复找不到 View、Text、Image 等模板的问题 ([6714ffb](https://github.com/psaren/taro-ui-vue/commit/6714ffb090701d4ca53414e88db7096343a88859))
+* 改写 Vue.extend 组件 ([8f5615e](https://github.com/psaren/taro-ui-vue/commit/8f5615e40d606fc4a4fb0d5c34ea6df92a1aa461))
+* **progress:** replace View to view ([16c71e4](https://github.com/psaren/taro-ui-vue/commit/16c71e404d5a53e8155183fd3a254006cf1cf869))
+* **taro-ui-vue:** action-sheet  缺少 mixins ([18cd9c6](https://github.com/psaren/taro-ui-vue/commit/18cd9c6f9cff4f9a691006feb2ad79375b948628))
+* **taro-ui-vue:** H5 calendar swipe event ([e6eeabd](https://github.com/psaren/taro-ui-vue/commit/e6eeabd03b7f9dc8e85d3233c391fea65a5da6e1))
+* **taro-ui-vue:** tabs missing scroll props ([24d4219](https://github.com/psaren/taro-ui-vue/commit/24d42196a1e53a09a6a6526a7fa6543d90f73a98))
+* **taro-ui-vue:** timeline root tag ([79423f9](https://github.com/psaren/taro-ui-vue/commit/79423f9eb38956114dc10c2709fd3cc0b7ade1ea))
+* **taro-ui-vue-demo:** toast import AtButton ([4862900](https://github.com/psaren/taro-ui-vue/commit/486290089cb93153d058031a389066905f61ae65))
+
+
+
+
+
 ## [0.0.9](https://github.com/psaren/taro-ui-vue/compare/v0.0.8...v0.0.9) (2020-06-28)
 ### Docs update
 * update README
@@ -111,6 +192,3 @@
 * 完善Calendar ([d6cdf33](https://github.com/psaren/taro-ui-vue/commit/d6cdf336c098820a3037f293bf7488392170fd3b))
 * 添加 基础& 视图组件 ([c545f89](https://github.com/psaren/taro-ui-vue/commit/c545f89f3e83e44500647997e341735167185ea2))
 * 移除vue-prototype ([dce28a0](https://github.com/psaren/taro-ui-vue/commit/dce28a0593a71a4b45f55f64ca73ca10516325ad))
-
-
-

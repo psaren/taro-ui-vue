@@ -26,13 +26,13 @@
     ]
   },
   "include": [
-    "src/components/**",
-    "src/utils/**",
+    "src/components/**.jsx",
+    "src/utils/**.ts",
     "src/index.ts"
   ],
   "exclude": [
     "node_modules/*",
-    "dist"
+    "packages/taro-ui-vue/dist"
   ],
   "compileOnSave": false
 }

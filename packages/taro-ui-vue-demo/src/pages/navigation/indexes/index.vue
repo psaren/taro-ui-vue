@@ -48,7 +48,7 @@ export default {
 
     onClick(item) {
       Taro.showToast({
-        title: `onClick: ${JSON.stringify(item.name)}:  ${JSON.stringify(item.key)}`,
+        title: `onClick: ${item}`,
         icon: 'none',
       })
     },
@@ -57,7 +57,7 @@ export default {
       if (!this.value) {
         return
       }
-      this.scrollIntoView && this.scrollIntoView(this.value.toUpperCase())
+      this.scrollToView && this.scrollToView(this.value.toUpperCase())
       this.value = ''
     },
 
@@ -66,8 +66,8 @@ export default {
     },
 
     handleScroll(fn) {
-      this.scrollIntoView = fn
-    }
+      this.scrollToView = fn
+    },
   },
 }
 </script>

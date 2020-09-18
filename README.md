@@ -4,20 +4,30 @@
 ![David](https://img.shields.io/david/psaren/taro-ui-vue)
 [![npm](https://img.shields.io/npm/dm/taro-ui-vue)](https://www.npmjs.com/package/taro-ui-vue)
 ## 项目背景 
-`tarojs` 已经开始支持 `vue` 去写 taro 应用了，由于缺少相关的 ui 库，因此决定 按照 taro-ui 重写用 `(j|t)sx` 成 `vue` 组件。
+`tarojs` 已经开始支持 `vue` 去写 taro 应用了，由于缺少相关的 ui 库，因此决定 按照 taro-ui 重写成 `vue` 组件。
 形成了 `taro-ui-vue` 这个库。
-重写是基于 @tarojs 3.0.0-beta.6, 样式是复用的 taro-ui@2.2.x。
+
+## 相关链接
+[Taro Ui Vue 使用文档](http://taro-ui-vue.fontend.com/)  
+[Taro](https://github.com/NervJS/taro)  
+[Taro Ui](https://github.com/NervJS/taro-ui)
+
+## 使用注意
+Taro Ui Vue 提供的是源文件，源文件部分代码使用 `ts` 编写，需要项目支持 ts。
+如果是用 `taro init` 命令创建，则需在使用时选择 `ts` 。
+
 ## 安装
 ``` bash
 npm i -S taro-ui-vue
 ```
+
 ## 使用
 ### 按需引入
 ``` javascript
 // page.js
 import { AtButton } from 'taro-ui-vue'
-// 除了引入所需的组件，还需要手动引入组件样式
-
+// OR
+import AtButton from 'taro-ui-vue/src/components/button/index.vue'
 ```
 按需引入样式
 ``` javascript
@@ -53,7 +63,7 @@ export default {
 ### 全局引入所有组件
 ``` javascript
 // app.js
-import TaroUiVue from 'taro-ui-vue'
+import TaroUiVue from 'taro-ui-vue/src'
 import 'taro-ui-vue/dist/style/index.scss'
 Vue.use(TaroUiVue)
 ```
@@ -71,41 +81,13 @@ Vue.use(TaroUiVue)
   </view>
 </template>
 ```
-在 jsx 中需要按下面这样写, 明确 onXXX(on开头的props) 属于 props 
-``` javascript
-{
-  ...
-  methods: {
-    handleClick() {
-      // TODO
-    }
-  },
-  render() {
-    return (
-      <AtTag
-      type="primary"
-      props={{onClick: this.handleClick}}
-    >
-      标签
-    </AtTag>
-    )
-  }
-}
-```
-| AtCalendar | AtActionSheet | AtTabBar |
-| :--------: | :--------: | :--------: |
-|![AtCalendar](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtCalendar.gif)|![AtActionSheet](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtActionSheet.gif)|![AtTabBar](https://raw.githubusercontent.com/psaren/taro-ui-vue/HEAD/src/assets/images/AtTabBar.gif)
 
 ## 更多使用方式
 更多组件使用及属性请参考 [taro-ui 使用文档](https://taro-ui.jd.com/#/docs/introduction)   
 所有参数基本一致
 
-## 相关链接
-[taro](https://github.com/NervJS/taro)  
-[taro-ui](https://github.com/NervJS/taro-ui)
 ## TODO
 - 为组件添加测试用例
-- 修复现存[已知问题](https://github.com/psaren/taro-ui-vue/blob/master/src/components/notes.md)
 
 ## CHANGELOG
 [CHANGELOG](https://github.com/psaren/taro-ui-vue/blob/master/CHANGELOG.md)
