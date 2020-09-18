@@ -30,7 +30,7 @@
       class="at-indexes__body"
       :scroll-y="true"
       :scroll-with-animation="animation"
-      :scroll-top="isWEB ? state._scrollTop : undefined"
+      :scroll-top="state._scrollTop"
       :scroll-into-view="!isWEB ? state._scrollIntoView : ''"
       @scroll="handleScroll"
     >
@@ -53,7 +53,7 @@
               v-for="item in dataList.items"
               :key="item.name"
               :title="item.name"
-              @tap="handleClick"
+              :onClick="handleClick.bind(this, item)"
             />
           </template>
         </AtList>

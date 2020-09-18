@@ -48,7 +48,7 @@ export default {
 
     onClick(item) {
       Taro.showToast({
-        title: `onClick: ${item}`,
+        title: `onClick: ${JSON.stringify(item.name)}:  ${JSON.stringify(item.key)}`,
         icon: 'none',
       })
     },
