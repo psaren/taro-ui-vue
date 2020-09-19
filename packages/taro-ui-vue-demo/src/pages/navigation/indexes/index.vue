@@ -1,5 +1,8 @@
 <template>
-  <view class="page" style="height: 100vh;">
+  <view
+    class="page"
+    style="height: 100vh;"
+  >
     <!-- 基础用法 -->
     <view style="height: 100%;">
       <AtIndexes
@@ -45,7 +48,7 @@ export default {
 
     onClick(item) {
       Taro.showToast({
-        title: `onClick: ${item}`,
+        title: `onClick: ${JSON.stringify(item.name)}:  ${JSON.stringify(item.key)}`,
         icon: 'none',
       })
     },

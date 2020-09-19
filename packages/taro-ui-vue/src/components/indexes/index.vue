@@ -1,5 +1,8 @@
 <template>
-  <view :class="rootCls" :style="customStyle">
+  <view
+    :class="rootCls"
+    :style="customStyle"
+  >
     <AtToast
       :custom-style="toastStyle"
       :is-opened="state._isShowToast"
@@ -14,28 +17,27 @@
       <view
         class="at-indexes__menu-item"
         @tap="jumpTarget('at-indexes__top', 0)"
-      >
-        {{ topKey }}
-      </view>
+      >{{ topKey }}</view>
       <view
         v-for="(dataList, i) in list"
         :key="dataList.key"
         class="at-indexes__menu-item"
         @tap="jumpTarget(`at-indexes__list-${dataList.key}`, i + 1)"
-      >
-        {{ dataList.key }}
-      </view>
+      >{{ dataList.key }}</view>
     </view>
     <scroll-view
       :id="listId"
       class="at-indexes__body"
       :scroll-y="true"
       :scroll-with-animation="animation"
-      :scroll-top="isWEB ? state._scrollTop : undefined"
+      :scroll-top="state._scrollTop"
       :scroll-into-view="!isWEB ? state._scrollIntoView : ''"
       @scroll="handleScroll"
     >
-      <view id="at-indexes__top" class="at-indexes__content">
+      <view
+        id="at-indexes__top"
+        class="at-indexes__content"
+      >
         <slot />
       </view>
       <view
@@ -44,16 +46,14 @@
         :key="dataList.key"
         class="at-indexes__list"
       >
-        <view class="at-indexes__list-title">
-          {{ dataList.title }}
-        </view>
+        <view class="at-indexes__list-title">{{ dataList.title }}</view>
         <AtList>
           <template v-if="dataList.items">
             <AtListItem
               v-for="item in dataList.items"
               :key="item.name"
               :title="item.name"
-              @tap="handleClick"
+              :onClick="handleClick.bind(this, item)"
             />
           </template>
         </AtList>
