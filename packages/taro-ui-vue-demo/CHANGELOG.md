@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.9](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2020-09-19)
+
+
+### Bug Fixes
+
+* **AtIndexes:** 修复 [#49](https://github.com/psaren/taro-ui-vue/issues/49) onClick 以及 onScrollIntoView 事件不生效 ([0f49c5c](https://github.com/psaren/taro-ui-vue/commit/0f49c5ca1c92aaa43966b646ff060da2e99edd0f))
+
+
+
+
+
 # [1.0.0-alpha.8](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2020-09-13)
 
 **Note:** Version bump only for package taro-ui-vue-demo

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.9](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2020-09-19)
+
+
+### Bug Fixes
+
+* [#55](https://github.com/psaren/taro-ui-vue/issues/55) ([ea5dce1](https://github.com/psaren/taro-ui-vue/commit/ea5dce17363bd20296a9a73a26b5aa701be18ffa))
+* **AtIndexes:** 修复 [#49](https://github.com/psaren/taro-ui-vue/issues/49) onClick 以及 onScrollIntoView 事件不生效 ([0f49c5c](https://github.com/psaren/taro-ui-vue/commit/0f49c5ca1c92aaa43966b646ff060da2e99edd0f))
+* [#50](https://github.com/psaren/taro-ui-vue/issues/50) ([ed8cb25](https://github.com/psaren/taro-ui-vue/commit/ed8cb25a18b44776e7fc0e9dd28721441937e326))
+* indexes in weapp ([2da5b47](https://github.com/psaren/taro-ui-vue/commit/2da5b47b08c05e3e335f3ba599904f2501c49a93))
+* **image-picker:** duplicate keys ([8d6f638](https://github.com/psaren/taro-ui-vue/commit/8d6f6384ade985d0eecbd2f6a00edcfdcdefc63a))
+
+
+
+
+
 # [1.0.0-alpha.8](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2020-09-13)
 
 
