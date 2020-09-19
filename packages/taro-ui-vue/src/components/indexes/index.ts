@@ -62,6 +62,8 @@ export default {
       startTop: 0,
       // 右侧导航元素高度
       itemHeight: 0,
+      // scroll-view 列表项目的高度数组
+      scrollItemHeights: [],
       // 当前索引
       currentIndex: -1,
       listId: isTest() ? 'indexes-list-AOTU2018' : `list-${uuid()}`,
@@ -149,6 +151,7 @@ export default {
       }
 
       this.updateState({
+        _scrollTop: this.scrollItemHeights[idx],
         _scrollIntoView,
         _tipText,
       })
@@ -190,14 +193,20 @@ export default {
         Taro.vibrateShort()
       }
     },
-    getItemHeight () {
-      delayQuerySelector(this, '.at-indexes__menu').then((rect) => {
+    async getItemHeight () {
+      await delayQuerySelector(this, '.at-indexes__menu').then((rect) => {
         const arr = [...rect, { top: 0, height: 0 }]
         const len = this.list.length
         this.menuHeight = arr[0].height
         this.startTop = arr[0].top
         this.itemHeight = Math.floor(this.menuHeight / (len + 1))
       })
+
+      if (this.list.length > 0) {
+        await this._getScrollListItemHeights(this.list).then(res => {
+          this.scrollItemHeights = [...res]
+        })
+      }
     },
     initData() {
       if (this.isWeb) {
@@ -208,10 +217,54 @@ export default {
         }, 100)
       }
     },
+    _getHeight(selector: string, delay?: number) {
+      return new Promise<number>(resolve => {
+        delayQuerySelector(this, selector, delay).then(rect => {
+          // @ts-ignore
+          if(rect && rect[0]) {
+            // @ts-ignore
+            resolve(rect[0].height)
+          }
+        })
+      })
+    },
+    /**
+     *
+     * @param {Array<ListItem>} list
+     */
+    _getScrollListItemHeights(list) {
+      return new Promise<number[]>(resolve => {
+        if (list.length > 0) {
+          let rawHeights: Promise<number>[] = []
+          let itemHeights: number[] = []
+
+          // 获取 #at-indexes__top 的高度              
+          rawHeights.push(this._getHeight(`#at-indexes__top`))
+
+          // 获取 #at-indexes——list-${key} 的高度
+          list.forEach((item) => {
+            rawHeights.push(this._getHeight(`#at-indexes__list-${item.key}`))
+          })
+
+          Promise.all(rawHeights).then(res => {
+            let height = 0
+            itemHeights.push(height)
+
+            for (let i = 0; i < res.length; i++) {
+              height += res[i]
+              itemHeights.push(height)
+            }
+
+            resolve(itemHeights)
+          })
+        }
+      })
+    },
     handleScroll(e) {
       if (e && e.detail) {
         this.setState({
-          _scrollTop: e.detail.scrollTop,
+          // _scrollTop: e.detail.scrollTop,
+          _scrollIntoView: ''
         })
       }
     },
