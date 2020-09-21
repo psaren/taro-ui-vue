@@ -24,7 +24,7 @@
     "test:analyze": "rollup --config ./config/rollup.config.analyze.js",
     "build:lib": "tsc --project ./tsconfig.build.json",
     "build:lib-dev": "cross-env LIB_ENV=dev rollup --config ./config/rollup.config.js",
-    "build:rollup": "rollup --config ./config/rollup.config.js",
+    "build:rollup": "rollup --config ./config/rollup.config.js && node config/copy.js",
     "rollup:test": "node tests/transform-component.js && rollup --config ./config/rollup-test.config.js",
     "clean": "rimraf dist lib",
     "clog": "conventional-changelog -p angular -i CHANGELOG.md -s -r",
