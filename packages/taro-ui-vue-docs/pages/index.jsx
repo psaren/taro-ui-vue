@@ -57,7 +57,7 @@ class Index extends React.Component {
               </NavLink>
               <a
                 className='btn btn-start btn-start--h5'
-                href='https://nervjs.github.io/taro-ui/h5/index.html'
+                href='http://taro-ui-vue-demo.fontend.com'
               >
                 开始使用
               </a>
