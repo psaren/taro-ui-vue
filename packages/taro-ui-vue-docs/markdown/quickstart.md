@@ -75,7 +75,7 @@ import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 
 **引入组件样式的三种方式**
 
-- **全局引入（JS中）：** 在入口文件中引入 `taro-ui` 所有的样式
+- **全局引入（JS中）：** 在入口文件中引入 `taro-ui-vue` 所有的样式
 :::demo
 ```js
 import 'taro-ui/dist/style/index.scss' // 引入组件样式 - 方式一
@@ -96,7 +96,7 @@ import 'taro-ui/dist/style/index.scss' // 引入组件样式 - 方式一
 ```
 :::
 
-> 具体的组件样式文件请查看 [组件样式列表](https://github.com/NervJS/taro-ui/tree/dev/src/style/components)
+> 具体的组件样式文件请查看 [组件样式列表](https://github.com/psaren/taro-ui-vue/tree/master/packages/taro-ui-vue/src/components)
 
 ## 示例
 

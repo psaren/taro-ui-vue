@@ -20,7 +20,7 @@ Taro UI 的组件样式是使用 SCSS 编写的，如果你的项目中也使用
 
 :::demo
 ```scss
-/* 改变主题变量，具体变量名可查看 taro-ui/dist/style/variables/default.scss 文件 */
+/* 改变主题变量，具体变量名可查看 taro-ui-vue/dist/style/variables/default.scss 文件 */
 $color-brand: #6190E8;
 
 /* 引入 Taro UI 默认样式 */
@@ -28,7 +28,7 @@ $color-brand: #6190E8;
 ```
 :::
 
-> 覆写的变量，需要在引入 taro ui 默认样式之前定义，[默认主题变量命名](https://github.com/NervJS/taro-ui/blob/dev/src/style/variables/default.scss)
+> 覆写的变量，需要在引入 taro ui vue 默认样式之前定义，[默认主题变量命名](https://github.com/psaren/taro-ui-vue/blob/master/packages/taro-ui-vue/src/style/variables/default.scss)
 
 之后在项目的入口文件中引入以上的样式文件即可（无需重复引入组件的默认样式）
 
@@ -43,11 +43,11 @@ import './custom-variables.scss'
 
 ## 全局样式类
 
-全局样式类是微信小程序定义的一套用于修改组件内部样式的方案。如果希望组件外样式类能够影响组件内部，可以在组件构造器中的 `options.addGlobalClass` 字段设置为 true（Taro UI 的组件均开启了此特性）。这个特性从小程序基础库版本 `2.2.3` 开始支持。
+全局样式类是微信小程序定义的一套用于修改组件内部样式的方案。如果希望组件外样式类能够影响组件内部，可以在组件构造器中的 `options.addGlobalClass` 字段设置为 true（Taro UI Vue的组件均开启了此特性）。
 
-**P.S. `addGlobalClass` 这个 API 只对 Page 上的 class 起作用。换言之，如果在自定义的组件中使用 `taro-ui`，是无法在自定义组件内部通过 `全局样式类` 的方式去更改组件样式的。**
+**P.S. `addGlobalClass` 这个 API 只对 Page 上的 class 起作用。换言之，如果在自定义的组件中使用 `taro-ui-vue`，是无法在自定义组件内部通过 `全局样式类` 的方式去更改组件样式的。**
 
-> 当开放了全局样式类，存在外部样式无意间污染组件样式的风险。由于 Taro UI 的组件样式采用 BEM 的命名方式，从一定程度上避免了样式污染的问题。
+> 当开放了全局样式类，存在外部样式无意间污染组件样式的风险。由于 Taro UI Vue的组件样式采用 BEM 的命名方式，从一定程度上避免了样式污染的问题。
 
 :::demo
 ```jsx
