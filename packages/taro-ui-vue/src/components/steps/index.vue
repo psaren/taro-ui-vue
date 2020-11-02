@@ -10,7 +10,7 @@
           'at-steps__item--inactive': index !== current,
         })
       "
-      @click="handleClick"
+      @tap="handleClick(index)"
     >
       <view class="at-steps__circular-wrap">
         <view v-if="index !== 0" class="at-steps__left-line" />

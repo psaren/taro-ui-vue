@@ -27,7 +27,7 @@ export default {
   methods: {
     classNames,
     handleClick(event) {
-      this.onClick && this.onClick(event)
+      this.onChange && this.onChange(event)
     },
   },
 }
