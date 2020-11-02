@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.11](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2020-11-02)
+
+
+### Bug Fixes
+
+* [#71](https://github.com/psaren/taro-ui-vue/issues/71) ([1da9715](https://github.com/psaren/taro-ui-vue/commit/1da971532ea66f9c08aa48cb10cc2925b253413f))
+
+
+
+
+
+
 # [1.0.0-alpha.10](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2020-09-21)
 
 **Note:** Version bump only for package taro-ui-vue
