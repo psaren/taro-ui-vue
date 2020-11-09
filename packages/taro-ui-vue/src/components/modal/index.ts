@@ -16,7 +16,7 @@ export default {
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     onCancel: {
       type: Function,
