@@ -1,5 +1,5 @@
 <template>
-  <view class="rootClass" @tap="handleClick">
+  <view :class="rootClass" @tap="handleClick">
     <view class="at-card__header">
       <view v-if="thumb" class="at-card__header-thumb">
         <image
