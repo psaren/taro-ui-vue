@@ -177,7 +177,7 @@
                 name="value14"
                 title="验证码"
                 type="text"
-                :maxLength="4"
+                :maxlength="4"
                 clear
                 placeholder="验证码"
                 :value="state.value14"

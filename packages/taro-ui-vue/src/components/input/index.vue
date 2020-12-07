@@ -22,7 +22,7 @@
         :placeholderClass="placeholderCls"
         :placeholder="placeholder"
         :cursorSpacing="cursorSpacing"
-        :maxLength="inputProps.maxLength"
+        :maxlength="inputProps.maxLength"
         :autoFocus="autoFocus"
         :focus="focus"
         :value="value"
