@@ -11,7 +11,7 @@
       </view>
     </view>
     <view class="at-nav-bar__title">
-      {{ title || this.$slots.default }}
+      <slot>{{ title }}</slot>
     </view>
     <view class="at-nav-bar__right-view">
       <view
