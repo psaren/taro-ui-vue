@@ -11,7 +11,7 @@
       "license": "MIT"
     }
   },
-  "version": "1.0.0-alpha.15",
+  "version": "1.0.0-beta.1",
   "npmClient": "yarn",
   "useWorkspaces": true
 }
