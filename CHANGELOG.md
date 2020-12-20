@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.3](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2020-12-20)
+
+
+### Bug Fixes
+
+* [#71](https://github.com/psaren/taro-ui-vue/issues/71) ([ce7c595](https://github.com/psaren/taro-ui-vue/commit/ce7c5956b2f69ead16e6653b0a45ce1a7dc0d47c))
+* [#74](https://github.com/psaren/taro-ui-vue/issues/74) ([129f2c9](https://github.com/psaren/taro-ui-vue/commit/129f2c975124f6ba4d9701f1d0727f94f4d69b88))
+* [#76](https://github.com/psaren/taro-ui-vue/issues/76) ([87ff45c](https://github.com/psaren/taro-ui-vue/commit/87ff45c0e7a58d7cd4591659870f77abc426de58))
+* [#89](https://github.com/psaren/taro-ui-vue/issues/89) ([32fdd04](https://github.com/psaren/taro-ui-vue/commit/32fdd041d7a72f2040521ba2471ebbab0b8b4076))
+* AtCard [#87](https://github.com/psaren/taro-ui-vue/issues/87) ([980cf07](https://github.com/psaren/taro-ui-vue/commit/980cf07193f55027fe939cf0ea30766c9c74a20b))
+
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-12-13)
 
 
