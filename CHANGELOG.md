@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2020-12-13)
+
+
+### Features
+
+* add LECENSE.md ([bcf7263](https://github.com/psaren/taro-ui-vue/commit/bcf7263be65591491ed280b01dded49fcb5a1ebe))
+
+
+
+
+
+
+
+**Note:** Version bump only for package taro-ui-vue
+
+
+
+
+
+# [1.0.0-beta.1](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.15...v1.0.0-beta.1) (2020-12-13)
+
+**Note:** Version bump only for package taro-ui-vue
+
+
+
+
+
+# [1.0.0-alpha.15](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2020-12-13)
+
+
+### Bug Fixes
+
+* [#89](https://github.com/psaren/taro-ui-vue/issues/89) ([4eb5a62](https://github.com/psaren/taro-ui-vue/commit/4eb5a6294526e09a414f5a21d08cee4d6e553f11))
+
+
+
+
+
+
+# [1.0.0-alpha.14](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2020-12-07)
+
+
+### Bug Fixes
+
+* AtCard [#87](https://github.com/psaren/taro-ui-vue/issues/87) ([e135af0](https://github.com/psaren/taro-ui-vue/commit/e135af01a8c2f11b7ba420a38278ced539184870))
+
+
+
+
+
+
 # [1.0.0-alpha.13](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2020-11-23)
 
 
