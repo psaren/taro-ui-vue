@@ -23,12 +23,12 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.trrigerOptionsDomUpadte()
+      this.triggerOptionsDomUpadte()
     }, 16)
   },
   watch: {
     options() {
-      this.trrigerOptionsDomUpadte()
+      this.triggerOptionsDomUpadte()
     },
   },
   computed: {
@@ -37,7 +37,7 @@ export default {
     },
   },
   methods: {
-    trrigerOptionsDomUpadte() {
+    triggerOptionsDomUpadte() {
       delayQuerySelector(this, `#swipeActionOptions-${this.componentId}`).then(
         (res) => {
           const arr = [...res]
