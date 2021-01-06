@@ -113,6 +113,10 @@ const AtImagePicker = {
         return function () {}
       },
     },
+    sourceType: {
+      type: Array,
+      default: () => []
+    },
   },
   computed: {
     rootCls() {

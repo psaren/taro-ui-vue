@@ -17,6 +17,19 @@
             />
           </view>
         </view>
+        <!-- 调用相机 -->
+        <view class="panel">
+          <view class="panel__title">调用相机</view>
+          <view class="panel__content no-padding">
+            <view class="example-item">
+              <AtImagePicker
+                :sourceType="['camera']"
+                :files="files5"
+                :onChange="onChange.bind(this, 'files5')"
+              />
+            </view>
+          </view>
+        </view>
       </view>
 
       <!-- 多选图片 -->
@@ -69,6 +82,7 @@
 </template>
 
 <script>
+import AtImagePicker from '../../../../../taro-ui-vue/src/components/image-picker/index.vue'
 const dogaImages = [
   {
     url: 'https://storage.360buyimg.com/mtd/home/111543234387022.jpg',
@@ -83,9 +97,13 @@ const dogaImages = [
 ]
 export default {
   name: 'ImagePickerPage',
+  components: {
+    AtImagePicker,
+  },
   data() {
     return {
       files1: Array.from(dogaImages),
+      files5: Array.from(dogaImages),
       files2: Array.from(dogaImages),
       files3: Array.from(dogaImages),
       files4: dogaImages.concat([

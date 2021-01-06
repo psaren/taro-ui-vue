@@ -46,7 +46,7 @@
     "@tarojs/taro": "3.0.2",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.27",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "taro-ui-vue": "file:../taro-ui-vue",
     "vue": "^2.5.0",
     "vue-template-compiler": "^2.5.0"
