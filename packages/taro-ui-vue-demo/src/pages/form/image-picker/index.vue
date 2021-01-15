@@ -82,7 +82,6 @@
 </template>
 
 <script>
-import AtImagePicker from '../../../../../taro-ui-vue/src/components/image-picker/index.vue'
 const dogaImages = [
   {
     url: 'https://storage.360buyimg.com/mtd/home/111543234387022.jpg',
@@ -97,9 +96,6 @@ const dogaImages = [
 ]
 export default {
   name: 'ImagePickerPage',
-  components: {
-    AtImagePicker,
-  },
   data() {
     return {
       files1: Array.from(dogaImages),
