@@ -115,7 +115,7 @@ const AtImagePicker = {
     },
     sourceType: {
       type: Array,
-      default: () => []
+      default: () => ['album', 'camera']
     },
   },
   computed: {
