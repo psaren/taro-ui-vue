@@ -104,6 +104,12 @@ const AtInputNumber = {
         return function () {}
       },
     },
+    onFocus: {
+      type: Function,
+      default: function () {
+        return function () {}
+      },
+    },
   },
   methods: {
     handleClick(clickType: 'minus' | 'plus', e: CommonEvent): void {
@@ -174,6 +180,10 @@ const AtInputNumber = {
 
     handleBlur(event: ITouchEvent): void {
       this.onBlur && this.onBlur(event)
+    },
+
+    handleFocus(event: ITouchEvent): void {
+      this.onFocus && this.onFocus(event)
     },
 
     handleError(errorValue: InputError): void {
