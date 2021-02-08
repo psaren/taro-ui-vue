@@ -12,7 +12,8 @@
       :value="String(inputValue)"
       :disabled="disabledInput || disabled"
       @input="handleInput"
-      :on-blur="handleBlur"
+      @blur="handleBlur"
+      @focus="handleFocus"
     />
     <view :class="plusBtnCls" @tap="handleClick('plus')">
       <view class="at-icon at-icon-add at-input-number__btn-add"></view>
