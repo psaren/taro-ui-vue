@@ -44,6 +44,8 @@
     "@tarojs/components": "3.0.2",
     "@tarojs/runtime": "3.0.2",
     "@tarojs/taro": "3.0.2",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
     "classnames": "^2.2.6",
     "dayjs": "^1.8.27",
     "lodash": "^4.17.20",

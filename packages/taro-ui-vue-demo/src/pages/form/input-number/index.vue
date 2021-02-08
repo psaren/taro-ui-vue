@@ -111,6 +111,25 @@
           </view>
         </view>
       </view>
+      <!-- onblur和onfocus事件 -->
+      <view class="panel">
+        <view class="panel__title">Input输入框blur和focus事件</view>
+        <view class="panel__content">
+          <view class="example-item">
+            <AtInputNumber
+              :width="200"
+              :min="0"
+              :max="10"
+              :step="1"
+              :value="state.number4"
+              :on-focus="handleFocus"
+              :on-blur="handleBlur"
+              :onChange="handleNumberChange.bind(this, 'number4')"
+            />
+            <text v-show="inputStatus">(input：{{ inputStatus }})</text>
+          </view>
+        </view>
+      </view>
     </view>
     <!-- E Body -->
   </view>
@@ -125,6 +144,7 @@ export default {
   mixins: [setStateMixin],
   data() {
     return {
+      inputStatus: null,
       state: {
         number1: 1,
         number2: 1,
@@ -136,6 +156,14 @@ export default {
     }
   },
   methods: {
+    handleBlur() {
+      this.inputStatus = 'blur'
+      console.log('input blur')
+    },
+    handleFocus() {
+      this.inputStatus = 'focus'
+      console.log('input focus')
+    },
     handleNumberChange(stateName, value, e) {
       this.setState({
         [stateName]: value,
