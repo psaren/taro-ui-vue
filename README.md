@@ -97,4 +97,4 @@ Vue.use(TaroUiVue)
 
 ## License
 
-[MIT](./LECENSE.md)
+[MIT](./LICENSE.md)
