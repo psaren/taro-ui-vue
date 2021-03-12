@@ -89,6 +89,10 @@ const AtSearchBar = {
         return function () {}
       },
     },
+    onClear: {
+      type: Function,
+      default: undefined,
+    },
   },
   computed: {
     rootCls() {
@@ -167,7 +171,7 @@ const AtSearchBar = {
       this.onChange(e.target.value, e)
     },
     handleClear(event: CommonEvent): void {
-      if (this.onClear) {
+      if (this.onClear && this.onClear instanceof Function) {
         this.onClear(event)
       } else {
         this.onChange('', event)
