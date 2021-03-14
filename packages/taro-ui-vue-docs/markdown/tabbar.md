@@ -64,7 +64,7 @@ export default {
     }
   },
   methods: {
-    onClick(value) {
+    handleClick(value) {
       this.current1 = value
     }
   },
