@@ -117,6 +117,10 @@ const AtImagePicker = {
       type: Array,
       default: () => ['album', 'camera']
     },
+    count: {
+      type: Number,
+      default: 1
+    }
   },
   computed: {
     rootCls() {
