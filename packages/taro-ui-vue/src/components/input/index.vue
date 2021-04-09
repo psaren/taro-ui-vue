@@ -34,7 +34,7 @@
         @input="handleInput"
         @focus="handleFocus"
         @blur="handleBlur"
-        :on-confirm="handleConfirm"
+        @confirm="handleConfirm"
         @keyboardHeightChange="handleKeyboardHeightChange"
       />
       <view
