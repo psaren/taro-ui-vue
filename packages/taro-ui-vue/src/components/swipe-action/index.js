@@ -1,7 +1,12 @@
 import classNames from 'classnames'
 import _inRange from 'lodash/inRange'
 import _isEmpty from 'lodash/isEmpty'
-import { delayGetClientRect, delayGetScrollOffset, isTest, uuid } from '../../utils/common'
+import {
+  delayGetClientRect,
+  delayGetScrollOffset,
+  isTest,
+  uuid,
+} from '../../utils/common'
 import mixins from '../mixins'
 
 export default {
@@ -26,7 +31,11 @@ export default {
         return options.every((item) => {
           if (typeof item === 'object') {
             if (!item.text) return false
-            if (item.style && typeof item.style !== 'string' && typeof item.style !== 'object')
+            if (
+              item.style &&
+              typeof item.style !== 'string' &&
+              typeof item.style !== 'object'
+            )
               return false
             if (
               item.className &&
@@ -83,21 +92,21 @@ export default {
     }
   },
   computed: {
-    rootClass () {
+    rootClass() {
       return classNames('at-swipe-action', this.className)
     },
-    contentCls () {
+    contentCls() {
       return classNames('at-swipe-action__content', {
         animtion: !this.isTouching,
       })
     },
-    transform () {
+    transform() {
       return this.computeTransform(this.state.offsetSize)
     },
     transformStyle() {
       const { transform } = this
       return transform ? { transform } : {}
-    }
+    },
   },
   methods: {
     getDomInfo() {
@@ -190,7 +199,8 @@ export default {
 
       if (!this.isMoving && inDom) {
         this.isMoving =
-          y === 0 || x / y >= Number.parseFloat(Math.tan((45 * Math.PI) / 180).toFixed(2))
+          y === 0 ||
+          x / y >= Number.parseFloat(Math.tan((45 * Math.PI) / 180).toFixed(2))
       }
 
       if (this.isTouching && this.isMoving) {
@@ -218,13 +228,13 @@ export default {
       const absOffsetSize = Math.abs(offsetSize)
 
       if (absOffsetSize > breakpoint) {
-        this._reset(true)
         this.handleOpened(event)
+        this._reset(true)
         return
       }
 
-      this._reset(false) // TODO: Check behavior
       this.handleClosed(event)
+      this._reset(false) // TODO: Check behavior
     },
     /**
      *
@@ -255,6 +265,6 @@ export default {
     },
     getOptionsCls(item) {
       return classNames('at-swipe-action__option', item.className)
-    }
+    },
   },
 }
