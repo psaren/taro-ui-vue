@@ -27,7 +27,7 @@
     "build:rollup": "rollup --config ./config/rollup.config.js && node config/copy.js",
     "rollup:test": "node tests/transform-component.js && rollup --config ./config/rollup-test.config.js",
     "clean": "rimraf dist lib",
-    "clog": "conventional-changelog -p angular -i CHANGELOG.md -s -r",
+    "clog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "test": "node ./tests/transform-component.js && cross-env NODE_ENV=test && jest --coverage",
     "lint": "eslint ./src/**/*.{ts,vue}",
     "lint:fix": "eslint ./src/**/*.{ts,vue} --fix"

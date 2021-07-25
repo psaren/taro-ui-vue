@@ -1,7 +1,20 @@
-# Change Log
+# [1.0.0-beta.12](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.11...v1.0.0-beta.12) (2021-07-25)
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+### Bug Fixes
+
+* [#129](https://github.com/psaren/taro-ui-vue/issues/129) ([244f3af](https://github.com/psaren/taro-ui-vue/commit/244f3af1df8d063b7f914b3bcdf96204e7a54491))
+
+
+
+# [1.0.0-beta.11](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2021-07-13)
+
+
+### Bug Fixes
+
+* [#126](https://github.com/psaren/taro-ui-vue/issues/126) ([a39fffd](https://github.com/psaren/taro-ui-vue/commit/a39fffdb9dd9362cd07ca86bf6161258daa1329d))
+
+
 
 # [1.0.0-beta.10](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2021-04-09)
 
@@ -9,9 +22,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * [#114](https://github.com/psaren/taro-ui-vue/issues/114),[#115](https://github.com/psaren/taro-ui-vue/issues/115) ([7584f5f](https://github.com/psaren/taro-ui-vue/commit/7584f5f9cf9a78c6bf4137a34640f37291c9214e))
-
-
-
 
 
 
@@ -24,24 +34,46 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-beta.8](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2021-02-17)
 
-**Note:** Version bump only for package taro-ui-vue
 
 
+# [1.0.0-beta.7](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2021-02-17)
+
+
+
+# [1.0.0-beta.6](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2021-01-16)
+
+
+### Bug Fixes
+
+* [#96](https://github.com/psaren/taro-ui-vue/issues/96) ([1299423](https://github.com/psaren/taro-ui-vue/commit/12994231455f3b36ecd7aab36950238bf57f104c))
+
+
+
+# [1.0.0-beta.5](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2021-01-06)
+
+
+### Bug Fixes
+
+* [#94](https://github.com/psaren/taro-ui-vue/issues/94) [#95](https://github.com/psaren/taro-ui-vue/issues/95) ([a021893](https://github.com/psaren/taro-ui-vue/commit/a021893fb24b27fd2c646258265a56488666cc53))
 
 
 
 # [1.0.0-beta.4](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2020-12-20)
 
-**Note:** Version bump only for package taro-ui-vue
 
 
+# [1.0.0-beta.3](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2020-12-20)
 
 
+### Bug Fixes
+
+* [#71](https://github.com/psaren/taro-ui-vue/issues/71) ([ce7c595](https://github.com/psaren/taro-ui-vue/commit/ce7c5956b2f69ead16e6653b0a45ce1a7dc0d47c))
+* [#74](https://github.com/psaren/taro-ui-vue/issues/74) ([129f2c9](https://github.com/psaren/taro-ui-vue/commit/129f2c975124f6ba4d9701f1d0727f94f4d69b88))
+* [#76](https://github.com/psaren/taro-ui-vue/issues/76) ([87ff45c](https://github.com/psaren/taro-ui-vue/commit/87ff45c0e7a58d7cd4591659870f77abc426de58))
+* [#89](https://github.com/psaren/taro-ui-vue/issues/89) ([32fdd04](https://github.com/psaren/taro-ui-vue/commit/32fdd041d7a72f2040521ba2471ebbab0b8b4076))
+* AtCard [#87](https://github.com/psaren/taro-ui-vue/issues/87) ([980cf07](https://github.com/psaren/taro-ui-vue/commit/980cf07193f55027fe939cf0ea30766c9c74a20b))
 
 
 
@@ -53,7 +85,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * add LECENSE.md ([bcf7263](https://github.com/psaren/taro-ui-vue/commit/bcf7263be65591491ed280b01dded49fcb5a1ebe))
 
 
-**Note:** Version bump only for package taro-ui-vue
+
+# [1.0.0-beta.1](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.15...v1.0.0-beta.1) (2020-12-13)
+
 
 
 # [1.0.0-alpha.15](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2020-12-13)
@@ -62,9 +96,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Bug Fixes
 
 * [#89](https://github.com/psaren/taro-ui-vue/issues/89) ([4eb5a62](https://github.com/psaren/taro-ui-vue/commit/4eb5a6294526e09a414f5a21d08cee4d6e553f11))
-
-
-
 
 
 
@@ -77,18 +108,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-alpha.13](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2020-11-23)
 
 
 ### Bug Fixes
 
 * [#76](https://github.com/psaren/taro-ui-vue/issues/76) ([03f5d9f](https://github.com/psaren/taro-ui-vue/commit/03f5d9f8d3bd80f4d580540ec7b6ebf8993894aa))
-
-
-
 
 
 
@@ -101,9 +126,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-alpha.11](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2020-11-02)
 
 
@@ -113,15 +135,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-alpha.10](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2020-09-21)
-
-**Note:** Version bump only for package taro-ui-vue
-
-
-
 
 
 
@@ -133,10 +147,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * [#55](https://github.com/psaren/taro-ui-vue/issues/55) ([ea5dce1](https://github.com/psaren/taro-ui-vue/commit/ea5dce17363bd20296a9a73a26b5aa701be18ffa))
 * **AtIndexes:** 修复 [#49](https://github.com/psaren/taro-ui-vue/issues/49) onClick 以及 onScrollIntoView 事件不生效 ([0f49c5c](https://github.com/psaren/taro-ui-vue/commit/0f49c5ca1c92aaa43966b646ff060da2e99edd0f))
 * [#50](https://github.com/psaren/taro-ui-vue/issues/50) ([ed8cb25](https://github.com/psaren/taro-ui-vue/commit/ed8cb25a18b44776e7fc0e9dd28721441937e326))
+* indexes in weapp ([cee38fa](https://github.com/psaren/taro-ui-vue/commit/cee38fa0c21d970c1d8b53c4f04506b1cadd6b34))
 * indexes in weapp ([2da5b47](https://github.com/psaren/taro-ui-vue/commit/2da5b47b08c05e3e335f3ba599904f2501c49a93))
 * **image-picker:** duplicate keys ([8d6f638](https://github.com/psaren/taro-ui-vue/commit/8d6f6384ade985d0eecbd2f6a00edcfdcdefc63a))
-
-
 
 
 
@@ -150,9 +163,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-alpha.7](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2020-09-05)
 
 
@@ -162,20 +172,19 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-alpha.6](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2020-08-22)
 
 
 ### Bug Fixes
 
+* **AtModal:** Button 改为 AtButton ([5972d62](https://github.com/psaren/taro-ui-vue/commit/5972d62167cd199e50c90e2ba6a21447a0b38b18))
 * **avatar:** avatar 无法显示头像 [#42](https://github.com/psaren/taro-ui-vue/issues/42) ([cd6ed45](https://github.com/psaren/taro-ui-vue/commit/cd6ed45788018a04fcfb3f021d978383264fd5e3))
 * **calendar:** 修复 currentDate 类型以便进行多日期选择 ([0f33fd4](https://github.com/psaren/taro-ui-vue/commit/0f33fd418162f4d6712db965b5111ddb3102c8e9))
 * **calendar:** 修复非当前月份不能选取日期的问题 ([6fef79e](https://github.com/psaren/taro-ui-vue/commit/6fef79ee8c61f1efa5a947a3c4e7a570fb86d62e))
+* **calendar demo:** fix multi-selection demo ([1d0c165](https://github.com/psaren/taro-ui-vue/commit/1d0c165ec89e52bae1f368dc75843ec69fe3dd6d))
 * calendar body wrapCls ([33817c3](https://github.com/psaren/taro-ui-vue/commit/33817c341aba5386a6b324fd7ffa79b32f4f6481))
 * calendar swiper class ([c6c86de](https://github.com/psaren/taro-ui-vue/commit/c6c86de140401c0464c705c1ef4734bf63d86007))
-* **AtModal:** Button 改为 AtButton ([5972d62](https://github.com/psaren/taro-ui-vue/commit/5972d62167cd199e50c90e2ba6a21447a0b38b18))
+* DocsHeader 样式失效 ([6d80dc3](https://github.com/psaren/taro-ui-vue/commit/6d80dc3a377dff1405fcd4cc4f3fa85750e3b65c))
 * 修复 Accordion 默认开启时内容不显示 ([82d376d](https://github.com/psaren/taro-ui-vue/commit/82d376db989d9d6245f953a53492530da48b2569))
 * 修复找不到 View、Text、Image 等模板的问题 ([103a998](https://github.com/psaren/taro-ui-vue/commit/103a9989bfafaa26b9f403b9b2eacf2ba13836e5))
 * 改写 Vue.extend 组件 ([51bdc60](https://github.com/psaren/taro-ui-vue/commit/51bdc605f3ac2b1ed984f3934490215a0c310014))
@@ -185,20 +194,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-
-
-
 # [1.0.0-alpha.5](https://github.com/psaren/taro-ui-vue/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-08-06)
 
 
 ### Bug Fixes
 
+* **modal:** fix modal style and footer slot button ([4a73786](https://github.com/psaren/taro-ui-vue/commit/4a73786fe159f488b6527a15ee6bc941221c086b))
 * **modal:** fix modal style and footer slot button ([2a0defa](https://github.com/psaren/taro-ui-vue/commit/2a0defa2fbf7893e3b78afa3a5e7fbdccb295e21))
 * **Noticebar:** 修复Noticebar H5滚动 ([a0b35eb](https://github.com/psaren/taro-ui-vue/commit/a0b35ebb79734914b2d0b25eac90fd1254c653a4))
 * **progress:** set default status to '' and fix pogressbar is full at 0% ([38a062a](https://github.com/psaren/taro-ui-vue/commit/38a062a6aba526b6073a43608391c388e7efdcda))
 * **tabs:** 修复tabs在 H5 内容偏移 [#26](https://github.com/psaren/taro-ui-vue/issues/26) ([00923a7](https://github.com/psaren/taro-ui-vue/commit/00923a7b6aaa1742c5009b655d1cfb2d8b8b1373))
-
-
 
 
 
@@ -428,3 +433,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * 完善Calendar ([d6cdf33](https://github.com/psaren/taro-ui-vue/commit/d6cdf336c098820a3037f293bf7488392170fd3b))
 * 添加 基础& 视图组件 ([c545f89](https://github.com/psaren/taro-ui-vue/commit/c545f89f3e83e44500647997e341735167185ea2))
 * 移除vue-prototype ([dce28a0](https://github.com/psaren/taro-ui-vue/commit/dce28a0593a71a4b45f55f64ca73ca10516325ad))
+
+
+
