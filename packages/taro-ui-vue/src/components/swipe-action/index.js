@@ -69,6 +69,14 @@ export default {
       default: () => '',
     },
   },
+  watch: {
+    isOpened(val) {
+      if (val !== this.state._isOpened) {
+        this.state._isOpened = val
+        this._reset(val)
+      }
+    },
+  },
   data() {
     const { isOpened } = this
     return {
