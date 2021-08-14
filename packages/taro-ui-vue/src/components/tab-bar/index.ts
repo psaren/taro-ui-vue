@@ -31,6 +31,10 @@ export default {
       type: String,
       default: '',
     },
+    backgroundColor: {
+      type: String,
+      default: '',
+    },
     selectedColor: {
       type: String,
       default: '',
